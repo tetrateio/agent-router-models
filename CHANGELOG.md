@@ -1,0 +1,534 @@
+# 2026-08-27 TARS MODEL UPDATE
+
+## New Models:
+- [Groq] `qwen/qwen3.8-27b` — a preview multimodal model. Text and image input, text output. 131k context and 16k max output. $0.80 input and $4.00 output per 1M tokens. 450 tokens per second. The maximum file size is 20 MB. The model accepts a maximum of 3 input images.
+- [DeepInfra] We added 5 models. All prices are per 1M tokens, input then output.
+    - `zai-org/GLM-5.3-Flash` $0.15/$0.50 — a multimodal model with a 1M context window. Text, image, and video input. Reasoning and tool use.
+    - `Qwen/Qwen3.8-27B` $0.40/$3.00 — a vision model with a 262k context window. Reasoning and tool use.
+    - `ibm-granite/granite-4.2-30b` $0.16/$0.65, `ibm-granite/granite-4.2-8b` $0.06/$0.25, and `ibm-granite/granite-4.2-3b` $0.03/$0.12 — IBM reasoning models with a 131k context window and tool use.
+
+## Price Changes:
+- [OpenAI] `gpt-5.6-sol` — $5.00/$30.00 → $4.00/$20.00 per 1M tokens. Cached input $0.50 → $0.40. Cache writes $6.25 → $5.00. Prompts of more than 272k tokens now cost $8.00 input and $30.00 output. OpenAI gives this promotional price at least through 2026-11-21.
+- [OpenAI] `daybreak-blue-latest` — the same price change as `gpt-5.6-sol`, because the alias points to that model.
+
+## Deprecated Models:
+- [DeepInfra] `Qwen/Qwen3-235B-A22B-Thinking-2507` — DeepInfra marked the model as deprecated on 2026-08-25. Replacement: `Qwen/Qwen3.6-35B-A3B`. DeepInfra publishes no shutdown date, so the model continues to work.
+- [Gemini] `gemini-robotics-er-1.6-preview` — Google now gives a firm shutdown date of 2026-08-31. Replacement: `gemini-robotics-er-2-preview`.
+
+## Retired Models:
+- [Gemini] `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001`, and `imagen-4.0-fast-generate-001` — shut down 2026-08-17. Replacement: `gemini-3.1-flash-image`.
+
+## Other Updates:
+- [Groq] We removed `llama-3.1-8b-instant`, `llama-3.3-70b-versatile`, and `minimaxai/minimax-m2.7` from the catalog. Groq marks the three models as Enterprise only and publishes no price. Enterprise models stay out of the catalog from this update on.
+
+## Notes:
+
+### Corrections to earlier updates
+- [Gemini] We removed `deep-research-preview-04-2026`, `deep-research-max-preview-04-2026`, and `antigravity-preview-05-2026` from the catalog. Google serves these agents through the Interactions API only, and no catalog mode fits that API. The 2026-08-17 block and earlier blocks kept the three records with null prices.
+
+### Follow-up work
+- [OpenAI] The `gpt-5.6-sol` promotional price runs at least through 2026-11-21. Check the price after that date.
+- [Gemini] The `gemini-3.7-flash` and `gemini-3.6-flash` promotional prices run through 2026-12-31. The prices rise to $1.50 input and $7.50 output on 2027-01-01.
+- [xAI] The rate-limits page no longer publishes per-model limits. The limits are now per tier in the xAI console. The catalog keeps the last published values.
+- [DeepInfra] The `rerank` records stay in the catalog until `CLAUDE.md` decides on that mode.
+
+### Schema and catalog changes
+- [Gemini] The three removed agent records drop the catalog count from 27 to 24. The three Imagen records take `isEnabled: false`, `deprecated_date: 2026-06-15`, and `retirement_date: 2026-08-17`. `gemini-robotics-er-1.6-preview` takes `retirement_date: 2026-08-31`.
+- [Groq] The new Qwen record and the three removed Enterprise records change the count from 7 to 5. Groq publishes the context window of `qwen/qwen3.8-27b` as 131,042 tokens on both the index and the model page. The catalog records that value as written.
+- [DeepInfra] The five new records raise the count from 163 to 168. `Qwen/Qwen3-235B-A22B-Thinking-2507` takes `deprecated: true` and `deprecated_date: 2026-08-25`.
+
+### Models that stay out of the catalog
+- [Gemini] `gemini-3.5-transcribe` and `gemini-3.5-transcribe-live` — speech-to-text models, GA on 2026-08-26. The models accept audio input only and no text input, so they fall outside the catalog rules. The live model also answers on the Live API only.
+- [Gemini] The Interactions API agents (Deep Research, Deep Research Max, Antigravity) stay out. See Corrections.
+- [DeepInfra] 81 deprecated text or embedding models on the provider list stay out, as in earlier updates.
+- [Groq] All Enterprise models stay out: `llama-3.1-8b-instant`, `llama-3.3-70b-versatile`, `minimaxai/minimax-m2.7`, `minimaxai/minimax-m2.5`, and `qwen/qwen3-vl-32b-instruct`. Groq publishes no price for them.
+
+### Prices that did not change
+- [Anthropic] All 24 models on the pricing page match the catalog. No changes since 2026-08-17.
+- [xAI] All 10 models match the catalog, including the image models and the long-context tiers.
+- [OpenAI] All models except `gpt-5.6-sol` and `daybreak-blue-latest` match the catalog.
+- [Gemini] All 24 remaining records match the pricing page.
+- [DeepInfra] All 163 existing records match the provider list. The `XiaomiMiMo` discounts (39% and 32.5%, no end date) stay recorded at the base price, as in the 2026-08-17 block.
+
+### Sources and coverage
+- Anthropic: release notes, models overview, pricing, deprecations, context windows, fast mode. The release notes since 2026-08-17 name platform features only.
+- OpenAI: changelog, compare table, pricing, deprecations, fast mode. The compare table now lists only the four flagship models.
+- Gemini: changelog, models, pricing, deprecations, and the Transcribe model page.
+- xAI: release notes, models, pricing, rate limits. Nothing new since Grok 4.6.
+- Groq: changelog (nothing since April), models index, deprecations, capability pages, and the Qwen 3.8 model page.
+- DeepInfra: the models/list API and per-model detail endpoints for the five new records.
+
+# 2026-08-17 TARS MODEL UPDATE
+
+## New Models:
+- [DeepInfra] We added 55 models. All prices are per 1M tokens, input then output.
+    - Anthropic (7): `claude-opus-5` $5.00/$25.00, `claude-fable-5` $10.00/$50.00, `claude-sonnet-5` $2.00/$10.00, `claude-opus-4-8` and `claude-opus-4-7` $5.00/$25.00, `claude-sonnet-4-6` $3.00/$15.00, `claude-haiku-4-5` $1.00/$5.00
+    - Google (9): `gemini-3.7-flash` $0.75/$3.75, `gemini-3.5-flash` $1.50/$9.00, `gemini-3.1-pro` $2.00/$12.00, `gemini-3.1-flash-lite` $0.25/$1.50, and the Gemma 4 family `gemma-4-31B-it` $0.13/$0.38, `gemma-4-31B-it-turbo` $0.09/$0.34, `gemma-4-31B-it-Ultra` $0.27/$0.76, `gemma-4-26B-A4B-it` $0.07/$0.34, `gemma-4-E4B-it` $0.02/$0.10
+    - Qwen (10): `Qwen3.8-Max` $1.65/$4.951, `Qwen3.8-2.4T-A95B` $2.00/$6.00, `Qwen3.7-Max` $2.50/$7.50, `Qwen3.6-27B` $0.32/$3.20, `Qwen3.6-35B-A3B` $0.10/$0.95, `Qwen3.5-397B-A17B` $0.45/$3.00, `Qwen3.5-122B-A10B` $0.29/$2.40, `Qwen3.5-35B-A3B` $0.14/$1.00, `Qwen3.5-27B` $0.26/$2.60, `Qwen3.5-9B` $0.10/$0.15
+    - DeepSeek (4): `DeepSeek-V4-Pro` and `DeepSeek-V4-Pro-0813` $1.30/$2.60, `DeepSeek-V4-Flash` $0.09/$0.18, `DeepSeek-V4-Flash-0731` $0.08/$0.18
+    - NVIDIA (6): `NVIDIA-Nemotron-3-Ultra-550B-A55B` $0.50/$2.20, `NVIDIA-Nemotron-3.5-Lightning` $0.08/$0.20, `Nemotron-Content-Safety-3.5` $0.20/$0.20, and three embedding models `Nemotron-3-Embed-8B` $0.035, `Nemotron-3-Embed-1B-BF16` $0.015, `Nemotron-3-Embed-1B-NVFP4` $0.010
+    - Moonshot (3): `Kimi-K3` $2.85/$14.25, `Kimi-K2.7-Code` $0.68/$3.40, `Kimi-K2.6` $0.75/$3.50
+    - MiniMax (3): `MiniMax-M3` $0.28/$1.10, `MiniMax-M2.7` $0.25/$1.00, `MiniMax-M2.7-Turbo` $0.38/$1.70
+    - Z.ai (2): `GLM-5.2` $0.75/$2.40, `GLM-5.1` $1.05/$3.50
+    - ByteDance (2): `Seed-2.0-pro` and `Seed-2.0-code` $0.50/$3.00
+    - OpenAI (1): `gpt-oss-120b-Ultra` $0.20/$0.95
+    - New suppliers (8): `XiaomiMiMo/MiMo-V2.5-Pro` $1.00/$3.00, `XiaomiMiMo/MiMo-V2.5` $0.40/$2.00, `thinkingmachines/Inkling` $0.95/$4.05, `thinkingmachines/Inkling-Small` $0.45/$1.20, `stepfun-ai/Step-3.7-Flash` $0.20/$1.15, `tencent/Hy3` $0.14/$0.58, `inclusionAI/Ling-3.0-flash` $0.06/$0.18, `meta-models/Muse-Glimmer-30B` $0.30/$1.20
+- [Gemini] `gemini-3.7-flash` — the newest Flash model for coding, agents, and multi-step work. Text, image, video, audio, and PDF input. Text output. 1M context and 65k max output. $0.75 input, $0.075 cached input, and $3.75 output per 1M tokens. Thinking effort accepts `low`, `medium`, and `high`.
+- [Gemini] `gemini-robotics-er-2-preview` — a robotics model for spatial reasoning and multi-robot work. Text, image, video, and audio input. Text output. 131k context and 65k max output. $2.00 input, $0.20 cached input, and $10.00 output per 1M tokens.
+- [Gemini] `gemini-embedding-001` — a text embedding model at $0.15 per 1M input tokens. 2,048 input token limit. Output dimensions are flexible from 128 to 3072. Google gives a shutdown date of 2028-05-14.
+- [Groq] `qwen/qwen3.6-27b` — a preview multimodal model. Text and image input, text output. 131k context and 16k max output. $0.60 input and $3.00 output per 1M tokens. 500 tokens per second. The maximum file size is 20 MB. The model accepts a maximum of 3 input images.
+- [Groq] `minimaxai/minimax-m2.7` — a preview model for agentic work and software engineering. Text input and output. 196k context and 131k max output. 260 tokens per second. Groq offers this model to Enterprise customers only and publishes no price.
+- [OpenAI] `gpt-5.6-cyber` — a cybersecurity model for authorized vulnerability research and security testing. Text and image input, text output. 400k context, 128k max output, and 272k max input. $12.50 input, $1.25 cached input, and $75.00 output per 1M tokens. Prompts of more than 272k tokens cost 2x input and 1.5x output. The Responses API is the only endpoint, and Batch is not supported.
+- [OpenAI] `daybreak-blue-latest` — an alias for frontier general-purpose models with safeguards for defensive cybersecurity work. It points to `gpt-5.6-sol` and uses the same prices and limits.
+- [OpenAI] `daybreak-red-latest` — an alias for advanced cybersecurity models. It points to `gpt-5.6-cyber` and uses the same prices and limits.
+- [OpenAI] `gpt-image-2` — an image generation model. Text and image input, image output. Flexible image sizes and low, medium, and high quality tiers.
+- [xAI] `grok-4.6` — the newest frontier model for code, agents, and knowledge work. Text and image input, text output. 500k context. $2.00 input, $0.50 cached input, and $6.00 output per 1M tokens. Prompts of 200k tokens or more cost 2x. Reasoning effort accepts `low`, `medium`, `high` (default), and `xhigh`.
+- [xAI] `grok-imagine-image-2.0` — an image model at $0.04 per image. xAI recommends this model for images. It is the only image model that accepts the `quality` parameter (`low` or `medium`). Resolutions are `1k` and `2k`.
+- [xAI] `grok-imagine-image-quality` — premium image generation at $0.05 per image. Aliases are `grok-imagine-image-quality-latest` and `grok-imagine-image-pro`.
+- [Gemini] `gemini-robotics-er-2-streaming-preview` — a robotics model for real-time text streaming. Text, image, video, and audio input. Text output. 131k context and 65k max output. $2.00 input and $10.00 output per 1M tokens. Google serves this model through the Live API only, so the model stays disabled.
+
+## Price Changes:
+- [OpenAI] `gpt-5.6-terra` — $2.50/$15.00 → $2.00/$12.00 per 1M tokens. Cached input $0.25 → $0.20. Cache writes $3.125 → $2.50.
+- [OpenAI] `gpt-5.6-luna` — $1.00/$6.00 → $0.20/$1.20 per 1M tokens. Cached input $0.10 → $0.02. Cache writes $1.25 → $0.25.
+- [Gemini] `gemini-3.6-flash` — $1.50/$7.50 → $0.75/$3.75 per 1M tokens. Cached input $0.15 → $0.075. Cache storage $1.00 → $0.50 per 1M tokens per hour. This promotional price runs through 2026-12-31.
+- [xAI] `grok-4.5` — cached input $0.50 → $0.30 per 1M tokens.
+- [xAI] `grok-imagine-image` — the price is now flat at $0.02 per image for both `1k` and `2k`.
+- [xAI] `grok-imagine-image-quality` — the price is now flat at $0.05 per image. The 2k price drops from $0.07 to $0.05.
+- [Anthropic] `claude-sonnet-5` — the $2.00/$10.00 price is now the standard price. The increase to $3.00/$15.00 on 2026-09-01 will not occur.
+- [Anthropic] `claude-opus-4-8` — fast mode is now available at $10.00 input and $50.00 output per 1M tokens. Fast mode covers Claude Opus 5 and Claude Opus 4.8 only.
+- [Anthropic] US-only inference costs 1.1x on all token types for Claude 4.6 and later models. Earlier models do not accept the parameter.
+- [Gemini] `gemini-2.5-computer-use-preview-10-2025` — prompts of more than 200k tokens now cost $2.50 input and $15.00 output per 1M tokens.
+- [DeepInfra] 22 models had a price change.
+    - The price went up for 17 models:
+        - `Qwen/Qwen2.5-72B-Instruct` $0.12/$0.39 → $0.36/$0.40
+        - `meta-llama/Llama-3.2-11B-Vision-Instruct` $0.049/$0.049 → $0.345/$0.345
+        - `NousResearch/Hermes-3-Llama-3.1-70B` $0.30/$0.30 → $0.70/$0.70
+        - `nvidia/Llama-3.3-Nemotron-Super-49B-v1.5` $0.10/$0.40 → $0.40/$0.40
+        - `Qwen/Qwen3-235B-A22B-Instruct-2507` $0.071/$0.10 → $0.09/$0.55
+        - `Qwen/Qwen3-30B-A3B` $0.08/$0.28 → $0.12/$0.50
+        - `Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo` input $0.22 → $0.30
+        - `zai-org/GLM-4.6` $0.43/$1.74 → $0.50/$2.00
+        - `deepseek-ai/DeepSeek-V3.1` $0.21/$0.79 → $0.25/$0.95
+        - `deepseek-ai/DeepSeek-V3.1-Terminus` $0.21/$0.79 → $0.27/$0.95
+        - `deepseek-ai/DeepSeek-V3-0324` $0.20/$0.77 → $0.24/$0.90
+        - `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` $0.15/$0.60 → $0.20/$0.80
+        - `meta-llama/Llama-4-Scout-17B-16E-Instruct` input $0.08 → $0.10
+        - `meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo` output $0.03 → $0.04
+        - `google/gemma-3-12b-it` $0.04/$0.13 → $0.05/$0.15
+        - `google/gemma-3-4b-it` $0.04/$0.08 → $0.05/$0.10
+        - `MiniMaxAI/MiniMax-M2.5` output $0.95 → $1.15
+    - The price went down for 6 models:
+        - `zai-org/GLM-5` $0.80/$2.56 → $0.60/$2.08
+        - `Qwen/Qwen3-Embedding-8B` $0.05 → $0.01
+        - `nvidia/NVIDIA-Nemotron-3-Super-120B-A12B` $0.10/$0.50 → $0.085/$0.40
+        - `openai/gpt-oss-120b` $0.039/$0.19 → $0.037/$0.17
+        - `mistralai/Mistral-Nemo-Instruct-2407` $0.02/$0.04 → $0.019/$0.03
+        - `MiniMaxAI/MiniMax-M2.5` input $0.27 → $0.15
+
+## Deprecated Models:
+- [OpenAI] `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-5-pro`, `o3`, and `o3-pro` — OpenAI announced the deprecation on 2026-06-11. The shutdown date is 2026-12-11. Replacements: `gpt-5.6-sol` for `gpt-5` and `o3`, `gpt-5.6-terra` for `gpt-5-mini`, and `gpt-5.6-luna` for `gpt-5-nano`. Replace the two pro models with `gpt-5.6-sol` and `reasoning.mode: pro`. The six models work until the shutdown date.
+- [DeepInfra] DeepInfra now marks 31 models as deprecated. DeepInfra publishes no shutdown date, so the models continue to work.
+    - Anthropic: `claude-3-7-sonnet-latest` → `claude-sonnet-4-6`, `claude-4-sonnet` → `claude-sonnet-4-6`, `claude-4-opus` → `claude-opus-4-7`
+    - Meta: `Meta-Llama-3-8B-Instruct` → `Llama-4-Scout-17B-16E-Instruct`, `Meta-Llama-3.1-8B-Instruct` and `Meta-Llama-3.1-70B-Instruct` → their Turbo builds, `Llama-3.2-11B-Vision-Instruct` → `google/gemma-4-31B-it`
+    - Qwen: `Qwen2.5-VL-32B-Instruct` → `Qwen3-VL-30B-A3B-Instruct`, `Qwen3-Coder-480B-A35B-Instruct` → the Turbo build, and the three `Qwen3-Embedding-*-batch` models → their standard builds
+    - DeepSeek: `DeepSeek-V3.1-Terminus` → `DeepSeek-V4-Flash-0731`, `DeepSeek-R1-0528-Turbo` and `DeepSeek-R1-Distill-Llama-70B` → `DeepSeek-R1-0528`, `DeepSeek-OCR` → `google/gemma-4-31B-it`
+    - Moonshot: `Kimi-K2-Instruct-0905`, `Kimi-K2-Thinking`, and `Kimi-K2.5-Turbo` → `Kimi-K2.5`
+    - MiniMax: `MiniMax-M2.1` and `MiniMax-M2.5` → `MiniMax-M2.7`
+    - NVIDIA: `Llama-3.1-Nemotron-70B-Instruct`, `Llama-3.3-Nemotron-Super-49B-v1.5`, and `NVIDIA-Nemotron-Nano-12B-v2-VL` → `NVIDIA-Nemotron-3-Ultra-550B-A55B`. `NVIDIA-Nemotron-Nano-9B-v2` → `Nemotron-3-Nano-30B-A3B`
+    - Others: `zai-org/GLM-4.6V` → `google/gemma-4-26B-A4B-it`, `mistralai/Mixtral-8x7B-Instruct-v0.1` → `Mistral-Small-24B-Instruct-2501`, `Sao10K/L3.3-70B-Euryale-v2.3` → `L3.1-70B-Euryale-v2.2`, `allenai/Olmo-3.1-32B-Instruct`, `allenai/olmOCR-2-7B-1025`, and `PaddlePaddle/PaddleOCR-VL-0.9B` → `google/gemma-4-31B-it`
+- [Gemini] `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite` are no longer deprecated. Google now gives no shutdown date for the three models. The 2026-10-16 date in the 2026-07-21 update is no longer correct.
+- [Gemini] `gemini-robotics-er-1.6-preview` — Google announced the deprecation on 2026-07-30. Replacement: `gemini-robotics-er-2-preview`. Google gives 2026-08-31 as the earliest shutdown date, so the model still works.
+
+## Retired Models:
+- [Groq] `llama-3.1-8b-instant` and `llama-3.3-70b-versatile` — shut down 2026-08-16. The shutdown applies to the free and developer tiers. Enterprise customers with a committed-spend contract keep access. Replacements: `openai/gpt-oss-20b` for Llama 3.1 8B, and `openai/gpt-oss-120b` or `qwen/qwen3.6-27b` for Llama 3.3 70B.
+- [Groq] `qwen/qwen3-32b` — shut down 2026-07-17. Replacement: `openai/gpt-oss-120b`.
+- [Groq] `meta-llama/llama-4-scout-17b-16e-instruct` — shut down 2026-07-17. Replacement: `openai/gpt-oss-120b` or `qwen/qwen3.6-27b`.
+- [Anthropic] `claude-opus-4-1` and `claude-opus-4-1-20250805` — shut down on the Claude API on 2026-08-05. The models stay available on Amazon Bedrock and Google Cloud. Replacement: `claude-opus-4-8`.
+- [OpenAI] `computer-use-preview`, `gpt-4o-mini-search-preview`, `gpt-4o-search-preview`, `gpt-5-chat-latest`, `gpt-5-codex`, `gpt-5.1-chat-latest`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5.1-codex-mini`, `gpt-5.2-codex`, `o3-deep-research`, and `o4-mini-deep-research` — shut down 2026-07-23.
+- [OpenAI] `gpt-5.2-chat-latest` and `gpt-5.3-chat-latest` — shut down 2026-08-10.
+- [xAI] `grok-imagine-image-pro` — the name is now an alias of `grok-imagine-image-quality`.
+
+## Other Updates:
+- [Anthropic] `claude-sonnet-4-5` — the model has a 200k context window and no 1M tier. We removed the long-context price.
+- [Gemini] `gemini-3.5-flash` — Google now lists this model as the legacy Flash model.
+- [DeepInfra] `Qwen/Qwen3-Next-80B-A3B-Instruct` — context window 131,072 → 262,144.
+- [xAI] `grok-4.3` — xAI removed the alias `grok-latest`. xAI now lists only `grok-4.3-latest`.
+- [xAI] `grok-4.20-0309-reasoning`, `grok-4.20-0309-non-reasoning`, `grok-4.20-multi-agent-0309`, and `grok-build-0.1` — xAI removed the region `eu-west-1`. xAI now lists `us-east-1` and `us-west-2` only.
+- [xAI] `grok-imagine-image` — xAI removed the region `eu-west-1` and added the region `us-saltlake-2`.
+- [xAI] `grok-4.20-multi-agent-0309` — the display name is now "Grok 4.20 Multi-Agent Beta". The reasoning effort selects the agent count. `low` or `medium` runs 4 agents. `high` or `xhigh` runs 16 agents.
+- [xAI] `grok-build-0.1` — xAI removed the 20% batch discount. xAI lists the discount for `grok-4.3` and the three `grok-4.20` models only.
+- [xAI] Rate limits changed for all models. `grok-4.5` 7,200 → 9,000 rpm. `grok-4.3`, the two `grok-4.20` chat models, and `grok-build-0.1` 1,800 → 2,220 rpm. `grok-4.20-multi-agent-0309` 450 → 540 rpm. The two image models 300 → 360 rpm.
+- [OpenAI] We corrected the abilities of 42 models. OpenAI gives a list of supported features and supported tools on each model page. We read that list again for every model. Older models gained abilities they always had: web search, code execution, image generation, file upload, and prompt caching. Examples: `gpt-4o` and `gpt-4o-mini` gained web search, code execution, image generation, and file upload. `gpt-5.1` and `gpt-5.2` gained the same four. `o3` gained all four. `gpt-5.3-codex`, `gpt-5.2-codex`, and the three `gpt-5.1-codex` models gained web search.
+- [OpenAI] `gpt-4.1-nano` — the model does not support web search. OpenAI does not list web search for this model.
+- [Groq] `qwen/qwen3.6-27b` and `minimaxai/minimax-m2.7` — these two models do not support structured outputs. Groq lists them for JSON object mode only. Use JSON object mode instead.
+- [Groq] `openai/gpt-oss-safeguard-20b` — the model does not support code execution. Groq lists code execution for `openai/gpt-oss-120b` and `openai/gpt-oss-20b` only.
+- [Groq] `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, and `openai/gpt-oss-safeguard-20b` — these three models support prompt caching. Cached input tokens cost 50% less.
+- [Groq] `openai/gpt-oss-120b` and `openai/gpt-oss-20b` — the Batch API gives a 50% discount on these two models. The batch discount does not add to the prompt-caching discount.
+- [Groq] The request limit is 1,000 requests per minute on the Developer plan for `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `openai/gpt-oss-safeguard-20b`, and `qwen/qwen3.6-27b`.
+- [Gemini] `gemini-3.5-flash-lite` — the model now supports computer use. Google lists this ability as a preview.
+- [Gemini] `gemini-3-pro-image` — the model does not support structured outputs. Google lists structured outputs as not supported.
+- [xAI] The maximum file size is 48 MB for all text models. The earlier value of 20 MB was the maximum size of one input image, not the file size limit.
+- [Anthropic] One request accepts a maximum of 600 images or PDF pages on models with a 1M token context window. The maximum is 100 on models with a 200k token context window.
+- [DeepInfra] `deepseek-ai/DeepSeek-V4-Flash`, `deepseek-ai/DeepSeek-V4-Pro`, `deepseek-ai/DeepSeek-V4-Pro-0813`, `moonshotai/Kimi-K2.7-Code`, `moonshotai/Kimi-K3`, `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B`, and `zai-org/GLM-5.2` — these seven models accept explicit cache breakpoints. A 5-minute cache write costs 1.25x the input price. A 1-hour cache write costs 2x.
+- [DeepInfra] 11 models do not support structured outputs. DeepInfra lists them for JSON mode only: `deepseek-ai/DeepSeek-R1-0528-Turbo`, `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`, `google/gemma-4-31B-it-Ultra`, `inclusionAI/Ling-3.0-flash`, `meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo`, `MiniMaxAI/MiniMax-M2.1`, `MiniMaxAI/MiniMax-M2.5`, `MiniMaxAI/MiniMax-M2.7`, `MiniMaxAI/MiniMax-M2.7-Turbo`, `openai/gpt-oss-120b-Ultra`, and `thinkingmachines/Inkling`.
+
+## Notes:
+
+### Models that are added but not enabled
+- [OpenAI] `gpt-5.6-cyber`, `daybreak-blue-latest`, and `daybreak-red-latest` — these models need separate approval through the Daybreak program.
+- [Groq] `minimaxai/minimax-m2.7` — Groq offers this model to Enterprise customers only and publishes no price. The record holds `null` for all prices.
+- [xAI] `grok-imagine-image-2.0` and `grok-imagine-image-quality` — these models stay disabled until integration is complete.
+- [Gemini] `gemini-robotics-er-2-streaming-preview` — Google serves this model through the Live API, a WebSocket interface. The catalog points Gemini records at the OpenAI-compatible endpoint, which does not serve this model. The record stays disabled until integration is complete.
+- Retired models keep their record with `isEnabled: false` while the provider still lists the model. We delete the record once the provider drops the model from its documentation, or folds the name into another model. For this reason we deleted `qwen/qwen3-32b`, `meta-llama/llama-4-scout-17b-16e-instruct`, and `grok-imagine-image-pro`.
+
+### Corrections to earlier updates
+- [Gemini] The 2026-07-21 update removed `gemini-embedding-001`. That update read the release date of 2026-07-14 as a shutdown date. Google gives a shutdown date of 2028-05-14, so the model is back in the catalog.
+- [Gemini] The 2026-07-21 update gave a shutdown date of 2026-10-16 for `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite`. Google now gives no shutdown date for these three models.
+- [OpenAI] Earlier updates gave incomplete abilities for 42 models. Each OpenAI model page gives a list of supported features and supported tools. Earlier updates read that list for the newest models only. We now read it for every model. See Other Updates for the models that changed.
+- [Groq] Earlier updates read the ability list from each Groq model card. The model card for `openai/gpt-oss-safeguard-20b` names code execution, but the code execution page does not list the model. The model cards for `qwen/qwen3.6-27b` and `minimaxai/minimax-m2.7` name JSON object mode, which is not structured outputs. We now read the ability pages, because each one gives a list of supported models.
+- [xAI] Earlier updates gave `max_file_size_mb: 20` for all models. That value is the maximum size of one input image. The file size limit is 48 MB.
+- [DeepInfra] Earlier updates marked 31 models as deprecated but recorded no date. The list endpoint gives the date as a Unix timestamp.
+
+### Follow-up work
+- [Gemini] `gemini-3.7-flash` and `gemini-3.6-flash` prices increase on 2027-01-01 to $1.50 input, $0.15 cached input, $7.50 output, and $1.00 cache storage per 1M tokens per hour. The catalog holds the current price.
+- [Gemini] The Imagen 4 models stay enabled. Their shutdown date of 2026-08-17 is today, but Google states that the listed dates are the earliest possible dates. The models page still shows Imagen 4 as "Deprecated" and not "Shut down".
+- [DeepInfra] The catalog keeps 4 rerank models. The CLAUDE.md rule lists `chat`, `embedding`, `image_generation`, and `responses` as the accepted modes, so `rerank` is outside that list. These four records were in the catalog before this update. They stay for now.
+- [Gemini] Google gives a shutdown date for 6 models, but states that every listed date is the earliest possible date. We record no shutdown date for these models. The dates are: `gemini-3.1-flash-lite` 2027-05-07, `gemini-2.5-flash-image` 2026-10-02, `gemini-embedding-001` 2028-05-14, and the three Imagen 4 models 2026-08-17.
+- [DeepInfra] DeepInfra gives a price for two more service tiers. Priority costs 1.5x the standard price on 45 models. Flex costs 0.8x on 70 models. The catalog records neither, because the schema has one field for a price multiplier. A decision on how to hold service-tier prices is open.
+- [OpenAI] `gpt-4o-search-preview` and `gpt-4o-mini-search-preview` keep the abilities from the earlier update. The two model pages name an `image_input` feature, but the same pages give text as the only input. The pages also omit web search, which the pricing page bills for both models. Both models shut down on 2026-07-23, so we made no change.
+- [Gemini] `gemini-3.1-pro-preview-customtools` stays in the catalog. Google gives no model page for this name. The record was in the catalog before this update.
+- [Anthropic] `claude-4-opus-20250514` and `claude-4-sonnet-20250514` stay in the catalog. Anthropic gives no page for either name. It lists `claude-opus-4-20250514` and `claude-sonnet-4-20250514` instead. Both records lack the cache-write prices and the vision ability that their matching records hold. The records were in the catalog before this update.
+
+### Schema and catalog changes
+- [DeepInfra] We rebuilt the capabilities from the tags that DeepInfra publishes. This change removes `function_calling` from all 60 models that had it. The CLAUDE.md rule allows `tool_choice` only. The change also replaces `capabilities: null` with an empty array on 31 embedding and rerank models.
+- [DeepInfra] We recomputed the cached input price for all models. DeepInfra gives a multiplier of the input price, not an absolute price.
+- [DeepInfra] We added `quantization` metadata where DeepInfra publishes it, for example `fp4`, `fp8`, and `bfloat16`.
+- [Anthropic] We added `inference_geo_us_multiplier: 1.1` to `claude-opus-5`, `claude-fable-5`, `claude-mythos-5`, `claude-sonnet-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-opus-4-6`, and `claude-sonnet-4-6`.
+- [Anthropic] We removed the long-context price fields from `claude-sonnet-4-5` and `claude-sonnet-4-5-20250929`.
+- [Anthropic] We added `tool_use_system_prompt_tokens` from the pricing page for the `auto` and `none` tool choices. These tokens count against the input price.
+    - `claude-opus-5` 286, `claude-opus-4-8` 290, `claude-opus-4-7` 675, `claude-opus-4-6` 497
+    - `claude-opus-4-5` and `claude-opus-4-5-20251101` 496, `claude-opus-4-1` and `claude-opus-4-1-20250805` 313
+    - `claude-sonnet-5` 354, `claude-sonnet-4-6` 497, `claude-sonnet-4-5` and `claude-sonnet-4-5-20250929` 496
+    - `claude-haiku-4-5` and `claude-haiku-4-5-20251001` 496, `claude-3-5-haiku-latest` and `claude-3-5-haiku-20241022` 264
+- [Gemini] `gemini-2.5-computer-use-preview-10-2025` — we added `high_context: 200000`.
+- [Gemini] Google added two new consumption options: Flex inference at 0.5x the standard price and Priority inference at 1.8x. The catalog records the batch discount only, because the schema has one multiplier field for discounts.
+- [xAI] The image size keys `1024x1024` and `2048x2048` are now `1k` and `2k`. We removed the `input_image_per_image` surcharge from both image models. xAI no longer publishes a price for input images.
+- [xAI] Rate limits come from the rate limits page at Tier 0. xAI gives requests per second and states that the per-second limit is the per-minute budget divided by 60. The catalog holds the per-second value multiplied by 60.
+- [OpenAI] We rebuilt `capabilities` for all 68 models from the supported features and supported tools lists on each model page. The mapping is: `function_calling` to `tool_choice`, `code_interpreter` and `hosted_shell` to `code_execution`, `file_uploads` to `file_upload`, and `web_search`, `image_generation`, `computer_use`, `structured_outputs`, and `prompt_caching` to the same name. `vision` comes from an image input modality. `reasoning` comes from reasoning token support. We map `file_search` to no capability, because it names the retrieval tool and not file upload. This change removed `file_upload` from `gpt-5.6-cyber`, `daybreak-blue-latest`, and `daybreak-red-latest`, which do not list `file_uploads`. We also map `streaming`, `apply_patch`, `skills`, `mcp`, `tool_search`, `evals`, `stored_completions`, `predicted_outputs`, and `fine_tuning` to no capability.
+- [OpenAI] We added `max_input_tokens` to the 19 models whose pages give a maximum input size. The value is 922,000 for `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`, and `daybreak-blue-latest`, and 272,000 for the other 15. The other models give no maximum input size, so the field stays absent.
+- [xAI] We added `max_image_size_mb: 20` to all 10 models and set `max_file_size_mb: 48` on the 7 text models. The 3 Imagine models hold `max_image_size_mb` only, because they accept image input and not file attachments.
+- [Anthropic] We added `max_images_per_prompt` to the 14 current models: 600 on the 1M token models and 100 on the 200k token models.
+- [Anthropic] We added `deprecated`, `deprecated_date`, `retirement_date`, and `deprecated_reason` to `claude-2.1` (2025-07-21), `claude-3-sonnet-20240229` (2025-07-21), and `claude-instant-1.2` (2024-11-06). These dates come from the deprecation history table. All three records were already disabled.
+- [Gemini] We removed `retirement_date` from 6 models. See Follow-up work for the dates.
+- [Gemini] We added `gemini-embedding-2-preview` as an alias of `gemini-embedding-2`. The models page uses the `-preview` name, and the deprecations page and the model page use the plain name.
+- [Groq] We added `limits.rpm` to 4 models. Earlier updates recorded `tpm` from the Developer plan column of the models page but not `rpm` from the same column.
+- [DeepInfra] We added `caching_5m_per_million`, `caching_1h_per_million`, and `limits.explicit_cache_granularity_tokens` to the 7 models with explicit cache breakpoints. DeepInfra gives the cache-write rates as multipliers of the input price.
+- [DeepInfra] We added `deprecated_date` to all 31 deprecated models, from the `deprecated` Unix timestamp on the list endpoint.
+
+### Models that stay out of the catalog
+- [DeepInfra] DeepInfra lists 361 models. The catalog holds 163 of them: 129 chat, 30 embedding, and 4 rerank. We exclude these types because the rules do not accept their modes:
+    - 50 text-to-image
+    - 30 text-to-video
+    - 20 text-to-speech
+    - 14 speech recognition
+    - 2 image classification
+    - 1 text-to-music
+
+    Text-to-image is an accepted mode. DeepInfra prices these models per image unit, and the catalog holds no DeepInfra image model today.
+- [Gemini] `gemini-3.5-live-translate-preview`, `gemini-3.1-flash-live-preview`, `gemini-3.1-flash-tts-preview`, `gemini-omni-flash`, `gemini-2.5-flash-native-audio-preview-12-2025`, `gemini-2.5-flash-preview-tts`, `gemini-2.5-pro-preview-tts`, the Veo 3.1 models, and the Lyria 3 models.
+- [Groq] `whisper-large-v3` and `whisper-large-v3-turbo` (audio transcription), `canopylabs/orpheus-arabic-saudi` and `canopylabs/orpheus-v1-english` (text to speech), and `meta-llama/llama-prompt-guard-2-22m` and `meta-llama/llama-prompt-guard-2-86m` (classifiers). The systems `groq/compound` and `groq/compound-mini` are also excluded, because Groq lists no price for them.
+- [OpenAI] `gpt-oss-120b` and `gpt-oss-20b` are open-weight models and OpenAI publishes no price for them. `gpt-5.5-cyber` and `gpt-5.4-cyber` appear in the cyber pricing table but have no model page.
+- [Anthropic] `claude-mythos-preview` is deprecated and Anthropic publishes no price or specification for it. Replacement: `claude-mythos-5`.
+- [xAI] `grok-imagine-video`, `grok-imagine-video-1.5`, and the `grok-voice-*` models.
+- [Gemini] `gemma-4` appears on the pricing page with a free tier only. Google gives no paid price, so the model stays out.
+- [Gemini] `deep-research-preview-04-2026`, `deep-research-max-preview-04-2026`, and `antigravity-preview-05-2026` stay in the catalog with `null` prices. Google lists all three on the models page but gives no price for any of them.
+- [Groq] `minimaxai/minimax-m2.5` and `qwen/qwen3-vl-32b-instruct` — the changelog announced both for Enterprise customers on 2026-04-18. Neither model is on the models page today.
+
+### Prices that did not change
+- [Anthropic] Web search $10 per 1,000 searches. Code execution $0.05 per hour per container after 1,550 free hours per month. Code execution is free with `web_search_20260209` or `web_fetch_20260209` and later.
+- [OpenAI] Web search $10 per 1,000 calls. Web search preview on non-reasoning models $25 per 1,000 calls. File search $2.50 per 1,000 calls.
+- [Gemini] Grounding is $14 per 1,000 requests for Gemini 3.x models. It is $35 for search and $25 for Maps per 1,000 grounded prompts for Gemini 2.5 models. Gemini 3.x models share 5,000 free search requests per month.
+- [xAI] Web search $5, X search $5, code execution $5, file attachments $10, and collections search $2.50 per 1,000 calls.
+- [Groq] Cached input tokens cost 50% less. The Batch API gives a 50% discount.
+- [DeepInfra] All 163 records hold the price that the list endpoint gives today. No price changed after the earlier price update in this block.
+
+### Sources and coverage
+We compared every record in every file against a provider record with a script. Every model in every catalog is accounted for. The paragraphs below give the sources and the result for each provider.
+
+- [DeepInfra] Data comes from `https://api.deepinfra.com/models/list`. This address gives the JSON that the `deepinfra.com/models` page renders. The page itself is a JavaScript application and gives no server-side HTML. No model in the catalog is absent from that list. Every model that the list gives with an accepted mode, and that DeepInfra does not mark as deprecated, is in the catalog. For all 163 records we compared these fields: the input price, the output price, the cached input price, and the cache-write price. We also compared the context window, the deprecation state, the quantization, and the tags.
+- [Anthropic] All other records match the documentation. We compared prices, cache-write prices, context windows, max output tokens, and knowledge cutoffs against the models overview, the pricing page, and the context windows page. Anthropic gives tentative retirement dates for active models in the form "not sooner than". These dates are not recorded, because they are not hard cutoffs. Fast mode covers Claude Opus 5 and Claude Opus 4.8 only. This matches the catalog.
+- [OpenAI] All other records match the documentation. We read each of the 68 model pages and the pricing page. We compared context windows, max output tokens, modalities, token prices, cache prices, abilities, and knowledge cutoffs. No price and no limit changed. Only the abilities changed. Fast mode is the new name for priority processing since 2026-07-30. Both `service_tier: "priority"` and `service_tier: "fast"` work. The models comparison page now gives four models only, so we read each model page instead.
+- [Gemini] All other records match the documentation. We read each model page, the pricing page, the changelog, and the deprecations page. We compared prices, context windows, max output tokens, modalities, abilities, and grounding prices. Each Gemini model page gives an abilities table that marks every ability as supported or not supported. We read that table for every model.
+- [Groq] All other records match the documentation. We compared prices, context windows, max completion tokens, token speeds, and rate limits against the models page and each model card. Abilities come from the ability pages, because each one gives a list of supported models. The model cards and the ability pages disagree for two models. We followed the ability pages.
+- [xAI] All other records match the documentation. We read each of the 10 model pages, the pricing page, and the release notes. We compared prices, cached prices, long-context prices, context windows, aliases, regions, rate limits, and batch discounts. Only the file size limit changed. xAI now publishes a knowledge cutoff for Grok 4.6 (2026-02-01). The other 9 models have no published cutoff, so the field stays empty.
+
+# 2026-07-25 TARS MODEL UPDATE
+
+## New Models:
+- [Anthropic] `claude-opus-5` — new flagship Opus model released 2026-07-24 at $5/$25 per MTok (cached input $0.50; 5m cache write $6.25, 1h cache write $10), 1M context window at standard pricing, 128k max output, thinking on by default, full `low`/`medium`/`high`/`xhigh`/`max` effort ladder, `computer-use-2025-11-24` support, code execution, web search, vision, PDF/files, and structured outputs. Also records the 512-token prompt-cache minimum (down from 1,024 on Opus 4.8) and fast-mode pricing ($10/$50 per MTok, Claude API only).
+
+## Updated Models:
+- [Anthropic] `claude-fable-5` — re-enabled (`isEnabled: false` → `true`); Anthropic states access to Claude Fable 5 and Claude Mythos 5 has been restored. Added `knowledge_cutoff: 2026-01-01`.
+- [Anthropic] `claude-mythos-5` — added `knowledge_cutoff: 2026-01-01`; kept `isEnabled: false` (limited availability, invitation-only through Project Glasswing).
+- [Anthropic] `claude-sonnet-4-6` — max output tokens 64,000 → 128,000 per the models overview legacy table.
+- [Anthropic] `claude-3-5-haiku-latest` / `claude-3-5-haiku-20241022` — marked deprecated with `deprecated_date: 2025-12-19` and `retirement_date: 2026-02-19` (retired on the Claude API; still available on Amazon Bedrock and Google Cloud). Replacement: `claude-haiku-4-5-20251001`.
+- [Anthropic] Added `reasoning_efforts` metadata from the effort docs:
+    - `claude-opus-4-8`, `claude-opus-4-7` — `low`, `medium`, `high`, `xhigh`, `max`
+    - `claude-opus-4-6`, `claude-sonnet-4-6` — `low`, `medium`, `high`, `max` (no `xhigh`)
+    - `claude-opus-4-5`, `claude-opus-4-5-20251101` — `low`, `medium`, `high` (`max` is Claude 4.6 and later)
+
+## Notes:
+- [Anthropic] `claude-sonnet-5` pricing left at the introductory $2/$10 per MTok, which Anthropic documents as in effect through 2026-08-31; standard pricing of $3/$15 (cached input $0.30; 5m cache write $3.75, 1h cache write $6) takes effect 2026-09-01 and will need a follow-up update.
+- [Anthropic] `claude-opus-4-1` / `claude-opus-4-1-20250805` remain deprecated with retirement 2026-08-05; recommended replacement is now `claude-opus-4-8`.
+- [Anthropic] Computer use is confirmed unsupported on `claude-fable-5` and `claude-mythos-5`; `computer-use-2025-11-24` covers Opus 5, Sonnet 5, Opus 4.8, Opus 4.7, Opus 4.6, Sonnet 4.6, and Opus 4.5 only.
+
+# 2026-07-21 TARS MODEL UPDATE
+
+## New Models:
+- [Gemini] `gemini-3.6-flash` — stable multimodal chat model at $1.50/$7.50 per 1M tokens (cached input $0.15), 1M context, 65k max output, reasoning, tools, structured outputs, computer use, search/Maps grounding, and 50% batch discount.
+- [Gemini] `gemini-3.5-flash` — stable multimodal chat model at $1.50/$9.00 per 1M tokens (cached input $0.15), 1M context, 65k max output, reasoning, tools, structured outputs, computer use, search/Maps grounding, and 50% batch discount.
+- [Gemini] `gemini-3.5-flash-lite` — stable high-throughput model at $0.30/$2.50 per 1M tokens (cached input $0.03), 1M context, 65k max output, reasoning, tools, structured outputs, and search/Maps grounding.
+- [Gemini] `gemini-3.1-flash-lite` — stable replacement for the retired preview at $0.25/$1.50 per 1M text/image/video tokens ($0.50 audio; cached input $0.025/$0.05), 1M context and 65k max output.
+- [Gemini] `gemini-3.1-flash-image` — Nano Banana 2 image generation/editing model with text/image/PDF input, text/image output, 131k context, search grounding, and image output priced from $0.045 (0.5K) to $0.151 (4K).
+- [Gemini] `gemini-3.1-flash-lite-image` — Nano Banana 2 Lite image generation/editing model with text/image input, text/image output, 65k context, tool choice, and $0.0336 per 1K image.
+- [Gemini] `gemini-3-pro-image` — Nano Banana Pro image generation/editing model at $2.00/$12.00 per 1M text tokens and $120.00 per 1M image-output tokens; 1K/2K images cost $0.134 and 4K images $0.24.
+- [Gemini] `gemini-2.5-flash-image` — Nano Banana image generation/editing model at $0.30 per 1M input tokens and $0.039 per image, with a 50% batch discount.
+- [Gemini] `gemini-embedding-2` — stable multimodal embedding model with 8,192-token input, flexible 128–3,072 dimensions, and per-modality pricing for text, image, audio, and video.
+- [Gemini] `gemini-robotics-er-1.6-preview` — multimodal robotics model at $1.00/$5.00 per 1M tokens ($2.00 audio input), 131k context, 65k max output, reasoning, tools, computer use, and search grounding.
+- [Gemini] `gemini-2.5-computer-use-preview-10-2025` — computer-use model with image/text input, text output, 128k context, and $1.25/$10.00 per 1M token pricing.
+- [Gemini] `deep-research-preview-04-2026` / `deep-research-max-preview-04-2026` — Interactions API research agents with multimodal input, cited text/image reports, 1M context, and 65k max output.
+- [Gemini] `antigravity-preview-05-2026` — Interactions API managed agent for multi-step reasoning, code execution, file workflows, and web search with 1M context and 65k max output.
+- [Gemini] `imagen-4.0-fast-generate-001` / `imagen-4.0-generate-001` / `imagen-4.0-ultra-generate-001` — Imagen 4 image models at $0.02/$0.04/$0.06 per image with up to four outputs.
+
+## Deprecated Models:
+- [Gemini] `gemini-3.1-flash-lite` — scheduled for shutdown 2027-05-07; replacement: `gemini-3.5-flash-lite`.
+- [Gemini] `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite` — scheduled for shutdown 2026-10-16; replacements: `gemini-3.1-pro-preview`, `gemini-3.6-flash`, and `gemini-3.1-flash-lite` respectively.
+- [Gemini] `gemini-2.5-flash-image` — scheduled for shutdown 2026-10-02; Google currently lists the retired `gemini-3.1-flash-image-preview` as its replacement.
+- [Gemini] Imagen 4 model family — scheduled for shutdown 2026-08-17; replacement: `gemini-3.1-flash-image`.
+
+## Removed Models:
+- [Gemini] `gemini-2.0-flash`, `gemini-2.0-flash-001`, `gemini-2.0-flash-lite`, and `gemini-2.0-flash-lite-001` — shut down 2026-06-01.
+- [Gemini] `gemini-2.5-flash-preview-09-2025` and `gemini-2.5-flash-lite-preview-09-2025` — retired preview models replaced by stable Gemini 3.x models.
+- [Gemini] `gemini-3.1-flash-lite-preview` — shut down 2026-05-25; replaced by `gemini-3.1-flash-lite`.
+- [Gemini] `gemini-embedding-001` and `gemini-embedding-2-preview` — replaced by stable `gemini-embedding-2`; Gemini Embedding 001 shut down 2026-07-14.
+- [Gemini] `gemini-robotics-er-1.5-preview` — shut down 2026-04-30; replaced by `gemini-robotics-er-1.6-preview`.
+
+## Updated Models:
+- [Gemini] `gemini-3.1-pro-preview` / `gemini-3.1-pro-preview-customtools` — retained current $2.00/$12.00 pricing, high-context tier above 200k tokens, 1M context, 65k max output, and verified tool/grounding capabilities.
+- [Gemini] `gemini-3-flash-preview` — retained current $0.50/$3.00 pricing, corrected audio/cache pricing, 1M context, 65k max output, and verified computer-use/tool/grounding capabilities.
+- [Gemini] Catalog capabilities normalized to `tool_choice`; removed legacy `function_calling`, added modality-required vision/speech/image-generation capabilities, and aligned limits and pricing with official model, pricing, and deprecation documentation.
+
+# 2026-07-10 TARS MODEL UPDATE
+
+## New Models:
+- [OpenAI] `gpt-5.6-sol` — frontier GPT-5.6 model at $5.00/$30.00 per 1M tokens (cached input $0.50; cache writes $6.25), 1.05M context, 128k max output, configurable reasoning (`none`/`low`/`medium`/`high`/`xhigh`/`max`), text/image input, text output, tools, structured outputs, vision, image generation, web search, code execution, and computer use; alias `gpt-5.6`.
+- [OpenAI] `gpt-5.6-terra` — balanced GPT-5.6 tier at $2.50/$15.00 per 1M tokens (cached input $0.25; cache writes $3.125), with the same 1.05M context, 128k max output, reasoning efforts, modalities, and tool capabilities as GPT-5.6 Sol.
+- [OpenAI] `gpt-5.6-luna` — cost-sensitive GPT-5.6 tier at $1.00/$6.00 per 1M tokens (cached input $0.10; cache writes $1.25), with the same 1.05M context, 128k max output, reasoning efforts, modalities, and tool capabilities as GPT-5.6 Sol.
+- [OpenAI] `chat-latest` — latest ChatGPT Instant alias at $5.00/$30.00 per 1M tokens (cached input $0.50), 400k context, 128k max output, text/image input, text output, tools, structured outputs, vision, image generation, web search, and code interpreter support.
+
+## Deprecated Models:
+- [OpenAI] `gpt-5.2-chat-latest` / `gpt-5.3-chat-latest` — deprecated 2026-05-08; scheduled for removal 2026-08-10.
+- [OpenAI] `gpt-image-1-mini`, `gpt-image-1.5`, and `chatgpt-image-latest` — deprecated 2026-06-02; scheduled for removal 2026-12-01 in favor of `gpt-image-2`.
+
+## Retired Models:
+- [OpenAI] `dall-e-2` / `dall-e-3` — disabled after their 2026-05-12 API shutdown.
+
+# 2026-07-09 TARS MODEL UPDATE
+
+## New Models:
+- [xAI] `grok-4.5` — flagship coding/agentic model at $2.00/$6.00 per 1M tokens (cached $0.50), 500k context, configurable reasoning (`low`/`medium`/`high`, default high), tools, structured outputs, vision; regions `us-east-1`, `us-west-2`; no batch discount.
+- [xAI] `grok-4.3` — flagship general model at $1.25/$2.50 per 1M tokens (cached $0.20), 1M context, configurable reasoning (`none`/`low`/`medium`/`high`), 20% batch discount, tools, structured outputs, vision; aliases `grok-4.3-latest`, `grok-latest`.
+- [xAI] `grok-build-0.1` — coding model at $1.00/$2.00 per 1M tokens (cached $0.20), 256k context, reasoning, tools, structured outputs, vision; aliases include retired `grok-code-fast-1` / `grok-code-fast` / `grok-code-fast-1-0825`.
+
+## Removed Models:
+- [xAI] `grok-4-1-fast-reasoning` — retired 2026-05-15 (redirects to `grok-4.3` with low reasoning effort).
+- [xAI] `grok-4-1-fast-non-reasoning` — retired 2026-05-15 (redirects to `grok-4.3` with none reasoning effort).
+
+## Updated Models:
+- [xAI] `grok-4.20-0309-reasoning` / `grok-4.20-0309-non-reasoning` / `grok-4.20-multi-agent-0309`
+    - Token pricing: $2.00/$6.00 → $1.25/$2.50 (cached $0.20)
+    - Context window: 2,000,000 → 1,000,000
+    - Batch discount: 50% off (`batch_discount_multiplier: 0.5`) → 20% off (`0.8`); multi-agent now includes batch discount
+    - Multi-agent rate limits: 1,800 rpm / 10M tpm → 450 rpm / 2.5M tpm
+    - Regions: added `us-west-2`
+    - Removed undocumented `web_search_per_thousand_sources`; kept documented tool surcharges (web/X search, code execution, file attachments, collections)
+    - High-context tier remains 2× above 200k tokens
+
+# 2026-06-30 TARS MODEL UPDATE
+
+- [Anthropic] `claude-sonnet-5` — added active chat model with 1M context, 128k max output, introductory $2/$10 per MTok pricing through 2026-08-31, adaptive reasoning/effort, tool choice, structured outputs, vision/PDF/files, web search, code execution, and computer use.
+- [Anthropic] `claude-mythos-5` — added disabled limited-availability model; access is suspended as of 2026-06-12.
+- [Anthropic] `claude-fable-5` — kept disabled and recorded the 2026-06-12 access suspension.
+- [Anthropic] Disabled retired Claude Sonnet 4 and Claude Opus 4 Claude API rows as of 2026-06-15.
+
+# 2026-06-10 TARS MODEL UPDATE
+
+## New Models:
+- [Anthropic] `claude-fable-5` — added Claude Fable 5.
+
+## Deprecated Models:
+- [Anthropic] `claude-opus-4-1`
+- [Anthropic] `claude-opus-4-1-20250805`
+
+# 2026-05-28 TARS MODEL UPDATE
+
+## New Models:
+- [Anthropic] `claude-opus-4-8` — added Claude Opus 4.8.
+
+# 2026-04-28 TARS MODEL UPDATE
+
+## New Models:
+- [OpenAI] `gpt-5.5` — added newest frontier responses model with text/image input, text output, reasoning support, structured outputs/tool choice, vision, image generation, web search, code execution, computer use.
+- [OpenAI] `gpt-5.5-pro` — added higher-compute GPT-5.5 responses model with text/image input, text output, reasoning support, structured outputs/tool choice, vision, image generation, web search, code execution.
+- [OpenAI] `gpt-5.4-mini` — added smaller GPT-5.4 responses model with text/image input, text output, reasoning support, structured outputs/tool choice, vision, image generation, web search, code execution, computer use.
+- [OpenAI] `gpt-5.4-nano` — added GPT-5.4 nano responses model with text/image input, text output, reasoning support, structured outputs/tool choice, vision, image generation, web search, code execution.
+- [OpenAI] `o3-pro` — (reenabled) higher-compute o3 reasoning model for Responses API with text/image input, text output, reasoning support, structured outputs/tool choice, vision.
+
+## Deprecated Models:
+- [OpenAI] `gpt-4o-mini-search-preview` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `gpt-5-chat-latest` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `gpt-5.1-codex-mini` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `gpt-5.1-codex-max` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `o4-mini-deep-research` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `gpt-5.2-codex` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `o3-deep-research` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `gpt-5.1-codex` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `gpt-5-codex` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `computer-use-preview` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `gpt-5.1-chat-latest` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `o4-mini` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `gpt-4.1-nano` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `gpt-image-1` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `o1-pro` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `gpt-4o-search-preview` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-07-23`.
+- [OpenAI] `o3-mini` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `o1` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `gpt-4o-2024-11-20` — OpenAI does not publish an exact deprecation or retirement date for this ID.
+- [OpenAI] `gpt-4o-2024-05-13` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `gpt-4o` — OpenAI does not publish an exact deprecation or retirement date for this ID.
+- [OpenAI] `gpt-4o-2024-08-06` — OpenAI does not publish an exact deprecation or retirement date for this ID.
+- [OpenAI] `gpt-4-turbo` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `gpt-3.5-turbo` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `gpt-4` — set `deprecated_date: 2026-04-22`, `retirement_date: 2026-10-23`.
+- [OpenAI] `dall-e-3` — set `deprecated_date: 2025-11-14`, `retirement_date: 2026-05-12`.
+- [OpenAI] `dall-e-2` — set `deprecated_date: 2025-11-14`, `retirement_date: 2026-05-12`.
+
+## Retired Models:
+- [OpenAI] `codex-mini-latest` — retired as of `2026-02-12`.
+- [OpenAI] `chatgpt-4o-latest` — retired as of `2026-02-17`.
+- [OpenAI] `gpt-4.5-preview` — retired as of `2025-07-14`.
+- [OpenAI] `gpt-4-turbo-preview` — retired as of `2026-03-26`.
+- [OpenAI] `o1-mini` — retired as of `2025-10-27`.
+- [OpenAI] `o1-preview` — retired as of `2025-07-28`.
+
+## Updated Models:
+- [OpenAI] Normalized capabilities across shared OpenAI models:
+    - Removed `function_calling` in favor of `tool_choice` only.
+    - Removed unsupported `file_upload` capability entries.
+    - Added `vision` to image-input image models and `image_generation` where model/tool support is represented in the catalog.
+- [OpenAI] Updated deprecated model records so only retired models are disabled; active deprecated models retain `deprecated: true`, and retired models are listed separately above.
+- [OpenAI] Removed the deprecated marker from `gpt-5` and `o3`.
+- [OpenAI] `gpt-4.1-nano` — corrected context window from 1,048,576 to 1,047,576.
+- [OpenAI] `gpt-5`, `gpt-5.1`, and `gpt-5.2` — added explicit reasoning effort metadata.
+- [OpenAI] `gpt-5.1` — corrected output modality from image+text to text only and trimmed capabilities to reasoning, structured outputs/tool choice, and vision.
+- [OpenAI] `gpt-5.4` and `gpt-5.4-pro` — added aliases and normalized capabilities.
+- [OpenAI] `gpt-5.5-pro` — removed unsupported above-272k input/output pricing multipliers; OpenAI documents no cached-input discount and regional processing uplift for this model.
+- [OpenAI] `chatgpt-image-latest`, `gpt-image-1`, `gpt-image-1-mini`, and `gpt-image-1.5` — added vision capability and aliases/source URLs, and refreshed image generation options metadata.
+- [OpenAI] `text-embedding-3-large` — corrected output modality from `embedding` + `video` to `embedding`.
+- [OpenAI] `text-embedding-ada-002` — removed incorrect `video_generation` capability.
+
+
+# 2026-04-21 TARS MODEL UPDATE
+
+## Retired Models:
+- [Anthropic] `claude-3-haiku-20240307` — Anthropic now lists Claude Haiku 3 as retired on the Claude API effective 2026-04-20, and states that requests to retired models fail. Recommended replacement: `claude-haiku-4-5-20251001`.
+
+
+# 2026-04-18 TARS MODEL UPDATE
+
+## Notes:
+- Going forward, we aim to be faster and more detailed with model updates — shorter lag between provider announcements and our catalog changes, and richer per-model details (capabilities, pricing tiers, rate limits, aliases, deprecation metadata).
+
+## New Models:
+- [Anthropic] `claude-opus-4-7` — new flagship GA model released 2026-04-16 at $5/$25 per MTok (same as Opus 4.6), 1M context window at standard pricing, 128k max output, adaptive thinking, high-resolution vision (up to 2576px), and `computer-use-2025-11-24` support.
+- [xAI] `grok-4-1-fast-reasoning`
+- [xAI] `grok-4-1-fast-non-reasoning`
+- [xAI] `grok-4.20-0309-reasoning`
+- [xAI] `grok-4.20-0309-non-reasoning`
+- [xAI] `grok-4.20-multi-agent-0309`
+- [Groq] `openai/gpt-oss-safeguard-20b`
+
+## Removed Models:
+- [xAI] `grok-4-0709` — no longer listed on `docs.x.ai/developers/models`
+- [xAI] `grok-4-fast-reasoning` — no longer listed on `docs.x.ai/developers/models`
+- [xAI] `grok-4-fast-non-reasoning` — no longer listed on `docs.x.ai/developers/models`
+- [xAI] `grok-code-fast-1` — no longer listed on `docs.x.ai/developers/models`
+- [xAI] `grok-3` — no longer listed on `docs.x.ai/developers/models`
+- [xAI] `grok-3-mini` — no longer listed on `docs.x.ai/developers/models`
+- [Groq] `meta-llama/llama-4-maverick-17b-128e-instruct`
+- [Groq] `moonshotai/kimi-k2-instruct-0905` — retired at 2026-04-15 (replacement: `openai/gpt-oss-120b`). Deprecation announced 2026-03-23.
+
+## Deprecated Models:
+- [Anthropic] `claude-3-haiku-20240307` — marked deprecated with `deprecated_date: 2026-02-19` and `retirement_date: 2026-04-20` per the model deprecations page (replacement: `claude-haiku-4-5-20251001`).
+- [Anthropic] `claude-sonnet-4-20250514` scheduled to be retired at 2026-06-15 (replacement: `claude-sonnet-4-6`). Announced 2026-04-14.
+- [Anthropic] `claude-opus-4-20250514` scheduled to be retired at 2026-06-15 (replacement: `claude-opus-4-6`). Announced 2026-04-14.
+
+## Renamed Models:
+- [xAI] `grok-4.20-beta-0309-reasoning` → `grok-4.20-0309-reasoning` — xAI promoted Grok 4.20 from beta to GA; canonical model ID on docs dropped `beta` (display name "Grok 4.20 Beta" → "Grok 4.20"). Old beta ID kept as alias for backwards compatibility.
+- [xAI] `grok-4.20-beta-0309-non-reasoning` → `grok-4.20-0309-non-reasoning` — same GA promotion as above.
+- [xAI] `grok-4.20-multi-agent-beta-0309` → `grok-4.20-multi-agent-0309` — same GA promotion as above.
+
+## Disabled Models (added with `isEnabled: false`):
+- [xAI] `grok-imagine-image` — image generation model; per-image pricing doesn't map cleanly to the token-based schema, disabled pending integration.
+- [xAI] `grok-imagine-image-pro` — image generation model; same reason as above.
+
+## Updated Models:
+- [Anthropic] `claude-sonnet-4-6`
+    - Context window: 200,000 → 1,000,000 (docs confirm full 1M at standard pricing — `Opus 4.7, Opus 4.6, and Sonnet 4.6 include the full 1M token context window at standard pricing`)
+    - Removed high-context tier pricing (`input_tokens_price_per_million_high_context`, `cached_tokens_price_per_million_high_context`, `output_tokens_price_per_million_high_context`, `caching_tokens_price_per_million_high_context`) — no premium applies above 200k
+- [Anthropic] `claude-3-haiku-20240307`
+    - Removed `computer_use` capability — Haiku 3 is not listed among models supported by either `computer-use-2025-11-24` or `computer-use-2025-01-24` per the computer use tool docs
+- [xAI] `grok-4.20-multi-agent-0309`
+    - Removed `batch_discount_multiplier` (multi-agent doesn't support the Batch API per docs)
+    - Rate limits: 607 rpm / 4M tpm → 1,800 rpm / 10M tpm
+    - Aliases expanded (`grok-4.20-multi-agent`, `grok-4.20-multi-agent-latest`, `grok-4.20-multi-agent-beta-0309`)
+- [xAI] `grok-4.20-0309-reasoning` / `grok-4.20-0309-non-reasoning`
+    - Rate limits: 607 rpm / 4M tpm → 1,800 rpm / 10M tpm
+    - Aliases expanded with canonical non-beta forms (`grok-4.20`, `grok-4.20-reasoning`, `grok-4.20-non-reasoning`, `-latest` and `-gv2` variants)
+    - Description: removed "Beta" wording; typo fix ("adherance" → "adherence")
+- [xAI] `grok-4-1-fast-reasoning` / `grok-4-1-fast-non-reasoning`
+    - Rate limits: 607 rpm / 4M tpm → 1,800 rpm / 10M tpm
+    - Removed `us-east-4` region (not listed on current docs pages)
+- [xAI] Source URLs migrated from `docs.x.ai/docs/models/...` to `docs.x.ai/developers/models/...` for all xAI models
+
+## Schema Changes:
+- Removed `function_calling` and `parallel_function_calling` from `MODEL_CAPABILITIES` in `schema.ts`. Consolidated under `tool_choice` — a model that supports function calling / tool use / tool calling / parallel function calling now sets only `tool_choice`.
+- All xAI models migrated: `function_calling` → `tool_choice`.
+- All Anthropic models migrated: removed `function_calling` from every model's capabilities (all retain `tool_choice`).
+- Applied new CLAUDE.md rules to xAI models:
+    - Functionality with an entry in `additionalPricePerMillion` implies its capability (e.g. `web_search_per_thousand_calls` → `web_search` capability). Added `code_execution` to all xAI chat models.
+    - `modalities.input.image` → `vision` capability. Added `vision` to all xAI multimodal chat models.
+    - `modalities.output.image` → `image_generation` capability. Applied to the two new `grok-imagine-*` models.
+
+# 2026-02-20 TARS MODEL UPDATE
+
+## New Models:
+- [Google Gemini] `gemini-3-1-pro-preview`
+    - Built to refine the performance and reliability of the Gemini 3 Pro series, Gemini 3.1 Pro Preview provides better thinking, improved token efficiency, and a more grounded, factually consistent experience. 
+    - It's optimized for software engineering behavior and usability, as well as agentic workflows requiring precise tool usage and reliable multi-step execution across real-world domains.
+- [Google Gemini] `gemini-3-1-pro-preview-customtools`
+    - Gemini 3.1 Pro Preview endpoint optimized for agentic workflows that use custom tools and bash
+- [Google Gemini] `gemini-3-flash-preview`
+    - Gemini 3 Flash combines Gemini 3 Pro's reasoning capabilities with the Flash line's levels on latency, efficiency, and cost. It not only enables everyday tasks with improved reasoning, but is designed to tackle the most complex agentic workflows.
+
+## Deprecated Models:
+- [Anthropic] `claude-3-haiku-20240307` scheduled to be retired at 2026-04-20
+- [Anthropic] `claude-3-haiku` scheduled to be retired at 2026-04-20
+
+## Retired Models:
+- [Anthropic] `claude-3-7-sonnet-20250219`
+- [Anthropic] `claude-3-7-sonnet-latest`
+- [Anthropic] `claude-3-5-haiku-20241022`
+- [Anthropic] `claude-3-5-haiku-latest`
+- [VertexAnthropic] `vertexanthropic/claude-3-5-haiku`
+- [VertexAnthropic] `vertexanthropic/claude-3-5-haiku@20241022`

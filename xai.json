@@ -1,0 +1,547 @@
+{
+  "version": "1.0",
+  "models": [
+    {
+      "model": "xai/grok-4.6",
+      "provider": "xai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "6.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 500000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "high_context_multiplier": 2,
+        "x_search_per_thousand_calls": 5,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5
+      },
+      "limits": {
+        "rpm": 9000,
+        "tpm": 50000000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-4.6",
+        "description": "SpaceXAI's frontier model for coding, agentic tasks, and knowledge work. Configurable reasoning effort (low, medium, high, xhigh; default high). Reasoning cannot be disabled.",
+        "display_name": "Grok 4.6",
+        "knowledge_cutoff": "2026-02-01",
+        "reasoning_efforts": ["low", "medium", "high", "xhigh"]
+      }
+    },
+    {
+      "model": "xai/grok-4.5",
+      "provider": "xai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "6.0000000000",
+      "cachedTokensPricePerMillion": "0.3000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 500000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "high_context_multiplier": 2,
+        "x_search_per_thousand_calls": 5,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5
+      },
+      "limits": {
+        "rpm": 9000,
+        "tpm": 50000000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": ["grok-4.5-latest", "grok-build-latest"],
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-4.5",
+        "description": "SpaceXAI's intelligent coding model for agentic software, engineering, and workflow tasks. Trained in SpaceXAI's data centers in Memphis with new datasets spanning science, engineering, and math. Configurable reasoning effort (low, medium, high; default high). Requests with xhigh are treated as high.",
+        "display_name": "Grok 4.5",
+        "reasoning_efforts": ["low", "medium", "high"]
+      }
+    },
+    {
+      "model": "xai/grok-4.3",
+      "provider": "xai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "high_context_multiplier": 2,
+        "batch_discount_multiplier": 0.8,
+        "x_search_per_thousand_calls": 5,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5
+      },
+      "limits": {
+        "rpm": 2220,
+        "tpm": 10000000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": ["grok-4.3-latest"],
+        "regions": ["eu-west-1", "us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-4.3",
+        "description": "Fast, reliable model with strong tool calling and instruction following capabilities. Supports four reasoning effort levels (none, low, medium, high).",
+        "display_name": "Grok 4.3",
+        "reasoning_efforts": ["none", "low", "medium", "high"]
+      }
+    },
+    {
+      "model": "xai/grok-4.20-0309-reasoning",
+      "provider": "xai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "high_context_multiplier": 2,
+        "batch_discount_multiplier": 0.8,
+        "x_search_per_thousand_calls": 5,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5
+      },
+      "limits": {
+        "rpm": 2220,
+        "tpm": 10000000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": [
+          "grok-4.20-reasoning-latest",
+          "grok-4.20",
+          "grok-4.20-reasoning",
+          "grok-4.20-0309",
+          "grok-4.20-beta-0309-reasoning",
+          "grok-4.20-beta",
+          "grok-4.20-beta-0309",
+          "grok-4.20-beta-latest",
+          "grok-4.20-beta-latest-reasoning",
+          "grok-4.20-beta-reasoning",
+          "grok-4.20-experimental-beta-0304-reasoning",
+          "grok-4.20-experimental-beta-0304",
+          "grok-4.20-experimental-beta-reasoning-latest",
+          "grok-4.20-experimental-beta-latest",
+          "grok-4.20-reasoning-gv2"
+        ],
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-4.20-0309-reasoning",
+        "description": "Grok 4.20 is a high-performance model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherence, delivering consistently precise and truthful responses.",
+        "display_name": "Grok 4.20"
+      }
+    },
+    {
+      "model": "xai/grok-4.20-0309-non-reasoning",
+      "provider": "xai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "high_context_multiplier": 2,
+        "batch_discount_multiplier": 0.8,
+        "x_search_per_thousand_calls": 5,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5
+      },
+      "limits": {
+        "rpm": 2220,
+        "tpm": 10000000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": [
+          "grok-4.20-non-reasoning",
+          "grok-4.20-non-reasoning-latest",
+          "grok-4.20-beta-non-reasoning",
+          "grok-4.20-beta-latest-non-reasoning",
+          "grok-4.20-experimental-beta-0304-non-reasoning",
+          "grok-4.20-experimental-beta-non-reasoning-latest",
+          "grok-4.20-beta-0309-non-reasoning",
+          "grok-4.20-non-reasoning-gv2"
+        ],
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-4.20-0309-non-reasoning",
+        "description": "Grok 4.20 is a high-performance model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherence, delivering consistently precise and truthful responses.",
+        "display_name": "Grok 4.20 (Non-Reasoning)"
+      }
+    },
+    {
+      "model": "xai/grok-4.20-multi-agent-0309",
+      "provider": "xai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "high_context_multiplier": 2,
+        "batch_discount_multiplier": 0.8,
+        "x_search_per_thousand_calls": 5,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5
+      },
+      "limits": {
+        "rpm": 540,
+        "tpm": 2500000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": [
+          "grok-4.20-multi-agent",
+          "grok-4.20-multi-agent-latest",
+          "grok-4.20-multi-agent-beta-latest",
+          "grok-4.20-multi-agent-experimental-beta-0304",
+          "grok-4.20-multi-agent-experimental-beta-latest",
+          "grok-4.20-multi-agent-beta-0309"
+        ],
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-4.20-multi-agent-0309",
+        "description": "Multiple agents collaborate in parallel to perform deep research tasks. The reasoning effort parameter selects the agent count: low or medium runs 4 agents, high or xhigh runs 16 agents.",
+        "display_name": "Grok 4.20 Multi-Agent Beta",
+        "preview": true,
+        "reasoning_efforts": ["low", "medium", "high", "xhigh"]
+      }
+    },
+    {
+      "model": "xai/grok-build-0.1",
+      "provider": "xai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "2.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 256000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "high_context_multiplier": 2,
+        "x_search_per_thousand_calls": 5,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5
+      },
+      "limits": {
+        "rpm": 2220,
+        "tpm": 10000000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": ["grok-code-fast-1", "grok-code-fast", "grok-code-fast-1-0825"],
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-build-0.1",
+        "description": "SpaceXAI's intelligent coding model for agentic software, engineering, and workflow tasks.",
+        "display_name": "Grok Build 0.1"
+      }
+    },
+    {
+      "model": "xai/grok-imagine-image-2.0",
+      "provider": "xai",
+      "mode": "image_generation",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["image"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "low": {
+            "1k": 0.04,
+            "2k": 0.04
+          },
+          "medium": {
+            "1k": 0.04,
+            "2k": 0.04
+          }
+        }
+      },
+      "limits": {
+        "rpm": 360,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+        "description": "Grok Imagine Image 2.0 text-to-image generation and editing model, recommended by xAI for images. Accepts text and image input and outputs images at 1k or 2k resolution. Only model that accepts the quality parameter (low or medium; default medium).",
+        "display_name": "Grok Imagine Image 2.0",
+        "options": {
+          "quality": ["low", "medium"],
+          "resolution": ["1k", "2k"],
+          "aspect_ratio": [
+            "1:1",
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "2:1",
+            "1:2",
+            "19.5:9",
+            "9:19.5",
+            "20:9",
+            "9:20",
+            "auto"
+          ]
+        }
+      }
+    },
+    {
+      "model": "xai/grok-imagine-image-quality",
+      "provider": "xai",
+      "mode": "image_generation",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["image"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "standard": {
+            "1k": 0.05,
+            "2k": 0.05
+          }
+        }
+      },
+      "limits": {
+        "rpm": 360,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": [
+          "grok-imagine-image-quality-20260403",
+          "grok-imagine-image-quality-latest",
+          "grok-imagine-image-pro"
+        ],
+        "regions": ["us-east-1", "us-west-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-imagine-image-quality",
+        "description": "Premium quality tier of the Grok Imagine text-to-image generation model. Accepts text and image input and outputs images at 1k or 2k resolution for $0.05 per image.",
+        "display_name": "Grok Imagine Image Quality",
+        "options": {
+          "resolution": ["1k", "2k"],
+          "aspect_ratio": [
+            "1:1",
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "2:1",
+            "1:2",
+            "19.5:9",
+            "9:19.5",
+            "20:9",
+            "9:20",
+            "auto"
+          ]
+        }
+      }
+    },
+    {
+      "model": "xai/grok-imagine-image",
+      "provider": "xai",
+      "mode": "image_generation",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["image"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "standard": {
+            "1k": 0.02,
+            "2k": 0.02
+          }
+        }
+      },
+      "limits": {
+        "rpm": 360,
+        "max_image_size_mb": 20
+      },
+      "metadata": {
+        "aliases": ["grok-imagine-image-2026-03-02"],
+        "regions": ["us-east-1", "us-west-2", "us-saltlake-2"],
+        "source_url": "https://docs.x.ai/developers/models/grok-imagine-image",
+        "description": "Grok Imagine text-to-image generation model. Accepts text and image input and outputs images at 1k or 2k resolution for $0.02 per image.",
+        "display_name": "Grok Imagine Image",
+        "options": {
+          "resolution": ["1k", "2k"],
+          "aspect_ratio": [
+            "1:1",
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "2:1",
+            "1:2",
+            "19.5:9",
+            "9:19.5",
+            "20:9",
+            "9:20",
+            "auto"
+          ]
+        }
+      }
+    }
+  ]
+}

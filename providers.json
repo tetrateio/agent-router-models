@@ -1,0 +1,126 @@
+{
+  "version": "1.0",
+  "providers": [
+    {
+      "name": "anthropic",
+      "displayName": "Anthropic",
+      "apiBaseUrl": "https://api.anthropic.com",
+      "authType": "api_key",
+      "metadata": {
+        "first_party": true,
+        "type": "anthropic",
+        "backend_schema": "anthropic",
+        "api_key_flavor": "anthropic",
+        "operation_variants": {
+          "chat_completion": {
+            "provider_id": "anthropic-openai-compat",
+            "type": "openai",
+            "backend_schema": "openai",
+            "auth_type": "bearer"
+          }
+        }
+      },
+      "isEnabled": false
+    },
+    {
+      "name": "deepinfra",
+      "displayName": "DeepInfra",
+      "apiBaseUrl": "https://api.deepinfra.com/v1/openai",
+      "authType": "api_key",
+      "metadata": {
+        "type": "openai",
+        "backend_schema": "openai",
+        "api_key_flavor": "bearer"
+      },
+      "isEnabled": false
+    },
+    {
+      "name": "gemini",
+      "displayName": "Google Gemini",
+      "apiBaseUrl": "https://generativelanguage.googleapis.com/v1beta",
+      "authType": "api_key",
+      "metadata": {
+        "first_party": true,
+        "type": "openai",
+        "backend_schema": "gcpvertexai",
+        "api_key_flavor": "gemini",
+        "operation_variants": {
+          "image_generation": {
+            "provider_id": "gemini-image",
+            "type": "openai",
+            "backend_schema": "gcpvertexai",
+            "auth_type": "gemini"
+          }
+        }
+      },
+      "isEnabled": false
+    },
+    {
+      "name": "groq",
+      "displayName": "Groq",
+      "apiBaseUrl": "https://api.groq.com/openai/v1",
+      "authType": "api_key",
+      "metadata": {
+        "schema_version": "openai/v1",
+        "type": "openai",
+        "backend_schema": "openai",
+        "api_key_flavor": "bearer"
+      },
+      "isEnabled": false
+    },
+    {
+      "name": "openai",
+      "displayName": "OpenAI",
+      "apiBaseUrl": "https://api.openai.com/v1",
+      "authType": "api_key",
+      "metadata": {
+        "first_party": true,
+        "type": "openai",
+        "backend_schema": "openai",
+        "api_key_flavor": "bearer"
+      },
+      "isEnabled": false
+    },
+    {
+      "name": "vertex",
+      "displayName": "Google Vertex AI",
+      "apiBaseUrl": "https://aiplatform.googleapis.com/v1",
+      "authType": "vertex",
+      "metadata": {
+        "type": "openai",
+        "backend_schema": "gcpvertexai",
+        "region": "global",
+        "schema_version": "vertex-2023-10-16",
+        "gcp_project_name": "tars-production-6f92c3c"
+      },
+      "isEnabled": false
+    },
+    {
+      "name": "vertexanthropic",
+      "displayName": "Google Vertex AI Anthropic Models",
+      "apiBaseUrl": "https://aiplatform.googleapis.com/v1",
+      "authType": "vertex_anthropic",
+      "metadata": {
+        "type": "anthropic",
+        "backend_schema": "gcpanthropic",
+        "region": "global",
+        "schema_version": "vertex-2023-10-16",
+        "gcp_project_name": "tars-production-6f92c3c"
+      },
+      "isEnabled": false
+    },
+    {
+      "name": "xai",
+      "displayName": "xAI",
+      "apiBaseUrl": "https://api.x.ai/v1",
+      "authType": "api_key",
+      "metadata": {
+        "first_party": true,
+        "type": "openai",
+        "backend_schema": "openai",
+        "api_key_flavor": "bearer"
+      },
+      "isEnabled": false
+    }
+  ]
+}

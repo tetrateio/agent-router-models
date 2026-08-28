@@ -1,0 +1,1338 @@
+{
+  "version": "1.0",
+  "models": [
+    {
+      "model": "gemini-3.7-flash",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7500000000",
+      "outputTokensPricePerMillion": "3.7500000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.0750000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.7-flash"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash",
+        "description": "Our latest and most capable Flash model, built for complex coding, agentic workflows, and reliable multi-step execution.",
+        "display_name": "Gemini 3.7 Flash",
+        "release_date": "2026-08-13",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ]
+      }
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7500000000",
+      "outputTokensPricePerMillion": "3.7500000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.0750000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.6-flash"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.6-flash",
+        "description": "Gemini 3.6 Flash provides sustained frontier-level intelligence optimized for real-world tasks at a higher speed and lower cost. It excels at code generation, agentic execution, and spatial reasoning.",
+        "display_name": "Gemini 3.6 Flash",
+        "release_date": "2026-07-21"
+      }
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.5000000000",
+      "outputTokensPricePerMillion": "9.0000000000",
+      "cachedTokensPricePerMillion": "0.1500000000",
+      "cachingTokensPricePerMillion": "0.1500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.5-flash"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash",
+        "description": "Our legacy Flash model, providing baseline speed and foundational performance for routine, high-throughput workloads.",
+        "display_name": "Gemini 3.5 Flash",
+        "release_date": "2026-05-19"
+      }
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.0300000000",
+      "cachingTokensPricePerMillion": "0.0300000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.5-flash-lite"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite",
+        "description": "Google's fastest, most cost-effective Gemini 3.5 model for high-throughput execution.",
+        "display_name": "Gemini 3.5 Flash-Lite",
+        "release_date": "2026-07-21"
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2500000000",
+      "outputTokensPricePerMillion": "1.5000000000",
+      "cachedTokensPricePerMillion": "0.0250000000",
+      "cachingTokensPricePerMillion": "0.0250000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "input_tokens_price_per_million_audio": 0.5,
+        "cached_tokens_price_per_million_audio": 0.05,
+        "caching_tokens_price_per_million_audio": 0.05
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-flash-lite"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite",
+        "description": "Frontier-class performance rivaling larger models at a fraction of the cost.",
+        "display_name": "Gemini 3.1 Flash-Lite",
+        "release_date": "2026-05-07",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for shutdown; use gemini-3.5-flash-lite."
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "0.2000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 4.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "input_tokens_price_per_million_high_context": 4,
+        "cached_tokens_price_per_million_high_context": 0.4,
+        "output_tokens_price_per_million_high_context": 18,
+        "caching_tokens_price_per_million_high_context": 0.4
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "high_context": 200000,
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-pro-preview"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview",
+        "description": "Gemini 3.1 Pro Preview provides improved thinking, token efficiency, grounding, and reliable multi-step tool use for software engineering and agentic workflows.",
+        "display_name": "Gemini 3.1 Pro Preview",
+        "release_date": "2026-02-19",
+        "preview": true
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview-customtools",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "0.2000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 4.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "input_tokens_price_per_million_high_context": 4,
+        "cached_tokens_price_per_million_high_context": 0.4,
+        "output_tokens_price_per_million_high_context": 18,
+        "caching_tokens_price_per_million_high_context": 0.4
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "high_context": 200000,
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-pro-preview-customtools"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview",
+        "description": "Gemini 3.1 Pro Preview endpoint optimized to prioritize custom tools in agentic workflows that mix custom tools and bash.",
+        "display_name": "Gemini 3.1 Pro Preview Custom Tools",
+        "release_date": "2026-02-19",
+        "preview": true
+      }
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.5000000000",
+      "outputTokensPricePerMillion": "3.0000000000",
+      "cachedTokensPricePerMillion": "0.0500000000",
+      "cachingTokensPricePerMillion": "0.0500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "input_tokens_price_per_million_audio": 1,
+        "cached_tokens_price_per_million_audio": 0.1,
+        "caching_tokens_price_per_million_audio": 0.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3-flash-preview"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3-flash-preview",
+        "description": "Frontier-class performance rivaling larger models at a fraction of the cost.",
+        "display_name": "Gemini 3 Flash Preview",
+        "release_date": "2025-12-17",
+        "preview": true
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-image",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.5000000000",
+      "outputTokensPricePerMillion": "3.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 60
+        },
+        "image_generation": {
+          "standard": {
+            "0.5K": 0.045,
+            "1K": 0.067,
+            "2K": 0.101,
+            "4K": 0.151
+          }
+        }
+      },
+      "contextWindow": 131072,
+      "capabilities": [
+        "image_generation",
+        "pdf_support",
+        "reasoning",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-flash-image"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-image",
+        "description": "Powerful, high-efficiency image generation and editing optimized for speed and high-volume use cases.",
+        "display_name": "Gemini 3.1 Flash Image (Nano Banana 2)",
+        "release_date": "2026-05-28"
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-lite-image",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2500000000",
+      "outputTokensPricePerMillion": "1.5000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 30
+        },
+        "image_generation": {
+          "standard": {
+            "1K": 0.0336
+          }
+        }
+      },
+      "contextWindow": 65536,
+      "capabilities": [
+        "image_generation",
+        "reasoning",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 4096
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-flash-lite-image"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite-image",
+        "description": "Ultra-low-latency, cost-effective image generation and editing designed for high-volume interactive use cases.",
+        "display_name": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite)",
+        "release_date": "2026-06-30",
+        "reasoning_efforts": [
+          "minimal",
+          "high"
+        ]
+      }
+    },
+    {
+      "model": "gemini-3-pro-image",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 120
+        },
+        "image_generation": {
+          "standard": {
+            "1K": 0.134,
+            "2K": 0.134,
+            "4K": 0.24
+          }
+        }
+      },
+      "contextWindow": 65536,
+      "capabilities": [
+        "image_generation",
+        "reasoning",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3-pro-image"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3-pro-image",
+        "description": "State-of-the-art image generation and editing for highly contextual native image creation.",
+        "display_name": "Gemini 3 Pro Image (Nano Banana Pro)",
+        "release_date": "2026-05-28"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": "0.1250000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 4.5,
+        "grounding_google_search_per_thousand": 35,
+        "grounding_google_maps_per_thousand": 25,
+        "input_tokens_price_per_million_high_context": 2.5,
+        "cached_tokens_price_per_million_high_context": 0.25,
+        "output_tokens_price_per_million_high_context": 15,
+        "caching_tokens_price_per_million_high_context": 0.25
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "high_context": 200000,
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-pro"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro",
+        "description": "Google's advanced model for complex tasks, deep reasoning, and coding.",
+        "display_name": "Gemini 2.5 Pro",
+        "release_date": "2025-06-17",
+        "knowledge_cutoff": "2025-01-01"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.0300000000",
+      "cachingTokensPricePerMillion": "0.0300000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 35,
+        "grounding_google_maps_per_thousand": 25,
+        "input_tokens_price_per_million_audio": 1,
+        "cached_tokens_price_per_million_audio": 0.1,
+        "caching_tokens_price_per_million_audio": 0.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-flash"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash",
+        "description": "A price-performance model for low-latency, high-volume tasks that require reasoning.",
+        "display_name": "Gemini 2.5 Flash",
+        "release_date": "2025-06-17",
+        "knowledge_cutoff": "2025-01-01"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash-lite",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": "0.4000000000",
+      "cachedTokensPricePerMillion": "0.0100000000",
+      "cachingTokensPricePerMillion": "0.0100000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 35,
+        "grounding_google_maps_per_thousand": 25,
+        "input_tokens_price_per_million_audio": 0.3,
+        "cached_tokens_price_per_million_audio": 0.03,
+        "caching_tokens_price_per_million_audio": 0.03
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-flash-lite"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-lite",
+        "description": "The fastest and most budget-friendly multimodal model in the Gemini 2.5 family.",
+        "display_name": "Gemini 2.5 Flash-Lite",
+        "release_date": "2025-07-22",
+        "knowledge_cutoff": "2025-01-01"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash-image",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "image_generation": {
+          "standard": {
+            "default": 0.039
+          }
+        }
+      },
+      "contextWindow": 65536,
+      "capabilities": [
+        "image_generation",
+        "prompt_caching",
+        "structured_outputs",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-flash-image"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-image",
+        "description": "Native image generation and editing designed for fast, creative workflows.",
+        "display_name": "Gemini 2.5 Flash Image (Nano Banana)",
+        "release_date": "2025-10-02",
+        "knowledge_cutoff": "2025-06-01",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement."
+      }
+    },
+    {
+      "model": "gemini-embedding-2",
+      "provider": "gemini",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "input_audio_per_million_tokens": 6.5,
+        "input_image_per_million_tokens": 0.45,
+        "input_video_per_million_tokens": 12
+      },
+      "contextWindow": 8192,
+      "capabilities": [
+        "embedding_image_input",
+        "pdf_support",
+        "speech_recognition",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-embedding-2",
+          "gemini-embedding-2-preview"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-embedding-2",
+        "description": "Multimodal Gemini embedding model for retrieval and analytics tasks.",
+        "display_name": "Gemini Embedding 2",
+        "release_date": "2026-04-22",
+        "options": {
+          "output_dimensionality": [
+            "128-3072"
+          ]
+        }
+      }
+    },
+    {
+      "model": "gemini-embedding-001",
+      "provider": "gemini",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "contextWindow": 2048,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-embedding-001"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-embedding-001",
+        "description": "Text embedding model for semantic search, document retrieval, and recommendation systems. Output dimensions are flexible from 128 to 3072.",
+        "display_name": "Gemini Embedding 001",
+        "release_date": "2025-07-14",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for shutdown; use gemini-embedding-2.",
+        "options": {
+          "output_dimensionality": [
+            "128-3072"
+          ]
+        }
+      }
+    },
+    {
+      "model": "gemini-robotics-er-2-preview",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "0.2000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14
+      },
+      "contextWindow": 131072,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-robotics-er-2-preview"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+        "description": "Embodied reasoning model for robotics with video understanding, spatial reasoning, multi-step tool orchestration, and multi-robot collaboration.",
+        "display_name": "Gemini Robotics ER 2 Preview",
+        "release_date": "2026-07-30",
+        "preview": true
+      }
+    },
+    {
+      "model": "gemini-robotics-er-2-streaming-preview",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14
+      },
+      "contextWindow": 131072,
+      "capabilities": [
+        "reasoning",
+        "speech_recognition",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-robotics-er-2-streaming-preview"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-streaming-preview",
+        "description": "Embodied reasoning model for robotics optimized for real-time text streaming over the Live API, with bidirectional streaming and function calling.",
+        "display_name": "Gemini Robotics ER 2 Streaming Preview",
+        "release_date": "2026-07-30",
+        "preview": true
+      }
+    },
+    {
+      "model": "gemini-robotics-er-1.6-preview",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "5.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "input_tokens_price_per_million_audio": 2
+      },
+      "contextWindow": 131072,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-robotics-er-1.6-preview"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-1.6-preview",
+        "display_name": "Gemini Robotics-ER 1.6 Preview",
+        "release_date": "2026-04-14",
+        "knowledge_cutoff": "2025-01-01",
+        "preview": true,
+        "deprecated": true,
+        "deprecated_date": "2026-07-30",
+        "deprecated_reason": "replaced by gemini-robotics-er-2-preview"
+      }
+    },
+    {
+      "model": "gemini-2.5-computer-use-preview-10-2025",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "computer_use",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 64000,
+        "high_context": 200000
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-computer-use-preview-10-2025"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-computer-use-preview-10-2025",
+        "description": "Gemini model specialized for computer-use workflows with image and text input.",
+        "display_name": "Gemini 2.5 Computer Use Preview",
+        "preview": true
+      },
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 2.5,
+        "output_tokens_price_per_million_high_context": 15
+      }
+    },
+    {
+      "model": "imagen-4.0-fast-generate-001",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "fast": {
+            "default": 0.02
+          }
+        }
+      },
+      "contextWindow": 480,
+      "capabilities": [
+        "image_generation"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/"
+      ],
+      "limits": {
+        "max_output_images": 4
+      },
+      "metadata": {
+        "aliases": [
+          "imagen-4.0-fast-generate-001"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/imagen",
+        "description": "Fast Imagen 4 model for advanced visual synthesis.",
+        "display_name": "Imagen 4 Fast",
+        "release_date": "2025-06-24",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for shutdown; use gemini-3.1-flash-image."
+      }
+    },
+    {
+      "model": "imagen-4.0-generate-001",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "standard": {
+            "default": 0.04
+          }
+        }
+      },
+      "contextWindow": 480,
+      "capabilities": [
+        "image_generation"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/"
+      ],
+      "limits": {
+        "max_output_images": 4
+      },
+      "metadata": {
+        "aliases": [
+          "imagen-4.0-generate-001"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/imagen",
+        "description": "Standard Imagen 4 model for advanced visual synthesis.",
+        "display_name": "Imagen 4",
+        "release_date": "2025-06-24",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for shutdown; use gemini-3.1-flash-image."
+      }
+    },
+    {
+      "model": "imagen-4.0-ultra-generate-001",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "ultra": {
+            "default": 0.06
+          }
+        }
+      },
+      "contextWindow": 480,
+      "capabilities": [
+        "image_generation"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/"
+      ],
+      "limits": {
+        "max_output_images": 4
+      },
+      "metadata": {
+        "aliases": [
+          "imagen-4.0-ultra-generate-001"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/imagen",
+        "description": "Ultra-quality Imagen 4 model for advanced visual synthesis.",
+        "display_name": "Imagen 4 Ultra",
+        "release_date": "2025-06-24",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for shutdown; use gemini-3.1-flash-image."
+      }
+    }
+  ]
+}

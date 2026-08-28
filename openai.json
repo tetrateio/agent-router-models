@@ -1,0 +1,2785 @@
+{
+  "version": "1.0",
+  "models": [
+    {
+      "model": "gpt-5.6-sol",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "4.0000000000",
+      "outputTokensPricePerMillion": "20.0000000000",
+      "cachedTokensPricePerMillion": "0.4000000000",
+      "cachingTokensPricePerMillion": "5.0000000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5,
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+        "description": "Frontier model for complex professional work",
+        "display_name": "GPT-5.6 Sol",
+        "knowledge_cutoff": "2026-02-16",
+        "reasoning_efforts": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "aliases": ["gpt-5.6-sol", "gpt-5.6"]
+      }
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "2.5000000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5,
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+        "description": "GPT-5.6 model that balances intelligence and cost",
+        "display_name": "GPT-5.6 Terra",
+        "knowledge_cutoff": "2026-02-16",
+        "reasoning_efforts": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "aliases": ["gpt-5.6-terra"]
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2000000000",
+      "outputTokensPricePerMillion": "1.2000000000",
+      "cachedTokensPricePerMillion": "0.0200000000",
+      "cachingTokensPricePerMillion": "0.2500000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5,
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+        "description": "GPT-5.6 model optimized for cost-sensitive workloads",
+        "display_name": "GPT-5.6 Luna",
+        "knowledge_cutoff": "2026-02-16",
+        "reasoning_efforts": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "aliases": ["gpt-5.6-luna"]
+      }
+    },
+    {
+      "model": "gpt-5.6-cyber",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "12.5000000000",
+      "outputTokensPricePerMillion": "75.0000000000",
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": "15.6250000000",
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5
+        }
+      },
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000,
+        "max_prompt_length": 272000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-cyber",
+        "description": "Our most advanced cybersecurity model for authorized vulnerability research and security testing. The model needs separate approval and provisioning through the Daybreak program.",
+        "display_name": "GPT-5.6 Cyber",
+        "knowledge_cutoff": "2026-02-16",
+        "aliases": ["gpt-5.6-cyber"]
+      }
+    },
+    {
+      "model": "daybreak-blue-latest",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "4.0000000000",
+      "outputTokensPricePerMillion": "20.0000000000",
+      "cachedTokensPricePerMillion": "0.4000000000",
+      "cachingTokensPricePerMillion": "5.0000000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5
+        }
+      },
+      "limits": {
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000,
+        "max_prompt_length": 922000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/daybreak-blue-latest",
+        "description": "An alias for frontier general-purpose models with safeguards for defensive cybersecurity work. It points to gpt-5.6-sol and needs separate approval through the Daybreak program.",
+        "display_name": "Daybreak Blue",
+        "knowledge_cutoff": "2026-02-16",
+        "aliases": ["daybreak-blue-latest", "gpt-5.6-sol"]
+      }
+    },
+    {
+      "model": "daybreak-red-latest",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "12.5000000000",
+      "outputTokensPricePerMillion": "75.0000000000",
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": "15.6250000000",
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5
+        }
+      },
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000,
+        "max_prompt_length": 272000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/daybreak-red-latest",
+        "description": "An alias for advanced cybersecurity models for authorized vulnerability research and security testing. It points to gpt-5.6-cyber and needs separate approval through the Daybreak program.",
+        "display_name": "Daybreak Red",
+        "knowledge_cutoff": "2026-02-16",
+        "aliases": ["daybreak-red-latest", "gpt-5.6-cyber"]
+      }
+    },
+    {
+      "model": "chat-latest",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "30.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "image_generation",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/chat-latest",
+        "description": "Latest Instant model used in ChatGPT",
+        "display_name": "Chat Latest",
+        "knowledge_cutoff": "2025-08-31",
+        "aliases": ["chat-latest"]
+      }
+    },
+    {
+      "model": "text-embedding-3-small",
+      "provider": "openai",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0200000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": [],
+      "modalities": {
+        "input": ["text"],
+        "output": ["embedding"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {},
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/text-embedding-3-small",
+        "description": "Small embedding model",
+        "display_name": "text-embedding-3-small",
+        "aliases": ["text-embedding-3-small"]
+      }
+    },
+    {
+      "model": "text-embedding-3-large",
+      "provider": "openai",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1300000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": [],
+      "modalities": {
+        "input": ["text"],
+        "output": ["embedding"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {},
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/text-embedding-3-large",
+        "description": "Most capable embedding model",
+        "display_name": "text-embedding-3-large",
+        "aliases": ["text-embedding-3-large"]
+      }
+    },
+    {
+      "model": "text-embedding-ada-002",
+      "provider": "openai",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": [],
+      "modalities": {
+        "input": ["text"],
+        "output": ["embedding"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {},
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/text-embedding-ada-002",
+        "description": "Older embedding model",
+        "display_name": "text-embedding-ada-002",
+        "aliases": ["text-embedding-ada-002"]
+      }
+    },
+    {
+      "model": "gpt-4o-mini-search-preview",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "0.6000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": ["structured_outputs", "web_search"],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4o-mini-search-preview",
+          "gpt-4o-mini-search-preview-2025-03-11"
+        ],
+        "preview": true,
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4o-mini-search-preview",
+        "description": "Fast, affordable small model for web search",
+        "display_name": "GPT-4o mini Search Preview",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23"
+      }
+    },
+    {
+      "model": "gpt-5-nano",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0500000000",
+      "outputTokensPricePerMillion": "0.4000000000",
+      "cachedTokensPricePerMillion": "0.0050000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5-nano", "gpt-5-nano-2025-08-07"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5-nano",
+        "description": "Fastest, most cost-efficient version of GPT-5",
+        "display_name": "GPT-5 nano",
+        "knowledge_cutoff": "2024-05-31",
+        "deprecated": true,
+        "deprecated_date": "2026-06-11",
+        "retirement_date": "2026-12-11",
+        "deprecated_reason": "replaced by gpt-5.6-luna"
+      }
+    },
+    {
+      "model": "gpt-5-mini",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2500000000",
+      "outputTokensPricePerMillion": "2.0000000000",
+      "cachedTokensPricePerMillion": "0.0250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5-mini", "gpt-5-mini-2025-08-07"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "description": "Near-frontier intelligence for cost sensitive, low latency, high volume workloads",
+        "display_name": "GPT-5 mini",
+        "knowledge_cutoff": "2024-05-31",
+        "deprecated": true,
+        "deprecated_date": "2026-06-11",
+        "retirement_date": "2026-12-11",
+        "deprecated_reason": "replaced by gpt-5.6-terra"
+      }
+    },
+    {
+      "model": "gpt-5",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5", "gpt-5-2025-08-07"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5",
+        "description": "Previous intelligent reasoning model for coding and agentic tasks with configurable reasoning effort",
+        "display_name": "GPT-5",
+        "knowledge_cutoff": "2024-09-30",
+        "reasoning_efforts": ["minimal", "low", "medium", "high"],
+        "deprecated": true,
+        "deprecated_date": "2026-06-11",
+        "retirement_date": "2026-12-11",
+        "deprecated_reason": "replaced by gpt-5.6-sol"
+      }
+    },
+    {
+      "model": "gpt-5-chat-latest",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "code_execution",
+        "image_generation",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": ["gpt-5-chat-latest"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5-chat-latest",
+        "description": "GPT-5 model used in ChatGPT",
+        "display_name": "GPT-5 Chat",
+        "knowledge_cutoff": "2024-09-30",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23"
+      }
+    },
+    {
+      "model": "gpt-5.1-codex-mini",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "0.2500000000",
+      "outputTokensPricePerMillion": "2.0000000000",
+      "cachedTokensPricePerMillion": "0.0250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.1-codex-mini",
+        "description": "Smaller, more cost-effective, less-capable version of GPT-5.1-Codex",
+        "display_name": "GPT-5.1-Codex mini",
+        "knowledge_cutoff": "2024-09-30",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["gpt-5.1-codex-mini"]
+      }
+    },
+    {
+      "model": "gpt-5.1-codex-max",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "description": "A version of GPT-5.1-codex optimized for long running tasks.",
+        "display_name": "GPT-5.1-Codex-Max",
+        "knowledge_cutoff": "2024-09-30",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["gpt-5.1-codex-max"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.1-codex-max"
+      }
+    },
+    {
+      "model": "gpt-5.3-codex",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.7500000000",
+      "outputTokensPricePerMillion": "14.0000000000",
+      "cachedTokensPricePerMillion": "0.1750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "description": "The most capable agentic coding model to date.",
+        "display_name": "GPT-5.3-Codex",
+        "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["low", "medium", "high", "xhigh"],
+        "aliases": ["gpt-5.3-codex"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.3-codex"
+      }
+    },
+    {
+      "model": "o4-mini-deep-research",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "8.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "prompt_caching",
+        "reasoning",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/o4-mini-deep-research",
+        "description": "Faster, more affordable deep research model",
+        "display_name": "o4-mini-deep-research",
+        "knowledge_cutoff": "2024-06-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["o4-mini-deep-research", "o4-mini-deep-research-2025-06-26"]
+      }
+    },
+    {
+      "model": "gpt-5.4-pro",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "30.0000000000",
+      "outputTokensPricePerMillion": "180.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1050000,
+      "capabilities": [
+        "computer_use",
+        "image_generation",
+        "reasoning",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5,
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.4-pro",
+        "description": "Version of GPT-5.4 that produces smarter and more precise responses.",
+        "display_name": "GPT-5.4 Pro",
+        "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["medium", "high", "xhigh"],
+        "aliases": ["gpt-5.4-pro", "gpt-5.4-pro-2026-03-05"]
+      }
+    },
+    {
+      "model": "gpt-5.2-codex",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.7500000000",
+      "outputTokensPricePerMillion": "14.0000000000",
+      "cachedTokensPricePerMillion": "0.1750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "description": "Our most intelligent coding model optimized for long-horizon, agentic coding tasks.",
+        "display_name": "GPT-5.2-Codex",
+        "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["low", "medium", "high", "xhigh"],
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["gpt-5.2-codex"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.2-codex"
+      }
+    },
+    {
+      "model": "chatgpt-image-latest",
+      "provider": "openai",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text", "image"]
+      },
+      "backendUrls": ["/v1/images/generations"],
+      "additionalPricePerMillion": {
+        "image_tokens": {
+          "input_image_tokens_price_per_million": 8,
+          "output_image_tokens_price_per_million": 32,
+          "cached_input_image_tokens_price_per_million": 2
+        },
+        "image_generation": {
+          "low": {
+            "1024x1024": 0.009,
+            "1024x1536": 0.013,
+            "1536x1024": 0.013
+          },
+          "high": {
+            "1024x1024": 0.133,
+            "1024x1536": 0.2,
+            "1536x1024": 0.2
+          },
+          "medium": {
+            "1024x1024": 0.034,
+            "1024x1536": 0.05,
+            "1536x1024": 0.05
+          }
+        }
+      },
+      "limits": {
+        "max_prompt_length": 32000,
+        "max_images_per_prompt": 4
+      },
+      "metadata": {
+        "options": {
+          "background": ["auto", "transparent", "opaque"],
+          "moderation": ["auto", "low"],
+          "output_format": ["jpeg", "png", "webp"],
+          "partial_images": ["0", "1", "2", "3"]
+        },
+        "description": "Previous image model used in ChatGPT.",
+        "display_name": "chatgpt-image-latest",
+        "aliases": ["chatgpt-image-latest"],
+        "source_url": "https://developers.openai.com/api/docs/models/chatgpt-image-latest",
+        "deprecated": true,
+        "deprecated_date": "2026-06-02",
+        "retirement_date": "2026-12-01"
+      }
+    },
+    {
+      "model": "gpt-5.3-chat-latest",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.7500000000",
+      "outputTokensPricePerMillion": "14.0000000000",
+      "cachedTokensPricePerMillion": "0.1750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "code_execution",
+        "image_generation",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.3-chat-latest",
+        "description": "GPT-5.3 Instant model used in ChatGPT",
+        "display_name": "GPT-5.3 Chat",
+        "knowledge_cutoff": "2025-08-31",
+        "aliases": ["gpt-5.3-chat-latest"],
+        "deprecated": true,
+        "deprecated_date": "2026-05-08",
+        "retirement_date": "2026-08-10"
+      }
+    },
+    {
+      "model": "o3-deep-research",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "10.0000000000",
+      "outputTokensPricePerMillion": "40.0000000000",
+      "cachedTokensPricePerMillion": "2.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "prompt_caching",
+        "reasoning",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/o3-deep-research",
+        "description": "Our most powerful deep research model",
+        "display_name": "o3-deep-research",
+        "knowledge_cutoff": "2024-06-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["o3-deep-research", "o3-deep-research-2025-06-26"]
+      }
+    },
+    {
+      "model": "gpt-5.4",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.5000000000",
+      "outputTokensPricePerMillion": "15.0000000000",
+      "cachedTokensPricePerMillion": "0.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5,
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+        "description": "A more affordable model for coding and professional work.",
+        "display_name": "GPT-5.4",
+        "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh"],
+        "aliases": ["gpt-5.4", "gpt-5.4-2026-03-05"]
+      }
+    },
+    {
+      "model": "gpt-5.1-codex",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "description": "A version of GPT-5.1 optimized for agentic coding in Codex.",
+        "display_name": "GPT-5.1-Codex",
+        "knowledge_cutoff": "2024-09-30",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["gpt-5.1-codex"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.1-codex"
+      }
+    },
+    {
+      "model": "gpt-image-1-mini",
+      "provider": "openai",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["image"]
+      },
+      "backendUrls": ["/v1/images/generations"],
+      "additionalPricePerMillion": {
+        "image_tokens": {
+          "input_image_tokens_price_per_million": 2.5,
+          "output_image_tokens_price_per_million": 8,
+          "cached_input_image_tokens_price_per_million": 0.25
+        },
+        "image_generation": {
+          "low": {
+            "1024x1024": 0.005,
+            "1024x1536": 0.006,
+            "1536x1024": 0.006
+          },
+          "high": {
+            "1024x1024": 0.036,
+            "1024x1536": 0.052,
+            "1536x1024": 0.052
+          },
+          "medium": {
+            "1024x1024": 0.011,
+            "1024x1536": 0.015,
+            "1536x1024": 0.015
+          }
+        }
+      },
+      "limits": {
+        "max_prompt_length": 32000,
+        "max_images_per_prompt": 4
+      },
+      "metadata": {
+        "options": {
+          "background": ["auto", "transparent", "opaque"],
+          "moderation": ["auto", "low"],
+          "output_format": ["jpeg", "png", "webp"],
+          "partial_images": ["0", "1", "2", "3"]
+        },
+        "description": "A cost-efficient version of GPT Image 1",
+        "display_name": "gpt-image-1-mini",
+        "aliases": ["gpt-image-1-mini"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-image-1-mini",
+        "deprecated": true,
+        "deprecated_date": "2026-06-02",
+        "retirement_date": "2026-12-01"
+      }
+    },
+    {
+      "model": "gpt-5.2-chat-latest",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.7500000000",
+      "outputTokensPricePerMillion": "14.0000000000",
+      "cachedTokensPricePerMillion": "0.1750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "code_execution",
+        "image_generation",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.2-chat-latest",
+        "description": "GPT-5.2 model used in ChatGPT",
+        "display_name": "GPT-5.2 Chat",
+        "knowledge_cutoff": "2025-08-31",
+        "aliases": ["gpt-5.2-chat-latest"],
+        "deprecated": true,
+        "deprecated_date": "2026-05-08",
+        "retirement_date": "2026-08-10"
+      }
+    },
+    {
+      "model": "gpt-image-1.5",
+      "provider": "openai",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text", "image"]
+      },
+      "backendUrls": ["/v1/images/generations"],
+      "additionalPricePerMillion": {
+        "image_tokens": {
+          "input_image_tokens_price_per_million": 8,
+          "output_image_tokens_price_per_million": 32,
+          "cached_input_image_tokens_price_per_million": 2
+        },
+        "image_generation": {
+          "low": {
+            "1024x1024": 0.009,
+            "1024x1536": 0.013,
+            "1536x1024": 0.013
+          },
+          "high": {
+            "1024x1024": 0.133,
+            "1024x1536": 0.2,
+            "1536x1024": 0.2
+          },
+          "medium": {
+            "1024x1024": 0.034,
+            "1024x1536": 0.05,
+            "1536x1024": 0.05
+          }
+        }
+      },
+      "limits": {
+        "max_prompt_length": 32000,
+        "max_images_per_prompt": 4
+      },
+      "metadata": {
+        "options": {
+          "background": ["auto", "transparent", "opaque"],
+          "moderation": ["auto", "low"],
+          "output_format": ["jpeg", "png", "webp"],
+          "partial_images": ["0", "1", "2", "3"]
+        },
+        "description": "Our previous image generation model",
+        "display_name": "GPT Image 1.5",
+        "aliases": ["gpt-image-1.5", "gpt-image-1.5-2025-12-16"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-image-1.5",
+        "deprecated": true,
+        "deprecated_date": "2026-06-02",
+        "retirement_date": "2026-12-01"
+      }
+    },
+    {
+      "model": "gpt-5-codex",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "description": "A version of GPT-5 optimized for agentic coding in Codex",
+        "display_name": "GPT-5-Codex",
+        "knowledge_cutoff": "2024-09-30",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["gpt-5-codex"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5-codex"
+      }
+    },
+    {
+      "model": "gpt-5-pro",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "15.0000000000",
+      "outputTokensPricePerMillion": "120.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "file_upload",
+        "image_generation",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 272000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5-pro",
+        "description": "Version of GPT-5 that produces smarter and more precise responses",
+        "display_name": "GPT-5 Pro",
+        "knowledge_cutoff": "2024-09-30",
+        "reasoning_efforts": ["high"],
+        "aliases": ["gpt-5-pro", "gpt-5-pro-2025-10-06"],
+        "deprecated": true,
+        "deprecated_date": "2026-06-11",
+        "retirement_date": "2026-12-11",
+        "deprecated_reason": "replaced by gpt-5.6-sol with reasoning.mode: pro"
+      }
+    },
+    {
+      "model": "computer-use-preview",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "3.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 8192,
+      "capabilities": ["reasoning", "tool_choice", "vision"],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 1024
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/computer-use-preview",
+        "description": "Specialized model for computer use tool",
+        "display_name": "computer-use-preview",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23",
+        "aliases": ["computer-use-preview", "computer-use-preview-2025-03-11"]
+      }
+    },
+    {
+      "model": "gpt-5.2-pro",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "21.0000000000",
+      "outputTokensPricePerMillion": "168.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "image_generation",
+        "reasoning",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.2-pro",
+        "description": "Previous pro model for professional work that produces smarter and more precise responses.",
+        "display_name": "GPT-5.2 Pro",
+        "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["medium", "high", "xhigh"],
+        "aliases": ["gpt-5.2-pro", "gpt-5.2-pro-2025-12-11"]
+      }
+    },
+    {
+      "model": "gpt-5.2",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.7500000000",
+      "outputTokensPricePerMillion": "14.0000000000",
+      "cachedTokensPricePerMillion": "0.1750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5.2", "gpt-5.2-2025-12-11"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.2",
+        "description": "Previous frontier model for professional work with configurable reasoning effort",
+        "display_name": "GPT-5.2",
+        "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh"]
+      }
+    },
+    {
+      "model": "gpt-5.1",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5.1", "gpt-5.1-2025-11-13"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.1",
+        "description": "The best model for coding and agentic tasks with configurable reasoning effort",
+        "display_name": "GPT-5.1",
+        "knowledge_cutoff": "2024-09-30",
+        "reasoning_efforts": ["none", "low", "medium", "high"]
+      }
+    },
+    {
+      "model": "gpt-5.1-chat-latest",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "code_execution",
+        "image_generation",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": ["gpt-5.1-chat-latest"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.1-chat-latest",
+        "description": "GPT-5.1 model used in ChatGPT",
+        "display_name": "GPT-5.1 Chat",
+        "knowledge_cutoff": "2024-09-30",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23"
+      }
+    },
+    {
+      "model": "o3",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "8.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "aliases": ["o3", "o3-2025-04-16"],
+        "source_url": "https://developers.openai.com/api/docs/models/o3",
+        "description": "Reasoning model for complex tasks, succeeded by GPT-5",
+        "display_name": "o3",
+        "knowledge_cutoff": "2024-06-01",
+        "deprecated": true,
+        "deprecated_date": "2026-06-11",
+        "retirement_date": "2026-12-11",
+        "deprecated_reason": "replaced by gpt-5.6-sol"
+      }
+    },
+    {
+      "model": "o4-mini",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.1000000000",
+      "outputTokensPricePerMillion": "4.4000000000",
+      "cachedTokensPricePerMillion": "0.2750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "aliases": ["o4-mini", "o4-mini-2025-04-16"],
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23",
+        "source_url": "https://developers.openai.com/api/docs/models/o4-mini",
+        "description": "Fast, cost-efficient reasoning model, succeeded by GPT-5 mini",
+        "display_name": "o4-mini",
+        "knowledge_cutoff": "2024-06-01",
+        "deprecated_reason": "succeeded by GPT-5 mini"
+      }
+    },
+    {
+      "model": "gpt-4.1",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "8.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1047576,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": ["gpt-4.1", "gpt-4.1-2025-04-14"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4.1",
+        "description": "Smartest non-reasoning model",
+        "display_name": "GPT-4.1",
+        "knowledge_cutoff": "2024-06-01"
+      }
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.4000000000",
+      "outputTokensPricePerMillion": "1.6000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1047576,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": ["gpt-4.1-mini", "gpt-4.1-mini-2025-04-14"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+        "description": "Smaller, faster version of GPT-4.1",
+        "display_name": "GPT-4.1 mini",
+        "knowledge_cutoff": "2024-06-01"
+      }
+    },
+    {
+      "model": "gpt-4.1-nano",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": "0.4000000000",
+      "cachedTokensPricePerMillion": "0.0250000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1047576,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": ["gpt-4.1-nano", "gpt-4.1-nano-2025-04-14"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4.1-nano",
+        "description": "Fastest, most cost-efficient version of GPT-4.1",
+        "display_name": "GPT-4.1 nano",
+        "knowledge_cutoff": "2024-06-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23"
+      }
+    },
+    {
+      "model": "gpt-image-1",
+      "provider": "openai",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["image"]
+      },
+      "backendUrls": ["/v1/images/generations"],
+      "additionalPricePerMillion": {
+        "image_tokens": {
+          "input_image_tokens_price_per_million": 10,
+          "output_image_tokens_price_per_million": 40,
+          "cached_input_image_tokens_price_per_million": 2.5
+        },
+        "image_generation": {
+          "low": {
+            "1024x1024": 0.011,
+            "1024x1536": 0.016,
+            "1536x1024": 0.016
+          },
+          "high": {
+            "1024x1024": 0.167,
+            "1024x1536": 0.25,
+            "1536x1024": 0.25
+          },
+          "medium": {
+            "1024x1024": 0.042,
+            "1024x1536": 0.063,
+            "1536x1024": 0.063
+          }
+        }
+      },
+      "limits": {
+        "max_prompt_length": 32000,
+        "max_images_per_prompt": 4
+      },
+      "metadata": {
+        "options": {
+          "background": ["auto", "transparent", "opaque"],
+          "moderation": ["auto", "low"],
+          "output_format": ["jpeg", "png", "webp"],
+          "partial_images": ["0", "1", "2", "3"]
+        },
+        "description": "Our previous image generation model",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23",
+        "display_name": "GPT Image 1",
+        "aliases": ["gpt-image-1"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-image-1"
+      }
+    },
+    {
+      "model": "o1-pro",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "150.0000000000",
+      "outputTokensPricePerMillion": "600.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/o1-pro",
+        "description": "Version of o1 with more compute for better responses",
+        "display_name": "o1-pro",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23",
+        "aliases": ["o1-pro", "o1-pro-2025-03-19"]
+      }
+    },
+    {
+      "model": "gpt-4o-search-preview",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "2.5000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": ["structured_outputs", "web_search"],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4o-search-preview",
+          "gpt-4o-search-preview-2025-03-11"
+        ],
+        "preview": true,
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4o-search-preview",
+        "description": "GPT model for web search in Chat Completions",
+        "display_name": "GPT-4o Search Preview",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-07-23"
+      }
+    },
+    {
+      "model": "o3-mini",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.1000000000",
+      "outputTokensPricePerMillion": "4.4000000000",
+      "cachedTokensPricePerMillion": "0.5500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "aliases": ["o3-mini", "o3-mini-2025-01-31"],
+        "source_url": "https://developers.openai.com/api/docs/models/o3-mini",
+        "description": "A small model alternative to o3",
+        "display_name": "o3-mini",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23"
+      }
+    },
+    {
+      "model": "o1",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "15.0000000000",
+      "outputTokensPricePerMillion": "60.0000000000",
+      "cachedTokensPricePerMillion": "7.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "aliases": [
+          "o1",
+          "o1-2024-12-17",
+          "o1-preview",
+          "o1-preview-2024-09-12"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/o1",
+        "description": "Previous full o-series reasoning model",
+        "display_name": "o1",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23"
+      }
+    },
+    {
+      "model": "gpt-4o-2024-11-20",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.5000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": ["structured_outputs", "tool_choice", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4o",
+          "gpt-4o-2024-08-06",
+          "gpt-4o-2024-11-20",
+          "gpt-4o-2024-05-13"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4o",
+        "description": "Fast, intelligent, flexible GPT model",
+        "display_name": "GPT-4o",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true
+      }
+    },
+    {
+      "model": "gpt-4o-2024-05-13",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "15.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": ["structured_outputs", "tool_choice", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4o",
+          "gpt-4o-2024-08-06",
+          "gpt-4o-2024-11-20",
+          "gpt-4o-2024-05-13"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4o",
+        "description": "Fast, intelligent, flexible GPT model",
+        "display_name": "GPT-4o",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23"
+      }
+    },
+    {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.5000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4o",
+          "gpt-4o-2024-08-06",
+          "gpt-4o-2024-11-20",
+          "gpt-4o-2024-05-13"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4o",
+        "description": "Fast, intelligent, flexible GPT model",
+        "display_name": "GPT-4o",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true
+      }
+    },
+    {
+      "model": "gpt-4o-2024-08-06",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.5000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": ["structured_outputs", "tool_choice", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4o",
+          "gpt-4o-2024-08-06",
+          "gpt-4o-2024-11-20",
+          "gpt-4o-2024-05-13"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4o",
+        "description": "Fast, intelligent, flexible GPT model",
+        "display_name": "GPT-4o",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true
+      }
+    },
+    {
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "0.6000000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": ["gpt-4o-mini", "gpt-4o-mini-2024-07-18"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "description": "Fast, affordable small model for focused tasks",
+        "display_name": "GPT-4o mini",
+        "knowledge_cutoff": "2023-10-01"
+      }
+    },
+    {
+      "model": "gpt-4-turbo",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "10.0000000000",
+      "outputTokensPricePerMillion": "30.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": ["tool_choice", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 4096
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4-turbo",
+          "gpt-4-turbo-2024-04-09",
+          "gpt-4-turbo-preview",
+          "gpt-4-0125-preview",
+          "gpt-4-1106-vision-preview"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4-turbo",
+        "description": "An older high-intelligence GPT model",
+        "display_name": "GPT-4 Turbo",
+        "knowledge_cutoff": "2023-12-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23"
+      }
+    },
+    {
+      "model": "gpt-3.5-turbo",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.5000000000",
+      "outputTokensPricePerMillion": "1.5000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 16385,
+      "capabilities": [],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 4096
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-3.5-turbo",
+          "gpt-3.5-turbo-0125",
+          "gpt-3.5-turbo-1106",
+          "gpt-3.5-turbo-instruct"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-3.5-turbo",
+        "description": "Legacy GPT model for cheaper chat and non-chat tasks",
+        "display_name": "GPT-3.5 Turbo",
+        "knowledge_cutoff": "2021-09-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23"
+      }
+    },
+    {
+      "model": "gpt-4",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "30.0000000000",
+      "outputTokensPricePerMillion": "60.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 8192,
+      "capabilities": [],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 8192
+      },
+      "metadata": {
+        "aliases": ["gpt-4", "gpt-4-0613", "gpt-4-0314"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4",
+        "description": "An older high-intelligence GPT model",
+        "display_name": "GPT-4",
+        "knowledge_cutoff": "2023-12-01",
+        "deprecated": true,
+        "deprecated_date": "2026-04-22",
+        "retirement_date": "2026-10-23"
+      }
+    },
+    {
+      "model": "gpt-5.5",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "30.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5,
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5.5", "gpt-5.5-2026-04-23"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.5",
+        "description": "A new class of intelligence for coding and professional work.",
+        "display_name": "GPT-5.5",
+        "knowledge_cutoff": "2025-12-01",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh"]
+      }
+    },
+    {
+      "model": "gpt-5.5-pro",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "30.0000000000",
+      "outputTokensPricePerMillion": "180.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "image_generation",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5.5-pro", "gpt-5.5-pro-2026-04-23"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.5-pro",
+        "description": "Version of GPT-5.5 that produces smarter and more precise responses.",
+        "display_name": "GPT-5.5 Pro",
+        "knowledge_cutoff": "2025-12-01"
+      }
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7500000000",
+      "outputTokensPricePerMillion": "4.5000000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5.4-mini", "gpt-5.4-mini-2026-03-17"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+        "description": "Our strongest mini model yet for coding, computer use, and subagents",
+        "display_name": "GPT-5.4 mini",
+        "knowledge_cutoff": "2025-08-31"
+      }
+    },
+    {
+      "model": "gpt-5.4-nano",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2000000000",
+      "outputTokensPricePerMillion": "1.2500000000",
+      "cachedTokensPricePerMillion": "0.0200000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 400000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": ["gpt-5.4-nano", "gpt-5.4-nano-2026-03-17"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
+        "description": "Our cheapest GPT-5.4-class model for simple high-volume tasks",
+        "display_name": "GPT-5.4 nano",
+        "knowledge_cutoff": "2025-08-31"
+      }
+    },
+    {
+      "model": "o3-pro",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "20.0000000000",
+      "outputTokensPricePerMillion": "80.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "image_generation",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "aliases": ["o3-pro", "o3-pro-2025-06-10"],
+        "source_url": "https://developers.openai.com/api/docs/models/o3-pro",
+        "description": "Version of o3 with more compute for better responses",
+        "display_name": "o3-pro",
+        "knowledge_cutoff": "2024-06-01",
+        "deprecated": true,
+        "deprecated_date": "2026-06-11",
+        "retirement_date": "2026-12-11",
+        "deprecated_reason": "replaced by gpt-5.6-sol with reasoning.mode: pro"
+      }
+    },
+    {
+      "model": "gpt-image-2",
+      "provider": "openai",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation", "vision"],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["image"]
+      },
+      "backendUrls": ["/v1/images/generations"],
+      "additionalPricePerMillion": {
+        "image_tokens": {
+          "input_image_tokens_price_per_million": 8,
+          "output_image_tokens_price_per_million": 30,
+          "cached_input_image_tokens_price_per_million": 2
+        },
+        "image_generation": {
+          "low": {
+            "1024x1024": 0.006,
+            "1024x1536": 0.005,
+            "1536x1024": 0.005
+          },
+          "medium": {
+            "1024x1024": 0.053,
+            "1024x1536": 0.041,
+            "1536x1024": 0.041
+          },
+          "high": {
+            "1024x1024": 0.211,
+            "1024x1536": 0.165,
+            "1536x1024": 0.165
+          }
+        }
+      },
+      "limits": {
+        "max_edge_px": 3840,
+        "min_total_pixels": 655360,
+        "max_total_pixels": 8294400,
+        "edge_multiple_px": 16,
+        "max_long_edge_to_short_edge_ratio": "3:1",
+        "experimental_above_total_pixels": 3686400
+      },
+      "metadata": {
+        "aliases": ["gpt-image-2", "gpt-image-2-2026-04-21"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-image-2",
+        "description": "State-of-the-art image generation model",
+        "display_name": "GPT Image 2",
+        "options": {
+          "background": ["auto", "opaque"],
+          "moderation": ["auto", "low"],
+          "output_format": ["jpeg", "png", "webp"],
+          "output_compression": ["0-100"],
+          "partial_images": ["0", "1", "2", "3"],
+          "quality": ["auto", "low", "medium", "high"],
+          "size": [
+            "auto",
+            "1024x1024",
+            "1536x1024",
+            "1024x1536",
+            "2048x2048",
+            "2048x1152",
+            "3840x2160",
+            "2160x3840"
+          ]
+        }
+      }
+    },
+    {
+      "model": "codex-mini-latest",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 100000
+      },
+      "metadata": {
+        "aliases": ["codex-mini-latest"],
+        "source_url": "https://developers.openai.com/api/docs/models/codex-mini-latest",
+        "description": "Fast reasoning model optimized for the Codex CLI",
+        "display_name": "codex-mini-latest",
+        "knowledge_cutoff": "2024-06-01",
+        "deprecated": true,
+        "deprecated_date": "2025-11-17",
+        "retirement_date": "2026-02-12"
+      },
+      "mode": "responses",
+      "inputTokensPricePerMillion": "1.5000000000",
+      "outputTokensPricePerMillion": "6.0000000000",
+      "cachedTokensPricePerMillion": "0.3750000000",
+      "contextWindow": 200000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      }
+    },
+    {
+      "model": "chatgpt-4o-latest",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": ["chatgpt-4o-latest"],
+        "source_url": "https://developers.openai.com/api/docs/models/chatgpt-4o-latest",
+        "description": "GPT-4o model used in ChatGPT",
+        "display_name": "ChatGPT-4o",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2025-11-18",
+        "retirement_date": "2026-02-17"
+      },
+      "mode": "responses",
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "15.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": ["vision"],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      }
+    },
+    {
+      "model": "gpt-4.5-preview",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "aliases": ["gpt-4.5-preview", "gpt-4.5-preview-2025-02-27"],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4.5-preview",
+        "description": "Deprecated large model.",
+        "display_name": "GPT-4.5 Preview",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2025-04-14",
+        "retirement_date": "2025-07-14",
+        "preview": true
+      },
+      "mode": "responses",
+      "inputTokensPricePerMillion": "75.0000000000",
+      "outputTokensPricePerMillion": "150.0000000000",
+      "cachedTokensPricePerMillion": "37.5000000000",
+      "contextWindow": 128000,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      }
+    },
+    {
+      "model": "gpt-4-turbo-preview",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 4096
+      },
+      "metadata": {
+        "aliases": [
+          "gpt-4-turbo-preview",
+          "gpt-4-0125-preview",
+          "gpt-4-1106-vision-preview"
+        ],
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4-turbo-preview",
+        "description": "An older fast GPT model",
+        "display_name": "GPT-4 Turbo Preview",
+        "knowledge_cutoff": "2023-12-01",
+        "deprecated": true,
+        "deprecated_date": "2025-09-26",
+        "retirement_date": "2026-03-26",
+        "preview": true
+      },
+      "mode": "responses",
+      "inputTokensPricePerMillion": "10.0000000000",
+      "outputTokensPricePerMillion": "30.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      }
+    },
+    {
+      "model": "o1-mini",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": ["o1-mini", "o1-mini-2024-09-12"],
+        "source_url": "https://developers.openai.com/api/docs/models/o1-mini",
+        "description": "A small model alternative to o1",
+        "display_name": "o1-mini",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2025-04-28",
+        "retirement_date": "2025-10-27"
+      },
+      "mode": "responses",
+      "inputTokensPricePerMillion": "1.1000000000",
+      "outputTokensPricePerMillion": "4.4000000000",
+      "cachedTokensPricePerMillion": "0.5500000000",
+      "contextWindow": 128000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "reasoning"
+      ],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      }
+    },
+    {
+      "model": "o1-preview",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": ["o1-preview", "o1-preview-2024-09-12"],
+        "source_url": "https://developers.openai.com/api/docs/models/o1-preview",
+        "description": "Preview of our first o-series reasoning model",
+        "display_name": "o1 Preview",
+        "knowledge_cutoff": "2023-10-01",
+        "deprecated": true,
+        "deprecated_date": "2025-04-28",
+        "retirement_date": "2025-07-28",
+        "preview": true
+      },
+      "mode": "responses",
+      "inputTokensPricePerMillion": "15.0000000000",
+      "outputTokensPricePerMillion": "60.0000000000",
+      "cachedTokensPricePerMillion": "7.5000000000",
+      "contextWindow": 128000,
+      "capabilities": [
+        "file_upload",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      }
+    },
+    {
+      "model": "dall-e-3",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["/v1/images/generations"],
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "standard": {
+            "1024x1024": 0.04,
+            "1024x1536": 0.08,
+            "1536x1024": 0.08
+          },
+          "hd": {
+            "1024x1024": 0.08,
+            "1024x1536": 0.12,
+            "1536x1024": 0.12
+          }
+        }
+      },
+      "limits": {},
+      "metadata": {
+        "aliases": ["dall-e-3"],
+        "source_url": "https://developers.openai.com/api/docs/models/dall-e-3",
+        "description": "Previous generation image generation model",
+        "display_name": "DALL·E 3",
+        "deprecated": true,
+        "deprecated_date": "2025-11-14",
+        "retirement_date": "2026-05-12",
+        "options": {
+          "quality": ["standard", "hd"],
+          "size": ["1024x1024", "1024x1536", "1536x1024"]
+        }
+      },
+      "mode": "image_generation",
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation"],
+      "modalities": {
+        "input": ["text"],
+        "output": ["image"]
+      }
+    },
+    {
+      "model": "dall-e-2",
+      "provider": "openai",
+      "isEnabled": false,
+      "cachingTokensPricePerMillion": null,
+      "backendUrls": ["/v1/images/generations"],
+      "additionalPricePerMillion": {
+        "image_generation": {
+          "standard": {
+            "1024x1024": 0.016,
+            "1024x1536": 0.018,
+            "1536x1024": 0.02
+          }
+        }
+      },
+      "limits": {},
+      "metadata": {
+        "aliases": ["dall-e-2"],
+        "source_url": "https://developers.openai.com/api/docs/models/dall-e-2",
+        "description": "Our first image generation model",
+        "display_name": "DALL·E 2",
+        "deprecated": true,
+        "deprecated_date": "2025-11-14",
+        "retirement_date": "2026-05-12",
+        "options": {
+          "quality": ["standard"],
+          "size": ["1024x1024", "1024x1536", "1536x1024"]
+        }
+      },
+      "mode": "image_generation",
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": ["image_generation"],
+      "modalities": {
+        "input": ["text"],
+        "output": ["image"]
+      }
+    }
+  ]
+}
