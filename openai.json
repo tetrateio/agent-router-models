@@ -2,6 +2,70 @@
   "version": "1.0",
   "models": [
     {
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "10.0000000000",
+      "outputTokensPricePerMillion": "50.0000000000",
+      "cachedTokensPricePerMillion": "1.0000000000",
+      "cachingTokensPricePerMillion": "12.5000000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://api.openai.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "extra": {
+          "input_tokens_above_272k_multiplier": 2,
+          "output_tokens_above_272k_multiplier": 1.5,
+          "regional_processing_uplift_multiplier": 1.1
+        }
+      },
+      "limits": {
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+        "description": "Our most capable model, built for the hardest end-to-end work",
+        "display_name": "GPT-6 Astra",
+        "release_date": "2026-09-03",
+        "knowledge_cutoff": "2026-04-30",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "aliases": [
+          "gpt-6-astra"
+        ]
+      }
+    },
+    {
       "model": "gpt-5.6-sol",
       "provider": "openai",
       "mode": "responses",

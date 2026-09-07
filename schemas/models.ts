@@ -27,6 +27,8 @@ export const PROVIDERS = [
   "groq",
   "xai",
   "deepinfra",
+  "vertex",
+  "vertexanthropic",
 ] as const;
 export type Provider = (typeof PROVIDERS)[number];
 

@@ -6,9 +6,9 @@ disable-model-invocation: true
 
 # Update the provider catalogs
 
-Refresh `anthropic.json`, `openai.json`, `gemini-prod.json`, `xai.json`, `groq.json`, and
-`deepinfra.json` against each provider's current documentation, then write one dated block
-at the top of `CHANGELOG.md`.
+Refresh `anthropic.json`, `openai.json`, `gemini-prod.json`, `xai.json`, `groq.json`,
+`deepinfra.json`, `vertex.json`, and `vertexanthropic.json` against each provider's current
+documentation, then write one dated block at the top of `CHANGELOG.md`.
 
 The work is a **drift** hunt: the delta between what a catalog record says and what the
 provider publishes today. Prices move, context windows grow, models get deprecated and shut
@@ -148,6 +148,41 @@ Fetch with `curl`, not WebFetch. WebFetch summarizes through a small model and r
 - `/models/<owner>/<name>` — per-model detail. `max_output_tokens` lives only here,
   absent from the list endpoint.
 
+### Vertex / VertexAnthropic — `docs.cloud.google.com/gemini-enterprise-agent-platform`
+
+One provider surface, two catalogs: Anthropic's models go in `vertexanthropic.json`, every
+other model in `vertex.json`. Google renames this product often; the path is the stable
+handle, not the name on the page.
+
+- `/generative-ai/pricing` — the only price source, and the one page on this host that
+  **JavaScript-renders**: `curl` returns a shell with zero `<table>` elements. Read it
+  through `claude-in-chrome`. Every other page here `curl`s fine.
+- Doc paths live only in the left nav, never in the page body. Harvest them from any
+  fetched page: `grep -o 'href="/gemini-enterprise-agent-platform/models/[^"]*"'`.
+- Google models: `/models/gemini/<slug>`, where the slug drops the dots
+  (`gemini-3.8-flash` → `3-8-flash`).
+- Claude: `/models/partner-models/claude` carries the descriptions,
+  `/models/partner-models/claude/<slug>` carries the record.
+- Grok, Mistral, Llama: `/models/partner-models/<publisher>/<slug>`.
+- Open MaaS models — DeepSeek, Qwen, GLM (`zaiorg`), Kimi, MiniMax, gpt-oss (`openai`),
+  Gemma (`google`), E5: `/models/maas/<publisher>/<slug>`.
+- `/models/embeddings/get-text-embeddings` — `gemini-embedding-001`, `text-embedding-005`,
+  and `text-multilingual-embedding-002` live only here and have no model page.
+- Deprecations split three ways: `/models/deprecations/partner-models` (Claude, Jamba),
+  `/models/deprecations/open-models` (every MaaS model), and the Versions block on each
+  Gemini model page. `/models/deprecations` is a 404. Google deprecates the whole MaaS
+  fleet in dated waves, so read the open-models page every run.
+- Each model page's Capabilities table is the authority for these two catalogs, and it
+  disagrees with the direct-API docs on purpose: no code execution or Files API for
+  Claude, no web search for Grok, no capability table at all for Mistral.
+- `backendUrls` is `https://aiplatform.googleapis.com/v1/` for every record.
+  `metadata.regions` comes from the Model availability block, `metadata.launch_stage` from
+  the page header.
+- Vertex-only price fields: `non_global_endpoint_multiplier` 1.1 (GA Gemini 3 and later,
+  from 2026-07-01), a cache-storage rate that differs from the Gemini API, and grounding
+  rates that differ per generation — $14 per 1k for Gemini 3, and $35 Search / $45 Web
+  Grounding / $25 Maps for Gemini 2.5.
+
 ## Keep the diff honest
 
 `jsonfmt.ts` in this skill's folder decides how you may write a file. Run it with `bun`:
@@ -197,6 +232,13 @@ These recur every run. Decide them the same way each time.
   catalog, and name them under **Models that stay out of the catalog**. Do not park them
   in `responses` — that mode means the OpenAI Responses API, and a gateway that reads it
   calls an endpoint Google does not serve.
+- **Mirror** — a Vertex record for a model that also ships direct. Start from the
+  `gemini.json` or `anthropic.json` record, then let the Agent Platform page overwrite
+  prices, context window, capabilities, and limits. Vertex wins every disagreement, and the
+  changelog names it. A capability the Agent Platform page omits stays out of the record,
+  however loudly the direct-API docs claim it.
+- **Dash-priced cell** — the Vertex pricing table prints `-` where Google publishes no
+  rate. Leave the field `null` and name it under Follow-up work.
 - **Out-of-mode records** — a record whose `mode` falls outside the `CLAUDE.md` list
   (today: `rerank` in `deepinfra.json`). Leave the record as is and name it under
   Follow-up work until `CLAUDE.md` decides.
@@ -215,7 +257,8 @@ Body sections, in order: **New Models**, **Price Changes**, **Deprecated Models*
 Notes sections, under `## Notes:` as `###` headings: **Models that are added but not
 enabled**, **Corrections to earlier updates**, **Follow-up work**, **Schema and catalog
 changes**, **Models that stay out of the catalog**, **Prices that did not change**,
-**Sources and coverage**.
+**Sources and coverage**. A mirror catalog adds two more: **Prices that differ from the
+direct-API catalogs** and **Capabilities that differ from the direct-API catalogs**.
 
 Field names belong in Notes. `deprecated: true`, `high_context`, `isEnabled`, and the rest
 of the schema vocabulary go under **Schema and catalog changes**, never in the body.

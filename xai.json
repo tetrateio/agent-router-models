@@ -405,10 +405,10 @@
       "metadata": {
         "regions": ["us-east-1", "us-west-2"],
         "source_url": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
-        "description": "Grok Imagine Image 2.0 text-to-image generation and editing model, recommended by xAI for images. Accepts text and image input and outputs images at 1k or 2k resolution. Only model that accepts the quality parameter (low or medium; default medium).",
+        "description": "Grok Imagine Image 2.0 text-to-image generation and editing model, recommended by xAI for images. Accepts text and image input and outputs images at 1k or 2k resolution. Only model that accepts the quality parameter (low, medium, or auto; default auto, which serves low for generation and medium for editing). Image editing accepts up to 5 source images.",
         "display_name": "Grok Imagine Image 2.0",
         "options": {
-          "quality": ["low", "medium"],
+          "quality": ["low", "medium", "auto"],
           "resolution": ["1k", "2k"],
           "aspect_ratio": [
             "1:1",
@@ -424,6 +424,8 @@
             "9:19.5",
             "20:9",
             "9:20",
+            "21:9",
+            "5:2",
             "auto"
           ]
         }
@@ -467,6 +469,10 @@
         "source_url": "https://docs.x.ai/developers/models/grok-imagine-image-quality",
         "description": "Premium quality tier of the Grok Imagine text-to-image generation model. Accepts text and image input and outputs images at 1k or 2k resolution for $0.05 per image.",
         "display_name": "Grok Imagine Image Quality",
+        "deprecated": true,
+        "deprecated_date": "2026-09-02",
+        "retirement_date": "2026-11-02",
+        "deprecated_reason": "Retires on November 2, 2026. After that date requests are served by grok-imagine-image-2.0 with quality set to low at that model's per-image price.",
         "options": {
           "resolution": ["1k", "2k"],
           "aspect_ratio": [

@@ -1,0 +1,2505 @@
+{
+  "version": "1.0",
+  "models": [
+    {
+      "model": "gemini-3.8-flash",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7500000000",
+      "outputTokensPricePerMillion": "3.7500000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.0750000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "non_global_endpoint_multiplier": 1.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.8-flash"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash",
+        "description": "Our most intelligent Flash model, engineered for long-horizon software engineering, autonomous agents, and complex enterprise workflows.",
+        "display_name": "Gemini 3.8 Flash",
+        "release_date": "2026-09-02",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7500000000",
+      "outputTokensPricePerMillion": "3.7500000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.0750000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "non_global_endpoint_multiplier": 1.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.7-flash"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-7-flash",
+        "description": "Our previous-generation Flash model for complex coding, agentic workflows, and reliable multi-step execution.",
+        "display_name": "Gemini 3.7 Flash",
+        "release_date": "2026-08-13",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7500000000",
+      "outputTokensPricePerMillion": "3.7500000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.0750000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1.0,
+        "non_global_endpoint_multiplier": 1.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.6-flash"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-6-flash",
+        "description": "Gemini 3.6 Flash provides sustained frontier-level intelligence optimized for real-world tasks at a higher speed and lower cost. It excels at code generation, agentic execution, and spatial reasoning.",
+        "display_name": "Gemini 3.6 Flash",
+        "release_date": "2026-07-21"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.5000000000",
+      "outputTokensPricePerMillion": "9.0000000000",
+      "cachedTokensPricePerMillion": "0.1500000000",
+      "cachingTokensPricePerMillion": "0.1500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1.0,
+        "non_global_endpoint_multiplier": 1.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.5-flash"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-5-flash",
+        "description": "Our legacy Flash model, providing baseline speed and foundational performance for routine, high-throughput workloads.",
+        "display_name": "Gemini 3.5 Flash",
+        "release_date": "2026-05-19"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.0300000000",
+      "cachingTokensPricePerMillion": "0.0300000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1.0,
+        "non_global_endpoint_multiplier": 1.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.5-flash-lite"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-5-flash-lite",
+        "description": "Google's fastest, most cost-effective Gemini 3.5 model for high-throughput execution.",
+        "display_name": "Gemini 3.5 Flash-Lite",
+        "release_date": "2026-07-21"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2500000000",
+      "outputTokensPricePerMillion": "1.5000000000",
+      "cachedTokensPricePerMillion": "0.0250000000",
+      "cachingTokensPricePerMillion": "0.0250000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1.0,
+        "input_tokens_price_per_million_audio": 0.5,
+        "cached_tokens_price_per_million_audio": 0.05,
+        "caching_tokens_price_per_million_audio": 0.05,
+        "non_global_endpoint_multiplier": 1.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-flash-lite"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-lite",
+        "description": "Frontier-class performance rivaling larger models at a fraction of the cost.",
+        "display_name": "Gemini 3.1 Flash-Lite",
+        "release_date": "2026-05-07",
+        "deprecated": true,
+        "retirement_date": "2027-05-07",
+        "deprecated_reason": "Scheduled for shutdown; use gemini-3.5-flash-lite."
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "0.2000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 4.5,
+        "input_tokens_price_per_million_high_context": 4,
+        "cached_tokens_price_per_million_high_context": 0.4,
+        "output_tokens_price_per_million_high_context": 18,
+        "caching_tokens_price_per_million_high_context": 0.4
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-pro-preview"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-pro",
+        "description": "Gemini 3.1 Pro Preview provides improved thinking, token efficiency, grounding, and reliable multi-step tool use for software engineering and agentic workflows.",
+        "display_name": "Gemini 3.1 Pro Preview",
+        "release_date": "2026-02-19",
+        "preview": true
+      },
+      "limits": {
+        "high_context": 200000,
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview-customtools",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "0.2000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 4.5,
+        "input_tokens_price_per_million_high_context": 4,
+        "cached_tokens_price_per_million_high_context": 0.4,
+        "output_tokens_price_per_million_high_context": 18,
+        "caching_tokens_price_per_million_high_context": 0.4
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-pro-preview-customtools"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-pro",
+        "description": "Gemini 3.1 Pro Preview endpoint optimized to prioritize custom tools in agentic workflows that mix custom tools and bash.",
+        "display_name": "Gemini 3.1 Pro Preview Custom Tools",
+        "release_date": "2026-02-19",
+        "preview": true
+      },
+      "limits": {
+        "high_context": 200000,
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": "0.1250000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 35,
+        "grounding_google_maps_per_thousand": 25,
+        "web_grounding_enterprise_per_thousand": 45,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 4.5,
+        "input_tokens_price_per_million_high_context": 2.5,
+        "cached_tokens_price_per_million_high_context": 0.25,
+        "output_tokens_price_per_million_high_context": 15,
+        "caching_tokens_price_per_million_high_context": 0.25
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-pro"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/2-5-pro",
+        "description": "Google's advanced model for complex tasks, deep reasoning, and coding.",
+        "display_name": "Gemini 2.5 Pro",
+        "release_date": "2025-06-17",
+        "knowledge_cutoff": "2025-01-01"
+      },
+      "limits": {
+        "high_context": 200000,
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.0300000000",
+      "cachingTokensPricePerMillion": "0.0300000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 35,
+        "grounding_google_maps_per_thousand": 25,
+        "web_grounding_enterprise_per_thousand": 45,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1.0,
+        "input_tokens_price_per_million_audio": 1.0,
+        "cached_tokens_price_per_million_audio": 0.1,
+        "caching_tokens_price_per_million_audio": 0.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-flash"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/2-5-flash",
+        "description": "A price-performance model for low-latency, high-volume tasks that require reasoning.",
+        "display_name": "Gemini 2.5 Flash",
+        "release_date": "2025-06-17",
+        "knowledge_cutoff": "2025-01-01"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-2.5-flash-lite",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": "0.4000000000",
+      "cachedTokensPricePerMillion": "0.0100000000",
+      "cachingTokensPricePerMillion": "0.0100000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 35,
+        "grounding_google_maps_per_thousand": 25,
+        "web_grounding_enterprise_per_thousand": 45,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1.0,
+        "input_tokens_price_per_million_audio": 0.3,
+        "cached_tokens_price_per_million_audio": 0.03,
+        "caching_tokens_price_per_million_audio": 0.03
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-flash-lite"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/2-5-flash-lite",
+        "description": "The fastest and most budget-friendly multimodal model in the Gemini 2.5 family.",
+        "display_name": "Gemini 2.5 Flash-Lite",
+        "release_date": "2025-07-22",
+        "knowledge_cutoff": "2025-01-01"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "gemini-3-pro-image",
+      "provider": "vertex",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "12.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 120
+        },
+        "image_generation": {
+          "standard": {
+            "1K": 0.134,
+            "2K": 0.134,
+            "4K": 0.24
+          }
+        },
+        "input_tokens_price_per_million_high_context": 4,
+        "cached_tokens_price_per_million_high_context": 0.4,
+        "output_tokens_price_per_million_high_context": 18
+      },
+      "contextWindow": 65536,
+      "capabilities": [
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3-pro-image"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-pro-image",
+        "description": "State-of-the-art image generation and editing for highly contextual native image creation.",
+        "display_name": "Gemini 3 Pro Image (Nano Banana Pro)",
+        "release_date": "2026-05-28"
+      },
+      "limits": {
+        "high_context": 200000,
+        "max_output_tokens": 32768
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-image",
+      "provider": "vertex",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.5000000000",
+      "outputTokensPricePerMillion": "3.0000000000",
+      "cachedTokensPricePerMillion": "0.0500000000",
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 60
+        },
+        "image_generation": {
+          "standard": {
+            "0.5K": 0.045,
+            "1K": 0.067,
+            "2K": 0.101,
+            "4K": 0.15
+          }
+        },
+        "non_global_endpoint_multiplier": 1.1
+      },
+      "contextWindow": 131072,
+      "capabilities": [
+        "image_generation",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-flash-image"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-image",
+        "description": "Powerful, high-efficiency image generation and editing optimized for speed and high-volume use cases.",
+        "display_name": "Gemini 3.1 Flash Image (Nano Banana 2)",
+        "release_date": "2026-05-28"
+      },
+      "limits": {
+        "max_output_tokens": 32768
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-lite-image",
+      "provider": "vertex",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2500000000",
+      "outputTokensPricePerMillion": "1.5000000000",
+      "cachedTokensPricePerMillion": "0.0250000000",
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 30
+        },
+        "image_generation": {
+          "standard": {
+            "1K": 0.034
+          }
+        }
+      },
+      "contextWindow": 65536,
+      "capabilities": [
+        "image_generation",
+        "prompt_caching",
+        "reasoning",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.1-flash-lite-image"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-lite-image",
+        "description": "Ultra-low-latency, cost-effective image generation and editing designed for high-volume interactive use cases.",
+        "display_name": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite)",
+        "release_date": "2026-06-30",
+        "reasoning_efforts": [
+          "minimal",
+          "high"
+        ]
+      },
+      "limits": {
+        "max_output_tokens": 4096
+      }
+    },
+    {
+      "model": "gemini-2.5-flash-image",
+      "provider": "vertex",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 30
+        },
+        "image_generation": {
+          "standard": {
+            "default": 0.039
+          }
+        }
+      },
+      "contextWindow": 65536,
+      "capabilities": [
+        "image_generation",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-2.5-flash-image"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/2-5-flash-image",
+        "description": "Native image generation and editing designed for fast, creative workflows.",
+        "display_name": "Gemini 2.5 Flash Image (Nano Banana)",
+        "release_date": "2025-10-02",
+        "knowledge_cutoff": "2025-06-01",
+        "deprecated": true,
+        "retirement_date": "2026-10-02",
+        "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement."
+      },
+      "limits": {
+        "max_output_tokens": 32768
+      }
+    },
+    {
+      "model": "gemini-embedding-2",
+      "provider": "vertex",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "input_audio_per_million_tokens": 6.5,
+        "input_image_per_million_tokens": 0.45,
+        "input_video_per_million_tokens": 12
+      },
+      "contextWindow": 8192,
+      "capabilities": [
+        "embedding_image_input",
+        "pdf_support",
+        "speech_recognition",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-embedding-2",
+          "gemini-embedding-2-preview"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/embedding-2",
+        "description": "Multimodal Gemini embedding model for retrieval and analytics tasks.",
+        "display_name": "Gemini Embedding 2",
+        "release_date": "2026-04-22",
+        "options": {
+          "output_dimensionality": [
+            "128-3072"
+          ]
+        }
+      }
+    },
+    {
+      "model": "gemini-embedding-001",
+      "provider": "vertex",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.8
+      },
+      "contextWindow": 2048,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-embedding-001"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-text-embeddings",
+        "description": "State-of-the-art text embedding model across English, multilingual, and code tasks. It unifies the earlier text-embedding-005 and text-multilingual-embedding-002 models.",
+        "display_name": "Gemini Embedding 001",
+        "options": {
+          "output_dimensionality": [
+            "128-3072"
+          ]
+        }
+      }
+    },
+    {
+      "model": "text-embedding-005",
+      "provider": "vertex",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0250000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.8
+      },
+      "contextWindow": 2048,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "text-embedding-005"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-text-embeddings",
+        "description": "Text embedding model specialized in English and code tasks.",
+        "display_name": "Text Embedding 005",
+        "options": {
+          "output_dimensionality": [
+            "1-768"
+          ]
+        }
+      }
+    },
+    {
+      "model": "text-multilingual-embedding-002",
+      "provider": "vertex",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0250000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.8
+      },
+      "contextWindow": 2048,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "text-multilingual-embedding-002"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-text-embeddings",
+        "description": "Text embedding model specialized in multilingual tasks.",
+        "display_name": "Text Multilingual Embedding 002",
+        "options": {
+          "output_dimensionality": [
+            "1-768"
+          ]
+        }
+      }
+    },
+    {
+      "model": "grok-4.6",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "6.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 524288,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "grok-4.6"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/grok/grok-4-6",
+        "description": "xAI's most capable model, built for coding, agentic tasks, and knowledge work.",
+        "display_name": "Grok 4.6",
+        "release_date": "2026-08-21",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "preview",
+        "preview": true
+      },
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 4,
+        "output_tokens_price_per_million_high_context": 12,
+        "cached_tokens_price_per_million_high_context": 1
+      },
+      "limits": {
+        "high_context": 200000
+      }
+    },
+    {
+      "model": "grok-4.3",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "grok-4.3"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/grok/grok-4-3",
+        "description": "xAI's high-performance model.",
+        "display_name": "Grok 4.3",
+        "release_date": "2026-05-27",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "preview",
+        "preview": true
+      },
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 2.5,
+        "output_tokens_price_per_million_high_context": 5,
+        "cached_tokens_price_per_million_high_context": 0.4
+      },
+      "limits": {
+        "high_context": 200000
+      }
+    },
+    {
+      "model": "grok-4.20-reasoning",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 2000000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "grok-4.20-reasoning"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/grok/grok-4-20",
+        "description": "A high-performance model from xAI with an industry-leading low hallucination rate. It excels at document understanding and long-horizon agentic tool calling.",
+        "display_name": "Grok 4.20 (Reasoning)",
+        "release_date": "2026-04-14",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga"
+      },
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 2.5,
+        "output_tokens_price_per_million_high_context": 5,
+        "cached_tokens_price_per_million_high_context": 0.4
+      },
+      "limits": {
+        "high_context": 200000
+      }
+    },
+    {
+      "model": "grok-4.20-non-reasoning",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 2000000,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "grok-4.20-non-reasoning"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/grok/grok-4-20",
+        "description": "A high-performance non-thinking model from xAI with an industry-leading low hallucination rate. It excels in latency-sensitive uses such as customer support and categorization.",
+        "display_name": "Grok 4.20 (Non-reasoning)",
+        "release_date": "2026-04-07",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga"
+      },
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 2.5,
+        "output_tokens_price_per_million_high_context": 5,
+        "cached_tokens_price_per_million_high_context": 0.4
+      },
+      "limits": {
+        "high_context": 200000
+      }
+    },
+    {
+      "model": "grok-4.1-fast-reasoning",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "0.2000000000",
+      "outputTokensPricePerMillion": "0.5000000000",
+      "cachedTokensPricePerMillion": "0.0500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "grok-4.1-fast-reasoning"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/grok/grok-4-1-fast",
+        "description": "xAI's most cost-effective model, with strong tool calling and efficient knowledge base synthesis.",
+        "display_name": "Grok 4.1 Fast (Reasoning)",
+        "release_date": "2026-04-07",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "deprecated",
+        "deprecated": true,
+        "retirement_date": "2026-08-20",
+        "deprecated_reason": "The Grok 4.1 family was shut down on Agent Platform on August 20, 2026. Migrate to Grok 4.3 or Grok 4.6."
+      }
+    },
+    {
+      "model": "grok-4.1-fast-non-reasoning",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "0.2000000000",
+      "outputTokensPricePerMillion": "0.5000000000",
+      "cachedTokensPricePerMillion": "0.0500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "grok-4.1-fast-non-reasoning"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/grok/grok-4-1-fast",
+        "description": "xAI's most cost-effective non-thinking model, optimized for low latency on high-volume tasks.",
+        "display_name": "Grok 4.1 Fast (Non-reasoning)",
+        "release_date": "2026-04-07",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "deprecated",
+        "deprecated": true,
+        "retirement_date": "2026-08-20",
+        "deprecated_reason": "The Grok 4.1 family was shut down on Agent Platform on August 20, 2026. Migrate to Grok 4.3 or Grok 4.6."
+      }
+    },
+    {
+      "model": "deepseek-v3.1-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.6000000000",
+      "outputTokensPricePerMillion": "1.7000000000",
+      "cachedTokensPricePerMillion": "0.0600000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 163840,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "deepseek-v3.1-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/deepseek/deepseek-v31",
+        "description": "DeepSeek-V3.1 text model served as a managed API on Agent Platform.",
+        "display_name": "DeepSeek-V3.1",
+        "release_date": "2025-08-28",
+        "regions": [
+          "us-central1"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 32768
+      }
+    },
+    {
+      "model": "deepseek-v3.2-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.5600000000",
+      "outputTokensPricePerMillion": "1.6800000000",
+      "cachedTokensPricePerMillion": "0.0560000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 163840,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "deepseek-v3.2-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/deepseek/deepseek-v32",
+        "description": "DeepSeek-V3.2 text model served as a managed API on Agent Platform.",
+        "display_name": "DeepSeek-V3.2",
+        "release_date": "2025-12-10",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "deepseek-r1-0528-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.3500000000",
+      "outputTokensPricePerMillion": "5.4000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 163840,
+      "capabilities": [
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "deepseek-r1-0528-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/deepseek/r1-0528",
+        "description": "DeepSeek-R1 (0528) text model served as a managed API on Agent Platform.",
+        "display_name": "DeepSeek-R1 (0528)",
+        "release_date": "2025-07-08",
+        "regions": [
+          "us-central1"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 32768
+      }
+    },
+    {
+      "model": "deepseek-ocr-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "1.2000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 8192,
+      "capabilities": [
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "deepseek-ocr-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/deepseek/deepseek-ocr",
+        "description": "DeepSeek-OCR reads text and images and returns text.",
+        "display_name": "DeepSeek-OCR",
+        "release_date": "2025-10-23",
+        "regions": [
+          "us-central1"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "limits": {
+        "max_output_tokens": 8192
+      }
+    },
+    {
+      "model": "kimi-k2-thinking-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.6000000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.0600000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "kimi-k2-thinking-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/kimi/kimi-k2-thinking",
+        "description": "Moonshot AI's Kimi K2 Thinking reasoning model served as a managed API on Agent Platform.",
+        "display_name": "Kimi K2 Thinking",
+        "release_date": "2025-11-13",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "limits": {
+        "max_output_tokens": 262144
+      }
+    },
+    {
+      "model": "minimax-m2-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "1.2000000000",
+      "cachedTokensPricePerMillion": "0.0300000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 196608,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "minimax-m2-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/minimax/minimax-m2",
+        "description": "MiniMax's M2 text model served as a managed API on Agent Platform.",
+        "display_name": "MiniMax-M2",
+        "release_date": "2025-11-04",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "limits": {
+        "max_output_tokens": 196608
+      }
+    },
+    {
+      "model": "gpt-oss-120b-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0900000000",
+      "outputTokensPricePerMillion": "0.3600000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 131072,
+      "capabilities": [
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gpt-oss-120b-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/openai/gpt-oss-120b",
+        "description": "OpenAI's 120B open-weight model served as a managed API on Agent Platform.",
+        "display_name": "gpt-oss-120b",
+        "release_date": "2025-08-13",
+        "regions": [
+          "global",
+          "us-central1"
+        ],
+        "launch_stage": "ga"
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 131072
+      }
+    },
+    {
+      "model": "gpt-oss-20b-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0700000000",
+      "outputTokensPricePerMillion": "0.2500000000",
+      "cachedTokensPricePerMillion": "0.0070000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 131072,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gpt-oss-20b-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/openai/gpt-oss-20b",
+        "description": "OpenAI's 20B open-weight model served as a managed API on Agent Platform.",
+        "display_name": "gpt-oss-20b",
+        "release_date": "2025-08-13",
+        "regions": [
+          "us-central1"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 32768
+      }
+    },
+    {
+      "model": "qwen3-235b-a22b-instruct-2507-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2200000000",
+      "outputTokensPricePerMillion": "0.8800000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "qwen3-235b-a22b-instruct-2507-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/qwen/qwen3-235b",
+        "description": "Alibaba's Qwen3 235B instruct model served as a managed API on Agent Platform.",
+        "display_name": "Qwen3-235B-A22B-Instruct-2507",
+        "release_date": "2025-08-13",
+        "regions": [
+          "global",
+          "us-south1"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 16384
+      }
+    },
+    {
+      "model": "qwen3-coder-480b-a35b-instruct-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2200000000",
+      "outputTokensPricePerMillion": "1.8000000000",
+      "cachedTokensPricePerMillion": "0.0220000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "qwen3-coder-480b-a35b-instruct-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/qwen/qwen3-coder",
+        "description": "Alibaba's Qwen3 Coder model served as a managed API on Agent Platform.",
+        "display_name": "Qwen3-Coder-480B-A35B-Instruct",
+        "release_date": "2025-08-13",
+        "regions": [
+          "global",
+          "us-south1"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "qwen3-next-80b-a3b-instruct-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "1.2000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "qwen3-next-80b-a3b-instruct-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/qwen/qwen3-next-instruct",
+        "description": "Alibaba's Qwen3-Next 80B instruct model served as a managed API on Agent Platform.",
+        "display_name": "Qwen3-Next-80B Instruct",
+        "release_date": "2025-09-15",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "limits": {
+        "max_output_tokens": 262144
+      }
+    },
+    {
+      "model": "qwen3-next-80b-a3b-thinking-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "1.2000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "qwen3-next-80b-a3b-thinking-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/qwen/qwen3-next-thinking",
+        "description": "Alibaba's Qwen3-Next 80B thinking model served as a managed API on Agent Platform.",
+        "display_name": "Qwen3-Next-80B Thinking",
+        "release_date": "2025-09-15",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "limits": {
+        "max_output_tokens": 262144
+      }
+    },
+    {
+      "model": "glm-4.7-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.6000000000",
+      "outputTokensPricePerMillion": "2.2000000000",
+      "cachedTokensPricePerMillion": "0.0600000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "glm-4.7-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/zaiorg/glm-47",
+        "description": "Z.ai's GLM-4.7 text model served as a managed API on Agent Platform.",
+        "display_name": "GLM-4.7",
+        "release_date": "2026-01-06",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      }
+    },
+    {
+      "model": "glm-5-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "3.2000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 200000,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "glm-5-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/zaiorg/glm-5",
+        "description": "Z.ai's GLM-5 text model served as a managed API on Agent Platform.",
+        "display_name": "GLM-5",
+        "release_date": "2026-02-10",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      }
+    },
+    {
+      "model": "glm-5.2-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.4000000000",
+      "outputTokensPricePerMillion": "4.4000000000",
+      "cachedTokensPricePerMillion": "0.1400000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "glm-5.2-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/zaiorg/glm-52",
+        "description": "Z.ai's GLM-5.2 reasoning model served as a managed API on Agent Platform.",
+        "display_name": "GLM-5.2",
+        "release_date": "2026-08-24",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "preview",
+        "preview": true
+      },
+      "limits": {
+        "max_output_tokens": 64000
+      }
+    },
+    {
+      "model": "gemma-4-26b-a4b-it-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "0.6000000000",
+      "cachedTokensPricePerMillion": "0.0150000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemma-4-26b-a4b-it-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/google/gemma-4-26b-a4b-it",
+        "description": "Google's Gemma 4 26B instruction-tuned open model served as a managed API on Agent Platform.",
+        "display_name": "Gemma 4 26B A4B IT",
+        "release_date": "2026-04-03",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "experimental"
+      },
+      "limits": {
+        "max_output_tokens": 128000
+      }
+    },
+    {
+      "model": "llama-4-maverick-17b-128e-instruct-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3500000000",
+      "outputTokensPricePerMillion": "1.1500000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 524288,
+      "capabilities": [
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "llama-4-maverick-17b-128e-instruct-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/llama/llama4-maverick",
+        "description": "Meta's Llama 4 Maverick model served as a managed API on Agent Platform.",
+        "display_name": "Llama 4 Maverick 17B-128E Instruct",
+        "release_date": "2025-04-29",
+        "regions": [
+          "us-east5"
+        ],
+        "launch_stage": "ga"
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 8192
+      }
+    },
+    {
+      "model": "llama-4-scout-17b-16e-instruct-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2500000000",
+      "outputTokensPricePerMillion": "0.7000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1310720,
+      "capabilities": [
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "llama-4-scout-17b-16e-instruct-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/llama/llama4-scout",
+        "description": "Meta's Llama 4 Scout model served as a managed API on Agent Platform.",
+        "display_name": "Llama 4 Scout 17B-16E Instruct",
+        "release_date": "2025-04-29",
+        "regions": [
+          "us-east5"
+        ],
+        "launch_stage": "ga"
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 8192
+      }
+    },
+    {
+      "model": "llama-3.3-70b-instruct-maas",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7200000000",
+      "outputTokensPricePerMillion": "0.7200000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "llama-3.3-70b-instruct-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/llama/llama3-3",
+        "description": "Meta's Llama 3.3 70B instruct model served as a managed API on Agent Platform.",
+        "display_name": "Llama 3.3 70B Instruct",
+        "release_date": "2025-04-29",
+        "regions": [
+          "us-central1"
+        ],
+        "launch_stage": "ga",
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      },
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "limits": {
+        "max_output_tokens": 8192
+      }
+    },
+    {
+      "model": "mistral-medium-3",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.4000000000",
+      "outputTokensPricePerMillion": "2.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "mistral-medium-3"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/mistral/mistral-medium-3",
+        "description": "A versatile model for programming, mathematical reasoning, long document understanding, summarization, and dialogue.",
+        "display_name": "Mistral Medium 3",
+        "release_date": "2025-10-07",
+        "regions": [
+          "us-central1",
+          "europe-west4"
+        ],
+        "launch_stage": "ga"
+      }
+    },
+    {
+      "model": "mistral-small-2503",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": "0.3000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "pdf_support"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "mistral-small-2503"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/mistral/mistral-small-3-1",
+        "description": "A version of Mistral's Small model with multimodal capabilities and extended context length.",
+        "display_name": "Mistral Small 3.1 (25.03)",
+        "release_date": "2025-03-18",
+        "regions": [
+          "us-central1",
+          "europe-west4"
+        ],
+        "launch_stage": "ga"
+      }
+    },
+    {
+      "model": "codestral-2",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.3000000000",
+      "outputTokensPricePerMillion": "0.9000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "codestral-2"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/mistral/codestral-2",
+        "description": "Mistral's code generation model, built for high-precision fill-in-the-middle completion.",
+        "display_name": "Codestral 2",
+        "release_date": "2025-10-16",
+        "regions": [
+          "us-central1",
+          "europe-west4"
+        ],
+        "launch_stage": "ga"
+      }
+    },
+    {
+      "model": "multilingual-e5-large-instruct-maas",
+      "provider": "vertex",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0250000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "contextWindow": 512,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "multilingual-e5-large-instruct-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/e5/multilingual-e5-large",
+        "description": "Multilingual text embedding model with up to 1,024 output dimensions.",
+        "display_name": "Multilingual E5 Large Instruct",
+        "release_date": "2025-09-19",
+        "regions": [
+          "us-central1",
+          "europe-west4"
+        ],
+        "launch_stage": "ga",
+        "options": {
+          "output_dimensionality": [
+            "1-1024"
+          ]
+        },
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      }
+    },
+    {
+      "model": "multilingual-e5-small-maas",
+      "provider": "vertex",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0150000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5
+      },
+      "contextWindow": 512,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "multilingual-e5-small-maas"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/e5/multilingual-e5-small",
+        "description": "Multilingual text embedding model with up to 384 output dimensions.",
+        "display_name": "Multilingual E5 Small",
+        "release_date": "2025-09-19",
+        "regions": [
+          "us-central1",
+          "europe-west4"
+        ],
+        "launch_stage": "ga",
+        "options": {
+          "output_dimensionality": [
+            "1-384"
+          ]
+        },
+        "deprecated": true,
+        "deprecated_date": "2026-07-21",
+        "retirement_date": "2026-10-21",
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+      }
+    }
+  ]
+}

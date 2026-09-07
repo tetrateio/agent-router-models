@@ -1,0 +1,858 @@
+{
+  "version": "1.0",
+  "models": [
+    {
+      "model": "claude-fable-5-1",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "10.0000000000",
+      "outputTokensPricePerMillion": "50.0000000000",
+      "cachedTokensPricePerMillion": "0.2500000000",
+      "cachingTokensPricePerMillion": "12.5000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 12.5,
+        "caching_1h_per_million": 20
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-fable-5-1"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/fable-5-1",
+        "description": "Optimized for autonomous knowledge work and coding, handling long-running, complex, and asynchronous tasks.",
+        "display_name": "Claude Fable 5.1 on Google Cloud",
+        "release_date": "2026-09-01",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "retirement_date": "2027-03-01"
+      }
+    },
+    {
+      "model": "claude-opus-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "25.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": "6.2500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 6.25,
+        "caching_1h_per_million": 10
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 2000,
+        "tpm": 20000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-opus-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-5",
+        "description": "Anthropic's most advanced Opus model, powering long-running agents while delivering improvements in coding and professional work.",
+        "display_name": "Claude Opus 5 on Google Cloud",
+        "release_date": "2026-07-24",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "retirement_date": "2027-01-24"
+      }
+    },
+    {
+      "model": "claude-sonnet-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "2.5000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 2.5,
+        "caching_1h_per_million": 4.0
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 2500,
+        "tpm": 25000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-sonnet-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-5",
+        "description": "The most capable Sonnet model yet, built for coding, agents, and professional work at scale.",
+        "display_name": "Claude Sonnet 5 on Google Cloud",
+        "release_date": "2026-06-30",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "retirement_date": "2026-12-24"
+      }
+    },
+    {
+      "model": "claude-fable-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "10.0000000000",
+      "outputTokensPricePerMillion": "50.0000000000",
+      "cachedTokensPricePerMillion": "1.0000000000",
+      "cachingTokensPricePerMillion": "12.5000000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 12.5,
+        "caching_1h_per_million": 20
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 2000,
+        "tpm": 20000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-fable-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/fable-5",
+        "description": "Optimized for autonomous knowledge work and coding, handling long-running, complex, and asynchronous tasks.",
+        "display_name": "Claude Fable 5 on Google Cloud",
+        "release_date": "2026-06-09",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "retirement_date": "2027-06-08"
+      }
+    },
+    {
+      "model": "claude-opus-4-8",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "25.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": "6.2500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 6.25,
+        "caching_1h_per_million": 10
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 2000,
+        "tpm": 20000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-opus-4-8"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4-8",
+        "description": "A high-intelligence Opus model built for coding and agents, featuring deep reasoning for enterprise workflows.",
+        "display_name": "Claude Opus 4.8 on Google Cloud",
+        "release_date": "2026-05-28",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "retirement_date": "2027-05-28"
+      }
+    },
+    {
+      "model": "claude-opus-4-7",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "25.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": "6.2500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 6.25,
+        "caching_1h_per_million": 10
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 800,
+        "tpm": 8000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-opus-4-7"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4-7",
+        "description": "Optimized for coding, enterprise agents, and professional work.",
+        "display_name": "Claude Opus 4.7 on Google Cloud",
+        "release_date": "2026-04-15",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "retirement_date": "2027-04-16"
+      }
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "3.0000000000",
+      "outputTokensPricePerMillion": "15.0000000000",
+      "cachedTokensPricePerMillion": "0.3000000000",
+      "cachingTokensPricePerMillion": "3.7500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 3.75,
+        "caching_1h_per_million": 6.0
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 1500,
+        "tpm": 1500000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-sonnet-4-6"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-4-6",
+        "description": "Frontier intelligence at scale, built for coding, agents, and enterprise workflows.",
+        "display_name": "Claude Sonnet 4.6 on Google Cloud",
+        "release_date": "2026-02-17",
+        "regions": [
+          "global",
+          "us",
+          "eu",
+          "us-east5",
+          "europe-west1",
+          "asia-southeast1"
+        ]
+      }
+    },
+    {
+      "model": "claude-opus-4-6",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "25.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": "6.2500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 6.25,
+        "caching_1h_per_million": 10
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 400,
+        "tpm": 4000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-opus-4-6"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4-6",
+        "description": "Optimized for coding, enterprise agents, and professional work.",
+        "display_name": "Claude Opus 4.6 on Google Cloud",
+        "release_date": "2026-02-05",
+        "regions": [
+          "global",
+          "us",
+          "eu",
+          "us-east5",
+          "europe-west1",
+          "asia-southeast1"
+        ],
+        "retirement_date": "2027-02-05"
+      }
+    },
+    {
+      "model": "claude-opus-4-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": "25.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": "6.2500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 6.25,
+        "caching_1h_per_million": 10
+      },
+      "contextWindow": 200000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 64000,
+        "rpm": 400,
+        "tpm": 4000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-opus-4-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4-5",
+        "description": "Optimized for coding, agents, computer use, and enterprise workflows.",
+        "display_name": "Claude Opus 4.5 on Google Cloud",
+        "release_date": "2025-11-24",
+        "regions": [
+          "global",
+          "us",
+          "eu",
+          "us-east5",
+          "europe-west1",
+          "asia-southeast1"
+        ],
+        "retirement_date": "2026-11-24"
+      }
+    },
+    {
+      "model": "claude-sonnet-4-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "3.0000000000",
+      "outputTokensPricePerMillion": "15.0000000000",
+      "cachedTokensPricePerMillion": "0.3000000000",
+      "cachingTokensPricePerMillion": "3.7500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 3.75,
+        "caching_1h_per_million": 6.0,
+        "input_tokens_price_per_million_high_context": 6,
+        "output_tokens_price_per_million_high_context": 22.5,
+        "cached_tokens_price_per_million_high_context": 0.6,
+        "caching_tokens_price_per_million_high_context": 7.5,
+        "caching_1h_per_million_high_context": 12
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 64000,
+        "high_context": 200000,
+        "rpm": 1500,
+        "tpm": 1500000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-sonnet-4-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-4-5",
+        "description": "Anthropic's Sonnet-class model for real-world agents, with leading coding, computer use, cybersecurity, and office-file capabilities.",
+        "display_name": "Claude Sonnet 4.5 on Google Cloud",
+        "release_date": "2025-09-29",
+        "regions": [
+          "global",
+          "us",
+          "eu",
+          "us-east5",
+          "europe-west1",
+          "asia-southeast1"
+        ],
+        "knowledge_cutoff": "2025-07-01",
+        "retirement_date": "2026-09-29"
+      }
+    },
+    {
+      "model": "claude-haiku-4-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "5.0000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": "1.2500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 1.25,
+        "caching_1h_per_million": 2.0
+      },
+      "contextWindow": 200000,
+      "capabilities": [
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 64000,
+        "rpm": 2500,
+        "tpm": 2500000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-haiku-4-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/haiku-4-5",
+        "description": "Near-frontier performance with the speed and cost to power free products and high-volume user experiences.",
+        "display_name": "Claude Haiku 4.5 on Google Cloud",
+        "release_date": "2025-10-15",
+        "regions": [
+          "global",
+          "us-east5",
+          "europe-west1"
+        ],
+        "retirement_date": "2026-10-15"
+      }
+    },
+    {
+      "model": "claude-opus-4-1",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "15.0000000000",
+      "outputTokensPricePerMillion": "75.0000000000",
+      "cachedTokensPricePerMillion": "1.5000000000",
+      "cachingTokensPricePerMillion": "18.7500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 18.75,
+        "caching_1h_per_million": 30
+      },
+      "contextWindow": 200000,
+      "capabilities": [
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 32000,
+        "rpm": 25,
+        "tpm": 60000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-opus-4-1"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4-1",
+        "description": "Anthropic's Opus-class model and an industry leader for coding and agent capabilities, especially agentic search.",
+        "display_name": "Claude Opus 4.1 on Google Cloud",
+        "release_date": "2025-08-05",
+        "regions": [
+          "global",
+          "us-east5"
+        ],
+        "retirement_date": "2026-08-05",
+        "deprecated": true,
+        "deprecated_reason": "Superseded by newer Claude models on Agent Platform."
+      }
+    },
+    {
+      "model": "claude-opus-4",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10
+      },
+      "contextWindow": 200000,
+      "capabilities": [
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 32000,
+        "rpm": 25,
+        "tpm": 60000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-opus-4"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4",
+        "description": "A state-of-the-art model for coding and agent capabilities, especially agentic search.",
+        "display_name": "Claude Opus 4 on Google Cloud",
+        "release_date": "2025-05-22",
+        "regions": [
+          "global",
+          "us-east5"
+        ],
+        "knowledge_cutoff": "2024-11-01",
+        "retirement_date": "2026-05-14",
+        "deprecated": true,
+        "deprecated_reason": "Superseded; Google Cloud no longer publishes a price for this model."
+      }
+    },
+    {
+      "model": "claude-sonnet-4",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "web_search_per_thousand_calls": 10
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 64000,
+        "rpm": 35,
+        "tpm": 276000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-sonnet-4"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-4",
+        "description": "Balances performance for coding with the speed and cost for high-volume use cases.",
+        "display_name": "Claude Sonnet 4 on Google Cloud",
+        "release_date": "2025-05-22",
+        "regions": [
+          "global",
+          "us-east5",
+          "europe-west1"
+        ],
+        "knowledge_cutoff": "2025-03-01",
+        "retirement_date": "2026-05-14",
+        "deprecated": true,
+        "deprecated_reason": "Superseded; Google Cloud no longer publishes a price for this model."
+      }
+    }
+  ]
+}
