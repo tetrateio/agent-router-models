@@ -12,6 +12,8 @@ This repository holds the provider data and the AI model data for the Tetrate Ag
 | `xai.json` | xAI |
 | `groq.json` | Groq |
 | `deepinfra.json` | DeepInfra |
+| `vertex.json` | Google Vertex AI (Agent Platform) |
+| `vertexanthropic.json` | Google Vertex AI — Anthropic Claude models |
 
 The other JSON files are backups, staging copies, and exports.
 

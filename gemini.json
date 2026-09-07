@@ -2,6 +2,68 @@
   "version": "1.0",
   "models": [
     {
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.7500000000",
+      "outputTokensPricePerMillion": "3.7500000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.0750000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 0.5,
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3.8-flash"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+        "description": "Our most intelligent Flash model, engineered for long-horizon software engineering, autonomous agents, and complex enterprise workflows.",
+        "display_name": "Gemini 3.8 Flash",
+        "release_date": "2026-09-02",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ]
+      }
+    },
+    {
       "model": "gemini-3.7-flash",
       "provider": "gemini",
       "mode": "chat",
@@ -54,7 +116,7 @@
           "gemini-3.7-flash"
         ],
         "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash",
-        "description": "Our latest and most capable Flash model, built for complex coding, agentic workflows, and reliable multi-step execution.",
+        "description": "Our previous-generation Flash model for complex coding, agentic workflows, and reliable multi-step execution.",
         "display_name": "Gemini 3.7 Flash",
         "release_date": "2026-08-13",
         "reasoning_efforts": [
@@ -297,6 +359,7 @@
         "display_name": "Gemini 3.1 Flash-Lite",
         "release_date": "2026-05-07",
         "deprecated": true,
+        "retirement_date": "2027-05-07",
         "deprecated_reason": "Scheduled for shutdown; use gemini-3.5-flash-lite."
       }
     },
@@ -891,6 +954,7 @@
         "release_date": "2025-10-02",
         "knowledge_cutoff": "2025-06-01",
         "deprecated": true,
+        "retirement_date": "2026-10-02",
         "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement."
       }
     },
@@ -981,6 +1045,7 @@
         "display_name": "Gemini Embedding 001",
         "release_date": "2025-07-14",
         "deprecated": true,
+        "retirement_date": "2028-05-14",
         "deprecated_reason": "Scheduled for shutdown; use gemini-embedding-2.",
         "options": {
           "output_dimensionality": [
@@ -1098,7 +1163,7 @@
       "model": "gemini-robotics-er-1.6-preview",
       "provider": "gemini",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "1.0000000000",
       "outputTokensPricePerMillion": "5.0000000000",
       "cachedTokensPricePerMillion": null,
@@ -1149,7 +1214,8 @@
         "preview": true,
         "deprecated": true,
         "deprecated_date": "2026-07-30",
-        "deprecated_reason": "replaced by gemini-robotics-er-2-preview"
+        "retirement_date": "2026-08-31",
+        "deprecated_reason": "Shut down on August 31, 2026; replaced by gemini-robotics-er-2-preview."
       }
     },
     {
@@ -1200,7 +1266,7 @@
       "model": "imagen-4.0-fast-generate-001",
       "provider": "gemini",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": null,
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": null,
@@ -1239,14 +1305,15 @@
         "display_name": "Imagen 4 Fast",
         "release_date": "2025-06-24",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for shutdown; use gemini-3.1-flash-image."
+        "retirement_date": "2026-08-17",
+        "deprecated_reason": "Shut down on August 17, 2026; use gemini-3.1-flash-image."
       }
     },
     {
       "model": "imagen-4.0-generate-001",
       "provider": "gemini",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": null,
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": null,
@@ -1285,14 +1352,15 @@
         "display_name": "Imagen 4",
         "release_date": "2025-06-24",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for shutdown; use gemini-3.1-flash-image."
+        "retirement_date": "2026-08-17",
+        "deprecated_reason": "Shut down on August 17, 2026; use gemini-3.1-flash-image."
       }
     },
     {
       "model": "imagen-4.0-ultra-generate-001",
       "provider": "gemini",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": null,
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": null,
@@ -1331,7 +1399,8 @@
         "display_name": "Imagen 4 Ultra",
         "release_date": "2025-06-24",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for shutdown; use gemini-3.1-flash-image."
+        "retirement_date": "2026-08-17",
+        "deprecated_reason": "Shut down on August 17, 2026; use gemini-3.1-flash-image."
       }
     }
   ]

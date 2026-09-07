@@ -138,7 +138,9 @@
         "tps": 450,
         "max_file_size_mb": 20,
         "max_input_images": 3,
-        "max_output_tokens": 16384
+        "max_output_tokens": 16384,
+        "tpm": 250000,
+        "rpm": 1000
       },
       "metadata": {
         "preview": true,
