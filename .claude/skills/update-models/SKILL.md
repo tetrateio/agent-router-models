@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Update the provider catalogs
 
-Refresh `anthropic.json`, `openai.json`, `gemini-prod.json`, `xai.json`, `groq.json`,
+Refresh `anthropic.json`, `openai.json`, `gemini.json`, `xai.json`, `groq.json`,
 `deepinfra.json`, `vertex.json`, and `vertexanthropic.json` against each provider's current
 documentation, then write one dated block at the top of `CHANGELOG.md`.
 
@@ -34,7 +34,8 @@ record. This skill does not repeat those rules.
    state. A scripted comparison is what makes "every model accounted for" checkable.
 4. **Apply** the drift. Prices and limits take the provider's current value.
 5. **Add** models the provider lists that the catalog lacks, within the `CLAUDE.md` modes.
-6. **Validate**: the file parses, and `totalCount` equals the model count.
+6. **Validate**: the file parses, and `bun schemas/validate.ts` prints `ok`. It checks the
+   long-context tier shape on every catalog and names each violation as `file:model: reason`.
 
 Batch the fetches. Providers are independent, so fetch several at once.
 
@@ -219,6 +220,14 @@ These recur every run. Decide them the same way each time.
 - **Groq Enterprise models** — a model Groq marks Enterprise or Contact sales stays out of
   the catalog. Remove the record when a cataloged model moves to Enterprise, and name it
   under **Models that stay out of the catalog**.
+- **Long-context tier** — the provider publishes a second price above an input-token
+  count. Set `limits.high_context` to that count and write the provider's own numbers into
+  the `*_high_context` prices. Never a multiplier, even when the provider describes the
+  tier as one. A model whose context window is at or below the threshold gets no tier,
+  however the pricing table prints it: Google's tables carry a long-context column on
+  every model, including 64k and 128k ones. A model with a context window above 200k and
+  no tier is named under **Prices that did not change**, so a missing tier means verified
+  flat, not unchecked.
 - **Promotional price** — record the price in effect today. Put the scheduled price and its
   date in the changelog under follow-up work.
 - **Description edits** — update a `description` only when the provider's wording changes

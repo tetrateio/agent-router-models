@@ -110,9 +110,8 @@ export interface AdditionalPricing {
   image_tokens?: ImageTokenPricing;
   image_generation?: ImageGenerationPricing;
 
-  // Batch / tier multipliers
+  // Batch multiplier
   batch_discount_multiplier?: number;
-  high_context_multiplier?: number;
 
   // Anthropic prompt-cache write pricing (per-million)
   caching_1h_per_million?: number;
@@ -121,11 +120,16 @@ export interface AdditionalPricing {
   // Prompt-cache storage (gemini)
   caching_storage_per_million_per_hour?: number;
 
-  // Gemini high-context tier pricing (applies above `limits.high_context`)
+  // Long-context tier. Applies to a request whose input token count is
+  // greater than `limits.high_context`. Absolute prices, never a multiplier.
+  // A record that sets any of these must set `limits.high_context`, and a
+  // model whose context window is at or below the threshold carries none.
+  // `bun schemas/validate.ts` enforces this.
   input_tokens_price_per_million_high_context?: number;
   cached_tokens_price_per_million_high_context?: number;
   output_tokens_price_per_million_high_context?: number;
   caching_tokens_price_per_million_high_context?: number;
+  caching_1h_per_million_high_context?: number;
 
   // Gemini audio-token pricing (per-million)
   input_tokens_price_per_million_audio?: number;
@@ -160,7 +164,7 @@ export interface ModelLimits {
   max_output_tokens?: number;
   max_prompt_length?: number;
 
-  /** Long-context threshold — above this, `_high_context` pricing applies (xai). */
+  /** Input-token count above which the `_high_context` prices apply. Must be below `contextWindow`. */
   high_context?: number;
 
   // Rate limits

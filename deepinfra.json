@@ -755,7 +755,7 @@
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.060",
       "outputTokensPricePerMillion": "0.180",
-      "cachedTokensPricePerMillion": "0.016",
+      "cachedTokensPricePerMillion": "0.015",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": ["reasoning", "structured_outputs", "tool_choice"],
@@ -765,7 +765,9 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {},
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 384000
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Flash-0731",
         "description": "DeepSeek-V4-Flash-0731 is the official release of DeepSeek-V4-Flash, superseding the preview version, with substantially enhanced agentic capabilities. DeepSeek-V4-Flash-0731 outperforms DeepSeek-V4-Pro (Preview) on benchmarks listed below despite its far smaller activated parameter count, and is broadly competitive with the strongest proprietary models available.",
@@ -789,13 +791,8 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {
-        "caching_5m_per_million": 1.625,
-        "caching_1h_per_million": 2.6
-      },
-      "limits": {
-        "explicit_cache_granularity_tokens": 1024
-      },
+      "additionalPricePerMillion": {},
+      "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Pro",
         "description": "DeepSeek V4 Pro is an MoE model with 1.6T total parameters (49B active) and a 1M-token context window. It's built for advanced reasoning, coding, and long-running agent tasks, and performs well on knowledge, math, and software engineering benchmarks.",
@@ -819,13 +816,8 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {
-        "caching_5m_per_million": 1.625,
-        "caching_1h_per_million": 2.6
-      },
-      "limits": {
-        "explicit_cache_granularity_tokens": 1024
-      },
+      "additionalPricePerMillion": {},
+      "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Pro-0813",
         "description": "DeepSeek-V4-Pro-0813 is the official release of DeepSeek-V4-Pro, superseding the preview version, with greatly enhanced agentic capabilities and performance improvements that are especially pronounced in production environments. It is built on the DeepSeek-V4-Pro (Preview) model structure, with a DSpark speculative decoding module attached.",
@@ -846,12 +838,13 @@
       "contextWindow": 1000000,
       "capabilities": [
         "reasoning",
+        "speech_recognition",
         "structured_outputs",
         "tool_choice",
         "vision"
       ],
       "modalities": {
-        "input": ["image", "text"],
+        "input": ["audio", "image", "text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
@@ -876,12 +869,13 @@
       "contextWindow": 1000000,
       "capabilities": [
         "reasoning",
+        "speech_recognition",
         "structured_outputs",
         "tool_choice",
         "vision"
       ],
       "modalities": {
-        "input": ["image", "text"],
+        "input": ["audio", "image", "text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
@@ -935,12 +929,13 @@
       "contextWindow": 1000000,
       "capabilities": [
         "reasoning",
+        "speech_recognition",
         "structured_outputs",
         "tool_choice",
         "vision"
       ],
       "modalities": {
-        "input": ["image", "text"],
+        "input": ["audio", "image", "text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
@@ -964,12 +959,13 @@
       "contextWindow": 1000000,
       "capabilities": [
         "reasoning",
+        "speech_recognition",
         "structured_outputs",
         "tool_choice",
         "vision"
       ],
       "modalities": {
-        "input": ["image", "text"],
+        "input": ["audio", "image", "text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
@@ -993,12 +989,13 @@
       "contextWindow": 1000000,
       "capabilities": [
         "reasoning",
+        "speech_recognition",
         "structured_outputs",
         "tool_choice",
         "vision"
       ],
       "modalities": {
-        "input": ["image", "text"],
+        "input": ["audio", "image", "text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
@@ -1161,12 +1158,14 @@
       "contextWindow": 262144,
       "capabilities": ["reasoning", "tool_choice", "vision"],
       "modalities": {
-        "input": ["text"],
+        "input": ["image", "text", "video"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {},
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/google/gemma-4-31B-it-turbo",
         "description": "Gemma is a family of open models built by Google DeepMind. Gemma 4 models are multimodal, handling text and image input and generating text output.",
@@ -1953,9 +1952,9 @@
         "display_name": "moonshotai/Kimi-K2-Instruct-0905",
         "quantization": "fp4",
         "deprecated": true,
-        "deprecated_reason": "Retired on DeepInfra on 2026-04-15. Replacement: moonshotai/Kimi-K2.5.",
-        "deprecated_date": "2026-04-15",
-        "retirement_date": "2026-04-15"
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-07. Replacement: moonshotai/Kimi-K2.6.",
+        "deprecated_date": "2026-09-07",
+        "retirement_date": "2026-09-07"
       }
     },
     {
@@ -1983,9 +1982,9 @@
         "display_name": "moonshotai/Kimi-K2-Thinking",
         "quantization": "fp4",
         "deprecated": true,
-        "deprecated_reason": "Retired on DeepInfra on 2026-04-15. Replacement: moonshotai/Kimi-K2.5.",
-        "deprecated_date": "2026-04-15",
-        "retirement_date": "2026-04-15"
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-07. Replacement: moonshotai/Kimi-K2.6.",
+        "deprecated_date": "2026-09-07",
+        "retirement_date": "2026-09-07"
       }
     },
     {
@@ -2046,9 +2045,9 @@
         "description": "",
         "display_name": "moonshotai/Kimi-K2.5-Turbo",
         "deprecated": true,
-        "deprecated_reason": "Retired on DeepInfra on 2026-04-15. Replacement: moonshotai/Kimi-K2.5.",
-        "deprecated_date": "2026-04-15",
-        "retirement_date": "2026-04-15"
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-07. Replacement: moonshotai/Kimi-K2.6.",
+        "deprecated_date": "2026-09-07",
+        "retirement_date": "2026-09-07"
       }
     },
     {
@@ -3483,11 +3482,14 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {},
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 131072
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.5",
         "description": "MiMo-V2.5 is a native omnimodal model with strong agentic capabilities, supporting text, image, video, and audio understanding within a unified architecture. Built upon the MiMo-V2-Flash backbone and extended with dedicated vision and audio encoders, it delivers robust performance across multimodal perception, long-context reasoning, and agentic workflows. ",
-        "display_name": "XiaomiMiMo/MiMo-V2.5"
+        "display_name": "XiaomiMiMo/MiMo-V2.5",
+        "quantization": "fp8"
       }
     },
     {
@@ -3742,12 +3744,14 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {},
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 131072
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/zai-org/GLM-5.3-Flash",
         "description": "GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-context behavior while reducing compute overhead.",
         "display_name": "zai-org/GLM-5.3-Flash",
-        "quantization": "fp8"
+        "quantization": "fp4"
       }
     },
     {
@@ -3872,7 +3876,7 @@
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/BAAI/bge-m3-multi",
-        "description": "BGE-M3 is a multilingual text embedding model developed by BAAI, distinguished by its Multi-Linguality (supporting 100+ languages), Multi-Functionality (unified dense, multi-vector, and sparse retrieval), and Multi-Granularity (handling inputs from short queries to 8192-token documents). It achieves state-of-the-art retrieval performance across diverse benchmarks while maintaining a single model for multiple retrieval modes.",
+        "description": "BGE-M3 is a multilingual text embedding model developed by BAAI, distinguished by its Multi-Linguality (supporting 100+ languages), Multi-Functionality (unified dense, multi-vector, and sparse retrieval), and Multi-Granularity (handling inputs from short queries to long documents). It achieves state-of-the-art retrieval performance across diverse benchmarks while maintaining a single model for multiple retrieval modes. Inputs to this endpoint are truncated to 512 tokens.",
         "display_name": "BAAI/bge-m3-multi"
       }
     },
@@ -3897,7 +3901,7 @@
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/embeddinggemma-300m",
-        "description": "ChatGPT said:  EmbeddingGemma is a 300M parameter multilingual open embedding model from Google DeepMind, designed for efficient deployment even on low-resource devices, producing high-quality text vector representations for tasks such as search, classification, clustering, and semantic similarity.",
+        "description": "EmbeddingGemma is a 300M parameter multilingual open embedding model from Google DeepMind, designed for efficient deployment even on low-resource devices, producing high-quality text vector representations for tasks such as search, classification, clustering, and semantic similarity.",
         "display_name": "google/embeddinggemma-300m"
       }
     },

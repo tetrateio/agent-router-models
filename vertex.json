@@ -703,10 +703,7 @@
             "2K": 0.134,
             "4K": 0.24
           }
-        },
-        "input_tokens_price_per_million_high_context": 4,
-        "cached_tokens_price_per_million_high_context": 0.4,
-        "output_tokens_price_per_million_high_context": 18
+        }
       },
       "contextWindow": 65536,
       "capabilities": [
@@ -739,7 +736,6 @@
         "release_date": "2026-05-28"
       },
       "limits": {
-        "high_context": 200000,
         "max_output_tokens": 32768
       }
     },
@@ -1180,14 +1176,6 @@
         ],
         "launch_stage": "preview",
         "preview": true
-      },
-      "additionalPricePerMillion": {
-        "input_tokens_price_per_million_high_context": 2.5,
-        "output_tokens_price_per_million_high_context": 5,
-        "cached_tokens_price_per_million_high_context": 0.4
-      },
-      "limits": {
-        "high_context": 200000
       }
     },
     {
