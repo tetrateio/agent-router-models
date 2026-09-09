@@ -19,7 +19,7 @@ provider record.
 named in the changelog as absent from the provider's list. A file you did not compare
 model by model is not done.
 
-`CLAUDE.md` holds the field rules — accepted modes, capability mapping, the `tool_choice`
+`AGENTS.md` holds the field rules — accepted modes, capability mapping, the `tool_choice`
 rule — and `schemas/models.ts` holds the record shape. Read both before you touch a
 record. This skill does not repeat those rules.
 
@@ -33,7 +33,7 @@ record. This skill does not repeat those rules.
    Compare price, context window, max output, modalities, capabilities, and deprecation
    state. A scripted comparison is what makes "every model accounted for" checkable.
 4. **Apply** the drift. Prices and limits take the provider's current value.
-5. **Add** models the provider lists that the catalog lacks, within the `CLAUDE.md` modes.
+5. **Add** models the provider lists that the catalog lacks, within the `AGENTS.md` modes.
 6. **Validate**: the file parses, and `bun schemas/validate.ts` prints `ok`. It checks the
    long-context tier shape on every catalog and names each violation as `file:model: reason`.
 
@@ -157,7 +157,7 @@ handle, not the name on the page.
 
 - `/generative-ai/pricing` — the only price source, and the one page on this host that
   **JavaScript-renders**: `curl` returns a shell with zero `<table>` elements. Read it
-  through `claude-in-chrome`. Every other page here `curl`s fine.
+  through `Codex-in-chrome`. Every other page here `curl`s fine.
 - Doc paths live only in the left nav, never in the page body. Harvest them from any
   fetched page: `grep -o 'href="/gemini-enterprise-agent-platform/models/[^"]*"'`.
 - Google models: `/models/gemini/<slug>`, where the slug drops the dots
@@ -189,7 +189,7 @@ handle, not the name on the page.
 `jsonfmt.ts` in this skill's folder decides how you may write a file. Run it with `bun`:
 
 ```ts
-import { load, dump } from "./.claude/skills/update-models/jsonfmt.ts"
+import { load, dump } from "./.agents/skills/update-models/jsonfmt.ts"
 const { doc, style } = load("groq.json")
 // ...mutate doc...
 dump("groq.json", doc, style)
@@ -198,7 +198,7 @@ dump("groq.json", doc, style)
 A `style` string means a whole-file rewrite reproduces the untouched file byte for byte, so
 a script may mutate `doc` and `dump` it. `style === null` means the file is hand-formatted:
 edit it as text with the Edit tool, one record at a time (`dump` throws). Run `bun
-.claude/skills/update-models/jsonfmt.ts` to see the current state of every file.
+.agents/skills/update-models/jsonfmt.ts` to see the current state of every file.
 
 The guard is the point. It proves the diff contains only what you changed.
 
@@ -240,7 +240,7 @@ These recur every run. Decide them the same way each time.
   An empty field is correct; a remembered value is drift you created.
 - **Interactions-API-only models** — Google serves its agents (Deep Research, Deep
   Research Max, Antigravity) only through `interactions.create`. No `generateContent`,
-  no OpenAI-compatible path, and no mode in `CLAUDE.md` fits them. Leave them out of the
+  no OpenAI-compatible path, and no mode in `AGENTS.md` fits them. Leave them out of the
   catalog, and name them under **Models that stay out of the catalog**. Do not park them
   in `responses` — that mode means the OpenAI Responses API, and a gateway that reads it
   calls an endpoint Google does not serve.
@@ -251,9 +251,9 @@ These recur every run. Decide them the same way each time.
   however loudly the direct-API docs claim it.
 - **Dash-priced cell** — the Vertex pricing table prints `-` where Google publishes no
   rate. Leave the field `null` and name it under Follow-up work.
-- **Out-of-mode records** — a record whose `mode` falls outside the `CLAUDE.md` list
+- **Out-of-mode records** — a record whose `mode` falls outside the `AGENTS.md` list
   (today: `rerank` in `deepinfra.json`). Leave the record as is and name it under
-  Follow-up work until `CLAUDE.md` decides.
+  Follow-up work until `AGENTS.md` decides.
 
 ## The changelog block
 
