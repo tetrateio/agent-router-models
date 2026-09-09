@@ -1,3 +1,62 @@
+# 2026-09-08 TARS MODEL UPDATE
+
+## Other Updates:
+- [OpenAI] `gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`, `gpt-5.5`, `gpt-5.5-pro`, `gpt-5.4`, `gpt-5.4-pro`, and `daybreak-blue-latest` — the records now give the long-context prices as dollar amounts. The prices did not change. A prompt of more than 272,000 input tokens costs twice the standard input and cached input price and one and a half times the output price, for the whole request.
+- [OpenAI] `gpt-5.5-pro` — the record now carries the long-context price that OpenAI publishes: $60.00 input and $270.00 output per 1M tokens above 272,000 input tokens.
+- [OpenAI] `gpt-5.6-cyber` and `daybreak-red-latest` — both models accept at most 272,000 input tokens, so a prompt cannot go above the long-context threshold. We removed the long-context price.
+- [xAI] `grok-4.6`, `grok-4.5`, `grok-4.3`, `grok-4.20-0309-reasoning`, `grok-4.20-0309-non-reasoning`, `grok-4.20-multi-agent-0309`, and `grok-build-0.1` — the records now give the long-context prices as dollar amounts. The prices did not change. Prompts of 200k tokens or more cost twice the standard input, cached input, and output price, as before.
+- [Gemini] `gemini-2.5-computer-use-preview-10-2025` — the model accepts 128k input tokens, so a prompt cannot reach the 200k long-context tier. We removed the long-context price.
+- [Vertex] `gemini-3-pro-image` — the model has a 65k context window, so a prompt cannot reach the 200k long-context tier. We removed the long-context price.
+- [Vertex] `grok-4.3` — the Agent Platform model page gives a 200k context length, so a prompt cannot go above the 200k threshold. We removed the long-context price. The direct xAI record keeps its 1M context window and its long-context price.
+
+## Notes:
+
+### Corrections to earlier updates
+- [OpenAI] Ten records stated the long-context tier as a pair of multipliers inside `additionalPricePerMillion.extra`, so a reader had to multiply to learn the price. Two of the ten are for models that cannot reach the threshold. This update writes the prices out and removes the two.
+- [Vertex] The 2026-09-07 update added the three `_high_context` price fields and `limits.high_context: 200000` to `gemini-3-pro-image`. The model has a 65,536 token context window, so the tier is unreachable. This update removes the fields.
+- [Gemini] The 2026-08-31 update added `high_context: 200000` to `gemini-2.5-computer-use-preview-10-2025`. The model has a 128,000 token input limit, so the tier is unreachable. This update removes the threshold and the two tier prices.
+- [Anthropic] `claude-sonnet-4-0` and `claude-sonnet-4-20250514` carried four `_high_context` price fields with no `limits.high_context` and a 200k context window. Both records are retired. This update removes the four fields.
+
+### Schema and catalog changes
+- One shape for long-context pricing in every catalog, across three thresholds: 200,000 tokens at Anthropic, Google, and xAI, and 272,000 at OpenAI. `limits.high_context` holds the input-token threshold, and `additionalPricePerMillion` holds the absolute prices above it in `input_tokens_price_per_million_high_context`, `output_tokens_price_per_million_high_context`, `cached_tokens_price_per_million_high_context`, `caching_tokens_price_per_million_high_context`, and `caching_1h_per_million_high_context`. The tier applies to a request whose input token count is greater than the threshold.
+- `schemas/models.ts` removes `high_context_multiplier` from `AdditionalPricing`, adds `caching_1h_per_million_high_context`, and states the rule in the comments. A prompt must be able to go above `limits.high_context`, so the threshold sits below the input ceiling.
+- New `schemas/validate.ts`. Run `bun schemas/validate.ts` to check every catalog. It rejects a tier written as a ratio, a tier price without a threshold, a threshold without input and output tier prices, a threshold a prompt cannot go above, a tier price below the base price, and an unknown `high_context` key. The script exits with code 1 and one `file:model: reason` line per violation.
+- [xAI] The seven chat records replace `high_context_multiplier: 2` with `input_tokens_price_per_million_high_context`, `output_tokens_price_per_million_high_context`, and `cached_tokens_price_per_million_high_context`. The values are the ones on the xAI pricing page.
+- [OpenAI] Nine records take `limits.high_context: 272000` and the absolute `*_high_context` prices. The ten records that carried `extra.input_tokens_above_272k_multiplier` and `extra.output_tokens_above_272k_multiplier` no longer do. OpenAI is the third threshold in the catalog after the 200k used by Anthropic, Google, and xAI.
+- `schemas/validate.ts` now rejects a tier written as a ratio under any key in `additionalPricePerMillion`, `limits`, or either `extra` bag, not only `high_context_multiplier`. It also measures reachability against `limits.max_input_tokens` when the provider publishes one, and against `contextWindow` otherwise. The OpenAI multipliers sat in `extra`, where the first version of the script did not look.
+- New `schemas/validate.test.ts` with nine cases, including both multiplier shapes and a threshold equal to the input cap. Run `bun schemas/validate.test.ts`.
+- The `update-models` skill now runs the validator in the Validate step and carries a **Long-context tier** judgment call. A model with a context window above 200k and flat pricing is named under **Prices that did not change** on each run, so a missing tier means verified flat.
+- The skill named `gemini-prod.json`. The file is `gemini.json`. The skill now uses the right name.
+
+### Prices that did not change
+- [Anthropic] All 22 priced records match the pricing page. The 17 records on the deprecation table match its status column.
+- [OpenAI] All 64 records with a model page match on input, cached input, and output price, context window, and maximum output tokens. Only the shape of the long-context tier changed.
+- [DeepInfra] All 172 records match the model list endpoint on price, context window, capabilities, modalities, and shutdown date.
+- [Gemini] All 25 records match the pricing page and the model pages.
+- [Vertex] All 49 records and all 14 VertexAnthropic records match the Agent Platform pricing tables. The 16 deprecated open models match the open-models deprecation page.
+- [Groq] All 5 records match the model index on price, context window, maximum completion tokens, and rate limits.
+- [OpenAI] `gpt-5.4-mini`, `gpt-5.4-nano`, `gpt-5.2`, `gpt-5.1`, `gpt-5`, and the GPT-4.1 family have flat pricing. `gpt-5.4-mini` and `gpt-5.4-nano` have a 400k context window but accept at most 272,000 input tokens.
+- [xAI] All seven long-context tiers match the pricing page: 2x the standard input, cached input, and output price at 200k prompt tokens and above.
+- [Gemini] `gemini-3.1-pro-preview`, `gemini-3.1-pro-preview-customtools`, and `gemini-2.5-pro` keep their long-context tiers. The Flash models have flat pricing across the 1M context window, as on 2026-09-07.
+- [Anthropic] The current 1M context models have flat pricing across the window, as recorded on 2026-07-24 for `claude-opus-5`.
+
+### Sources and coverage
+- [xAI] `docs.x.ai/developers/pricing.md`, read on 2026-09-08. The table gives a `< 200k` and a `≥ 200k` row for each of the seven models.
+- [Gemini] `ai.google.dev/gemini-api/docs/models/gemini-2.5-computer-use-preview-10-2025` gives a 128,000 token input limit. `ai.google.dev/gemini-api/docs/pricing` still prints a `> 200k` price for the model.
+- [Vertex] `docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-pro-image` gives a 65,536 token context window. `.../models/partner-models/grok/grok-4-3` gives a 200,000 token context length. The Agent Platform pricing page prints a long-context column for both.
+- [Anthropic] `platform.claude.com` release notes, models overview, pricing, model deprecations, context windows, and prompt caching, read on 2026-09-08. The caching page gives the per-model minimum cacheable prompt length.
+- [OpenAI] `developers.openai.com` pricing, deprecations, changelog, and a model page for each of the 64 catalog models with one, read on 2026-09-08. The `models/compare.md` endpoint returns only the first four rows, so the per-model pages carry the comparison. The 272,000-token rule is stated on each model page and in the Long context columns of the pricing tables.
+- [Gemini] `ai.google.dev/gemini-api/docs` changelog, models, pricing, and deprecations, read on 2026-09-08.
+- [DeepInfra] `api.deepinfra.com/models/list` and the per-model endpoints, read on 2026-09-08.
+- [Vertex] The Agent Platform pricing page returned all 57 tables to `curl` on 2026-09-08, so this run did not need a browser for it. The model pages, both deprecation pages, and the Grok pages were read the same way.
+- [Groq] `console.groq.com/docs/models` was read in the browser on 2026-09-08; the host answers `curl` with an access-denied body. The index carries price, context window, maximum completion tokens, and rate limits, which covers every field in the 5 records.
+
+### Follow-up work
+- [Groq] The deprecations page, the changelog, and the capability pages started refusing requests part way through this run, in the browser as well as through `curl`. The 5 records were verified against the model index only. Read those pages on the next run and confirm the capability lists.
+- [Gemini] Google publishes a scheduled price increase for `gemini-3.8-flash`, `gemini-3.7-flash`, and `gemini-3.6-flash` on 2027-01-01: input rises from $0.75 to $1.50, output from $3.75 to $7.50, and cached input from $0.075 to $0.15 per 1M tokens. The records keep the price in effect today.
+- [Vertex] The pricing page lists Gemini 2.5 Pro Computer Use-Preview with a published price. The catalog has no record for it. Decide on the next run whether it belongs in `vertex.json`.
+- [OpenAI] `daybreak-blue-latest` and `daybreak-red-latest` are aliases that point to `gpt-5.6-sol` and `gpt-5.6-cyber` today. Their long-context state follows whichever model the alias points to, so check it whenever OpenAI moves the alias.
+
 # 2026-09-07 TARS MODEL UPDATE
 
 ## New Models:

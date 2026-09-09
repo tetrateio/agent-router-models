@@ -117,7 +117,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 32000,
         "extra": {
-          "tool_use_system_prompt_tokens": 313
+          "tool_use_system_prompt_tokens": 313,
+          "min_cacheable_prompt_tokens": 1024
         }
       },
       "metadata": {
@@ -184,7 +185,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 32000,
         "extra": {
-          "tool_use_system_prompt_tokens": 313
+          "tool_use_system_prompt_tokens": 313,
+          "min_cacheable_prompt_tokens": 1024
         }
       },
       "metadata": {
@@ -387,7 +389,10 @@
       "limits": {
         "max_file_size_mb": 32,
         "max_output_tokens": 128000,
-        "max_images_per_prompt": 600
+        "max_images_per_prompt": 600,
+        "extra": {
+          "min_cacheable_prompt_tokens": 512
+        }
       },
       "metadata": {
         "aliases": [
@@ -452,7 +457,10 @@
       "limits": {
         "max_file_size_mb": 32,
         "max_output_tokens": 128000,
-        "max_images_per_prompt": 600
+        "max_images_per_prompt": 600,
+        "extra": {
+          "min_cacheable_prompt_tokens": 512
+        }
       },
       "metadata": {
         "aliases": [
@@ -520,7 +528,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 128000,
         "extra": {
-          "tool_use_system_prompt_tokens": 290
+          "tool_use_system_prompt_tokens": 290,
+          "min_cacheable_prompt_tokens": 1024
         },
         "max_images_per_prompt": 600
       },
@@ -588,7 +597,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 128000,
         "extra": {
-          "tool_use_system_prompt_tokens": 354
+          "tool_use_system_prompt_tokens": 354,
+          "min_cacheable_prompt_tokens": 1024
         },
         "max_images_per_prompt": 600
       },
@@ -656,7 +666,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 128000,
         "extra": {
-          "tool_use_system_prompt_tokens": 675
+          "tool_use_system_prompt_tokens": 675,
+          "min_cacheable_prompt_tokens": 2048
         },
         "max_images_per_prompt": 600
       },
@@ -724,7 +735,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 128000,
         "extra": {
-          "tool_use_system_prompt_tokens": 497
+          "tool_use_system_prompt_tokens": 497,
+          "min_cacheable_prompt_tokens": 1024
         },
         "max_images_per_prompt": 600
       },
@@ -795,7 +807,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 128000,
         "extra": {
-          "tool_use_system_prompt_tokens": 497
+          "tool_use_system_prompt_tokens": 497,
+          "min_cacheable_prompt_tokens": 4096
         },
         "max_images_per_prompt": 600
       },
@@ -865,7 +878,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 64000,
         "extra": {
-          "tool_use_system_prompt_tokens": 496
+          "tool_use_system_prompt_tokens": 496,
+          "min_cacheable_prompt_tokens": 4096
         },
         "max_images_per_prompt": 100
       },
@@ -934,7 +948,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 64000,
         "extra": {
-          "tool_use_system_prompt_tokens": 496
+          "tool_use_system_prompt_tokens": 496,
+          "min_cacheable_prompt_tokens": 4096
         },
         "max_images_per_prompt": 100
       },
@@ -1003,7 +1018,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 64000,
         "extra": {
-          "tool_use_system_prompt_tokens": 496
+          "tool_use_system_prompt_tokens": 496,
+          "min_cacheable_prompt_tokens": 4096
         },
         "max_images_per_prompt": 100
       },
@@ -1067,7 +1083,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 64000,
         "extra": {
-          "tool_use_system_prompt_tokens": 496
+          "tool_use_system_prompt_tokens": 496,
+          "min_cacheable_prompt_tokens": 4096
         },
         "max_images_per_prompt": 100
       },
@@ -1131,7 +1148,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 64000,
         "extra": {
-          "tool_use_system_prompt_tokens": 496
+          "tool_use_system_prompt_tokens": 496,
+          "min_cacheable_prompt_tokens": 1024
         },
         "max_images_per_prompt": 100
       },
@@ -1195,7 +1213,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 64000,
         "extra": {
-          "tool_use_system_prompt_tokens": 496
+          "tool_use_system_prompt_tokens": 496,
+          "min_cacheable_prompt_tokens": 1024
         },
         "max_images_per_prompt": 100
       },
@@ -1253,15 +1272,15 @@
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
         "batch_discount_multiplier": 0.5,
-        "input_tokens_price_per_million_high_context": 6,
-        "cached_tokens_price_per_million_high_context": 0.6,
-        "output_tokens_price_per_million_high_context": 22.5,
-        "caching_tokens_price_per_million_high_context": 7.5,
         "web_search_per_thousand_calls": 10
       },
       "limits": {
         "max_file_size_mb": 32,
-        "max_output_tokens": 64000
+        "max_output_tokens": 64000,
+        "extra": {
+          "min_cacheable_prompt_tokens": 1024,
+          "tool_use_system_prompt_tokens": 313
+        }
       },
       "metadata": {
         "aliases": [
@@ -1325,7 +1344,11 @@
       },
       "limits": {
         "max_file_size_mb": 32,
-        "max_output_tokens": 32000
+        "max_output_tokens": 32000,
+        "extra": {
+          "min_cacheable_prompt_tokens": 1024,
+          "tool_use_system_prompt_tokens": 313
+        }
       },
       "metadata": {
         "aliases": [
@@ -1389,7 +1412,11 @@
       },
       "limits": {
         "max_file_size_mb": 32,
-        "max_output_tokens": 32000
+        "max_output_tokens": 32000,
+        "extra": {
+          "min_cacheable_prompt_tokens": 1024,
+          "tool_use_system_prompt_tokens": 313
+        }
       },
       "metadata": {
         "aliases": [
@@ -1480,15 +1507,15 @@
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
         "batch_discount_multiplier": 0.5,
-        "input_tokens_price_per_million_high_context": 6,
-        "cached_tokens_price_per_million_high_context": 0.6,
-        "output_tokens_price_per_million_high_context": 22.5,
-        "caching_tokens_price_per_million_high_context": 7.5,
         "web_search_per_thousand_calls": 10
       },
       "limits": {
         "max_file_size_mb": 32,
-        "max_output_tokens": 64000
+        "max_output_tokens": 64000,
+        "extra": {
+          "min_cacheable_prompt_tokens": 1024,
+          "tool_use_system_prompt_tokens": 313
+        }
       },
       "metadata": {
         "aliases": [
@@ -1644,7 +1671,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 8000,
         "extra": {
-          "tool_use_system_prompt_tokens": 264
+          "tool_use_system_prompt_tokens": 264,
+          "min_cacheable_prompt_tokens": 2048
         }
       },
       "metadata": {
@@ -1706,7 +1734,8 @@
         "max_file_size_mb": 32,
         "max_output_tokens": 8000,
         "extra": {
-          "tool_use_system_prompt_tokens": 264
+          "tool_use_system_prompt_tokens": 264,
+          "min_cacheable_prompt_tokens": 2048
         }
       },
       "metadata": {

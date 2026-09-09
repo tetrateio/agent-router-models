@@ -36,14 +36,17 @@
         "https://api.openai.com/v1/"
       ],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 20,
+        "cached_tokens_price_per_million_high_context": 2,
+        "output_tokens_price_per_million_high_context": 75,
+        "caching_tokens_price_per_million_high_context": 25,
         "batch_discount_multiplier": 0.5,
         "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5,
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
@@ -92,14 +95,17 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 8,
+        "cached_tokens_price_per_million_high_context": 0.8,
+        "output_tokens_price_per_million_high_context": 30,
+        "caching_tokens_price_per_million_high_context": 10,
         "batch_discount_multiplier": 0.5,
         "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5,
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
@@ -146,14 +152,17 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 4,
+        "cached_tokens_price_per_million_high_context": 0.4,
+        "output_tokens_price_per_million_high_context": 18,
+        "caching_tokens_price_per_million_high_context": 5,
         "batch_discount_multiplier": 0.5,
         "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5,
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
@@ -200,14 +209,17 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 0.4,
+        "cached_tokens_price_per_million_high_context": 0.04,
+        "output_tokens_price_per_million_high_context": 1.8,
+        "caching_tokens_price_per_million_high_context": 0.5,
         "batch_discount_multiplier": 0.5,
         "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5,
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
@@ -253,12 +265,6 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {
-        "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5
-        }
-      },
       "limits": {
         "max_input_tokens": 272000,
         "max_output_tokens": 128000,
@@ -299,12 +305,13 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5
-        }
+        "input_tokens_price_per_million_high_context": 8,
+        "cached_tokens_price_per_million_high_context": 0.8,
+        "output_tokens_price_per_million_high_context": 30,
+        "caching_tokens_price_per_million_high_context": 10
       },
       "limits": {
+        "high_context": 272000,
         "max_input_tokens": 922000,
         "max_output_tokens": 128000,
         "max_prompt_length": 922000
@@ -343,12 +350,6 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {
-        "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5
-        }
-      },
       "limits": {
         "max_input_tokens": 272000,
         "max_output_tokens": 128000,
@@ -853,14 +854,15 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 60,
+        "output_tokens_price_per_million_high_context": 270,
         "batch_discount_multiplier": 0.5,
         "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5,
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_output_tokens": 128000
       },
       "metadata": {
@@ -1080,14 +1082,16 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 5,
+        "cached_tokens_price_per_million_high_context": 0.5,
+        "output_tokens_price_per_million_high_context": 22.5,
         "batch_discount_multiplier": 0.5,
         "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5,
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_output_tokens": 128000
       },
       "metadata": {
@@ -2286,14 +2290,16 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 10,
+        "cached_tokens_price_per_million_high_context": 1,
+        "output_tokens_price_per_million_high_context": 45,
         "batch_discount_multiplier": 0.5,
         "extra": {
-          "input_tokens_above_272k_multiplier": 2,
-          "output_tokens_above_272k_multiplier": 1.5,
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_output_tokens": 128000
       },
       "metadata": {
@@ -2330,12 +2336,15 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 60,
+        "output_tokens_price_per_million_high_context": 270,
         "batch_discount_multiplier": 0.5,
         "extra": {
           "regional_processing_uplift_multiplier": 1.1
         }
       },
       "limits": {
+        "high_context": 272000,
         "max_output_tokens": 128000
       },
       "metadata": {
