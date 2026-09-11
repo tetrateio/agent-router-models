@@ -2,7 +2,7 @@
   "version": "1.0",
   "models": [
     {
-      "model": "gemini-3.8-flash",
+      "model": "vertex/gemini-3.8-flash",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -58,14 +58,15 @@
           "low",
           "medium",
           "high"
-        ]
+        ],
+        "upstream_model": "gemini-3.8-flash"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-3.7-flash",
+      "model": "vertex/gemini-3.7-flash",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -121,14 +122,15 @@
           "low",
           "medium",
           "high"
-        ]
+        ],
+        "upstream_model": "gemini-3.7-flash"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-3.6-flash",
+      "model": "vertex/gemini-3.6-flash",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -180,14 +182,15 @@
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-6-flash",
         "description": "Gemini 3.6 Flash provides sustained frontier-level intelligence optimized for real-world tasks at a higher speed and lower cost. It excels at code generation, agentic execution, and spatial reasoning.",
         "display_name": "Gemini 3.6 Flash",
-        "release_date": "2026-07-21"
+        "release_date": "2026-07-21",
+        "upstream_model": "gemini-3.6-flash"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-3.5-flash",
+      "model": "vertex/gemini-3.5-flash",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -239,14 +242,15 @@
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-5-flash",
         "description": "Our legacy Flash model, providing baseline speed and foundational performance for routine, high-throughput workloads.",
         "display_name": "Gemini 3.5 Flash",
-        "release_date": "2026-05-19"
+        "release_date": "2026-05-19",
+        "upstream_model": "gemini-3.5-flash"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-3.5-flash-lite",
+      "model": "vertex/gemini-3.5-flash-lite",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -298,14 +302,15 @@
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-5-flash-lite",
         "description": "Google's fastest, most cost-effective Gemini 3.5 model for high-throughput execution.",
         "display_name": "Gemini 3.5 Flash-Lite",
-        "release_date": "2026-07-21"
+        "release_date": "2026-07-21",
+        "upstream_model": "gemini-3.5-flash-lite"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-3.1-flash-lite",
+      "model": "vertex/gemini-3.1-flash-lite",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -362,14 +367,15 @@
         "release_date": "2026-05-07",
         "deprecated": true,
         "retirement_date": "2027-05-07",
-        "deprecated_reason": "Scheduled for shutdown; use gemini-3.5-flash-lite."
+        "deprecated_reason": "Scheduled for shutdown; use gemini-3.5-flash-lite.",
+        "upstream_model": "gemini-3.1-flash-lite"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-3.1-pro-preview",
+      "model": "vertex/gemini-3.1-pro-preview",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -424,7 +430,8 @@
         "description": "Gemini 3.1 Pro Preview provides improved thinking, token efficiency, grounding, and reliable multi-step tool use for software engineering and agentic workflows.",
         "display_name": "Gemini 3.1 Pro Preview",
         "release_date": "2026-02-19",
-        "preview": true
+        "preview": true,
+        "upstream_model": "gemini-3.1-pro-preview"
       },
       "limits": {
         "high_context": 200000,
@@ -432,7 +439,7 @@
       }
     },
     {
-      "model": "gemini-3.1-pro-preview-customtools",
+      "model": "vertex/gemini-3.1-pro-preview-customtools",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -487,7 +494,8 @@
         "description": "Gemini 3.1 Pro Preview endpoint optimized to prioritize custom tools in agentic workflows that mix custom tools and bash.",
         "display_name": "Gemini 3.1 Pro Preview Custom Tools",
         "release_date": "2026-02-19",
-        "preview": true
+        "preview": true,
+        "upstream_model": "gemini-3.1-pro-preview-customtools"
       },
       "limits": {
         "high_context": 200000,
@@ -495,7 +503,7 @@
       }
     },
     {
-      "model": "gemini-2.5-pro",
+      "model": "vertex/gemini-2.5-pro",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -551,7 +559,8 @@
         "description": "Google's advanced model for complex tasks, deep reasoning, and coding.",
         "display_name": "Gemini 2.5 Pro",
         "release_date": "2025-06-17",
-        "knowledge_cutoff": "2025-01-01"
+        "knowledge_cutoff": "2025-01-01",
+        "upstream_model": "gemini-2.5-pro"
       },
       "limits": {
         "high_context": 200000,
@@ -559,7 +568,7 @@
       }
     },
     {
-      "model": "gemini-2.5-flash",
+      "model": "vertex/gemini-2.5-flash",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -614,14 +623,15 @@
         "description": "A price-performance model for low-latency, high-volume tasks that require reasoning.",
         "display_name": "Gemini 2.5 Flash",
         "release_date": "2025-06-17",
-        "knowledge_cutoff": "2025-01-01"
+        "knowledge_cutoff": "2025-01-01",
+        "upstream_model": "gemini-2.5-flash"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-2.5-flash-lite",
+      "model": "vertex/gemini-2.5-flash-lite",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -676,14 +686,15 @@
         "description": "The fastest and most budget-friendly multimodal model in the Gemini 2.5 family.",
         "display_name": "Gemini 2.5 Flash-Lite",
         "release_date": "2025-07-22",
-        "knowledge_cutoff": "2025-01-01"
+        "knowledge_cutoff": "2025-01-01",
+        "upstream_model": "gemini-2.5-flash-lite"
       },
       "limits": {
         "max_output_tokens": 65536
       }
     },
     {
-      "model": "gemini-3-pro-image",
+      "model": "vertex/gemini-3-pro-image",
       "provider": "vertex",
       "mode": "image_generation",
       "isEnabled": true,
@@ -733,14 +744,15 @@
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-pro-image",
         "description": "State-of-the-art image generation and editing for highly contextual native image creation.",
         "display_name": "Gemini 3 Pro Image (Nano Banana Pro)",
-        "release_date": "2026-05-28"
+        "release_date": "2026-05-28",
+        "upstream_model": "gemini-3-pro-image"
       },
       "limits": {
         "max_output_tokens": 32768
       }
     },
     {
-      "model": "gemini-3.1-flash-image",
+      "model": "vertex/gemini-3.1-flash-image",
       "provider": "vertex",
       "mode": "image_generation",
       "isEnabled": true,
@@ -794,14 +806,15 @@
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-image",
         "description": "Powerful, high-efficiency image generation and editing optimized for speed and high-volume use cases.",
         "display_name": "Gemini 3.1 Flash Image (Nano Banana 2)",
-        "release_date": "2026-05-28"
+        "release_date": "2026-05-28",
+        "upstream_model": "gemini-3.1-flash-image"
       },
       "limits": {
         "max_output_tokens": 32768
       }
     },
     {
-      "model": "gemini-3.1-flash-lite-image",
+      "model": "vertex/gemini-3.1-flash-lite-image",
       "provider": "vertex",
       "mode": "image_generation",
       "isEnabled": true,
@@ -851,14 +864,15 @@
         "reasoning_efforts": [
           "minimal",
           "high"
-        ]
+        ],
+        "upstream_model": "gemini-3.1-flash-lite-image"
       },
       "limits": {
         "max_output_tokens": 4096
       }
     },
     {
-      "model": "gemini-2.5-flash-image",
+      "model": "vertex/gemini-2.5-flash-image",
       "provider": "vertex",
       "mode": "image_generation",
       "isEnabled": true,
@@ -906,14 +920,15 @@
         "knowledge_cutoff": "2025-06-01",
         "deprecated": true,
         "retirement_date": "2026-10-02",
-        "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement."
+        "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement.",
+        "upstream_model": "gemini-2.5-flash-image"
       },
       "limits": {
         "max_output_tokens": 32768
       }
     },
     {
-      "model": "gemini-embedding-2",
+      "model": "vertex/gemini-embedding-2",
       "provider": "vertex",
       "mode": "embedding",
       "isEnabled": true,
@@ -962,11 +977,12 @@
           "output_dimensionality": [
             "128-3072"
           ]
-        }
+        },
+        "upstream_model": "gemini-embedding-2"
       }
     },
     {
-      "model": "gemini-embedding-001",
+      "model": "vertex/gemini-embedding-001",
       "provider": "vertex",
       "mode": "embedding",
       "isEnabled": true,
@@ -1001,11 +1017,12 @@
           "output_dimensionality": [
             "128-3072"
           ]
-        }
+        },
+        "upstream_model": "gemini-embedding-001"
       }
     },
     {
-      "model": "text-embedding-005",
+      "model": "vertex/text-embedding-005",
       "provider": "vertex",
       "mode": "embedding",
       "isEnabled": true,
@@ -1040,11 +1057,12 @@
           "output_dimensionality": [
             "1-768"
           ]
-        }
+        },
+        "upstream_model": "text-embedding-005"
       }
     },
     {
-      "model": "text-multilingual-embedding-002",
+      "model": "vertex/text-multilingual-embedding-002",
       "provider": "vertex",
       "mode": "embedding",
       "isEnabled": true,
@@ -1079,11 +1097,12 @@
           "output_dimensionality": [
             "1-768"
           ]
-        }
+        },
+        "upstream_model": "text-multilingual-embedding-002"
       }
     },
     {
-      "model": "grok-4.6",
+      "model": "vertex/xai/grok-4.6",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1123,7 +1142,8 @@
           "global"
         ],
         "launch_stage": "preview",
-        "preview": true
+        "preview": true,
+        "upstream_model": "xai/grok-4.6"
       },
       "additionalPricePerMillion": {
         "input_tokens_price_per_million_high_context": 4,
@@ -1135,7 +1155,7 @@
       }
     },
     {
-      "model": "grok-4.3",
+      "model": "vertex/xai/grok-4.3",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1175,11 +1195,12 @@
           "global"
         ],
         "launch_stage": "preview",
-        "preview": true
+        "preview": true,
+        "upstream_model": "xai/grok-4.3"
       }
     },
     {
-      "model": "grok-4.20-reasoning",
+      "model": "vertex/xai/grok-4.20-reasoning",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1218,7 +1239,8 @@
         "regions": [
           "global"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "xai/grok-4.20-reasoning"
       },
       "additionalPricePerMillion": {
         "input_tokens_price_per_million_high_context": 2.5,
@@ -1230,7 +1252,7 @@
       }
     },
     {
-      "model": "grok-4.20-non-reasoning",
+      "model": "vertex/xai/grok-4.20-non-reasoning",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1268,7 +1290,8 @@
         "regions": [
           "global"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "xai/grok-4.20-non-reasoning"
       },
       "additionalPricePerMillion": {
         "input_tokens_price_per_million_high_context": 2.5,
@@ -1280,7 +1303,7 @@
       }
     },
     {
-      "model": "grok-4.1-fast-reasoning",
+      "model": "vertex/xai/grok-4.1-fast-reasoning",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": false,
@@ -1322,11 +1345,12 @@
         "launch_stage": "deprecated",
         "deprecated": true,
         "retirement_date": "2026-08-20",
-        "deprecated_reason": "The Grok 4.1 family was shut down on Agent Platform on August 20, 2026. Migrate to Grok 4.3 or Grok 4.6."
+        "deprecated_reason": "The Grok 4.1 family was shut down on Agent Platform on August 20, 2026. Migrate to Grok 4.3 or Grok 4.6.",
+        "upstream_model": "xai/grok-4.1-fast-reasoning"
       }
     },
     {
-      "model": "grok-4.1-fast-non-reasoning",
+      "model": "vertex/xai/grok-4.1-fast-non-reasoning",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": false,
@@ -1367,11 +1391,12 @@
         "launch_stage": "deprecated",
         "deprecated": true,
         "retirement_date": "2026-08-20",
-        "deprecated_reason": "The Grok 4.1 family was shut down on Agent Platform on August 20, 2026. Migrate to Grok 4.3 or Grok 4.6."
+        "deprecated_reason": "The Grok 4.1 family was shut down on Agent Platform on August 20, 2026. Migrate to Grok 4.3 or Grok 4.6.",
+        "upstream_model": "xai/grok-4.1-fast-non-reasoning"
       }
     },
     {
-      "model": "deepseek-v3.1-maas",
+      "model": "vertex/deepseek-ai/deepseek-v3.1-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1411,7 +1436,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "deepseek-ai/deepseek-v3.1-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -1421,7 +1447,7 @@
       }
     },
     {
-      "model": "deepseek-v3.2-maas",
+      "model": "vertex/deepseek-ai/deepseek-v3.2-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1461,7 +1487,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "deepseek-ai/deepseek-v3.2-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -1471,7 +1498,7 @@
       }
     },
     {
-      "model": "deepseek-r1-0528-maas",
+      "model": "vertex/deepseek-ai/deepseek-r1-0528-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1510,7 +1537,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "deepseek-ai/deepseek-r1-0528-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -1520,7 +1548,7 @@
       }
     },
     {
-      "model": "deepseek-ocr-maas",
+      "model": "vertex/deepseek-ai/deepseek-ocr-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1559,14 +1587,15 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "deepseek-ai/deepseek-ocr-maas"
       },
       "limits": {
         "max_output_tokens": 8192
       }
     },
     {
-      "model": "kimi-k2-thinking-maas",
+      "model": "vertex/moonshotai/kimi-k2-thinking-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1607,14 +1636,15 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "moonshotai/kimi-k2-thinking-maas"
       },
       "limits": {
         "max_output_tokens": 262144
       }
     },
     {
-      "model": "minimax-m2-maas",
+      "model": "vertex/minimaxai/minimax-m2-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1654,14 +1684,15 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "minimaxai/minimax-m2-maas"
       },
       "limits": {
         "max_output_tokens": 196608
       }
     },
     {
-      "model": "gpt-oss-120b-maas",
+      "model": "vertex/openai/gpt-oss-120b-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1697,7 +1728,8 @@
           "global",
           "us-central1"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "openai/gpt-oss-120b-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -1707,7 +1739,7 @@
       }
     },
     {
-      "model": "gpt-oss-20b-maas",
+      "model": "vertex/openai/gpt-oss-20b-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1747,7 +1779,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "openai/gpt-oss-20b-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -1757,7 +1790,7 @@
       }
     },
     {
-      "model": "qwen3-235b-a22b-instruct-2507-maas",
+      "model": "vertex/qwen/qwen3-235b-a22b-instruct-2507-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1797,7 +1830,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "qwen/qwen3-235b-a22b-instruct-2507-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -1807,7 +1841,7 @@
       }
     },
     {
-      "model": "qwen3-coder-480b-a35b-instruct-maas",
+      "model": "vertex/qwen/qwen3-coder-480b-a35b-instruct-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1848,7 +1882,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "qwen/qwen3-coder-480b-a35b-instruct-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -1858,7 +1893,7 @@
       }
     },
     {
-      "model": "qwen3-next-80b-a3b-instruct-maas",
+      "model": "vertex/qwen/qwen3-next-80b-a3b-instruct-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1897,14 +1932,15 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "qwen/qwen3-next-80b-a3b-instruct-maas"
       },
       "limits": {
         "max_output_tokens": 262144
       }
     },
     {
-      "model": "qwen3-next-80b-a3b-thinking-maas",
+      "model": "vertex/qwen/qwen3-next-80b-a3b-thinking-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1944,14 +1980,15 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "qwen/qwen3-next-80b-a3b-thinking-maas"
       },
       "limits": {
         "max_output_tokens": 262144
       }
     },
     {
-      "model": "glm-4.7-maas",
+      "model": "vertex/zaiorg/glm-4.7-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -1991,14 +2028,15 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "zaiorg/glm-4.7-maas"
       },
       "limits": {
         "max_output_tokens": 128000
       }
     },
     {
-      "model": "glm-5-maas",
+      "model": "vertex/zaiorg/glm-5-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2038,14 +2076,15 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "zaiorg/glm-5-maas"
       },
       "limits": {
         "max_output_tokens": 128000
       }
     },
     {
-      "model": "glm-5.2-maas",
+      "model": "vertex/zaiorg/glm-5.2-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2083,14 +2122,15 @@
           "global"
         ],
         "launch_stage": "preview",
-        "preview": true
+        "preview": true,
+        "upstream_model": "zaiorg/glm-5.2-maas"
       },
       "limits": {
         "max_output_tokens": 64000
       }
     },
     {
-      "model": "gemma-4-26b-a4b-it-maas",
+      "model": "vertex/google/gemma-4-26b-a4b-it-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2128,14 +2168,15 @@
         "regions": [
           "global"
         ],
-        "launch_stage": "experimental"
+        "launch_stage": "experimental",
+        "upstream_model": "google/gemma-4-26b-a4b-it-maas"
       },
       "limits": {
         "max_output_tokens": 128000
       }
     },
     {
-      "model": "llama-4-maverick-17b-128e-instruct-maas",
+      "model": "vertex/meta/llama-4-maverick-17b-128e-instruct-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2172,7 +2213,8 @@
         "regions": [
           "us-east5"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "meta/llama-4-maverick-17b-128e-instruct-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -2182,7 +2224,7 @@
       }
     },
     {
-      "model": "llama-4-scout-17b-16e-instruct-maas",
+      "model": "vertex/meta/llama-4-scout-17b-16e-instruct-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2219,7 +2261,8 @@
         "regions": [
           "us-east5"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "meta/llama-4-scout-17b-16e-instruct-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -2229,7 +2272,7 @@
       }
     },
     {
-      "model": "llama-3.3-70b-instruct-maas",
+      "model": "vertex/meta/llama-3.3-70b-instruct-maas",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2268,7 +2311,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "meta/llama-3.3-70b-instruct-maas"
       },
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5
@@ -2278,7 +2322,7 @@
       }
     },
     {
-      "model": "mistral-medium-3",
+      "model": "vertex/mistralai/mistral-medium-3",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2311,11 +2355,12 @@
           "us-central1",
           "europe-west4"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "mistralai/mistral-medium-3"
       }
     },
     {
-      "model": "mistral-small-2503",
+      "model": "vertex/mistralai/mistral-small-2503",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2351,11 +2396,12 @@
           "us-central1",
           "europe-west4"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "mistralai/mistral-small-2503"
       }
     },
     {
-      "model": "codestral-2",
+      "model": "vertex/mistralai/codestral-2",
       "provider": "vertex",
       "mode": "chat",
       "isEnabled": true,
@@ -2388,11 +2434,12 @@
           "us-central1",
           "europe-west4"
         ],
-        "launch_stage": "ga"
+        "launch_stage": "ga",
+        "upstream_model": "mistralai/codestral-2"
       }
     },
     {
-      "model": "multilingual-e5-large-instruct-maas",
+      "model": "vertex/intfloat/multilingual-e5-large-instruct-maas",
       "provider": "vertex",
       "mode": "embedding",
       "isEnabled": true,
@@ -2437,11 +2484,12 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "intfloat/multilingual-e5-large-instruct-maas"
       }
     },
     {
-      "model": "multilingual-e5-small-maas",
+      "model": "vertex/intfloat/multilingual-e5-small-maas",
       "provider": "vertex",
       "mode": "embedding",
       "isEnabled": true,
@@ -2486,7 +2534,8 @@
         "deprecated": true,
         "deprecated_date": "2026-07-21",
         "retirement_date": "2026-10-21",
-        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead."
+        "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
+        "upstream_model": "intfloat/multilingual-e5-small-maas"
       }
     }
   ]
