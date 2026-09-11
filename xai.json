@@ -14,6 +14,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -40,7 +41,8 @@
         "tpm": 50000000,
         "high_context": 200000,
         "max_file_size_mb": 48,
-        "max_image_size_mb": 20
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "regions": ["us-east-1", "us-west-2"],
@@ -64,6 +66,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -90,7 +93,8 @@
         "tpm": 50000000,
         "high_context": 200000,
         "max_file_size_mb": 48,
-        "max_image_size_mb": 20
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "aliases": ["grok-4.5-latest", "grok-build-latest"],
@@ -114,6 +118,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -141,7 +146,8 @@
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 48,
-        "max_image_size_mb": 20
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "aliases": ["grok-4.3-latest"],
@@ -165,6 +171,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -192,7 +199,8 @@
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 48,
-        "max_image_size_mb": 20
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "aliases": [
@@ -231,6 +239,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -257,7 +266,8 @@
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 48,
-        "max_image_size_mb": 20
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "aliases": [
@@ -289,6 +299,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -316,7 +327,8 @@
         "tpm": 2500000,
         "high_context": 200000,
         "max_file_size_mb": 48,
-        "max_image_size_mb": 20
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "aliases": [
@@ -348,6 +360,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -374,7 +387,8 @@
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 48,
-        "max_image_size_mb": 20
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "aliases": ["grok-code-fast-1", "grok-code-fast", "grok-code-fast-1-0825"],
@@ -449,7 +463,7 @@
       "model": "xai/grok-imagine-image-quality",
       "provider": "xai",
       "mode": "image_generation",
-      "isEnabled": false,
+      "isEnabled": true,
       "inputTokensPricePerMillion": null,
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": null,

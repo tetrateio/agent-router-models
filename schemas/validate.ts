@@ -1,92 +1,140 @@
-// Check every catalog for a consistent long-context tier shape.
-//
-// The tier shape is: `limits.high_context` (an input-token threshold) plus
-// absolute `*_high_context` prices in `additionalPricePerMillion`. The
-// TypeScript types in models.ts cannot enforce this on JSON, because
-// AdditionalPricing and ModelLimits end in a catch-all index, so this script
-// does. Exit code 1 and one `file:model: reason` line per violation.
-//
-//     bun schemas/validate.ts
-//
-// ponytail: tier rules only. Add other record rules here when a run ships a
-// mistake the types did not catch.
+// Validate the pricing contract on every provider catalog: bun schemas/validate.ts
+import { readFileSync } from "node:fs"
+import {
+  ADDITIONAL_RATE_KEYS, IMAGE_TOKEN_PRICE_KEYS, PRICING_MULTIPLIER_KEYS,
+  PROVIDERS, SERVICE_TIERS, TOKEN_PRICE_BASES, TOKEN_PRICE_KEYS,
+} from "./models.ts"
 
-import { readFileSync, readdirSync } from "node:fs"
-
-const TIER_KEYS: Record<string, string | null> = {
-  input_tokens_price_per_million_high_context: "inputTokensPricePerMillion",
-  output_tokens_price_per_million_high_context: "outputTokensPricePerMillion",
-  cached_tokens_price_per_million_high_context: "cachedTokensPricePerMillion",
-  caching_tokens_price_per_million_high_context: "cachingTokensPricePerMillion",
-  caching_1h_per_million_high_context: null,
-}
-const REQUIRED = [
-  "input_tokens_price_per_million_high_context",
-  "output_tokens_price_per_million_high_context",
-]
-
-// A tier written as a ratio of the base price, in any bag. Providers describe
-// their tier this way (xAI "2x", OpenAI "2x input and 1.5x output"); the
-// catalog stores the resulting dollar amounts instead, so a reader never has to
-// multiply. These patterns catch the ratio shape wherever it is parked.
+const rateKeys = new Set<string>(ADDITIONAL_RATE_KEYS)
+const multiplierKeys = new Set<string>(PRICING_MULTIPLIER_KEYS)
+const imageKeys = new Set<string>(IMAGE_TOKEN_PRICE_KEYS)
+const object = (v: unknown): v is Record<string, any> =>
+  v !== null && typeof v === "object" && !Array.isArray(v)
+const rate = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v) && v >= 0
+const known = (v: unknown) => v !== null && v !== undefined
+const equalPrice = (a: number, b: number) => Math.abs(a - b) <= 1e-10 * Math.max(1, Math.abs(a), Math.abs(b))
 const MULTIPLIER_RE = /high_context_multiplier|above_\d+k|_(?:above|over)_\d/i
 
-/** Every key in the record's pricing and limits bags, including nested `extra`. */
-function allKeys(m: any): string[] {
-  const bags = [m.additionalPricePerMillion, m.additionalPricePerMillion?.extra, m.limits, m.limits?.extra]
-  return bags.flatMap((b) => (b && typeof b === "object" ? Object.keys(b) : []))
-}
+/** Structural checks do not establish provider support or source verification. */
+export function pricingErrors(m: any): string[] {
+  if (!object(m)) return ["model must be an object"]
+  const errors: string[] = []
+  const price = m.additionalPricePerMillion === undefined ? {} : m.additionalPricePerMillion
+  if (!object(price)) return ["additionalPricePerMillion must be an object"]
+  if (m.limits !== undefined && !object(m.limits)) return ["limits must be an object"]
 
-export function tierErrors(m: any): string[] {
-  const errs: string[] = []
-  const price = m.additionalPricePerMillion ?? {}
-  const threshold = m.limits?.high_context
-  const tierKeys = Object.keys(price).filter((k) => k.includes("high_context"))
-
-  for (const k of allKeys(m))
-    if (MULTIPLIER_RE.test(k))
-      errs.push(`${k} states the tier as a multiplier; write absolute *_high_context prices`)
-  for (const k of tierKeys)
-    if (!(k in TIER_KEYS)) errs.push(`unknown tier key ${k}`)
-
-  const hasTier = tierKeys.length > 0 || threshold != null
-  if (!hasTier) return errs
-
-  // A prompt has to be able to exceed the threshold. `max_input_tokens` is the
-  // real ceiling when the provider publishes one; otherwise the context window.
-  const ceiling = m.limits?.max_input_tokens ?? m.contextWindow
-  if (!(Number.isInteger(threshold) && threshold > 0))
-    errs.push("tier prices need limits.high_context as a positive integer")
-  else if (ceiling != null && threshold >= ceiling)
-    errs.push(`limits.high_context ${threshold} is not reachable; input caps at ${ceiling}`)
-
-  for (const k of REQUIRED)
-    if (!(k in price)) errs.push(`limits.high_context set but ${k} is missing`)
-
-  for (const [k, base] of Object.entries(TIER_KEYS)) {
-    if (!(k in price) || base === null) continue
-    if (m[base] == null) errs.push(`${k} set but ${base} is null`)
-    else if (Number(price[k]) < Number(m[base]))
-      errs.push(`${k} ${price[k]} is below ${base} ${m[base]}`)
+  // Top-level DB decimal strings retain their existing representation.
+  for (const key of Object.values(TOKEN_PRICE_BASES).filter(k => !k.startsWith("caching_"))) {
+    const v = m[key]
+    if (known(v) && !(typeof v === "string" && /^\d+(?:\.\d+)?$/.test(v) && Number.isFinite(Number(v))))
+      errors.push(`${key} must be a nonnegative decimal string or null`)
   }
-  return errs
+  const checkRate = (path: string, value: unknown) => {
+    if (value !== null && !rate(value)) errors.push(`${path} must be a finite nonnegative number or null`)
+  }
+  for (const [key, value] of Object.entries(price)) {
+    if (rateKeys.has(key)) checkRate(key, value)
+    else if (multiplierKeys.has(key)) {
+      checkRate(key, value)
+      if (rate(value) && (key === "batch_discount_multiplier" ? value <= 0 || value > 1 : value < 1))
+        errors.push(`${key} is outside its multiplier range`)
+    } else if (key === "image_tokens") {
+      if (!object(value)) errors.push("image_tokens must be an object")
+      else for (const [k, v] of Object.entries(value)) {
+        if (!imageKeys.has(k)) errors.push(`unknown image_tokens key ${k}`)
+        else checkRate(`image_tokens.${k}`, v)
+      }
+    } else if (key === "image_generation") {
+      if (!object(value) || !Object.keys(value).length) errors.push("image_generation must be a nonempty quality/size table")
+      else for (const [quality, sizes] of Object.entries(value)) {
+        if (!quality.trim() || !object(sizes) || !Object.keys(sizes).length)
+          errors.push(`image_generation.${quality} must be a nonempty size table`)
+        else for (const [size, v] of Object.entries(sizes)) {
+          if (!size.trim()) errors.push(`image_generation.${quality} has an empty size`)
+          checkRate(`image_generation.${quality}.${size}`, v)
+        }
+      }
+    } else errors.push(`unknown pricing key ${key}`)
+  }
+
+  // Keep detecting the old threshold multipliers in extensible limits bags.
+  const checkLimits = (bag: unknown) => {
+    if (!object(bag)) return
+    for (const [key, value] of Object.entries(bag)) {
+      if (MULTIPLIER_RE.test(key)) errors.push(`${key} states the tier as a multiplier; write absolute *_high_context prices`)
+      checkLimits(value)
+    }
+  }
+  checkLimits(m.limits)
+
+  const threshold = m.limits?.high_context
+  const comparison = m.limits?.high_context_comparison ?? "gt"
+  if (m.limits?.high_context_comparison !== undefined && !["gt", "gte"].includes(m.limits.high_context_comparison)) errors.push("high_context_comparison must be gt or gte")
+  const highKeys = Object.keys(price).filter(k => rateKeys.has(k) && k.endsWith("_high_context"))
+  const hasThreshold = threshold !== undefined
+  if (hasThreshold || highKeys.length || m.limits?.high_context_comparison !== undefined) {
+    if (!(Number.isInteger(threshold) && threshold > 0))
+      errors.push("tier prices need limits.high_context as a positive integer")
+    const ceiling = m.limits?.max_input_tokens ?? m.contextWindow
+    if (!known(ceiling)) errors.push("tier prices need a published input ceiling")
+    else if (!(Number.isInteger(ceiling) && ceiling > 0))
+      errors.push("tier input ceiling must be a positive integer")
+    else if (known(ceiling) && (comparison === "gte" ? threshold > ceiling : threshold >= ceiling))
+      errors.push(`limits.high_context ${threshold} is not reachable; input caps at ${ceiling}`)
+    if (!highKeys.length) errors.push("limits.high_context set but high-context prices are missing")
+  }
+
+  for (const tier of ["", ...SERVICE_TIERS]) {
+    const prefix = tier ? `${tier}_` : ""
+    const hasBase = tier && TOKEN_PRICE_KEYS.some(k => `${prefix}${k}` in price)
+    const hasHigh = TOKEN_PRICE_KEYS.some(k => `${prefix}${k}_high_context` in price)
+    for (const suffix of ["", "_high_context"]) {
+      if (!(suffix ? hasHigh : hasBase)) continue
+      for (const key of ["input_tokens_price_per_million", "output_tokens_price_per_million"]) {
+        if (!(`${prefix}${key}${suffix}` in price)) errors.push(`${prefix}${key}${suffix} is missing`)
+      }
+    }
+    for (const key of TOKEN_PRICE_KEYS) {
+      const highKey = `${prefix}${key}_high_context`
+      if (!known(price[highKey])) continue
+      const baseKey = tier ? `${prefix}${key}` : TOKEN_PRICE_BASES[key]
+      const inAdditional = !!tier || baseKey.startsWith("caching_")
+      const base = inAdditional ? price[baseKey] : m[baseKey]
+      if (!known(base)) errors.push(`${highKey} set but ${baseKey} is null or missing`)
+      else if (rate(price[highKey]) && price[highKey] < Number(base))
+        errors.push(`${highKey} ${price[highKey]} is below ${baseKey} ${base}`)
+    }
+  }
+
+  // Legacy Batch compatibility describes input/output only; cached rates are independent.
+  if (rate(price.batch_discount_multiplier)) {
+    for (const key of ["input_tokens_price_per_million", "output_tokens_price_per_million"] as const) {
+      const explicit = price[`batch_${key}`], base = m[TOKEN_PRICE_BASES[key]]
+      if (rate(explicit) && known(base) && !equalPrice(explicit, Number(base) * price.batch_discount_multiplier))
+        errors.push(`batch_${key} conflicts with batch_discount_multiplier`)
+    }
+  }
+  return errors
 }
+
+// Retain the previous import while extending its checks to the complete pricing bag.
+export const tierErrors = pricingErrors
 
 if (import.meta.main) {
   let bad = 0
-  for (const file of readdirSync(".").filter((f) => f.endsWith(".json")).sort()) {
-    let doc: any
+  for (const provider of PROVIDERS) {
+    const file = `${provider}.json`
     try {
-      doc = JSON.parse(readFileSync(file, "utf8"))
-    } catch {
-      continue
-    }
-    if (!Array.isArray(doc?.models)) continue
-    for (const m of doc.models)
-      for (const e of tierErrors(m)) {
-        console.log(`${file}:${m.model}: ${e}`)
+      const doc = JSON.parse(readFileSync(file, "utf8"))
+      if (!Array.isArray(doc.models)) throw new Error("models must be an array")
+      for (const m of doc.models) for (const error of pricingErrors(m)) {
+        console.error(`${file}:${m?.model}: ${error}`)
         bad++
       }
+    } catch (error) {
+      console.error(`${file}: ${error instanceof Error ? error.message : error}`)
+      bad++
+    }
   }
   console.log(bad ? `${bad} violation(s)` : "ok")
   process.exit(bad ? 1 : 0)

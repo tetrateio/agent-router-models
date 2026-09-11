@@ -21,7 +21,8 @@ model by model is not done.
 
 `CLAUDE.md` holds the field rules — accepted modes, capability mapping, the `tool_choice`
 rule — and `schemas/models.ts` holds the record shape. Read both before you touch a
-record. This skill does not repeat those rules.
+record. For every pricing update, also read [the shared pricing contract](../../../schemas/pricing.md).
+It defines units, service tiers, threshold boundaries, migration rules, and validation.
 
 ## Per file
 
@@ -34,8 +35,8 @@ record. This skill does not repeat those rules.
    state. A scripted comparison is what makes "every model accounted for" checkable.
 4. **Apply** the drift. Prices and limits take the provider's current value.
 5. **Add** models the provider lists that the catalog lacks, within the `CLAUDE.md` modes.
-6. **Validate**: the file parses, and `bun schemas/validate.ts` prints `ok`. It checks the
-   long-context tier shape on every catalog and names each violation as `file:model: reason`.
+6. **Validate** using the shared pricing contract. Every catalog must pass `bun schemas/validate.ts`.
+   Run its regression checks after schema or pricing changes. Record blocked sources separately; validation does not complete source verification.
 
 Batch the fetches. Providers are independent, so fetch several at once.
 
@@ -155,6 +156,16 @@ One provider surface, two catalogs: Anthropic's models go in `vertexanthropic.js
 other model in `vertex.json`. Google renames this product often; the path is the stable
 handle, not the name on the page.
 
+- For `vertex.json`, use the documented model ID with this user-approved publisher
+  mapping: xAI → `xai/`, Mistral (including Codestral) → `mistralai/`,
+  DeepSeek → `deepseek-ai/`, Kimi → `moonshotai/`, MiniMax → `minimaxai/`,
+  GPT-OSS → `openai/`, Qwen → `qwen/`, Llama → `meta/`, E5 → `intfloat/`,
+  GLM → `zaiorg/`, and Gemma → `google/`.
+  Apply the prefix exactly once and preserve the remaining ID and version suffix.
+  Other publishers keep their documented IDs. Store this ID in `metadata.upstream_model`
+  and set `model` to `vertex/` followed by that upstream ID, including for Gemini
+  and embedding models. Apply each prefix exactly once. This mapping replaces the signed-in
+  Model Garden card's Version name lookup and also applies to mirrored records.
 - `/generative-ai/pricing` — the only price source, and the one page on this host that
   **JavaScript-renders**: `curl` returns a shell with zero `<table>` elements. Read it
   through `claude-in-chrome`. Every other page here `curl`s fine.
@@ -220,17 +231,11 @@ These recur every run. Decide them the same way each time.
 - **Groq Enterprise models** — a model Groq marks Enterprise or Contact sales stays out of
   the catalog. Remove the record when a cataloged model moves to Enterprise, and name it
   under **Models that stay out of the catalog**.
-- **Long-context tier** — the provider publishes a second price above an input-token
-  count. Set `limits.high_context` to that count and write the provider's own numbers into
-  the `*_high_context` prices. Never a multiplier, even when the provider describes the
-  tier as one. A prompt has to be able to go above the threshold, so compare it with
-  `limits.max_input_tokens` where the provider publishes one and the context window
-  otherwise; a model that caps input at or below the threshold gets no tier, however the
-  pricing table prints it. Google's tables carry a long-context column on every model,
-  including 64k and 128k ones, and OpenAI gives `gpt-5.6-cyber` a 400k context window but
-  caps input at exactly 272,000. A model with a context window above 200k and
-  no tier is named under **Prices that did not change**, so a missing tier means verified
-  flat, not unchecked.
+- **Pricing dimensions** — inventory every additional-pricing key and compare all published service tables.
+  Follow [the shared pricing contract](../../../schemas/pricing.md) for absolute rates, promotion scope, and exact threshold operators.
+  Finish when every changed cell has a source and a declared field, or an unresolved audit entry.
+- **Long-context coverage** — verify whether each reachable tier applies to the model.
+  Name verified flat models above 200k under **Prices that did not change**.
 - **Promotional price** — record the price in effect today. Put the scheduled price and its
   date in the changelog under follow-up work.
 - **Description edits** — update a `description` only when the provider's wording changes

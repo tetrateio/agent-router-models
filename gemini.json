@@ -20,6 +20,7 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -82,7 +83,7 @@
       "capabilities": [
         "code_execution",
         "computer_use",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -145,7 +146,7 @@
       "capabilities": [
         "code_execution",
         "computer_use",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -203,7 +204,7 @@
       "capabilities": [
         "code_execution",
         "computer_use",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -261,7 +262,7 @@
       "capabilities": [
         "code_execution",
         "computer_use",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -321,7 +322,7 @@
       "contextWindow": 1048576,
       "capabilities": [
         "code_execution",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -385,6 +386,7 @@
       "contextWindow": 1048576,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -447,6 +449,7 @@
       "contextWindow": 1048576,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -509,7 +512,7 @@
       "capabilities": [
         "code_execution",
         "computer_use",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -585,7 +588,8 @@
         "input": [
           "document",
           "image",
-          "text"
+          "text",
+          "video"
         ],
         "output": [
           "image",
@@ -631,14 +635,16 @@
       "contextWindow": 65536,
       "capabilities": [
         "image_generation",
+        "pdf_support",
         "reasoning",
-        "tool_choice",
         "vision"
       ],
       "modalities": {
         "input": [
+          "document",
           "image",
-          "text"
+          "text",
+          "video"
         ],
         "output": [
           "image",
@@ -743,7 +749,7 @@
       "contextWindow": 1048576,
       "capabilities": [
         "code_execution",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -805,7 +811,7 @@
       "contextWindow": 1048576,
       "capabilities": [
         "code_execution",
-
+        "file_upload",
         "prompt_caching",
         "reasoning",
         "speech_recognition",
@@ -864,7 +870,7 @@
       "contextWindow": 1048576,
       "capabilities": [
         "code_execution",
-
+        "file_upload",
         "pdf_support",
         "prompt_caching",
         "reasoning",
@@ -924,8 +930,6 @@
       "contextWindow": 65536,
       "capabilities": [
         "image_generation",
-        "prompt_caching",
-        "structured_outputs",
         "vision"
       ],
       "modalities": {
@@ -1059,21 +1063,20 @@
       "provider": "gemini",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "2.0000000000",
-      "outputTokensPricePerMillion": "10.0000000000",
-      "cachedTokensPricePerMillion": "0.2000000000",
-      "cachingTokensPricePerMillion": "0.2000000000",
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "5.0000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": "0.1000000000",
       "additionalPricePerMillion": {
         "batch_discount_multiplier": 0.5,
-        "caching_storage_per_million_per_hour": 1,
-        "grounding_google_search_per_thousand": 14,
-        "grounding_google_maps_per_thousand": 14
+        "caching_storage_per_million_per_hour": 0.5,
+        "grounding_google_search_per_thousand": 14
       },
       "contextWindow": 131072,
       "capabilities": [
         "code_execution",
         "computer_use",
-
+        "file_upload",
         "prompt_caching",
         "reasoning",
         "speech_recognition",
@@ -1116,8 +1119,8 @@
       "provider": "gemini",
       "mode": "chat",
       "isEnabled": false,
-      "inputTokensPricePerMillion": "2.0000000000",
-      "outputTokensPricePerMillion": "10.0000000000",
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "5.0000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
@@ -1177,6 +1180,7 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "prompt_caching",
         "reasoning",
         "speech_recognition",

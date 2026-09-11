@@ -19,6 +19,53 @@ const CASES: [string, any, boolean][] = [
   ["a flat model", { additionalPricePerMillion: { batch_discount_multiplier: 0.5 }, limits: {}, contextWindow: 1000000 }, false],
 ]
 
+const tier = {
+  inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "40",
+  contextWindow: 200000, limits: { high_context: 100000 },
+  additionalPricePerMillion: {
+    batch_input_tokens_price_per_million: 5,
+    batch_output_tokens_price_per_million: 20,
+    batch_input_tokens_price_per_million_high_context: 7,
+    batch_output_tokens_price_per_million_high_context: 30,
+  },
+}
+const withPrices = (p: any) => ({ additionalPricePerMillion: p })
+CASES.push(
+  ["service long-context compares with Batch, not Standard", tier, false],
+  ["service long-context cannot undercut its own base", { ...tier, additionalPricePerMillion: { ...tier.additionalPricePerMillion, batch_input_tokens_price_per_million_high_context: 4 } }, true],
+  ["inclusive boundary reaches an equal cap", { ...tier, limits: { high_context: 200000, high_context_comparison: "gte" } }, false],
+  ["inclusive boundary cannot exceed cap", { ...tier, limits: { high_context: 200001, high_context_comparison: "gte" } }, true],
+  ["invalid comparison", { ...tier, limits: { high_context: 100000, high_context_comparison: "ge" } }, true],
+  ["null comparison is not omission", { ...tier, limits: { high_context: 100000, high_context_comparison: null } }, true],
+  ["unknown input ceiling", { ...tier, contextWindow: null }, true],
+  ["missing service output", withPrices({ flex_input_tokens_price_per_million: 1 }), true],
+  ["unpublished service cache rate stays null", withPrices({ flex_input_tokens_price_per_million: 1, flex_output_tokens_price_per_million: 2, flex_cached_tokens_price_per_million: null }), false],
+  ["omitted service cache rate is allowed", withPrices({ flex_input_tokens_price_per_million: 1, flex_output_tokens_price_per_million: 2 }), false],
+  ["unknown service base cannot be treated as zero", { ...tier, additionalPricePerMillion: { ...tier.additionalPricePerMillion, batch_input_tokens_price_per_million: null } }, true],
+  ["unknown nested tier rejected", withPrices({ service_tier_prices: { flex: { input_per_million: 1 } } }), true],
+  ["raw cents are not normalized prices", withPrices({ provider_billing: { cents_per_image_unit: 5 } }), true],
+  ["unknown scalar rejected", withPrices({ invented_price: 1 }), true],
+  ["numeric strings rejected in additional prices", withPrices({ web_search_per_thousand_calls: "1" }), true],
+  ["negative price rejected", withPrices({ web_search_per_thousand_calls: -1 }), true],
+  ["infinite price rejected", withPrices({ web_search_per_thousand_calls: Infinity }), true],
+  ["NaN price rejected", withPrices({ web_search_per_thousand_calls: NaN }), true],
+  ["explicit free and unknown prices", withPrices({ web_search_per_thousand_calls: 0, code_execution_per_hour: null }), false],
+  ["array pricing bag rejected", withPrices([]), true],
+  ["null pricing bag rejected", withPrices(null), true],
+  ["unknown image token key", withPrices({ image_tokens: { input_per_million: 1 } }), true],
+  ["array image size table rejected", withPrices({ image_generation: { standard: [0.01] } }), true],
+  ["extra nesting in image table rejected", withPrices({ image_generation: { standard: { "1K": { usd: 1 } } } }), true],
+  ["empty image table rejected", withPrices({ image_generation: {} }), true],
+  ["image table with arbitrary documented labels", withPrices({ image_generation: { standard: { "1K": 0.01, "1024x1024": null } } }), false],
+  ["double Batch discount rejected", { inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "40", additionalPricePerMillion: { batch_discount_multiplier: 0.5, batch_input_tokens_price_per_million: 2.5, batch_output_tokens_price_per_million: 10 } }, true],
+  ["Batch cached price is independent of legacy factor", { inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "40", cachedTokensPricePerMillion: "1", additionalPricePerMillion: { batch_discount_multiplier: 0.5, batch_input_tokens_price_per_million: 5, batch_output_tokens_price_per_million: 20, batch_cached_tokens_price_per_million: 1 } }, false],
+  ["discount above one rejected", withPrices({ batch_discount_multiplier: 1.5 }), true],
+  ["regional uplift below one rejected", withPrices({ regional_processing_uplift_multiplier: 0.5 }), true],
+  ["legacy multiplier hidden in limits", { limits: { extra: { input_tokens_above_272k_multiplier: 2 } } }, true],
+  ["numeric top-level price rejected", { inputTokensPricePerMillion: 1 }, true],
+  ["exponent top-level price rejected", { inputTokensPricePerMillion: "1e9" }, true],
+)
+
 let failed = 0
 for (const [name, record, shouldError] of CASES) {
   const errs = tierErrors(record)

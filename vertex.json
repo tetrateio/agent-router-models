@@ -26,6 +26,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -90,6 +91,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -155,6 +157,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -215,6 +218,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -275,6 +279,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -337,6 +342,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -402,6 +408,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -466,6 +473,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -531,6 +539,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -595,6 +604,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -658,6 +668,7 @@
         "reasoning",
         "speech_recognition",
         "structured_outputs",
+        "system_messages",
         "tool_choice",
         "url_context",
         "vision",
@@ -719,15 +730,18 @@
       "contextWindow": 65536,
       "capabilities": [
         "image_generation",
+        "pdf_support",
         "prompt_caching",
         "reasoning",
+        "system_messages",
         "vision",
         "web_search"
       ],
       "modalities": {
         "input": [
+          "text",
           "image",
-          "text"
+          "document"
         ],
         "output": [
           "image",
@@ -782,14 +796,16 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
+        "system_messages",
         "vision",
         "web_search"
       ],
       "modalities": {
         "input": [
-          "document",
+          "text",
           "image",
-          "text"
+          "video",
+          "document"
         ],
         "output": [
           "image",
@@ -836,14 +852,18 @@
       "contextWindow": 65536,
       "capabilities": [
         "image_generation",
+        "pdf_support",
         "prompt_caching",
         "reasoning",
+        "system_messages",
         "vision"
       ],
       "modalities": {
         "input": [
+          "text",
           "image",
-          "text"
+          "video",
+          "document"
         ],
         "output": [
           "image",
@@ -891,15 +911,18 @@
           }
         }
       },
-      "contextWindow": 65536,
+      "contextWindow": 32768,
       "capabilities": [
         "image_generation",
+        "pdf_support",
+        "system_messages",
         "vision"
       ],
       "modalities": {
         "input": [
+          "text",
           "image",
-          "text"
+          "document"
         ],
         "output": [
           "image",
@@ -2374,7 +2397,6 @@
       ],
       "modalities": {
         "input": [
-          "document",
           "text"
         ],
         "output": [
@@ -2536,6 +2558,120 @@
         "retirement_date": "2026-10-21",
         "deprecated_reason": "Deprecated on Agent Platform MaaS; self-deploy the model on Model Garden instead.",
         "upstream_model": "intfloat/multilingual-e5-small-maas"
+      }
+    },
+    {
+      "model": "vertex/gemini-3-flash-preview",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.5000000000",
+      "outputTokensPricePerMillion": "3.0000000000",
+      "cachedTokensPricePerMillion": "0.0500000000",
+      "cachingTokensPricePerMillion": "0.0500000000",
+      "additionalPricePerMillion": {
+        "batch_discount_multiplier": 0.5,
+        "caching_storage_per_million_per_hour": 1,
+        "grounding_google_search_per_thousand": 14,
+        "input_tokens_price_per_million_audio": 1,
+        "cached_tokens_price_per_million_audio": 0.1,
+        "caching_tokens_price_per_million_audio": 0.1
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search",
+        "system_messages"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536,
+        "max_images_per_prompt": 3000,
+        "max_file_size_mb": 50
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-3-flash-preview"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-flash",
+        "description": "Frontier-class performance rivaling larger models at a fraction of the cost.",
+        "display_name": "Gemini 3 Flash Preview",
+        "release_date": "2025-12-17",
+        "preview": true,
+        "upstream_model": "gemini-3-flash-preview",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "Public preview"
+      }
+    },
+    {
+      "model": "vertex/multimodalembedding@001",
+      "provider": "vertex",
+      "mode": "embedding",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 32,
+      "capabilities": [
+        "embedding_image_input",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "additionalPricePerMillion": {},
+      "limits": {
+        "max_file_size_mb": 20,
+        "embedding_dimensions": [
+          128,
+          256,
+          512,
+          1408
+        ],
+        "max_video_seconds_per_request": 120
+      },
+      "metadata": {
+        "upstream_model": "multimodalembedding@001",
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings",
+        "display_name": "Multimodal Embedding 001",
+        "description": "Creates embeddings from English text, images, and video.",
+        "catalog_note": "Disabled until the pricing table count units are resolved for text and video billing."
       }
     }
   ]

@@ -16,6 +16,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -223,6 +224,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -291,6 +293,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -359,6 +362,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -427,6 +431,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -495,6 +500,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -566,6 +572,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -635,6 +642,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -704,6 +712,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -776,6 +785,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -848,6 +858,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -918,6 +929,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -988,6 +1000,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1053,6 +1066,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1118,6 +1132,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1183,6 +1198,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1438,37 +1454,6 @@
       }
     },
     {
-      "model": "claude-4-opus-20250514",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "15.0000000000",
-      "outputTokensPricePerMillion": "75.0000000000",
-      "cachedTokensPricePerMillion": "1.5000000000",
-      "cachingTokensPricePerMillion": "18.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 32000,
-        "extra": {
-          "tool_use_system_prompt_tokens": 159
-        }
-      },
-      "metadata": {}
-    },
-    {
       "model": "claude-sonnet-4-20250514",
       "provider": "anthropic",
       "mode": "chat",
@@ -1535,37 +1520,6 @@
         "deprecated_reason": "Retired on June 15, 2026",
         "provider_override": "autofallback"
       }
-    },
-    {
-      "model": "claude-4-sonnet-20250514",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "3.0000000000",
-      "outputTokensPricePerMillion": "15.0000000000",
-      "cachedTokensPricePerMillion": "0.3000000000",
-      "cachingTokensPricePerMillion": "3.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 64000,
-        "extra": {
-          "tool_use_system_prompt_tokens": 159
-        }
-      },
-      "metadata": {}
     },
     {
       "model": "claude-3-7-sonnet-latest",
@@ -1857,37 +1811,6 @@
       }
     },
     {
-      "model": "claude-3-5-sonnet-latest",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "3.0000000000",
-      "outputTokensPricePerMillion": "15.0000000000",
-      "cachedTokensPricePerMillion": "0.3000000000",
-      "cachingTokensPricePerMillion": "3.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 8192,
-        "extra": {
-          "tool_use_system_prompt_tokens": 159
-        }
-      },
-      "metadata": {}
-    },
-    {
       "model": "claude-3-sonnet-20240229",
       "provider": "anthropic",
       "mode": "chat",
@@ -2103,37 +2026,6 @@
       }
     },
     {
-      "model": "claude-3-opus-latest",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "15.0000000000",
-      "outputTokensPricePerMillion": "75.0000000000",
-      "cachedTokensPricePerMillion": "1.5000000000",
-      "cachingTokensPricePerMillion": "18.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 4096,
-        "extra": {
-          "tool_use_system_prompt_tokens": 395
-        }
-      },
-      "metadata": {}
-    },
-    {
       "model": "claude-2.1",
       "provider": "anthropic",
       "mode": "chat",
@@ -2169,34 +2061,6 @@
       }
     },
     {
-      "model": "claude-instant-1",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "1.6300000000",
-      "outputTokensPricePerMillion": "5.5100000000",
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": 100000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 8191
-      },
-      "metadata": {}
-    },
-    {
       "model": "claude-instant-1.2",
       "provider": "anthropic",
       "mode": "chat",
@@ -2230,34 +2094,6 @@
         "retirement_date": "2024-11-06",
         "deprecated_reason": "replaced by claude-haiku-4-5-20251001"
       }
-    },
-    {
-      "model": "claude-2",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "8.0000000000",
-      "outputTokensPricePerMillion": "24.0000000000",
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": 100000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 8191
-      },
-      "metadata": {}
     }
   ]
 }
