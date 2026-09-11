@@ -11,10 +11,12 @@
       "cachedTokensPricePerMillion": "0.0750000000",
       "cachingTokensPricePerMillion": "0.0750000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 0.5,
         "grounding_google_search_per_thousand": 14,
-        "grounding_google_maps_per_thousand": 14
+        "grounding_google_maps_per_thousand": 14,
+        "batch_input_tokens_price_per_million": 0.375,
+        "batch_output_tokens_price_per_million": 1.875,
+        "batch_cached_tokens_price_per_million": 0.0375
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -74,10 +76,12 @@
       "cachedTokensPricePerMillion": "0.0750000000",
       "cachingTokensPricePerMillion": "0.0750000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 0.5,
         "grounding_google_search_per_thousand": 14,
-        "grounding_google_maps_per_thousand": 14
+        "grounding_google_maps_per_thousand": 14,
+        "batch_input_tokens_price_per_million": 0.375,
+        "batch_output_tokens_price_per_million": 1.875,
+        "batch_cached_tokens_price_per_million": 0.0375
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -137,10 +141,12 @@
       "cachedTokensPricePerMillion": "0.0750000000",
       "cachingTokensPricePerMillion": "0.0750000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 0.5,
         "grounding_google_search_per_thousand": 14,
-        "grounding_google_maps_per_thousand": 14
+        "grounding_google_maps_per_thousand": 14,
+        "batch_input_tokens_price_per_million": 0.375,
+        "batch_output_tokens_price_per_million": 1.875,
+        "batch_cached_tokens_price_per_million": 0.0375
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -195,10 +201,12 @@
       "cachedTokensPricePerMillion": "0.1500000000",
       "cachingTokensPricePerMillion": "0.1500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 1,
         "grounding_google_search_per_thousand": 14,
-        "grounding_google_maps_per_thousand": 14
+        "grounding_google_maps_per_thousand": 14,
+        "batch_input_tokens_price_per_million": 0.75,
+        "batch_output_tokens_price_per_million": 4.5,
+        "batch_cached_tokens_price_per_million": 0.075
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -253,10 +261,12 @@
       "cachedTokensPricePerMillion": "0.0300000000",
       "cachingTokensPricePerMillion": "0.0300000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 1,
         "grounding_google_search_per_thousand": 14,
-        "grounding_google_maps_per_thousand": 14
+        "grounding_google_maps_per_thousand": 14,
+        "batch_input_tokens_price_per_million": 0.15,
+        "batch_output_tokens_price_per_million": 1.25,
+        "batch_cached_tokens_price_per_million": 0.02
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -311,13 +321,15 @@
       "cachedTokensPricePerMillion": "0.0250000000",
       "cachingTokensPricePerMillion": "0.0250000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 1,
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
         "input_tokens_price_per_million_audio": 0.5,
         "cached_tokens_price_per_million_audio": 0.05,
-        "caching_tokens_price_per_million_audio": 0.05
+        "caching_tokens_price_per_million_audio": 0.05,
+        "batch_input_tokens_price_per_million": 0.125,
+        "batch_output_tokens_price_per_million": 0.75,
+        "batch_cached_tokens_price_per_million": 0.0125
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -374,14 +386,19 @@
       "cachedTokensPricePerMillion": "0.2000000000",
       "cachingTokensPricePerMillion": "0.2000000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 4.5,
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
         "input_tokens_price_per_million_high_context": 4,
         "cached_tokens_price_per_million_high_context": 0.4,
         "output_tokens_price_per_million_high_context": 18,
-        "caching_tokens_price_per_million_high_context": 0.4
+        "caching_tokens_price_per_million_high_context": 0.4,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_output_tokens_price_per_million": 6,
+        "batch_output_tokens_price_per_million_high_context": 9,
+        "batch_cached_tokens_price_per_million": 0.2,
+        "batch_cached_tokens_price_per_million_high_context": 0.4
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -437,14 +454,19 @@
       "cachedTokensPricePerMillion": "0.2000000000",
       "cachingTokensPricePerMillion": "0.2000000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 4.5,
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
         "input_tokens_price_per_million_high_context": 4,
         "cached_tokens_price_per_million_high_context": 0.4,
         "output_tokens_price_per_million_high_context": 18,
-        "caching_tokens_price_per_million_high_context": 0.4
+        "caching_tokens_price_per_million_high_context": 0.4,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_output_tokens_price_per_million": 6,
+        "batch_output_tokens_price_per_million_high_context": 9,
+        "batch_cached_tokens_price_per_million": 0.2,
+        "batch_cached_tokens_price_per_million_high_context": 0.4
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -500,13 +522,15 @@
       "cachedTokensPricePerMillion": "0.0500000000",
       "cachingTokensPricePerMillion": "0.0500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 1,
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
         "input_tokens_price_per_million_audio": 1,
         "cached_tokens_price_per_million_audio": 0.1,
-        "caching_tokens_price_per_million_audio": 0.1
+        "caching_tokens_price_per_million_audio": 0.1,
+        "batch_input_tokens_price_per_million": 0.25,
+        "batch_output_tokens_price_per_million": 1.5,
+        "batch_cached_tokens_price_per_million": 0.05
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -562,7 +586,6 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "grounding_google_search_per_thousand": 14,
         "image_tokens": {
           "output_image_tokens_price_per_million": 60
@@ -574,7 +597,9 @@
             "2K": 0.101,
             "4K": 0.151
           }
-        }
+        },
+        "batch_input_tokens_price_per_million": 0.25,
+        "batch_output_tokens_price_per_million": 1.5
       },
       "contextWindow": 131072,
       "capabilities": [
@@ -622,7 +647,6 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "image_tokens": {
           "output_image_tokens_price_per_million": 30
         },
@@ -630,7 +654,9 @@
           "standard": {
             "1K": 0.0336
           }
-        }
+        },
+        "batch_input_tokens_price_per_million": 0.125,
+        "batch_output_tokens_price_per_million": 0.75
       },
       "contextWindow": 65536,
       "capabilities": [
@@ -681,7 +707,6 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "grounding_google_search_per_thousand": 14,
         "image_tokens": {
           "output_image_tokens_price_per_million": 120
@@ -692,7 +717,9 @@
             "2K": 0.134,
             "4K": 0.24
           }
-        }
+        },
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 6
       },
       "contextWindow": 65536,
       "capabilities": [
@@ -737,14 +764,19 @@
       "cachedTokensPricePerMillion": "0.1250000000",
       "cachingTokensPricePerMillion": "0.1250000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 4.5,
         "grounding_google_search_per_thousand": 35,
         "grounding_google_maps_per_thousand": 25,
         "input_tokens_price_per_million_high_context": 2.5,
         "cached_tokens_price_per_million_high_context": 0.25,
         "output_tokens_price_per_million_high_context": 15,
-        "caching_tokens_price_per_million_high_context": 0.25
+        "caching_tokens_price_per_million_high_context": 0.25,
+        "batch_input_tokens_price_per_million": 0.625,
+        "batch_input_tokens_price_per_million_high_context": 1.25,
+        "batch_output_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million_high_context": 7.5,
+        "batch_cached_tokens_price_per_million": 0.125,
+        "batch_cached_tokens_price_per_million_high_context": 0.25
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -800,13 +832,15 @@
       "cachedTokensPricePerMillion": "0.0300000000",
       "cachingTokensPricePerMillion": "0.0300000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 1,
         "grounding_google_search_per_thousand": 35,
         "grounding_google_maps_per_thousand": 25,
         "input_tokens_price_per_million_audio": 1,
         "cached_tokens_price_per_million_audio": 0.1,
-        "caching_tokens_price_per_million_audio": 0.1
+        "caching_tokens_price_per_million_audio": 0.1,
+        "batch_input_tokens_price_per_million": 0.15,
+        "batch_output_tokens_price_per_million": 1.25,
+        "batch_cached_tokens_price_per_million": 0.03
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -859,13 +893,15 @@
       "cachedTokensPricePerMillion": "0.0100000000",
       "cachingTokensPricePerMillion": "0.0100000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 1,
         "grounding_google_search_per_thousand": 35,
         "grounding_google_maps_per_thousand": 25,
         "input_tokens_price_per_million_audio": 0.3,
         "cached_tokens_price_per_million_audio": 0.03,
-        "caching_tokens_price_per_million_audio": 0.03
+        "caching_tokens_price_per_million_audio": 0.03,
+        "batch_input_tokens_price_per_million": 0.05,
+        "batch_output_tokens_price_per_million": 0.2,
+        "batch_cached_tokens_price_per_million": 0.01
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -920,12 +956,13 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "image_generation": {
           "standard": {
             "default": 0.039
           }
-        }
+        },
+        "batch_input_tokens_price_per_million": 0.15,
+        "batch_output_tokens_price_per_million": null
       },
       "contextWindow": 65536,
       "capabilities": [
@@ -972,10 +1009,11 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "input_audio_per_million_tokens": 6.5,
         "input_image_per_million_tokens": 0.45,
-        "input_video_per_million_tokens": 12
+        "input_video_per_million_tokens": 12,
+        "batch_input_tokens_price_per_million": 0.1,
+        "batch_output_tokens_price_per_million": null
       },
       "contextWindow": 8192,
       "capabilities": [
@@ -1025,7 +1063,8 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 0.075,
+        "batch_output_tokens_price_per_million": null
       },
       "contextWindow": 2048,
       "capabilities": [],
@@ -1068,9 +1107,11 @@
       "cachedTokensPricePerMillion": "0.1000000000",
       "cachingTokensPricePerMillion": "0.1000000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "caching_storage_per_million_per_hour": 0.5,
-        "grounding_google_search_per_thousand": 14
+        "grounding_google_search_per_thousand": 14,
+        "batch_input_tokens_price_per_million": 0.5,
+        "batch_output_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.05
       },
       "contextWindow": 131072,
       "capabilities": [
@@ -1172,9 +1213,10 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "grounding_google_search_per_thousand": 14,
-        "input_tokens_price_per_million_audio": 2
+        "input_tokens_price_per_million_audio": 2,
+        "batch_input_tokens_price_per_million": 0.5,
+        "batch_output_tokens_price_per_million": 2.5
       },
       "contextWindow": 131072,
       "capabilities": [

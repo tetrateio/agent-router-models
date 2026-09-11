@@ -134,12 +134,17 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "batch_discount_multiplier": 0.8,
         "x_search_per_thousand_calls": 5,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
-        "collections_search_per_thousand_calls": 2.5
+        "collections_search_per_thousand_calls": 2.5,
+        "batch_cached_tokens_price_per_million": 0.16,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_output_tokens_price_per_million_high_context": 4,
+        "batch_cached_tokens_price_per_million_high_context": 0.32,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 2
       },
       "limits": {
         "rpm": 2220,
@@ -187,12 +192,17 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "batch_discount_multiplier": 0.8,
         "x_search_per_thousand_calls": 5,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
-        "collections_search_per_thousand_calls": 2.5
+        "collections_search_per_thousand_calls": 2.5,
+        "batch_cached_tokens_price_per_million": 0.16,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_output_tokens_price_per_million_high_context": 4,
+        "batch_cached_tokens_price_per_million_high_context": 0.32,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 2
       },
       "limits": {
         "rpm": 2220,
@@ -254,12 +264,17 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "batch_discount_multiplier": 0.8,
         "x_search_per_thousand_calls": 5,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
-        "collections_search_per_thousand_calls": 2.5
+        "collections_search_per_thousand_calls": 2.5,
+        "batch_cached_tokens_price_per_million": 0.16,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_output_tokens_price_per_million_high_context": 4,
+        "batch_cached_tokens_price_per_million_high_context": 0.32,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 2
       },
       "limits": {
         "rpm": 2220,
@@ -315,12 +330,17 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "batch_discount_multiplier": 0.8,
         "x_search_per_thousand_calls": 5,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
-        "collections_search_per_thousand_calls": 2.5
+        "collections_search_per_thousand_calls": 2.5,
+        "batch_cached_tokens_price_per_million": 0.16,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_output_tokens_price_per_million_high_context": 4,
+        "batch_cached_tokens_price_per_million_high_context": 0.32,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 2
       },
       "limits": {
         "rpm": 540,

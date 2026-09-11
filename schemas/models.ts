@@ -159,9 +159,8 @@ export const ADDITIONAL_RATE_KEYS = [
   ...SERVICE_PRICE_KEYS,
 ] as const;
 
-/** Dimensionless factors. Absolute service rates take precedence over legacy Batch. */
+/** Dimensionless regional surcharges. Service-tier rates are always absolute. */
 export const PRICING_MULTIPLIER_KEYS = [
-  "batch_discount_multiplier",
   "inference_geo_us_multiplier",
   "regional_processing_uplift_multiplier",
   "non_global_endpoint_multiplier",

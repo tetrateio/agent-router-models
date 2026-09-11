@@ -14,5 +14,7 @@ const nested: AdditionalPricing = { service_tier_prices: {} }
 const stringRate: AdditionalPricing = { web_search_per_thousand_calls: "1" }
 // @ts-expect-error Image token keys are closed too.
 const unknownImage: AdditionalPricing = { image_tokens: { invented_price: 1 } }
+// @ts-expect-error Batch multipliers are no longer part of the pricing contract.
+const legacyBatch: AdditionalPricing = { batch_discount_multiplier: 0.5 }
 const limits: ModelLimits = { high_context_comparison: "gte", provider_specific: true }
-void [valid, unknown, nested, stringRate, unknownImage, limits]
+void [valid, unknown, nested, stringRate, unknownImage, legacyBatch, limits]

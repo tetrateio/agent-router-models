@@ -12,7 +12,6 @@ const object = (v: unknown): v is Record<string, any> =>
   v !== null && typeof v === "object" && !Array.isArray(v)
 const rate = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v) && v >= 0
 const known = (v: unknown) => v !== null && v !== undefined
-const equalPrice = (a: number, b: number) => Math.abs(a - b) <= 1e-10 * Math.max(1, Math.abs(a), Math.abs(b))
 const MULTIPLIER_RE = /high_context_multiplier|above_\d+k|_(?:above|over)_\d/i
 
 /** Structural checks do not establish provider support or source verification. */
@@ -36,7 +35,7 @@ export function pricingErrors(m: any): string[] {
     if (rateKeys.has(key)) checkRate(key, value)
     else if (multiplierKeys.has(key)) {
       checkRate(key, value)
-      if (rate(value) && (key === "batch_discount_multiplier" ? value <= 0 || value > 1 : value < 1))
+      if (rate(value) && value < 1)
         errors.push(`${key} is outside its multiplier range`)
     } else if (key === "image_tokens") {
       if (!object(value)) errors.push("image_tokens must be an object")
@@ -106,14 +105,6 @@ export function pricingErrors(m: any): string[] {
     }
   }
 
-  // Legacy Batch compatibility describes input/output only; cached rates are independent.
-  if (rate(price.batch_discount_multiplier)) {
-    for (const key of ["input_tokens_price_per_million", "output_tokens_price_per_million"] as const) {
-      const explicit = price[`batch_${key}`], base = m[TOKEN_PRICE_BASES[key]]
-      if (rate(explicit) && known(base) && !equalPrice(explicit, Number(base) * price.batch_discount_multiplier))
-        errors.push(`batch_${key} conflicts with batch_discount_multiplier`)
-    }
-  }
   return errors
 }
 

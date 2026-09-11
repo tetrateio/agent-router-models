@@ -41,7 +41,6 @@
         "cached_tokens_price_per_million_high_context": 2,
         "output_tokens_price_per_million_high_context": 75,
         "caching_tokens_price_per_million_high_context": 25,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 5,
         "batch_cached_tokens_price_per_million": 0.5,
         "batch_caching_tokens_price_per_million": 6.25,
@@ -124,7 +123,6 @@
         "cached_tokens_price_per_million_high_context": 0.8,
         "output_tokens_price_per_million_high_context": 30,
         "caching_tokens_price_per_million_high_context": 10,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 2,
         "batch_cached_tokens_price_per_million": 0.2,
         "batch_caching_tokens_price_per_million": 2.5,
@@ -205,7 +203,6 @@
         "cached_tokens_price_per_million_high_context": 0.4,
         "output_tokens_price_per_million_high_context": 18,
         "caching_tokens_price_per_million_high_context": 5,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 1,
         "batch_cached_tokens_price_per_million": 0.1,
         "batch_caching_tokens_price_per_million": 1.25,
@@ -286,7 +283,6 @@
         "cached_tokens_price_per_million_high_context": 0.04,
         "output_tokens_price_per_million_high_context": 1.8,
         "caching_tokens_price_per_million_high_context": 0.5,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.1,
         "batch_cached_tokens_price_per_million": 0.01,
         "batch_caching_tokens_price_per_million": 0.125,
@@ -641,7 +637,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.025,
         "batch_cached_tokens_price_per_million": 0.0025,
         "batch_caching_tokens_price_per_million": null,
@@ -694,7 +689,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.125,
         "batch_cached_tokens_price_per_million": 0.0125,
         "batch_caching_tokens_price_per_million": null,
@@ -752,7 +746,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.625,
         "batch_cached_tokens_price_per_million": 0.0625,
         "batch_caching_tokens_price_per_million": null,
@@ -965,7 +958,8 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 4
       },
       "limits": {
         "max_output_tokens": 100000
@@ -1009,7 +1003,6 @@
       "additionalPricePerMillion": {
         "input_tokens_price_per_million_high_context": 60,
         "output_tokens_price_per_million_high_context": 270,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 15,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -1208,7 +1201,8 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 20
       },
       "limits": {
         "max_output_tokens": 100000
@@ -1256,7 +1250,6 @@
         "input_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.5,
         "output_tokens_price_per_million_high_context": 22.5,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 1.25,
         "batch_cached_tokens_price_per_million": 0.13,
         "batch_caching_tokens_price_per_million": null,
@@ -1559,7 +1552,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 7.5,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -1598,7 +1590,8 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 6
       },
       "limits": {
         "max_output_tokens": 1024
@@ -1639,7 +1632,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 10.5,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -1685,7 +1677,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.875,
         "batch_cached_tokens_price_per_million": 0.0875,
         "batch_caching_tokens_price_per_million": null,
@@ -1739,7 +1730,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.625,
         "batch_cached_tokens_price_per_million": 0.0625,
         "batch_caching_tokens_price_per_million": null,
@@ -1835,7 +1825,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 1,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -1891,7 +1880,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.55,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -1947,7 +1935,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 1,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -1994,7 +1981,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.2,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2041,7 +2027,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.05,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2148,7 +2133,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 75,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2229,7 +2213,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.55,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2274,7 +2257,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 7.5,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2350,7 +2332,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 2.5,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2406,7 +2387,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 1.25,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2494,7 +2474,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.075,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2532,7 +2511,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 5,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2575,7 +2553,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.25,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2617,7 +2594,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 15,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2669,7 +2645,6 @@
         "input_tokens_price_per_million_high_context": 10,
         "cached_tokens_price_per_million_high_context": 1,
         "output_tokens_price_per_million_high_context": 45,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 2.5,
         "batch_cached_tokens_price_per_million": 0.25,
         "batch_caching_tokens_price_per_million": null,
@@ -2733,7 +2708,6 @@
       "additionalPricePerMillion": {
         "input_tokens_price_per_million_high_context": 60,
         "output_tokens_price_per_million_high_context": 270,
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 15,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,
@@ -2785,7 +2759,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.375,
         "batch_cached_tokens_price_per_million": 0.0375,
         "batch_caching_tokens_price_per_million": null,
@@ -2840,7 +2813,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 0.1,
         "batch_cached_tokens_price_per_million": 0.01,
         "batch_caching_tokens_price_per_million": null,
@@ -2888,7 +2860,6 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "batch_input_tokens_price_per_million": 10,
         "batch_cached_tokens_price_per_million": null,
         "batch_caching_tokens_price_per_million": null,

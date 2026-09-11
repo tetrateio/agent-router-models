@@ -1,6 +1,6 @@
 // Run: bun schemas/migrate-pricing.test.ts
 import { deepStrictEqual, strictEqual, throws } from "node:assert"
-import { migratePricing } from "./migrate-pricing.ts"
+import { migratePricing, migrateLegacyBatch } from "./migrate-pricing.ts"
 
 const original = {
   provider: "deepinfra", inputTokensPricePerMillion: "0.4875", outputTokensPricePerMillion: "1.56",
@@ -42,3 +42,31 @@ for (const provider of ["xai", "vertex"]) {
   strictEqual(result.model.limits.high_context_comparison, provider === "xai" ? "gte" : undefined)
 }
 console.log("migration checks passed")
+
+const legacyBatch = {
+  inputTokensPricePerMillion: "0.75", outputTokensPricePerMillion: null,
+  cachedTokensPricePerMillion: "0.075", limits: { high_context: 200000 },
+  additionalPricePerMillion: { batch_discount_multiplier: 0.5, input_tokens_price_per_million_high_context: 1.5 },
+}
+const batch = migrateLegacyBatch(legacyBatch)
+strictEqual(batch.model.additionalPricePerMillion.batch_input_tokens_price_per_million, 0.375)
+strictEqual(batch.model.additionalPricePerMillion.batch_output_tokens_price_per_million, null)
+strictEqual("batch_discount_multiplier" in batch.model.additionalPricePerMillion, false)
+strictEqual("batch_cached_tokens_price_per_million" in batch.model.additionalPricePerMillion, false, "cache discounts are not inferred")
+strictEqual("batch_input_tokens_price_per_million_high_context" in batch.model.additionalPricePerMillion, false, "threshold scope requires a source")
+strictEqual(legacyBatch.additionalPricePerMillion.batch_discount_multiplier, 0.5, "input is unchanged")
+deepStrictEqual(migrateLegacyBatch(batch.model), { model: batch.model, changes: [] })
+strictEqual(batch.changes.at(-1)?.status, "removed")
+const independentCache = migrateLegacyBatch(legacyBatch, { batch_cached_tokens_price_per_million: 0.075 })
+strictEqual(independentCache.model.additionalPricePerMillion.batch_cached_tokens_price_per_million, 0.075, "published cached rate is not halved")
+const explicit = migrateLegacyBatch({ ...legacyBatch, additionalPricePerMillion: {
+  ...legacyBatch.additionalPricePerMillion, batch_input_tokens_price_per_million: 0.375, batch_output_tokens_price_per_million: null,
+} })
+strictEqual(explicit.model.additionalPricePerMillion.batch_input_tokens_price_per_million, 0.375, "never discount an explicit rate twice")
+strictEqual(explicit.model.additionalPricePerMillion.batch_output_tokens_price_per_million, null, "explicit null is authoritative")
+strictEqual("batch_discount_multiplier" in migratePricing(legacyBatch).model.additionalPricePerMillion, false, "full migration removes the legacy factor too")
+throws(() => migrateLegacyBatch({ ...legacyBatch, additionalPricePerMillion: { batch_discount_multiplier: null } }), /invalid legacy/)
+throws(() => migrateLegacyBatch({ ...legacyBatch, inputTokensPricePerMillion: undefined }), /missing Batch base/)
+throws(() => migrateLegacyBatch(legacyBatch, { batch_input_tokens_price_per_million: -1 }), /invalid published/)
+throws(() => migrateLegacyBatch(legacyBatch, { flex_input_tokens_price_per_million: 1 }), /unsupported published/)
+console.log("legacy Batch migration checks passed")

@@ -16,7 +16,7 @@ const CASES: [string, any, boolean][] = [
   ["threshold with no tier prices", { additionalPricePerMillion: {}, limits: { high_context: 200000 }, contextWindow: 500000 }, true],
   ["tier price below the base price", { additionalPricePerMillion: { input_tokens_price_per_million_high_context: 1, output_tokens_price_per_million_high_context: 9 }, limits: { high_context: 200000 }, contextWindow: 500000, inputTokensPricePerMillion: "2", outputTokensPricePerMillion: "6" }, true],
   ["a well-formed tier", { additionalPricePerMillion: { input_tokens_price_per_million_high_context: 20, output_tokens_price_per_million_high_context: 75 }, limits: { high_context: 272000, max_input_tokens: 922000 }, contextWindow: 1050000, inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "50" }, false],
-  ["a flat model", { additionalPricePerMillion: { batch_discount_multiplier: 0.5 }, limits: {}, contextWindow: 1000000 }, false],
+  ["a flat model", { additionalPricePerMillion: { batch_input_tokens_price_per_million: 1, batch_output_tokens_price_per_million: 2 }, limits: {}, contextWindow: 1000000 }, false],
 ]
 
 const tier = {
@@ -57,9 +57,10 @@ CASES.push(
   ["extra nesting in image table rejected", withPrices({ image_generation: { standard: { "1K": { usd: 1 } } } }), true],
   ["empty image table rejected", withPrices({ image_generation: {} }), true],
   ["image table with arbitrary documented labels", withPrices({ image_generation: { standard: { "1K": 0.01, "1024x1024": null } } }), false],
-  ["double Batch discount rejected", { inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "40", additionalPricePerMillion: { batch_discount_multiplier: 0.5, batch_input_tokens_price_per_million: 2.5, batch_output_tokens_price_per_million: 10 } }, true],
-  ["Batch cached price is independent of legacy factor", { inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "40", cachedTokensPricePerMillion: "1", additionalPricePerMillion: { batch_discount_multiplier: 0.5, batch_input_tokens_price_per_million: 5, batch_output_tokens_price_per_million: 20, batch_cached_tokens_price_per_million: 1 } }, false],
-  ["discount above one rejected", withPrices({ batch_discount_multiplier: 1.5 }), true],
+  ["legacy factor rejected beside double-discounted rates", { inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "40", additionalPricePerMillion: { batch_discount_multiplier: 0.5, batch_input_tokens_price_per_million: 2.5, batch_output_tokens_price_per_million: 10 } }, true],
+  ["Batch cached price is independent of input discount", { inputTokensPricePerMillion: "10", outputTokensPricePerMillion: "40", cachedTokensPricePerMillion: "1", additionalPricePerMillion: { batch_input_tokens_price_per_million: 5, batch_output_tokens_price_per_million: 20, batch_cached_tokens_price_per_million: 1 } }, false],
+  ["legacy Batch factor rejected", withPrices({ batch_discount_multiplier: 0.5 }), true],
+  ["legacy factor rejected even with absolute rates", withPrices({ batch_discount_multiplier: 0.5, batch_input_tokens_price_per_million: 1, batch_output_tokens_price_per_million: 2 }), true],
   ["regional uplift below one rejected", withPrices({ regional_processing_uplift_multiplier: 0.5 }), true],
   ["legacy multiplier hidden in limits", { limits: { extra: { input_tokens_above_272k_multiplier: 2 } } }, true],
   ["numeric top-level price rejected", { inputTokensPricePerMillion: 1 }, true],

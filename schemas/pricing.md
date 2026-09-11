@@ -70,10 +70,10 @@ Select the service and threshold before reading its price; never apply two token
 
 ## Multipliers and compatibility
 
-`batch_discount_multiplier` remains for existing consumers. Its scope is Standard input/output pricing.
-When explicit Batch prices exist, they are authoritative and must agree with that legacy factor.
-Do not multiply an explicit Batch price again or use the factor to infer cached prices.
-This migration does not synthesize absolute Batch rates for catalogs that contain only the legacy factor.
+Batch uses absolute `batch_*` rates exclusively. `batch_discount_multiplier` is removed and rejected by validation.
+Readers must select the published Batch cell directly. Do not apply another discount or infer a cached rate.
+Existing absolute rates, including null, remain authoritative during migration.
+The former factor supplies only missing input/output cells; other dimensions require independent provider evidence.
 
 Regional factors retain explicit names: `inference_geo_us_multiplier`,
 `regional_processing_uplift_multiplier`, and `non_global_endpoint_multiplier`.
@@ -86,7 +86,10 @@ The provisional `service_tier_prices`, `service_tier_*_multiplier`, `extra`, and
 Consumers must adopt the flat fields and the `gte` boundary before using those rates.
 Consumers that require raw billing dimensions need a separate billing contract; the normalized catalog cannot calculate those charges.
 This repository has no production billing reader, so these checks do not establish downstream compatibility.
-The legacy Batch factor should remain until its downstream consumers have been checked.
+Removing the Batch factor is a breaking change for consumers that previously multiplied Standard prices.
+The [Batch migration audit](../audits/2026-09-11-batch-migration.json) covers all 137 affected records.
+It preserves source cells and distinguishes unresolved or inherited pricing from newly checked provider facts.
+Separate Batch audio/image/video prices are not inferred from the removed input/output factor.
 
 ## Update and validation workflow
 

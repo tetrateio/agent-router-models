@@ -23,6 +23,7 @@ model by model is not done.
 rule — and `schemas/models.ts` holds the record shape. Read both before you touch a
 record. For every pricing update, also read [the shared pricing contract](../../../schemas/pricing.md).
 It defines units, service tiers, threshold boundaries, migration rules, and validation.
+Batch prices use absolute `batch_*` cells. The validator rejects the removed `batch_discount_multiplier` field.
 
 ## Per file
 

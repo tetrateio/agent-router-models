@@ -1,4 +1,5 @@
 {
+  "batch_migration": "2026-09-11-batch-migration.json",
   "pricing_migration": "2026-09-11-pricing-migration.json",
   "pricing_shape_note": "Field paths below describe the refresh before normalization. Consult the migration audit for final paths and raw billing evidence.",
   "date": "2026-09-11",

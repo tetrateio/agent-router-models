@@ -1,4 +1,5 @@
 {
+  "subsequent_batch_migration": "2026-09-11-batch-migration.json",
   "date": "2026-09-11",
   "description": "Migration of the provisional September 11 refresh shape. The source verification audit remains separate.",
   "records": [

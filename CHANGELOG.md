@@ -6,7 +6,9 @@
 - Direct xAI records use `limits.high_context_comparison: "gte"` at 200,000 input tokens. An omitted comparison retains the existing `gt` behavior, including Vertex mirrors.
 - Migrated 158 models from provisional nested pricing, service multipliers, and regional `extra` fields. The [migration audit](audits/2026-09-11-pricing-migration.json) records old values, destination paths, and source URLs.
 - Preserved 44 raw billing entries in that audit as unresolved mappings. The catalog cannot calculate those image-unit, media, or native-service charges. Existing availability flags remain unchanged by this shape migration.
-- Retained `batch_discount_multiplier` for compatibility. Explicit Batch rates take precedence; consumers must not apply the factor again or infer cached rates.
+- Removed `batch_discount_multiplier` from all 137 affected records and from the schema. Existing absolute Batch rates remain intact; 105 records gain explicit input/output cells. Unknown prices remain null.
+- The [Batch migration audit](audits/2026-09-11-batch-migration.json) records provider-specific cache and long-context cells. Readers must use absolute Batch prices directly; removing the factor is a breaking change.
+- Groq receives only an arithmetic conversion of its two existing Batch entries; current source verification remains blocked. Separate Batch media dimensions are not inferred.
 - Both local update skills now share [one pricing contract](schemas/pricing.md), including source coverage, exact thresholds, and promotion rules. Production consumer compatibility remains unverified outside this repository.
 
 ## New Models:
@@ -120,7 +122,7 @@
 
 ### Follow-up work
 
-- [Groq] All five model checks remain blocked. The documentation host returned HTTP 403, Browser reported a blocked request, and the public pricing URL redirected to the homepage. No Groq record changed. The affected names are `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `qwen/qwen3.6-27b`, `qwen/qwen3.8-27b`, and `openai/gpt-oss-safeguard-20b`.
+- [Groq] All five model checks remain blocked. The documentation host returned HTTP 403, Browser reported a blocked request, and the public pricing URL redirected to the homepage. Model facts and Standard prices remain unchanged; the Batch shape migration converts two existing factors to absolute rates. The affected names are `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `qwen/qwen3.6-27b`, `qwen/qwen3.8-27b`, and `openai/gpt-oss-safeguard-20b`.
 - [Gemini] On January 1, 2027, Robotics ER 2 input/output returns to $2/$10 per 1M tokens. Cached input returns to $0.20 and storage to $1 per 1M tokens per hour. The streaming variant also returns to $2/$10.
 - [Gemini] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash input/output rises to $1.50/$7.50 per 1M tokens. Cached input rises to $0.15 and cache storage to $1 per 1M tokens per hour.
 - [DeepInfra] Promotion end dates remain unpublished. The next run must check all seven discounts again. Their undiscounted input/cached/output rates are listed below.
@@ -167,7 +169,7 @@
 - [Anthropic] Removed six names absent from the current index, ID guide, and retirement history: `claude-4-opus-20250514`, `claude-4-sonnet-20250514`, `claude-3-5-sonnet-latest`, `claude-3-opus-latest`, `claude-instant-1`, and `claude-2`.
 - [DeepInfra] The migration audit preserves raw image billing units and defaults. These do not map safely to flat per-image or text-token prices. New image records keep top-level token prices null. Native-only records keep `backendUrls` empty and `isEnabled` false.
 - [DeepInfra] Flat Priority and Flex fields contain absolute rates, calculated once from current promotional token prices. GLM-5.2 explicit cache retention uses blocks of 1,024 tokens.
-- [OpenAI] Flat `batch_*`, `flex_*`, and `fast_mode_*` fields store absolute service rates, including long-context overrides. Null cached cells remain null. The legacy Batch multiplier cannot supply a missing cached rate.
+- [OpenAI] Flat `batch_*`, `flex_*`, and `fast_mode_*` fields store absolute service rates, including long-context overrides. Null cached cells remain null. Missing cached rates cannot be inferred from Standard prices.
 - [VertexAnthropic] Removed `structured_outputs` from all 14 records because Google's model capability tables omit it. Removed `reasoning` from Fable 5.1, Opus 5, Sonnet 5, Fable 5, and Opus 4.5 for the same reason.
 - [All] Pricing validation covers every catalog, including unknown keys, numeric units, media tables, and service-specific long-context rates. Regression checks cover migration and CLI failures.
 
@@ -349,7 +351,7 @@
 - [xAI] [Models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing), [release notes](https://docs.x.ai/developers/release-notes), and [the image retirement notice](https://docs.x.ai/developers/migration/imagine-image-quality-nov-2). Per-model pages supply the remaining model facts.
 - [DeepInfra] [Model list](https://api.deepinfra.com/models/list) and individual detail records at `https://api.deepinfra.com/models/<owner>/<name>`. Browser confirmed effective discounts and hosted tier prices. The site lists recent models; no separate usable change feed was found.
 - [Vertex] [Pricing](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), [Claude models](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), [partner deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/partner-models), and [open-model deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/open-models). Browser displayed all 57 pricing tables. Model pages supply limits, abilities, regions, and dates. Google's release notes were also checked.
-- [Groq] [Release notes](https://console.groq.com/docs/changelog) were accessible. [Models](https://console.groq.com/docs/models), deprecations, and capability pages were blocked. The five existing records remain unchanged and unverified for this date.
+- [Groq] [Release notes](https://console.groq.com/docs/changelog) were accessible. [Models](https://console.groq.com/docs/models), deprecations, and capability pages were blocked. The five existing records remain unverified for this date; two receive the Batch shape migration only.
 
 # 2026-09-08 TARS MODEL UPDATE
 
