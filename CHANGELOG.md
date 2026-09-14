@@ -4,10 +4,10 @@
 
 - `schemas/models.ts` now defines a closed additional-pricing contract shared with the runtime validator. Token rates use explicit service prefixes and optional `_high_context` suffixes.
 - Direct xAI records use `limits.high_context_comparison: "gte"` at 200,000 input tokens. An omitted comparison retains the existing `gt` behavior, including Vertex mirrors.
-- Migrated 158 models from provisional nested pricing, service multipliers, and regional `extra` fields. The [migration audit](audits/2026-09-11-pricing-migration.json) records old values, destination paths, and source URLs.
-- Preserved 44 raw billing entries in that audit as unresolved mappings. The catalog cannot calculate those image-unit, media, or native-service charges. Existing availability flags remain unchanged by this shape migration.
+- Migrated 158 models from provisional nested pricing, service multipliers, and regional `extra` fields.
+- Preserved 44 raw billing entries in local evidence files as unresolved mappings. The catalog cannot calculate those image-unit, media, or native-service charges. Existing availability flags remain unchanged by this shape migration.
 - Removed `batch_discount_multiplier` from all 137 affected records and from the schema. Existing absolute Batch rates remain intact; 105 records gain explicit input/output cells. Unknown prices remain null.
-- The [Batch migration audit](audits/2026-09-11-batch-migration.json) records provider-specific cache and long-context cells. Readers must use absolute Batch prices directly; removing the factor is a breaking change.
+- Batch prices use provider-specific cache and long-context cells. Readers must use absolute Batch prices directly; removing the factor is a breaking change.
 - Groq receives only an arithmetic conversion of its two existing Batch entries; current source verification remains blocked. Separate Batch media dimensions are not inferred.
 - Both local update skills now share [one pricing contract](schemas/pricing.md), including source coverage, exact thresholds, and promotion rules. Production consumer compatibility remains unverified outside this repository.
 
@@ -75,7 +75,7 @@
 ## Retired Models:
 
 - [DeepInfra] `MiniMaxAI/MiniMax-M2.7`, `zai-org/GLM-5`, and `zai-org/GLM-4.7-Flash` shut down on September 10. Their replacements are `MiniMaxAI/MiniMax-M3`, `zai-org/GLM-5.2`, and `zai-org/GLM-5.3-Flash`, respectively.
-- [DeepInfra] Added 89 disabled historical records that the provider still lists. These are catalog coverage additions, not new shutdown announcements. The audit names every record and its source.
+- [DeepInfra] Added 89 disabled historical records that the provider still lists. These are catalog coverage additions, not new shutdown announcements. Local evidence files record each model and its source.
 
 ## Other Updates:
 
@@ -161,13 +161,13 @@
 | [VertexAnthropic] `claude-opus-4` | 2026-05-14 |
 | [VertexAnthropic] `claude-sonnet-4` | 2026-05-14 |
 
-- [DeepInfra] Existing rerank records remain unchanged because AGENTS.md does not accept that mode. The audit names those records.
+- [DeepInfra] Existing rerank records remain unchanged because AGENTS.md does not accept that mode. Local evidence files name those records.
 
 ### Schema and catalog changes
 
-- [All] The catalogs contain 510 records after this update. The audit lists every starting record, addition, removal, source, and compared field. It distinguishes source matches from fields not extracted.
+- [All] The catalogs contain 510 records after this update. Local comparison reports distinguish verified fields from fields not extracted.
 - [Anthropic] Removed six names absent from the current index, ID guide, and retirement history: `claude-4-opus-20250514`, `claude-4-sonnet-20250514`, `claude-3-5-sonnet-latest`, `claude-3-opus-latest`, `claude-instant-1`, and `claude-2`.
-- [DeepInfra] The migration audit preserves raw image billing units and defaults. These do not map safely to flat per-image or text-token prices. New image records keep top-level token prices null. Native-only records keep `backendUrls` empty and `isEnabled` false.
+- [DeepInfra] Local evidence files preserve raw image billing units and defaults. These do not map safely to flat per-image or text-token prices. New image records keep top-level token prices null. Native-only records keep `backendUrls` empty and `isEnabled` false.
 - [DeepInfra] Flat Priority and Flex fields contain absolute rates, calculated once from current promotional token prices. GLM-5.2 explicit cache retention uses blocks of 1,024 tokens.
 - [OpenAI] Flat `batch_*`, `flex_*`, and `fast_mode_*` fields store absolute service rates, including long-context overrides. Null cached cells remain null. Missing cached rates cannot be inferred from Standard prices.
 - [VertexAnthropic] Removed `structured_outputs` from all 14 records because Google's model capability tables omit it. Removed `reasoning` from Fable 5.1, Opus 5, Sonnet 5, Fable 5, and Opus 4.5 for the same reason.
@@ -343,8 +343,8 @@
 
 ### Sources and coverage
 
-- [All] Sources were read on September 11, 2026, using Browser and batched `curl` requests. The audit compares every starting catalog record by script. Groq is explicitly incomplete. A provider match does not imply that every optional field was published or extracted.
-- [All] See [the model audit](audits/2026-09-11.json) for record-level coverage and field gaps. Previous changelog blocks remain unchanged.
+- [All] Sources were read on September 11, 2026, using Browser and batched `curl` requests. Scripts compare every starting catalog record. Groq is explicitly incomplete. A provider match does not imply that every optional field was published or extracted.
+- [All] Provider evidence and migration reports stay in the ignored local `audits/` directory. They are excluded from commits.
 - [Anthropic] [Model index](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), and [release notes](https://platform.claude.com/docs/en/release-notes/api). Individual model pages and the context, caching, fast-mode, and tool guides supplement the index.
 - [OpenAI] [Model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), and [changelog](https://developers.openai.com/api/docs/changelog). Model pages, the image guide, and the fast-mode guide supply limits and abilities. Snapshot pages that return 404 use the family page; snapshot-specific fields remain unchanged without explicit evidence.
 - [Gemini] [Models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), and [changelog](https://ai.google.dev/gemini-api/docs/changelog). Shared model pages supply the Custom Tools and Robotics variants.

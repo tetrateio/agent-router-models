@@ -1,1 +1,4 @@
 .DS_Store
+
+# Local provider evidence and migration reports
+/audits/

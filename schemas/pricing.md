@@ -23,7 +23,9 @@ Neither null nor omission establishes availability or permits a fallback to anot
 
 The pricing object has no catch-all field. Media tables retain their existing nesting.
 Image quality and size labels come from the provider; their leaf values use the same numeric rules.
-Provider billing units, raw cents, and unresolved dimensions belong in an audit under `audits/`.
+Store provider billing units, raw cents, and unresolved dimensions in local audits under `audits/`.
+These supporting artifacts are ignored by Git and excluded from commits.
+Record material limitations and source URLs in `CHANGELOG.md` so committed changes remain reviewable.
 An image unit is not necessarily one image. A provider's billed token is not necessarily a text token.
 
 ## Service rates
@@ -80,22 +82,22 @@ Regional factors retain explicit names: `inference_geo_us_multiplier`,
 Their applicability comes from the provider's documentation. They do not establish combinations with other discounts.
 
 The provisional `service_tier_prices`, `service_tier_*_multiplier`, `extra`, and `provider_billing` keys are removed.
-[The migration audit](../audits/2026-09-11-pricing-migration.json) records each old path, value, source, and destination or unresolved status.
+Local migration audits record each old path, value, source, and destination or unresolved status.
 [migrate-pricing.ts](migrate-pricing.ts) contains the one-time transformation; it leaves formatting and audit storage to its caller.
 
 Consumers must adopt the flat fields and the `gte` boundary before using those rates.
 Consumers that require raw billing dimensions need a separate billing contract; the normalized catalog cannot calculate those charges.
 This repository has no production billing reader, so these checks do not establish downstream compatibility.
 Removing the Batch factor is a breaking change for consumers that previously multiplied Standard prices.
-The [Batch migration audit](../audits/2026-09-11-batch-migration.json) covers all 137 affected records.
-It preserves source cells and distinguishes unresolved or inherited pricing from newly checked provider facts.
+The Batch migration covered all 137 affected records.
+Local evidence preserves source cells and distinguishes unresolved or inherited pricing from newly checked provider facts.
 Separate Batch audio/image/video prices are not inferred from the removed input/output factor.
 
 ## Update and validation workflow
 
 1. Inventory every existing additional-pricing key before changing a catalog.
 2. Match each price cell to the provider's service, unit, threshold operator, and effective date.
-3. Record source URLs and unresolved mappings in the run's audit.
+3. Record source URLs and unresolved mappings in the run's local audit.
 4. Use declared fields; extend the shared schema and validator before introducing a new pricing dimension.
 5. Preserve explicit zero, null, and omission during conversion.
 6. Run these checks from the repository root:

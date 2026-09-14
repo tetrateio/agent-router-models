@@ -24,6 +24,8 @@ rule — and `schemas/models.ts` holds the record shape. Read both before you to
 record. For every pricing update, also read [the shared pricing contract](../../../schemas/pricing.md).
 It defines units, service tiers, threshold boundaries, migration rules, and validation.
 Batch prices use absolute `batch_*` cells. The validator rejects the removed `batch_discount_multiplier` field.
+Keep supporting audits locally under ignored `audits/`; exclude them from commits.
+Record material source gaps and unresolved pricing in the changelog notes.
 
 ## Per file
 
@@ -234,7 +236,7 @@ These recur every run. Decide them the same way each time.
   under **Models that stay out of the catalog**.
 - **Pricing dimensions** — inventory every additional-pricing key and compare all published service tables.
   Follow [the shared pricing contract](../../../schemas/pricing.md) for absolute rates, promotion scope, and exact threshold operators.
-  Finish when every changed cell has a source and a declared field, or an unresolved audit entry.
+  Finish when every changed cell has a source and a declared field, or an unresolved local audit entry.
 - **Long-context coverage** — verify whether each reachable tier applies to the model.
   Name verified flat models above 200k under **Prices that did not change**.
 - **Promotional price** — record the price in effect today. Put the scheduled price and its
