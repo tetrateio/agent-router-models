@@ -1,221 +1,164 @@
 # 2026-09-14 TARS MODEL UPDATE
 
-Scope: Groq only. This update checks all five existing records against current Groq documentation.
+This combined update covers all eight catalogs, the pricing schema, and the updater instructions. The catalogs contain 496 records.
 
 ## New Models:
 
-- [Groq] None. The current index contains no additional model that meets the catalog requirements.
+- [OpenAI] Added two historical audio-preview records. Both retired on May 7, 2026 and remain disabled. These records do not restore API access.
+
+| Model | Text input/output | Audio input/output | Context / maximum output |
+| --- | --- | --- | --- |
+| `gpt-4o-audio-preview` | $2.50 / $10 | $40 / $80 | 128,000 / 16,384 tokens |
+| `gpt-4o-mini-audio-preview` | $0.15 / $0.60 | $10 / $20 | 128,000 / 16,384 tokens |
+
+Prices are USD per million tokens. Both models accept and produce text and audio, with streaming and tool calls.
 
 ## Price Changes:
 
-- [Groq] Standard, cached-input, and Batch token prices did not change. The catalog now also records the existing Flex rates.
+- [DeepInfra] Hy3's promotional discount decreased from 50% to 25%. The promotion has no published end date.
+
+| `tencent/Hy3` rate | Previous | Current |
+| --- | --- | --- |
+| Standard input / output | $0.07 / $0.29 | $0.105 / $0.435 |
+| Standard cached input | $0.0175 | $0.02625 |
+| Flex input / output | $0.056 / $0.232 | $0.084 / $0.348 |
+| Flex cached input | $0.014 | $0.021 |
+
+Prices are USD per million tokens. Other new pricing cells record existing provider charges or correct catalog errors.
 
 ## Deprecated Models:
 
-- [Groq] No new deprecation affects the five cataloged models.
+- [Vertex] `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite` retire on October 20, 2026. They remain enabled with 1,048,576-token contexts and 65,536-token output limits. Standard input/output prices remain $1.25/$10, $0.30/$2.50, and $0.10/$0.40 per million tokens. Pro retains its long-context prices.
 
 ## Retired Models:
 
-- [Groq] No new retirement affects the five cataloged models.
+- [OpenAI] The two historical audio records above retain their May 7 shutdown. The January 2027 notice concerns different IDs.
 
 ## Other Updates:
 
-- [Groq] All five records now include Flex prices. Flex uses standard prices and offers paid customers ten times the standard rate limits. Capacity failures remain possible. [Flex documentation](https://console.groq.com/docs/flex-processing).
-- [Groq] GPT OSS 20B and GPT OSS 120B now list low, medium, and high reasoning settings.
-- [Groq] Qwen 3.6 now lists reasoning on or off. Qwen 3.8 also lists low, medium, and high settings. [Reasoning documentation](https://console.groq.com/docs/reasoning).
-- [Groq] Qwen 3.6, Qwen 3.8, and Safety GPT OSS 20B now include their documented TruePoint quantization.
+- [All] Image generation is enabled only for eligible direct OpenAI and Gemini models. All 41 DeepInfra generators, three xAI generators, and four Vertex image mirrors remain disabled.
+- [Anthropic] Opus 5 and Opus 4.8 now include Fast-mode cache prices. Reads cost $1 per million tokens. Five-minute writes cost $12.50, and one-hour writes cost $20.
+- [OpenAI] Added $10 per 1,000 web-search calls to 40 supported models. Search-content tokens incur separate charges. GPT-5.3-Codex and GPT-5.2-Codex now include hosted command execution. The three text embeddings now record their 8,192-token input limits.
+- [Gemini/Vertex] Added published Batch, Flex, Priority, media, and storage prices. Embedding 2 Batch image/audio/video input costs $0.225/$3.25/$6 per million tokens on both providers. Detailed rates appear in Notes.
+- [Gemini] Four audio cache-creation prices are now unknown because the previous values described cache reads. Published read prices remain unchanged.
+- [DeepInfra] Added Batch prices for 134 available chat and embedding models at 20% less than real-time prices. Added Priority prices for 25 embeddings at 1.5 times Standard input.
+- [DeepInfra] `deepseek-ai/Janus-Pro-1B` and `deepseek-ai/Janus-Pro-7B` now record $0.0005 and $0.002 per processed input image. Both accept an image and question, then return text. Both remain disabled because the catalog lacks a compatible endpoint.
+- [DeepInfra] `nvidia/llama-nemotron-embed-vl-1b-v2` now includes hosted image input. Its $0.01 price per million input tokens and 10,240-token context remain unchanged.
+- [Vertex] Cache creation now uses Standard input prices for 12 Gemini models and three Gemini 3 image models. Five embeddings now record explicitly free output. Mistral Small 3.1 now includes document input, retaining its 128,000-token context and $0.10/$0.30 input/output prices per million tokens.
+- [VertexAnthropic] Sonnet 4.5 long-context prices apply from 200,000 input tokens, including equality. Five-minute cache writes cost $7.50 per million tokens at that threshold.
+- [xAI] Added Priority prices at twice Standard rates for all seven text models, including cached tokens and long prompts. Corrected image prices by quality and size. Grok 4.5 and 4.3 now list extra-high reasoning. Grok 4.6 now lists the us-central-1 region.
+- [Groq] Added Flex prices for all five models, matching Standard prices. Flex offers paid customers ten times the standard rate limits, with possible capacity failures. Four models now list reasoning settings, and three gain TruePoint quantization metadata.
 
 ## Notes:
 
-### Models that are added but not enabled
-
-- [Groq] None.
-
 ### Corrections to earlier updates
 
-- [Groq] The 2026-08-17 block described Compound and Compound Mini as models without published prices. Their current pages publish partial prices by underlying model. The exclusion now reflects incomplete, mixed-model pricing. This does not establish what Groq published on that earlier date.
-
-### Follow-up work
-
-- [Groq] Qwen 3.6 has conflicting image limits. Its [model page](https://console.groq.com/docs/model/qwen/qwen3.6-27b) lists three images, but the [vision guide](https://console.groq.com/docs/vision) lists five. The record retains `max_input_images: 3`.
-- [Groq] Safeguard has conflicting tool documentation. Its [model page](https://console.groq.com/docs/model/openai/gpt-oss-safeguard-20b) lists browser search and code execution. The [tool overview](https://console.groq.com/docs/tool-use/overview) marks built-in tools unsupported. The [browser-search guide](https://console.groq.com/docs/tool-use/built-in-tools/browser-search) explicitly includes Safeguard. The [code-execution guide](https://console.groq.com/docs/tool-use/built-in-tools/code-execution) excludes it from its supported list. The record retains `web_search` and omits `code_execution`.
-- [Groq] Safeguard's model page describes low, medium, and high reasoning effort. The [reasoning guide](https://console.groq.com/docs/reasoning) limits those settings to other named models. Its `reasoning_efforts` field remains absent.
-- [Groq] The tool guides link to [Groq pricing](https://groq.com/pricing), which redirects to a homepage without prices. GPT OSS browser-search and code-execution charges remain unverified. Compound tool charges do not establish those models' charges.
-- [Groq] Compound pricing needs separate rates for each underlying model and tool. Both systems publish GPT OSS 120B rates of $0.15 input and $0.60 output per million tokens. Compound lists pending Llama 4 Scout rates. Compound Mini lists pending Llama 3.3 70B rates. The schema cannot represent these routing-dependent inference prices. [Compound](https://console.groq.com/docs/compound/systems/compound), [Compound Mini](https://console.groq.com/docs/compound/systems/compound-mini), and [usage breakdowns](https://console.groq.com/docs/compound).
-- [Groq] Compound tools cost $5 for basic search, $8 for advanced search, and $1 for website visits per 1,000 requests. Code execution costs $0.18 per hour. These prices remain in the local audit with their system scope and unresolved search-level and website-visit mappings.
+- [OpenAI] The September 11 removal of GPT-5.3-Codex and GPT-5.2-Codex command execution was incorrect. Their model pages document hosted shell, which does not establish Code Interpreter billing.
+- [Vertex] The September 11 Gemini 3 Flash Preview Standard output price of $3 is no longer supported by the current table. The cell is null. Published Priority output remains $5.40, and Flex/Batch output remains $1.50 per million tokens.
+- [Vertex] Restored Mistral Small document input from its hosted table. Removed Gemini 3.1 Flash-Lite's unsupported hard retirement date. Corrected Gemini 3.1 Flash-Lite Image's release date from June 30 to June 23, 2026.
+- [DeepInfra] Corrected the September 11 omissions of Janus input-image prices and seven historical service rows. Six rows use Priority, and one uses Flex. These models remain disabled: `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16`, `Qwen/Qwen3.5-4B`, `Qwen/Qwen3.5-2B`, and `Qwen/Qwen3.5-0.8B`. The other three are `stepfun-ai/Step-3.5-Flash`, `nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning`, and `deepreinforce-ai/Ornith-1.0-35B`.
+- [xAI] The September 11 claim that medium image pricing was unpublished was incorrect. Rendered tables include quality, size, and input-image charges that Markdown omits.
+- [Groq] The August 17 block described Compound systems as unpriced. Current pages publish partial prices by underlying model. The exclusion now reflects incomplete, mixed-model pricing. This does not establish what Groq published in August.
 
 ### Schema and catalog changes
 
-- [Groq] The catalog retains five enabled records. No schema change is necessary.
-- [Groq] All five records gain `flex_input_tokens_price_per_million` and `flex_output_tokens_price_per_million`. The three GPT OSS records also gain `flex_cached_tokens_price_per_million`.
-- [Groq] Flex input/output prices per million tokens are $0.15/$0.60 for GPT OSS 120B and $0.075/$0.30 for GPT OSS 20B and Safeguard. Qwen 3.6 costs $0.60/$3.00. Qwen 3.8 costs $0.80/$4.00.
-- [Groq] Flex cached-input prices are $0.075 for GPT OSS 120B and $0.037 for GPT OSS 20B and Safeguard. These preserve the exact published rounded rates. [Caching documentation](https://console.groq.com/docs/prompt-caching) applies caching to all supported API requests. [Flex documentation](https://console.groq.com/docs/flex-processing) specifies the same prices as standard processing.
-- [Groq] Four records gain `metadata.reasoning_efforts`. Qwen 3.6 accepts `none` and `default`. Qwen 3.8 accepts `none`, `default`, `low`, `medium`, and `high`. GPT OSS 20B and 120B accept `low`, `medium`, and `high`.
-- [Groq] Qwen 3.6, Qwen 3.8, and Safeguard gain `metadata.quantization: Groq's TruePoint Numerics` from their model pages.
-- [Groq] Each Qwen image counts as 2,048 input tokens under the unified input rate. This conversion is not a separate image charge. [Vision documentation](https://console.groq.com/docs/vision).
-- [Groq] The existing `rpm` and `tpm` values describe the Developer plan. Flex limits and account-specific limits do not replace those values.
+- [All] Added two OpenAI records and removed 16 records without current published inference prices. Removal for missing pricing does not announce a provider shutdown.
+- [All] The image policy matches image-generation mode, image output, or the image-generation capability. Image input or `vision` alone does not trigger it. Eligible providers still require valid prices, endpoints, and lifecycle status.
+- [DeepInfra] Disabled the 24 image generators that remained enabled. [Vertex] Disabled `gemini-3-pro-image`, `gemini-3.1-flash-image`, `gemini-3.1-flash-lite-image`, and `gemini-2.5-flash-image`. Their direct Gemini records remain enabled.
+- [All] Added `input_image_price_per_image` in USD per processed input image. Numeric values, including zero, qualify as published inference prices. The field requires image input and `vision`, but does not enable a model. Null token prices do not mean free inference.
+- [All] Added closed service fields for audio, embedding media, cache storage, processed images, image tokens, and generated images. Existing field names, units, zero values, null values, and omissions retain their meanings. The [pricing contract](docs/pricing.md) defines the fields and their service prefixes.
+- [All] Media `_high_context` overrides share the model's input threshold and require known base prices. Published media prices can decrease past the threshold. Text-price rules remain unchanged.
+- [Gemini/Vertex] The media extension contains 156 new price cells, four cache-creation corrections, and two threshold fields across 18 Gemini and nine Vertex records. Gemini adds 37 service cache-storage rates, in USD per million stored tokens per hour.
+- [Gemini] Audio cache-creation cells remain null for `gemini-3.1-flash-lite`, `gemini-3-flash-preview`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite`.
+- [Vertex] Gemini 2.5 Flash audio uses `high_context: 200000` and `high_context_comparison: gt`. Input costs $1 per million tokens through that threshold, then $0.30. Cache creation uses the same Standard input rates.
+- [VertexAnthropic] Sonnet 4.5 uses `high_context_comparison: gte`. [xAI] The seven text models retain their existing 200,000-token `gte` boundary.
+- [xAI] Added `x_search_per_thousand_posts` and `x_search_per_thousand_user_profiles`. The schema does not schedule future prices. Catalog rates still use the current call unit.
+- [All] Consumers need explicit support for new price fields. Per-image and image-token prices can describe one charge. Each charge must count only once. Container sessions, memory tiers, conditional waivers, and ambiguous image/count units still need separate billing rules.
+- [All] Catalog checks now enforce provider restrictions, modality/capability links, mapped tool fees, tool names, and retirement dates. Omitted `isEnabled` means enabled. Hard retirement dates use the current UTC date.
+- [All] Updated both agent rule files and updater skills together. They require exact-ID lifecycle checks, complete field accounting, scoped evidence, and the user-selected browser. The full OpenAI index and rendered tables resolve gaps in smaller tables or Markdown.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, TypeScript compilation, and all eight catalogs. Supporting audits remain ignored.
 
-### Models that stay out of the catalog
+### Recorded service and image prices
 
-- [Groq] `llama-3.1-8b-instant`, `llama-3.3-70b-versatile`, and `minimaxai/minimax-m2.7` remain Enterprise models with contact-sales pricing. [Model index](https://console.groq.com/docs/models).
-- [Groq] `minimaxai/minimax-m2.5` and `qwen/qwen3-vl-32b-instruct` remain Enterprise exclusions from the latest [changelog entry](https://console.groq.com/docs/changelog).
-- [Groq] `whisper-large-v3` and `whisper-large-v3-turbo` require audio input. `canopylabs/orpheus-arabic-saudi` and `canopylabs/orpheus-v1-english` produce audio. Their modes are outside this catalog's accepted modes. [Model index](https://console.groq.com/docs/models).
-- [Groq] `meta-llama/llama-prompt-guard-2-22m` and `meta-llama/llama-prompt-guard-2-86m` remain excluded as DeBERTa classifiers. Groq exposes them through Chat Completions, but the catalog excludes the classifier task type. [22M model page](https://console.groq.com/docs/model/meta-llama/llama-prompt-guard-2-22m), [86M model page](https://console.groq.com/docs/model/meta-llama/llama-prompt-guard-2-86m).
-- [Groq] `groq/compound` and `groq/compound-mini` remain excluded for incomplete, mixed-model inference pricing. See Follow-up work.
-- [Groq] The [Performance tier](https://console.groq.com/docs/performance-tier) requires an Enterprise agreement and provisioned capacity. It publishes no token rate for the catalog.
+All token rates below use USD per million tokens. These additions do not announce new provider prices.
 
-### Prices that did not change
+<details>
+<summary>Token, audio, image, and storage rates</summary>
 
-- [Groq] All five records retain their standard input/output prices and context/output limits. All three GPT OSS records retain their published cached-input rates. The model index and all five model pages agree on these values.
-- [Groq] GPT OSS 120B retains Batch input/output rates of $0.075/$0.30 per million tokens. GPT OSS 20B retains $0.0375/$0.15. Batch does not stack with caching discounts. Other cataloged models lack documented Batch eligibility. [Batch documentation](https://console.groq.com/docs/batch).
-- [Groq] No cataloged model has a context window greater than 200,000 tokens. Qwen 3.8 retains the explicitly published 131,042-token context window.
-- [Groq] Cache-write rates remain null. Groq describes automatic caching without an additional fee but publishes no separate cache-write token rate. Qwen cache-read rates remain null because Qwen lacks documented caching support.
+- [Gemini] Added Flex/Priority token prices across 14 records. Gemini 3.8, 3.7, and 3.6 Flash use Flex input/cache/output prices of $0.375/$0.0375/$1.875. Priority uses $1.35/$0.135/$6.75.
+- [Vertex] Added Priority/Flex token prices across 16 Gemini records. Regions and launch stages match hosted availability. Publisher prefixes and the `https://aiplatform.googleapis.com/v1/` backend remain unchanged.
+- [Gemini] Standard image-input token prices are $0.50 for 3.1 Flash Image, $0.25 for 3.1 Flash-Lite Image, and $2 for 3 Pro Image. Gemini 2.5 Flash Image uses $0.30 input and $30 output per million image tokens.
 
-### Sources and coverage
+[Gemini audio and storage pricing](https://ai.google.dev/gemini-api/docs/pricing):
 
-- [Groq] This run read the change feed first, using 2026-09-07 as the previous broad source-coverage baseline. Later partial runs did not advance unchecked coverage. The [feed](https://console.groq.com/docs/changelog) still ends on 2026-04-18. The latest [deprecation notice](https://console.groq.com/docs/deprecations) remains 2026-08-16.
-- [Groq] Browser checks covered the index, all five model pages, deprecations, and the Developer-plan rate table. They also covered vision, reasoning, structured outputs, caching, tool guides, Batch, Flex, Performance, service tiers, and both Compound pages.
-- [Groq] HTTP fetches supplied source text for a scripted comparison of every existing field and every additional-price cell. Local evidence under ignored `audits/2026-09-14/groq-focused/` records source URLs, statuses, exclusions, and comparisons.
-- [Groq] The earlier browser and HTTP access failures did not recur. Source verification remains incomplete for the named conflicts and redirected tool-pricing source. Structural checks do not resolve those gaps.
-- [Groq] All eight catalogs pass the catalog validator. Pricing, catalog-policy, and CLI regression checks pass.
+| Model | Batch/Flex audio input / cache read | Priority audio input / cache read | Batch/Flex storage | Priority storage |
+| --- | --- | --- | --- | --- |
+| Gemini 3.1 Flash-Lite | $0.25 / $0.025 | $0.90 / $0.09 | $0.50 | $1.80 |
+| Gemini 3 Flash Preview / Gemini 2.5 Flash | $0.50 / $0.10 | $1.80 / $0.18 | $1.00 | $1.80 |
+| Gemini 2.5 Flash-Lite | $0.15 / $0.03 | $0.54 / $0.054 | $1.00 | $1.80 |
 
+Storage uses USD per million stored tokens per hour. Cache-read prices do not establish cache-creation prices.
 
-# 2026-09-14 TARS MODEL UPDATE
+[Vertex audio pricing](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing) covers both input bands: at most 200,000 tokens and more than 200,000 tokens.
 
-## New Models:
+| Model / endpoint | Batch/Flex audio input | Batch/Flex cache read | Priority audio input / cache read |
+| --- | --- | --- | --- |
+| Gemini 3 Flash Preview | $0.50 | null | $1.80 / $0.18 |
+| Gemini 2.5 Flash | $0.50 | not listed | $1.80 / $0.18 |
+| Gemini 3.1 Flash-Lite, global | $0.25 | $0.025 | $0.90 / $0.09 |
+| Gemini 3.1 Flash-Lite, non-global | $0.275 | $0.0275 | $0.99 / $0.099 |
+| Gemini 2.5 Flash-Lite | $0.05 | not listed | $0.54 / $0.054 |
 
-- [All] None. The catalogs retain 496 records.
+Vertex publishes no service-specific storage rows. Absent cells remain omitted, and explicit unavailable cells remain null.
 
-## Price Changes:
+| Provider / image model | Recorded rates and published equivalents |
+| --- | --- |
+| Gemini 3.1 Flash Image | Batch output: $30 per million image tokens, or $0.022/$0.034/$0.050/$0.076 per 0.5K/1K/2K/4K image. |
+| Gemini 3.1 Flash-Lite Image | Batch output: $15 per million image tokens, or $0.0168 per 1K image. |
+| Gemini 3 Pro Image | Batch/Flex input: $0.0006 per image. Output: $0.067 per 1K/2K image and $0.12 per 4K image. Priority input/output: $3.60/$216 per million image tokens. |
+| Gemini 2.5 Flash Image | Batch/Flex output: $0.0195 per image. Priority output: $0.0702 per image. |
+| Vertex Gemini 3 Pro Image | Priority output: $216 per million image tokens in both context bands. Global Batch/Flex output: $60 through 200,000 input tokens. |
+| Vertex Gemini 3.1 Flash Image | Batch/Flex output: $30 globally and $33 outside global per million image tokens, through 200,000 input tokens. |
+| Vertex Gemini 3.1 Flash-Lite Image / Gemini 2.5 Flash Image | Batch/Flex output: $15 per million image tokens through 200,000 input tokens. |
 
-- [All] Provider prices remain unchanged. This update records previously unrepresented media and service charges.
+Per-image, second, and frame equivalents describe conversions, not additional inference fees. Sources: [Gemini](https://ai.google.dev/gemini-api/docs/pricing), [Vertex](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
 
-## Deprecated Models:
+[xAI image prices](https://docs.x.ai/developers/pricing), in USD per image:
 
-- [All] None in this focused update.
+| Model / quality | 1K output | 2K output | Each input image |
+| --- | --- | --- | --- |
+| Imagine Image 2.0, low | $0.04 | $0.06 | $0.01 |
+| Imagine Image 2.0, medium | $0.06 | $0.08 | $0.01 |
+| `grok-imagine-image-quality` | $0.05 | $0.07 | $0.01 |
 
-## Retired Models:
+Imagine Image costs $0.02 per output image and $0.002 per input image. All three models remain disabled.
+Grok 4.6 retains the explicitly published `knowledge_cutoff: 2026-02-01`.
 
-- [All] None in this focused update.
+[Groq Flex prices](https://console.groq.com/docs/flex-processing) match Standard rates. The three GPT OSS cache rates follow the [caching documentation](https://console.groq.com/docs/prompt-caching).
 
-## Other Updates:
+| Model | Input / output | Cached input | Reasoning settings |
+| --- | --- | --- | --- |
+| `openai/gpt-oss-120b` | $0.15 / $0.60 | $0.075 | `low`, `medium`, `high` |
+| `openai/gpt-oss-20b` | $0.075 / $0.30 | $0.037 | `low`, `medium`, `high` |
+| `openai/gpt-oss-safeguard-20b` | $0.075 / $0.30 | $0.037 | unresolved |
+| `qwen/qwen3.6-27b` | $0.60 / $3.00 | null | `none`, `default` |
+| `qwen/qwen3.8-27b` | $0.80 / $4.00 | null | `none`, `default`, `low`, `medium`, `high` |
 
-- [Gemini] Added published Batch, Flex, and Priority audio, image, and cache-storage prices. Gemini Embedding 2 Batch image/audio/video input costs $0.225/$3.25/$6 per million tokens.
-- [Vertex] Added published audio and image service prices. Gemini Embedding 2 Batch image/audio/video input also costs $0.225/$3.25/$6 per million tokens. All four image generators remain disabled.
-- [Vertex] Gemini 2.5 Flash audio input costs $1 per million tokens through 200,000 input tokens, then $0.30. Cache creation uses the same published Standard input rate.
-- [Gemini] Four audio cache-creation prices are now unknown. The earlier values described cache reads. Published cache-read prices remain unchanged.
+- [Groq] The 13 new Flex cells preserve literal rounded cache rates. Four records gain `reasoning_efforts` from the [reasoning guide](https://console.groq.com/docs/reasoning). Qwen 3.6, Qwen 3.8, and Safeguard gain TruePoint `quantization`.
+- [Groq] Each Qwen image counts as 2,048 input tokens under the unified input rate, without a separate image charge. [Vision guide](https://console.groq.com/docs/vision). Existing `rpm` and `tpm` values remain Developer-plan limits.
 
-## Notes:
-
-### Models that are added but not enabled
-
-- [All] No models were added. All existing enablement values, model order, endpoints, modalities, and capabilities remain unchanged.
-
-### Corrections to earlier updates
-
-- [Gemini/Vertex] The earlier September 14 refresh left service-media prices outside the schema. This extension records 162 supported catalog changes across 18 Gemini and nine Vertex models. These include 156 new pricing cells, four cache-creation corrections, and two threshold fields.
-- [Gemini] Corrected audio cache-creation cells for `gemini-3.1-flash-lite`, `gemini-3-flash-preview`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite`. Their null values preserve unpublished creation prices. Cache-read rates do not establish cache-creation rates.
-
-### Follow-up work
-
-- [xAI] X Search's September 21, 2026 change takes effect at noon Pacific time. The schema now supports separate fetched-post and fetched-profile charges. Current call prices remain in place until that time. Published future prices are $5 per 1,000 posts and $10 per 1,000 profiles. See [pricing](https://docs.x.ai/developers/pricing).
-- [All] Consumers need explicit support for the new fields before estimating these charges. Per-image and image-token prices can describe the same charge. Add each charge only once.
-- [All] Container sessions, memory tiers, conditional waivers, and ambiguous image/count units still need separate billing semantics. Existing source conflicts and Groq access failures remain unresolved.
-- [Gemini/Vertex] Future promotions and unrelated unpublished prices remain as documented in the earlier refresh. Vertex publishes no service-specific storage rows, so those combinations remain absent.
-
-### Schema and catalog changes
-
-- [All] Added closed service-media fields in `schemas/models.ts`. Existing names and units remain available. Media-only service entries do not require invented text or output prices.
-- [All] Audio and embedding-media keys accept the existing service prefixes. Storage and processed-input-image keys also accept service prefixes. Image-token service keys remain inside `image_tokens`. Generated-image services retain documented quality and size tables.
-- [All] Media keys accept `_high_context` with the record's shared input-token threshold. Each numeric override requires its own known base. Published media prices can decrease above that threshold. Existing text-tier checks remain unchanged.
-- [Vertex] Gemini 2.5 Flash now uses `high_context: 200000` and `high_context_comparison: gt` for its audio overrides. No text price or output rate was inferred.
-- [xAI] Added `x_search_per_thousand_posts` and `x_search_per_thousand_user_profiles` to the schema. Catalog rates still use the current call unit. The schema does not schedule future prices.
-- [All] Added catalog policy checks for image providers, modality/capability links, mapped tool fees, legacy tool names, and retirement dates. Omitted `isEnabled` means enabled. The command rejects enabled models on or after their hard retirement date, using the current UTC date.
-- [All] Updated both agent skills and their rule files together. They now require exact-ID lifecycle checks, complete field accounting, scoped provider evidence, and the user-selected browser. OpenAI inventory checks use the full index. Rendered tables resolve dimensions that Markdown omits.
-- [All] Updated the pricing contract and validation instructions. Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, TypeScript compilation, and all eight catalogs.
-
-### Models that stay out of the catalog
-
-- [All] The extension adds no models. Existing exclusions and image-provider restrictions remain in effect.
-
-### Prices that did not change
-
-- [All] Existing Standard text input/output rates remain unchanged. New service prices and threshold fields record current published billing dimensions.
-- [Gemini] Added 37 published service cache-storage rates. Each uses USD per million stored tokens per hour. Current promotional prices remain in effect through their documented end dates.
-
-### Sources and coverage
-
-- [All] This focused extension uses official source snapshots from the September 14 refresh. It does not advance full provider verification coverage. Local evidence maps every changed catalog field to its source row and unit under ignored `audits/`.
-- [Gemini] Prices come from the [service tables](https://ai.google.dev/gemini-api/docs/pricing). The update preserves literal audio, image, cache-read, and storage rates. Per-image equivalents remain separate from image-token representations.
-- [Vertex] Prices come from the [rendered pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing). The [cache overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/context-cache/context-cache-overview) establishes cache-creation billing. Explicit N/A cells remain null, and absent source cells remain omitted.
-
-### Prices that differ from the direct-API catalogs
-
-- [Vertex] Gemini 2.5 Flash-Lite Batch/Flex audio input costs $0.05 per million tokens. Direct Gemini costs $0.15 per million tokens.
-- [Vertex] Gemini 3 Flash Preview Batch/Flex audio cache-read cells remain null. The Gemini 2.5 Batch/Flex tables omit cache columns. Direct Gemini publishes corresponding cache-read rates. Hosted prices retain the Vertex scope.
-
-### Capabilities that differ from the direct-API catalogs
-
-- [Vertex] This extension changes no capabilities. The earlier hosted capability differences and disabled image generators remain in effect.
-
-# 2026-09-14 TARS MODEL UPDATE
-
-## New Models:
-
-- [OpenAI] Added historical `gpt-4o-audio-preview`, disabled after its May 7 retirement. Its page lists text and audio input and output, streaming, and tool calls. Listed text input/output costs $2.50/$10 per million tokens, and audio input/output costs $40/$80. Context is 128,000 tokens, with a 16,384-token output limit.
-- [OpenAI] Added historical `gpt-4o-mini-audio-preview`, also disabled after May 7. Its page lists the same modalities, abilities, and limits. Listed text input/output costs $0.15/$0.60 per million tokens, and audio input/output costs $10/$20. These additions do not restore API access.
-
-## Price Changes:
-
-- [DeepInfra] `tencent/Hy3` now receives a 25% promotional discount, down from 50%. Standard input/output rises from $0.07/$0.29 to $0.105/$0.435 per million tokens. Cached input rises from $0.0175 to $0.02625. Flex input/output rises from $0.056/$0.232 to $0.084/$0.348, with cached input at $0.021.
-
-## Deprecated Models:
-
-- [Vertex] `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite` retire on October 20, 2026. They remain available with a 1,048,576-token context and a 65,536-token output limit. Standard input/output remains $1.25/$10, $0.30/$2.50, and $0.10/$0.40 per million tokens, respectively. Pro retains higher prices for long prompts.
-
-## Retired Models:
-
-- [OpenAI] Both audio-preview additions retired on May 7, 2026. Their disabled records retain published historical coverage. These additions preserve historical catalog coverage.
-- [Groq] Retirement verification remains blocked.
-
-## Other Updates:
-
-- [Anthropic] Added Fast-mode cache prices for Opus 5 and Opus 4.8. Cache reads cost $1 per million tokens. Five-minute cache writes cost $12.50, and one-hour writes cost $20 per million tokens.
-- [OpenAI] Added the standard web-search tool fee of $10 per 1,000 calls to 40 supported models. Search-content tokens incur separate charges.
-- [OpenAI] `gpt-5.3-codex` and `gpt-5.2-codex` now include their documented ability to execute commands through hosted shell.
-- [OpenAI] The three text embedding models now record the published 8,192-token input limit. Their prices remain unchanged.
-- [Gemini] Added published Flex and Priority token prices across 14 records. For Gemini 3.8, 3.7, and 3.6 Flash, Flex input/output costs $0.375/$1.875 per million tokens. Priority input/output costs $1.35/$6.75. Flex cached input costs $0.0375, and Priority cached input costs $0.135 per million tokens.
-- [Gemini] Removed Gemini Embedding 001 because current pricing and applicable guides publish no inference price. This catalog removal does not announce a provider shutdown.
-- [Gemini] Added explicit image-input token prices for Gemini 3.1 Flash Image ($0.50), 3.1 Flash-Lite Image ($0.25), and 3 Pro Image ($2). Gemini 2.5 Flash Image now records $0.30 input and $30 output per million image tokens. All amounts use millions of image tokens.
-- [DeepInfra] Added Batch prices for 134 available chat and embedding models. Batch requests cost 20% less than the corresponding real-time requests. Added Priority prices for 25 embedding models at 1.5 times the Standard input rate.
-- [DeepInfra] `nvidia/llama-nemotron-embed-vl-1b-v2` now lists its hosted image-input support. Its $0.01 price per million input tokens and 10,240-token context remain unchanged.
-- [DeepInfra] Recorded `deepseek-ai/Janus-Pro-7B` at $0.002 per processed input image. It accepts an image and a question, then returns text. It remains disabled because the catalog lacks a compatible endpoint.
-- [Vertex] Corrected cache creation prices for 12 Gemini models and added them for three Gemini 3 image models. Google bills cache creation at the Standard input price. Cache-read prices remain unchanged.
-- [Vertex] Added Priority and Flex token prices to 16 Gemini records. Five text embedding models now record the provider's explicit free output. Their input prices remain unchanged.
-- [Vertex] Mistral Small 3.1 now lists document input. Its text output, 128,000-token context, and $0.10/$0.30 input/output prices remain unchanged.
-- [VertexAnthropic] Sonnet 4.5 long-context pricing starts at 200,000 input tokens, including equality. Five-minute cache writes cost $7.50 per million tokens at that threshold.
-- [xAI] Added Priority prices for all seven text models. Priority costs twice the Standard token rate, including cached tokens and long prompts.
-- [xAI] Corrected Imagine Image 2.0 prices. Low quality costs $0.04 at 1K and $0.06 at 2K. Medium quality costs $0.06 at 1K and $0.08 at 2K. Each input image costs $0.01. The model remains disabled.
-- [xAI] Corrected Imagine Image Quality prices to $0.05 at 1K and $0.07 at 2K. Each input image costs $0.01. Imagine Image costs $0.02 per output image and $0.002 per input image. Both models remain disabled.
-- [xAI] Grok 4.5 and Grok 4.3 now include the published extra-high reasoning option. Grok 4.6 also lists the us-central-1 region.
-
-## Notes:
-
-### Models that are added but not enabled
-
-- [OpenAI] `gpt-4o-audio-preview` and `gpt-4o-mini-audio-preview` remain disabled because their exact IDs retired on May 7, 2026. The later January 2027 notice names different audio IDs and does not reverse these shutdowns.
-
-### Corrections to earlier updates
-
-- [OpenAI] The September 11 block removed code execution from GPT-5.3-Codex and GPT-5.2-Codex. Their current pages list hosted shell. This supports command execution but does not establish Code Interpreter billing.
-- [Vertex] The September 11 block reported a $3 Standard output price for Gemini 3 Flash Preview. The current Standard table omits that row. Its Standard output price is now null. Published Priority output remains $5.40, and Flex/Batch output remains $1.50 per million tokens.
-- [Vertex] The September 11 block removed document input from Mistral Small. Its current hosted input table explicitly lists Documents.
-- [Vertex] Gemini 3.1 Flash-Lite's page gives May 7, 2027 or later. This update removes the unsupported hard retirement date. Gemini 3.1 Flash-Lite Image's published release date is June 23, 2026, correcting the previous June 30 value.
-- [DeepInfra] The September 11 update omitted historical service prices for seven retired models. This update adds six Priority rows and one Flex row. These models remain disabled: `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16`, `Qwen/Qwen3.5-4B`, `Qwen/Qwen3.5-2B`, and `Qwen/Qwen3.5-0.8B`. The other three are `stepfun-ai/Step-3.5-Flash`, `nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning`, and `deepreinforce-ai/Ornith-1.0-35B`.
-- [DeepInfra] The September 11 migration left Janus-Pro-7B pricing unmapped. Its hosted API establishes a charge per processed input image.
-- [xAI] The September 11 block called the medium image price unpublished. The rendered pricing table publishes separate quality and size rates. The Markdown page omits those details and input-image charges.
+</details>
 
 ### Follow-up work
+
+- [xAI] On September 21, 2026 at noon Pacific time, X Search changes from $5 per 1,000 calls to separate usage units. Fetched posts cost $5 per 1,000, and fetched profiles cost $10 per 1,000. Current call prices remain until that time. [Pricing](https://docs.x.ai/developers/pricing).
+- [Gemini/Vertex] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash token prices double. Standard input/output rises from $0.75/$3.75 to $1.50/$7.50. Direct Gemini cache and storage prices also double. Current rates retain the documented promotion.
+- [OpenAI] Sol's promotion lasts at least through November 21, 2026. No later price is confirmed.
+- [DeepInfra] Seven promotions lack end dates: Hy3 25%, Step-3.7-Flash 20%, MiMo-V2.5 5%, MiMo-V2.5-Pro 61%, GLM-5.2 35%, GLM-5.3-Flash 50%, and DeepSeek-V4-Flash-Vision-Exp 51%.
+- [All] The detailed notes below retain unresolved source conflicts, historical field gaps, and billing units that the schema cannot represent.
+
+<details>
+<summary>Source conflicts, historical gaps, and tentative dates</summary>
 
 - [OpenAI] Standard web search costs $10 per 1,000 calls plus input-token charges for search content. Reasoning preview search uses the same rate. Non-reasoning preview search costs $25 per 1,000 calls, with free search-content tokens. The schema lacks separate variant fields.
 - [OpenAI] Standard search on `gpt-4o-mini` and `gpt-4.1-mini` bills 8,000 input tokens per call. This usage rule remains unrepresented. Tool-fee scope remains unresolved for `gpt-4o-search-preview` and `gpt-4o-mini-search-preview`.
@@ -224,115 +167,97 @@ Scope: Groq only. This update checks all five existing records against current G
 - [OpenAI] Regional-processing eligibility remains unverified for `gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`, and `gpt-5.4-pro`. It also remains unverified for `gpt-5.4`, `gpt-5.5`, `gpt-5.5-pro`, `gpt-5.4-mini`, and `gpt-5.4-nano`. The published 1.1 multiplier itself is verified.
 - [OpenAI] Existing Batch prices remain unverified for `o4-mini-deep-research`, `o3-deep-research`, and `computer-use-preview`. Existing per-image matrices remain unverified for `chatgpt-image-latest`, `dall-e-3`, and `dall-e-2`. The current image guide omits these matrices.
 - [OpenAI] Snapshot limits and full capabilities remain unverified for `gpt-4o-2024-05-13`, `gpt-4o-2024-08-06`, and `gpt-4o-2024-11-20`. Family pricing, modalities, and exact lifecycle rows were checked.
-- [OpenAI] Sol's promotion lasts at least through November 21, 2026. No later price is confirmed.
 - [Anthropic] Historical limits, modalities, and full capabilities remain unverified for the following eight retained records. Their prices are published, and exact lifecycle entries were matched.
 - [Anthropic] `claude-opus-4-1`, `claude-opus-4-1-20250805`, `claude-sonnet-4-0`, `claude-opus-4-0`.
 - [Anthropic] `claude-opus-4-20250514`, `claude-sonnet-4-20250514`, `claude-3-5-haiku-latest`, `claude-3-5-haiku-20241022`.
 - [Anthropic] Historical tool eligibility on the other old records remains unverified. Current code execution is free with the documented February 2026 search/fetch tools. The flat hourly field cannot express that condition. See [pricing](https://platform.claude.com/docs/en/about-claude/pricing).
 - [Gemini] Robotics ER 2's cache-write compatibility price remains unverified because its keyed pricing section differs from the model ID.
-- [Gemini] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash token, cache, and storage prices double. Standard input/output rises from $0.75/$3.75 to $1.50/$7.50 per million tokens.
-- [Gemini] Gemini 3.1 Flash Image Batch output costs $30 per million image tokens. Per-image prices are $0.022/$0.034/$0.050/$0.076 at 0.5K/1K/2K/4K. Gemini 3.1 Flash-Lite Image Batch output costs $15 per million image tokens, or $0.0168 per 1K image.
-- [Gemini] Gemini 3 Pro Image Batch/Flex input costs $0.0006 per image. Output costs $0.067 per 1K/2K image and $0.12 per 4K image. Priority image input/output costs $3.60/$216 per million image tokens.
-- [Gemini] Gemini 2.5 Flash Image Batch/Flex output costs $0.0195 per image. Priority output costs $0.0702 per image. Embedding 2 Batch image/audio/video input costs $0.225/$3.25/$6 per million tokens.
-- [Gemini] These [published media rates](https://ai.google.dev/gemini-api/docs/pricing) need service-specific fields. Per-image, second, and frame equivalents describe conversions, so they are not separate inference fees. The audio rates follow below.
-- [Gemini] Map the published audio rates for `gemini-3.1-flash-lite`. Batch and Flex audio input costs $0.25 per million tokens. Cached audio reads cost $0.025 per million tokens. Priority audio input costs $0.90 per million tokens. Cached audio reads cost $0.09 per million tokens. Batch/Flex cache storage costs $0.50 per million stored tokens hourly. Priority storage costs $1.80 per million stored tokens hourly. All amounts are USD. [Official pricing](https://ai.google.dev/gemini-api/docs/pricing#gemini-3.1-flash-lite).
-- [Gemini] Map the published audio rates for `gemini-3-flash-preview`. Batch and Flex audio input costs $0.50 per million tokens. Cached audio reads cost $0.10 per million tokens. Priority audio input costs $1.80 per million tokens. Cached audio reads cost $0.18 per million tokens. Batch/Flex cache storage costs $1.00 per million stored tokens hourly. Priority storage costs $1.80 per million stored tokens hourly. All amounts are USD. [Official pricing](https://ai.google.dev/gemini-api/docs/pricing#gemini-3-flash-preview).
-- [Gemini] Map the published audio rates for `gemini-2.5-flash`. Batch and Flex audio input costs $0.50 per million tokens. Cached audio reads cost $0.10 per million tokens. Priority audio input costs $1.80 per million tokens. Cached audio reads cost $0.18 per million tokens. Batch/Flex cache storage costs $1.00 per million stored tokens hourly. Priority storage costs $1.80 per million stored tokens hourly. All amounts are USD. [Official pricing](https://ai.google.dev/gemini-api/docs/pricing#gemini-2.5-flash).
-- [Gemini] Map the published audio rates for `gemini-2.5-flash-lite`. Batch and Flex audio input costs $0.15 per million tokens. Cached audio reads cost $0.03 per million tokens. Priority audio input costs $0.54 per million tokens. Cached audio reads cost $0.054 per million tokens. Batch/Flex cache storage costs $1.00 per million stored tokens hourly. Priority storage costs $1.80 per million stored tokens hourly. All amounts are USD. [Official pricing](https://ai.google.dev/gemini-api/docs/pricing#gemini-2.5-flash-lite).
-- [Gemini] Add separate fields for these service-specific audio input, cached audio read, and cache storage rates. The cited rows do not establish cache-write prices. Do not use their read prices as write prices.
 - [Gemini] Gemini 2.5 Flash Image's prose compares text output with 2.5 Flash, but its output table lists only image prices. Text-output prices remain null until the model-specific sources agree.
 - [OpenAI] GPT-4o Mini Audio's Markdown lists Responses-only hosted tools, but its endpoints reject Responses. Its rendered page establishes function calling. The catalog retains that supported ability.
-- [DeepInfra] Seven promotions lack published end dates. Hy3 now has a 25% discount. Other discounts remain Step-3.7-Flash 20%, MiMo-V2.5 5%, MiMo-V2.5-Pro 61%, GLM-5.2 35%, GLM-5.3-Flash 50%, and DeepSeek-V4-Flash-Vision-Exp 51%.
 - [DeepInfra] Batch documentation does not establish cache-read, cache-retention, or combined Batch and Priority/Flex rates. Those combinations remain unrepresented.
 - [DeepInfra] Both CLIP embedding models describe image encoding, but their hosted image routes remain unverified. The affected names are `sentence-transformers/clip-ViT-B-32` and `sentence-transformers/clip-ViT-B-32-multilingual-v1`.
 - [DeepInfra] Retired `deepseek-ai/DeepSeek-OCR` returns an unusable maximum-output value of -1. The catalog keeps that limit absent.
 - [DeepInfra] Four rerank records remain unchanged because their mode is outside the accepted scope. They are `nvidia/llama-nemotron-rerank-vl-1b-v2`, `Qwen/Qwen3-Reranker-0.6B`, `Qwen/Qwen3-Reranker-4B`, and `Qwen/Qwen3-Reranker-8B`.
-- [DeepInfra] The following 41 image generators remain disabled. Their published image-unit, image-token, or execution-time charges do not map safely to the declared fields. Local evidence preserves every rate, unit, source, and mapping gap.
-- [DeepInfra] [black-forest-labs/FLUX-1-schnell](https://api.deepinfra.com/models/black-forest-labs/FLUX-1-schnell): $0.0005 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [black-forest-labs/FLUX-2-pro](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-pro): $0.015 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [XpucT/Deliberate](https://api.deepinfra.com/models/XpucT/Deliberate): $0.0005 per execution second. The schema has no execution-time inference field.
-- [DeepInfra] [Bria/fibo_edit](https://api.deepinfra.com/models/Bria/fibo_edit): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [ClarityAI/flux](https://api.deepinfra.com/models/ClarityAI/flux): $0.2 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Bria/Bria-3.2-vector](https://api.deepinfra.com/models/Bria/Bria-3.2-vector): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [stabilityai/sdxl-turbo](https://api.deepinfra.com/models/stabilityai/sdxl-turbo): $0.0002 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [google/gemini-3-pro-image](https://api.deepinfra.com/models/google/gemini-3-pro-image): raw rate $0.00012 per provider image token. The source does not establish a directional image-token field. Input images use 560 tokens. Output costs $0.134 for 1K/2K and $0.24 for 4K. Quality labels remain unresolved.
-- [DeepInfra] [ByteDance/Seedream-4.5](https://api.deepinfra.com/models/ByteDance/Seedream-4.5): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [CompVis/stable-diffusion-v1-4](https://api.deepinfra.com/models/CompVis/stable-diffusion-v1-4): $0.0005 per execution second. The schema has no execution-time inference field.
-- [DeepInfra] [black-forest-labs/FLUX-1-dev](https://api.deepinfra.com/models/black-forest-labs/FLUX-1-dev): $0.009 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [black-forest-labs/FLUX-2-max](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-max): $0.1 per provider image unit. The unit lacks a documented generated-image quality and size mapping. The separately published default price is $0.07.
-- [DeepInfra] [run-diffusion/Juggernaut-Lightning-Flux](https://api.deepinfra.com/models/run-diffusion/Juggernaut-Lightning-Flux): $0.009 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Qwen/Qwen-Image-Max](https://api.deepinfra.com/models/Qwen/Qwen-Image-Max): $0.075 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Wan-AI/Wan2.6-Image-Edit](https://api.deepinfra.com/models/Wan-AI/Wan2.6-Image-Edit): $0.03 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [PrunaAI/p-image-Edit](https://api.deepinfra.com/models/PrunaAI/p-image-Edit): $0.01 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [runwayml/stable-diffusion-v1-5](https://api.deepinfra.com/models/runwayml/stable-diffusion-v1-5): $0.0005 per execution second. The schema has no execution-time inference field.
-- [DeepInfra] [Bria/gen_fill](https://api.deepinfra.com/models/Bria/gen_fill): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Qwen/Qwen-Image-Edit](https://api.deepinfra.com/models/Qwen/Qwen-Image-Edit): $0.025 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [google/nano-banana-2-lite](https://api.deepinfra.com/models/google/nano-banana-2-lite): raw rate $0.00003 per provider image token. The source does not establish a directional image-token field. Output costs $0.034 at 1K for 1,120 tokens. Quality labels remain unresolved.
-- [DeepInfra] [Bria/replace_background](https://api.deepinfra.com/models/Bria/replace_background): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [black-forest-labs/FLUX-2-klein-9b](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-klein-9b): $0.015 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Bria/expand](https://api.deepinfra.com/models/Bria/expand): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [google/nano-banana-pro](https://api.deepinfra.com/models/google/nano-banana-pro): raw rate $0.00012 per provider image token. The source does not establish a directional image-token field. Input images use 560 tokens. Output costs $0.134 for 1K/2K and $0.24 for 4K. Quality labels remain unresolved.
-- [DeepInfra] [Bria/fibo](https://api.deepinfra.com/models/Bria/fibo): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [run-diffusion/Juggernaut-Flux](https://api.deepinfra.com/models/run-diffusion/Juggernaut-Flux): $0.009 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Wan-AI/Wan2.7-Image-Edit](https://api.deepinfra.com/models/Wan-AI/Wan2.7-Image-Edit): $0.03 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [ClarityAI/creative](https://api.deepinfra.com/models/ClarityAI/creative): $0.05 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Qwen/Qwen-Image-Edit-Max](https://api.deepinfra.com/models/Qwen/Qwen-Image-Edit-Max): $0.075 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [black-forest-labs/FLUX-2-klein-4b](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-klein-4b): $0.014 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [stabilityai/sd3.5-medium](https://api.deepinfra.com/models/stabilityai/sd3.5-medium): $0.03 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [google/nano-banana-2](https://api.deepinfra.com/models/google/nano-banana-2): raw rate $0.00006 per provider image token. The source does not establish a directional image-token field. Input images use 1,120 tokens. Output costs $0.045/$0.067/$0.101/$0.151 at 512/1K/2K/4K. Quality labels remain unresolved.
-- [DeepInfra] [stabilityai/stable-diffusion-2-1](https://api.deepinfra.com/models/stabilityai/stable-diffusion-2-1): $0.0005 per execution second. The schema has no execution-time inference field.
-- [DeepInfra] [Wan-AI/Wan2.6-T2I](https://api.deepinfra.com/models/Wan-AI/Wan2.6-T2I): $0.03 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [black-forest-labs/FLUX.1-Kontext-dev](https://api.deepinfra.com/models/black-forest-labs/FLUX.1-Kontext-dev): $0.01 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [black-forest-labs/FLUX-1.1-pro](https://api.deepinfra.com/models/black-forest-labs/FLUX-1.1-pro): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [ByteDance/Seedream-4](https://api.deepinfra.com/models/ByteDance/Seedream-4): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [black-forest-labs/FLUX-2-dev](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-dev): $0.01 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [stabilityai/sd3.5](https://api.deepinfra.com/models/stabilityai/sd3.5): $0.06 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [PrunaAI/p-image](https://api.deepinfra.com/models/PrunaAI/p-image): $0.005 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
-- [DeepInfra] [Bria/Bria-3.2](https://api.deepinfra.com/models/Bria/Bria-3.2): $0.04 per provider image unit. The unit lacks a documented generated-image quality and size mapping.
 - [VertexAnthropic] Vertex's $10 Web Search table names eight older models. It does not establish that rate for Fable 5.1, Opus 5, Sonnet 5, Fable 5, Opus 4.8, or Opus 4.7. These six supported models now retain null search rates.
 - [VertexAnthropic] Sonnet 4.5's five-minute Batch cache-write rows conflict at $1.88 and $1.00 per million tokens. Its existing null remains. Regional tables also contain rounded rates and inconsistent labels. Local evidence preserves those rows without a universal multiplier.
 - [Vertex] Gemini 3 Flash Preview's Standard output rate remains unresolved. The storage table omits Gemini 3.8 and 3.7 Flash despite documented caching support.
-- [Vertex] Gemini 2.5 Flash audio costs $1 per million input tokens through 200,000 input tokens, then $0.30. The schema lacks this audio threshold dimension.
-- [Vertex] Gemini 3 Flash Preview and Gemini 2.5 Flash publish Priority audio input/cache-read rates of $1.80/$0.18 per million tokens. Flex and Batch audio input costs $0.50 per million tokens. Both published input bands use these rates: ≤200,000 tokens and >200,000 tokens. The schema lacks service-specific audio fields. [Source](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
-- [Vertex] Gemini 3.1 Flash-Lite publishes global Priority audio input/cache-read rates of $0.90/$0.09 per million tokens. Global Flex and Batch rates are $0.25/$0.025 per million tokens. Non-global Priority rates are $0.99/$0.099. Non-global Flex and Batch rates are $0.275/$0.0275 per million tokens. Both published input bands use these rates: ≤200,000 tokens and >200,000 tokens. The schema lacks service-specific audio fields. [Source](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
-- [Vertex] Gemini 2.5 Flash-Lite publishes Priority audio input/cache-read rates of $0.54/$0.054 per million tokens. Flex and Batch audio input costs $0.05 per million tokens. Both published input bands use these rates: ≤200,000 tokens and >200,000 tokens. The schema lacks service-specific audio fields. [Source](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
-- [Vertex] Gemini 3 Pro Image publishes Priority image output at $216 per million tokens in both context bands. Global Flex and Batch image output costs $60 per million tokens for prompts up to 200,000 tokens. The schema lacks service-specific image-output token fields. [Source](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
-- [Vertex] Gemini 3.1 Flash Image publishes Flex and Batch image output at $30 globally and $33 outside global per million tokens. These rates cover prompts up to 200,000 tokens. The schema lacks service-specific image-output token fields. [Source](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
-- [Vertex] Gemini 3.1 Flash-Lite Image and Gemini 2.5 Flash Image publish Flex and Batch image output at $15 per million tokens. These rates cover prompts up to 200,000 tokens. The schema lacks service-specific image-output token fields. [Source](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
-- [Vertex] Gemini Embedding 2 publishes Batch input rates of $0.225 for images, $6 for video, and $3.25 for audio per million tokens. The schema lacks service-specific media fields. [Source](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing).
 - [Vertex] `multimodalembedding@001` remains disabled because text and video count units are unresolved. Text costs $0.0002 per 1,000 counts, and images cost $0.0001 per count. Video Plus, Standard, and Essential cost $0.002, $0.001, and $0.0005 per count, respectively.
 - [Vertex] E5 model pages reject Batch inference, but the pricing table publishes Batch rates. The catalog records those rates without a Batch availability claim.
 - [Vertex] Gemini 2.5 Pro Computer Use Preview has pricing but no established hosted model ID or limits. It remains outside the catalog.
-- [Vertex] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash input/output rises to $1.50/$7.50 per million tokens. Current prices reflect the published 50% credit promotion.
 - [Vertex] Tentative retirement dates remain separate from confirmed shutdowns. Gemini 3.5 Flash: May 19, 2027 or later. Gemini 3.5 Flash-Lite: July 21, 2027 or later. Gemini 3.1 Flash-Lite: May 7, 2027 or later. Gemini 3 Pro Image and 3.1 Flash Image: May 28, 2027 or later.
 - [VertexAnthropic] Earliest possible retirement dates remain tentative. Fable 5.1: March 1, 2027. Opus 5: January 24, 2027. Sonnet 5: December 24, 2026.
 - [VertexAnthropic] Earliest possible retirement dates remain tentative. Fable 5: June 8, 2027. Opus 4.8: May 28, 2027. Opus 4.7: April 16, 2027.
 - [VertexAnthropic] Earliest possible retirement dates remain tentative. Sonnet 4.6: February 17, 2027. Opus 4.6: February 5, 2027. Opus 4.5: November 24, 2026.
 - [VertexAnthropic] Earliest possible retirement dates remain tentative. Sonnet 4.5: September 29, 2026. Haiku 4.5: October 15, 2026. Opus 4.1: August 5, 2026.
-- [Groq] Model verification remains incomplete. The model index, retirement page, model page, and tool page refused browser access. Markdown sources returned HTTP 403. The public pricing URL redirected to the homepage. Existing records and prices remain unchanged.
-- [Groq] Affected models: `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `openai/gpt-oss-safeguard-20b`, `qwen/qwen3.6-27b`, and `qwen/qwen3.8-27b`.
-- [xAI] On September 21 at noon Pacific time, X Search changes its billing unit. Posts cost $5 per 1,000 fetched. User profiles cost $10 per 1,000 fetched. Until then, the current $5 per 1,000 calls applies. The schema needs separate post and profile fields before that change.
 - [xAI] File storage costs $0.025 per GiB daily. Collection storage costs $0.10 per GiB daily. Downloads cost $0.20 per GiB. A pre-generation policy refusal costs $0.05 per Responses request. These ancillary units have no declared fields.
 - [xAI] The rendered Grok 4.20 Non-Reasoning page shows a generic reasoning card. Its Markdown page explicitly says reasoning is unsupported. The existing capability list remains unchanged until xAI resolves this conflict.
+- [Groq] Qwen 3.6 has conflicting image limits. Its [model page](https://console.groq.com/docs/model/qwen/qwen3.6-27b) lists three images, but the [vision guide](https://console.groq.com/docs/vision) lists five. The record retains `max_input_images: 3`.
+- [Groq] Safeguard has conflicting tool documentation. Its [model page](https://console.groq.com/docs/model/openai/gpt-oss-safeguard-20b) lists browser search and code execution. The [tool overview](https://console.groq.com/docs/tool-use/overview) marks built-in tools unsupported. The [browser-search guide](https://console.groq.com/docs/tool-use/built-in-tools/browser-search) explicitly includes Safeguard. The [code-execution guide](https://console.groq.com/docs/tool-use/built-in-tools/code-execution) excludes it from its supported list. The record retains `web_search` and omits `code_execution`.
+- [Groq] Safeguard's model page describes low, medium, and high reasoning effort. The [reasoning guide](https://console.groq.com/docs/reasoning) limits those settings to other named models. Its `reasoning_efforts` field remains absent.
+- [Groq] The tool guides link to [Groq pricing](https://groq.com/pricing), which redirects to a homepage without prices. GPT OSS browser-search and code-execution charges remain unverified. Compound tool charges do not establish those models' charges.
+- [Groq] Compound pricing needs separate rates for each underlying model and tool. Both systems publish GPT OSS 120B rates of $0.15 input and $0.60 output per million tokens. Compound lists pending Llama 4 Scout rates. Compound Mini lists pending Llama 3.3 70B rates. The schema cannot represent these routing-dependent inference prices. [Compound](https://console.groq.com/docs/compound/systems/compound), [Compound Mini](https://console.groq.com/docs/compound/systems/compound-mini), and [usage breakdowns](https://console.groq.com/docs/compound).
+- [Groq] Compound tools cost $5 for basic search, $8 for advanced search, and $1 for website visits per 1,000 requests. Code execution costs $0.18 per hour. These prices remain in the local audit with their system scope and unresolved search-level and website-visit mappings.
 
-### Schema and catalog changes
+</details>
 
-- [All] The catalogs retain 496 records after two OpenAI additions and 16 removals for missing published inference prices. Seven catalog files changed. Groq remains unchanged.
-- [All] No shared schema change was necessary. New service prices use absolute rates. Explicit zero, null, and omission retain their separate meanings.
-- [Anthropic] Removed nine unpriced retired records. Added eight Fast-mode cache cells across two retained records.
-- [Gemini] Removed five unpriced records. Changed 103 cells across 16 retained records. Added 98 Flex/Priority cells across 14 records and five explicit Standard image-token cells.
-- [OpenAI] Added 40 `web_search_per_thousand_calls` cells. Two models gain `code_execution` from hosted shell support. The two audio additions use `mode: chat` and remain disabled with their exact-ID retirement dates. Three embeddings gain `contextWindow` and `limits.max_input_tokens` values of 8,192.
-- [DeepInfra] Changed 355 fields across 142 records. Added 268 Batch input/output cells, 25 embedding Priority rows, and seven historical service rows. Janus-Pro-7B gains `input_image_price_per_image`. The Nvidia VL embedding gains image input, `vision`, and `embedding_image_input`.
-- [Vertex] Changed 144 pricing cells across both hosted catalogs, including 109 Priority/Flex fields across 16 Gemini records. Cache writes now use Standard input prices. Five embedding output cells are zero, and Gemini 3 Flash Preview's Standard output cell is null.
-- [Vertex] Regions and launch stages now match the model availability blocks. Publisher prefixes and the `https://aiplatform.googleapis.com/v1/` backend remain unchanged.
-- [VertexAnthropic] Sonnet 4.5 uses `high_context_comparison: gte` and the published long-context five-minute cache-write rate.
-- [xAI] Added 42 absolute `priority_*` token prices across seven records. Each record includes input, cached-input, and output rates for short and long prompts. The existing 200,000-token `gte` boundary remains unchanged.
-- [xAI] Added `input_image_price_per_image` to three existing disabled image models. The rendered tables establish separate input and output charges. No schema change is necessary.
-- [xAI] Grok 4.6 retains `knowledge_cutoff: 2026-02-01`. The current model index explicitly publishes this date, despite the older skill guidance.
-- [All] Image generation remains enabled only for eligible direct OpenAI and Gemini records. All 41 DeepInfra generators, three xAI generators, and four Vertex image mirrors remain disabled.
-- [All] Pricing regression checks passed: 80 cases plus CLI failure checks. All eight catalogs passed validation. Supporting evidence remains under ignored `audits/`.
+<details>
+<summary>Unmapped prices for 41 disabled DeepInfra image generators</summary>
+
+All 41 DeepInfra image generators remain disabled under the provider policy. Their raw prices also need billing mappings.
+Provider image units lack documented quality/size mappings. Execution seconds lack an inference field. Image-token direction and quality remain unresolved where stated.
+
+| [DeepInfra] Model and source | Published raw price and remaining detail |
+| --- | --- |
+| [black-forest-labs/FLUX-1-schnell](https://api.deepinfra.com/models/black-forest-labs/FLUX-1-schnell) | $0.0005 per provider image unit. |
+| [black-forest-labs/FLUX-2-pro](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-pro) | $0.015 per provider image unit. |
+| [XpucT/Deliberate](https://api.deepinfra.com/models/XpucT/Deliberate) | $0.0005 per execution second. |
+| [Bria/fibo_edit](https://api.deepinfra.com/models/Bria/fibo_edit) | $0.04 per provider image unit. |
+| [ClarityAI/flux](https://api.deepinfra.com/models/ClarityAI/flux) | $0.2 per provider image unit. |
+| [Bria/Bria-3.2-vector](https://api.deepinfra.com/models/Bria/Bria-3.2-vector) | $0.04 per provider image unit. |
+| [stabilityai/sdxl-turbo](https://api.deepinfra.com/models/stabilityai/sdxl-turbo) | $0.0002 per provider image unit. |
+| [google/gemini-3-pro-image](https://api.deepinfra.com/models/google/gemini-3-pro-image) | raw rate $0.00012 per provider image token. The source does not establish a directional image-token field. Input images use 560 tokens. Output costs $0.134 for 1K/2K and $0.24 for 4K. Quality labels remain unresolved. |
+| [ByteDance/Seedream-4.5](https://api.deepinfra.com/models/ByteDance/Seedream-4.5) | $0.04 per provider image unit. |
+| [CompVis/stable-diffusion-v1-4](https://api.deepinfra.com/models/CompVis/stable-diffusion-v1-4) | $0.0005 per execution second. |
+| [black-forest-labs/FLUX-1-dev](https://api.deepinfra.com/models/black-forest-labs/FLUX-1-dev) | $0.009 per provider image unit. |
+| [black-forest-labs/FLUX-2-max](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-max) | $0.1 per provider image unit. The separately published default price is $0.07. |
+| [run-diffusion/Juggernaut-Lightning-Flux](https://api.deepinfra.com/models/run-diffusion/Juggernaut-Lightning-Flux) | $0.009 per provider image unit. |
+| [Qwen/Qwen-Image-Max](https://api.deepinfra.com/models/Qwen/Qwen-Image-Max) | $0.075 per provider image unit. |
+| [Wan-AI/Wan2.6-Image-Edit](https://api.deepinfra.com/models/Wan-AI/Wan2.6-Image-Edit) | $0.03 per provider image unit. |
+| [PrunaAI/p-image-Edit](https://api.deepinfra.com/models/PrunaAI/p-image-Edit) | $0.01 per provider image unit. |
+| [runwayml/stable-diffusion-v1-5](https://api.deepinfra.com/models/runwayml/stable-diffusion-v1-5) | $0.0005 per execution second. |
+| [Bria/gen_fill](https://api.deepinfra.com/models/Bria/gen_fill) | $0.04 per provider image unit. |
+| [Qwen/Qwen-Image-Edit](https://api.deepinfra.com/models/Qwen/Qwen-Image-Edit) | $0.025 per provider image unit. |
+| [google/nano-banana-2-lite](https://api.deepinfra.com/models/google/nano-banana-2-lite) | raw rate $0.00003 per provider image token. The source does not establish a directional image-token field. Output costs $0.034 at 1K for 1,120 tokens. Quality labels remain unresolved. |
+| [Bria/replace_background](https://api.deepinfra.com/models/Bria/replace_background) | $0.04 per provider image unit. |
+| [black-forest-labs/FLUX-2-klein-9b](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-klein-9b) | $0.015 per provider image unit. |
+| [Bria/expand](https://api.deepinfra.com/models/Bria/expand) | $0.04 per provider image unit. |
+| [google/nano-banana-pro](https://api.deepinfra.com/models/google/nano-banana-pro) | raw rate $0.00012 per provider image token. The source does not establish a directional image-token field. Input images use 560 tokens. Output costs $0.134 for 1K/2K and $0.24 for 4K. Quality labels remain unresolved. |
+| [Bria/fibo](https://api.deepinfra.com/models/Bria/fibo) | $0.04 per provider image unit. |
+| [run-diffusion/Juggernaut-Flux](https://api.deepinfra.com/models/run-diffusion/Juggernaut-Flux) | $0.009 per provider image unit. |
+| [Wan-AI/Wan2.7-Image-Edit](https://api.deepinfra.com/models/Wan-AI/Wan2.7-Image-Edit) | $0.03 per provider image unit. |
+| [ClarityAI/creative](https://api.deepinfra.com/models/ClarityAI/creative) | $0.05 per provider image unit. |
+| [Qwen/Qwen-Image-Edit-Max](https://api.deepinfra.com/models/Qwen/Qwen-Image-Edit-Max) | $0.075 per provider image unit. |
+| [black-forest-labs/FLUX-2-klein-4b](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-klein-4b) | $0.014 per provider image unit. |
+| [stabilityai/sd3.5-medium](https://api.deepinfra.com/models/stabilityai/sd3.5-medium) | $0.03 per provider image unit. |
+| [google/nano-banana-2](https://api.deepinfra.com/models/google/nano-banana-2) | raw rate $0.00006 per provider image token. The source does not establish a directional image-token field. Input images use 1,120 tokens. Output costs $0.045/$0.067/$0.101/$0.151 at 512/1K/2K/4K. Quality labels remain unresolved. |
+| [stabilityai/stable-diffusion-2-1](https://api.deepinfra.com/models/stabilityai/stable-diffusion-2-1) | $0.0005 per execution second. |
+| [Wan-AI/Wan2.6-T2I](https://api.deepinfra.com/models/Wan-AI/Wan2.6-T2I) | $0.03 per provider image unit. |
+| [black-forest-labs/FLUX.1-Kontext-dev](https://api.deepinfra.com/models/black-forest-labs/FLUX.1-Kontext-dev) | $0.01 per provider image unit. |
+| [black-forest-labs/FLUX-1.1-pro](https://api.deepinfra.com/models/black-forest-labs/FLUX-1.1-pro) | $0.04 per provider image unit. |
+| [ByteDance/Seedream-4](https://api.deepinfra.com/models/ByteDance/Seedream-4) | $0.04 per provider image unit. |
+| [black-forest-labs/FLUX-2-dev](https://api.deepinfra.com/models/black-forest-labs/FLUX-2-dev) | $0.01 per provider image unit. |
+| [stabilityai/sd3.5](https://api.deepinfra.com/models/stabilityai/sd3.5) | $0.06 per provider image unit. |
+| [PrunaAI/p-image](https://api.deepinfra.com/models/PrunaAI/p-image) | $0.005 per provider image unit. |
+| [Bria/Bria-3.2](https://api.deepinfra.com/models/Bria/Bria-3.2) | $0.04 per provider image unit. |
+
+</details>
 
 ### Models that stay out of the catalog
+
+- [All] Sixteen records lack current published inference prices: nine Anthropic, five Gemini, and two VertexAnthropic records. Other exclusions concern modes, Enterprise access, endpoints, or unresolved pricing.
+
+<details>
+<summary>Removed records and excluded models</summary>
 
 - [Anthropic] Removed these nine retired records after checking current [API pricing](https://platform.claude.com/docs/en/about-claude/pricing) and the linked [pricing page](https://claude.com/pricing). The applicable sources publish no inference price.
 - [Anthropic] `claude-3-7-sonnet-latest`, `claude-3-haiku-20240307`, `claude-3-opus-20240229`, `claude-3-sonnet-20240229`.
@@ -367,137 +292,90 @@ Scope: Groq only. This update checks all five existing records against current G
 - [Vertex] Gemini Live-only models, Live Translate, Transcribe, Omni video, Veo, Lyria, and agents remain outside the accepted modes. Gemini Embedding 2 Preview already exists as an alias under the GA model.
 - [Vertex] Imagen models remain excluded by the image-generation restriction and historical endpoint retirements.
 - [Vertex] These excluded names are Imagen 4 Ultra, Imagen 4, Imagen 4 Fast, Imagen 3, and Imagen 3 Fast. Imagen 2 and Imagen 1 also remain excluded.
-- [Groq] The accessible feed lists `minimaxai/minimax-m2.5` and `qwen/qwen3-vl-32b-instruct` as Enterprise models. The blocked index prevents a current inventory of other exclusions.
 - [xAI] `grok-imagine-video-1.5`, `grok-imagine-video`, and `grok-voice-think-fast-2.0` use excluded video or audio routes. Speech-to-text and text-to-speech routes also remain excluded.
 - [xAI] Retired redirect names remain outside the active model index: `grok-4-1-fast-reasoning`, `grok-4-1-fast-non-reasoning`, `grok-4-fast-reasoning`, `grok-4-fast-non-reasoning`, `grok-4-0709`, and `grok-3`. Existing aliases retain `grok-code-fast-1` and `grok-imagine-image-pro` under their replacement models.
 - [DeepInfra] The unfiltered index contains 373 records. All 220 text-generation and 31 embedding entries already have catalog records. These 75 endpoints remain excluded because their inputs, outputs, or modes do not qualify.
-- [DeepInfra] text-to-music: `ACE-Step/acestep-v15-xl-sft`.
-- [DeepInfra] text-to-video: `google/veo-3.1-fast`, `Wan-AI/Wan2.7-R2V`, `Bria/video_remove_background`, `Bria/video_foreground_mask`.
-- [DeepInfra] text-to-video: `nvidia/Cosmos3-Super`, `Wan-AI/Wan2.6-I2V`, `ByteDance/Seedance-1.5-Pro`, `nvidia/Cosmos3-Nano`.
-- [DeepInfra] text-to-video: `Wan-AI/Wan2.7-I2V`, `Wan-AI/Wan3.0-Video`, `Wan-AI/Wan2.1-T2V-1.3B`, `Pixverse/Pixverse-6-I2V`.
-- [DeepInfra] text-to-video: `FastVideo/LTX2-Distilled-Diffusers`, `google/veo-3.1`, `Pixverse/Pixverse-T2V-HD`, `ByteDance/Seedance-2.0`.
-- [DeepInfra] text-to-video: `Pixverse/Pixverse-6-T2V`, `PrunaAI/p-video`, `Wan-AI/Wan2.1-T2V-14B`, `Bria/video_mask_by_prompt`.
-- [DeepInfra] text-to-video: `Wan-AI/Wan2.6-T2V`, `PrunaAI/p-video-avatar`, `Bria/video_eraser`, `Wan-AI/Wan2.2-T2V-A14B`.
-- [DeepInfra] text-to-video: `Bria/video_increase_resolution`, `google/veo-3.0`, `Pixverse/Pixverse-T2V`, `Bria/video_mask_by_key_points`.
-- [DeepInfra] text-to-video: `FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers`, `google/veo-3.0-fast`, `FastVideo/FastWan-QAD-FP8-1.3B`.
-- [DeepInfra] automatic-speech-recognition: `openai/whisper-base.en`, `openai/whisper-large-v3-turbo`, `openai/whisper-base`, `Qwen/Qwen3-ASR-1.7B`.
-- [DeepInfra] automatic-speech-recognition: `nvidia/Nemotron-3.5-ASR-Streaming-Multilingual-0.6b`, `openai/whisper-timestamped-medium.en`, `openai/whisper-medium.en`, `mistralai/Voxtral-Small-24B-2507`.
-- [DeepInfra] automatic-speech-recognition: `openai/whisper-timestamped-medium`, `openai/whisper-small.en`, `openai/whisper-tiny.en`, `openai/whisper-large-v3`.
-- [DeepInfra] automatic-speech-recognition: `mistralai/Voxtral-Mini-3B-2507`, `Qwen/Qwen3-ASR-0.6B`.
-- [DeepInfra] text-to-speech: `inworld-ai/inworld-tts-1.5-max`, `hexgrad/Kokoro-82M`, `Zyphra/Zonos-v0.1-transformer`, `ResembleAI/chatterbox-turbo`.
-- [DeepInfra] text-to-speech: `inworld-ai/realtime-tts-1.5-mini`, `XiaomiMiMo/MiMo-V2.5-tts-voicedesign`, `inworld-ai/realtime-tts-2`, `inworld-ai/realtime-tts-1.5-max`.
-- [DeepInfra] text-to-speech: `Qwen/Qwen3-TTS`, `inworld-ai/inworld-tts-1.5-mini`, `ResembleAI/chatterbox`, `Qwen/Qwen3-TTS-VoiceDesign`.
-- [DeepInfra] text-to-speech: `XiaomiMiMo/MiMo-V2.5-tts-voiceclone`, `canopylabs/orpheus-3b-0.1-ft`, `XiaomiMiMo/MiMo-V2.5-tts`, `ResembleAI/chatterbox-multilingual`.
-- [DeepInfra] text-to-speech: `sesame/csm-1b`, `Audio8/Audio8-TTS-Preview-0.6b`, `bosonai/HiggsAudioV2.5`, `Zyphra/Zonos-v0.1-hybrid`.
-- [DeepInfra] text-to-image: `Bria/blur_background`, `Bria/remove_background`, `Bria/erase`, `ClarityAI/crystal`.
-- [DeepInfra] text-to-image: `Bria/enhance`, `black-forest-labs/FLUX-1-Redux-dev`, `Bria/erase_foreground`.
-- [DeepInfra] zero-shot-image-classification: `openai/clip-vit-base-patch32`, `openai/clip-vit-large-patch14-336`.
+- [Groq] `llama-3.1-8b-instant`, `llama-3.3-70b-versatile`, and `minimaxai/minimax-m2.7` remain Enterprise models with contact-sales pricing. [Model index](https://console.groq.com/docs/models).
+- [Groq] `minimaxai/minimax-m2.5` and `qwen/qwen3-vl-32b-instruct` remain Enterprise exclusions from the latest [changelog entry](https://console.groq.com/docs/changelog).
+- [Groq] `whisper-large-v3` and `whisper-large-v3-turbo` require audio input. `canopylabs/orpheus-arabic-saudi` and `canopylabs/orpheus-v1-english` produce audio. Their modes are outside this catalog's accepted modes. [Model index](https://console.groq.com/docs/models).
+- [Groq] `meta-llama/llama-prompt-guard-2-22m` and `meta-llama/llama-prompt-guard-2-86m` remain excluded as DeBERTa classifiers. Groq exposes them through Chat Completions, but the catalog excludes the classifier task type. [22M model page](https://console.groq.com/docs/model/meta-llama/llama-prompt-guard-2-22m), [86M model page](https://console.groq.com/docs/model/meta-llama/llama-prompt-guard-2-86m).
+- [Groq] `groq/compound` and `groq/compound-mini` remain excluded for incomplete, mixed-model inference pricing. See Follow-up work.
+- [Groq] The [Performance tier](https://console.groq.com/docs/performance-tier) requires an Enterprise agreement and provisioned capacity. It publishes no token rate for the catalog.
+
+| [DeepInfra] Excluded mode | Models |
+| --- | --- |
+| text-to-music | `ACE-Step/acestep-v15-xl-sft` |
+| text-to-video | `google/veo-3.1-fast`, `Wan-AI/Wan2.7-R2V`, `Bria/video_remove_background`, `Bria/video_foreground_mask`, `nvidia/Cosmos3-Super`, `Wan-AI/Wan2.6-I2V`, `ByteDance/Seedance-1.5-Pro`, `nvidia/Cosmos3-Nano`, `Wan-AI/Wan2.7-I2V`, `Wan-AI/Wan3.0-Video`, `Wan-AI/Wan2.1-T2V-1.3B`, `Pixverse/Pixverse-6-I2V`, `FastVideo/LTX2-Distilled-Diffusers`, `google/veo-3.1`, `Pixverse/Pixverse-T2V-HD`, `ByteDance/Seedance-2.0`, `Pixverse/Pixverse-6-T2V`, `PrunaAI/p-video`, `Wan-AI/Wan2.1-T2V-14B`, `Bria/video_mask_by_prompt`, `Wan-AI/Wan2.6-T2V`, `PrunaAI/p-video-avatar`, `Bria/video_eraser`, `Wan-AI/Wan2.2-T2V-A14B`, `Bria/video_increase_resolution`, `google/veo-3.0`, `Pixverse/Pixverse-T2V`, `Bria/video_mask_by_key_points`, `FastVideo/FastWan2.2-TI2V-5B-FullAttn-Diffusers`, `google/veo-3.0-fast`, `FastVideo/FastWan-QAD-FP8-1.3B` |
+| automatic-speech-recognition | `openai/whisper-base.en`, `openai/whisper-large-v3-turbo`, `openai/whisper-base`, `Qwen/Qwen3-ASR-1.7B`, `nvidia/Nemotron-3.5-ASR-Streaming-Multilingual-0.6b`, `openai/whisper-timestamped-medium.en`, `openai/whisper-medium.en`, `mistralai/Voxtral-Small-24B-2507`, `openai/whisper-timestamped-medium`, `openai/whisper-small.en`, `openai/whisper-tiny.en`, `openai/whisper-large-v3`, `mistralai/Voxtral-Mini-3B-2507`, `Qwen/Qwen3-ASR-0.6B` |
+| text-to-speech | `inworld-ai/inworld-tts-1.5-max`, `hexgrad/Kokoro-82M`, `Zyphra/Zonos-v0.1-transformer`, `ResembleAI/chatterbox-turbo`, `inworld-ai/realtime-tts-1.5-mini`, `XiaomiMiMo/MiMo-V2.5-tts-voicedesign`, `inworld-ai/realtime-tts-2`, `inworld-ai/realtime-tts-1.5-max`, `Qwen/Qwen3-TTS`, `inworld-ai/inworld-tts-1.5-mini`, `ResembleAI/chatterbox`, `Qwen/Qwen3-TTS-VoiceDesign`, `XiaomiMiMo/MiMo-V2.5-tts-voiceclone`, `canopylabs/orpheus-3b-0.1-ft`, `XiaomiMiMo/MiMo-V2.5-tts`, `ResembleAI/chatterbox-multilingual`, `sesame/csm-1b`, `Audio8/Audio8-TTS-Preview-0.6b`, `bosonai/HiggsAudioV2.5`, `Zyphra/Zonos-v0.1-hybrid` |
+| text-to-image | `Bria/blur_background`, `Bria/remove_background`, `Bria/erase`, `ClarityAI/crystal`, `Bria/enhance`, `black-forest-labs/FLUX-1-Redux-dev`, `Bria/erase_foreground` |
+| zero-shot-image-classification | `openai/clip-vit-base-patch32`, `openai/clip-vit-large-patch14-336` |
+
+</details>
 
 ### Prices that did not change
 
-- [Anthropic] Retained Standard token prices remain unchanged. Priced historical records retain named specification and tool gaps.
-- [OpenAI] Existing Standard token prices remain unchanged. New search fees record previously omitted tool charges.
-- [Gemini] Retained Standard token prices remain unchanged. Added service rates do not announce provider price changes.
-- [DeepInfra] Standard prices remain unchanged outside Hy3. The following 65 enabled models have contexts greater than 200,000 tokens and verified flat Standard rates.
-- [DeepInfra] `anthropic/claude-fable-5`, `anthropic/claude-opus-4-7`, `anthropic/claude-opus-4-8`, `anthropic/claude-opus-5`.
-- [DeepInfra] `anthropic/claude-sonnet-4-6`, `anthropic/claude-sonnet-5`, `ByteDance/Seed-1.8`, `ByteDance/Seed-2.0-code`.
-- [DeepInfra] `ByteDance/Seed-2.0-mini`, `ByteDance/Seed-2.0-pro`, `deepseek-ai/DeepSeek-V4-Flash`, `deepseek-ai/DeepSeek-V4-Flash-0731`.
-- [DeepInfra] `deepseek-ai/DeepSeek-V4-Pro`, `deepseek-ai/DeepSeek-V4-Pro-0813`, `google/gemini-2.5-flash`, `google/gemini-2.5-pro`.
-- [DeepInfra] `google/gemini-3.1-flash-lite`, `google/gemini-3.1-pro`, `google/gemini-3.5-flash`, `google/gemini-3.7-flash`.
-- [DeepInfra] `google/gemma-4-26B-A4B-it`, `google/gemma-4-31B-it`, `google/gemma-4-31B-it-turbo`, `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8`.
-- [DeepInfra] `meta-llama/Llama-4-Scout-17B-16E-Instruct`, `MiniMaxAI/MiniMax-M3`, `moonshotai/Kimi-K2.6`, `moonshotai/Kimi-K2.7-Code`.
-- [DeepInfra] `moonshotai/Kimi-K3`, `nvidia/Nemotron-3-Nano-30B-A3B`, `nvidia/NVIDIA-Nemotron-3-Super-120B-A12B`, `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B`.
-- [DeepInfra] `nvidia/NVIDIA-Nemotron-3.5-Lightning`, `Qwen/Qwen3-235B-A22B-Instruct-2507`, `Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo`, `Qwen/Qwen3-Max`.
-- [DeepInfra] `Qwen/Qwen3-Max-Thinking`, `Qwen/Qwen3-Next-80B-A3B-Instruct`, `Qwen/Qwen3-VL-235B-A22B-Instruct`, `Qwen/Qwen3-VL-30B-A3B-Instruct`.
-- [DeepInfra] `Qwen/Qwen3.5-122B-A10B`, `Qwen/Qwen3.5-27B`, `Qwen/Qwen3.5-35B-A3B`, `Qwen/Qwen3.5-397B-A17B`.
-- [DeepInfra] `Qwen/Qwen3.5-9B`, `Qwen/Qwen3.6-27B`, `Qwen/Qwen3.6-35B-A3B`, `Qwen/Qwen3.7-Max`.
-- [DeepInfra] `Qwen/Qwen3.8-2.4T-A95B`, `Qwen/Qwen3.8-27B`, `Qwen/Qwen3.8-Max`, `stepfun-ai/Step-3.7-Flash`.
-- [DeepInfra] `thinkingmachines/Inkling`, `thinkingmachines/Inkling-Small`, `XiaomiMiMo/MiMo-V2.5`, `XiaomiMiMo/MiMo-V2.5-Pro`.
-- [DeepInfra] `zai-org/GLM-4.6`, `zai-org/GLM-4.7`, `zai-org/GLM-5.1`, `zai-org/GLM-5.2`.
-- [DeepInfra] `zai-org/GLM-5.3-Flash`, `zai-org/GLM-5.3`, `deepseek-ai/DeepSeek-V4-Flash-Vision-Exp`, `inclusionAI/Ling-3.0-flash-Fin`.
-- [DeepInfra] `deepseek-ai/DeepSeek-V4.1-Flash`.
-- [All] The following additional models have published flat Standard text rates across their allowed contexts greater than 200,000 tokens. Gemini 3 Flash Preview on Vertex still lacks a published Standard output rate.
-- [Anthropic] `claude-opus-5`, `claude-fable-5-1`, `claude-mythos-5-1`, `claude-fable-5`.
-- [Anthropic] `claude-mythos-5`, `claude-opus-4-8`, `claude-sonnet-5`, `claude-opus-4-7`.
-- [Anthropic] `claude-sonnet-4-6`, `claude-opus-4-6`.
-- [OpenAI] `gpt-5.6-cyber`, `gpt-daybreak-red-latest`, `chat-latest`, `gpt-5-nano`.
-- [OpenAI] `gpt-5-mini`, `gpt-5`, `gpt-5.1-codex-mini`, `gpt-5.1-codex-max`.
-- [OpenAI] `gpt-5.3-codex`, `gpt-5.2-codex`, `gpt-5.1-codex`, `gpt-5-codex`.
-- [OpenAI] `gpt-5-pro`, `gpt-5.2-pro`, `gpt-5.2`, `gpt-5.1`.
-- [OpenAI] `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `gpt-5.4-mini`.
-- [OpenAI] `gpt-5.4-nano`.
-- [Gemini] `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`.
-- [Gemini] `gemini-3.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-3-flash-preview`, `gemini-2.5-flash`.
-- [Gemini] `gemini-2.5-flash-lite`.
-- [Vertex] `vertex/gemini-3.8-flash`, `vertex/gemini-3.7-flash`, `vertex/gemini-3.6-flash`, `vertex/gemini-3.5-flash`.
-- [Vertex] `vertex/gemini-3.5-flash-lite`, `vertex/gemini-3.1-flash-lite`, `vertex/gemini-2.5-flash`, `vertex/gemini-2.5-flash-lite`.
-- [Vertex] `vertex/moonshotai/kimi-k2-thinking-maas`, `vertex/qwen/qwen3-235b-a22b-instruct-2507-maas`, `vertex/qwen/qwen3-coder-480b-a35b-instruct-maas`, `vertex/qwen/qwen3-next-80b-a3b-instruct-maas`.
-- [Vertex] `vertex/qwen/qwen3-next-80b-a3b-thinking-maas`, `vertex/zaiorg/glm-5.2-maas`, `vertex/google/gemma-4-26b-a4b-it-maas`, `vertex/meta/llama-4-maverick-17b-128e-instruct-maas`.
-- [Vertex] `vertex/meta/llama-4-scout-17b-16e-instruct-maas`, `vertex/gemini-3-flash-preview`.
-- [VertexAnthropic] `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-fable-5`.
-- [VertexAnthropic] `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-opus-4-6`.
-- [xAI] All seven text models retain their Standard prices and 200,000-token long-context threshold. The four eligible models retain the 20% Batch discount. Every text model with more than 200,000 tokens has a published long-context tier.
+- [Anthropic/OpenAI/Gemini] Retained Standard token rates remain unchanged. Newly recorded service and tool rates do not announce provider price changes.
+- [DeepInfra] Standard prices remain unchanged except Hy3. Sixty-five enabled models with contexts greater than 200,000 tokens retain verified flat Standard rates.
+- [Groq] All five models retain Standard prices, cached-input prices, and context/output limits. Qwen 3.8 retains its explicitly published 131,042-token context. No Groq context exceeds 200,000 tokens.
+- [Groq] GPT OSS 120B retains Batch input/output rates of $0.075/$0.30. GPT OSS 20B retains $0.0375/$0.15. Batch does not stack with cache discounts. Other cataloged models lack documented Batch eligibility. [Batch guide](https://console.groq.com/docs/batch).
+- [Groq] Cache-write rates remain null because Groq publishes no separate creation rate. Qwen cache-read rates remain null because caching support is undocumented.
+- [xAI] All seven text models retain Standard prices and the 200,000-token long-context threshold. Four eligible models retain the 20% Batch discount.
+
+<details>
+<summary>Models with flat long-context prices</summary>
+
+These models have contexts greater than 200,000 tokens and published flat Standard text rates.
+Vertex Gemini 3 Flash Preview is the exception: its Standard output rate remains unpublished.
+
+| Provider | Models |
+| --- | --- |
+| DeepInfra | `anthropic/claude-fable-5`, `anthropic/claude-opus-4-7`, `anthropic/claude-opus-4-8`, `anthropic/claude-opus-5`, `anthropic/claude-sonnet-4-6`, `anthropic/claude-sonnet-5`, `ByteDance/Seed-1.8`, `ByteDance/Seed-2.0-code`, `ByteDance/Seed-2.0-mini`, `ByteDance/Seed-2.0-pro`, `deepseek-ai/DeepSeek-V4-Flash`, `deepseek-ai/DeepSeek-V4-Flash-0731`, `deepseek-ai/DeepSeek-V4-Pro`, `deepseek-ai/DeepSeek-V4-Pro-0813`, `google/gemini-2.5-flash`, `google/gemini-2.5-pro`, `google/gemini-3.1-flash-lite`, `google/gemini-3.1-pro`, `google/gemini-3.5-flash`, `google/gemini-3.7-flash`, `google/gemma-4-26B-A4B-it`, `google/gemma-4-31B-it`, `google/gemma-4-31B-it-turbo`, `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8`, `meta-llama/Llama-4-Scout-17B-16E-Instruct`, `MiniMaxAI/MiniMax-M3`, `moonshotai/Kimi-K2.6`, `moonshotai/Kimi-K2.7-Code`, `moonshotai/Kimi-K3`, `nvidia/Nemotron-3-Nano-30B-A3B`, `nvidia/NVIDIA-Nemotron-3-Super-120B-A12B`, `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B`, `nvidia/NVIDIA-Nemotron-3.5-Lightning`, `Qwen/Qwen3-235B-A22B-Instruct-2507`, `Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo`, `Qwen/Qwen3-Max`, `Qwen/Qwen3-Max-Thinking`, `Qwen/Qwen3-Next-80B-A3B-Instruct`, `Qwen/Qwen3-VL-235B-A22B-Instruct`, `Qwen/Qwen3-VL-30B-A3B-Instruct`, `Qwen/Qwen3.5-122B-A10B`, `Qwen/Qwen3.5-27B`, `Qwen/Qwen3.5-35B-A3B`, `Qwen/Qwen3.5-397B-A17B`, `Qwen/Qwen3.5-9B`, `Qwen/Qwen3.6-27B`, `Qwen/Qwen3.6-35B-A3B`, `Qwen/Qwen3.7-Max`, `Qwen/Qwen3.8-2.4T-A95B`, `Qwen/Qwen3.8-27B`, `Qwen/Qwen3.8-Max`, `stepfun-ai/Step-3.7-Flash`, `thinkingmachines/Inkling`, `thinkingmachines/Inkling-Small`, `XiaomiMiMo/MiMo-V2.5`, `XiaomiMiMo/MiMo-V2.5-Pro`, `zai-org/GLM-4.6`, `zai-org/GLM-4.7`, `zai-org/GLM-5.1`, `zai-org/GLM-5.2`, `zai-org/GLM-5.3-Flash`, `zai-org/GLM-5.3`, `deepseek-ai/DeepSeek-V4-Flash-Vision-Exp`, `inclusionAI/Ling-3.0-flash-Fin`, `deepseek-ai/DeepSeek-V4.1-Flash` |
+| Anthropic | `claude-opus-5`, `claude-fable-5-1`, `claude-mythos-5-1`, `claude-fable-5`, `claude-mythos-5`, `claude-opus-4-8`, `claude-sonnet-5`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-opus-4-6` |
+| OpenAI | `gpt-5.6-cyber`, `gpt-daybreak-red-latest`, `chat-latest`, `gpt-5-nano`, `gpt-5-mini`, `gpt-5`, `gpt-5.1-codex-mini`, `gpt-5.1-codex-max`, `gpt-5.3-codex`, `gpt-5.2-codex`, `gpt-5.1-codex`, `gpt-5-codex`, `gpt-5-pro`, `gpt-5.2-pro`, `gpt-5.2`, `gpt-5.1`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `gpt-5.4-mini`, `gpt-5.4-nano` |
+| Gemini | `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-3-flash-preview`, `gemini-2.5-flash`, `gemini-2.5-flash-lite` |
+| Vertex | `vertex/gemini-3.8-flash`, `vertex/gemini-3.7-flash`, `vertex/gemini-3.6-flash`, `vertex/gemini-3.5-flash`, `vertex/gemini-3.5-flash-lite`, `vertex/gemini-3.1-flash-lite`, `vertex/gemini-2.5-flash`, `vertex/gemini-2.5-flash-lite`, `vertex/moonshotai/kimi-k2-thinking-maas`, `vertex/qwen/qwen3-235b-a22b-instruct-2507-maas`, `vertex/qwen/qwen3-coder-480b-a35b-instruct-maas`, `vertex/qwen/qwen3-next-80b-a3b-instruct-maas`, `vertex/qwen/qwen3-next-80b-a3b-thinking-maas`, `vertex/zaiorg/glm-5.2-maas`, `vertex/google/gemma-4-26b-a4b-it-maas`, `vertex/meta/llama-4-maverick-17b-128e-instruct-maas`, `vertex/meta/llama-4-scout-17b-16e-instruct-maas`, `vertex/gemini-3-flash-preview` |
+| VertexAnthropic | `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-opus-4-6` |
+
+</details>
+
+### Prices that differ from the direct-API catalogs
+
+- [Vertex] Gemini 2.5 Flash-Lite Batch/Flex audio input costs $0.05 per million tokens, compared with $0.15 through direct Gemini.
+- [Vertex] Gemini 3 Flash Preview Batch/Flex audio cache reads remain null. Gemini 2.5 Batch/Flex tables omit cache columns. Direct Gemini publishes corresponding cache-read rates.
+- [Vertex] Gemini 3 Flash Preview lacks a published Standard output rate, despite direct Gemini's $3 rate.
+- [Vertex] Hosted grounding costs $14 per 1,000 Gemini 3 queries. Gemini 2.5 Search, Enterprise Web, and Maps cost $35, $45, and $25 per 1,000 operations. Cache storage and creation retain hosted prices.
+- [VertexAnthropic] Sonnet 4.5's long-context threshold includes 200,000 tokens. Direct-provider service prices do not establish hosted service availability.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [VertexAnthropic] Hosted tables omit direct code execution, file upload, and structured outputs. Some newer Claude tables also omit reasoning. The catalog retains hosted claims only.
+- [Vertex] Grok mirrors omit direct web search. Gemini 2.5 Flash Image accepts 32,768 input tokens, compared with 65,536 through direct Gemini. All Vertex image generators remain disabled.
 
 ### Sources and coverage
 
-- [All] This run covers all eight catalogs and uses the user-selected @Browser. The previous September 14 block was focused and did not advance general coverage. Every starting record has a comparison entry or an explicit blocked status.
-- [All] Provider matches do not establish complete field verification. The blocked Groq checks, historical source gaps, source contradictions, and unresolved billing dimensions remain incomplete.
+- [All] The full refresh and focused corrections cover all eight catalogs. Every starting record has a comparison entry or an explicit gap. Provider matches and structural checks do not establish complete field verification.
+- [Groq] Access recovered later on September 14. Browser and HTTP checks now cover all five models and applicable pricing, capability, and lifecycle sources. The named conflicts and redirected tool-pricing page remain unresolved.
+- [Gemini/Vertex] The media extension uses the September 14 source snapshots. It maps each changed field to its source and does not establish broader verification.
+- [All] Supporting evidence remains under ignored `audits/`. Historical field gaps, source contradictions, and unresolved billing dimensions remain incomplete.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
 - [Anthropic] All 33 records matched current model or lifecycle entries. Checks covered the [feed](https://platform.claude.com/docs/en/release-notes/api), [models](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), and [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations). [Fast-mode eligibility](https://platform.claude.com/docs/en/build-with-claude/fast-mode) limits the new cache prices to Opus 5 and Opus 4.8. Nine unpriced records were removed. Historical field gaps remain incomplete for eight retained records.
 - [OpenAI] All 74 starting records and both additions have comparison entries. Checks covered the [feed](https://developers.openai.com/api/docs/changelog), [comparison table](https://developers.openai.com/api/docs/models/compare), [pricing](https://developers.openai.com/api/docs/pricing), and [deprecations](https://developers.openai.com/api/docs/deprecations). Model pages establish [GPT-5.3-Codex tools](https://developers.openai.com/api/docs/models/gpt-5.3-codex) and [GPT-5.2-Codex tools](https://developers.openai.com/api/docs/models/gpt-5.2-codex). The [embeddings guide](https://developers.openai.com/api/docs/guides/embeddings) establishes input limits.
-- [Gemini] All 25 records have comparison entries. Checks covered the [feed](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), and [deprecations](https://ai.google.dev/gemini-api/docs/deprecations). Models without published inference prices were removed. Unresolved service/media dimensions remain incomplete.
+- [Gemini] All 25 records have comparison entries. Checks covered the [feed](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), and [deprecations](https://ai.google.dev/gemini-api/docs/deprecations). Models without published inference prices were removed. The later media extension records the supported service rates.
 - [Anthropic/OpenAI/Gemini] The feeds contain no entries after September 11. Scripted comparisons cover all 132 starting records and the two additions. Another 164 supplementary checks found no remaining drift within checked fields. These checks do not resolve the named gaps. Main pricing pages passed earlier Browser checks. Follow-up linked guides were fetched successfully, but Browser rendering was then unavailable.
 - [DeepInfra] All 298 records match the [unfiltered index](https://api.deepinfra.com/models/list). All 373 provider detail documents were fetched. The [blog](https://deepinfra.com/blog) has no entry after September 11. Browser checks covered [pricing](https://deepinfra.com/pricing), [Hy3](https://deepinfra.com/tencent/Hy3), [Janus-Pro-7B's API](https://deepinfra.com/deepseek-ai/Janus-Pro-7B/api), and [Batch pricing](https://docs.deepinfra.com/batch/introduction). Of 294 in-mode comparisons, 198 have no unresolved fields and 96 retain named gaps. Four rerank records remain unchanged.
 - [Vertex] All 65 starting records match official model pages. The [feed](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) ends September 9. Checks cover [open-model retirements](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/open-models), [partner retirements](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/partner-models), and 57 [rendered pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing). The [cache overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/context-cache/context-cache-overview) establishes cache-creation charges. All sources were accessible. Unpublished fields remain explicit gaps.
 - [Vertex] Nine hosted pages publish no maximum output, so these fields remain absent. The models are `xai/grok-4.6`, `xai/grok-4.3`, `xai/grok-4.20-reasoning`, and `xai/grok-4.20-non-reasoning`. They also include `xai/grok-4.1-fast-reasoning`, `xai/grok-4.1-fast-non-reasoning`, `mistralai/mistral-medium-3`, `mistralai/mistral-small-2503`, and `mistralai/codestral-2`.
 - [xAI] All 10 records matched the [model index](https://docs.x.ai/developers/models) and individual model pages. The comparison includes [rendered pricing](https://docs.x.ai/developers/pricing), [rate limits](https://docs.x.ai/developers/rate-limits), and [Priority processing](https://docs.x.ai/developers/advanced-api-usage/priority-processing). The [feed](https://docs.x.ai/developers/release-notes) has no entries after September 11. Retirement sources cover [May redirects](https://docs.x.ai/developers/migration/may-15-retirement) and [November image retirement](https://docs.x.ai/developers/migration/imagine-image-quality-nov-2). The reasoning contradiction remains unresolved.
-- [Groq] The [feed](https://console.groq.com/docs/changelog) was accessible. [Models](https://console.groq.com/docs/models) and [deprecations](https://console.groq.com/docs/deprecations) remain blocked. This update does not advance verification coverage for any of the five records.
+- [Groq] This run read the change feed first, using 2026-09-07 as the previous broad source-coverage baseline. Later partial runs did not advance unchecked coverage. The [feed](https://console.groq.com/docs/changelog) still ends on 2026-04-18. The latest [deprecation notice](https://console.groq.com/docs/deprecations) remains 2026-08-16.
+- [Groq] Browser checks covered the index, all five model pages, deprecations, and the Developer-plan rate table. They also covered vision, reasoning, structured outputs, caching, tool guides, Batch, Flex, Performance, service tiers, and both Compound pages.
+- [Groq] HTTP fetches supplied source text for a scripted comparison of every existing field and every additional-price cell. Local evidence under ignored `audits/2026-09-14/groq-focused/` records source URLs, statuses, exclusions, and comparisons.
+- [DeepInfra] Janus-Pro-1B browser checks covered its [model page](https://deepinfra.com/deepseek-ai/Janus-Pro-1B) and [API example](https://deepinfra.com/deepseek-ai/Janus-Pro-1B/api).
 
-### Prices that differ from the direct-API catalogs
-
-- [Vertex] Hosted grounding costs $14 per 1,000 Gemini 3 queries. Gemini 2.5 Search, Enterprise Web, and Maps cost $35, $45, and $25 per 1,000 operations, respectively. Hosted cache storage and cache creation retain Vertex prices.
-- [VertexAnthropic] Sonnet 4.5's long-context threshold includes 200,000 input tokens. Direct-provider service prices do not establish Vertex service availability.
-- [Vertex] Gemini 3 Flash Preview's hosted Standard output rate remains unpublished despite the direct Gemini rate of $3 per million tokens.
-
-### Capabilities that differ from the direct-API catalogs
-
-- [VertexAnthropic] Hosted capability tables omit direct code execution, file upload, and structured output support. Some newer Claude tables also omit reasoning. The catalog retains only the hosted claims.
-- [Vertex] Grok mirrors omit direct web search. Gemini 2.5 Flash Image accepts 32,768 input tokens on Vertex, compared with 65,536 through direct Gemini. All Vertex image generators remain disabled.
-
-# 2026-09-14 TARS MODEL UPDATE
-
-## Other Updates:
-
-- [All] Image generation is enabled only through the direct OpenAI and Gemini catalogs. Other providers remain disabled, including Vertex and DeepInfra mirrors.
-- [DeepInfra] Disabled the 24 image-generation models that remained enabled. All 41 image-generation records now remain disabled.
-- [xAI] Disabled `grok-imagine-image-quality` under the image-generation provider restriction.
-- [Vertex] Disabled `gemini-3-pro-image`, `gemini-3.1-flash-image`, `gemini-3.1-flash-lite-image`, and `gemini-2.5-flash-image`. Their direct Gemini records remain enabled.
-- [DeepInfra] Recorded Janus-Pro-1B's published price of $0.0005 per processed input image. The model accepts images and returns text. It remains disabled because the catalog lacks a compatible endpoint.
-
-## Notes:
-
-### Corrections to earlier updates
-
-- [DeepInfra] The September 11 migration removed raw image billing rates without changing model access. This update disables the remaining image-generation records.
-- [DeepInfra] The September 11 migration removed Janus-Pro-1B's raw image-unit rate because the schema lacked a matching field. This update records the rate in a field for processed input images. This is a catalog correction, not a provider price change.
-
-### Follow-up work
-
-- [DeepInfra] Other image-unit billing mappings remain unresolved. A provider image unit requires a documented conversion before the catalog can represent it as an image. The image-generation provider restriction remains in effect.
-- [All] Consumers must support the new input-image price field before they can calculate these charges. Null token prices do not represent free inference.
-
-### Schema and catalog changes
-
-- [DeepInfra] Changed `isEnabled` from `true` to `false` on 24 image-generation records. Added Janus-Pro-1B's input-image rate and preserved its disabled state. Existing prices, modalities, and retirement metadata remain unchanged.
-- [All] Repository instructions and both updater skills restrict image-generation enablement to `provider: openai` or `provider: gemini`. Image input or `vision` alone does not trigger this restriction. Existing retirement, pricing, and endpoint restrictions still apply to allowed providers.
-- [All] Added `additionalPricePerMillion.input_image_price_per_image` as USD per processed input image. Validation accepts nonnegative finite numbers or null and requires image input plus `vision`. A numeric rate, including zero, qualifies as a published inference price. The field does not enable a model.
-- [All] Both updater skills now skip models with no published inference price. Explicit zero rates count as published prices. Missing individual rates, unsupported billing units, and blocked sources receive separate treatment.
-- [DeepInfra] Both updater skills now distinguish token rates, rates per processed image, rates per generated image, and unresolved image units.
-
-### Sources and coverage
-
-- [All] The image-generation restriction follows the user's provider policy. A scripted inventory covers image-generation mode, image output, and image-generation capability across all eight catalogs.
-- [DeepInfra] This focused correction includes Janus-Pro-1B's input-image price. The internal Browser confirmed the [model page](https://deepinfra.com/deepseek-ai/Janus-Pro-1B) and [API example](https://deepinfra.com/deepseek-ai/Janus-Pro-1B/api) on September 14. Local evidence records the source rate, mapping, and earlier migration.
-- [All] This update does not refresh provider catalogs model by model. The September 11 block retains the previous coverage details and unresolved source gaps.
+</details>
 
 # 2026-09-11 TARS MODEL UPDATE
 
@@ -992,129 +870,141 @@ Scope: Groq only. This update checks all five existing records against current G
 - Groq: changelog, models index, deprecations, rate limits, the five model pages, and the capability pages for vision, reasoning, structured outputs, prompt caching, tool use, browser search, web search, and code execution. The first fetch on this run returned an access error from the Groq edge. A later fetch succeeded. The deprecations page has no entry after 2026-08-16.
 - We compared every record in all eight catalogs to the provider pages with a script. Price, cached price, context window, and deprecation state were part of the comparison.
 
-# 2026-09-04 TARS MODEL UPDATE — VERTEX
-
-## New Catalogs:
-- [Vertex] `vertex.json` — 49 models served by Gemini Enterprise Agent Platform (Vertex AI). 19 Google models (11 chat, 4 image generation, 4 embedding) and 30 partner and open models (28 chat, 2 embedding).
-- [VertexAnthropic] `vertexanthropic.json` — 14 Anthropic Claude models served by Agent Platform. The `vertexanthropic/claude-*` names that `anthropic.json` already gives in `fallback_policies` now resolve to real records.
-
-## New Models:
-- [Vertex] Chat: `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-3.1-pro-preview`, `gemini-3.1-pro-preview-customtools`, `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite`.
-- [Vertex] Image generation: `gemini-3-pro-image`, `gemini-3.1-flash-image`, `gemini-3.1-flash-lite-image`, and `gemini-2.5-flash-image`.
-- [Vertex] Embedding: `gemini-embedding-2` ($0.20 text, $0.45 image, $12.00 video, $6.50 audio per 1M tokens), `gemini-embedding-001` ($0.15 per 1M tokens), `text-embedding-005`, and `text-multilingual-embedding-002` ($0.025 per 1M tokens each).
-- [VertexAnthropic] `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-opus-4-6`, `claude-opus-4-5`, `claude-sonnet-4-5`, `claude-haiku-4-5`, `claude-opus-4-1`, `claude-opus-4`, and `claude-sonnet-4`.
-
-### Partner models (managed APIs)
-All prices are per 1M tokens, input then output.
-- [Vertex] xAI Grok: `grok-4.6` $2.00/$6.00, `grok-4.3` $1.25/$2.50, `grok-4.20-reasoning` and `grok-4.20-non-reasoning` $1.25/$2.50, and the deprecated `grok-4.1-fast-reasoning` and `grok-4.1-fast-non-reasoning` $0.20/$0.50. Prompts of more than 200k tokens cost twice as much for Grok 4.6, 4.3, and 4.20. Grok 4.20 has a 2M context window, the largest in the catalog.
-- [Vertex] Mistral AI: `mistral-medium-3` $0.40/$2.00, `codestral-2` $0.30/$0.90, and `mistral-small-2503` $0.10/$0.30. All three have a 128k context window and run in `us-central1` and `europe-west4`.
-- [Vertex] Meta Llama: `llama-4-scout-17b-16e-instruct-maas` $0.25/$0.70 with a 1.31M context window, `llama-4-maverick-17b-128e-instruct-maas` $0.35/$1.15 with a 524k context window, and `llama-3.3-70b-instruct-maas` $0.72/$0.72 with a 128k context window. All three cap output at 8,192 tokens.
-- [Vertex] DeepSeek: `deepseek-v3.1-maas` $0.60/$1.70, `deepseek-v3.2-maas` $0.56/$1.68, `deepseek-r1-0528-maas` $1.35/$5.40, and `deepseek-ocr-maas` $0.30/$1.20. DeepSeek-OCR reads images and returns text.
-- [Vertex] Qwen: `qwen3-coder-480b-a35b-instruct-maas` $0.22/$1.80, `qwen3-235b-a22b-instruct-2507-maas` $0.22/$0.88, and `qwen3-next-80b-a3b-instruct-maas` and `qwen3-next-80b-a3b-thinking-maas` $0.15/$1.20.
-- [Vertex] Z.ai GLM: `glm-5.2-maas` $1.40/$4.40 with a 1M context window, `glm-5-maas` $1.00/$3.20, and `glm-4.7-maas` $0.60/$2.20.
-- [Vertex] OpenAI open weights: `gpt-oss-120b-maas` $0.09/$0.36 and `gpt-oss-20b-maas` $0.07/$0.25.
-- [Vertex] Others: `kimi-k2-thinking-maas` $0.60/$2.50, `minimax-m2-maas` $0.30/$1.20, and `gemma-4-26b-a4b-it-maas` $0.15/$0.60.
-- [Vertex] Embedding: `multilingual-e5-large-instruct-maas` $0.025 and `multilingual-e5-small-maas` $0.015 per 1M input tokens. Both take a maximum sequence of 512 tokens.
-
-## Notes:
-
-### Prices that differ from the direct-API catalogs
-- [Vertex] Non-global endpoints cost 1.1 times the global price. This applies to the GA Gemini 3 and later families from 2026-07-01. The records carry `non_global_endpoint_multiplier: 1.1` for `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.5-flash-lite`, `gemini-3.1-flash-lite`, and `gemini-3.1-flash-image`. The other models are global only.
-- [Vertex] Cache storage costs $1.00 per 1M tokens per hour for the Flash and Flash-Lite models and $4.50 for the Pro models. The Gemini API price for `gemini-3.8-flash` is $0.50, so the two catalogs differ here.
-- [Vertex] Grounding costs $14 per 1,000 queries for the Gemini 3 models. For the Gemini 2.5 models it costs $35 per 1,000 prompts with Google Search, $45 with Web Grounding for Enterprise, and $25 with Google Maps. Grounding with your data costs $2.50 per 1,000 prompts for all models.
-- [Vertex] `gemini-3.1-flash-image` publishes a cached input price of $0.05 and `gemini-2.5-flash-image` publishes a text output price of $2.50. The Gemini API catalog has no value for either field.
-- [VertexAnthropic] The token prices match `anthropic.json` for all 12 priced models.
-
-### Capabilities that differ from the direct-API catalogs
-- [VertexAnthropic] Agent Platform does not offer the code execution tool or the Files API for Claude, so no record carries `code_execution` or `file_upload`. The `anthropic.json` records carry both.
-- [VertexAnthropic] Agent Platform lists computer use for `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-opus-4-6`, and `claude-opus-4-5` only. The other five records have no `computer_use`.
-- [Vertex] `gemini-2.5-flash-image` has no context caching and no structured output on Agent Platform, and `gemini-3.1-flash-lite-image` has no function calling. The records drop those capabilities.
-- [Vertex] The Grok records differ from `xai.json`. Agent Platform gives no web search, no code execution, and no file upload for Grok, and it splits Grok 4.20 into a reasoning and a non-reasoning model ID. The context windows also differ: Agent Platform gives 524,288 for Grok 4.6 and 200,000 for Grok 4.3, where `xai.json` gives 500,000 and 1,000,000.
-
-### Deprecated partner models
-- [Vertex] Google deprecated 16 MaaS models on 2026-07-21 and retires them on 2026-10-21: `deepseek-v3.1-maas`, `deepseek-v3.2-maas`, `deepseek-r1-0528-maas`, `deepseek-ocr-maas`, `glm-4.7-maas`, `glm-5-maas`, `gpt-oss-20b-maas`, `kimi-k2-thinking-maas`, `llama-3.3-70b-instruct-maas`, `minimax-m2-maas`, `multilingual-e5-large-instruct-maas`, `multilingual-e5-small-maas`, `qwen3-235b-a22b-instruct-2507-maas`, `qwen3-coder-480b-a35b-instruct-maas`, `qwen3-next-80b-a3b-instruct-maas`, and `qwen3-next-80b-a3b-thinking-maas`. The records carry the dates and stay enabled, because the endpoints still answer until the retirement date. Google gives a Model Garden self-deploy option for each one.
-- [Vertex] `grok-4.1-fast-reasoning` and `grok-4.1-fast-non-reasoning` — shut down 2026-08-20. Both records take `isEnabled: false`. Google names Grok 4.3 and Grok 4.6 as the replacements.
-
-### Models that stay out of the catalog
-- [Vertex] `gemini-3-flash-preview` — the Agent Platform pricing page gives an input price of $0.50 but no output price. We leave the model out until Google publishes one.
-- [Vertex] The Gemini Robotics ER models, the Live API models, `gemini-3.5-transcribe`, `gemini-3.5-live-translate`, the Gemini Omni video models, Imagen, and Veo — no catalog mode fits them, or Agent Platform publishes no model page for them.
-- [Vertex] `mistral-ocr-2505` — the model takes documents only, not text, so it does not meet the catalog rule for accepted models.
-- [Vertex] Jamba 1.5 Large and Jamba 1.5 Mini — both were shut down on 2026-02-27.
-- [VertexAnthropic] `claude-3-opus`, `claude-3-haiku`, `claude-3-5-sonnet`, `claude-3-5-sonnet-v2`, `claude-3-5-haiku`, and `claude-3-7-sonnet` — all six are on the partner deprecation page with shutdown dates that have passed.
-
-### Follow-up work
-- [Vertex] The Mistral model pages give no capability list, so `mistral-medium-3` and `codestral-2` have an empty `capabilities` array and `mistral-small-2503` carries only `pdf_support`. Google publishes no function calling or structured output support for them on Agent Platform.
-- [Vertex] The Grok model pages give no maximum output token count, only an output tokens-per-minute quota. Those four records have no `max_output_tokens`.
-- [Vertex] The `multilingual-e5-*` pages say batch inference is not supported, but the pricing page gives a batch price. The records keep `batch_discount_multiplier: 0.5`.
-- [Vertex] The partner and open model pages list no context caching. Where the pricing page gives a cache hit price, the record carries `prompt_caching` and `cachedTokensPricePerMillion`, and `cachingTokensPricePerMillion` stays null because Google publishes no cache write price.
-- [Vertex] The cache storage table does not list `gemini-3.8-flash` or `gemini-3.7-flash`. Their records carry no `caching_storage_per_million_per_hour`. The other Flash records use the published $1.00 rate.
-- [Vertex] The pricing table shows a dash for the `gemini-3-pro-image` input price and image output price. The record keeps `inputTokensPricePerMillion: null`. The cached input price of $0.20 and the text output price of $12.00 are published, and the image output price of $120 per 1M tokens comes from the published $0.134 per 1,120-token 1K image.
-- [Vertex] The introductory price of $0.75 input and $3.75 output for `gemini-3.8-flash`, `gemini-3.7-flash`, and `gemini-3.6-flash` runs through 2026-12-31. On 2027-01-01 it goes to $1.50 and $7.50.
-- [VertexAnthropic] `claude-opus-4` and `claude-sonnet-4` still have model pages, but Agent Platform no longer publishes a price for them. Both records keep `isEnabled: false` and null prices, because `anthropic.json` names them as fallback targets.
-- [VertexAnthropic] Agent Platform lists extended thinking for the 4.x models only. It does not list it for `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-fable-5`, or `claude-opus-4-5`, because those models always think. All 14 records carry `reasoning`.
-- [VertexAnthropic] `claude-sonnet-4-5` has a 1M context window in preview and 200k at GA. The record uses 1,000,000 with `high_context: 200000`, so the published above-200k prices ($6.00 input, $22.50 output, $0.60 cache hit) stay in the record.
-- [VertexAnthropic] The retirement dates come from the "not sooner than" dates on the model pages, as `anthropic.json` already does for `claude-opus-4-1`.
-
-### Schema and catalog changes
-- `schemas/models.ts` — `PROVIDERS` gains `vertex` and `vertexanthropic`.
-- `README.md` — the catalog table gains `vertex.json` and `vertexanthropic.json`.
-- The partner records use a `launch_stage` key in `metadata` to hold the Agent Platform stage (`ga`, `preview`, `experimental`, `deprecated`).
-- `providers.json` — no change. Both provider records already exist.
-
-### Sources and coverage
-- Agent Platform pricing: https://docs.cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing — Gemini 3, Gemini 2.5, grounding, cache storage, embeddings, and the Anthropic partner tables.
-- Agent Platform models: the model page of every record under https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/, plus the Claude overview, the partner model overview, the partner and open model deprecation pages, and the text embeddings page.
-
 # 2026-09-04 TARS MODEL UPDATE
 
+## New Catalogs:
+
+- [Vertex] `vertex.json` adds 49 models on Gemini Enterprise Agent Platform (Vertex AI). Google supplies 11 chat, four image-generation, and four embedding models. Partners supply 28 chat and two embedding models.
+- [VertexAnthropic] `vertexanthropic.json` adds 14 Claude models. The existing `vertexanthropic/claude-*` targets in `anthropic.json` `fallback_policies` now resolve to records.
+
 ## New Models:
-- [Anthropic] `claude-fable-5-1` — the newest Claude model for demanding reasoning and long-horizon agent work. Anthropic released the model on 2026-09-01. Text, image, and PDF input, text output. 1M context and 128k max output. $10.00 input and $50.00 output per 1M tokens, the same price as Claude Fable 5. Cached input costs $0.25 per 1M tokens, one quarter of the price on other Claude models. A 5-minute cache write costs $12.50 and a 1-hour cache write costs $20.00 per 1M tokens. The model thinks on every request, and effort accepts `low`, `medium`, `high`, `xhigh`, and `max`, with `high` as the default. The model supports tool use, structured outputs, computer use, browser use, code execution, web search, and file upload.
-- [Anthropic] `claude-mythos-5-1` — the same model for Project Glasswing participants. Same modalities, limits, and price as `claude-fable-5-1`. Anthropic gives access by invitation only, so the model stays disabled.
-- [Gemini] `gemini-3.8-flash` — Google's most intelligent Flash model, made for long-horizon software engineering, autonomous agents, and complex enterprise work. Google released the model on 2026-09-02. Text, image, video, audio, and PDF input, text output. 1M context and 65k max output. $0.75 input, $0.075 cached input, and $3.75 output per 1M tokens. This is an introductory price through 2026-12-31. Cache storage costs $0.50 per 1M tokens per hour. Thinking accepts `low`, `medium`, and `high`. The model supports tool use, structured outputs, code execution, URL context, and computer use in preview. Grounding with Google Search and Google Maps costs $14 per 1,000 requests.
+
+- [Anthropic] `claude-fable-5-1`, released 2026-09-01, supports demanding reasoning and long-running agent tasks. It accepts text, images, and PDFs and returns text, with 1M context and 128k maximum output. Prices per million tokens are $10 input, $50 output, $0.25 cached input, $12.50 for five-minute writes, and $20 for one-hour writes. Input/output prices match Claude Fable 5, while cached input costs one quarter of the rate on other Claude models. It always reasons, with `low`, `medium`, `high`, `xhigh`, and `max` effort settings and `high` as the default. Capabilities include tools, structured outputs, computer use, browser use, code execution, web search, and file upload.
+- [Anthropic] `claude-mythos-5-1` provides the same model, modalities, limits, and prices to Project Glasswing participants. It remains disabled because access requires an invitation.
+- [Gemini] `gemini-3.8-flash`, released 2026-09-02, supports software engineering, autonomous agents, and enterprise tasks. It accepts text, images, video, audio, and PDFs and returns text, with 1M context and 65k maximum output.
+
+  Introductory prices per million tokens are $0.75 input, $0.075 cached input, and $3.75 output through 2026-12-31. Cache storage costs $0.50 per million tokens per hour. Reasoning settings are `low`, `medium`, and `high`. Capabilities include tools, structured outputs, code execution, URL context, and preview computer use. Google Search and Google Maps grounding each cost $14 per 1,000 requests.
+- [Vertex] Google chat models: `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-3.1-pro-preview`, `gemini-3.1-pro-preview-customtools`, `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite`.
+- [Vertex] Image models: `gemini-3-pro-image`, `gemini-3.1-flash-image`, `gemini-3.1-flash-lite-image`, and `gemini-2.5-flash-image`.
+- [Vertex] `gemini-embedding-2` costs $0.20 for text, $0.45 for images, $12 for video, and $6.50 for audio per million tokens. `gemini-embedding-001` costs $0.15. `text-embedding-005` and `text-multilingual-embedding-002` each cost $0.025 per million tokens.
+- [VertexAnthropic] Claude models: `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-opus-4-6`, `claude-opus-4-5`, `claude-sonnet-4-5`, `claude-haiku-4-5`, `claude-opus-4-1`, `claude-opus-4`, and `claude-sonnet-4`.
+
+### Vertex partner and open models
+
+Prices are USD per million tokens, input/output unless stated otherwise.
+
+| Models | Input/output price | Limits and abilities |
+| --- | --- | --- |
+| `grok-4.6` | $2.00/$6.00 | Long-context pricing described below |
+| `grok-4.3` | $1.25/$2.50 | Long-context pricing described below |
+| `grok-4.20-reasoning`, `grok-4.20-non-reasoning` | $1.25/$2.50 | 2M context, the largest in this catalog |
+| `grok-4.1-fast-reasoning`, `grok-4.1-fast-non-reasoning` | $0.20/$0.50 | Retired and disabled |
+| `mistral-medium-3` | $0.40/$2.00 | 128k context |
+| `codestral-2` | $0.30/$0.90 | 128k context |
+| `mistral-small-2503` | $0.10/$0.30 | 128k context |
+| `llama-4-scout-17b-16e-instruct-maas` | $0.25/$0.70 | 1.31M context, 8,192 maximum output |
+| `llama-4-maverick-17b-128e-instruct-maas` | $0.35/$1.15 | 524k context, 8,192 maximum output |
+| `llama-3.3-70b-instruct-maas` | $0.72/$0.72 | 128k context, 8,192 maximum output |
+| `deepseek-v3.1-maas` | $0.60/$1.70 | |
+| `deepseek-v3.2-maas` | $0.56/$1.68 | |
+| `deepseek-r1-0528-maas` | $1.35/$5.40 | |
+| `deepseek-ocr-maas` | $0.30/$1.20 | Image input and text output |
+| `qwen3-coder-480b-a35b-instruct-maas` | $0.22/$1.80 | |
+| `qwen3-235b-a22b-instruct-2507-maas` | $0.22/$0.88 | |
+| `qwen3-next-80b-a3b-instruct-maas`, `qwen3-next-80b-a3b-thinking-maas` | $0.15/$1.20 | |
+| `glm-5.2-maas` | $1.40/$4.40 | 1M context |
+| `glm-5-maas` | $1.00/$3.20 | |
+| `glm-4.7-maas` | $0.60/$2.20 | |
+| `gpt-oss-120b-maas` | $0.09/$0.36 | OpenAI open weights |
+| `gpt-oss-20b-maas` | $0.07/$0.25 | OpenAI open weights |
+| `kimi-k2-thinking-maas` | $0.60/$2.50 | |
+| `minimax-m2-maas` | $0.30/$1.20 | |
+| `gemma-4-26b-a4b-it-maas` | $0.15/$0.60 | |
+| `multilingual-e5-large-instruct-maas` | $0.025 input | Embedding, 512-token maximum sequence |
+| `multilingual-e5-small-maas` | $0.015 input | Embedding, 512-token maximum sequence |
+
+- [Vertex] Grok 4.6, 4.3, and 4.20 prices double for prompts with more than 200,000 tokens. The three Mistral models run in `us-central1` and `europe-west4`.
+
+## Deprecated Models:
+
+- [Vertex] Google deprecated 16 MaaS models on 2026-07-21, with retirement on 2026-10-21. Affected models: `deepseek-v3.1-maas`, `deepseek-v3.2-maas`, `deepseek-r1-0528-maas`, `deepseek-ocr-maas`, `glm-4.7-maas`, `glm-5-maas`, `gpt-oss-20b-maas`, `kimi-k2-thinking-maas`, `llama-3.3-70b-instruct-maas`, `minimax-m2-maas`, `multilingual-e5-large-instruct-maas`, `multilingual-e5-small-maas`, `qwen3-235b-a22b-instruct-2507-maas`, `qwen3-coder-480b-a35b-instruct-maas`, `qwen3-next-80b-a3b-instruct-maas`, and `qwen3-next-80b-a3b-thinking-maas`. They remain enabled until retirement. Google provides a Model Garden self-deployment option for each model.
 
 ## Retired Models:
-- [Gemini] `gemini-robotics-er-1.6-preview` — shut down 2026-08-31. Replacement: `gemini-robotics-er-2-preview`.
-- [Gemini] `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001`, and `imagen-4.0-fast-generate-001` — shut down 2026-08-17. Replacement: `gemini-3.1-flash-image`.
+
+- [Gemini] `gemini-robotics-er-1.6-preview` retired on 2026-08-31. Replacement: `gemini-robotics-er-2-preview`.
+- [Gemini] `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001`, and `imagen-4.0-fast-generate-001` retired on 2026-08-17. Replacement: `gemini-3.1-flash-image`.
+- [Vertex] `grok-4.1-fast-reasoning` and `grok-4.1-fast-non-reasoning` retired on 2026-08-20 and are disabled. Replacements: Grok 4.3 and Grok 4.6.
 
 ## Other Updates:
-- [Anthropic] `claude-fable-5` and `claude-mythos-5` — the two models support computer use and browser use. Anthropic added both toolsets on 2026-08-19. We added the missing ability to the catalog.
-- [Gemini] `gemini-3.7-flash` — Google now lists this model as the previous-generation Flash model. We changed the description. The price and the limits do not change.
+
+- [Anthropic] `claude-fable-5` and `claude-mythos-5` gain computer use and browser use, which Anthropic added on 2026-08-19.
+- [Gemini] `gemini-3.7-flash` now has a previous-generation description. Its prices and limits remain unchanged.
 
 ## Notes:
 
 ### Models that are added but not enabled
-- [Anthropic] `claude-mythos-5-1` — Project Glasswing gives access by invitation only. The record keeps the published price and limits.
+
+- [Anthropic] `claude-mythos-5-1` retains published prices and limits despite invitation-only access.
+- [VertexAnthropic] `claude-opus-4` and `claude-sonnet-4` retain model pages but have no published Agent Platform price. Both remain disabled with null prices because `anthropic.json` names them as fallback targets.
+
+### Prices that differ from the direct-API catalogs
+
+- [Vertex] Non-global endpoints cost 1.1 times global prices for GA Gemini 3 and later families from 2026-07-01. This covers Gemini 3.8, 3.7, 3.6, 3.5, and 3.5 Flash-Lite, plus 3.1 Flash-Lite and 3.1 Flash Image. Those records use `non_global_endpoint_multiplier: 1.1`. Other models are global only.
+- [Vertex] Flash and Flash-Lite cache storage costs $1 per million tokens per hour. Pro storage costs $4.50. Direct Gemini 3.8 Flash storage costs $0.50. The exceptions for unpublished Vertex storage rates appear under Follow-up work.
+- [Vertex] Gemini 3 grounding costs $14 per 1,000 queries. Gemini 2.5 grounding costs $35 for Google Search, $45 for Web Grounding for Enterprise, and $25 for Google Maps per 1,000 prompts. Grounding with your data costs $2.50 per 1,000 prompts for all models.
+- [Vertex] `gemini-3.1-flash-image` publishes $0.05 cached input and `gemini-2.5-flash-image` publishes $2.50 text output per million tokens. Both fields lack values in the direct Gemini catalog.
+- [VertexAnthropic] All 12 priced models match the direct Anthropic token prices.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [VertexAnthropic] Claude lacks Agent Platform code execution and Files API support. Hosted records omit `code_execution` and `file_upload`, which the direct records include.
+- [VertexAnthropic] Computer use covers Fable 5.1, Opus 5, Sonnet 5, Fable 5, Opus 4.8/4.7, Sonnet 4.6, and Opus 4.6/4.5. The other five records omit `computer_use`.
+- [Vertex] `gemini-2.5-flash-image` omits context caching and structured outputs. `gemini-3.1-flash-lite-image` omits function calling.
+- [Vertex] Compared with `xai.json`, hosted Grok omits web search, code execution, and file upload. Grok 4.20 has separate reasoning and non-reasoning IDs. Hosted Grok 4.6 has 524,288 context tokens versus 500,000 directly. Hosted Grok 4.3 has 200,000 versus 1,000,000 directly.
 
 ### Follow-up work
-- [Anthropic] Anthropic gives the retirement date of `claude-fable-5-1` as "not sooner than September 1, 2027". This is not a firm date, so the record has no retirement date.
-- [Anthropic] Anthropic publishes no tool-use system prompt token count for the Fable and Mythos models. The field stays empty.
-- [Gemini] The introductory prices of `gemini-3.8-flash`, `gemini-3.7-flash`, and `gemini-3.6-flash` run through 2026-12-31. On 2027-01-01 the price goes to $1.50 input, $0.15 cached input, and $7.50 output per 1M tokens. Cache storage goes to $1.00 per 1M tokens per hour.
-- [Gemini] The `gemini-robotics-er-2-preview` model page lists grounding with Google Maps, but the pricing page gives no Maps price for this model. The catalog keeps the $14 per 1,000 rate that Google gives for the other Gemini 3 models.
-- [Gemini] The Gemini deprecations page calls its shutdown dates the earliest possible dates. We record them as retirement dates, as in earlier updates.
+
+- [Vertex] Mistral pages publish no capability lists or function-calling and structured-output support. `mistral-medium-3` and `codestral-2` have empty capabilities. `mistral-small-2503` has only `pdf_support`.
+- [Vertex] Grok pages publish output-token quotas without maximum response lengths. Four records omit `max_output_tokens`.
+- [Vertex] `multilingual-e5-*` pages deny Batch support, but pricing lists Batch rates. Records retain `batch_discount_multiplier: 0.5`.
+- [Vertex] Partner and open-model pages list no context caching. Where prices establish cache hits, records retain `prompt_caching` and `cachedTokensPricePerMillion`. `cachingTokensPricePerMillion` remains null because Google publishes no cache-write price.
+- [Vertex] The storage table omits `gemini-3.8-flash` and `gemini-3.7-flash`, so both omit `caching_storage_per_million_per_hour`. Other Flash records use $1 per million tokens per hour.
+- [Vertex] `gemini-3-pro-image` has dashes for input and image-output pricing. It retains `inputTokensPricePerMillion: null`. Published cached input costs $0.20 and text output costs $12 per million tokens. The recorded $120 image-output rate derives from the published $0.134 per 1,120-token 1K image.
+- [Gemini/Vertex] Gemini 3.8, 3.7, and 3.6 Flash introductory input/output prices of $0.75/$3.75 per million tokens end on 2026-12-31. From 2027-01-01, input/output costs $1.50/$7.50. Direct Gemini cached input rises to $0.15 and storage to $1 per million tokens per hour.
+- [VertexAnthropic] Agent Platform lists extended thinking for the 4.x models. Fable 5.1, Opus 5, Sonnet 5, Fable 5, and Opus 4.5 always think instead. All 14 records retain `reasoning`.
+- [VertexAnthropic] Sonnet 4.5 has preview 1M context and GA 200k context. Its record uses 1,000,000 with `high_context: 200000`. Prices for more than 200,000 tokens are $6 input, $22.50 output, and $0.60 cache hits per million tokens.
+- [VertexAnthropic] This update uses model-page "not sooner than" dates as retirement dates, matching the direct `claude-opus-4-1` record.
+- [Anthropic] Fable 5.1 retirement is "not sooner than September 1, 2027". Its record has no firm retirement date. Anthropic publishes no tool-use system prompt token counts for Fable or Mythos.
+- [Gemini] Robotics ER 2 Preview lists Google Maps support without a model-specific Maps price. Its record retains the $14 per 1,000 rate published for other Gemini 3 models.
+- [Gemini] This update records the earliest possible shutdown dates from the deprecations page as retirement dates, as earlier updates did.
 
 ### Schema and catalog changes
-- [Anthropic] The two new records raise the catalog count from 37 to 39. Both records take `min_cacheable_prompt_tokens: 512`, `max_images_per_prompt: 600`, and `inference_geo_us_multiplier: 1.1`. `claude-fable-5` and `claude-mythos-5` gain `computer_use` in `capabilities`.
-- [Gemini] The new record raises the catalog count from 24 to 25. The four retired records take `isEnabled: false`. Seven records gain a `retirement_date`: the four retired ones, and `gemini-2.5-flash-image`, `gemini-3.1-flash-lite`, and `gemini-embedding-001`, which carried `deprecated: true` with no date.
 
-### Deprecated partner models
-- [Vertex] Google deprecated 16 MaaS models on 2026-07-21 and retires them on 2026-10-21: `deepseek-v3.1-maas`, `deepseek-v3.2-maas`, `deepseek-r1-0528-maas`, `deepseek-ocr-maas`, `glm-4.7-maas`, `glm-5-maas`, `gpt-oss-20b-maas`, `kimi-k2-thinking-maas`, `llama-3.3-70b-instruct-maas`, `minimax-m2-maas`, `multilingual-e5-large-instruct-maas`, `multilingual-e5-small-maas`, `qwen3-235b-a22b-instruct-2507-maas`, `qwen3-coder-480b-a35b-instruct-maas`, `qwen3-next-80b-a3b-instruct-maas`, and `qwen3-next-80b-a3b-thinking-maas`. The records carry the dates and stay enabled, because the endpoints still answer until the retirement date. Google gives a Model Garden self-deploy option for each one.
-- [Vertex] `grok-4.1-fast-reasoning` and `grok-4.1-fast-non-reasoning` — shut down 2026-08-20. Both records take `isEnabled: false`. Google names Grok 4.3 and Grok 4.6 as the replacements.
+- [Anthropic] Two additions increase the catalog from 37 to 39 records. Both use `min_cacheable_prompt_tokens: 512`, `max_images_per_prompt: 600`, and `inference_geo_us_multiplier: 1.1`. Fable 5 and Mythos 5 gain `computer_use`.
+- [Gemini] One addition increases the catalog from 24 to 25 records. Four retired records take `isEnabled: false`. Seven gain `retirement_date`: those four, `gemini-2.5-flash-image`, `gemini-3.1-flash-lite`, and `gemini-embedding-001`. The last three already had `deprecated: true` without retirement dates.
+- [Vertex/VertexAnthropic] `schemas/models.ts` adds `vertex` and `vertexanthropic` to `PROVIDERS`, and `README.md` adds both catalogs. Partner records gain `metadata.launch_stage` for `ga`, `preview`, `experimental`, or `deprecated`. `providers.json` stays unchanged because both providers already exist.
 
 ### Models that stay out of the catalog
-- [Gemini] `lyria-3.5-clip-preview` and `lyria-3.5-pro-preview` — music generation models, released 2026-09-03. The models make audio, so no catalog mode fits them.
-- [Gemini] `gemini-omni-1.1-flash` — a video generation and editing model, GA on 2026-08-27. The model makes video, so no catalog mode fits it.
-- [Gemini] The speech, live, and video models stay out, as in earlier updates: `gemini-3.5-transcribe`, `gemini-3.5-transcribe-live`, `gemini-3.5-live-translate-preview`, `gemini-3.1-flash-live-preview`, `gemini-3.1-flash-tts-preview`, `gemini-2.5-flash-native-audio-preview-12-2025`, `gemini-2.5-flash-preview-tts`, `gemini-2.5-pro-preview-tts`, and the Veo models.
-- [Gemini] The Interactions API agents stay out: Deep Research, Deep Research Max, and Antigravity.
+
+- [Vertex] `gemini-3-flash-preview` has $0.50 input pricing but no output price. This update excludes it until Google publishes an output price.
+- [Vertex] Robotics ER, Live API, `gemini-3.5-transcribe`, `gemini-3.5-live-translate`, Gemini Omni video, Imagen, and Veo lack an accepted mode or a published hosted model page.
+- [Vertex] `mistral-ocr-2505` accepts documents only, without the required text input.
+- [Vertex] Jamba 1.5 Large and Mini retired on 2026-02-27.
+- [VertexAnthropic] Six models have passed shutdown dates: `claude-3-opus`, `claude-3-haiku`, `claude-3-5-sonnet`, `claude-3-5-sonnet-v2`, `claude-3-5-haiku`, and `claude-3-7-sonnet`.
+- [Gemini] `lyria-3.5-clip-preview` and `lyria-3.5-pro-preview`, released 2026-09-03, produce audio. `gemini-omni-1.1-flash`, GA from 2026-08-27, generates and edits video. Their modes remain excluded.
+- [Gemini] Speech, live, and video exclusions remain: `gemini-3.5-transcribe`, `gemini-3.5-transcribe-live`, `gemini-3.5-live-translate-preview`, `gemini-3.1-flash-live-preview`, `gemini-3.1-flash-tts-preview`, `gemini-2.5-flash-native-audio-preview-12-2025`, `gemini-2.5-flash-preview-tts`, `gemini-2.5-pro-preview-tts`, and Veo.
+- [Gemini] Deep Research, Deep Research Max, and Antigravity remain excluded as Interactions API agents.
 
 ### Prices that did not change
-- [Anthropic] All 17 models on the pricing page match the catalog. The two new models are the only additions. The `claude-sonnet-5` price stays at $2.00 and $10.00 per 1M tokens. Anthropic canceled the increase to $3.00 and $15.00 that was set for 2026-09-01.
-- [Gemini] All 24 existing records match the pricing page. This covers the token prices, the cached-token prices, the cache storage prices, the long-context prices, and the grounding prices.
+
+- [Anthropic] All 17 models on the pricing page match the catalog. Only the two new models are additions. Sonnet 5 retains $2/$10 input/output per million tokens. Anthropic canceled its planned 2026-09-01 increase to $3/$15.
+- [Gemini] The comparison reports matching prices for all 24 existing records. It covers tokens, cached tokens, storage, long context, and grounding, subject to the Maps caveat above.
 
 ### Sources and coverage
-- Anthropic: release notes, models overview, pricing, deprecations, context windows, fast mode, prompt caching, request size limits, and the model pages for Claude Fable 5.1 and Claude Mythos 5.1. We also read the compatibility list on the computer use, browser use, code execution, structured outputs, and effort pages.
-- We compared all 37 existing records to the provider pages with a script. Price, cache price, context window, max output, and image limit match for every model. The retired records stay in the catalog because Anthropic still lists them.
-- Gemini: release notes, models index, pricing, deprecations, and the model pages for Gemini 3.8 Flash, Gemini 3.7 Flash, and Gemini Robotics ER 2.
-- We compared all 24 existing Gemini records to the pricing and deprecations pages with a script. Only the retirement state changed.
+
+- [Vertex/VertexAnthropic] [Agent Platform pricing](https://docs.cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing) covers Gemini 3, Gemini 2.5, grounding, cache storage, embeddings, and Claude partner tables. Sources include every record's [model page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/), Claude and partner overviews, partner/open-model deprecations, and text embeddings.
+- [Anthropic] Sources cover release notes, models, pricing, deprecations, context windows, Fast mode, caching, request sizes, and Fable 5.1/Mythos 5.1 pages. Capability sources cover computer use, browser use, code execution, structured outputs, and effort. Scripted comparisons cover all 37 existing records' prices, cache prices, context windows, maximum outputs, and image limits. All compared values match. Retired records remain because Anthropic still lists them.
+- [Gemini] Sources cover release notes, models, pricing, deprecations, and Gemini 3.8 Flash, 3.7 Flash, and Robotics ER 2 pages. Scripted comparisons cover all 24 existing records against pricing and deprecations. Only retirement state changes on those records.
 
 # 2026-08-27 TARS MODEL UPDATE
 
