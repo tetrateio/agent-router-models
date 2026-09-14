@@ -173,7 +173,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 8,
+        "batch_output_tokens_price_per_million": 40
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/anthropic/claude-fable-5",
@@ -202,7 +205,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.8,
+        "batch_output_tokens_price_per_million": 4
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/anthropic/claude-haiku-4-5",
@@ -231,7 +237,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 4,
+        "batch_output_tokens_price_per_million": 20
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/anthropic/claude-opus-4-7",
@@ -260,7 +269,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 4,
+        "batch_output_tokens_price_per_million": 20
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/anthropic/claude-opus-4-8",
@@ -289,7 +301,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 4,
+        "batch_output_tokens_price_per_million": 20
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/anthropic/claude-opus-5",
@@ -318,7 +333,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.4,
+        "batch_output_tokens_price_per_million": 12
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/anthropic/claude-sonnet-4-6",
@@ -347,7 +365,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.4,
+        "batch_output_tokens_price_per_million": 12
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/anthropic/claude-sonnet-5",
@@ -378,7 +399,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.2,
+        "batch_output_tokens_price_per_million": 1.6
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/ByteDance/Seed-1.8",
@@ -408,7 +432,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.4,
+        "batch_output_tokens_price_per_million": 2.4
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/ByteDance/Seed-2.0-code",
@@ -439,7 +466,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.08,
+        "batch_output_tokens_price_per_million": 0.32
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/ByteDance/Seed-2.0-mini",
@@ -469,7 +499,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.4,
+        "batch_output_tokens_price_per_million": 2.4
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/ByteDance/Seed-2.0-pro",
@@ -533,7 +566,9 @@
         "flex_input_tokens_price_per_million": 0.4,
         "flex_output_tokens_price_per_million": 1.72,
         "flex_cached_tokens_price_per_million": 0.28,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.4,
+        "batch_output_tokens_price_per_million": 1.72
       },
       "limits": {
         "max_output_tokens": 32768
@@ -628,7 +663,9 @@
         "flex_input_tokens_price_per_million": 0.256,
         "flex_output_tokens_price_per_million": 0.712,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.256,
+        "batch_output_tokens_price_per_million": 0.712
       },
       "limits": {},
       "metadata": {
@@ -663,7 +700,9 @@
         "flex_input_tokens_price_per_million": 0.192,
         "flex_output_tokens_price_per_million": 0.72,
         "flex_cached_tokens_price_per_million": 0.108,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.192,
+        "batch_output_tokens_price_per_million": 0.72
       },
       "limits": {},
       "metadata": {
@@ -699,7 +738,9 @@
         "flex_input_tokens_price_per_million": 0.2,
         "flex_output_tokens_price_per_million": 0.76,
         "flex_cached_tokens_price_per_million": 0.104,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.2,
+        "batch_output_tokens_price_per_million": 0.76
       },
       "limits": {
         "max_output_tokens": 32768
@@ -774,7 +815,9 @@
         "flex_input_tokens_price_per_million": 0.208,
         "flex_output_tokens_price_per_million": 0.304,
         "flex_cached_tokens_price_per_million": 0.104,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.208,
+        "batch_output_tokens_price_per_million": 0.304
       },
       "limits": {},
       "metadata": {
@@ -819,7 +862,9 @@
         "flex_cached_tokens_price_per_million": 0.0144,
         "flex_caching_tokens_price_per_million": null,
         "flex_caching_5m_per_million": 0.09,
-        "flex_caching_1h_per_million": 0.144
+        "flex_caching_1h_per_million": 0.144,
+        "batch_input_tokens_price_per_million": 0.072,
+        "batch_output_tokens_price_per_million": 0.144
       },
       "limits": {
         "explicit_cache_granularity_tokens": 1024,
@@ -861,7 +906,9 @@
         "flex_input_tokens_price_per_million": 0.048,
         "flex_output_tokens_price_per_million": 0.144,
         "flex_cached_tokens_price_per_million": 0.012,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.048,
+        "batch_output_tokens_price_per_million": 0.144
       },
       "limits": {
         "max_output_tokens": 384000
@@ -897,7 +944,9 @@
         "flex_input_tokens_price_per_million": 1.04,
         "flex_output_tokens_price_per_million": 2.08,
         "flex_cached_tokens_price_per_million": 0.08,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 1.04,
+        "batch_output_tokens_price_per_million": 2.08
       },
       "limits": {},
       "metadata": {
@@ -931,7 +980,9 @@
         "flex_input_tokens_price_per_million": 1.04,
         "flex_output_tokens_price_per_million": 2.08,
         "flex_cached_tokens_price_per_million": 0.08,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 1.04,
+        "batch_output_tokens_price_per_million": 2.08
       },
       "limits": {},
       "metadata": {
@@ -964,7 +1015,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.24,
+        "batch_output_tokens_price_per_million": 2
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/gemini-2.5-flash",
@@ -995,7 +1049,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 8
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/gemini-2.5-pro",
@@ -1025,7 +1082,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.2,
+        "batch_output_tokens_price_per_million": 1.2
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/gemini-3.1-flash-lite",
@@ -1055,7 +1115,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1.6,
+        "batch_output_tokens_price_per_million": 9.6
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/gemini-3.1-pro",
@@ -1085,7 +1148,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1.2,
+        "batch_output_tokens_price_per_million": 7.2
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/gemini-3.5-flash",
@@ -1115,7 +1181,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.6,
+        "batch_output_tokens_price_per_million": 3
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/gemini-3.7-flash",
@@ -1148,7 +1217,9 @@
         "flex_input_tokens_price_per_million": 0.04,
         "flex_output_tokens_price_per_million": 0.12,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.04,
+        "batch_output_tokens_price_per_million": 0.12
       },
       "limits": {},
       "metadata": {
@@ -1183,7 +1254,9 @@
         "flex_input_tokens_price_per_million": 0.064,
         "flex_output_tokens_price_per_million": 0.128,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.064,
+        "batch_output_tokens_price_per_million": 0.128
       },
       "limits": {},
       "metadata": {
@@ -1218,7 +1291,9 @@
         "flex_input_tokens_price_per_million": 0.04,
         "flex_output_tokens_price_per_million": 0.08,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.04,
+        "batch_output_tokens_price_per_million": 0.08
       },
       "limits": {},
       "metadata": {
@@ -1257,7 +1332,9 @@
         "flex_input_tokens_price_per_million": 0.056,
         "flex_output_tokens_price_per_million": 0.272,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.056,
+        "batch_output_tokens_price_per_million": 0.272
       },
       "limits": {},
       "metadata": {
@@ -1297,7 +1374,9 @@
         "flex_input_tokens_price_per_million": 0.104,
         "flex_output_tokens_price_per_million": 0.304,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.104,
+        "batch_output_tokens_price_per_million": 0.304
       },
       "limits": {},
       "metadata": {
@@ -1337,7 +1416,9 @@
         "flex_input_tokens_price_per_million": 0.072,
         "flex_output_tokens_price_per_million": 0.272,
         "flex_cached_tokens_price_per_million": 0.04,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.072,
+        "batch_output_tokens_price_per_million": 0.272
       },
       "limits": {
         "max_output_tokens": 16384
@@ -1365,7 +1446,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.216,
+        "batch_output_tokens_price_per_million": 0.608
+      },
       "limits": {
         "max_output_tokens": 8192
       },
@@ -1400,7 +1484,9 @@
         "flex_input_tokens_price_per_million": 0.016,
         "flex_output_tokens_price_per_million": 0.08,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.016,
+        "batch_output_tokens_price_per_million": 0.08
       },
       "limits": {},
       "metadata": {
@@ -1431,7 +1517,9 @@
         "flex_input_tokens_price_per_million": 0.32,
         "flex_output_tokens_price_per_million": 0.32,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.32,
+        "batch_output_tokens_price_per_million": 0.32
       },
       "limits": {},
       "metadata": {
@@ -1457,7 +1545,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.128,
+        "batch_output_tokens_price_per_million": 0.52
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/ibm-granite/granite-4.2-30b",
@@ -1481,7 +1572,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.024,
+        "batch_output_tokens_price_per_million": 0.096
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/ibm-granite/granite-4.2-3b",
@@ -1505,7 +1599,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.048,
+        "batch_output_tokens_price_per_million": 0.2
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/ibm-granite/granite-4.2-8b",
@@ -1534,7 +1631,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.048,
+        "batch_output_tokens_price_per_million": 0.144
+      },
       "limits": {
         "max_output_tokens": 32768
       },
@@ -1600,7 +1700,9 @@
         "flex_input_tokens_price_per_million": 0.08,
         "flex_output_tokens_price_per_million": 0.256,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.08,
+        "batch_output_tokens_price_per_million": 0.256
       },
       "limits": {},
       "metadata": {
@@ -1635,7 +1737,9 @@
         "flex_input_tokens_price_per_million": 0.16,
         "flex_output_tokens_price_per_million": 0.64,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.16,
+        "batch_output_tokens_price_per_million": 0.64
       },
       "limits": {},
       "metadata": {
@@ -1670,7 +1774,9 @@
         "flex_input_tokens_price_per_million": 0.08,
         "flex_output_tokens_price_per_million": 0.24,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.08,
+        "batch_output_tokens_price_per_million": 0.24
       },
       "limits": {},
       "metadata": {
@@ -1705,7 +1811,9 @@
         "flex_input_tokens_price_per_million": 0.144,
         "flex_output_tokens_price_per_million": 0.144,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.144,
+        "batch_output_tokens_price_per_million": 0.144
       },
       "limits": {},
       "metadata": {
@@ -1796,7 +1904,9 @@
         "flex_input_tokens_price_per_million": 0.32,
         "flex_output_tokens_price_per_million": 0.32,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.32,
+        "batch_output_tokens_price_per_million": 0.32
       },
       "limits": {},
       "metadata": {
@@ -1857,7 +1967,9 @@
         "flex_input_tokens_price_per_million": 0.016,
         "flex_output_tokens_price_per_million": 0.032,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.016,
+        "batch_output_tokens_price_per_million": 0.032
       },
       "limits": {},
       "metadata": {
@@ -1889,7 +2001,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.24,
+        "batch_output_tokens_price_per_million": 0.96
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/meta-models/Muse-Glimmer-30B",
@@ -1918,7 +2033,9 @@
         "flex_input_tokens_price_per_million": 0.056,
         "flex_output_tokens_price_per_million": 0.112,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.056,
+        "batch_output_tokens_price_per_million": 0.112
       },
       "limits": {},
       "metadata": {
@@ -2048,7 +2165,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.304,
+        "batch_output_tokens_price_per_million": 1.36
+      },
       "limits": {
         "max_output_tokens": 131072
       },
@@ -2085,7 +2205,9 @@
         "flex_input_tokens_price_per_million": 0.224,
         "flex_output_tokens_price_per_million": 0.88,
         "flex_cached_tokens_price_per_million": 0.0448,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.224,
+        "batch_output_tokens_price_per_million": 0.88
       },
       "limits": {
         "max_output_tokens": 512000
@@ -2118,7 +2240,9 @@
         "flex_input_tokens_price_per_million": 0.0152,
         "flex_output_tokens_price_per_million": 0.024,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.0152,
+        "batch_output_tokens_price_per_million": 0.024
       },
       "limits": {},
       "metadata": {
@@ -2149,7 +2273,9 @@
         "flex_input_tokens_price_per_million": 0.04,
         "flex_output_tokens_price_per_million": 0.064,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.04,
+        "batch_output_tokens_price_per_million": 0.064
       },
       "limits": {},
       "metadata": {
@@ -2184,7 +2310,9 @@
         "flex_input_tokens_price_per_million": 0.06,
         "flex_output_tokens_price_per_million": 0.16,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.06,
+        "batch_output_tokens_price_per_million": 0.16
       },
       "limits": {},
       "metadata": {
@@ -2405,7 +2533,9 @@
         "flex_input_tokens_price_per_million": 0.6,
         "flex_output_tokens_price_per_million": 2.8,
         "flex_cached_tokens_price_per_million": 0.12,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.6,
+        "batch_output_tokens_price_per_million": 2.8
       },
       "limits": {},
       "metadata": {
@@ -2451,7 +2581,9 @@
         "flex_cached_tokens_price_per_million": 0.1088,
         "flex_caching_tokens_price_per_million": null,
         "flex_caching_5m_per_million": 0.68,
-        "flex_caching_1h_per_million": 1.088
+        "flex_caching_1h_per_million": 1.088,
+        "batch_input_tokens_price_per_million": 0.544,
+        "batch_output_tokens_price_per_million": 2.72
       },
       "limits": {
         "explicit_cache_granularity_tokens": 1024
@@ -2486,7 +2618,9 @@
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
         "caching_5m_per_million": 3.5625,
-        "caching_1h_per_million": 5.7
+        "caching_1h_per_million": 5.7,
+        "batch_input_tokens_price_per_million": 2.28,
+        "batch_output_tokens_price_per_million": 11.4
       },
       "limits": {
         "explicit_cache_granularity_tokens": 1536
@@ -2518,7 +2652,9 @@
         "flex_input_tokens_price_per_million": 0.8,
         "flex_output_tokens_price_per_million": 0.8,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.8,
+        "batch_output_tokens_price_per_million": 0.8
       },
       "limits": {},
       "metadata": {
@@ -2553,7 +2689,9 @@
         "flex_input_tokens_price_per_million": 0.56,
         "flex_output_tokens_price_per_million": 0.56,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.56,
+        "batch_output_tokens_price_per_million": 0.56
       },
       "limits": {},
       "metadata": {
@@ -2648,7 +2786,9 @@
         "flex_input_tokens_price_per_million": 0.04,
         "flex_output_tokens_price_per_million": 0.16,
         "flex_cached_tokens_price_per_million": 0.02,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.04,
+        "batch_output_tokens_price_per_million": 0.16
       },
       "limits": {
         "max_output_tokens": 228000
@@ -2684,7 +2824,9 @@
         "flex_input_tokens_price_per_million": 0.16,
         "flex_output_tokens_price_per_million": 0.16,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.16,
+        "batch_output_tokens_price_per_million": 0.16
       },
       "limits": {},
       "metadata": {
@@ -2719,7 +2861,9 @@
         "flex_input_tokens_price_per_million": 0.068,
         "flex_output_tokens_price_per_million": 0.32,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.068,
+        "batch_output_tokens_price_per_million": 0.32
       },
       "limits": {},
       "metadata": {
@@ -2765,7 +2909,9 @@
         "flex_cached_tokens_price_per_million": 0.08,
         "flex_caching_tokens_price_per_million": null,
         "flex_caching_5m_per_million": 0.5,
-        "flex_caching_1h_per_million": 0.8
+        "flex_caching_1h_per_million": 0.8,
+        "batch_input_tokens_price_per_million": 0.4,
+        "batch_output_tokens_price_per_million": 1.76
       },
       "limits": {
         "explicit_cache_granularity_tokens": 8192,
@@ -2799,7 +2945,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.064,
+        "batch_output_tokens_price_per_million": 0.16
+      },
       "limits": {
         "max_output_tokens": 131072
       },
@@ -2886,7 +3035,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.0296,
+        "batch_output_tokens_price_per_million": 0.136
+      },
       "limits": {
         "max_output_tokens": 131072
       },
@@ -2918,7 +3070,9 @@
         "flex_input_tokens_price_per_million": 0.12,
         "flex_output_tokens_price_per_million": 0.48,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.12,
+        "batch_output_tokens_price_per_million": 0.48
       },
       "limits": {},
       "metadata": {
@@ -2944,7 +3098,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.16,
+        "batch_output_tokens_price_per_million": 0.76
+      },
       "limits": {
         "max_output_tokens": 131072
       },
@@ -2980,7 +3137,9 @@
         "flex_input_tokens_price_per_million": 0.024,
         "flex_output_tokens_price_per_million": 0.112,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.024,
+        "batch_output_tokens_price_per_million": 0.112
       },
       "limits": {
         "max_output_tokens": 131072
@@ -3045,7 +3204,9 @@
         "flex_input_tokens_price_per_million": 0.288,
         "flex_output_tokens_price_per_million": 0.32,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.288,
+        "batch_output_tokens_price_per_million": 0.32
       },
       "limits": {},
       "metadata": {
@@ -3110,7 +3271,9 @@
         "flex_input_tokens_price_per_million": 0.096,
         "flex_output_tokens_price_per_million": 0.192,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.096,
+        "batch_output_tokens_price_per_million": 0.192
       },
       "limits": {},
       "metadata": {
@@ -3145,7 +3308,9 @@
         "flex_input_tokens_price_per_million": 0.072,
         "flex_output_tokens_price_per_million": 0.44,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.072,
+        "batch_output_tokens_price_per_million": 0.44
       },
       "limits": {},
       "metadata": {
@@ -3226,7 +3391,9 @@
         "flex_input_tokens_price_per_million": 0.096,
         "flex_output_tokens_price_per_million": 0.4,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.096,
+        "batch_output_tokens_price_per_million": 0.4
       },
       "limits": {},
       "metadata": {
@@ -3261,7 +3428,9 @@
         "flex_input_tokens_price_per_million": 0.064,
         "flex_output_tokens_price_per_million": 0.224,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.064,
+        "batch_output_tokens_price_per_million": 0.224
       },
       "limits": {},
       "metadata": {
@@ -3324,7 +3493,9 @@
         "flex_input_tokens_price_per_million": 0.24,
         "flex_output_tokens_price_per_million": 0.8,
         "flex_cached_tokens_price_per_million": 0.08,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.24,
+        "batch_output_tokens_price_per_million": 0.8
       },
       "limits": {
         "max_output_tokens": 65536
@@ -3353,7 +3524,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.96,
+        "batch_output_tokens_price_per_million": 4.8
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3-Max",
@@ -3378,7 +3552,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.96,
+        "batch_output_tokens_price_per_million": 4.8
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3-Max-Thinking",
@@ -3411,7 +3588,9 @@
         "flex_input_tokens_price_per_million": 0.072,
         "flex_output_tokens_price_per_million": 0.88,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.072,
+        "batch_output_tokens_price_per_million": 0.88
       },
       "limits": {},
       "metadata": {
@@ -3451,7 +3630,9 @@
         "flex_input_tokens_price_per_million": 0.16,
         "flex_output_tokens_price_per_million": 0.704,
         "flex_cached_tokens_price_per_million": 0.088,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.16,
+        "batch_output_tokens_price_per_million": 0.704
       },
       "limits": {},
       "metadata": {
@@ -3486,7 +3667,9 @@
         "flex_input_tokens_price_per_million": 0.12,
         "flex_output_tokens_price_per_million": 0.48,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.12,
+        "batch_output_tokens_price_per_million": 0.48
       },
       "limits": {},
       "metadata": {
@@ -3525,7 +3708,9 @@
         "flex_input_tokens_price_per_million": 0.232,
         "flex_output_tokens_price_per_million": 1.92,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.232,
+        "batch_output_tokens_price_per_million": 1.92
       },
       "limits": {
         "max_output_tokens": 81920
@@ -3566,7 +3751,9 @@
         "flex_input_tokens_price_per_million": 0.208,
         "flex_output_tokens_price_per_million": 2.08,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.208,
+        "batch_output_tokens_price_per_million": 2.08
       },
       "limits": {
         "max_output_tokens": 81920
@@ -3608,7 +3795,9 @@
         "flex_input_tokens_price_per_million": 0.112,
         "flex_output_tokens_price_per_million": 0.8,
         "flex_cached_tokens_price_per_million": 0.04,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.112,
+        "batch_output_tokens_price_per_million": 0.8
       },
       "limits": {
         "max_output_tokens": 81920
@@ -3650,7 +3839,9 @@
         "flex_input_tokens_price_per_million": 0.36,
         "flex_output_tokens_price_per_million": 2.4,
         "flex_cached_tokens_price_per_million": 0.176,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.36,
+        "batch_output_tokens_price_per_million": 2.4
       },
       "limits": {
         "max_output_tokens": 81920
@@ -3686,7 +3877,9 @@
         "flex_input_tokens_price_per_million": 0.08,
         "flex_output_tokens_price_per_million": 0.12,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.08,
+        "batch_output_tokens_price_per_million": 0.12
       },
       "limits": {
         "max_output_tokens": 81920
@@ -3727,7 +3920,9 @@
         "flex_input_tokens_price_per_million": 0.256,
         "flex_output_tokens_price_per_million": 2.56,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.256,
+        "batch_output_tokens_price_per_million": 2.56
       },
       "limits": {
         "max_output_tokens": 81920
@@ -3768,7 +3963,9 @@
         "flex_input_tokens_price_per_million": 0.08,
         "flex_output_tokens_price_per_million": 0.76,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.08,
+        "batch_output_tokens_price_per_million": 0.76
       },
       "limits": {
         "max_output_tokens": 16384
@@ -3796,7 +3993,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2,
+        "batch_output_tokens_price_per_million": 6
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3.7-Max",
@@ -3825,7 +4025,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1.6,
+        "batch_output_tokens_price_per_million": 4.8
+      },
       "limits": {
         "max_output_tokens": 131072
       },
@@ -3858,7 +4061,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.32,
+        "batch_output_tokens_price_per_million": 2.4
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3.8-27B",
@@ -3882,7 +4088,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1.32,
+        "batch_output_tokens_price_per_million": 3.9608
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3.8-Max",
@@ -3911,7 +4120,9 @@
         "flex_input_tokens_price_per_million": 0.032,
         "flex_output_tokens_price_per_million": 0.04,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.032,
+        "batch_output_tokens_price_per_million": 0.04
       },
       "limits": {},
       "metadata": {
@@ -3942,7 +4153,9 @@
         "flex_input_tokens_price_per_million": 0.68,
         "flex_output_tokens_price_per_million": 0.68,
         "flex_cached_tokens_price_per_million": null,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.68,
+        "batch_output_tokens_price_per_million": 0.68
       },
       "limits": {},
       "metadata": {
@@ -4002,7 +4215,9 @@
         "flex_input_tokens_price_per_million": 0.128,
         "flex_output_tokens_price_per_million": 0.736,
         "flex_cached_tokens_price_per_million": 0.0256,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.128,
+        "batch_output_tokens_price_per_million": 0.736
       },
       "limits": {
         "max_output_tokens": 32768
@@ -4019,9 +4234,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.0700000000",
-      "outputTokensPricePerMillion": "0.2900000000",
-      "cachedTokensPricePerMillion": "0.0175000000",
+      "inputTokensPricePerMillion": "0.1050000000",
+      "outputTokensPricePerMillion": "0.4350000000",
+      "cachedTokensPricePerMillion": "0.0262500000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 262144,
       "capabilities": [
@@ -4036,10 +4251,12 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "flex_input_tokens_price_per_million": 0.056,
-        "flex_output_tokens_price_per_million": 0.232,
-        "flex_cached_tokens_price_per_million": 0.014,
-        "flex_caching_tokens_price_per_million": null
+        "flex_input_tokens_price_per_million": 0.084,
+        "flex_output_tokens_price_per_million": 0.348,
+        "flex_cached_tokens_price_per_million": 0.021,
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.084,
+        "batch_output_tokens_price_per_million": 0.348
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4073,7 +4290,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.76,
+        "batch_output_tokens_price_per_million": 3.24
+      },
       "limits": {
         "max_output_tokens": 262144
       },
@@ -4107,7 +4327,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.36,
+        "batch_output_tokens_price_per_million": 0.96
+      },
       "limits": {
         "max_output_tokens": 262144
       },
@@ -4149,7 +4372,9 @@
         "flex_input_tokens_price_per_million": 0.1064,
         "flex_output_tokens_price_per_million": 0.2128,
         "flex_cached_tokens_price_per_million": 0.002128,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.1064,
+        "batch_output_tokens_price_per_million": 0.2128
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4191,7 +4416,9 @@
         "flex_input_tokens_price_per_million": 0.312,
         "flex_output_tokens_price_per_million": 0.936,
         "flex_cached_tokens_price_per_million": 0.0624,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.312,
+        "batch_output_tokens_price_per_million": 0.936
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4229,7 +4456,9 @@
         "flex_input_tokens_price_per_million": 0.4,
         "flex_output_tokens_price_per_million": 1.6,
         "flex_cached_tokens_price_per_million": 0.08,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.4,
+        "batch_output_tokens_price_per_million": 1.6
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4302,7 +4531,9 @@
         "flex_input_tokens_price_per_million": 0.32,
         "flex_output_tokens_price_per_million": 1.4,
         "flex_cached_tokens_price_per_million": 0.064,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.32,
+        "batch_output_tokens_price_per_million": 1.4
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4419,7 +4650,9 @@
         "flex_input_tokens_price_per_million": 0.84,
         "flex_output_tokens_price_per_million": 2.8,
         "flex_cached_tokens_price_per_million": 0.164,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.84,
+        "batch_output_tokens_price_per_million": 2.8
       },
       "limits": {
         "max_output_tokens": 65536
@@ -4466,7 +4699,9 @@
         "flex_cached_tokens_price_per_million": 0.0728,
         "flex_caching_tokens_price_per_million": null,
         "flex_caching_5m_per_million": 0.4875,
-        "flex_caching_1h_per_million": 0.78
+        "flex_caching_1h_per_million": 0.78,
+        "batch_input_tokens_price_per_million": 0.39,
+        "batch_output_tokens_price_per_million": 1.248
       },
       "limits": {
         "explicit_cache_granularity_tokens": 1024,
@@ -4501,7 +4736,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.06,
+        "batch_output_tokens_price_per_million": 0.2
+      },
       "limits": {
         "max_output_tokens": 131072
       },
@@ -4529,7 +4767,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/BAAI/bge-base-en-v1.5",
@@ -4554,7 +4797,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/BAAI/bge-en-icl",
@@ -4579,7 +4827,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/BAAI/bge-large-en-v1.5",
@@ -4604,7 +4857,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/BAAI/bge-m3",
@@ -4630,7 +4888,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/BAAI/bge-m3-multi",
@@ -4655,7 +4918,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.003,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.0016,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/google/embeddinggemma-300m",
@@ -4680,7 +4948,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/intfloat/e5-base-v2",
@@ -4705,7 +4978,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/intfloat/e5-large-v2",
@@ -4730,7 +5008,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/intfloat/multilingual-e5-large",
@@ -4756,7 +5039,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/intfloat/multilingual-e5-large-instruct",
@@ -4775,13 +5063,18 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "contextWindow": 10240,
-      "capabilities": [],
+      "capabilities": ["embedding_image_input", "vision"],
       "modalities": {
-        "input": ["text"],
+        "input": ["text", "image"],
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/nvidia/llama-nemotron-embed-vl-1b-v2",
@@ -4805,7 +5098,10 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.012,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/nvidia/Nemotron-3-Embed-1B-BF16",
@@ -4830,7 +5126,10 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/nvidia/Nemotron-3-Embed-1B-NVFP4",
@@ -4855,7 +5154,10 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.028,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/nvidia/Nemotron-3-Embed-8B",
@@ -4881,7 +5183,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3-Embedding-0.6B",
@@ -4935,7 +5242,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.03,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.016,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3-Embedding-4B",
@@ -4989,7 +5301,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3-Embedding-8B",
@@ -5043,7 +5360,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/sentence-transformers/all-MiniLM-L12-v2",
@@ -5068,7 +5390,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/sentence-transformers/all-MiniLM-L6-v2",
@@ -5093,7 +5420,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/sentence-transformers/all-mpnet-base-v2",
@@ -5118,7 +5450,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/sentence-transformers/clip-ViT-B-32",
@@ -5143,7 +5480,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/sentence-transformers/clip-ViT-B-32-multilingual-v1",
@@ -5168,7 +5510,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/sentence-transformers/multi-qa-mpnet-base-dot-v1",
@@ -5193,7 +5540,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/sentence-transformers/paraphrase-MiniLM-L6-v2",
@@ -5218,7 +5570,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/shibing624/text2vec-base-chinese",
@@ -5243,7 +5600,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.0075,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.004,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/thenlper/gte-base",
@@ -5268,7 +5630,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/thenlper/gte-large",
@@ -5402,7 +5769,9 @@
         "flex_input_tokens_price_per_million": 0.96,
         "flex_output_tokens_price_per_million": 3.2,
         "flex_cached_tokens_price_per_million": 0.096,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.96,
+        "batch_output_tokens_price_per_million": 3.2
       },
       "limits": {
         "max_output_tokens": 131072
@@ -5444,7 +5813,9 @@
         "flex_input_tokens_price_per_million": 0.17248,
         "flex_output_tokens_price_per_million": 0.51744,
         "flex_cached_tokens_price_per_million": 0.005488,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.17248,
+        "batch_output_tokens_price_per_million": 0.51744
       },
       "limits": {
         "max_output_tokens": 262144
@@ -5477,7 +5848,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.048,
+        "batch_output_tokens_price_per_million": 0.144
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/inclusionAI/Ling-3.0-flash-Fin",
@@ -5502,7 +5876,12 @@
         "output": ["embedding"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.008,
+        "batch_output_tokens_price_per_million": null
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/BAAI/bge-m3-multi-8k",
@@ -5540,7 +5919,9 @@
         "flex_input_tokens_price_per_million": 0.16,
         "flex_output_tokens_price_per_million": 0.48,
         "flex_cached_tokens_price_per_million": 0.0048,
-        "flex_caching_tokens_price_per_million": null
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.16,
+        "batch_output_tokens_price_per_million": 0.48
       },
       "limits": {
         "max_output_tokens": 131072
@@ -5574,7 +5955,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.048,
+        "batch_output_tokens_price_per_million": 0.144
+      },
       "limits": {
         "max_output_tokens": 32768
       },
@@ -6013,7 +6397,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 1.5,
+        "priority_output_tokens_price_per_million": 7.5,
+        "priority_cached_tokens_price_per_million": 0.45,
+        "priority_caching_tokens_price_per_million": null
+      },
       "limits": {
         "max_output_tokens": 16384
       },
@@ -6823,7 +7212,9 @@
         "output": ["text"]
       },
       "backendUrls": [],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "input_image_price_per_image": 0.002
+      },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/Janus-Pro-7B",
@@ -6971,7 +7362,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.045,
+        "priority_output_tokens_price_per_million": 0.225,
+        "priority_cached_tokens_price_per_million": null,
+        "priority_caching_tokens_price_per_million": null
+      },
       "limits": {
         "max_output_tokens": 8192
       },
@@ -7284,7 +7680,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.03,
+        "priority_output_tokens_price_per_million": 0.15,
+        "priority_cached_tokens_price_per_million": null,
+        "priority_caching_tokens_price_per_million": null
+      },
       "limits": {
         "max_output_tokens": 81920
       },
@@ -7673,7 +8074,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.015,
+        "priority_output_tokens_price_per_million": 0.075,
+        "priority_cached_tokens_price_per_million": null,
+        "priority_caching_tokens_price_per_million": null
+      },
       "limits": {
         "max_output_tokens": 81920
       },
@@ -8210,7 +8616,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.135,
+        "priority_output_tokens_price_per_million": 0.45,
+        "priority_cached_tokens_price_per_million": 0.03,
+        "priority_caching_tokens_price_per_million": null
+      },
       "limits": {
         "max_output_tokens": 16384
       },
@@ -8273,7 +8684,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "flex_input_tokens_price_per_million": 0.08,
+        "flex_output_tokens_price_per_million": 0.6,
+        "flex_cached_tokens_price_per_million": 0.04,
+        "flex_caching_tokens_price_per_million": null
+      },
       "limits": {
         "max_output_tokens": 81920
       },
@@ -8567,7 +8983,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.3,
+        "priority_output_tokens_price_per_million": 1.2,
+        "priority_cached_tokens_price_per_million": null,
+        "priority_caching_tokens_price_per_million": null
+      },
       "limits": {
         "max_output_tokens": 16384
       },
