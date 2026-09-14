@@ -886,7 +886,7 @@ Vertex Gemini 3 Flash Preview is the exception: its Standard output rate remains
   Introductory prices per million tokens are $0.75 input, $0.075 cached input, and $3.75 output through 2026-12-31. Cache storage costs $0.50 per million tokens per hour. Reasoning settings are `low`, `medium`, and `high`. Capabilities include tools, structured outputs, code execution, URL context, and preview computer use. Google Search and Google Maps grounding each cost $14 per 1,000 requests.
 - [Vertex] Google chat models: `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-3.1-pro-preview`, `gemini-3.1-pro-preview-customtools`, `gemini-2.5-pro`, `gemini-2.5-flash`, and `gemini-2.5-flash-lite`.
 - [Vertex] Image models: `gemini-3-pro-image`, `gemini-3.1-flash-image`, `gemini-3.1-flash-lite-image`, and `gemini-2.5-flash-image`.
-- [Vertex] `gemini-embedding-2` costs $0.20 for text, $0.45 for images, $12 for video, and $6.50 for audio per million tokens. `gemini-embedding-001` costs $0.15. `text-embedding-005` and `text-multilingual-embedding-002` each cost $0.025 per million tokens.
+- [Vertex] `gemini-embedding-2` costs $0.20 for text, $0.45 for images, $12 for video, and $6.50 for audio per million tokens. `gemini-embedding-001` costs $0.15 per million tokens. `text-embedding-005` and `text-multilingual-embedding-002` each cost $0.025 per million tokens.
 - [VertexAnthropic] Claude models: `claude-fable-5-1`, `claude-opus-5`, `claude-sonnet-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-opus-4-6`, `claude-opus-4-5`, `claude-sonnet-4-5`, `claude-haiku-4-5`, `claude-opus-4-1`, `claude-opus-4`, and `claude-sonnet-4`.
 
 ### Vertex partner and open models
@@ -965,16 +965,16 @@ Prices are USD per million tokens, input/output unless stated otherwise.
 ### Follow-up work
 
 - [Vertex] Mistral pages publish no capability lists or function-calling and structured-output support. `mistral-medium-3` and `codestral-2` have empty capabilities. `mistral-small-2503` has only `pdf_support`.
-- [Vertex] Grok pages publish output-token quotas without maximum response lengths. Four records omit `max_output_tokens`.
+- [Vertex] Grok pages publish output-token quotas per minute without maximum response lengths. Four records omit `max_output_tokens`.
 - [Vertex] `multilingual-e5-*` pages deny Batch support, but pricing lists Batch rates. Records retain `batch_discount_multiplier: 0.5`.
 - [Vertex] Partner and open-model pages list no context caching. Where prices establish cache hits, records retain `prompt_caching` and `cachedTokensPricePerMillion`. `cachingTokensPricePerMillion` remains null because Google publishes no cache-write price.
 - [Vertex] The storage table omits `gemini-3.8-flash` and `gemini-3.7-flash`, so both omit `caching_storage_per_million_per_hour`. Other Flash records use $1 per million tokens per hour.
-- [Vertex] `gemini-3-pro-image` has dashes for input and image-output pricing. It retains `inputTokensPricePerMillion: null`. Published cached input costs $0.20 and text output costs $12 per million tokens. The recorded $120 image-output rate derives from the published $0.134 per 1,120-token 1K image.
+- [Vertex] `gemini-3-pro-image` has dashes for input and image-output pricing. It retains `inputTokensPricePerMillion: null`. Published cached input costs $0.20 and text output costs $12 per million tokens. The recorded image-output rate is $120 per million tokens, derived from the published $0.134 per 1,120-token 1K image.
 - [Gemini/Vertex] Gemini 3.8, 3.7, and 3.6 Flash introductory input/output prices of $0.75/$3.75 per million tokens end on 2026-12-31. From 2027-01-01, input/output costs $1.50/$7.50. Direct Gemini cached input rises to $0.15 and storage to $1 per million tokens per hour.
 - [VertexAnthropic] Agent Platform lists extended thinking for the 4.x models. Fable 5.1, Opus 5, Sonnet 5, Fable 5, and Opus 4.5 always think instead. All 14 records retain `reasoning`.
 - [VertexAnthropic] Sonnet 4.5 has preview 1M context and GA 200k context. Its record uses 1,000,000 with `high_context: 200000`. Prices for more than 200,000 tokens are $6 input, $22.50 output, and $0.60 cache hits per million tokens.
 - [VertexAnthropic] This update uses model-page "not sooner than" dates as retirement dates, matching the direct `claude-opus-4-1` record.
-- [Anthropic] Fable 5.1 retirement is "not sooner than September 1, 2027". Its record has no firm retirement date. Anthropic publishes no tool-use system prompt token counts for Fable or Mythos.
+- [Anthropic] Fable 5.1 retirement is "not sooner than September 1, 2027". Its record has no firm retirement date. Anthropic publishes no tool-use system prompt token counts for Fable or Mythos. The field stays empty.
 - [Gemini] Robotics ER 2 Preview lists Google Maps support without a model-specific Maps price. Its record retains the $14 per 1,000 rate published for other Gemini 3 models.
 - [Gemini] This update records the earliest possible shutdown dates from the deprecations page as retirement dates, as earlier updates did.
 
