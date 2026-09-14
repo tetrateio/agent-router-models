@@ -16,6 +16,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -39,11 +40,16 @@
         "caching_1h_per_million": 10,
         "caching_5m_per_million": 6.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "fast_mode_input_tokens_price_per_million": 10,
         "fast_mode_output_tokens_price_per_million": 50,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.25,
+        "batch_caching_tokens_price_per_million": 3.125,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -110,8 +116,13 @@
         "caching_1h_per_million": 30,
         "caching_5m_per_million": 18.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.75,
+        "batch_caching_tokens_price_per_million": 9.375,
+        "batch_caching_5m_per_million": 9.375,
+        "batch_caching_1h_per_million": 15,
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -178,8 +189,13 @@
         "caching_1h_per_million": 30,
         "caching_5m_per_million": 18.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.75,
+        "batch_caching_tokens_price_per_million": 9.375,
+        "batch_caching_5m_per_million": 9.375,
+        "batch_caching_1h_per_million": 15,
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -223,6 +239,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -246,9 +263,14 @@
         "caching_1h_per_million": 20,
         "caching_5m_per_million": 12.5,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.125,
+        "batch_caching_tokens_price_per_million": 6.25,
+        "batch_caching_5m_per_million": 6.25,
+        "batch_caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 25
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -291,6 +313,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -314,9 +337,14 @@
         "caching_1h_per_million": 20,
         "caching_5m_per_million": 12.5,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.125,
+        "batch_caching_tokens_price_per_million": 6.25,
+        "batch_caching_5m_per_million": 6.25,
+        "batch_caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 25
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -359,6 +387,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -382,9 +411,14 @@
         "caching_1h_per_million": 20,
         "caching_5m_per_million": 12.5,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.5,
+        "batch_caching_tokens_price_per_million": 6.25,
+        "batch_caching_5m_per_million": 6.25,
+        "batch_caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 25
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -427,6 +461,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -450,9 +485,14 @@
         "caching_1h_per_million": 20,
         "caching_5m_per_million": 12.5,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.5,
+        "batch_caching_tokens_price_per_million": 6.25,
+        "batch_caching_5m_per_million": 6.25,
+        "batch_caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 25
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -495,6 +535,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -518,11 +559,16 @@
         "caching_1h_per_million": 10,
         "caching_5m_per_million": 6.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "fast_mode_input_tokens_price_per_million": 10,
         "fast_mode_output_tokens_price_per_million": 50,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.25,
+        "batch_caching_tokens_price_per_million": 3.125,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -566,6 +612,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -589,9 +636,14 @@
         "caching_1h_per_million": 4,
         "caching_5m_per_million": 2.5,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_caching_tokens_price_per_million": 1.25,
+        "batch_caching_5m_per_million": 1.25,
+        "batch_caching_1h_per_million": 2,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -635,6 +687,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -658,9 +711,14 @@
         "caching_1h_per_million": 10,
         "caching_5m_per_million": 6.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.25,
+        "batch_caching_tokens_price_per_million": 3.125,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -704,6 +762,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -727,9 +786,14 @@
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -776,6 +840,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -799,9 +864,14 @@
         "caching_1h_per_million": 10,
         "caching_5m_per_million": 6.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
-        "inference_geo_us_multiplier": 1.1
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.25,
+        "batch_caching_tokens_price_per_million": 3.125,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -848,6 +918,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -871,8 +942,13 @@
         "caching_1h_per_million": 10,
         "caching_5m_per_million": 6.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.25,
+        "batch_caching_tokens_price_per_million": 3.125,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -918,6 +994,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -941,8 +1018,13 @@
         "caching_1h_per_million": 10,
         "caching_5m_per_million": 6.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.25,
+        "batch_caching_tokens_price_per_million": 3.125,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -988,6 +1070,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1011,8 +1094,13 @@
         "caching_1h_per_million": 2,
         "caching_5m_per_million": 1.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.05,
+        "batch_caching_tokens_price_per_million": 0.625,
+        "batch_caching_5m_per_million": 0.625,
+        "batch_caching_1h_per_million": 1,
+        "batch_input_tokens_price_per_million": 0.5,
+        "batch_output_tokens_price_per_million": 2.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1053,6 +1141,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1076,8 +1165,13 @@
         "caching_1h_per_million": 2,
         "caching_5m_per_million": 1.25,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.05,
+        "batch_caching_tokens_price_per_million": 0.625,
+        "batch_caching_5m_per_million": 0.625,
+        "batch_caching_1h_per_million": 1,
+        "batch_input_tokens_price_per_million": 0.5,
+        "batch_output_tokens_price_per_million": 2.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1118,6 +1212,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1141,8 +1236,13 @@
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1183,6 +1283,7 @@
         "computer_use",
         "file_upload",
         "pdf_support",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1206,8 +1307,13 @@
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1271,8 +1377,13 @@
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1339,8 +1450,13 @@
         "caching_1h_per_million": 30,
         "caching_5m_per_million": 18.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.75,
+        "batch_caching_tokens_price_per_million": 9.375,
+        "batch_caching_5m_per_million": 9.375,
+        "batch_caching_1h_per_million": 15,
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1407,8 +1523,13 @@
         "caching_1h_per_million": 30,
         "caching_5m_per_million": 18.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.75,
+        "batch_caching_tokens_price_per_million": 9.375,
+        "batch_caching_5m_per_million": 9.375,
+        "batch_caching_1h_per_million": 15,
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1436,37 +1557,6 @@
         "deprecated_reason": "Retired on June 15, 2026",
         "provider_override": "autofallback"
       }
-    },
-    {
-      "model": "claude-4-opus-20250514",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "15.0000000000",
-      "outputTokensPricePerMillion": "75.0000000000",
-      "cachedTokensPricePerMillion": "1.5000000000",
-      "cachingTokensPricePerMillion": "18.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 32000,
-        "extra": {
-          "tool_use_system_prompt_tokens": 159
-        }
-      },
-      "metadata": {}
     },
     {
       "model": "claude-sonnet-4-20250514",
@@ -1506,8 +1596,13 @@
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1535,37 +1630,6 @@
         "deprecated_reason": "Retired on June 15, 2026",
         "provider_override": "autofallback"
       }
-    },
-    {
-      "model": "claude-4-sonnet-20250514",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "3.0000000000",
-      "outputTokensPricePerMillion": "15.0000000000",
-      "cachedTokensPricePerMillion": "0.3000000000",
-      "cachingTokensPricePerMillion": "3.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 64000,
-        "extra": {
-          "tool_use_system_prompt_tokens": 159
-        }
-      },
-      "metadata": {}
     },
     {
       "model": "claude-3-7-sonnet-latest",
@@ -1605,8 +1669,13 @@
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1664,8 +1733,13 @@
         "caching_1h_per_million": 1.6,
         "caching_5m_per_million": 1,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.04,
+        "batch_caching_tokens_price_per_million": 0.5,
+        "batch_caching_5m_per_million": 0.5,
+        "batch_caching_1h_per_million": 0.8,
+        "batch_input_tokens_price_per_million": 0.4,
+        "batch_output_tokens_price_per_million": 2
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1727,8 +1801,13 @@
         "caching_1h_per_million": 1.6,
         "caching_5m_per_million": 1,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.04,
+        "batch_caching_tokens_price_per_million": 0.5,
+        "batch_caching_5m_per_million": 0.5,
+        "batch_caching_1h_per_million": 0.8,
+        "batch_input_tokens_price_per_million": 0.4,
+        "batch_output_tokens_price_per_million": 2
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1786,7 +1865,12 @@
       "additionalPricePerMillion": {
         "caching_1h_per_million": 0.5,
         "caching_5m_per_million": 0.3125,
-        "batch_discount_multiplier": 0.5
+        "batch_cached_tokens_price_per_million": 0.0125,
+        "batch_caching_tokens_price_per_million": 0.15625,
+        "batch_caching_5m_per_million": 0.15625,
+        "batch_caching_1h_per_million": 0.25,
+        "batch_input_tokens_price_per_million": 0.125,
+        "batch_output_tokens_price_per_million": 0.625
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1837,7 +1921,12 @@
       "additionalPricePerMillion": {
         "caching_1h_per_million": 30,
         "caching_5m_per_million": 18.75,
-        "batch_discount_multiplier": 0.5
+        "batch_cached_tokens_price_per_million": 0.75,
+        "batch_caching_tokens_price_per_million": 9.375,
+        "batch_caching_5m_per_million": 9.375,
+        "batch_caching_1h_per_million": 15,
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -1855,37 +1944,6 @@
         "knowledge_cutoff": "2024-01-01",
         "deprecated_reason": "Deprecated on June 30, 2025"
       }
-    },
-    {
-      "model": "claude-3-5-sonnet-latest",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "3.0000000000",
-      "outputTokensPricePerMillion": "15.0000000000",
-      "cachedTokensPricePerMillion": "0.3000000000",
-      "cachingTokensPricePerMillion": "3.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 8192,
-        "extra": {
-          "tool_use_system_prompt_tokens": 159
-        }
-      },
-      "metadata": {}
     },
     {
       "model": "claude-3-sonnet-20240229",
@@ -1966,7 +2024,12 @@
         "web_search_per_thousand_calls": 10,
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
-        "batch_discount_multiplier": 0.5
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32
@@ -2023,8 +2086,13 @@
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
         "code_execution_per_hour": 0.05,
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32,
@@ -2083,7 +2151,12 @@
         "web_search_per_thousand_calls": 10,
         "caching_1h_per_million": 6,
         "caching_5m_per_million": 3.75,
-        "batch_discount_multiplier": 0.5
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_caching_tokens_price_per_million": 1.875,
+        "batch_caching_5m_per_million": 1.875,
+        "batch_caching_1h_per_million": 3,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
         "max_file_size_mb": 32
@@ -2101,37 +2174,6 @@
         "retirement_date": "2025-10-28",
         "deprecated_reason": "Deprecated on August 13, 2025"
       }
-    },
-    {
-      "model": "claude-3-opus-latest",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "15.0000000000",
-      "outputTokensPricePerMillion": "75.0000000000",
-      "cachedTokensPricePerMillion": "1.5000000000",
-      "cachingTokensPricePerMillion": "18.7500000000",
-      "contextWindow": 200000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 4096,
-        "extra": {
-          "tool_use_system_prompt_tokens": 395
-        }
-      },
-      "metadata": {}
     },
     {
       "model": "claude-2.1",
@@ -2169,34 +2211,6 @@
       }
     },
     {
-      "model": "claude-instant-1",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "1.6300000000",
-      "outputTokensPricePerMillion": "5.5100000000",
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": 100000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 8191
-      },
-      "metadata": {}
-    },
-    {
       "model": "claude-instant-1.2",
       "provider": "anthropic",
       "mode": "chat",
@@ -2230,34 +2244,6 @@
         "retirement_date": "2024-11-06",
         "deprecated_reason": "replaced by claude-haiku-4-5-20251001"
       }
-    },
-    {
-      "model": "claude-2",
-      "provider": "anthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": "8.0000000000",
-      "outputTokensPricePerMillion": "24.0000000000",
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": 100000,
-      "capabilities": [],
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://api.anthropic.com/v1/"
-      ],
-      "additionalPricePerMillion": {},
-      "limits": {
-        "max_output_tokens": 8191
-      },
-      "metadata": {}
     }
   ]
 }

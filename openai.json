@@ -16,6 +16,7 @@
         "computer_use",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -40,10 +41,31 @@
         "cached_tokens_price_per_million_high_context": 2,
         "output_tokens_price_per_million_high_context": 75,
         "caching_tokens_price_per_million_high_context": 25,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 5,
+        "batch_cached_tokens_price_per_million": 0.5,
+        "batch_caching_tokens_price_per_million": 6.25,
+        "batch_output_tokens_price_per_million": 25,
+        "batch_input_tokens_price_per_million_high_context": 10,
+        "batch_cached_tokens_price_per_million_high_context": 1,
+        "batch_caching_tokens_price_per_million_high_context": 12.5,
+        "batch_output_tokens_price_per_million_high_context": 37.5,
+        "flex_input_tokens_price_per_million": 5,
+        "flex_cached_tokens_price_per_million": 0.5,
+        "flex_caching_tokens_price_per_million": 6.25,
+        "flex_output_tokens_price_per_million": 25,
+        "flex_input_tokens_price_per_million_high_context": 10,
+        "flex_cached_tokens_price_per_million_high_context": 1,
+        "flex_caching_tokens_price_per_million_high_context": 12.5,
+        "flex_output_tokens_price_per_million_high_context": 37.5,
+        "fast_mode_input_tokens_price_per_million": 20,
+        "fast_mode_cached_tokens_price_per_million": 2,
+        "fast_mode_caching_tokens_price_per_million": 25,
+        "fast_mode_output_tokens_price_per_million": 100,
+        "fast_mode_input_tokens_price_per_million_high_context": 40,
+        "fast_mode_cached_tokens_price_per_million_high_context": 4,
+        "fast_mode_caching_tokens_price_per_million_high_context": 50,
+        "fast_mode_output_tokens_price_per_million_high_context": 150,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -81,7 +103,9 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -99,10 +123,31 @@
         "cached_tokens_price_per_million_high_context": 0.8,
         "output_tokens_price_per_million_high_context": 30,
         "caching_tokens_price_per_million_high_context": 10,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 2,
+        "batch_cached_tokens_price_per_million": 0.2,
+        "batch_caching_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 10,
+        "batch_input_tokens_price_per_million_high_context": 4,
+        "batch_cached_tokens_price_per_million_high_context": 0.4,
+        "batch_caching_tokens_price_per_million_high_context": 5,
+        "batch_output_tokens_price_per_million_high_context": 15,
+        "flex_input_tokens_price_per_million": 2,
+        "flex_cached_tokens_price_per_million": 0.2,
+        "flex_caching_tokens_price_per_million": 2.5,
+        "flex_output_tokens_price_per_million": 10,
+        "flex_input_tokens_price_per_million_high_context": 4,
+        "flex_cached_tokens_price_per_million_high_context": 0.4,
+        "flex_caching_tokens_price_per_million_high_context": 5,
+        "flex_output_tokens_price_per_million_high_context": 15,
+        "fast_mode_input_tokens_price_per_million": 8,
+        "fast_mode_cached_tokens_price_per_million": 0.8,
+        "fast_mode_caching_tokens_price_per_million": 10,
+        "fast_mode_output_tokens_price_per_million": 40,
+        "fast_mode_input_tokens_price_per_million_high_context": 16,
+        "fast_mode_cached_tokens_price_per_million_high_context": 1.6,
+        "fast_mode_caching_tokens_price_per_million_high_context": 20,
+        "fast_mode_output_tokens_price_per_million_high_context": 60,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -138,7 +183,9 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -156,10 +203,31 @@
         "cached_tokens_price_per_million_high_context": 0.4,
         "output_tokens_price_per_million_high_context": 18,
         "caching_tokens_price_per_million_high_context": 5,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 1,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_caching_tokens_price_per_million": 1.25,
+        "batch_output_tokens_price_per_million": 6,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_cached_tokens_price_per_million_high_context": 0.2,
+        "batch_caching_tokens_price_per_million_high_context": 2.5,
+        "batch_output_tokens_price_per_million_high_context": 9,
+        "flex_input_tokens_price_per_million": 1,
+        "flex_cached_tokens_price_per_million": 0.1,
+        "flex_caching_tokens_price_per_million": 1.25,
+        "flex_output_tokens_price_per_million": 6,
+        "flex_input_tokens_price_per_million_high_context": 2,
+        "flex_cached_tokens_price_per_million_high_context": 0.2,
+        "flex_caching_tokens_price_per_million_high_context": 2.5,
+        "flex_output_tokens_price_per_million_high_context": 9,
+        "fast_mode_input_tokens_price_per_million": 4,
+        "fast_mode_cached_tokens_price_per_million": 0.4,
+        "fast_mode_caching_tokens_price_per_million": 5,
+        "fast_mode_output_tokens_price_per_million": 24,
+        "fast_mode_input_tokens_price_per_million_high_context": 8,
+        "fast_mode_cached_tokens_price_per_million_high_context": 0.8,
+        "fast_mode_caching_tokens_price_per_million_high_context": 10,
+        "fast_mode_output_tokens_price_per_million_high_context": 36,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -195,7 +263,9 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -213,10 +283,31 @@
         "cached_tokens_price_per_million_high_context": 0.04,
         "output_tokens_price_per_million_high_context": 1.8,
         "caching_tokens_price_per_million_high_context": 0.5,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 0.1,
+        "batch_cached_tokens_price_per_million": 0.01,
+        "batch_caching_tokens_price_per_million": 0.125,
+        "batch_output_tokens_price_per_million": 0.6,
+        "batch_input_tokens_price_per_million_high_context": 0.2,
+        "batch_cached_tokens_price_per_million_high_context": 0.02,
+        "batch_caching_tokens_price_per_million_high_context": 0.25,
+        "batch_output_tokens_price_per_million_high_context": 0.9,
+        "flex_input_tokens_price_per_million": 0.1,
+        "flex_cached_tokens_price_per_million": 0.01,
+        "flex_caching_tokens_price_per_million": 0.125,
+        "flex_output_tokens_price_per_million": 0.6,
+        "flex_input_tokens_price_per_million_high_context": 0.2,
+        "flex_cached_tokens_price_per_million_high_context": 0.02,
+        "flex_caching_tokens_price_per_million_high_context": 0.25,
+        "flex_output_tokens_price_per_million_high_context": 0.9,
+        "fast_mode_input_tokens_price_per_million": 0.4,
+        "fast_mode_cached_tokens_price_per_million": 0.04,
+        "fast_mode_caching_tokens_price_per_million": 0.5,
+        "fast_mode_output_tokens_price_per_million": 2.4,
+        "fast_mode_input_tokens_price_per_million_high_context": 0.8,
+        "fast_mode_cached_tokens_price_per_million_high_context": 0.08,
+        "fast_mode_caching_tokens_price_per_million_high_context": 1,
+        "fast_mode_output_tokens_price_per_million_high_context": 3.6,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -252,7 +343,9 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -279,7 +372,7 @@
       }
     },
     {
-      "model": "daybreak-blue-latest",
+      "model": "gpt-daybreak-blue-latest",
       "provider": "openai",
       "mode": "responses",
       "isEnabled": false,
@@ -291,7 +384,9 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -317,15 +412,15 @@
         "max_prompt_length": 922000
       },
       "metadata": {
-        "source_url": "https://developers.openai.com/api/docs/models/daybreak-blue-latest",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-daybreak-blue-latest",
         "description": "An alias for frontier general-purpose models with safeguards for defensive cybersecurity work. It points to gpt-5.6-sol and needs separate approval through the Daybreak program.",
         "display_name": "Daybreak Blue",
         "knowledge_cutoff": "2026-02-16",
-        "aliases": ["daybreak-blue-latest", "gpt-5.6-sol"]
+        "aliases": ["gpt-daybreak-blue-latest", "gpt-5.6-sol"]
       }
     },
     {
-      "model": "daybreak-red-latest",
+      "model": "gpt-daybreak-red-latest",
       "provider": "openai",
       "mode": "responses",
       "isEnabled": false,
@@ -337,7 +432,9 @@
       "capabilities": [
         "code_execution",
         "computer_use",
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -356,11 +453,11 @@
         "max_prompt_length": 272000
       },
       "metadata": {
-        "source_url": "https://developers.openai.com/api/docs/models/daybreak-red-latest",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-daybreak-red-latest",
         "description": "An alias for advanced cybersecurity models for authorized vulnerability research and security testing. It points to gpt-5.6-cyber and needs separate approval through the Daybreak program.",
         "display_name": "Daybreak Red",
         "knowledge_cutoff": "2026-02-16",
-        "aliases": ["daybreak-red-latest", "gpt-5.6-cyber"]
+        "aliases": ["gpt-daybreak-red-latest", "gpt-5.6-cyber"]
       }
     },
     {
@@ -375,7 +472,10 @@
       "contextWindow": 400000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -484,7 +584,7 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "contextWindow": 128000,
-      "capabilities": ["structured_outputs", "web_search"],
+      "capabilities": ["native_streaming", "structured_outputs", "vision", "web_search"],
       "modalities": {
         "input": ["text"],
         "output": ["text"]
@@ -523,6 +623,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -535,7 +636,16 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.025,
+        "batch_cached_tokens_price_per_million": 0.0025,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 0.2,
+        "flex_input_tokens_price_per_million": 0.025,
+        "flex_cached_tokens_price_per_million": 0.0025,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 0.2
+      },
       "limits": {
         "max_input_tokens": 272000,
         "max_output_tokens": 128000
@@ -565,6 +675,8 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "native_streaming",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -576,7 +688,20 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.125,
+        "batch_cached_tokens_price_per_million": 0.0125,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 1,
+        "flex_input_tokens_price_per_million": 0.125,
+        "flex_cached_tokens_price_per_million": 0.0125,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 1,
+        "fast_mode_input_tokens_price_per_million": 0.45,
+        "fast_mode_cached_tokens_price_per_million": 0.045,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 3.6
+      },
       "limits": {
         "max_input_tokens": 272000,
         "max_output_tokens": 128000
@@ -607,6 +732,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -619,7 +745,20 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.625,
+        "batch_cached_tokens_price_per_million": 0.0625,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 5,
+        "flex_input_tokens_price_per_million": 0.625,
+        "flex_cached_tokens_price_per_million": 0.0625,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 5,
+        "fast_mode_input_tokens_price_per_million": 2.5,
+        "fast_mode_cached_tokens_price_per_million": 0.25,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 20
+      },
       "limits": {
         "max_input_tokens": 272000,
         "max_output_tokens": 128000
@@ -649,7 +788,10 @@
       "contextWindow": 128000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -687,6 +829,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 400000,
       "capabilities": [
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -725,6 +868,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 400000,
       "capabilities": [
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -763,7 +907,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 400000,
       "capabilities": [
-        "code_execution",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -802,7 +946,7 @@
       "contextWindow": 200000,
       "capabilities": [
         "code_execution",
-        "file_upload",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "vision",
@@ -814,7 +958,8 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 4
       },
       "limits": {
         "max_output_tokens": 100000
@@ -842,7 +987,9 @@
       "contextWindow": 1050000,
       "capabilities": [
         "computer_use",
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "reasoning",
         "tool_choice",
         "vision",
@@ -856,10 +1003,23 @@
       "additionalPricePerMillion": {
         "input_tokens_price_per_million_high_context": 60,
         "output_tokens_price_per_million_high_context": 270,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 15,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 90,
+        "batch_input_tokens_price_per_million_high_context": 30,
+        "batch_cached_tokens_price_per_million_high_context": null,
+        "batch_caching_tokens_price_per_million_high_context": null,
+        "batch_output_tokens_price_per_million_high_context": 135,
+        "flex_input_tokens_price_per_million": 15,
+        "flex_cached_tokens_price_per_million": null,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 90,
+        "flex_input_tokens_price_per_million_high_context": 30,
+        "flex_cached_tokens_price_per_million_high_context": null,
+        "flex_caching_tokens_price_per_million_high_context": null,
+        "flex_output_tokens_price_per_million_high_context": 135,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -885,7 +1045,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 400000,
       "capabilities": [
-        "code_execution",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -925,7 +1085,7 @@
       "cachedTokensPricePerMillion": "1.2500000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": null,
-      "capabilities": ["image_generation", "vision"],
+      "capabilities": ["image_generation", "prompt_caching", "vision"],
       "modalities": {
         "input": ["image", "text"],
         "output": ["text", "image"]
@@ -987,7 +1147,10 @@
       "contextWindow": 128000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -1026,7 +1189,7 @@
       "contextWindow": 200000,
       "capabilities": [
         "code_execution",
-        "file_upload",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "vision",
@@ -1038,7 +1201,8 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 20
       },
       "limits": {
         "max_output_tokens": 100000
@@ -1069,6 +1233,7 @@
         "computer_use",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -1085,10 +1250,27 @@
         "input_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.5,
         "output_tokens_price_per_million_high_context": 22.5,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 1.25,
+        "batch_cached_tokens_price_per_million": 0.13,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 7.5,
+        "batch_input_tokens_price_per_million_high_context": 2.5,
+        "batch_cached_tokens_price_per_million_high_context": 0.25,
+        "batch_caching_tokens_price_per_million_high_context": null,
+        "batch_output_tokens_price_per_million_high_context": 11.25,
+        "flex_input_tokens_price_per_million": 1.25,
+        "flex_cached_tokens_price_per_million": 0.13,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 7.5,
+        "flex_input_tokens_price_per_million_high_context": 2.5,
+        "flex_cached_tokens_price_per_million_high_context": 0.25,
+        "flex_caching_tokens_price_per_million_high_context": null,
+        "flex_output_tokens_price_per_million_high_context": 11.25,
+        "fast_mode_input_tokens_price_per_million": 5,
+        "fast_mode_cached_tokens_price_per_million": 0.5,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 30,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -1114,6 +1296,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 400000,
       "capabilities": [
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -1151,7 +1334,7 @@
       "cachedTokensPricePerMillion": "0.2000000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": null,
-      "capabilities": ["image_generation", "vision"],
+      "capabilities": ["image_generation", "prompt_caching", "vision"],
       "modalities": {
         "input": ["image", "text"],
         "output": ["image"]
@@ -1213,7 +1396,10 @@
       "contextWindow": 128000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -1250,7 +1436,7 @@
       "cachedTokensPricePerMillion": "1.2500000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": null,
-      "capabilities": ["image_generation", "vision"],
+      "capabilities": ["image_generation", "prompt_caching", "vision"],
       "modalities": {
         "input": ["image", "text"],
         "output": ["text", "image"]
@@ -1311,6 +1497,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 400000,
       "capabilities": [
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -1352,6 +1539,7 @@
       "capabilities": [
         "file_upload",
         "image_generation",
+        "native_streaming",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1364,7 +1552,10 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 60
       },
       "limits": {
         "max_output_tokens": 272000
@@ -1399,7 +1590,8 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 6
       },
       "limits": {
         "max_output_tokens": 1024
@@ -1426,7 +1618,9 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 400000,
       "capabilities": [
+        "file_upload",
         "image_generation",
+        "native_streaming",
         "reasoning",
         "tool_choice",
         "vision",
@@ -1438,7 +1632,10 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 10.5,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 84
       },
       "limits": {
         "max_output_tokens": 128000
@@ -1466,6 +1663,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -1478,7 +1676,20 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.875,
+        "batch_cached_tokens_price_per_million": 0.0875,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 7,
+        "flex_input_tokens_price_per_million": 0.875,
+        "flex_cached_tokens_price_per_million": 0.0875,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 7,
+        "fast_mode_input_tokens_price_per_million": 3.5,
+        "fast_mode_cached_tokens_price_per_million": 0.35,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 28
+      },
       "limits": {
         "max_output_tokens": 128000
       },
@@ -1505,6 +1716,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -1517,7 +1729,20 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.625,
+        "batch_cached_tokens_price_per_million": 0.0625,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 5,
+        "flex_input_tokens_price_per_million": 0.625,
+        "flex_cached_tokens_price_per_million": 0.0625,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 5,
+        "fast_mode_input_tokens_price_per_million": 2.5,
+        "fast_mode_cached_tokens_price_per_million": 0.25,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 20
+      },
       "limits": {
         "max_output_tokens": 128000
       },
@@ -1542,7 +1767,10 @@
       "contextWindow": 128000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -1583,6 +1811,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -1595,7 +1824,20 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 4,
+        "flex_input_tokens_price_per_million": 1,
+        "flex_cached_tokens_price_per_million": 0.25,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 4,
+        "fast_mode_input_tokens_price_per_million": 3.5,
+        "fast_mode_cached_tokens_price_per_million": 0.875,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 14
+      },
       "limits": {
         "max_output_tokens": 100000
       },
@@ -1624,6 +1866,7 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -1636,7 +1879,20 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.55,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 2.2,
+        "flex_input_tokens_price_per_million": 0.55,
+        "flex_cached_tokens_price_per_million": 0.138,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 2.2,
+        "fast_mode_input_tokens_price_per_million": 2,
+        "fast_mode_cached_tokens_price_per_million": 0.5,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 8
+      },
       "limits": {
         "max_output_tokens": 100000
       },
@@ -1666,6 +1922,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "structured_outputs",
         "tool_choice",
@@ -1677,7 +1934,16 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 4,
+        "fast_mode_input_tokens_price_per_million": 3.5,
+        "fast_mode_cached_tokens_price_per_million": 0.875,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 14
+      },
       "limits": {
         "max_output_tokens": 32768
       },
@@ -1702,6 +1968,8 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -1712,7 +1980,16 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.2,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 0.8,
+        "fast_mode_input_tokens_price_per_million": 0.7,
+        "fast_mode_cached_tokens_price_per_million": 0.175,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 2.8
+      },
       "limits": {
         "max_output_tokens": 32768
       },
@@ -1738,6 +2015,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "structured_outputs",
         "tool_choice",
@@ -1748,7 +2026,16 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.05,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 0.2,
+        "fast_mode_input_tokens_price_per_million": 0.2,
+        "fast_mode_cached_tokens_price_per_million": 0.05,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 0.8
+      },
       "limits": {
         "max_output_tokens": 32768
       },
@@ -1773,7 +2060,7 @@
       "cachedTokensPricePerMillion": "1.2500000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": null,
-      "capabilities": ["image_generation", "vision"],
+      "capabilities": ["image_generation", "prompt_caching", "vision"],
       "modalities": {
         "input": ["text", "image"],
         "output": ["image"]
@@ -1834,6 +2121,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 200000,
       "capabilities": [
+        "file_upload",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1845,7 +2133,10 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 75,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 300
       },
       "limits": {
         "max_output_tokens": 100000
@@ -1871,7 +2162,7 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "contextWindow": 128000,
-      "capabilities": ["structured_outputs", "web_search"],
+      "capabilities": ["native_streaming", "structured_outputs", "vision", "web_search"],
       "modalities": {
         "input": ["text"],
         "output": ["text"]
@@ -1910,6 +2201,8 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice"
@@ -1919,7 +2212,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.55,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 2.2
+      },
       "limits": {
         "max_output_tokens": 100000
       },
@@ -1946,6 +2244,8 @@
       "contextWindow": 200000,
       "capabilities": [
         "file_upload",
+        "native_streaming",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1956,7 +2256,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 30
+      },
       "limits": {
         "max_output_tokens": 100000
       },
@@ -2007,7 +2312,7 @@
         "description": "Fast, intelligent, flexible GPT model",
         "display_name": "GPT-4o",
         "knowledge_cutoff": "2023-10-01",
-        "deprecated": true
+        "deprecated": false
       }
     },
     {
@@ -2026,7 +2331,16 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 7.5,
+        "fast_mode_input_tokens_price_per_million": 8.75,
+        "fast_mode_cached_tokens_price_per_million": null,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 26.25
+      },
       "limits": {
         "max_output_tokens": 16384
       },
@@ -2060,6 +2374,8 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -2070,7 +2386,16 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1.25,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 5,
+        "fast_mode_input_tokens_price_per_million": 4.25,
+        "fast_mode_cached_tokens_price_per_million": 2.125,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 17
+      },
       "limits": {
         "max_output_tokens": 16384
       },
@@ -2085,7 +2410,7 @@
         "description": "Fast, intelligent, flexible GPT model",
         "display_name": "GPT-4o",
         "knowledge_cutoff": "2023-10-01",
-        "deprecated": true
+        "deprecated": false
       }
     },
     {
@@ -2119,7 +2444,7 @@
         "description": "Fast, intelligent, flexible GPT model",
         "display_name": "GPT-4o",
         "knowledge_cutoff": "2023-10-01",
-        "deprecated": true
+        "deprecated": false
       }
     },
     {
@@ -2136,6 +2461,8 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
+        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision",
@@ -2146,7 +2473,16 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.075,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 0.3,
+        "fast_mode_input_tokens_price_per_million": 0.25,
+        "fast_mode_cached_tokens_price_per_million": 0.125,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 1
+      },
       "limits": {
         "max_output_tokens": 16384
       },
@@ -2168,13 +2504,18 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "contextWindow": 128000,
-      "capabilities": ["tool_choice", "vision"],
+      "capabilities": ["native_streaming", "tool_choice", "vision"],
       "modalities": {
         "input": ["image", "text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 5,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 15
+      },
       "limits": {
         "max_output_tokens": 4096
       },
@@ -2211,7 +2552,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.25,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 0.75
+      },
       "limits": {
         "max_output_tokens": 4096
       },
@@ -2241,13 +2587,18 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "contextWindow": 8192,
-      "capabilities": [],
+      "capabilities": ["native_streaming"],
       "modalities": {
         "input": ["text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 15,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 30
+      },
       "limits": {
         "max_output_tokens": 8192
       },
@@ -2277,6 +2628,7 @@
         "computer_use",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -2293,10 +2645,27 @@
         "input_tokens_price_per_million_high_context": 10,
         "cached_tokens_price_per_million_high_context": 1,
         "output_tokens_price_per_million_high_context": 45,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.25,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 15,
+        "batch_input_tokens_price_per_million_high_context": 5,
+        "batch_cached_tokens_price_per_million_high_context": 0.5,
+        "batch_caching_tokens_price_per_million_high_context": null,
+        "batch_output_tokens_price_per_million_high_context": 22.5,
+        "flex_input_tokens_price_per_million": 2.5,
+        "flex_cached_tokens_price_per_million": 0.25,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 15,
+        "flex_input_tokens_price_per_million_high_context": 5,
+        "flex_cached_tokens_price_per_million_high_context": 0.5,
+        "flex_caching_tokens_price_per_million_high_context": null,
+        "flex_output_tokens_price_per_million_high_context": 22.5,
+        "fast_mode_input_tokens_price_per_million": 12.5,
+        "fast_mode_cached_tokens_price_per_million": 1.25,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 75,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -2323,6 +2692,7 @@
       "contextWindow": 1050000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "image_generation",
         "reasoning",
         "structured_outputs",
@@ -2338,10 +2708,15 @@
       "additionalPricePerMillion": {
         "input_tokens_price_per_million_high_context": 60,
         "output_tokens_price_per_million_high_context": 270,
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 15,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 90,
+        "flex_input_tokens_price_per_million": 15,
+        "flex_cached_tokens_price_per_million": null,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 90,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "high_context": 272000,
@@ -2370,6 +2745,7 @@
         "computer_use",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -2383,10 +2759,19 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 0.375,
+        "batch_cached_tokens_price_per_million": 0.0375,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 2.25,
+        "flex_input_tokens_price_per_million": 0.375,
+        "flex_cached_tokens_price_per_million": 0.0375,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 2.25,
+        "fast_mode_input_tokens_price_per_million": 1.5,
+        "fast_mode_cached_tokens_price_per_million": 0.15,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 9,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "max_input_tokens": 272000,
@@ -2414,6 +2799,7 @@
         "code_execution",
         "file_upload",
         "image_generation",
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -2427,10 +2813,15 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
-        "extra": {
-          "regional_processing_uplift_multiplier": 1.1
-        }
+        "batch_input_tokens_price_per_million": 0.1,
+        "batch_cached_tokens_price_per_million": 0.01,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 0.625,
+        "flex_input_tokens_price_per_million": 0.1,
+        "flex_cached_tokens_price_per_million": 0.01,
+        "flex_caching_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 0.625,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "max_input_tokens": 272000,
@@ -2455,6 +2846,7 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 200000,
       "capabilities": [
+        "file_upload",
         "image_generation",
         "reasoning",
         "structured_outputs",
@@ -2467,7 +2859,12 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.openai.com/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 10,
+        "batch_cached_tokens_price_per_million": null,
+        "batch_caching_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": 40
+      },
       "limits": {
         "max_output_tokens": 100000
       },
@@ -2493,7 +2890,7 @@
       "cachedTokensPricePerMillion": "1.2500000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": null,
-      "capabilities": ["image_generation", "vision"],
+      "capabilities": ["image_generation", "prompt_caching", "vision"],
       "modalities": {
         "input": ["image", "text"],
         "output": ["image"]
@@ -2582,6 +2979,7 @@
       "cachedTokensPricePerMillion": "0.3750000000",
       "contextWindow": 200000,
       "capabilities": [
+        "native_streaming",
         "prompt_caching",
         "reasoning",
         "structured_outputs",
@@ -2618,7 +3016,7 @@
       "outputTokensPricePerMillion": "15.0000000000",
       "cachedTokensPricePerMillion": null,
       "contextWindow": 128000,
-      "capabilities": ["vision"],
+      "capabilities": ["native_streaming", "vision"],
       "modalities": {
         "input": ["text", "image"],
         "output": ["text"]
@@ -2651,6 +3049,7 @@
       "cachedTokensPricePerMillion": "37.5000000000",
       "contextWindow": 128000,
       "capabilities": [
+        "native_streaming",
         "prompt_caching",
         "structured_outputs",
         "tool_choice",
@@ -2725,6 +3124,8 @@
       "capabilities": [
         "code_execution",
         "file_upload",
+        "native_streaming",
+        "prompt_caching",
         "reasoning"
       ],
       "modalities": {
@@ -2760,6 +3161,8 @@
       "contextWindow": 128000,
       "capabilities": [
         "file_upload",
+        "native_streaming",
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice"
@@ -2852,6 +3255,278 @@
       "modalities": {
         "input": ["text"],
         "output": ["image"]
+      }
+    },
+    {
+      "model": "gpt-image-2.5-sunburst",
+      "provider": "openai",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": [
+        "image_generation",
+        "prompt_caching",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "backendUrls": [
+        "https://api.openai.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "image_tokens": {
+          "input_image_tokens_price_per_million": 8,
+          "cached_input_image_tokens_price_per_million": 2,
+          "output_image_tokens_price_per_million": 30
+        }
+      },
+      "limits": {
+        "max_edge_px": 3840,
+        "min_total_pixels": 655360,
+        "max_total_pixels": 8294400,
+        "edge_multiple_px": 16,
+        "max_long_edge_to_short_edge_ratio": "3:1",
+        "experimental_above_total_pixels": 3686400
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
+        "display_name": "GPT Image 2.5 Sunburst",
+        "description": "Generates and edits images from text and image inputs.",
+        "release_date": "2026-09-08",
+        "aliases": [
+          "gpt-image-2.5-sunburst",
+          "gpt-image-2.5-sunburst-2026-09-08"
+        ],
+        "options": {
+          "quality": [
+            "auto",
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        }
+      }
+    },
+    {
+      "model": "gpt-image-2.5-flare",
+      "provider": "openai",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "5.0000000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": "1.2500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": null,
+      "capabilities": [
+        "image_generation",
+        "prompt_caching",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "backendUrls": [
+        "https://api.openai.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "image_tokens": {
+          "input_image_tokens_price_per_million": 8,
+          "cached_input_image_tokens_price_per_million": 2,
+          "output_image_tokens_price_per_million": 30
+        }
+      },
+      "limits": {
+        "max_edge_px": 3840,
+        "min_total_pixels": 655360,
+        "max_total_pixels": 8294400,
+        "edge_multiple_px": 16,
+        "max_long_edge_to_short_edge_ratio": "3:1",
+        "experimental_above_total_pixels": 3686400
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-flare",
+        "display_name": "GPT Image 2.5 Flare",
+        "description": "Generates and edits images from text and image inputs.",
+        "release_date": "2026-09-08",
+        "aliases": [
+          "gpt-image-2.5-flare",
+          "gpt-image-2.5-flare-2026-09-08"
+        ],
+        "options": {
+          "quality": [
+            "auto",
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        }
+      }
+    },
+    {
+      "model": "gpt-audio-1.5",
+      "provider": "openai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.5000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "speech_recognition",
+        "tool_choice",
+        "native_streaming"
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "audio"
+        ],
+        "output": [
+          "text",
+          "audio"
+        ]
+      },
+      "backendUrls": [
+        "https://api.openai.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_audio": 32,
+        "output_tokens_price_per_million_audio": 64
+      },
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-audio-1.5",
+        "display_name": "GPT-Audio-1.5",
+        "description": "Accepts text and audio and returns text or audio through Chat Completions.",
+        "knowledge_cutoff": "2024-09-30",
+        "aliases": [
+          "gpt-audio-1.5"
+        ]
+      }
+    },
+    {
+      "model": "gpt-audio",
+      "provider": "openai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.5000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "speech_recognition",
+        "tool_choice",
+        "native_streaming"
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "audio"
+        ],
+        "output": [
+          "text",
+          "audio"
+        ]
+      },
+      "backendUrls": [
+        "https://api.openai.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_audio": 32,
+        "output_tokens_price_per_million_audio": 64
+      },
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-audio",
+        "display_name": "GPT-Audio",
+        "description": "Accepts text and audio and returns text or audio through Chat Completions.",
+        "knowledge_cutoff": "2023-10-01",
+        "aliases": [
+          "gpt-audio",
+          "gpt-audio-2025-08-28"
+        ],
+        "deprecated": true,
+        "deprecated_date": "2026-07-20",
+        "retirement_date": "2027-01-20",
+        "deprecated_reason": "Retires on January 20, 2027. Replacement: gpt-audio-1.5."
+      }
+    },
+    {
+      "model": "gpt-audio-mini",
+      "provider": "openai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.6000000000",
+      "outputTokensPricePerMillion": "2.4000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 128000,
+      "capabilities": [
+        "speech_recognition",
+        "tool_choice",
+        "prompt_caching"
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "audio"
+        ],
+        "output": [
+          "text",
+          "audio"
+        ]
+      },
+      "backendUrls": [
+        "https://api.openai.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_audio": 10,
+        "output_tokens_price_per_million_audio": 20
+      },
+      "limits": {
+        "max_output_tokens": 16384
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-audio-mini",
+        "display_name": "GPT-Audio Mini",
+        "description": "Accepts text and audio and returns text or audio through Chat Completions.",
+        "knowledge_cutoff": "2023-10-01",
+        "aliases": [
+          "gpt-audio-mini",
+          "gpt-audio-mini-2025-10-06",
+          "gpt-audio-mini-2025-12-15"
+        ],
+        "deprecated": true,
+        "deprecated_date": "2026-07-20",
+        "retirement_date": "2027-01-20",
+        "deprecated_reason": "Retires on January 20, 2027. Replacement: gpt-audio-1.5."
       }
     }
   ]

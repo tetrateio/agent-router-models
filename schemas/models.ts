@@ -1,23 +1,18 @@
 /**
- * Model Catalog Extraction Schema
- * ---------------------------------------------------------------------------
- * Target shape for data extracted from provider documentation via agentic
- * web search. Mirrors `schema-prod.ts` so extracted objects can be upserted
- * directly into the `ai_models` table (minus DB-managed fields:
- * `id` / `createdAt` / `updatedAt`).
+ * Model catalog type reference.
  *
- * Conventions:
- *   - Top-level fields use camelCase (match DB column names)
- *   - JSONB payload keys (metadata, limits, additionalPricePerMillion)
- *     use snake_case
- *   - All enums are strict literal unions
- *   - Top-level token pricing is a decimal-formatted string (matches the
- *     Drizzle `decimal` column type in `schema-prod.ts`) or `null` when
- *     the tier does not apply
+ * Top-level keys use camelCase. JSON payload keys use snake_case.
+ * Top-level token prices are USD per million as decimal strings, or null when
+ * no rate is published. Additional rates are numeric with field-specific units.
+ * Database-managed IDs and timestamps are outside this catalog contract.
+ *
+ * Literal field definitions are shared with validation tooling. This file
+ * contains declarations only; pricing interpretation is documented in
+ * ../docs/pricing.md.
  */
 
 // =============================================================================
-// ENUMS (strict literal unions)
+// KNOWN ENUM VALUES (see ModelCapability for its extensible type)
 // =============================================================================
 
 export const PROVIDERS = [
@@ -93,68 +88,80 @@ export type ModelOutputModality = (typeof MODEL_OUTPUT_MODALITIES)[number];
 // JSONB PAYLOADS — keys use snake_case
 // =============================================================================
 
-export interface ImageTokenPricing {
-  input_image_tokens_price_per_million?: number;
-  output_image_tokens_price_per_million?: number;
-  cached_input_image_tokens_price_per_million?: number;
-}
+/** USD rates. Null means no published rate; zero means explicitly free. */
+export type Price = number | null;
 
+export const IMAGE_TOKEN_PRICE_KEYS = [
+  "input_image_tokens_price_per_million",
+  "output_image_tokens_price_per_million",
+  "cached_input_image_tokens_price_per_million",
+] as const;
+export type ImageTokenPricing = Partial<Record<(typeof IMAGE_TOKEN_PRICE_KEYS)[number], Price>>;
+
+/** USD per generated image, indexed by documented quality and size. */
 export interface ImageGenerationPricing {
-  [quality: string]: {
-    [size: string]: number;
-  };
+  [quality: string]: { [size: string]: Price };
 }
 
-export interface AdditionalPricing {
-  // Media-token pricing
+/** Shared by the TypeScript contract and runtime validator. */
+export const TOKEN_PRICE_BASES = {
+  input_tokens_price_per_million: "inputTokensPricePerMillion",
+  output_tokens_price_per_million: "outputTokensPricePerMillion",
+  cached_tokens_price_per_million: "cachedTokensPricePerMillion",
+  caching_tokens_price_per_million: "cachingTokensPricePerMillion",
+  caching_5m_per_million: "caching_5m_per_million",
+  caching_1h_per_million: "caching_1h_per_million",
+} as const;
+export type TokenPriceKey = keyof typeof TOKEN_PRICE_BASES;
+export const SERVICE_TIERS = ["batch", "flex", "fast_mode", "priority"] as const;
+export type ServiceTier = (typeof SERVICE_TIERS)[number];
+export type ServicePriceKey = `${ServiceTier}_${TokenPriceKey}${"" | "_high_context"}`;
+
+export type HighContextPriceKey = `${TokenPriceKey}_high_context`;
+
+/** Supplementary rate fields; service and long-context fields derive from the types above. */
+export const ADDITIONAL_RATE_KEYS = [
+  "caching_1h_per_million",
+  "caching_5m_per_million",
+  "caching_storage_per_million_per_hour",
+  "input_tokens_price_per_million_audio",
+  "output_tokens_price_per_million_audio",
+  "cached_tokens_price_per_million_audio",
+  "caching_tokens_price_per_million_audio",
+  "input_audio_per_million_tokens",
+  "input_image_per_million_tokens",
+  "input_video_per_million_tokens",
+  "grounding_google_search_per_thousand",
+  "grounding_google_maps_per_thousand",
+  "grounding_your_data_per_thousand",
+  "web_grounding_enterprise_per_thousand",
+  "x_search_per_thousand_calls",
+  "web_search_per_thousand_calls",
+  "web_search_per_thousand_sources",
+  "code_execution_per_thousand_calls",
+  "code_execution_per_hour",
+  "file_attachments_per_thousand_calls",
+  "collections_search_per_thousand_calls",
+] as const;
+
+/** Dimensionless regional surcharges. Service-tier rates are always absolute. */
+export const PRICING_MULTIPLIER_KEYS = [
+  "inference_geo_us_multiplier",
+  "regional_processing_uplift_multiplier",
+  "non_global_endpoint_multiplier",
+] as const;
+
+type AdditionalScalarKey =
+  | (typeof ADDITIONAL_RATE_KEYS)[number]
+  | (typeof PRICING_MULTIPLIER_KEYS)[number]
+  | HighContextPriceKey
+  | ServicePriceKey;
+
+/** Closed pricing contract. See ../docs/pricing.md for units and tier selection. */
+export type AdditionalPricing = Partial<Record<AdditionalScalarKey, Price>> & {
   image_tokens?: ImageTokenPricing;
   image_generation?: ImageGenerationPricing;
-
-  // Batch multiplier
-  batch_discount_multiplier?: number;
-
-  // Anthropic prompt-cache write pricing (per-million)
-  caching_1h_per_million?: number;
-  caching_5m_per_million?: number;
-
-  // Prompt-cache storage (gemini)
-  caching_storage_per_million_per_hour?: number;
-
-  // Long-context tier. Applies to a request whose input token count is
-  // greater than `limits.high_context`. Absolute prices, never a multiplier.
-  // A record that sets any of these must set `limits.high_context`, and a
-  // model whose context window is at or below the threshold carries none.
-  // `bun schemas/validate.ts` enforces this.
-  input_tokens_price_per_million_high_context?: number;
-  cached_tokens_price_per_million_high_context?: number;
-  output_tokens_price_per_million_high_context?: number;
-  caching_tokens_price_per_million_high_context?: number;
-  caching_1h_per_million_high_context?: number;
-
-  // Gemini audio-token pricing (per-million)
-  input_tokens_price_per_million_audio?: number;
-  cached_tokens_price_per_million_audio?: number;
-  caching_tokens_price_per_million_audio?: number;
-
-  // Gemini embedding-model per-modality input pricing (per-million tokens)
-  input_audio_per_million_tokens?: number;
-  input_image_per_million_tokens?: number;
-  input_video_per_million_tokens?: number;
-
-  // Grounding / tool-call surcharges per 1000
-  grounding_google_search_per_thousand?: number;
-  grounding_google_maps_per_thousand?: number;
-  x_search_per_thousand_calls?: number;
-  web_search_per_thousand_calls?: number;
-  web_search_per_thousand_sources?: number;
-  code_execution_per_thousand_calls?: number;
-  code_execution_per_hour?: number;
-  file_attachments_per_thousand_calls?: number;
-  collections_search_per_thousand_calls?: number;
-
-  // Provider-specific fields not covered above
-  [key: string]: unknown;
-}
+};
 
 export interface ModelLimits {
   // Vision / file-upload caps
@@ -164,8 +171,10 @@ export interface ModelLimits {
   max_output_tokens?: number;
   max_prompt_length?: number;
 
-  /** Input-token count above which the `_high_context` prices apply. Must be below `contextWindow`. */
+  /** Input-token threshold for `_high_context` prices; must be reachable. */
   high_context?: number;
+  /** Omission preserves the historical strictly-greater-than boundary. */
+  high_context_comparison?: "gt" | "gte";
 
   // Rate limits
   rpm?: number;
@@ -182,6 +191,8 @@ export interface ModelModalities {
 }
 
 export interface ModelMetadata {
+  /** Model ID sent to the provider, without the catalog's routing prefix. */
+  upstream_model?: string;
   display_name?: string;
   description?: string;
   source_url?: string;
@@ -214,7 +225,7 @@ export interface ModelMetadata {
 // =============================================================================
 
 export interface ExtractedModel {
-  /** Canonical model slug (e.g. "gpt-4o", "gemini-2.0-flash"). */
+  /** Client-facing catalog ID (e.g. "vertex/xai/grok-4.6"). */
   model: string;
 
   provider: Provider;
@@ -225,7 +236,7 @@ export interface ExtractedModel {
   /** Defaults to true if omitted. */
   isEnabled?: boolean;
 
-  /** Decimal-formatted string, e.g. `"0.2900000000"`, or `null` when N/A. */
+  /** Decimal-formatted string, e.g. `"0.2900000000"`, or `null` when no rate is published. */
   inputTokensPricePerMillion: string | null;
   outputTokensPricePerMillion: string | null;
   cachedTokensPricePerMillion: string | null;

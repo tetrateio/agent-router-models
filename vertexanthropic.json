@@ -11,18 +11,20 @@
       "cachedTokensPricePerMillion": "0.2500000000",
       "cachingTokensPricePerMillion": "12.5000000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 12.5,
-        "caching_1h_per_million": 20
+        "caching_1h_per_million": 20,
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 25,
+        "batch_caching_5m_per_million": 6.25,
+        "batch_caching_1h_per_million": 10,
+        "batch_cached_tokens_price_per_million": 0.125
       },
       "contextWindow": 1000000,
       "capabilities": [
         "computer_use",
         "pdf_support",
         "prompt_caching",
-        "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -55,8 +57,7 @@
           "global",
           "us",
           "eu"
-        ],
-        "retirement_date": "2027-03-01"
+        ]
       }
     },
     {
@@ -69,18 +70,20 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
-        "caching_1h_per_million": 10
+        "caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_cached_tokens_price_per_million": 0.25
       },
       "contextWindow": 1000000,
       "capabilities": [
         "computer_use",
         "pdf_support",
         "prompt_caching",
-        "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -115,8 +118,7 @@
           "global",
           "us",
           "eu"
-        ],
-        "retirement_date": "2027-01-24"
+        ]
       }
     },
     {
@@ -129,18 +131,17 @@
       "cachedTokensPricePerMillion": "0.2000000000",
       "cachingTokensPricePerMillion": "2.5000000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 2.5,
-        "caching_1h_per_million": 4.0
+        "caching_1h_per_million": 4.0,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 5
       },
       "contextWindow": 1000000,
       "capabilities": [
         "computer_use",
         "pdf_support",
         "prompt_caching",
-        "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -175,8 +176,7 @@
           "global",
           "us",
           "eu"
-        ],
-        "retirement_date": "2026-12-24"
+        ]
       }
     },
     {
@@ -189,18 +189,20 @@
       "cachedTokensPricePerMillion": "1.0000000000",
       "cachingTokensPricePerMillion": "12.5000000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 12.5,
-        "caching_1h_per_million": 20
+        "caching_1h_per_million": 20,
+        "batch_input_tokens_price_per_million": 5,
+        "batch_output_tokens_price_per_million": 25,
+        "batch_caching_5m_per_million": 6.25,
+        "batch_caching_1h_per_million": 10,
+        "batch_cached_tokens_price_per_million": 0.5
       },
       "contextWindow": 1000000,
       "capabilities": [
         "computer_use",
         "pdf_support",
         "prompt_caching",
-        "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -235,8 +237,7 @@
           "global",
           "us",
           "eu"
-        ],
-        "retirement_date": "2027-06-08"
+        ]
       }
     },
     {
@@ -249,10 +250,14 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
-        "caching_1h_per_million": 10
+        "caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_cached_tokens_price_per_million": 0.25
       },
       "contextWindow": 1000000,
       "capabilities": [
@@ -260,7 +265,6 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -295,8 +299,7 @@
           "global",
           "us",
           "eu"
-        ],
-        "retirement_date": "2027-05-28"
+        ]
       }
     },
     {
@@ -309,10 +312,14 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
-        "caching_1h_per_million": 10
+        "caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_cached_tokens_price_per_million": 0.25
       },
       "contextWindow": 1000000,
       "capabilities": [
@@ -320,7 +327,6 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -355,8 +361,7 @@
           "global",
           "us",
           "eu"
-        ],
-        "retirement_date": "2027-04-16"
+        ]
       }
     },
     {
@@ -369,10 +374,14 @@
       "cachedTokensPricePerMillion": "0.3000000000",
       "cachingTokensPricePerMillion": "3.7500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 3.75,
-        "caching_1h_per_million": 6.0
+        "caching_1h_per_million": 6.0,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_output_tokens_price_per_million": 7.5,
+        "batch_caching_5m_per_million": 1.88,
+        "batch_caching_1h_per_million": 3,
+        "batch_cached_tokens_price_per_million": 0.15
       },
       "contextWindow": 1000000,
       "capabilities": [
@@ -380,7 +389,6 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -431,10 +439,14 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
-        "caching_1h_per_million": 10
+        "caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_cached_tokens_price_per_million": 0.25
       },
       "contextWindow": 1000000,
       "capabilities": [
@@ -442,7 +454,6 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -480,8 +491,7 @@
           "us-east5",
           "europe-west1",
           "asia-southeast1"
-        ],
-        "retirement_date": "2027-02-05"
+        ]
       }
     },
     {
@@ -494,18 +504,20 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
-        "caching_1h_per_million": 10
+        "caching_1h_per_million": 10,
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_output_tokens_price_per_million": 12.5,
+        "batch_caching_5m_per_million": 3.125,
+        "batch_caching_1h_per_million": 5,
+        "batch_cached_tokens_price_per_million": 0.25
       },
       "contextWindow": 200000,
       "capabilities": [
         "computer_use",
         "pdf_support",
         "prompt_caching",
-        "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -543,8 +555,7 @@
           "us-east5",
           "europe-west1",
           "asia-southeast1"
-        ],
-        "retirement_date": "2026-11-24"
+        ]
       }
     },
     {
@@ -557,7 +568,6 @@
       "cachedTokensPricePerMillion": "0.3000000000",
       "cachingTokensPricePerMillion": "3.7500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 3.75,
         "caching_1h_per_million": 6.0,
@@ -565,14 +575,23 @@
         "output_tokens_price_per_million_high_context": 22.5,
         "cached_tokens_price_per_million_high_context": 0.6,
         "caching_tokens_price_per_million_high_context": 7.5,
-        "caching_1h_per_million_high_context": 12
+        "caching_1h_per_million_high_context": 12,
+        "batch_input_tokens_price_per_million": 1.5,
+        "batch_input_tokens_price_per_million_high_context": null,
+        "batch_output_tokens_price_per_million": 7.5,
+        "batch_output_tokens_price_per_million_high_context": null,
+        "batch_caching_5m_per_million": null,
+        "batch_caching_5m_per_million_high_context": null,
+        "batch_caching_1h_per_million": 3,
+        "batch_caching_1h_per_million_high_context": null,
+        "batch_cached_tokens_price_per_million": 0.15,
+        "batch_cached_tokens_price_per_million_high_context": null
       },
       "contextWindow": 1000000,
       "capabilities": [
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -612,8 +631,7 @@
           "europe-west1",
           "asia-southeast1"
         ],
-        "knowledge_cutoff": "2025-07-01",
-        "retirement_date": "2026-09-29"
+        "knowledge_cutoff": "2025-07-01"
       }
     },
     {
@@ -626,17 +644,19 @@
       "cachedTokensPricePerMillion": "0.1000000000",
       "cachingTokensPricePerMillion": "1.2500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 1.25,
-        "caching_1h_per_million": 2.0
+        "caching_1h_per_million": 2.0,
+        "batch_input_tokens_price_per_million": 0.5,
+        "batch_output_tokens_price_per_million": 2.5,
+        "batch_caching_5m_per_million": 0.625,
+        "batch_cached_tokens_price_per_million": 0.05
       },
       "contextWindow": 200000,
       "capabilities": [
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -671,31 +691,33 @@
           "global",
           "us-east5",
           "europe-west1"
-        ],
-        "retirement_date": "2026-10-15"
+        ]
       }
     },
     {
       "model": "claude-opus-4-1",
       "provider": "vertexanthropic",
       "mode": "chat",
-      "isEnabled": false,
+      "isEnabled": true,
       "inputTokensPricePerMillion": "15.0000000000",
       "outputTokensPricePerMillion": "75.0000000000",
       "cachedTokensPricePerMillion": "1.5000000000",
       "cachingTokensPricePerMillion": "18.7500000000",
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
         "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 18.75,
-        "caching_1h_per_million": 30
+        "caching_1h_per_million": 30,
+        "batch_input_tokens_price_per_million": 7.5,
+        "batch_output_tokens_price_per_million": 37.5,
+        "batch_caching_5m_per_million": 9.375,
+        "batch_caching_1h_per_million": 15,
+        "batch_cached_tokens_price_per_million": 0.75
       },
       "contextWindow": 200000,
       "capabilities": [
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -730,9 +752,7 @@
           "global",
           "us-east5"
         ],
-        "retirement_date": "2026-08-05",
-        "deprecated": true,
-        "deprecated_reason": "Superseded by newer Claude models on Agent Platform."
+        "deprecated": false
       }
     },
     {
@@ -745,15 +765,15 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_input_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": null
       },
       "contextWindow": 200000,
       "capabilities": [
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -789,9 +809,7 @@
           "us-east5"
         ],
         "knowledge_cutoff": "2024-11-01",
-        "retirement_date": "2026-05-14",
-        "deprecated": true,
-        "deprecated_reason": "Superseded; Google Cloud no longer publishes a price for this model."
+        "deprecated": false
       }
     },
     {
@@ -804,15 +822,15 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5,
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "batch_input_tokens_price_per_million": null,
+        "batch_output_tokens_price_per_million": null
       },
       "contextWindow": 1000000,
       "capabilities": [
         "pdf_support",
         "prompt_caching",
         "reasoning",
-        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -849,9 +867,7 @@
           "europe-west1"
         ],
         "knowledge_cutoff": "2025-03-01",
-        "retirement_date": "2026-05-14",
-        "deprecated": true,
-        "deprecated_reason": "Superseded; Google Cloud no longer publishes a price for this model."
+        "deprecated": false
       }
     }
   ]

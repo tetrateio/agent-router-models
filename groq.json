@@ -25,7 +25,8 @@
       },
       "backendUrls": ["https://api.groq.com/openai/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 0.075,
+        "batch_output_tokens_price_per_million": 0.3
       },
       "limits": {
         "tps": 500,
@@ -64,7 +65,8 @@
       },
       "backendUrls": ["https://api.groq.com/openai/v1/"],
       "additionalPricePerMillion": {
-        "batch_discount_multiplier": 0.5
+        "batch_input_tokens_price_per_million": 0.0375,
+        "batch_output_tokens_price_per_million": 0.15
       },
       "limits": {
         "tps": 1000,
