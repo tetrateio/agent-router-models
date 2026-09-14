@@ -34,7 +34,13 @@
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
-        "collections_search_per_thousand_calls": 2.5
+        "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 4,
+        "priority_input_tokens_price_per_million_high_context": 8,
+        "priority_output_tokens_price_per_million": 12,
+        "priority_output_tokens_price_per_million_high_context": 24,
+        "priority_cached_tokens_price_per_million": 1,
+        "priority_cached_tokens_price_per_million_high_context": 2
       },
       "limits": {
         "rpm": 9000,
@@ -45,7 +51,7 @@
         "high_context_comparison": "gte"
       },
       "metadata": {
-        "regions": ["us-east-1", "us-west-2"],
+        "regions": ["us-east-1", "us-west-2", "us-central-1"],
         "source_url": "https://docs.x.ai/developers/models/grok-4.6",
         "description": "SpaceXAI's frontier model for coding, agentic tasks, and knowledge work. Configurable reasoning effort (low, medium, high, xhigh; default high). Reasoning cannot be disabled.",
         "display_name": "Grok 4.6",
@@ -86,7 +92,13 @@
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
-        "collections_search_per_thousand_calls": 2.5
+        "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 4,
+        "priority_input_tokens_price_per_million_high_context": 8,
+        "priority_output_tokens_price_per_million": 12,
+        "priority_output_tokens_price_per_million_high_context": 24,
+        "priority_cached_tokens_price_per_million": 0.6,
+        "priority_cached_tokens_price_per_million_high_context": 1.2
       },
       "limits": {
         "rpm": 9000,
@@ -100,9 +112,9 @@
         "aliases": ["grok-4.5-latest", "grok-build-latest"],
         "regions": ["us-east-1", "us-west-2"],
         "source_url": "https://docs.x.ai/developers/models/grok-4.5",
-        "description": "SpaceXAI's intelligent coding model for agentic software, engineering, and workflow tasks. Trained in SpaceXAI's data centers in Memphis with new datasets spanning science, engineering, and math. Configurable reasoning effort (low, medium, high; default high). Requests with xhigh are treated as high.",
+        "description": "SpaceXAI's intelligent coding model for agentic software, engineering, and workflow tasks. Trained in SpaceXAI's data centers in Memphis with new datasets spanning science, engineering, and math. Configurable reasoning effort (low, medium, high, xhigh; default high).",
         "display_name": "Grok 4.5",
-        "reasoning_efforts": ["low", "medium", "high"]
+        "reasoning_efforts": ["low", "medium", "high", "xhigh"]
       }
     },
     {
@@ -139,6 +151,12 @@
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
         "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 2.5,
+        "priority_input_tokens_price_per_million_high_context": 5,
+        "priority_output_tokens_price_per_million": 5,
+        "priority_output_tokens_price_per_million_high_context": 10,
+        "priority_cached_tokens_price_per_million": 0.4,
+        "priority_cached_tokens_price_per_million_high_context": 0.8,
         "batch_cached_tokens_price_per_million": 0.16,
         "batch_input_tokens_price_per_million_high_context": 2,
         "batch_output_tokens_price_per_million_high_context": 4,
@@ -158,9 +176,9 @@
         "aliases": ["grok-4.3-latest"],
         "regions": ["eu-west-1", "us-east-1", "us-west-2"],
         "source_url": "https://docs.x.ai/developers/models/grok-4.3",
-        "description": "Fast, reliable model with strong tool calling and instruction following capabilities. Supports four reasoning effort levels (none, low, medium, high).",
+        "description": "Fast, reliable model with strong tool calling and instruction following capabilities. Supports five reasoning effort levels (none, low, medium, high, xhigh).",
         "display_name": "Grok 4.3",
-        "reasoning_efforts": ["none", "low", "medium", "high"]
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh"]
       }
     },
     {
@@ -197,6 +215,12 @@
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
         "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 2.5,
+        "priority_input_tokens_price_per_million_high_context": 5,
+        "priority_output_tokens_price_per_million": 5,
+        "priority_output_tokens_price_per_million_high_context": 10,
+        "priority_cached_tokens_price_per_million": 0.4,
+        "priority_cached_tokens_price_per_million_high_context": 0.8,
         "batch_cached_tokens_price_per_million": 0.16,
         "batch_input_tokens_price_per_million_high_context": 2,
         "batch_output_tokens_price_per_million_high_context": 4,
@@ -269,6 +293,12 @@
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
         "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 2.5,
+        "priority_input_tokens_price_per_million_high_context": 5,
+        "priority_output_tokens_price_per_million": 5,
+        "priority_output_tokens_price_per_million_high_context": 10,
+        "priority_cached_tokens_price_per_million": 0.4,
+        "priority_cached_tokens_price_per_million_high_context": 0.8,
         "batch_cached_tokens_price_per_million": 0.16,
         "batch_input_tokens_price_per_million_high_context": 2,
         "batch_output_tokens_price_per_million_high_context": 4,
@@ -335,6 +365,12 @@
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
         "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 2.5,
+        "priority_input_tokens_price_per_million_high_context": 5,
+        "priority_output_tokens_price_per_million": 5,
+        "priority_output_tokens_price_per_million_high_context": 10,
+        "priority_cached_tokens_price_per_million": 0.4,
+        "priority_cached_tokens_price_per_million_high_context": 0.8,
         "batch_cached_tokens_price_per_million": 0.16,
         "batch_input_tokens_price_per_million_high_context": 2,
         "batch_output_tokens_price_per_million_high_context": 4,
@@ -400,7 +436,13 @@
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
-        "collections_search_per_thousand_calls": 2.5
+        "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 2,
+        "priority_input_tokens_price_per_million_high_context": 4,
+        "priority_output_tokens_price_per_million": 4,
+        "priority_output_tokens_price_per_million_high_context": 8,
+        "priority_cached_tokens_price_per_million": 0.4,
+        "priority_cached_tokens_price_per_million_high_context": 0.8
       },
       "limits": {
         "rpm": 2220,
@@ -438,13 +480,14 @@
         "image_generation": {
           "low": {
             "1k": 0.04,
-            "2k": 0.04
+            "2k": 0.06
           },
           "medium": {
-            "1k": 0.04,
-            "2k": 0.04
+            "1k": 0.06,
+            "2k": 0.08
           }
-        }
+        },
+        "input_image_price_per_image": 0.01
       },
       "limits": {
         "rpm": 360,
@@ -483,7 +526,7 @@
       "model": "xai/grok-imagine-image-quality",
       "provider": "xai",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": null,
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": null,
@@ -499,9 +542,10 @@
         "image_generation": {
           "standard": {
             "1k": 0.05,
-            "2k": 0.05
+            "2k": 0.07
           }
-        }
+        },
+        "input_image_price_per_image": 0.01
       },
       "limits": {
         "rpm": 360,
@@ -515,7 +559,7 @@
         ],
         "regions": ["us-east-1", "us-west-2"],
         "source_url": "https://docs.x.ai/developers/models/grok-imagine-image-quality",
-        "description": "Premium quality tier of the Grok Imagine text-to-image generation model. Accepts text and image input and outputs images at 1k or 2k resolution for $0.05 per image.",
+        "description": "Premium quality tier of the Grok Imagine text-to-image generation model. Accepts text and image input and outputs images at 1k resolution for $0.05 or 2k resolution for $0.07 per image. Each input image costs $0.01.",
         "display_name": "Grok Imagine Image Quality",
         "deprecated": true,
         "deprecated_date": "2026-09-02",
@@ -564,7 +608,8 @@
             "1k": 0.02,
             "2k": 0.02
           }
-        }
+        },
+        "input_image_price_per_image": 0.002
       },
       "limits": {
         "rpm": 360,

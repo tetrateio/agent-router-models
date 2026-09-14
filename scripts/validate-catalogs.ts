@@ -1,21 +1,26 @@
 // Validate the pricing contract on every provider catalog: bun scripts/validate-catalogs.ts
 import { readFileSync } from "node:fs"
+import { catalogErrors } from "./catalog-policy.ts"
 import {
-  ADDITIONAL_RATE_KEYS, IMAGE_TOKEN_PRICE_KEYS, PRICING_MULTIPLIER_KEYS,
-  PROVIDERS, SERVICE_TIERS, TOKEN_PRICE_BASES, type TokenPriceKey,
+  ADDITIONAL_RATE_KEYS, IMAGE_TOKEN_PRICE_KEYS, IMAGE_TOKEN_PRICE_BASES,
+  IMAGE_GENERATION_PRICE_KEYS, MEDIA_TOKEN_RATE_KEYS, SERVICE_UNIT_RATE_KEYS,
+  PRICING_MULTIPLIER_KEYS, PROVIDERS, SERVICE_TIERS, TOKEN_PRICE_BASES, type TokenPriceKey,
 } from "../schemas/models.ts"
 
 const TOKEN_PRICE_KEYS = Object.keys(TOKEN_PRICE_BASES) as TokenPriceKey[]
+const CONTEXT_RATE_KEYS = [...TOKEN_PRICE_KEYS, ...MEDIA_TOKEN_RATE_KEYS]
 // Generate runtime keys from the reference's literal declarations.
 const rateKeys = new Set<string>([
   ...ADDITIONAL_RATE_KEYS,
-  ...TOKEN_PRICE_KEYS.map(key => `${key}_high_context`),
-  ...SERVICE_TIERS.flatMap(tier => TOKEN_PRICE_KEYS.flatMap(key => [
-    `${tier}_${key}`, `${tier}_${key}_high_context`,
-  ])),
+  ...CONTEXT_RATE_KEYS.map(key => `${key}_high_context`),
+  ...SERVICE_TIERS.flatMap(tier => [
+    ...CONTEXT_RATE_KEYS.flatMap(key => [`${tier}_${key}`, `${tier}_${key}_high_context`]),
+    ...SERVICE_UNIT_RATE_KEYS.map(key => `${tier}_${key}`),
+  ]),
 ])
 const multiplierKeys = new Set<string>(PRICING_MULTIPLIER_KEYS)
 const imageKeys = new Set<string>(IMAGE_TOKEN_PRICE_KEYS)
+const generationKeys = new Set<string>(IMAGE_GENERATION_PRICE_KEYS)
 const object = (v: unknown): v is Record<string, any> =>
   v !== null && typeof v === "object" && !Array.isArray(v)
 const rate = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v) && v >= 0
@@ -51,17 +56,39 @@ export function pricingErrors(m: any): string[] {
         if (!imageKeys.has(k)) errors.push(`unknown image_tokens key ${k}`)
         else checkRate(`image_tokens.${k}`, v)
       }
-    } else if (key === "image_generation") {
-      if (!object(value) || !Object.keys(value).length) errors.push("image_generation must be a nonempty quality/size table")
+    } else if (generationKeys.has(key)) {
+      if (!object(value) || !Object.keys(value).length) errors.push(`${key} must be a nonempty quality/size table`)
       else for (const [quality, sizes] of Object.entries(value)) {
         if (!quality.trim() || !object(sizes) || !Object.keys(sizes).length)
-          errors.push(`image_generation.${quality} must be a nonempty size table`)
+          errors.push(`${key}.${quality} must be a nonempty size table`)
         else for (const [size, v] of Object.entries(sizes)) {
-          if (!size.trim()) errors.push(`image_generation.${quality} has an empty size`)
-          checkRate(`image_generation.${quality}.${size}`, v)
+          if (!size.trim()) errors.push(`${key}.${quality} has an empty size`)
+          checkRate(`${key}.${quality}.${size}`, v)
         }
       }
     } else errors.push(`unknown pricing key ${key}`)
+  }
+
+  const requireModality = (path: string, direction: "input" | "output", modality: string) => {
+    if (!Array.isArray(m.modalities?.[direction]) || !m.modalities[direction].includes(modality))
+      errors.push(`${path} requires modalities.${direction} to include ${modality}`)
+  }
+  for (const prefix of ["", ...SERVICE_TIERS.map(tier => `${tier}_`)]) {
+    const inputImage = `${prefix}input_image_price_per_image`
+    if (inputImage in price) {
+      requireModality(inputImage, "input", "image")
+      if (!Array.isArray(m.capabilities) || !m.capabilities.includes("vision"))
+        errors.push(`${inputImage} requires the vision capability`)
+    }
+    for (const key of MEDIA_TOKEN_RATE_KEYS) for (const suffix of ["", "_high_context"]) {
+      const path = `${prefix}${key}${suffix}`
+      if (!(path in price)) continue
+      const modality = key.includes("audio") ? "audio" : key.includes("image") ? "image" : "video"
+      requireModality(path, key.startsWith("output_") ? "output" : "input", modality)
+    }
+    // Service-specific generated-image prices describe output images, not input processing.
+    if (prefix && `${prefix}image_generation` in price)
+      requireModality(`${prefix}image_generation`, "output", "image")
   }
 
   // Keep detecting the old threshold multipliers in extensible limits bags.
@@ -77,7 +104,11 @@ export function pricingErrors(m: any): string[] {
   const threshold = m.limits?.high_context
   const comparison = m.limits?.high_context_comparison ?? "gt"
   if (m.limits?.high_context_comparison !== undefined && !["gt", "gte"].includes(m.limits.high_context_comparison)) errors.push("high_context_comparison must be gt or gte")
-  const highKeys = Object.keys(price).filter(k => rateKeys.has(k) && k.endsWith("_high_context"))
+  const imageTokens = object(price.image_tokens) ? price.image_tokens : {}
+  const highKeys = [
+    ...Object.keys(price).filter(k => rateKeys.has(k) && k.endsWith("_high_context")),
+    ...Object.keys(imageTokens).filter(k => imageKeys.has(k) && k.endsWith("_high_context")),
+  ]
   const hasThreshold = threshold !== undefined
   if (hasThreshold || highKeys.length || m.limits?.high_context_comparison !== undefined) {
     if (!(Number.isInteger(threshold) && threshold > 0))
@@ -111,6 +142,23 @@ export function pricingErrors(m: any): string[] {
       else if (rate(price[highKey]) && price[highKey] < Number(base))
         errors.push(`${highKey} ${price[highKey]} is below ${baseKey} ${base}`)
     }
+    // Media rates can decrease above a threshold. Their own base rate must still be known.
+    for (const key of MEDIA_TOKEN_RATE_KEYS) {
+      const baseKey = `${prefix}${key}`
+      const highKey = `${baseKey}_high_context`
+      if (known(price[highKey]) && !known(price[baseKey]))
+        errors.push(`${highKey} set but ${baseKey} is null or missing`)
+    }
+    for (const key of IMAGE_TOKEN_PRICE_BASES) {
+      const baseKey = `${prefix}${key}`
+      const highKey = `${baseKey}_high_context`
+      if (known(imageTokens[highKey]) && !known(imageTokens[baseKey]))
+        errors.push(`image_tokens.${highKey} set but image_tokens.${baseKey} is null or missing`)
+      for (const path of [baseKey, highKey]) {
+        if (path in imageTokens)
+          requireModality(`image_tokens.${path}`, key.startsWith("output_") ? "output" : "input", "image")
+      }
+    }
   }
 
   return errors
@@ -121,12 +169,13 @@ export const tierErrors = pricingErrors
 
 if (import.meta.main) {
   let bad = 0
+  const asOf = new Date().toISOString().slice(0, 10)
   for (const provider of PROVIDERS) {
     const file = `${provider}.json`
     try {
       const doc = JSON.parse(readFileSync(file, "utf8"))
       if (!Array.isArray(doc.models)) throw new Error("models must be an array")
-      for (const m of doc.models) for (const error of pricingErrors(m)) {
+      for (const m of doc.models) for (const error of [...pricingErrors(m), ...catalogErrors(m, asOf)]) {
         console.error(`${file}:${m?.model}: ${error}`)
         bad++
       }

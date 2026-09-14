@@ -9,7 +9,7 @@
       "inputTokensPricePerMillion": "0.7500000000",
       "outputTokensPricePerMillion": "3.7500000000",
       "cachedTokensPricePerMillion": "0.0750000000",
-      "cachingTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.7500000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -17,7 +17,13 @@
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.375,
         "batch_cached_tokens_price_per_million": 0.0375,
-        "batch_output_tokens_price_per_million": 1.875
+        "batch_output_tokens_price_per_million": 1.875,
+        "priority_input_tokens_price_per_million": 1.35,
+        "priority_cached_tokens_price_per_million": 0.135,
+        "priority_output_tokens_price_per_million": 6.75,
+        "flex_input_tokens_price_per_million": 0.375,
+        "flex_cached_tokens_price_per_million": 0.0375,
+        "flex_output_tokens_price_per_million": 1.875
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -62,7 +68,13 @@
           "medium",
           "high"
         ],
-        "upstream_model": "gemini-3.8-flash"
+        "upstream_model": "gemini-3.8-flash",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 65536
@@ -76,7 +88,7 @@
       "inputTokensPricePerMillion": "0.7500000000",
       "outputTokensPricePerMillion": "3.7500000000",
       "cachedTokensPricePerMillion": "0.0750000000",
-      "cachingTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.7500000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -84,7 +96,13 @@
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.375,
         "batch_cached_tokens_price_per_million": 0.0375,
-        "batch_output_tokens_price_per_million": 1.875
+        "batch_output_tokens_price_per_million": 1.875,
+        "priority_input_tokens_price_per_million": 1.35,
+        "priority_cached_tokens_price_per_million": 0.135,
+        "priority_output_tokens_price_per_million": 6.75,
+        "flex_input_tokens_price_per_million": 0.375,
+        "flex_cached_tokens_price_per_million": 0.0375,
+        "flex_output_tokens_price_per_million": 1.875
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -129,7 +147,13 @@
           "medium",
           "high"
         ],
-        "upstream_model": "gemini-3.7-flash"
+        "upstream_model": "gemini-3.7-flash",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 65536
@@ -143,7 +167,7 @@
       "inputTokensPricePerMillion": "0.7500000000",
       "outputTokensPricePerMillion": "3.7500000000",
       "cachedTokensPricePerMillion": "0.0750000000",
-      "cachingTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "0.7500000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -152,7 +176,13 @@
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.375,
         "batch_cached_tokens_price_per_million": 0.0375,
-        "batch_output_tokens_price_per_million": 1.875
+        "batch_output_tokens_price_per_million": 1.875,
+        "priority_input_tokens_price_per_million": 1.35,
+        "priority_cached_tokens_price_per_million": 0.135,
+        "priority_output_tokens_price_per_million": 6.75,
+        "flex_input_tokens_price_per_million": 0.375,
+        "flex_cached_tokens_price_per_million": 0.0375,
+        "flex_output_tokens_price_per_million": 1.875
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -192,7 +222,13 @@
         "description": "Gemini 3.6 Flash provides sustained frontier-level intelligence optimized for real-world tasks at a higher speed and lower cost. It excels at code generation, agentic execution, and spatial reasoning.",
         "display_name": "Gemini 3.6 Flash",
         "release_date": "2026-07-21",
-        "upstream_model": "gemini-3.6-flash"
+        "upstream_model": "gemini-3.6-flash",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 65536
@@ -206,7 +242,7 @@
       "inputTokensPricePerMillion": "1.5000000000",
       "outputTokensPricePerMillion": "9.0000000000",
       "cachedTokensPricePerMillion": "0.1500000000",
-      "cachingTokensPricePerMillion": "0.1500000000",
+      "cachingTokensPricePerMillion": "1.5000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -215,7 +251,13 @@
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.75,
         "batch_cached_tokens_price_per_million": 0.075,
-        "batch_output_tokens_price_per_million": 4.5
+        "batch_output_tokens_price_per_million": 4.5,
+        "priority_input_tokens_price_per_million": 2.7,
+        "priority_cached_tokens_price_per_million": 0.27,
+        "priority_output_tokens_price_per_million": 16.2,
+        "flex_input_tokens_price_per_million": 0.75,
+        "flex_cached_tokens_price_per_million": 0.075,
+        "flex_output_tokens_price_per_million": 4.5
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -255,7 +297,20 @@
         "description": "Our legacy Flash model, providing baseline speed and foundational performance for routine, high-throughput workloads.",
         "display_name": "Gemini 3.5 Flash",
         "release_date": "2026-05-19",
-        "upstream_model": "gemini-3.5-flash"
+        "upstream_model": "gemini-3.5-flash",
+        "regions": [
+          "asia-northeast1",
+          "asia-south1",
+          "asia-southeast1",
+          "australia-southeast1",
+          "europe-west2",
+          "europe-west3",
+          "northamerica-northeast1",
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 65536
@@ -269,7 +324,7 @@
       "inputTokensPricePerMillion": "0.3000000000",
       "outputTokensPricePerMillion": "2.5000000000",
       "cachedTokensPricePerMillion": "0.0300000000",
-      "cachingTokensPricePerMillion": "0.0300000000",
+      "cachingTokensPricePerMillion": "0.3000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -278,7 +333,13 @@
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.15,
         "batch_cached_tokens_price_per_million": 0.015,
-        "batch_output_tokens_price_per_million": 1.25
+        "batch_output_tokens_price_per_million": 1.25,
+        "priority_input_tokens_price_per_million": 0.54,
+        "priority_cached_tokens_price_per_million": 0.054,
+        "priority_output_tokens_price_per_million": 4.5,
+        "flex_input_tokens_price_per_million": 0.15,
+        "flex_cached_tokens_price_per_million": 0.015,
+        "flex_output_tokens_price_per_million": 1.25
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -318,7 +379,13 @@
         "description": "Google's fastest, most cost-effective Gemini 3.5 model for high-throughput execution.",
         "display_name": "Gemini 3.5 Flash-Lite",
         "release_date": "2026-07-21",
-        "upstream_model": "gemini-3.5-flash-lite"
+        "upstream_model": "gemini-3.5-flash-lite",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 65536
@@ -332,7 +399,7 @@
       "inputTokensPricePerMillion": "0.2500000000",
       "outputTokensPricePerMillion": "1.5000000000",
       "cachedTokensPricePerMillion": "0.0250000000",
-      "cachingTokensPricePerMillion": "0.0250000000",
+      "cachingTokensPricePerMillion": "0.2500000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -340,11 +407,23 @@
         "caching_storage_per_million_per_hour": 1.0,
         "input_tokens_price_per_million_audio": 0.5,
         "cached_tokens_price_per_million_audio": 0.05,
-        "caching_tokens_price_per_million_audio": 0.05,
+        "caching_tokens_price_per_million_audio": 0.5,
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.125,
         "batch_cached_tokens_price_per_million": 0.0125,
-        "batch_output_tokens_price_per_million": 0.75
+        "batch_output_tokens_price_per_million": 0.75,
+        "priority_input_tokens_price_per_million": 0.45,
+        "priority_cached_tokens_price_per_million": 0.045,
+        "priority_output_tokens_price_per_million": 2.7,
+        "flex_input_tokens_price_per_million": 0.125,
+        "flex_cached_tokens_price_per_million": 0.0125,
+        "flex_output_tokens_price_per_million": 0.75,
+        "priority_input_tokens_price_per_million_audio": 0.9,
+        "priority_cached_tokens_price_per_million_audio": 0.09,
+        "flex_input_tokens_price_per_million_audio": 0.25,
+        "flex_cached_tokens_price_per_million_audio": 0.025,
+        "batch_input_tokens_price_per_million_audio": 0.25,
+        "batch_cached_tokens_price_per_million_audio": 0.025
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -383,10 +462,16 @@
         "description": "Frontier-class performance rivaling larger models at a fraction of the cost.",
         "display_name": "Gemini 3.1 Flash-Lite",
         "release_date": "2026-05-07",
-        "deprecated": true,
-        "retirement_date": "2027-05-07",
-        "deprecated_reason": "Scheduled for shutdown; use gemini-3.5-flash-lite.",
-        "upstream_model": "gemini-3.1-flash-lite"
+        "deprecated": false,
+        "retirement_date": "",
+        "deprecated_reason": "",
+        "upstream_model": "gemini-3.1-flash-lite",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 65536
@@ -400,7 +485,7 @@
       "inputTokensPricePerMillion": "2.0000000000",
       "outputTokensPricePerMillion": "12.0000000000",
       "cachedTokensPricePerMillion": "0.2000000000",
-      "cachingTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "2.0000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -409,13 +494,25 @@
         "input_tokens_price_per_million_high_context": 4,
         "cached_tokens_price_per_million_high_context": 0.4,
         "output_tokens_price_per_million_high_context": 18,
-        "caching_tokens_price_per_million_high_context": 0.4,
+        "caching_tokens_price_per_million_high_context": 4,
         "batch_input_tokens_price_per_million": 1,
         "batch_input_tokens_price_per_million_high_context": 2,
         "batch_cached_tokens_price_per_million": null,
         "batch_cached_tokens_price_per_million_high_context": null,
         "batch_output_tokens_price_per_million": 6,
-        "batch_output_tokens_price_per_million_high_context": 9
+        "batch_output_tokens_price_per_million_high_context": 9,
+        "priority_input_tokens_price_per_million": 3.6,
+        "priority_cached_tokens_price_per_million": 0.36,
+        "priority_input_tokens_price_per_million_high_context": 7.2,
+        "priority_cached_tokens_price_per_million_high_context": 0.72,
+        "priority_output_tokens_price_per_million": 21.6,
+        "priority_output_tokens_price_per_million_high_context": 32.4,
+        "flex_input_tokens_price_per_million": 1,
+        "flex_cached_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million_high_context": 2,
+        "flex_cached_tokens_price_per_million_high_context": null,
+        "flex_output_tokens_price_per_million": 6,
+        "flex_output_tokens_price_per_million_high_context": 9
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -455,7 +552,11 @@
         "display_name": "Gemini 3.1 Pro Preview",
         "release_date": "2026-02-19",
         "preview": true,
-        "upstream_model": "gemini-3.1-pro-preview"
+        "upstream_model": "gemini-3.1-pro-preview",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "Public preview"
       },
       "limits": {
         "high_context": 200000,
@@ -470,7 +571,7 @@
       "inputTokensPricePerMillion": "2.0000000000",
       "outputTokensPricePerMillion": "12.0000000000",
       "cachedTokensPricePerMillion": "0.2000000000",
-      "cachingTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "2.0000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
@@ -479,13 +580,25 @@
         "input_tokens_price_per_million_high_context": 4,
         "cached_tokens_price_per_million_high_context": 0.4,
         "output_tokens_price_per_million_high_context": 18,
-        "caching_tokens_price_per_million_high_context": 0.4,
+        "caching_tokens_price_per_million_high_context": 4,
         "batch_input_tokens_price_per_million": 1,
         "batch_input_tokens_price_per_million_high_context": 2,
         "batch_cached_tokens_price_per_million": null,
         "batch_cached_tokens_price_per_million_high_context": null,
         "batch_output_tokens_price_per_million": 6,
-        "batch_output_tokens_price_per_million_high_context": 9
+        "batch_output_tokens_price_per_million_high_context": 9,
+        "priority_input_tokens_price_per_million": 3.6,
+        "priority_cached_tokens_price_per_million": 0.36,
+        "priority_input_tokens_price_per_million_high_context": 7.2,
+        "priority_cached_tokens_price_per_million_high_context": 0.72,
+        "priority_output_tokens_price_per_million": 21.6,
+        "priority_output_tokens_price_per_million_high_context": 32.4,
+        "flex_input_tokens_price_per_million": 1,
+        "flex_cached_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million_high_context": 2,
+        "flex_cached_tokens_price_per_million_high_context": null,
+        "flex_output_tokens_price_per_million": 6,
+        "flex_output_tokens_price_per_million_high_context": 9
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -525,7 +638,11 @@
         "display_name": "Gemini 3.1 Pro Preview Custom Tools",
         "release_date": "2026-02-19",
         "preview": true,
-        "upstream_model": "gemini-3.1-pro-preview-customtools"
+        "upstream_model": "gemini-3.1-pro-preview-customtools",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "Public preview"
       },
       "limits": {
         "high_context": 200000,
@@ -540,7 +657,7 @@
       "inputTokensPricePerMillion": "1.2500000000",
       "outputTokensPricePerMillion": "10.0000000000",
       "cachedTokensPricePerMillion": "0.1250000000",
-      "cachingTokensPricePerMillion": "0.1250000000",
+      "cachingTokensPricePerMillion": "1.2500000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 35,
         "grounding_google_maps_per_thousand": 25,
@@ -550,11 +667,21 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "cached_tokens_price_per_million_high_context": 0.25,
         "output_tokens_price_per_million_high_context": 15,
-        "caching_tokens_price_per_million_high_context": 0.25,
+        "caching_tokens_price_per_million_high_context": 2.5,
         "batch_input_tokens_price_per_million": 0.625,
         "batch_input_tokens_price_per_million_high_context": 1.25,
         "batch_output_tokens_price_per_million": 5,
-        "batch_output_tokens_price_per_million_high_context": 7.5
+        "batch_output_tokens_price_per_million_high_context": 7.5,
+        "priority_input_tokens_price_per_million": 2.25,
+        "priority_cached_tokens_price_per_million": 0.225,
+        "priority_input_tokens_price_per_million_high_context": 4.5,
+        "priority_cached_tokens_price_per_million_high_context": 0.45,
+        "priority_output_tokens_price_per_million": 18,
+        "priority_output_tokens_price_per_million_high_context": 27,
+        "flex_input_tokens_price_per_million": 0.625,
+        "flex_input_tokens_price_per_million_high_context": 1.25,
+        "flex_output_tokens_price_per_million": 5,
+        "flex_output_tokens_price_per_million_high_context": 7.5
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -594,7 +721,31 @@
         "display_name": "Gemini 2.5 Pro",
         "release_date": "2025-06-17",
         "knowledge_cutoff": "2025-01-01",
-        "upstream_model": "gemini-2.5-pro"
+        "upstream_model": "gemini-2.5-pro",
+        "regions": [
+          "asia-northeast1",
+          "europe-central2",
+          "europe-north1",
+          "europe-southwest1",
+          "europe-west1",
+          "europe-west4",
+          "europe-west8",
+          "europe-west9",
+          "northamerica-northeast1",
+          "us-central1",
+          "us-east1",
+          "us-east4",
+          "us-east5",
+          "us-south1",
+          "us-west1",
+          "us-west4",
+          "global"
+        ],
+        "launch_stage": "GA",
+        "deprecated": true,
+        "deprecated_date": "",
+        "retirement_date": "2026-10-20",
+        "deprecated_reason": "Google lists October 20, 2026 as the retirement date."
       },
       "limits": {
         "high_context": 200000,
@@ -609,7 +760,7 @@
       "inputTokensPricePerMillion": "0.3000000000",
       "outputTokensPricePerMillion": "2.5000000000",
       "cachedTokensPricePerMillion": "0.0300000000",
-      "cachingTokensPricePerMillion": "0.0300000000",
+      "cachingTokensPricePerMillion": "0.3000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 35,
         "grounding_google_maps_per_thousand": 25,
@@ -618,9 +769,20 @@
         "caching_storage_per_million_per_hour": 1.0,
         "input_tokens_price_per_million_audio": 1.0,
         "cached_tokens_price_per_million_audio": 0.1,
-        "caching_tokens_price_per_million_audio": 0.1,
+        "caching_tokens_price_per_million_audio": 1,
         "batch_input_tokens_price_per_million": 0.15,
-        "batch_output_tokens_price_per_million": 1.25
+        "batch_output_tokens_price_per_million": 1.25,
+        "priority_input_tokens_price_per_million": 0.54,
+        "priority_cached_tokens_price_per_million": 0.054,
+        "priority_output_tokens_price_per_million": 4.5,
+        "flex_input_tokens_price_per_million": 0.15,
+        "flex_output_tokens_price_per_million": 1.25,
+        "input_tokens_price_per_million_audio_high_context": 0.3,
+        "caching_tokens_price_per_million_audio_high_context": 0.3,
+        "priority_input_tokens_price_per_million_audio": 1.8,
+        "priority_cached_tokens_price_per_million_audio": 0.18,
+        "flex_input_tokens_price_per_million_audio": 0.5,
+        "batch_input_tokens_price_per_million_audio": 0.5
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -660,10 +822,43 @@
         "display_name": "Gemini 2.5 Flash",
         "release_date": "2025-06-17",
         "knowledge_cutoff": "2025-01-01",
-        "upstream_model": "gemini-2.5-flash"
+        "upstream_model": "gemini-2.5-flash",
+        "regions": [
+          "asia-northeast1",
+          "asia-northeast3",
+          "asia-south1",
+          "asia-southeast1",
+          "australia-southeast1",
+          "europe-central2",
+          "europe-north1",
+          "europe-southwest1",
+          "europe-west1",
+          "europe-west2",
+          "europe-west3",
+          "europe-west4",
+          "europe-west8",
+          "europe-west9",
+          "northamerica-northeast1",
+          "southamerica-east1",
+          "us-central1",
+          "us-east1",
+          "us-east4",
+          "us-east5",
+          "us-south1",
+          "us-west1",
+          "us-west4",
+          "global"
+        ],
+        "launch_stage": "GA",
+        "deprecated": true,
+        "deprecated_date": "",
+        "retirement_date": "2026-10-20",
+        "deprecated_reason": "Google lists October 20, 2026 as the retirement date."
       },
       "limits": {
-        "max_output_tokens": 65536
+        "max_output_tokens": 65536,
+        "high_context": 200000,
+        "high_context_comparison": "gt"
       }
     },
     {
@@ -674,7 +869,7 @@
       "inputTokensPricePerMillion": "0.1000000000",
       "outputTokensPricePerMillion": "0.4000000000",
       "cachedTokensPricePerMillion": "0.0100000000",
-      "cachingTokensPricePerMillion": "0.0100000000",
+      "cachingTokensPricePerMillion": "0.1000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 35,
         "grounding_google_maps_per_thousand": 25,
@@ -683,9 +878,18 @@
         "caching_storage_per_million_per_hour": 1.0,
         "input_tokens_price_per_million_audio": 0.3,
         "cached_tokens_price_per_million_audio": 0.03,
-        "caching_tokens_price_per_million_audio": 0.03,
+        "caching_tokens_price_per_million_audio": 0.3,
         "batch_input_tokens_price_per_million": 0.05,
-        "batch_output_tokens_price_per_million": 0.2
+        "batch_output_tokens_price_per_million": 0.2,
+        "priority_input_tokens_price_per_million": 0.18,
+        "priority_cached_tokens_price_per_million": 0.018,
+        "priority_output_tokens_price_per_million": 0.72,
+        "flex_input_tokens_price_per_million": 0.05,
+        "flex_output_tokens_price_per_million": 0.2,
+        "priority_input_tokens_price_per_million_audio": 0.54,
+        "priority_cached_tokens_price_per_million_audio": 0.054,
+        "flex_input_tokens_price_per_million_audio": 0.05,
+        "batch_input_tokens_price_per_million_audio": 0.05
       },
       "contextWindow": 1048576,
       "capabilities": [
@@ -725,7 +929,29 @@
         "display_name": "Gemini 2.5 Flash-Lite",
         "release_date": "2025-07-22",
         "knowledge_cutoff": "2025-01-01",
-        "upstream_model": "gemini-2.5-flash-lite"
+        "upstream_model": "gemini-2.5-flash-lite",
+        "regions": [
+          "europe-central2",
+          "europe-north1",
+          "europe-southwest1",
+          "europe-west1",
+          "europe-west4",
+          "europe-west8",
+          "europe-west9",
+          "us-central1",
+          "us-east1",
+          "us-east4",
+          "us-east5",
+          "us-south1",
+          "us-west1",
+          "us-west4",
+          "global"
+        ],
+        "launch_stage": "GA",
+        "deprecated": true,
+        "deprecated_date": "",
+        "retirement_date": "2026-10-20",
+        "deprecated_reason": "Google lists October 20, 2026 as the retirement date."
       },
       "limits": {
         "max_output_tokens": 65536
@@ -735,15 +961,26 @@
       "model": "vertex/gemini-3-pro-image",
       "provider": "vertex",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "2.0000000000",
       "outputTokensPricePerMillion": "12.0000000000",
       "cachedTokensPricePerMillion": "0.2000000000",
-      "cachingTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": "2.0000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "image_tokens": {
-          "output_image_tokens_price_per_million": 120
+          "output_image_tokens_price_per_million": 120,
+          "input_image_tokens_price_per_million": 2,
+          "cached_input_image_tokens_price_per_million": 0.2,
+          "priority_input_image_tokens_price_per_million": 3.6,
+          "priority_cached_input_image_tokens_price_per_million": 0.36,
+          "priority_output_image_tokens_price_per_million": 216,
+          "flex_input_image_tokens_price_per_million": 1,
+          "flex_cached_input_image_tokens_price_per_million": 0.1,
+          "batch_input_image_tokens_price_per_million": 1,
+          "batch_cached_input_image_tokens_price_per_million": 0.1,
+          "flex_output_image_tokens_price_per_million": 60,
+          "batch_output_image_tokens_price_per_million": 60
         },
         "image_generation": {
           "standard": {
@@ -754,7 +991,13 @@
         },
         "batch_input_tokens_price_per_million": 1,
         "batch_cached_tokens_price_per_million": 0.1,
-        "batch_output_tokens_price_per_million": 6
+        "batch_output_tokens_price_per_million": 6,
+        "priority_input_tokens_price_per_million": 3.6,
+        "priority_cached_tokens_price_per_million": 0.36,
+        "priority_output_tokens_price_per_million": 21.6,
+        "flex_input_tokens_price_per_million": 1,
+        "flex_cached_tokens_price_per_million": 0.1,
+        "flex_output_tokens_price_per_million": 6
       },
       "contextWindow": 65536,
       "capabilities": [
@@ -788,7 +1031,11 @@
         "description": "State-of-the-art image generation and editing for highly contextual native image creation.",
         "display_name": "Gemini 3 Pro Image (Nano Banana Pro)",
         "release_date": "2026-05-28",
-        "upstream_model": "gemini-3-pro-image"
+        "upstream_model": "gemini-3-pro-image",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 32768
@@ -798,15 +1045,26 @@
       "model": "vertex/gemini-3.1-flash-image",
       "provider": "vertex",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.5000000000",
       "outputTokensPricePerMillion": "3.0000000000",
       "cachedTokensPricePerMillion": "0.0500000000",
-      "cachingTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": "0.5000000000",
       "additionalPricePerMillion": {
         "grounding_google_search_per_thousand": 14,
         "image_tokens": {
-          "output_image_tokens_price_per_million": 60
+          "output_image_tokens_price_per_million": 60,
+          "input_image_tokens_price_per_million": 0.5,
+          "cached_input_image_tokens_price_per_million": 0.05,
+          "priority_input_image_tokens_price_per_million": null,
+          "priority_cached_input_image_tokens_price_per_million": null,
+          "priority_output_image_tokens_price_per_million": null,
+          "flex_input_image_tokens_price_per_million": 0.25,
+          "flex_cached_input_image_tokens_price_per_million": 0.025,
+          "batch_input_image_tokens_price_per_million": 0.25,
+          "batch_cached_input_image_tokens_price_per_million": 0.025,
+          "flex_output_image_tokens_price_per_million": 30,
+          "batch_output_image_tokens_price_per_million": 30
         },
         "image_generation": {
           "standard": {
@@ -819,7 +1077,13 @@
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.25,
         "batch_cached_tokens_price_per_million": 0.025,
-        "batch_output_tokens_price_per_million": 1.5
+        "batch_output_tokens_price_per_million": 1.5,
+        "priority_input_tokens_price_per_million": null,
+        "priority_cached_tokens_price_per_million": null,
+        "priority_output_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million": 0.25,
+        "flex_cached_tokens_price_per_million": 0.025,
+        "flex_output_tokens_price_per_million": 1.5
       },
       "contextWindow": 131072,
       "capabilities": [
@@ -854,7 +1118,13 @@
         "description": "Powerful, high-efficiency image generation and editing optimized for speed and high-volume use cases.",
         "display_name": "Gemini 3.1 Flash Image (Nano Banana 2)",
         "release_date": "2026-05-28",
-        "upstream_model": "gemini-3.1-flash-image"
+        "upstream_model": "gemini-3.1-flash-image",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 32768
@@ -864,14 +1134,25 @@
       "model": "vertex/gemini-3.1-flash-lite-image",
       "provider": "vertex",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.2500000000",
       "outputTokensPricePerMillion": "1.5000000000",
       "cachedTokensPricePerMillion": "0.0250000000",
-      "cachingTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": "0.2500000000",
       "additionalPricePerMillion": {
         "image_tokens": {
-          "output_image_tokens_price_per_million": 30
+          "output_image_tokens_price_per_million": 30,
+          "input_image_tokens_price_per_million": 0.25,
+          "cached_input_image_tokens_price_per_million": 0.025,
+          "priority_input_image_tokens_price_per_million": null,
+          "priority_cached_input_image_tokens_price_per_million": null,
+          "priority_output_image_tokens_price_per_million": null,
+          "flex_input_image_tokens_price_per_million": 0.125,
+          "flex_cached_input_image_tokens_price_per_million": 0.0125,
+          "batch_input_image_tokens_price_per_million": 0.125,
+          "batch_cached_input_image_tokens_price_per_million": 0.0125,
+          "flex_output_image_tokens_price_per_million": 15,
+          "batch_output_image_tokens_price_per_million": 15
         },
         "image_generation": {
           "standard": {
@@ -880,7 +1161,13 @@
         },
         "batch_input_tokens_price_per_million": 0.125,
         "batch_cached_tokens_price_per_million": 0.0125,
-        "batch_output_tokens_price_per_million": 0.75
+        "batch_output_tokens_price_per_million": 0.75,
+        "priority_input_tokens_price_per_million": null,
+        "priority_cached_tokens_price_per_million": null,
+        "priority_output_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million": 0.125,
+        "flex_cached_tokens_price_per_million": 0.0125,
+        "flex_output_tokens_price_per_million": 0.75
       },
       "contextWindow": 65536,
       "capabilities": [
@@ -913,12 +1200,16 @@
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-lite-image",
         "description": "Ultra-low-latency, cost-effective image generation and editing designed for high-volume interactive use cases.",
         "display_name": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite)",
-        "release_date": "2026-06-30",
+        "release_date": "2026-06-23",
         "reasoning_efforts": [
           "minimal",
           "high"
         ],
-        "upstream_model": "gemini-3.1-flash-lite-image"
+        "upstream_model": "gemini-3.1-flash-lite-image",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 4096
@@ -928,14 +1219,23 @@
       "model": "vertex/gemini-2.5-flash-image",
       "provider": "vertex",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.3000000000",
       "outputTokensPricePerMillion": "2.5000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
         "image_tokens": {
-          "output_image_tokens_price_per_million": 30
+          "output_image_tokens_price_per_million": 30,
+          "input_image_tokens_price_per_million": 0.3,
+          "cached_input_image_tokens_price_per_million": null,
+          "priority_input_image_tokens_price_per_million": null,
+          "priority_cached_input_image_tokens_price_per_million": null,
+          "priority_output_image_tokens_price_per_million": null,
+          "flex_input_image_tokens_price_per_million": 0.15,
+          "batch_input_image_tokens_price_per_million": 0.15,
+          "flex_output_image_tokens_price_per_million": 15,
+          "batch_output_image_tokens_price_per_million": 15
         },
         "image_generation": {
           "standard": {
@@ -943,7 +1243,12 @@
           }
         },
         "batch_input_tokens_price_per_million": 0.15,
-        "batch_output_tokens_price_per_million": 1.25
+        "batch_output_tokens_price_per_million": 1.25,
+        "priority_input_tokens_price_per_million": null,
+        "priority_cached_tokens_price_per_million": null,
+        "priority_output_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million": 0.15,
+        "flex_output_tokens_price_per_million": 1.25
       },
       "contextWindow": 32768,
       "capabilities": [
@@ -978,7 +1283,24 @@
         "deprecated": true,
         "retirement_date": "2026-10-02",
         "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement.",
-        "upstream_model": "gemini-2.5-flash-image"
+        "upstream_model": "gemini-2.5-flash-image",
+        "regions": [
+          "europe-central2",
+          "europe-north1",
+          "europe-southwest1",
+          "europe-west1",
+          "europe-west4",
+          "europe-west8",
+          "us-central1",
+          "us-east1",
+          "us-east4",
+          "us-east5",
+          "us-south1",
+          "us-west1",
+          "us-west4",
+          "global"
+        ],
+        "launch_stage": "GA"
       },
       "limits": {
         "max_output_tokens": 32768
@@ -998,7 +1320,10 @@
         "input_image_per_million_tokens": 0.45,
         "input_video_per_million_tokens": 12,
         "batch_input_tokens_price_per_million": 0.1,
-        "batch_output_tokens_price_per_million": null
+        "batch_output_tokens_price_per_million": null,
+        "batch_input_image_per_million_tokens": 0.225,
+        "batch_input_video_per_million_tokens": 6,
+        "batch_input_audio_per_million_tokens": 3.25
       },
       "contextWindow": 8192,
       "capabilities": [
@@ -1036,7 +1361,13 @@
             "128-3072"
           ]
         },
-        "upstream_model": "gemini-embedding-2"
+        "upstream_model": "gemini-embedding-2",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
       }
     },
     {
@@ -1045,7 +1376,7 @@
       "mode": "embedding",
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.1500000000",
-      "outputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": "0.0000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
@@ -1086,7 +1417,7 @@
       "mode": "embedding",
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.0250000000",
-      "outputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": "0.0000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
@@ -1127,7 +1458,7 @@
       "mode": "embedding",
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.0250000000",
-      "outputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": "0.0000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
@@ -1789,8 +2120,7 @@
         "display_name": "gpt-oss-120b",
         "release_date": "2025-08-13",
         "regions": [
-          "global",
-          "us-central1"
+          "global"
         ],
         "launch_stage": "ga",
         "upstream_model": "openai/gpt-oss-120b-maas"
@@ -2445,7 +2775,8 @@
       ],
       "modalities": {
         "input": [
-          "text"
+          "text",
+          "document"
         ],
         "output": [
           "text"
@@ -2514,7 +2845,7 @@
       "mode": "embedding",
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.0250000000",
-      "outputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": "0.0000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
@@ -2565,7 +2896,7 @@
       "mode": "embedding",
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.0150000000",
-      "outputTokensPricePerMillion": null,
+      "outputTokensPricePerMillion": "0.0000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "additionalPricePerMillion": {
@@ -2616,18 +2947,30 @@
       "mode": "chat",
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.5000000000",
-      "outputTokensPricePerMillion": "3.0000000000",
+      "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": "0.0500000000",
-      "cachingTokensPricePerMillion": "0.0500000000",
+      "cachingTokensPricePerMillion": "0.5000000000",
       "additionalPricePerMillion": {
         "caching_storage_per_million_per_hour": 1,
         "grounding_google_search_per_thousand": 14,
         "input_tokens_price_per_million_audio": 1,
         "cached_tokens_price_per_million_audio": 0.1,
-        "caching_tokens_price_per_million_audio": 0.1,
+        "caching_tokens_price_per_million_audio": 1,
         "batch_input_tokens_price_per_million": 0.25,
         "batch_cached_tokens_price_per_million": null,
-        "batch_output_tokens_price_per_million": 1.5
+        "batch_output_tokens_price_per_million": 1.5,
+        "priority_input_tokens_price_per_million": 0.9,
+        "priority_cached_tokens_price_per_million": 0.09,
+        "priority_output_tokens_price_per_million": 5.4,
+        "flex_input_tokens_price_per_million": 0.25,
+        "flex_cached_tokens_price_per_million": null,
+        "flex_output_tokens_price_per_million": 1.5,
+        "priority_input_tokens_price_per_million_audio": 1.8,
+        "priority_cached_tokens_price_per_million_audio": 0.18,
+        "flex_input_tokens_price_per_million_audio": 0.5,
+        "flex_cached_tokens_price_per_million_audio": null,
+        "batch_input_tokens_price_per_million_audio": 0.5,
+        "batch_cached_tokens_price_per_million_audio": null
       },
       "contextWindow": 1048576,
       "capabilities": [

@@ -33,6 +33,7 @@ Related files have separate locations:
 |---|---|
 | [docs/pricing.md](docs/pricing.md) | Pricing interpretation and update rules |
 | [scripts/validate-catalogs.ts](scripts/validate-catalogs.ts) | Runtime validation of model catalogs |
+| [scripts/catalog-policy.ts](scripts/catalog-policy.ts) | Capability, image-provider, and retirement rules |
 | [tests/](tests/) | Validator regression checks, CLI checks, and the type-check fixture |
 
 ## Validation
@@ -47,6 +48,7 @@ After pricing or schema changes, run the regression checks:
 
 ```sh
 bun tests/validate.test.ts
+bun tests/catalog-policy.test.ts
 bun tests/validate-cli.test.ts
 ```
 

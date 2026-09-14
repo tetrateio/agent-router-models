@@ -91,12 +91,11 @@ export type ModelOutputModality = (typeof MODEL_OUTPUT_MODALITIES)[number];
 /** USD rates. Null means no published rate; zero means explicitly free. */
 export type Price = number | null;
 
-export const IMAGE_TOKEN_PRICE_KEYS = [
+export const IMAGE_TOKEN_PRICE_BASES = [
   "input_image_tokens_price_per_million",
   "output_image_tokens_price_per_million",
   "cached_input_image_tokens_price_per_million",
 ] as const;
-export type ImageTokenPricing = Partial<Record<(typeof IMAGE_TOKEN_PRICE_KEYS)[number], Price>>;
 
 /** USD per generated image, indexed by documented quality and size. */
 export interface ImageGenerationPricing {
@@ -115,15 +114,9 @@ export const TOKEN_PRICE_BASES = {
 export type TokenPriceKey = keyof typeof TOKEN_PRICE_BASES;
 export const SERVICE_TIERS = ["batch", "flex", "fast_mode", "priority"] as const;
 export type ServiceTier = (typeof SERVICE_TIERS)[number];
-export type ServicePriceKey = `${ServiceTier}_${TokenPriceKey}${"" | "_high_context"}`;
 
-export type HighContextPriceKey = `${TokenPriceKey}_high_context`;
-
-/** Supplementary rate fields; service and long-context fields derive from the types above. */
-export const ADDITIONAL_RATE_KEYS = [
-  "caching_1h_per_million",
-  "caching_5m_per_million",
-  "caching_storage_per_million_per_hour",
+/** Existing media units retain their names and meaning under each service. */
+export const MEDIA_TOKEN_RATE_KEYS = [
   "input_tokens_price_per_million_audio",
   "output_tokens_price_per_million_audio",
   "cached_tokens_price_per_million_audio",
@@ -131,11 +124,46 @@ export const ADDITIONAL_RATE_KEYS = [
   "input_audio_per_million_tokens",
   "input_image_per_million_tokens",
   "input_video_per_million_tokens",
+] as const;
+export type MediaTokenRateKey = (typeof MEDIA_TOKEN_RATE_KEYS)[number];
+
+/** Storage and processed images have independent units, without context tiers. */
+export const SERVICE_UNIT_RATE_KEYS = [
+  "caching_storage_per_million_per_hour",
+  "input_image_price_per_image",
+] as const;
+export type ServicePriceKey =
+  | `${ServiceTier}_${TokenPriceKey | MediaTokenRateKey}${"" | "_high_context"}`
+  | `${ServiceTier}_${(typeof SERVICE_UNIT_RATE_KEYS)[number]}`;
+export type HighContextPriceKey = `${TokenPriceKey | MediaTokenRateKey}_high_context`;
+
+export type ImageTokenPriceKey =
+  `${"" | `${ServiceTier}_`}${(typeof IMAGE_TOKEN_PRICE_BASES)[number]}${"" | "_high_context"}`;
+export const IMAGE_TOKEN_PRICE_KEYS: readonly ImageTokenPriceKey[] =
+  (["", ...SERVICE_TIERS.map(tier => `${tier}_`)] as const).flatMap(prefix =>
+    IMAGE_TOKEN_PRICE_BASES.flatMap(key => [
+      `${prefix}${key}`, `${prefix}${key}_high_context`,
+    ] as ImageTokenPriceKey[]));
+export type ImageTokenPricing = Partial<Record<ImageTokenPriceKey, Price>>;
+
+export type ImageGenerationPriceKey = "image_generation" | `${ServiceTier}_image_generation`;
+export const IMAGE_GENERATION_PRICE_KEYS: readonly ImageGenerationPriceKey[] = [
+  "image_generation", ...SERVICE_TIERS.map(tier => `${tier}_image_generation` as const),
+];
+
+/** Supplementary rate fields; service and long-context fields derive from the types above. */
+export const ADDITIONAL_RATE_KEYS = [
+  "caching_1h_per_million",
+  "caching_5m_per_million",
+  ...MEDIA_TOKEN_RATE_KEYS,
+  ...SERVICE_UNIT_RATE_KEYS,
   "grounding_google_search_per_thousand",
   "grounding_google_maps_per_thousand",
   "grounding_your_data_per_thousand",
   "web_grounding_enterprise_per_thousand",
   "x_search_per_thousand_calls",
+  "x_search_per_thousand_posts",
+  "x_search_per_thousand_user_profiles",
   "web_search_per_thousand_calls",
   "web_search_per_thousand_sources",
   "code_execution_per_thousand_calls",
@@ -160,8 +188,7 @@ type AdditionalScalarKey =
 /** Closed pricing contract. See ../docs/pricing.md for units and tier selection. */
 export type AdditionalPricing = Partial<Record<AdditionalScalarKey, Price>> & {
   image_tokens?: ImageTokenPricing;
-  image_generation?: ImageGenerationPricing;
-};
+} & Partial<Record<ImageGenerationPriceKey, ImageGenerationPricing>>;
 
 export interface ModelLimits {
   // Vision / file-upload caps

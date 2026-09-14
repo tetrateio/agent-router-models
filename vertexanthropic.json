@@ -11,7 +11,7 @@
       "cachedTokensPricePerMillion": "0.2500000000",
       "cachingTokensPricePerMillion": "12.5000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
+        "web_search_per_thousand_calls": null,
         "caching_5m_per_million": 12.5,
         "caching_1h_per_million": 20,
         "batch_input_tokens_price_per_million": 5,
@@ -57,7 +57,8 @@
           "global",
           "us",
           "eu"
-        ]
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -70,7 +71,7 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
+        "web_search_per_thousand_calls": null,
         "caching_5m_per_million": 6.25,
         "caching_1h_per_million": 10,
         "batch_input_tokens_price_per_million": 2.5,
@@ -118,7 +119,8 @@
           "global",
           "us",
           "eu"
-        ]
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -131,7 +133,7 @@
       "cachedTokensPricePerMillion": "0.2000000000",
       "cachingTokensPricePerMillion": "2.5000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
+        "web_search_per_thousand_calls": null,
         "caching_5m_per_million": 2.5,
         "caching_1h_per_million": 4.0,
         "batch_input_tokens_price_per_million": 1,
@@ -176,7 +178,8 @@
           "global",
           "us",
           "eu"
-        ]
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -189,7 +192,7 @@
       "cachedTokensPricePerMillion": "1.0000000000",
       "cachingTokensPricePerMillion": "12.5000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
+        "web_search_per_thousand_calls": null,
         "caching_5m_per_million": 12.5,
         "caching_1h_per_million": 20,
         "batch_input_tokens_price_per_million": 5,
@@ -237,7 +240,8 @@
           "global",
           "us",
           "eu"
-        ]
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -250,7 +254,7 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
+        "web_search_per_thousand_calls": null,
         "caching_5m_per_million": 6.25,
         "caching_1h_per_million": 10,
         "batch_input_tokens_price_per_million": 2.5,
@@ -299,7 +303,8 @@
           "global",
           "us",
           "eu"
-        ]
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -312,7 +317,7 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
+        "web_search_per_thousand_calls": null,
         "caching_5m_per_million": 6.25,
         "caching_1h_per_million": 10,
         "batch_input_tokens_price_per_million": 2.5,
@@ -361,7 +366,8 @@
           "global",
           "us",
           "eu"
-        ]
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -420,13 +426,12 @@
         "display_name": "Claude Sonnet 4.6 on Google Cloud",
         "release_date": "2026-02-17",
         "regions": [
-          "global",
-          "us",
-          "eu",
-          "us-east5",
+          "asia-southeast1",
           "europe-west1",
-          "asia-southeast1"
-        ]
+          "us-east5",
+          "global"
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -485,13 +490,12 @@
         "display_name": "Claude Opus 4.6 on Google Cloud",
         "release_date": "2026-02-05",
         "regions": [
-          "global",
-          "us",
-          "eu",
-          "us-east5",
+          "asia-southeast1",
           "europe-west1",
-          "asia-southeast1"
-        ]
+          "us-east5",
+          "global"
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -549,13 +553,12 @@
         "display_name": "Claude Opus 4.5 on Google Cloud",
         "release_date": "2025-11-24",
         "regions": [
-          "global",
-          "us",
-          "eu",
-          "us-east5",
+          "asia-southeast1",
           "europe-west1",
-          "asia-southeast1"
-        ]
+          "us-east5",
+          "global"
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -585,7 +588,8 @@
         "batch_caching_1h_per_million": 3,
         "batch_caching_1h_per_million_high_context": null,
         "batch_cached_tokens_price_per_million": 0.15,
-        "batch_cached_tokens_price_per_million_high_context": null
+        "batch_cached_tokens_price_per_million_high_context": null,
+        "caching_5m_per_million_high_context": 7.5
       },
       "contextWindow": 1000000,
       "capabilities": [
@@ -613,7 +617,8 @@
         "max_output_tokens": 64000,
         "high_context": 200000,
         "rpm": 1500,
-        "tpm": 1500000
+        "tpm": 1500000,
+        "high_context_comparison": "gte"
       },
       "metadata": {
         "aliases": [
@@ -624,14 +629,13 @@
         "display_name": "Claude Sonnet 4.5 on Google Cloud",
         "release_date": "2025-09-29",
         "regions": [
-          "global",
-          "us",
-          "eu",
-          "us-east5",
+          "asia-southeast1",
           "europe-west1",
-          "asia-southeast1"
+          "us-east5",
+          "global"
         ],
-        "knowledge_cutoff": "2025-07-01"
+        "knowledge_cutoff": "2025-07-01",
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -691,7 +695,8 @@
           "global",
           "us-east5",
           "europe-west1"
-        ]
+        ],
+        "launch_stage": "Generally available"
       }
     },
     {
@@ -752,122 +757,8 @@
           "global",
           "us-east5"
         ],
-        "deprecated": false
-      }
-    },
-    {
-      "model": "claude-opus-4",
-      "provider": "vertexanthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": null,
-      "outputTokensPricePerMillion": null,
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
-        "batch_input_tokens_price_per_million": null,
-        "batch_output_tokens_price_per_million": null
-      },
-      "contextWindow": 200000,
-      "capabilities": [
-        "pdf_support",
-        "prompt_caching",
-        "reasoning",
-        "tool_choice",
-        "vision",
-        "web_search"
-      ],
-      "modalities": {
-        "input": [
-          "document",
-          "image",
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://aiplatform.googleapis.com/v1/"
-      ],
-      "limits": {
-        "max_output_tokens": 32000,
-        "rpm": 25,
-        "tpm": 60000
-      },
-      "metadata": {
-        "aliases": [
-          "claude-opus-4"
-        ],
-        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4",
-        "description": "A state-of-the-art model for coding and agent capabilities, especially agentic search.",
-        "display_name": "Claude Opus 4 on Google Cloud",
-        "release_date": "2025-05-22",
-        "regions": [
-          "global",
-          "us-east5"
-        ],
-        "knowledge_cutoff": "2024-11-01",
-        "deprecated": false
-      }
-    },
-    {
-      "model": "claude-sonnet-4",
-      "provider": "vertexanthropic",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": null,
-      "outputTokensPricePerMillion": null,
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10,
-        "batch_input_tokens_price_per_million": null,
-        "batch_output_tokens_price_per_million": null
-      },
-      "contextWindow": 1000000,
-      "capabilities": [
-        "pdf_support",
-        "prompt_caching",
-        "reasoning",
-        "tool_choice",
-        "vision",
-        "web_search"
-      ],
-      "modalities": {
-        "input": [
-          "document",
-          "image",
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://aiplatform.googleapis.com/v1/"
-      ],
-      "limits": {
-        "max_output_tokens": 64000,
-        "rpm": 35,
-        "tpm": 276000
-      },
-      "metadata": {
-        "aliases": [
-          "claude-sonnet-4"
-        ],
-        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-4",
-        "description": "Balances performance for coding with the speed and cost for high-volume use cases.",
-        "display_name": "Claude Sonnet 4 on Google Cloud",
-        "release_date": "2025-05-22",
-        "regions": [
-          "global",
-          "us-east5",
-          "europe-west1"
-        ],
-        "knowledge_cutoff": "2025-03-01",
-        "deprecated": false
+        "deprecated": false,
+        "launch_stage": "Generally available"
       }
     }
   ]
