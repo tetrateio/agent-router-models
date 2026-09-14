@@ -1,5 +1,87 @@
 # 2026-09-14 TARS MODEL UPDATE
 
+Scope: Groq only. This update checks all five existing records against current Groq documentation.
+
+## New Models:
+
+- [Groq] None. The current index contains no additional model that meets the catalog requirements.
+
+## Price Changes:
+
+- [Groq] Standard, cached-input, and Batch token prices did not change. The catalog now also records the existing Flex rates.
+
+## Deprecated Models:
+
+- [Groq] No new deprecation affects the five cataloged models.
+
+## Retired Models:
+
+- [Groq] No new retirement affects the five cataloged models.
+
+## Other Updates:
+
+- [Groq] All five records now include Flex prices. Flex uses standard prices and offers paid customers ten times the standard rate limits. Capacity failures remain possible. [Flex documentation](https://console.groq.com/docs/flex-processing).
+- [Groq] GPT OSS 20B and GPT OSS 120B now list low, medium, and high reasoning settings.
+- [Groq] Qwen 3.6 now lists reasoning on or off. Qwen 3.8 also lists low, medium, and high settings. [Reasoning documentation](https://console.groq.com/docs/reasoning).
+- [Groq] Qwen 3.6, Qwen 3.8, and Safety GPT OSS 20B now include their documented TruePoint quantization.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [Groq] None.
+
+### Corrections to earlier updates
+
+- [Groq] The 2026-08-17 block described Compound and Compound Mini as models without published prices. Their current pages publish partial prices by underlying model. The exclusion now reflects incomplete, mixed-model pricing. This does not establish what Groq published on that earlier date.
+
+### Follow-up work
+
+- [Groq] Qwen 3.6 has conflicting image limits. Its [model page](https://console.groq.com/docs/model/qwen/qwen3.6-27b) lists three images, but the [vision guide](https://console.groq.com/docs/vision) lists five. The record retains `max_input_images: 3`.
+- [Groq] Safeguard has conflicting tool documentation. Its [model page](https://console.groq.com/docs/model/openai/gpt-oss-safeguard-20b) lists browser search and code execution. The [tool overview](https://console.groq.com/docs/tool-use/overview) marks built-in tools unsupported. The [browser-search guide](https://console.groq.com/docs/tool-use/built-in-tools/browser-search) explicitly includes Safeguard. The [code-execution guide](https://console.groq.com/docs/tool-use/built-in-tools/code-execution) excludes it from its supported list. The record retains `web_search` and omits `code_execution`.
+- [Groq] Safeguard's model page describes low, medium, and high reasoning effort. The [reasoning guide](https://console.groq.com/docs/reasoning) limits those settings to other named models. Its `reasoning_efforts` field remains absent.
+- [Groq] The tool guides link to [Groq pricing](https://groq.com/pricing), which redirects to a homepage without prices. GPT OSS browser-search and code-execution charges remain unverified. Compound tool charges do not establish those models' charges.
+- [Groq] Compound pricing needs separate rates for each underlying model and tool. Both systems publish GPT OSS 120B rates of $0.15 input and $0.60 output per million tokens. Compound lists pending Llama 4 Scout rates. Compound Mini lists pending Llama 3.3 70B rates. The schema cannot represent these routing-dependent inference prices. [Compound](https://console.groq.com/docs/compound/systems/compound), [Compound Mini](https://console.groq.com/docs/compound/systems/compound-mini), and [usage breakdowns](https://console.groq.com/docs/compound).
+- [Groq] Compound tools cost $5 for basic search, $8 for advanced search, and $1 for website visits per 1,000 requests. Code execution costs $0.18 per hour. These prices remain in the local audit with their system scope and unresolved search-level and website-visit mappings.
+
+### Schema and catalog changes
+
+- [Groq] The catalog retains five enabled records. No schema change is necessary.
+- [Groq] All five records gain `flex_input_tokens_price_per_million` and `flex_output_tokens_price_per_million`. The three GPT OSS records also gain `flex_cached_tokens_price_per_million`.
+- [Groq] Flex input/output prices per million tokens are $0.15/$0.60 for GPT OSS 120B and $0.075/$0.30 for GPT OSS 20B and Safeguard. Qwen 3.6 costs $0.60/$3.00. Qwen 3.8 costs $0.80/$4.00.
+- [Groq] Flex cached-input prices are $0.075 for GPT OSS 120B and $0.037 for GPT OSS 20B and Safeguard. These preserve the exact published rounded rates. [Caching documentation](https://console.groq.com/docs/prompt-caching) applies caching to all supported API requests. [Flex documentation](https://console.groq.com/docs/flex-processing) specifies the same prices as standard processing.
+- [Groq] Four records gain `metadata.reasoning_efforts`. Qwen 3.6 accepts `none` and `default`. Qwen 3.8 accepts `none`, `default`, `low`, `medium`, and `high`. GPT OSS 20B and 120B accept `low`, `medium`, and `high`.
+- [Groq] Qwen 3.6, Qwen 3.8, and Safeguard gain `metadata.quantization: Groq's TruePoint Numerics` from their model pages.
+- [Groq] Each Qwen image counts as 2,048 input tokens under the unified input rate. This conversion is not a separate image charge. [Vision documentation](https://console.groq.com/docs/vision).
+- [Groq] The existing `rpm` and `tpm` values describe the Developer plan. Flex limits and account-specific limits do not replace those values.
+
+### Models that stay out of the catalog
+
+- [Groq] `llama-3.1-8b-instant`, `llama-3.3-70b-versatile`, and `minimaxai/minimax-m2.7` remain Enterprise models with contact-sales pricing. [Model index](https://console.groq.com/docs/models).
+- [Groq] `minimaxai/minimax-m2.5` and `qwen/qwen3-vl-32b-instruct` remain Enterprise exclusions from the latest [changelog entry](https://console.groq.com/docs/changelog).
+- [Groq] `whisper-large-v3` and `whisper-large-v3-turbo` require audio input. `canopylabs/orpheus-arabic-saudi` and `canopylabs/orpheus-v1-english` produce audio. Their modes are outside this catalog's accepted modes. [Model index](https://console.groq.com/docs/models).
+- [Groq] `meta-llama/llama-prompt-guard-2-22m` and `meta-llama/llama-prompt-guard-2-86m` remain excluded as DeBERTa classifiers. Groq exposes them through Chat Completions, but the catalog excludes the classifier task type. [22M model page](https://console.groq.com/docs/model/meta-llama/llama-prompt-guard-2-22m), [86M model page](https://console.groq.com/docs/model/meta-llama/llama-prompt-guard-2-86m).
+- [Groq] `groq/compound` and `groq/compound-mini` remain excluded for incomplete, mixed-model inference pricing. See Follow-up work.
+- [Groq] The [Performance tier](https://console.groq.com/docs/performance-tier) requires an Enterprise agreement and provisioned capacity. It publishes no token rate for the catalog.
+
+### Prices that did not change
+
+- [Groq] All five records retain their standard input/output prices and context/output limits. All three GPT OSS records retain their published cached-input rates. The model index and all five model pages agree on these values.
+- [Groq] GPT OSS 120B retains Batch input/output rates of $0.075/$0.30 per million tokens. GPT OSS 20B retains $0.0375/$0.15. Batch does not stack with caching discounts. Other cataloged models lack documented Batch eligibility. [Batch documentation](https://console.groq.com/docs/batch).
+- [Groq] No cataloged model has a context window greater than 200,000 tokens. Qwen 3.8 retains the explicitly published 131,042-token context window.
+- [Groq] Cache-write rates remain null. Groq describes automatic caching without an additional fee but publishes no separate cache-write token rate. Qwen cache-read rates remain null because Qwen lacks documented caching support.
+
+### Sources and coverage
+
+- [Groq] This run read the change feed first, using 2026-09-07 as the previous broad source-coverage baseline. Later partial runs did not advance unchecked coverage. The [feed](https://console.groq.com/docs/changelog) still ends on 2026-04-18. The latest [deprecation notice](https://console.groq.com/docs/deprecations) remains 2026-08-16.
+- [Groq] Browser checks covered the index, all five model pages, deprecations, and the Developer-plan rate table. They also covered vision, reasoning, structured outputs, caching, tool guides, Batch, Flex, Performance, service tiers, and both Compound pages.
+- [Groq] HTTP fetches supplied source text for a scripted comparison of every existing field and every additional-price cell. Local evidence under ignored `audits/2026-09-14/groq-focused/` records source URLs, statuses, exclusions, and comparisons.
+- [Groq] The earlier browser and HTTP access failures did not recur. Source verification remains incomplete for the named conflicts and redirected tool-pricing source. Structural checks do not resolve those gaps.
+- [Groq] All eight catalogs pass the catalog validator. Pricing, catalog-policy, and CLI regression checks pass.
+
+
+# 2026-09-14 TARS MODEL UPDATE
+
 ## New Models:
 
 - [All] None. The catalogs retain 496 records.
