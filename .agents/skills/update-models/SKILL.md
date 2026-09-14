@@ -21,8 +21,8 @@ model by model is not done.
 
 `AGENTS.md` holds the field rules — accepted modes, capability mapping, the `tool_choice`
 rule — and `schemas/models.ts` holds the record shape. Read both before you touch a
-record. For every pricing update, also read [the shared pricing contract](../../../schemas/pricing.md).
-It defines units, service tiers, threshold boundaries, migration rules, and validation.
+record. For every pricing update, also read [the shared pricing contract](../../../docs/pricing.md).
+It defines units, service tiers, threshold boundaries, compatibility rules, and validation.
 Batch prices use absolute `batch_*` cells. The validator rejects the removed `batch_discount_multiplier` field.
 Keep supporting audits locally under ignored `audits/`; exclude them from commits.
 Record material source gaps and unresolved pricing in the changelog notes.
@@ -38,7 +38,7 @@ Record material source gaps and unresolved pricing in the changelog notes.
    state. A scripted comparison is what makes "every model accounted for" checkable.
 4. **Apply** the drift. Prices and limits take the provider's current value.
 5. **Add** models the provider lists that the catalog lacks, within the `AGENTS.md` modes.
-6. **Validate** using the shared pricing contract. Every catalog must pass `bun schemas/validate.ts`.
+6. **Validate** using the shared pricing contract. Every catalog must pass `bun scripts/validate-catalogs.ts`.
    Run its regression checks after schema or pricing changes. Record blocked sources separately; validation does not complete source verification.
 
 Batch the fetches. Providers are independent, so fetch several at once.
@@ -235,7 +235,7 @@ These recur every run. Decide them the same way each time.
   the catalog. Remove the record when a cataloged model moves to Enterprise, and name it
   under **Models that stay out of the catalog**.
 - **Pricing dimensions** — inventory every additional-pricing key and compare all published service tables.
-  Follow [the shared pricing contract](../../../schemas/pricing.md) for absolute rates, promotion scope, and exact threshold operators.
+  Follow [the shared pricing contract](../../../docs/pricing.md) for absolute rates, promotion scope, and exact threshold operators.
   Finish when every changed cell has a source and a declared field, or an unresolved local audit entry.
 - **Long-context coverage** — verify whether each reachable tier applies to the model.
   Name verified flat models above 200k under **Prices that did not change**.

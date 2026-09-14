@@ -1,13 +1,13 @@
-// Run: bun schemas/validate-cli.test.ts
+// Run: bun tests/validate-cli.test.ts
 import { strictEqual, match } from "node:assert"
 import { mkdtempSync, writeFileSync, rmSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { spawnSync } from "node:child_process"
-import { PROVIDERS } from "./models.ts"
+import { PROVIDERS } from "../schemas/models.ts"
 
 const directory = mkdtempSync(join(tmpdir(), "catalog-validation-"))
-const run = () => spawnSync(process.execPath, [join(import.meta.dir, "validate.ts")], { cwd: directory, encoding: "utf8" })
+const run = () => spawnSync(process.execPath, [join(import.meta.dir, "../scripts/validate-catalogs.ts")], { cwd: directory, encoding: "utf8" })
 try {
   for (const provider of PROVIDERS) writeFileSync(join(directory, `${provider}.json`), '{"models":[]}')
   strictEqual(run().status, 0)

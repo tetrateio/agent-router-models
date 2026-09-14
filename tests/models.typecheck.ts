@@ -1,5 +1,5 @@
-// Compile with tsc --noEmit --strict --target es2022 schemas/models.typecheck.ts
-import type { AdditionalPricing, ModelLimits } from "./models"
+// Compile with tsc --noEmit --strict --target es2022 tests/models.typecheck.ts
+import type { AdditionalPricing, ModelLimits } from "../schemas/models"
 const valid: AdditionalPricing = {
   fast_mode_cached_tokens_price_per_million: null,
   batch_input_tokens_price_per_million_high_context: 1,

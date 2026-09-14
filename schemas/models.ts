@@ -1,23 +1,18 @@
 /**
- * Model Catalog Extraction Schema
- * ---------------------------------------------------------------------------
- * Target shape for data extracted from provider documentation via agentic
- * web search. Mirrors `schema-prod.ts` so extracted objects can be upserted
- * directly into the `ai_models` table (minus DB-managed fields:
- * `id` / `createdAt` / `updatedAt`).
+ * Model catalog type reference.
  *
- * Conventions:
- *   - Top-level fields use camelCase (match DB column names)
- *   - JSONB payload keys (metadata, limits, additionalPricePerMillion)
- *     use snake_case
- *   - All enums are strict literal unions
- *   - Top-level token pricing is a decimal-formatted string (matches the
- *     Drizzle `decimal` column type in `schema-prod.ts`) or `null` when
- *     no rate is published
+ * Top-level keys use camelCase. JSON payload keys use snake_case.
+ * Top-level token prices are USD per million as decimal strings, or null when
+ * no rate is published. Additional rates are numeric with field-specific units.
+ * Database-managed IDs and timestamps are outside this catalog contract.
+ *
+ * Literal field definitions are shared with validation tooling. This file
+ * contains declarations only; pricing interpretation is documented in
+ * ../docs/pricing.md.
  */
 
 // =============================================================================
-// ENUMS (strict literal unions)
+// KNOWN ENUM VALUES (see ModelCapability for its extensible type)
 // =============================================================================
 
 export const PROVIDERS = [
@@ -122,17 +117,9 @@ export const SERVICE_TIERS = ["batch", "flex", "fast_mode", "priority"] as const
 export type ServiceTier = (typeof SERVICE_TIERS)[number];
 export type ServicePriceKey = `${ServiceTier}_${TokenPriceKey}${"" | "_high_context"}`;
 
-export const TOKEN_PRICE_KEYS = Object.keys(TOKEN_PRICE_BASES) as TokenPriceKey[];
-export const HIGH_CONTEXT_PRICE_KEYS = TOKEN_PRICE_KEYS.map(
-  (key) => `${key}_high_context` as const,
-);
-export const SERVICE_PRICE_KEYS = SERVICE_TIERS.flatMap((tier) =>
-  TOKEN_PRICE_KEYS.flatMap((key) => [
-    `${tier}_${key}` as ServicePriceKey,
-    `${tier}_${key}_high_context` as ServicePriceKey,
-  ]),
-);
+export type HighContextPriceKey = `${TokenPriceKey}_high_context`;
 
+/** Supplementary rate fields; service and long-context fields derive from the types above. */
 export const ADDITIONAL_RATE_KEYS = [
   "caching_1h_per_million",
   "caching_5m_per_million",
@@ -155,8 +142,6 @@ export const ADDITIONAL_RATE_KEYS = [
   "code_execution_per_hour",
   "file_attachments_per_thousand_calls",
   "collections_search_per_thousand_calls",
-  ...HIGH_CONTEXT_PRICE_KEYS,
-  ...SERVICE_PRICE_KEYS,
 ] as const;
 
 /** Dimensionless regional surcharges. Service-tier rates are always absolute. */
@@ -168,9 +153,11 @@ export const PRICING_MULTIPLIER_KEYS = [
 
 type AdditionalScalarKey =
   | (typeof ADDITIONAL_RATE_KEYS)[number]
-  | (typeof PRICING_MULTIPLIER_KEYS)[number];
+  | (typeof PRICING_MULTIPLIER_KEYS)[number]
+  | HighContextPriceKey
+  | ServicePriceKey;
 
-/** Closed pricing contract. See pricing.md for units, tier selection and migration. */
+/** Closed pricing contract. See ../docs/pricing.md for units and tier selection. */
 export type AdditionalPricing = Partial<Record<AdditionalScalarKey, Price>> & {
   image_tokens?: ImageTokenPricing;
   image_generation?: ImageGenerationPricing;

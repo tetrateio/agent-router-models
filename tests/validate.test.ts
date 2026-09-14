@@ -1,11 +1,11 @@
-// Self-check for the long-context tier rules. Run: bun schemas/validate.test.ts
+// Self-check for the long-context tier rules. Run: bun tests/validate.test.ts
 //
 // Each case is a record shape that has appeared in a catalog, or that a future
 // run could reintroduce. The multiplier cases are the ones that matter: xAI and
 // OpenAI both published their tier as a ratio, and the OpenAI form hid inside
 // `additionalPricePerMillion.extra` where a search for "high_context" missed it.
 
-import { tierErrors } from "./validate.ts"
+import { tierErrors } from "../scripts/validate-catalogs.ts"
 
 const CASES: [string, any, boolean][] = [
   ["multiplier parked in extra", { additionalPricePerMillion: { extra: { input_tokens_above_272k_multiplier: 2 } }, limits: {} }, true],

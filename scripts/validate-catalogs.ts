@@ -1,11 +1,19 @@
-// Validate the pricing contract on every provider catalog: bun schemas/validate.ts
+// Validate the pricing contract on every provider catalog: bun scripts/validate-catalogs.ts
 import { readFileSync } from "node:fs"
 import {
   ADDITIONAL_RATE_KEYS, IMAGE_TOKEN_PRICE_KEYS, PRICING_MULTIPLIER_KEYS,
-  PROVIDERS, SERVICE_TIERS, TOKEN_PRICE_BASES, TOKEN_PRICE_KEYS,
-} from "./models.ts"
+  PROVIDERS, SERVICE_TIERS, TOKEN_PRICE_BASES, type TokenPriceKey,
+} from "../schemas/models.ts"
 
-const rateKeys = new Set<string>(ADDITIONAL_RATE_KEYS)
+const TOKEN_PRICE_KEYS = Object.keys(TOKEN_PRICE_BASES) as TokenPriceKey[]
+// Generate runtime keys from the reference's literal declarations.
+const rateKeys = new Set<string>([
+  ...ADDITIONAL_RATE_KEYS,
+  ...TOKEN_PRICE_KEYS.map(key => `${key}_high_context`),
+  ...SERVICE_TIERS.flatMap(tier => TOKEN_PRICE_KEYS.flatMap(key => [
+    `${tier}_${key}`, `${tier}_${key}_high_context`,
+  ])),
+])
 const multiplierKeys = new Set<string>(PRICING_MULTIPLIER_KEYS)
 const imageKeys = new Set<string>(IMAGE_TOKEN_PRICE_KEYS)
 const object = (v: unknown): v is Record<string, any> =>

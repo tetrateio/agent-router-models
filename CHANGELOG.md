@@ -9,7 +9,7 @@
 - Removed `batch_discount_multiplier` from all 137 affected records and from the schema. Existing absolute Batch rates remain intact; 105 records gain explicit input/output cells. Unknown prices remain null.
 - Batch prices use provider-specific cache and long-context cells. Readers must use absolute Batch prices directly; removing the factor is a breaking change.
 - Groq receives only an arithmetic conversion of its two existing Batch entries; current source verification remains blocked. Separate Batch media dimensions are not inferred.
-- Both local update skills now share [one pricing contract](schemas/pricing.md), including source coverage, exact thresholds, and promotion rules. Production consumer compatibility remains unverified outside this repository.
+- Both local update skills now share [one pricing contract](docs/pricing.md), including source coverage, exact thresholds, and promotion rules. Production consumer compatibility remains unverified outside this repository.
 
 ## New Models:
 
@@ -171,7 +171,8 @@
 - [DeepInfra] Flat Priority and Flex fields contain absolute rates, calculated once from current promotional token prices. GLM-5.2 explicit cache retention uses blocks of 1,024 tokens.
 - [OpenAI] Flat `batch_*`, `flex_*`, and `fast_mode_*` fields store absolute service rates, including long-context overrides. Null cached cells remain null. Missing cached rates cannot be inferred from Standard prices.
 - [VertexAnthropic] Removed `structured_outputs` from all 14 records because Google's model capability tables omit it. Removed `reasoning` from Fable 5.1, Opus 5, Sonnet 5, Fable 5, and Opus 4.5 for the same reason.
-- [All] Pricing validation covers every catalog, including unknown keys, numeric units, media tables, and service-specific long-context rates. Regression checks cover migration and CLI failures.
+- [All] Pricing validation covers every catalog, including unknown keys, numeric units, media tables, and service-specific long-context rates. Regression checks cover invalid pricing and CLI failures.
+- [All] `schemas/` contains the TypeScript reference in `models.ts` and `providers.ts`. Pricing guidance moves to `docs/pricing.md`. Runtime validation moves to `scripts/validate-catalogs.ts`, and ongoing regression checks move to `tests/`. Completed migration helpers and their tests remain in ignored local artifacts. `README.md` documents the layout, validation commands, and both updater skills.
 
 ### Models that stay out of the catalog
 
