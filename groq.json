@@ -26,7 +26,10 @@
       "backendUrls": ["https://api.groq.com/openai/v1/"],
       "additionalPricePerMillion": {
         "batch_input_tokens_price_per_million": 0.075,
-        "batch_output_tokens_price_per_million": 0.3
+        "batch_output_tokens_price_per_million": 0.3,
+        "flex_input_tokens_price_per_million": 0.15,
+        "flex_output_tokens_price_per_million": 0.6,
+        "flex_cached_tokens_price_per_million": 0.075
       },
       "limits": {
         "tps": 500,
@@ -38,7 +41,8 @@
         "source_url": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
         "description": "OpenAI's flagship open-weight MoE model with 120B total parameters. Designed for high-capability agentic use, it matches or surpasses proprietary models like OpenAI o4-mini on many benchmarks. With long-context reasoning, competitive math/coding performance, and robust health knowledge, it is ideal for advanced research, autonomous tools, and agentic applications.",
         "display_name": "GPT OSS 120B",
-        "quantization": "Groq's TruePoint Numerics"
+        "quantization": "Groq's TruePoint Numerics",
+        "reasoning_efforts": ["low", "medium", "high"]
       }
     },
     {
@@ -66,7 +70,10 @@
       "backendUrls": ["https://api.groq.com/openai/v1/"],
       "additionalPricePerMillion": {
         "batch_input_tokens_price_per_million": 0.0375,
-        "batch_output_tokens_price_per_million": 0.15
+        "batch_output_tokens_price_per_million": 0.15,
+        "flex_input_tokens_price_per_million": 0.075,
+        "flex_output_tokens_price_per_million": 0.3,
+        "flex_cached_tokens_price_per_million": 0.037
       },
       "limits": {
         "tps": 1000,
@@ -78,7 +85,8 @@
         "source_url": "https://console.groq.com/docs/model/openai/gpt-oss-20b",
         "description": "OpenAI's compact open-weight Mixture-of-Experts (MoE) model with 20B total parameters. Optimized for cost-efficient deployment and agentic workflows, it supports long-context reasoning, tool use, and function calling in a small memory footprint.",
         "display_name": "GPT OSS 20B",
-        "quantization": "Groq's TruePoint Numerics"
+        "quantization": "Groq's TruePoint Numerics",
+        "reasoning_efforts": ["low", "medium", "high"]
       }
     },
     {
@@ -97,7 +105,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.groq.com/openai/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "flex_input_tokens_price_per_million": 0.6,
+        "flex_output_tokens_price_per_million": 3
+      },
       "limits": {
         "tps": 500,
         "tpm": 250000,
@@ -110,7 +121,9 @@
         "preview": true,
         "source_url": "https://console.groq.com/docs/model/qwen/qwen3.6-27b",
         "description": "Qwen 3.6 27B is a 27-billion-parameter multimodal model from Alibaba's Qwen series, delivering flagship-level agentic coding and reasoning that rivals models many times its size. It accepts both image and text inputs for visual understanding tasks such as image analysis, OCR, and visual question answering, and supports seamless switching between thinking mode (for complex logical reasoning, math, and coding) and non-thinking mode (for efficient, general-purpose dialogue) within a single model, with a long context window and strong multilingual support.",
-        "display_name": "Qwen3.6-27B"
+        "display_name": "Qwen3.6-27B",
+        "quantization": "Groq's TruePoint Numerics",
+        "reasoning_efforts": ["none", "default"]
       }
     },
     {
@@ -135,7 +148,10 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.groq.com/openai/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "flex_input_tokens_price_per_million": 0.8,
+        "flex_output_tokens_price_per_million": 4
+      },
       "limits": {
         "tps": 450,
         "max_file_size_mb": 20,
@@ -148,7 +164,9 @@
         "preview": true,
         "source_url": "https://console.groq.com/docs/model/qwen/qwen3.8-27b",
         "description": "Qwen 3.8 27B is a 27-billion-parameter multimodal model from Alibaba's Qwen series, delivering frontier-level agentic coding, reasoning, and long-horizon task performance that rivals models many times its size. It accepts both image and text inputs for visual understanding tasks such as image analysis, OCR, and visual question answering, and supports seamless switching between thinking mode (for complex logical reasoning, math, and coding) and instruct mode (non-thinking, for efficient, general-purpose dialogue) within a single model, with a long context window and strong multilingual support.",
-        "display_name": "Qwen3.8-27B"
+        "display_name": "Qwen3.8-27B",
+        "quantization": "Groq's TruePoint Numerics",
+        "reasoning_efforts": ["none", "default", "low", "medium", "high"]
       }
     },
     {
@@ -173,7 +191,11 @@
         "output": ["text"]
       },
       "backendUrls": ["https://api.groq.com/openai/v1/"],
-      "additionalPricePerMillion": {},
+      "additionalPricePerMillion": {
+        "flex_input_tokens_price_per_million": 0.075,
+        "flex_output_tokens_price_per_million": 0.3,
+        "flex_cached_tokens_price_per_million": 0.037
+      },
       "limits": {
         "tps": 1000,
         "tpm": 150000,
@@ -184,7 +206,8 @@
         "preview": true,
         "source_url": "https://console.groq.com/docs/model/openai/gpt-oss-safeguard-20b",
         "description": "OpenAI's reasoning model fine-tuned specifically for safety classification. It helps classify text content based on customizable policies and supports bring-your-own-policy Trust & Safety AI. Built on GPT-OSS with 20B parameters, fine-tuned for safety tasks with Harmony response format support for separated reasoning channels.",
-        "display_name": "Safety GPT OSS 20B"
+        "display_name": "Safety GPT OSS 20B",
+        "quantization": "Groq's TruePoint Numerics"
       }
     }
   ],
