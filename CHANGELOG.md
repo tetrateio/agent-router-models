@@ -1,3 +1,39 @@
+# 2026-09-14 TARS MODEL UPDATE
+
+## Other Updates:
+
+- [All] Image generation is enabled only through the direct OpenAI and Gemini catalogs. Other providers remain disabled, including Vertex and DeepInfra mirrors.
+- [DeepInfra] Disabled the 24 image-generation models that remained enabled. All 41 image-generation records now remain disabled.
+- [xAI] Disabled `grok-imagine-image-quality` under the image-generation provider restriction.
+- [Vertex] Disabled `gemini-3-pro-image`, `gemini-3.1-flash-image`, `gemini-3.1-flash-lite-image`, and `gemini-2.5-flash-image`. Their direct Gemini records remain enabled.
+- [DeepInfra] Recorded Janus-Pro-1B's published price of $0.0005 per processed input image. The model accepts images and returns text. It remains disabled because the catalog lacks a compatible endpoint.
+
+## Notes:
+
+### Corrections to earlier updates
+
+- [DeepInfra] The September 11 migration removed raw image billing rates without changing model access. This update disables the remaining image-generation records.
+- [DeepInfra] The September 11 migration removed Janus-Pro-1B's raw image-unit rate because the schema lacked a matching field. This update records the rate in a field for processed input images. This is a catalog correction, not a provider price change.
+
+### Follow-up work
+
+- [DeepInfra] Other image-unit billing mappings remain unresolved. A provider image unit requires a documented conversion before the catalog can represent it as an image. The image-generation provider restriction remains in effect.
+- [All] Consumers must support the new input-image price field before they can calculate these charges. Null token prices do not represent free inference.
+
+### Schema and catalog changes
+
+- [DeepInfra] Changed `isEnabled` from `true` to `false` on 24 image-generation records. Added Janus-Pro-1B's input-image rate and preserved its disabled state. Existing prices, modalities, and retirement metadata remain unchanged.
+- [All] Repository instructions and both updater skills restrict image-generation enablement to `provider: openai` or `provider: gemini`. Image input or `vision` alone does not trigger this restriction. Existing retirement, pricing, and endpoint restrictions still apply to allowed providers.
+- [All] Added `additionalPricePerMillion.input_image_price_per_image` as USD per processed input image. Validation accepts nonnegative finite numbers or null and requires image input plus `vision`. A numeric rate, including zero, qualifies as a published inference price. The field does not enable a model.
+- [All] Both updater skills now skip models with no published inference price. Explicit zero rates count as published prices. Missing individual rates, unsupported billing units, and blocked sources receive separate treatment.
+- [DeepInfra] Both updater skills now distinguish token rates, rates per processed image, rates per generated image, and unresolved image units.
+
+### Sources and coverage
+
+- [All] The image-generation restriction follows the user's provider policy. A scripted inventory covers image-generation mode, image output, and image-generation capability across all eight catalogs.
+- [DeepInfra] This focused correction includes Janus-Pro-1B's input-image price. The internal Browser confirmed the [model page](https://deepinfra.com/deepseek-ai/Janus-Pro-1B) and [API example](https://deepinfra.com/deepseek-ai/Janus-Pro-1B/api) on September 14. Local evidence records the source rate, mapping, and earlier migration.
+- [All] This update does not refresh provider catalogs model by model. The September 11 block retains the previous coverage details and unresolved source gaps.
+
 # 2026-09-11 TARS MODEL UPDATE
 
 ## Pricing contract and migration:

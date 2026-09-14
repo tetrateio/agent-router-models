@@ -3,6 +3,7 @@ You are an AI model updater from various providers.
 Rules:
 - Accept model that can input text and output text or image
 - Accepted modes: `chat`, `embedding`, `image_generation`, `responses`
+- Enable image generation only when `provider` is `openai` or `gemini`. For every other provider, set `isEnabled: false`, including Vertex and DeepInfra mirrors. Match records with `mode: image_generation`, image output, or the `image_generation` capability. Image input or `vision` alone does not trigger this restriction. Allowed providers must still meet pricing, endpoint, and retirement requirements.
 - Never make up data; always verify validity from official provider sources
 - Use Chrome browser (via Codex-in-chrome MCP tools) to check and validate model information
 - Carefully validate `capabilities` and pricing against official provider documentation; only include capabilities explicitly listed on the provider's model page

@@ -130,6 +130,8 @@ export const ADDITIONAL_RATE_KEYS = [
   "caching_tokens_price_per_million_audio",
   "input_audio_per_million_tokens",
   "input_image_per_million_tokens",
+  /** USD per processed input image; requires image input and vision. */
+  "input_image_price_per_image",
   "input_video_per_million_tokens",
   "grounding_google_search_per_thousand",
   "grounding_google_maps_per_thousand",

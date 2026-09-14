@@ -9,15 +9,16 @@ disable-model-invocation: true
 Refresh `anthropic.json`, `openai.json`, `gemini.json`, `xai.json`, `groq.json`,
 `deepinfra.json`, `vertex.json`, and `vertexanthropic.json` against each provider's current
 documentation, then write one dated block at the top of `CHANGELOG.md`.
+For a focused review or correction, apply only the requested scope and state that scope in the changelog.
 
 The work is a **drift** hunt: the delta between what a catalog record says and what the
 provider publishes today. Prices move, context windows grow, models get deprecated and shut
 down, and new models appear. Every catalog record is drift until you have matched it to a
 provider record.
 
-**Done means:** every model in every catalog file is matched against a provider record, or
-named in the changelog as absent from the provider's list. A file you did not compare
-model by model is not done.
+**Done means:** every model in scope is matched against a provider record or named in the
+changelog as excluded or absent. A full refresh covers every catalog file, model by model.
+Blocked sources leave verification incomplete, even when structural validation passes.
 
 `CLAUDE.md` holds the field rules — accepted modes, capability mapping, the `tool_choice`
 rule — and `schemas/models.ts` holds the record shape. Read both before you touch a
@@ -29,15 +30,16 @@ Record material source gaps and unresolved pricing in the changelog notes.
 
 ## Per file
 
-1. **Feed first.** Read the provider's change feed entries newer than the top block of
-   `CHANGELOG.md`. They name the launches, price changes, and retirements before you diff
-   a single table.
+1. **Feed first.** Read the provider's change feed entries since its last verified coverage in `CHANGELOG.md`.
+   A focused or blocked update does not advance the coverage date for unchecked models.
+   The feed names launches, price changes, and retirements before you diff a table.
 2. **Fetch** the provider's model index, pricing page, and deprecation page.
 3. **Compare** every catalog record to its provider record with a script, not by eye.
    Compare price, context window, max output, modalities, capabilities, and deprecation
    state. A scripted comparison is what makes "every model accounted for" checkable.
 4. **Apply** the drift. Prices and limits take the provider's current value.
 5. **Add** models the provider lists that the catalog lacks, within the `CLAUDE.md` modes.
+   Apply the pricing eligibility and image-generation availability rules below before adding or enabling a record.
 6. **Validate** using the shared pricing contract. Every catalog must pass `bun scripts/validate-catalogs.ts`.
    Run its regression checks after schema or pricing changes. Record blocked sources separately; validation does not complete source verification.
 
@@ -45,8 +47,9 @@ Batch the fetches. Providers are independent, so fetch several at once.
 
 ## Sources
 
-Fetch with `curl`, not WebFetch. WebFetch summarizes through a small model and returns
-404 on some `.md` endpoints that `curl` reads.
+Use the browser selected by the user, or the browser required by `CLAUDE.md`, to validate model facts.
+Use `curl` for bulk source data and scripted comparisons. WebFetch can summarize or fail on some `.md` endpoints.
+If browser access is blocked, record the verification gap and continue independent work.
 
 ### Anthropic — `platform.claude.com` (append `.md` to any docs URL)
 
@@ -137,11 +140,16 @@ Fetch with `curl`, not WebFetch. WebFetch summarizes through a small model and r
   discount.
 - Groq publishes no knowledge cutoffs; the field stays empty.
 
-### DeepInfra — `api.deepinfra.com` (JSON; the site is a JavaScript app with no server HTML)
+### DeepInfra — `api.deepinfra.com` (JSON index and model details)
 
-- `/models/list` — the index. `?type=text-generation` (or `embeddings`) filters
-  server-side to the accepted modes.
-  - Prices are cents-per-token: multiply by 10,000 for dollars per million.
+- `/models/list` — fetch the unfiltered index to account for every catalog record and excluded model.
+  Filters such as `?type=text-generation` and `?type=embeddings` cover only those categories.
+  - Read `pricing.type` and the documented billing unit before converting a rate.
+    For cents per token, multiply by 10,000 for USD per million tokens.
+    For cents per image unit, divide by 100 for USD per image unit.
+    Image units, images, and text tokens are distinct billing units.
+    Use `image_generation` prices only for documented rates per generated image, with documented quality and size labels.
+    Keep unresolved units in the local audit under the **Published but unmapped price** rule.
   - `deprecated` is a unix timestamp, not a boolean — it decides Deprecated vs Retired.
   - `pricing` also carries `discount` / `discount_ends_at` (the Promotional-price rule,
     machine-readable), `rate_per_input_token_cached` (a multiplier of the input price,
@@ -152,6 +160,12 @@ Fetch with `curl`, not WebFetch. WebFetch summarizes through a small model and r
     `input-video` / `input-audio` add those modalities.
 - `/models/<owner>/<name>` — per-model detail. `max_output_tokens` lives only here,
   absent from the list endpoint.
+- `https://deepinfra.com/<owner>/<name>` and its API tab — validate the displayed price, billing unit, and hosted inputs/outputs.
+  A category label or upstream model description does not establish the hosted endpoint's output modality.
+  For example, Janus-Pro-1B lists a price per image, while its documented native endpoint returns text about an input image.
+  Record a documented flat input-image charge in `input_image_price_per_image`, in USD per processed input image.
+  Apply the [input image processing contract](../../../docs/pricing.md#input-image-processing) for units, required modalities, and capabilities.
+  Missing token rates alone do not mean that this model has no published price.
 
 ### Vertex / VertexAnthropic — `docs.cloud.google.com/gemini-enterprise-agent-platform`
 
@@ -220,6 +234,11 @@ The guard is the point. It proves the diff contains only what you changed.
 
 These recur every run. Decide them the same way each time.
 
+- **Image-generation availability** — apply the provider restriction in `CLAUDE.md` after availability, deprecation, and mirror handling.
+  Preserve existing excluded records and verified prices, with `isEnabled: false`.
+  Skip new image-generation records from excluded providers and name them under **Models that stay out of the catalog**.
+  Use the catalog's `provider`, not the upstream model's publisher, for this decision.
+  An allowed provider does not override retirement, missing prices, or endpoint restrictions.
 - **Deprecated** — the provider announced an end date in the future. Keep `isEnabled: true`,
   set `deprecated`, `deprecated_date`, `retirement_date`, and `deprecated_reason`.
 - **Retired** — the end date has passed. Set `isEnabled: false` and keep the record while
@@ -228,9 +247,21 @@ These recur every run. Decide them the same way each time.
   by redirecting to another model (xAI) is Retired.
 - **Tentative dates** — "not sooner than" and "earliest possible" are not hard cutoffs.
   Leave `retirement_date` empty and put the date in the changelog notes.
-- **No published price** — a model the provider lists but does not price (enterprise-only,
-  contact-sales, open weights). Add it with `isEnabled: false` and `null` prices, or leave
-  it out. Either way, name the model and the reason in the changelog notes.
+- **No published price** — after checking the model page and applicable pricing sources, skip models with no published inference price.
+  Check token, embedding, image, and other applicable billing units. Explicitly free inference counts as a published zero price.
+  A numeric `input_image_price_per_image`, including zero, qualifies even when every token-price field is null.
+  An ancillary tool charge or multiplier alone does not establish an inference price.
+  For new models, leave them out instead of adding disabled records with empty prices.
+  For existing models, remove the record only after sources confirm that no published inference price exists.
+  Name each exclusion and its source under **Models that stay out of the catalog**.
+  A missing individual price cell remains null under the pricing contract when the model has other published inference rates.
+- **Published but unmapped price** — a published rate whose unit or scope does not fit a declared field is unresolved pricing.
+  Preserve its rate, unit, source, and mapping gap in the local audit and changelog **Follow-up work**.
+  Keep existing records disabled if their inference prices cannot be represented. Skip new records until the mapping is resolved.
+  This is distinct from no published price. Never substitute a token or generated-image rate for another billing unit.
+- **Blocked pricing source** — failed access does not establish that a model has no price.
+  Preserve existing records and prices. Skip additions that lack verified pricing, and record the gap under **Follow-up work**.
+  Apply independent, user-requested disablement even when source verification is blocked.
 - **Groq Enterprise models** — a model Groq marks Enterprise or Contact sales stays out of
   the catalog. Remove the record when a cataloged model moves to Enterprise, and name it
   under **Models that stay out of the catalog**.

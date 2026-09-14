@@ -19,6 +19,7 @@ Neither null nor omission establishes availability or permits a fallback to anot
 | `*_per_thousand*` | USD per 1,000 named calls, sources, or grounding operations |
 | `code_execution_per_hour` | USD per execution hour |
 | `image_tokens` | USD per million image tokens, by input/output/cache direction |
+| `input_image_price_per_image` | USD per processed input image |
 | `image_generation` | USD per generated image, by documented quality and size |
 | `*_multiplier` | Dimensionless factor with the documented scope |
 
@@ -28,6 +29,33 @@ Store provider billing units, raw cents, and unresolved dimensions in local audi
 These supporting artifacts are ignored by Git and excluded from commits.
 Record material limitations and source URLs in `CHANGELOG.md` so committed changes remain reviewable.
 An image unit is not necessarily one image. A provider's billed token is not necessarily a text token.
+
+## Input image processing
+
+`additionalPricePerMillion.input_image_price_per_image` records a flat USD charge per processed input image.
+Its unit is one input image, despite the historical `additionalPricePerMillion` container name.
+For example, Janus-Pro-1B costs $0.0005 per input image:
+
+```json
+{
+  "additionalPricePerMillion": {
+    "input_image_price_per_image": 0.0005
+  }
+}
+```
+
+The field accepts a finite, nonnegative number or null. Omission means no recorded cell.
+A numeric rate, including zero, counts as a published inference price even when all token prices are null.
+Null and omission do not establish a published inference price. Unknown token rates remain null.
+Any record with this field, including a null cell, requires image input and the `vision` capability.
+The field does not require image output or the `image_generation` mode.
+Recording a price does not change `isEnabled`, endpoint compatibility, or a provider hold.
+
+Use this field only when provider documentation establishes a charge per processed input image.
+Keep unresolved provider image units in local audits until their conversion to processed input images is documented.
+Use `image_tokens` for image-token charges and `image_generation` for generated-image charges.
+Count each charge once. Separate image and token charges require evidence that both apply.
+Consumers must support this field to calculate these charges. Older consumers cannot infer them from null token prices.
 
 ## Service rates
 

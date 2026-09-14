@@ -64,6 +64,13 @@ export function pricingErrors(m: any): string[] {
     } else errors.push(`unknown pricing key ${key}`)
   }
 
+  if ("input_image_price_per_image" in price) {
+    if (!Array.isArray(m.modalities?.input) || !m.modalities.input.includes("image"))
+      errors.push("input_image_price_per_image requires modalities.input to include image")
+    if (!Array.isArray(m.capabilities) || !m.capabilities.includes("vision"))
+      errors.push("input_image_price_per_image requires the vision capability")
+  }
+
   // Keep detecting the old threshold multipliers in extensible limits bags.
   const checkLimits = (bag: unknown) => {
     if (!object(bag)) return

@@ -1,4 +1,4 @@
-// Self-check for the long-context tier rules. Run: bun tests/validate.test.ts
+// Self-check for the pricing contract. Run: bun tests/validate.test.ts
 //
 // Each case is a record shape that has appeared in a catalog, or that a future
 // run could reintroduce. The multiplier cases are the ones that matter: xAI and
@@ -67,9 +67,71 @@ CASES.push(
   ["exponent top-level price rejected", { inputTokensPricePerMillion: "1e9" }, true],
 )
 
+const inputImageModel = (price: any) => ({
+  mode: "chat", isEnabled: false,
+  inputTokensPricePerMillion: null, outputTokensPricePerMillion: null,
+  cachedTokensPricePerMillion: null, cachingTokensPricePerMillion: null,
+  modalities: { input: ["text", "image"], output: ["text"] },
+  capabilities: ["vision"],
+  additionalPricePerMillion: { input_image_price_per_image: price },
+})
+CASES.push(
+  ["input-image price needs no token price, output image, or context limit", inputImageModel(0.0005), false],
+  ["explicitly free input-image processing", inputImageModel(0), false],
+  ["unpublished input-image rate remains null", inputImageModel(null), false],
+  ["input-image pricing is optional for vision models", { ...inputImageModel(0.0005), additionalPricePerMillion: {} }, false],
+  ["omitted input-image pricing adds no modality or capability requirement", withPrices({}), false],
+  ["input-image pricing does not determine enablement", { ...inputImageModel(0.0005), isEnabled: true }, false],
+  ["image-token prices remain independent", withPrices({ image_tokens: { input_image_tokens_price_per_million: 1, output_image_tokens_price_per_million: null, cached_input_image_tokens_price_per_million: 0 } }), false],
+  ["input, generated, and token image rates retain separate fields", {
+    ...inputImageModel(0.0005),
+    additionalPricePerMillion: {
+      input_image_price_per_image: 0.0005,
+      image_generation: { standard: { "1024x1024": 0.02 } },
+      image_tokens: { input_image_tokens_price_per_million: 3 },
+    },
+  }, false],
+  ["input-image rate cannot be nested among image-token rates", withPrices({ image_tokens: { input_image_price_per_image: 0.0005 } }), true],
+  ["generated-image pricing still requires a quality and size table", withPrices({ image_generation: 0.0005 }), true],
+)
+for (const [label, value] of [
+  ["negative", -0.0005], ["numeric string", "0.0005"], ["infinite", Infinity],
+  ["negative infinity", -Infinity], ["NaN", NaN], ["object", { usd: 0.0005 }],
+  ["array", [0.0005]], ["boolean", false],
+] as const) {
+  CASES.push([`${label} input-image price rejected`, inputImageModel(value), true])
+}
+for (const [label, modalities] of [
+  ["missing", undefined], ["null", null], ["string", "image"],
+  ["missing input", { output: ["text"] }], ["null input", { input: null }],
+  ["string input", { input: "image" }], ["object input", { input: { image: true } }],
+  ["empty input", { input: [] }], ["text-only input", { input: ["text"] }],
+] as const) {
+  CASES.push([`input-image price rejects ${label} modalities`, { ...inputImageModel(0.0005), modalities }, true])
+}
+for (const [label, capabilities] of [
+  ["missing", undefined], ["null", null], ["string", "vision"],
+  ["object", { vision: true }], ["empty", []], ["non-vision", ["image_generation"]],
+] as const) {
+  CASES.push([`input-image price rejects ${label} capabilities`, { ...inputImageModel(0.0005), capabilities }, true])
+}
+CASES.push(
+  ["free input-image rate still requires image input", { ...inputImageModel(0), modalities: { input: ["text"], output: ["text"] } }, true],
+  ["null input-image rate still requires image input", { ...inputImageModel(null), modalities: { input: ["text"], output: ["text"] } }, true],
+  ["free input-image rate still requires vision", { ...inputImageModel(0), capabilities: [] }, true],
+  ["null input-image rate still requires vision", { ...inputImageModel(null), capabilities: [] }, true],
+)
+
 let failed = 0
 for (const [name, record, shouldError] of CASES) {
-  const errs = tierErrors(record)
+  let errs: string[]
+  try {
+    errs = tierErrors(record)
+  } catch (error) {
+    console.log(`FAIL ${name}: validator threw instead of returning errors: ${error}`)
+    failed++
+    continue
+  }
   if (errs.length > 0 !== shouldError) {
     console.log(`FAIL ${name}: expected ${shouldError ? "an error" : "no error"}, got ${JSON.stringify(errs)}`)
     failed++
