@@ -1,0 +1,6 @@
+# CODEOWNERS file for the agent-router-models repository
+# This file defines the code owners for the provider and model catalogs.
+# Code owners will be automatically requested for review when PRs modify their owned files.
+
+# Default owners for everything in the repo
+* @nascode
