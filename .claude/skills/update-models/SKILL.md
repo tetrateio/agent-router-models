@@ -256,6 +256,13 @@ These recur every run. Decide them the same way each time.
   Skip new image-generation records from excluded providers and name them under **Models that stay out of the catalog**.
   Use the catalog's `provider`, not the upstream model's publisher, for this decision.
   An allowed provider does not override retirement, missing prices, or endpoint restrictions.
+- **Audio-output models** — `CLAUDE.md` accepts text or image output only.
+  A record whose `modalities.output` includes `audio` gets `isEnabled: false`, even when it also returns text.
+  These models reject the text-only requests that `chat` mode sends.
+  For example, OpenAI's `gpt-audio` family answers only when a request has audio input or asks for audio output.
+  Otherwise the API returns `400 This model requires that either input content or output modality contain audio`.
+  Keep existing records disabled with their verified prices. Skip new audio-output models and name them under **Models that stay out of the catalog**.
+  Audio input alone does not trigger this rule.
 - **Lifecycle scope** — match notices to exact model IDs and dated snapshots.
   Exact-ID notices take precedence over broader family notices.
   Before adding an alias, verify its lifecycle separately.
