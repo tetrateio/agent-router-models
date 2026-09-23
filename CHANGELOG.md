@@ -59,6 +59,7 @@ Prices are USD per million tokens. This model also changed price on September 22
 
 - [Gemini] Google now limits access to the Gemini 2.5 models. Only projects that used them in the past can call them. Google states that these models are not deprecated and stay available through the API until further notice. New projects must use Gemini 3.5 Flash-Lite or Gemini 3.8 Flash. The catalog keeps all five Gemini 2.5 records available.
 - [xAI] The X Search price table now shows $5 per 1,000 posts and $10 per 1,000 profiles. The warning banner is gone. This matches the prices that the September 22 update recorded.
+- [OpenAI] `gpt-audio-1.5`, `gpt-audio`, and `gpt-audio-mini` are now disabled. These models answer only when a request contains audio or asks for audio output. A text-only chat request returns an error. Prices and limits do not change.
 
 ## Notes:
 
@@ -68,7 +69,7 @@ Prices are USD per million tokens. This model also changed price on September 22
 
 ### Corrections to earlier updates
 
-- [All] This update corrects no earlier entry.
+- [OpenAI] The 2026-09-11 update added `gpt-audio-1.5`, `gpt-audio`, and `gpt-audio-mini` as enabled records. The catalog accepts text or image output only, and these models return audio. OpenAI rejects a text-only request to them with `400 This model requires that either input content or output modality contain audio`. This update disables the three records.
 
 ### Follow-up work
 
@@ -80,6 +81,7 @@ Prices are USD per million tokens. This model also changed price on September 22
 - [Groq] The tool guides link to [Groq pricing](https://groq.com/pricing), which still redirects to a homepage without prices. Browser-search and code-execution charges stay unverified.
 - [DeepInfra] Nine promotions stay active with no published end date. The September 22 update lists them. GLM-5.3 now runs at 37.5 percent instead of 25 percent. This provider changed one promotion twice in two days, so its prices need a check on every run.
 - [Gemini/Vertex] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash token prices double.
+- [OpenAI] OpenAI's docs do not state the text-only error. Public developer reports on the same audio family show it. This run had no API key and did not reproduce it.
 - [All] Earlier unresolved items stay open. They cover source conflicts, historical field gaps, and billing units that the schema cannot hold.
 
 ### Schema and catalog changes
@@ -90,6 +92,7 @@ Prices are USD per million tokens. This model also changed price on September 22
 - [OpenAI] Both new records use `high_context: 272000`, `max_input_tokens: 922000`, and `regional_processing_uplift_multiplier: 1.1`. Their `reasoning_efforts` include `none`, which GPT-6 Astra does not accept.
 - [VertexAnthropic] `claude-opus-5-5` sets `web_search_per_thousand_calls` to null and keeps the `web_search` ability. Seven other Claude records already use this shape.
 - [DeepInfra] The two MiMo V2.5 records set `deprecated: true` and `retirement_date: "2026-09-29"`. They keep `isEnabled: true`, because the date is in the future.
+- [OpenAI] `gpt-audio-1.5`, `gpt-audio`, and `gpt-audio-mini` set `isEnabled: false`. They keep their prices, limits, and lifecycle fields. The update-models skill now disables every record whose output includes audio.
 - [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
 
 ### Models that stay out of the catalog
@@ -131,7 +134,7 @@ Prices are USD per million tokens. This model also changed price on September 22
 <summary>Provider sources and verification limits</summary>
 
 - [Anthropic] Checks covered the [release notes](https://platform.claude.com/docs/en/release-notes/overview), [models overview](https://platform.claude.com/docs/en/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [effort](https://platform.claude.com/docs/en/build-with-claude/effort), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), and the [Claude Opus 5.5 page](https://platform.claude.com/docs/en/models/opus-5-5/overview). The code-execution page lists `claude-opus-5-5` in its supported models.
-- [OpenAI] Checks covered the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), and the [Sol](https://developers.openai.com/api/docs/models/gpt-6-sol) and [Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) model pages. The web-search fee applies to all models at $10 per 1,000 calls.
+- [OpenAI] Checks covered the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), and the [Sol](https://developers.openai.com/api/docs/models/gpt-6-sol) and [Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) model pages. The web-search fee applies to all models at $10 per 1,000 calls. The [GPT-Audio-1.5](https://developers.openai.com/api/docs/models/gpt-audio-1.5), [GPT-Audio](https://developers.openai.com/api/docs/models/gpt-audio), and [GPT-Audio Mini](https://developers.openai.com/api/docs/models/gpt-audio-mini) pages and the [audio in Chat Completions guide](https://developers.openai.com/api/docs/guides/audio-chat-completions) describe these as audio models. Every example sends audio input or `modalities: ["text", "audio"]`.
 - [Gemini] Checks covered the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), and [deprecations](https://ai.google.dev/gemini-api/docs/deprecations). No model ID and no price changed.
 - [xAI] Checks covered the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), and [pricing](https://docs.x.ai/developers/pricing). The feed has no entry after Grok 4.7.
 - [Groq] Checks covered the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), and the [changelog](https://console.groq.com/docs/changelog). All three pages are unchanged.
