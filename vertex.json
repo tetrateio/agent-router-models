@@ -81,6 +81,68 @@
       }
     },
     {
+      "model": "vertex/gemini-3.8-flash-cyber",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "1.5000000000",
+      "outputTokensPricePerMillion": "7.5000000000",
+      "cachedTokensPricePerMillion": "0.1500000000",
+      "cachingTokensPricePerMillion": "1.5000000000",
+      "additionalPricePerMillion": {
+        "non_global_endpoint_multiplier": 1.1,
+        "priority_input_tokens_price_per_million": 2.7,
+        "priority_cached_tokens_price_per_million": 0.27,
+        "priority_output_tokens_price_per_million": 13.5,
+        "flex_input_tokens_price_per_million": 0.75,
+        "flex_cached_tokens_price_per_million": 0.075,
+        "flex_output_tokens_price_per_million": 3.75
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "system_messages",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-3.8-flash-cyber"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash-cyber",
+        "description": "A post-training version of Gemini 3.8 Flash tailored for cybersecurity use cases. Access requires an allowlist.",
+        "display_name": "Gemini 3.8 Flash Cyber",
+        "release_date": "2026-09-16",
+        "upstream_model": "gemini-3.8-flash-cyber",
+        "regions": [
+          "global",
+          "us"
+        ],
+        "launch_stage": "GA"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
       "model": "vertex/gemini-3.7-flash",
       "provider": "vertex",
       "mode": "chat",
@@ -1281,8 +1343,8 @@
         "release_date": "2025-10-02",
         "knowledge_cutoff": "2025-06-01",
         "deprecated": true,
-        "retirement_date": "2026-10-02",
-        "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement.",
+        "retirement_date": "2027-03-15",
+        "deprecated_reason": "Deprecated and scheduled for retirement; Google lists Gemini 3.1 Flash-Lite Image as its replacement.",
         "upstream_model": "gemini-2.5-flash-image",
         "regions": [
           "europe-central2",
@@ -1531,10 +1593,10 @@
         "display_name": "Grok 4.6",
         "release_date": "2026-08-21",
         "regions": [
-          "global"
+          "global",
+          "us"
         ],
-        "launch_stage": "preview",
-        "preview": true,
+        "launch_stage": "GA",
         "upstream_model": "xai/grok-4.6"
       },
       "additionalPricePerMillion": {

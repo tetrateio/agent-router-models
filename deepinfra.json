@@ -4044,9 +4044,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.400",
-      "outputTokensPricePerMillion": "3.000",
-      "cachedTokensPricePerMillion": "0.040",
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "1.8750000000",
+      "cachedTokensPricePerMillion": "0.0375000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 262144,
       "capabilities": [
@@ -4057,19 +4057,48 @@
         "vision"
       ],
       "modalities": {
-        "input": ["image", "text"],
+        "input": ["image", "text", "video"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.32,
-        "batch_output_tokens_price_per_million": 2.4
+        "batch_input_tokens_price_per_million": 0.12,
+        "batch_output_tokens_price_per_million": 1.5
       },
       "limits": {},
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3.8-27B",
         "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be enabled or disabled.",
         "display_name": "Qwen/Qwen3.8-27B"
+      }
+    },
+    {
+      "model": "deepinfra/Qwen/Qwen3.8-Flash",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1130000000",
+      "outputTokensPricePerMillion": "0.3820000000",
+      "cachedTokensPricePerMillion": "0.0141000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": ["prompt_caching", "structured_outputs", "tool_choice"],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.0904,
+        "batch_output_tokens_price_per_million": 0.3056
+      },
+      "limits": {
+        "max_output_tokens": 131072
+      },
+      "metadata": {
+        "source_url": "https://deepinfra.com/Qwen/Qwen3.8-Flash",
+        "description": "Qwen's fast, low-cost model with a one-million-token context window, billed at a flat rate across the entire window.",
+        "display_name": "Qwen/Qwen3.8-Flash"
       }
     },
     {
@@ -4234,9 +4263,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.1050000000",
-      "outputTokensPricePerMillion": "0.4350000000",
-      "cachedTokensPricePerMillion": "0.0262500000",
+      "inputTokensPricePerMillion": "0.1300000000",
+      "outputTokensPricePerMillion": "0.5300000000",
+      "cachedTokensPricePerMillion": "0.0330000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 262144,
       "capabilities": [
@@ -4251,12 +4280,12 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "flex_input_tokens_price_per_million": 0.084,
-        "flex_output_tokens_price_per_million": 0.348,
-        "flex_cached_tokens_price_per_million": 0.021,
+        "flex_input_tokens_price_per_million": 0.104,
+        "flex_output_tokens_price_per_million": 0.424,
+        "flex_cached_tokens_price_per_million": 0.0264,
         "flex_caching_tokens_price_per_million": null,
-        "batch_input_tokens_price_per_million": 0.084,
-        "batch_output_tokens_price_per_million": 0.348
+        "batch_input_tokens_price_per_million": 0.104,
+        "batch_output_tokens_price_per_million": 0.424
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4265,7 +4294,7 @@
         "source_url": "https://deepinfra.com/tencent/Hy3",
         "description": "Hy3 is a 295B-parameter Mixture-of-Experts (MoE) model with 21B active parameters and 3.8B MTP layer parameters, developed by the Tencent Hy Team. Following the Hy3 Preview launch in late April, we gathered feedback from 50+ products and scaled up post-training with higher quality data. Today, we introduce Hy3, which outperforms similar-size models and rivals flagship open-source models with 2-5x parameters. It also shows significant gains in utility across various products and productivity tasks.",
         "display_name": "tencent/Hy3",
-        "quantization": "fp8"
+        "quantization": "fp4"
       }
     },
     {
@@ -4383,7 +4412,10 @@
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.5",
         "description": "MiMo-V2.5 is a native omnimodal model with strong agentic capabilities, supporting text, image, video, and audio understanding within a unified architecture. Built upon the MiMo-V2-Flash backbone and extended with dedicated vision and audio encoders, it delivers robust performance across multimodal perception, long-context reasoning, and agentic workflows. ",
         "display_name": "XiaomiMiMo/MiMo-V2.5",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-09-29. Replacement: XiaomiMiMo/MiMo-V2.6-Flash.",
+        "retirement_date": "2026-09-29"
       }
     },
     {
@@ -4427,6 +4459,79 @@
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.5-Pro",
         "description": "MiMo-V2.5-Pro is an open-source Mixture-of-Experts (MoE) language model with 1.02T total parameters and 42B active parameters. It utilizes the hybrid attention architecture and 3-layers Multi-Token Prediction (MTP) introduced in [MiMo-V2-Flash](https://github.com/XiaomiMiMo/MiMo-V2-Flash).",
         "display_name": "XiaomiMiMo/MiMo-V2.5-Pro",
+        "quantization": "fp8",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-09-29. Replacement: XiaomiMiMo/MiMo-V2.6-Pro.",
+        "retirement_date": "2026-09-29"
+      }
+    },
+    {
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["audio", "image", "text", "video"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "limits": {},
+      "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Flash",
+      "inputTokensPricePerMillion": "0.1400000000",
+      "outputTokensPricePerMillion": "0.2800000000",
+      "cachedTokensPricePerMillion": "0.0028000000",
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.112,
+        "batch_output_tokens_price_per_million": 0.224
+      },
+      "metadata": {
+        "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.6-Flash",
+        "description": "MiMo-V2.6-Flash is the efficiency-balanced model in Xiaomi's MiMo-V2.6 series: a sparse Mixture-of-Experts model with 309B total and 15B activated parameters, natively omnimodal across text, image, video and audio.",
+        "display_name": "XiaomiMiMo/MiMo-V2.6-Flash",
+        "quantization": "fp8"
+      }
+    },
+    {
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["audio", "image", "text", "video"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "limits": {},
+      "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Pro",
+      "inputTokensPricePerMillion": "0.4350000000",
+      "outputTokensPricePerMillion": "0.8700000000",
+      "cachedTokensPricePerMillion": "0.0036000000",
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.348,
+        "batch_output_tokens_price_per_million": 0.696
+      },
+      "metadata": {
+        "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.6-Pro",
+        "description": "MiMo-V2.6-Pro is the flagship of Xiaomi's MiMo-V2.6 series: a sparse Mixture-of-Experts model with 1.02T total and 42B activated parameters, natively omnimodal across text, image, video and audio.",
+        "display_name": "XiaomiMiMo/MiMo-V2.6-Pro",
         "quantization": "fp8"
       }
     },
@@ -4669,9 +4774,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.4875000000",
-      "outputTokensPricePerMillion": "1.5600000000",
-      "cachedTokensPricePerMillion": "0.0910000000",
+      "inputTokensPricePerMillion": "0.5625000000",
+      "outputTokensPricePerMillion": "1.8000000000",
+      "cachedTokensPricePerMillion": "0.1050000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
@@ -4686,22 +4791,22 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "caching_5m_per_million": 0.609375,
-        "caching_1h_per_million": 0.975,
-        "priority_input_tokens_price_per_million": 0.73125,
-        "priority_output_tokens_price_per_million": 2.34,
-        "priority_cached_tokens_price_per_million": 0.1365,
+        "caching_5m_per_million": 0.703125,
+        "caching_1h_per_million": 1.125,
+        "priority_input_tokens_price_per_million": 0.84375,
+        "priority_output_tokens_price_per_million": 2.7,
+        "priority_cached_tokens_price_per_million": 0.1575,
         "priority_caching_tokens_price_per_million": null,
-        "priority_caching_5m_per_million": 0.9140625,
-        "priority_caching_1h_per_million": 1.4625,
-        "flex_input_tokens_price_per_million": 0.39,
-        "flex_output_tokens_price_per_million": 1.248,
-        "flex_cached_tokens_price_per_million": 0.0728,
+        "priority_caching_5m_per_million": 1.0546875,
+        "priority_caching_1h_per_million": 1.6875,
+        "flex_input_tokens_price_per_million": 0.45,
+        "flex_output_tokens_price_per_million": 1.44,
+        "flex_cached_tokens_price_per_million": 0.084,
         "flex_caching_tokens_price_per_million": null,
-        "flex_caching_5m_per_million": 0.4875,
-        "flex_caching_1h_per_million": 0.78,
-        "batch_input_tokens_price_per_million": 0.39,
-        "batch_output_tokens_price_per_million": 1.248
+        "flex_caching_5m_per_million": 0.5625,
+        "flex_caching_1h_per_million": 0.9,
+        "batch_input_tokens_price_per_million": 0.45,
+        "batch_output_tokens_price_per_million": 1.44
       },
       "limits": {
         "explicit_cache_granularity_tokens": 1024,
@@ -5749,9 +5854,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "1.200",
-      "outputTokensPricePerMillion": "4.000",
-      "cachedTokensPricePerMillion": "0.120",
+      "inputTokensPricePerMillion": "0.5625000000",
+      "outputTokensPricePerMillion": "2.5000000000",
+      "cachedTokensPricePerMillion": "0.1250000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
@@ -5766,12 +5871,12 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "flex_input_tokens_price_per_million": 0.96,
-        "flex_output_tokens_price_per_million": 3.2,
-        "flex_cached_tokens_price_per_million": 0.096,
+        "flex_input_tokens_price_per_million": 0.45,
+        "flex_output_tokens_price_per_million": 2,
+        "flex_cached_tokens_price_per_million": 0.1,
         "flex_caching_tokens_price_per_million": null,
-        "batch_input_tokens_price_per_million": 0.96,
-        "batch_output_tokens_price_per_million": 3.2
+        "batch_input_tokens_price_per_million": 0.45,
+        "batch_output_tokens_price_per_million": 2
       },
       "limits": {
         "max_output_tokens": 131072
@@ -5894,9 +5999,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.2000000000",
-      "outputTokensPricePerMillion": "0.6000000000",
-      "cachedTokensPricePerMillion": "0.0060000000",
+      "inputTokensPricePerMillion": "0.1400000000",
+      "outputTokensPricePerMillion": "0.4200000000",
+      "cachedTokensPricePerMillion": "0.0042000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
@@ -5912,16 +6017,16 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "priority_input_tokens_price_per_million": 0.3,
-        "priority_output_tokens_price_per_million": 0.9,
-        "priority_cached_tokens_price_per_million": 0.009,
+        "priority_input_tokens_price_per_million": 0.21,
+        "priority_output_tokens_price_per_million": 0.63,
+        "priority_cached_tokens_price_per_million": 0.0063,
         "priority_caching_tokens_price_per_million": null,
-        "flex_input_tokens_price_per_million": 0.16,
-        "flex_output_tokens_price_per_million": 0.48,
-        "flex_cached_tokens_price_per_million": 0.0048,
+        "flex_input_tokens_price_per_million": 0.112,
+        "flex_output_tokens_price_per_million": 0.336,
+        "flex_cached_tokens_price_per_million": 0.00336,
         "flex_caching_tokens_price_per_million": null,
-        "batch_input_tokens_price_per_million": 0.16,
-        "batch_output_tokens_price_per_million": 0.48
+        "batch_input_tokens_price_per_million": 0.112,
+        "batch_output_tokens_price_per_million": 0.336
       },
       "limits": {
         "max_output_tokens": 131072

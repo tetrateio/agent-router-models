@@ -2,6 +2,67 @@
   "version": "1.0",
   "models": [
     {
+      "model": "xai/grok-4.7",
+      "provider": "xai",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "6.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 500000,
+      "capabilities": [
+        "code_execution",
+        "file_upload",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.x.ai/v1/"],
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 4,
+        "output_tokens_price_per_million_high_context": 12,
+        "cached_tokens_price_per_million_high_context": 1,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
+        "web_search_per_thousand_calls": 5,
+        "code_execution_per_thousand_calls": 5,
+        "file_attachments_per_thousand_calls": 10,
+        "collections_search_per_thousand_calls": 2.5,
+        "priority_input_tokens_price_per_million": 4,
+        "priority_input_tokens_price_per_million_high_context": 8,
+        "priority_output_tokens_price_per_million": 12,
+        "priority_output_tokens_price_per_million_high_context": 24,
+        "priority_cached_tokens_price_per_million": 1,
+        "priority_cached_tokens_price_per_million_high_context": 2,
+        "regional_processing_uplift_multiplier": 1.1
+      },
+      "limits": {
+        "rpm": 9000,
+        "tpm": 50000000,
+        "high_context": 200000,
+        "max_file_size_mb": 48,
+        "max_image_size_mb": 20,
+        "high_context_comparison": "gte"
+      },
+      "metadata": {
+        "regions": ["us-east-1", "us-west-2", "us-central-1"],
+        "source_url": "https://docs.x.ai/developers/models/grok-4.7",
+        "description": "SpaceXAI's frontier model for coding, agentic tasks, and knowledge work. Configurable reasoning effort (low, medium, high, xhigh; default high).",
+        "display_name": "Grok 4.7",
+        "knowledge_cutoff": "2026-05-01",
+        "reasoning_efforts": ["low", "medium", "high", "xhigh"]
+      }
+    },
+    {
       "model": "xai/grok-4.6",
       "provider": "xai",
       "mode": "chat",
@@ -30,7 +91,9 @@
         "input_tokens_price_per_million_high_context": 4,
         "output_tokens_price_per_million_high_context": 12,
         "cached_tokens_price_per_million_high_context": 1,
-        "x_search_per_thousand_calls": 5,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
@@ -40,7 +103,8 @@
         "priority_output_tokens_price_per_million": 12,
         "priority_output_tokens_price_per_million_high_context": 24,
         "priority_cached_tokens_price_per_million": 1,
-        "priority_cached_tokens_price_per_million_high_context": 2
+        "priority_cached_tokens_price_per_million_high_context": 2,
+        "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "rpm": 9000,
@@ -88,7 +152,9 @@
         "input_tokens_price_per_million_high_context": 4,
         "output_tokens_price_per_million_high_context": 12,
         "cached_tokens_price_per_million_high_context": 0.6,
-        "x_search_per_thousand_calls": 5,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
@@ -146,7 +212,9 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "x_search_per_thousand_calls": 5,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
@@ -210,7 +278,9 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "x_search_per_thousand_calls": 5,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
@@ -288,7 +358,9 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "x_search_per_thousand_calls": 5,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
@@ -360,7 +432,9 @@
         "input_tokens_price_per_million_high_context": 2.5,
         "output_tokens_price_per_million_high_context": 5,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "x_search_per_thousand_calls": 5,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
@@ -432,7 +506,9 @@
         "input_tokens_price_per_million_high_context": 2,
         "output_tokens_price_per_million_high_context": 4,
         "cached_tokens_price_per_million_high_context": 0.4,
-        "x_search_per_thousand_calls": 5,
+        "x_search_per_thousand_calls": null,
+        "x_search_per_thousand_posts": 5,
+        "x_search_per_thousand_user_profiles": 10,
         "web_search_per_thousand_calls": 5,
         "code_execution_per_thousand_calls": 5,
         "file_attachments_per_thousand_calls": 10,
@@ -480,10 +556,12 @@
         "image_generation": {
           "low": {
             "1k": 0.04,
+            "1.5k": 0.05,
             "2k": 0.06
           },
           "medium": {
             "1k": 0.06,
+            "1.5k": 0.07,
             "2k": 0.08
           }
         },
@@ -542,6 +620,7 @@
         "image_generation": {
           "standard": {
             "1k": 0.05,
+            "1.5k": 0.06,
             "2k": 0.07
           }
         },

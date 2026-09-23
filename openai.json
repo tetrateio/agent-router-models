@@ -2,6 +2,156 @@
   "version": "1.0",
   "models": [
     {
+      "model": "gpt-6-sol",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "2.5000000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "image_generation",
+        "native_streaming",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "web_search_per_thousand_calls": 10,
+        "input_tokens_price_per_million_high_context": 4,
+        "cached_tokens_price_per_million_high_context": 0.4,
+        "output_tokens_price_per_million_high_context": 15,
+        "caching_tokens_price_per_million_high_context": 5,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_caching_tokens_price_per_million": 1.25,
+        "batch_output_tokens_price_per_million": 5,
+        "batch_input_tokens_price_per_million_high_context": 2,
+        "batch_cached_tokens_price_per_million_high_context": 0.2,
+        "batch_caching_tokens_price_per_million_high_context": 2.5,
+        "batch_output_tokens_price_per_million_high_context": 7.5,
+        "flex_input_tokens_price_per_million": 1,
+        "flex_cached_tokens_price_per_million": 0.1,
+        "flex_caching_tokens_price_per_million": 1.25,
+        "flex_output_tokens_price_per_million": 5,
+        "flex_input_tokens_price_per_million_high_context": 2,
+        "flex_cached_tokens_price_per_million_high_context": 0.2,
+        "flex_caching_tokens_price_per_million_high_context": 2.5,
+        "flex_output_tokens_price_per_million_high_context": 7.5,
+        "fast_mode_input_tokens_price_per_million": 4,
+        "fast_mode_cached_tokens_price_per_million": 0.4,
+        "fast_mode_caching_tokens_price_per_million": 5,
+        "fast_mode_output_tokens_price_per_million": 20,
+        "fast_mode_input_tokens_price_per_million_high_context": 8,
+        "fast_mode_cached_tokens_price_per_million_high_context": 0.8,
+        "fast_mode_caching_tokens_price_per_million_high_context": 10,
+        "fast_mode_output_tokens_price_per_million_high_context": 30,
+        "regional_processing_uplift_multiplier": 1.1
+      },
+      "limits": {
+        "high_context": 272000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+        "description": "Built to power complex coding and agentic workflows.",
+        "display_name": "GPT-6 Sol",
+        "release_date": "2026-09-22",
+        "knowledge_cutoff": "2026-04-20",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh", "max"],
+        "aliases": ["gpt-6-sol"]
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": "0.5000000000",
+      "cachedTokensPricePerMillion": "0.0100000000",
+      "cachingTokensPricePerMillion": "0.1250000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "image_generation",
+        "native_streaming",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "web_search_per_thousand_calls": 10,
+        "input_tokens_price_per_million_high_context": 0.2,
+        "cached_tokens_price_per_million_high_context": 0.02,
+        "output_tokens_price_per_million_high_context": 0.75,
+        "caching_tokens_price_per_million_high_context": 0.25,
+        "batch_input_tokens_price_per_million": 0.05,
+        "batch_cached_tokens_price_per_million": 0.005,
+        "batch_caching_tokens_price_per_million": 0.0625,
+        "batch_output_tokens_price_per_million": 0.25,
+        "batch_input_tokens_price_per_million_high_context": 0.1,
+        "batch_cached_tokens_price_per_million_high_context": 0.01,
+        "batch_caching_tokens_price_per_million_high_context": 0.125,
+        "batch_output_tokens_price_per_million_high_context": 0.375,
+        "flex_input_tokens_price_per_million": 0.05,
+        "flex_cached_tokens_price_per_million": 0.005,
+        "flex_caching_tokens_price_per_million": 0.0625,
+        "flex_output_tokens_price_per_million": 0.25,
+        "flex_input_tokens_price_per_million_high_context": 0.1,
+        "flex_cached_tokens_price_per_million_high_context": 0.01,
+        "flex_caching_tokens_price_per_million_high_context": 0.125,
+        "flex_output_tokens_price_per_million_high_context": 0.375,
+        "fast_mode_input_tokens_price_per_million": 0.2,
+        "fast_mode_cached_tokens_price_per_million": 0.02,
+        "fast_mode_caching_tokens_price_per_million": 0.25,
+        "fast_mode_output_tokens_price_per_million": 1,
+        "fast_mode_input_tokens_price_per_million_high_context": 0.4,
+        "fast_mode_cached_tokens_price_per_million_high_context": 0.04,
+        "fast_mode_caching_tokens_price_per_million_high_context": 0.5,
+        "fast_mode_output_tokens_price_per_million_high_context": 1.5,
+        "regional_processing_uplift_multiplier": 1.1
+      },
+      "limits": {
+        "high_context": 272000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+        "description": "Our most efficient model for focused, high-volume tasks.",
+        "display_name": "GPT-6 Luna",
+        "release_date": "2026-09-22",
+        "knowledge_cutoff": "2026-05-18",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh", "max"],
+        "aliases": ["gpt-6-luna"]
+      }
+    },
+    {
       "model": "gpt-6-astra",
       "provider": "openai",
       "mode": "responses",
@@ -1128,10 +1278,16 @@
       },
       "backendUrls": ["/v1/images/generations"],
       "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.63,
+        "batch_output_tokens_price_per_million": 5,
         "image_tokens": {
           "input_image_tokens_price_per_million": 8,
           "output_image_tokens_price_per_million": 32,
-          "cached_input_image_tokens_price_per_million": 2
+          "cached_input_image_tokens_price_per_million": 2,
+          "batch_input_image_tokens_price_per_million": 4,
+          "batch_output_image_tokens_price_per_million": 16,
+          "batch_cached_input_image_tokens_price_per_million": 1
         },
         "image_generation": {
           "low": {
@@ -1383,10 +1539,16 @@
       },
       "backendUrls": ["/v1/images/generations"],
       "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_output_tokens_price_per_million": null,
         "image_tokens": {
           "input_image_tokens_price_per_million": 2.5,
           "output_image_tokens_price_per_million": 8,
-          "cached_input_image_tokens_price_per_million": 0.25
+          "cached_input_image_tokens_price_per_million": 0.25,
+          "batch_input_image_tokens_price_per_million": 1.25,
+          "batch_output_image_tokens_price_per_million": 4,
+          "batch_cached_input_image_tokens_price_per_million": 0.13
         },
         "image_generation": {
           "low": {
@@ -1487,10 +1649,16 @@
       },
       "backendUrls": ["/v1/images/generations"],
       "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.63,
+        "batch_output_tokens_price_per_million": 5,
         "image_tokens": {
           "input_image_tokens_price_per_million": 8,
           "output_image_tokens_price_per_million": 32,
-          "cached_input_image_tokens_price_per_million": 2
+          "cached_input_image_tokens_price_per_million": 2,
+          "batch_input_image_tokens_price_per_million": 4,
+          "batch_output_image_tokens_price_per_million": 16,
+          "batch_cached_input_image_tokens_price_per_million": 1
         },
         "image_generation": {
           "low": {
@@ -2123,10 +2291,16 @@
       },
       "backendUrls": ["/v1/images/generations"],
       "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.63,
+        "batch_output_tokens_price_per_million": null,
         "image_tokens": {
           "input_image_tokens_price_per_million": 10,
           "output_image_tokens_price_per_million": 40,
-          "cached_input_image_tokens_price_per_million": 2.5
+          "cached_input_image_tokens_price_per_million": 2.5,
+          "batch_input_image_tokens_price_per_million": 5,
+          "batch_output_image_tokens_price_per_million": 20,
+          "batch_cached_input_image_tokens_price_per_million": 1.25
         },
         "image_generation": {
           "low": {
@@ -2960,10 +3134,16 @@
       },
       "backendUrls": ["/v1/images/generations"],
       "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.625,
+        "batch_output_tokens_price_per_million": null,
         "image_tokens": {
           "input_image_tokens_price_per_million": 8,
           "output_image_tokens_price_per_million": 30,
-          "cached_input_image_tokens_price_per_million": 2
+          "cached_input_image_tokens_price_per_million": 2,
+          "batch_input_image_tokens_price_per_million": 4,
+          "batch_output_image_tokens_price_per_million": 15,
+          "batch_cached_input_image_tokens_price_per_million": 1
         },
         "image_generation": {
           "low": {

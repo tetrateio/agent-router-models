@@ -1,3 +1,303 @@
+# 2026-09-23 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 504 records.
+
+## New Models:
+
+- [Anthropic] Claude Opus 5.5 is the new flagship model for long-running agentic coding and knowledge work. Input costs $4 and output costs $20 per million tokens. Cache reads cost $0.20, which is 5 percent of the input price. The context window holds 1,000,000 tokens, and output reaches 128,000 tokens. Adaptive thinking is always on and cannot be turned off. Effort accepts low, medium, high, xhigh, and max, and the default is medium. Knowledge extends through June 2026. The model accepts text, images, and PDF files, and it returns text. It supports computer use, web search, code execution, prompt caching, structured outputs, and tool calls. Forced tool use returns an error, so only automatic tool choice works.
+
+| `claude-opus-5-5` service | Input | Output |
+| --- | --- | --- |
+| Standard | $4.00 | $20.00 |
+| Batch | $2.00 | $10.00 |
+| Fast mode | $8.00 | $40.00 |
+
+Prices are USD per million tokens. Five-minute cache writes cost $5 and one-hour cache writes cost $8. Fast mode is a research preview on the Claude API only.
+
+- [VertexAnthropic] Claude Opus 5.5 on Google Cloud reached general availability on September 22, 2026. Standard input costs $4 and output costs $20 per million tokens. Cache reads cost $0.20. Five-minute cache writes cost $5, and one-hour cache writes cost $8. Batch input costs $2.50 and Batch output costs $12.50. The context window holds 1,000,000 tokens, and output reaches 128,000 tokens. It runs on the global endpoint and in the United States and Europe.
+
+- [OpenAI] GPT-6 Sol and GPT-6 Luna are two new reasoning models. Both accept text and images and return text. Both hold 1,050,000 tokens of context, accept at most 922,000 input tokens, and return at most 128,000 tokens. Effort accepts none, low, medium, high, xhigh, and max, and the default is medium. Sol's knowledge extends through April 20, 2026. Luna's knowledge extends through May 18, 2026.
+
+| Model | Input / cached / cache write / output | Above 272,000 input tokens |
+| --- | --- | --- |
+| `gpt-6-sol` | $2.00 / $0.20 / $2.50 / $10.00 | $4.00 / $0.40 / $5.00 / $15.00 |
+| `gpt-6-luna` | $0.10 / $0.01 / $0.125 / $0.50 | $0.20 / $0.02 / $0.25 / $0.75 |
+
+Prices are USD per million tokens. A prompt above 272,000 input tokens costs the higher price for the whole request. Batch and Flex cost half the standard price. Fast mode costs twice the standard price. Both models support web search, file search, code execution, computer use, image generation, and tool calls through the Responses API.
+
+- [DeepInfra] MiMo-V2.6-Flash and MiMo-V2.6-Pro are two new omnimodal models from Xiaomi. Both accept text, images, video, and audio, and both return text. Both hold 1,048,576 tokens of context. Both support reasoning, tool calls, structured outputs, and prompt caching.
+
+| Model | Input / cached / output | Batch input / output |
+| --- | --- | --- |
+| `XiaomiMiMo/MiMo-V2.6-Flash` | $0.14 / $0.0028 / $0.28 | $0.112 / $0.224 |
+| `XiaomiMiMo/MiMo-V2.6-Pro` | $0.435 / $0.0036 / $0.87 | $0.348 / $0.696 |
+
+Prices are USD per million tokens.
+
+## Price Changes:
+
+- [DeepInfra] GLM-5.3 costs less. Its list price fell, and its promotion grew from 25 percent to 37.5 percent.
+
+| `zai-org/GLM-5.3` rate | Previous | Current |
+| --- | --- | --- |
+| Standard input / output | $0.90 / $3.00 | $0.5625 / $2.50 |
+| Standard cached input | $0.15 | $0.125 |
+| Batch and Flex input / output | $0.72 / $2.40 | $0.45 / $2.00 |
+| Flex cached input | $0.12 | $0.10 |
+
+Prices are USD per million tokens. This model also changed price on September 22. No other model changed price. Scripted checks compared every published price cell against the catalog and found no other difference.
+
+## Deprecated Models:
+
+- [DeepInfra] MiMo-V2.5 and MiMo-V2.5-Pro retire on September 29, 2026. DeepInfra names MiMo-V2.6-Flash and MiMo-V2.6-Pro as their replacements. Both models stay available until that date, and their prices do not change.
+
+## Retired Models:
+
+- [All] No model retired in this update.
+
+## Other Updates:
+
+- [Gemini] Google now limits access to the Gemini 2.5 models. Only projects that used them in the past can call them. Google states that these models are not deprecated and stay available through the API until further notice. New projects must use Gemini 3.5 Flash-Lite or Gemini 3.8 Flash. The catalog keeps all five Gemini 2.5 records available.
+- [xAI] The X Search price table now shows $5 per 1,000 posts and $10 per 1,000 profiles. The warning banner is gone. This matches the prices that the September 22 update recorded.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [All] This update adds no disabled record. `vertex/gemini-3.8-flash-cyber` stays off from the September 22 update, because Google serves it behind an allowlist.
+
+### Corrections to earlier updates
+
+- [All] This update corrects no earlier entry.
+
+### Follow-up work
+
+- [Anthropic] The web search page names no supported models. It points to the Tool reference, whose Markdown holds no per-model table. Every example on the page runs web search on `claude-opus-5-5`, and Google Cloud's mirror of the same feature lists the model. The record carries web search on that evidence. A later run must read the rendered Tool reference.
+- [All] The browser extension was unreachable for this run. Every source was read over `curl`. The Vertex pricing page now returns its 56 tables to `curl`, and their contents match the browser read from September 22.
+- [DeepInfra] The provider index publishes one end timestamp for a deprecated model and no announcement date. The two MiMo records carry a retirement date and no deprecation date.
+- [Anthropic] Claude Opus 5.5 retires "not sooner than September 22, 2027". This date is not firm, so the record holds no retirement date. The same applies to the Google Cloud record.
+- [Gemini] The Gemini 2.5 access limit has no published end date and no model list beyond "the 2.5 models". The catalog cannot record a per-account access rule.
+- [Groq] The tool guides link to [Groq pricing](https://groq.com/pricing), which still redirects to a homepage without prices. Browser-search and code-execution charges stay unverified.
+- [DeepInfra] Nine promotions stay active with no published end date. The September 22 update lists them. GLM-5.3 now runs at 37.5 percent instead of 25 percent. This provider changed one promotion twice in two days, so its prices need a check on every run.
+- [Gemini/Vertex] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash token prices double.
+- [All] Earlier unresolved items stay open. They cover source conflicts, historical field gaps, and billing units that the schema cannot hold.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 498 to 504 records. This update adds six records and removes none.
+- [Anthropic] `claude-opus-5-5` uses `inference_geo_us_multiplier: 1.1` and the full `fast_mode_*` set. Its fast cache cells are $10 for five minutes, $16 for one hour, and $0.40 for a read. These follow the published 1.25x, 2x, and 0.05x multipliers on the $8 fast input price.
+- [Anthropic] The record uses `tool_use_system_prompt_tokens: 286` and `min_cacheable_prompt_tokens: 512`. The `tool_choice` ability covers automatic tool choice only, because forced tool use returns an error.
+- [OpenAI] Both new records use `high_context: 272000`, `max_input_tokens: 922000`, and `regional_processing_uplift_multiplier: 1.1`. Their `reasoning_efforts` include `none`, which GPT-6 Astra does not accept.
+- [VertexAnthropic] `claude-opus-5-5` sets `web_search_per_thousand_calls` to null and keeps the `web_search` ability. Seven other Claude records already use this shape.
+- [DeepInfra] The two MiMo V2.5 records set `deprecated: true` and `retirement_date: "2026-09-29"`. They keep `isEnabled: true`, because the date is in the future.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [DeepInfra] `nvidia/Nemotron-3-Diarization-preview` is a speaker-diarization model. It bills per input second, and its mode is outside the accepted list.
+- [All] Earlier exclusions stay. They cover the Gemini Live and Interactions models and the Groq Enterprise and speech models. They also cover the xAI Fast and transcription models, and the OpenAI realtime, transcription, and legacy completion models.
+
+### Prices that did not change
+
+- [OpenAI] A scripted check compared 824 price cells across the Standard, Batch, Flex, and Fast tables. Every cell matched, including the 64 new cells for Sol and Luna. The index and the deprecation page are unchanged.
+- [Anthropic] A scripted check compared 210 price cells across the standard, Batch, and Fast-mode tables for all 25 records. Every cell matched.
+- [Gemini] Model IDs and every published price are identical to the September 22 snapshot. Only the access note changed.
+- [xAI] Every token, tool, image, and service price is unchanged. The model index lists the same eight text and image models.
+- [Groq] The model index and the deprecation page are byte-identical to the September 22 snapshot. All four records keep their values.
+- [Vertex] The 56 rendered pricing tables hold no new price for an existing record. Claude Opus 5.5 supplied the only new rows.
+- [DeepInfra] The other 297 existing records match the provider index on price, limits, tags, and lifecycle.
+
+### Prices that differ from the direct-API catalogs
+
+- [VertexAnthropic] Claude Opus 5.5 keeps the same standard and cache prices as the direct Anthropic record. Batch differs: Google charges $2.50 input and $12.50 output per million tokens, while Anthropic charges $2 and $10.
+- [VertexAnthropic] Google publishes no fast-mode price for Claude Opus 5.5. Anthropic sells fast mode on its own API only, at $8 input and $40 output per million tokens.
+- [VertexAnthropic] Google's $10 web-search table does not name Claude Opus 5.5, so its search rate stays unknown. The direct Anthropic record carries $10 per 1,000 searches.
+- [VertexAnthropic] Regional endpoints cost $4.40 input and $22 output per million tokens. The catalog records the global prices, as it does for the other Claude records.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [VertexAnthropic] Claude Opus 5.5 on Google Cloud lists computer use, web search, batch predictions, prompt caching, function calling, count tokens, and the memory tool. It does not list code execution, file upload, structured outputs, or reasoning, so the record omits them. The direct Anthropic record carries all four.
+- [VertexAnthropic] Google's page lists PDF input, which the record keeps. Both catalogs record text, image, and document input with text output.
+
+### Sources and coverage
+
+- [All] This run compared every one of the 498 starting records against a current provider source. Six additions have full source records. A provider match and a passing validator do not establish complete field verification.
+- [All] The September 22 run saved page snapshots. This run fetched the same pages and compared them, so unchanged pages are proven unchanged, not assumed.
+- [All] Browser coverage is zero for this run. The extension did not connect. Every source, including the Vertex pricing tables, came from `curl`.
+- [All] Evidence stays under ignored `audits/2026-09-23/` and `audits/verify/`. It holds the fetched sources, the comparison scripts, and the apply scripts.
+- [All] A second pass re-fetched every source and re-checked all 34 changed records field by field. It compared 990 DeepInfra cells, 824 OpenAI cells, 168 xAI cells, and every changed Anthropic, Vertex, and Groq value. The pass found one stale price, which this update corrects.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Checks covered the [release notes](https://platform.claude.com/docs/en/release-notes/overview), [models overview](https://platform.claude.com/docs/en/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [effort](https://platform.claude.com/docs/en/build-with-claude/effort), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), and the [Claude Opus 5.5 page](https://platform.claude.com/docs/en/models/opus-5-5/overview). The code-execution page lists `claude-opus-5-5` in its supported models.
+- [OpenAI] Checks covered the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), and the [Sol](https://developers.openai.com/api/docs/models/gpt-6-sol) and [Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) model pages. The web-search fee applies to all models at $10 per 1,000 calls.
+- [Gemini] Checks covered the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), and [deprecations](https://ai.google.dev/gemini-api/docs/deprecations). No model ID and no price changed.
+- [xAI] Checks covered the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), and [pricing](https://docs.x.ai/developers/pricing). The feed has no entry after Grok 4.7.
+- [Groq] Checks covered the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), and the [changelog](https://console.groq.com/docs/changelog). All three pages are unchanged.
+- [DeepInfra] All 299 starting records match the [unfiltered index](https://api.deepinfra.com/models/list). A field-level comparison against the September 22 index found two changed records and three new models. Two detail endpoints supplied output limits.
+- [Vertex] Checks covered the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) and the [pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing). The only entry since September 22 is Claude Opus 5.5 in Model Garden. No record in `vertex.json` changed.
+- [VertexAnthropic] Checks covered the [Claude Opus 5.5 page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-5-5), the [Claude index](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), the [web search page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/web-search), and the three Claude pricing tables.
+
+</details>
+
+# 2026-09-22 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 498 records.
+
+## New Models:
+
+- [xAI] Grok 4.7 is SpaceXAI's new frontier model for coding, agentic tasks, and knowledge work. It accepts text and images. It returns text. The context window holds 500,000 tokens. Reasoning effort accepts low, medium, high, and xhigh. The default is high. Knowledge extends through May 2026.
+
+| `grok-4.7` price | Below 200,000 prompt tokens | 200,000 prompt tokens and above |
+| --- | --- | --- |
+| Input | $2.00 | $4.00 |
+| Cached input | $0.50 | $1.00 |
+| Output | $6.00 | $12.00 |
+
+Prices are USD per million tokens. A request that reaches 200,000 prompt tokens costs the higher price for every token in that request. The US regional endpoint costs 1.1 times these prices. The Batch API does not accept this model. The model supports web search, X Search, code execution, file upload, prompt caching, structured outputs, and tool calls.
+
+- [DeepInfra] Qwen3.8-Flash is a fast, low-cost text model. Input costs $0.113 per million tokens. Cached input costs $0.0141, and output costs $0.382. The context window holds 1,000,000 tokens. Output reaches 131,072 tokens. One flat price applies across the whole window. The model supports tool calls, structured outputs, and prompt caching.
+
+## Price Changes:
+
+- [DeepInfra] Five models changed price. Promotions started on three models. One promotion decreased, and one promotion ended.
+
+| Model | Previous input / output | Current input / output | Previous / current cached input |
+| --- | --- | --- | --- |
+| `Qwen/Qwen3.8-27B` | $0.40 / $3.00 | $0.15 / $1.875 | $0.04 / $0.0375 |
+| `deepseek-ai/DeepSeek-V4.1-Flash` | $0.20 / $0.60 | $0.14 / $0.42 | $0.006 / $0.0042 |
+| `tencent/Hy3` | $0.105 / $0.435 | $0.13 / $0.53 | $0.02625 / $0.033 |
+| `zai-org/GLM-5.2` | $0.4875 / $1.56 | $0.5625 / $1.80 | $0.091 / $0.105 |
+| `zai-org/GLM-5.3` | $1.20 / $4.00 | $0.90 / $3.00 | $0.12 / $0.15 |
+
+Prices are USD per million tokens. Batch prices stay 20 percent below the standard prices. Flex and Priority prices moved with the standard prices. Hy3 lost its 25 percent promotion, but its list price also decreased.
+
+- [xAI] X Search changed its billing unit on September 21, 2026 at noon Pacific time. Fetched posts now cost $5 per 1,000. Fetched user profiles now cost $10 per 1,000. The earlier price of $5 per 1,000 calls no longer applies. Every post that a search or a thread fetch returns counts. Parent posts and quoted posts also count. This change affects all seven xAI text models.
+
+- [OpenAI] Five image models now carry their published Batch prices. These prices are not new. Earlier updates did not record them.
+
+| Model | Batch text input / cached / output | Batch image input / cached / output |
+| --- | --- | --- |
+| `gpt-image-2` | $2.50 / $0.625 / none | $4.00 / $1.00 / $15.00 |
+| `gpt-image-1.5` | $2.50 / $0.63 / $5.00 | $4.00 / $1.00 / $16.00 |
+| `chatgpt-image-latest` | $2.50 / $0.63 / $5.00 | $4.00 / $1.00 / $16.00 |
+| `gpt-image-1` | $2.50 / $0.63 / none | $5.00 / $1.25 / $20.00 |
+| `gpt-image-1-mini` | $1.00 / $0.10 / none | $1.25 / $0.13 / $4.00 |
+
+Prices are USD per million tokens. "None" means that OpenAI publishes no rate for that cell.
+
+## Deprecated Models:
+
+- [Vertex] Gemini 2.5 Flash Image now retires on March 15, 2027. The earlier date was October 2, 2026. Google names Gemini 3.1 Flash-Lite Image as the replacement. This model stays off under the image-generation policy.
+
+## Retired Models:
+
+- [Groq] Qwen 3.6 27B shut down on September 14, 2026. Groq announced the replacement as `qwen/qwen3.8-27b`. The successor keeps the same 131K context window, thinking and instruct modes, tunable reasoning effort, tool use, and JSON mode. Groq no longer lists Qwen 3.6 27B on its supported-models page, so this update removes the record. The shutdown applies to free and developer-tier usage. Enterprise customers with a committed-spend contract keep access.
+- [Groq] `groq/compound` and `groq/compound-mini` shut down on September 21, 2026. Groq names no replacement. Both systems were already outside the catalog.
+
+## Other Updates:
+
+- [Vertex] Grok 4.6 reached general availability. It runs on the global endpoint and the US multi-region endpoint. Its prices, context window, and abilities did not change.
+- [VertexAnthropic] The Claude Opus 4.1 web-search price is now unknown. Google's table of $10 per 1,000 searches no longer names this model. The web-search feature page still lists the model, so the ability stays.
+- [DeepInfra] Qwen3.8-27B now accepts video input, with text and images. Hy3 now runs at fp4 precision instead of fp8. Both models also changed price, as the table above shows.
+- [xAI] Three image models now carry their 1.5K output prices. Imagine Image 2.0 costs $0.05 at low quality and $0.07 at medium quality. `grok-imagine-image-quality` costs $0.06. All three models stay off under the image-generation policy.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [Vertex] `gemini-3.8-flash-cyber` is a post-training version of Gemini 3.8 Flash for cybersecurity work. Google serves it at general availability behind an allowlist, so the record stays off. Standard input costs $1.50 and output costs $7.50 per million tokens. Cached input costs $0.15. Priority costs $2.70 input and $13.50 output. Flex costs $0.75 input and $3.75 output. Outside the global endpoint, prices rise by a factor of 1.1. The context window holds 1,048,576 tokens, and output reaches 65,536 tokens. It accepts text, image, audio, and video input, and returns text. It supports thinking, system instructions, structured outputs, and context caching. It does not support function calling, grounding, code execution, URL context, or computer use.
+
+### Corrections to earlier updates
+
+- [OpenAI] The September 14 update did not record the Batch prices for the five image models above. OpenAI published the same prices on that date. The catalog now carries them.
+- [xAI] The September 14 image table listed only 1K and 2K sizes. The rendered pricing page also publishes a 1.5K size for two models. The catalog now carries those three prices. This update cannot establish whether the 1.5K rows existed on September 14.
+- [Vertex] The September 14 replacement text for Gemini 2.5 Flash Image named a retired preview model. Google now names Gemini 3.1 Flash-Lite Image. The record carries the current name.
+
+### Follow-up work
+
+- [Groq] The tool guides link to [Groq pricing](https://groq.com/pricing), which still redirects to a homepage without prices. Browser-search and code-execution charges for the GPT OSS models stay unverified.
+- [Groq] The tool overview marks built-in tools unsupported for Safeguard. The browser-search guide lists Safeguard as supported. The code-execution guide does not. The record keeps `web_search` and omits `code_execution`, as in earlier updates.
+- [Groq] Safeguard appears in the reasoning supported-models table, but the reasoning guide gives effort levels only for GPT-OSS 20B and 120B. The record holds no reasoning settings for Safeguard.
+- [VertexAnthropic] Claude Opus 4.1 no longer appears anywhere on the Vertex pricing page. It held a full price table on September 14. Its model page is still live and still shows general availability. Under the catalog rules, a missing table alone does not establish that a model has no price. The record and its prices stay. A later run must resolve this.
+- [Vertex] Gemini 3.8 Flash Cyber has conflicting Batch evidence. The pricing table groups it under "Flex/Batch". Its model page states that batch inference is not supported. The record carries Flex prices only.
+- [xAI] The tool table still prints $5 per 1,000 X Search calls. The dated notice above the table states that post and profile prices replaced that rate. The catalog follows the notice, because the stated time has passed.
+- [Gemini] Gemini 2.5 Computer Use Preview publishes prices above 200,000 input tokens. Its input limit is 128,000 tokens, so a request cannot reach that threshold. The catalog records no long-context price.
+- [Vertex] Gemini 3.1 Flash-Lite Image now shows "June 28, 2027 or later". This date is not firm, so the record holds no retirement date.
+- [DeepInfra] Nine promotions are active, and none has a published end date. They cover `Qwen/Qwen3.8-27B` at 25 percent, `deepseek-ai/DeepSeek-V4.1-Flash` at 30 percent, `zai-org/GLM-5.2` at 25 percent, and `zai-org/GLM-5.3` at 25 percent. They also cover `zai-org/GLM-5.3-Flash` at 50 percent, `XiaomiMiMo/MiMo-V2.5-Pro` at 61 percent, `deepseek-ai/DeepSeek-V4-Flash-Vision-Exp` at 51 percent, `stepfun-ai/Step-3.7-Flash` at 20 percent, and `XiaomiMiMo/MiMo-V2.5` at 5 percent. The `tencent/Hy3` promotion ended.
+- [Gemini/Vertex] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash token prices double. Standard input and output rise from $0.75 and $3.75 to $1.50 and $7.50.
+- [OpenAI] The Sol promotion lasts at least through November 21, 2026. No later price is confirmed.
+- [All] Earlier unresolved items stay open. They cover source conflicts, historical field gaps, and billing units that the schema cannot hold.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 496 to 498 records. This update added three records and removed one. The new records are `xai/grok-4.7`, `deepinfra/Qwen/Qwen3.8-Flash`, and `vertex/gemini-3.8-flash-cyber`.
+- [xAI] Seven text models now set `x_search_per_thousand_calls` to null. They carry `x_search_per_thousand_posts: 5` and `x_search_per_thousand_user_profiles: 10`. A null call rate does not mean free usage. It means that the call unit no longer has a published price.
+- [xAI] `grok-4.7` and `grok-4.6` now carry `regional_processing_uplift_multiplier: 1.1` for the US regional endpoint. Earlier updates did not record this published factor.
+- [OpenAI] The five image records gained `batch_*` text cells and `batch_*` keys inside `image_tokens`. A null Batch output cell means that OpenAI publishes no rate.
+- [Groq] This update removes `groq/qwen/qwen3.6-27b`. Its shutdown date has passed, and Groq no longer serves the model. A removal for a passed shutdown date differs from a removal for missing prices.
+- [VertexAnthropic] `claude-opus-4-1` now sets `web_search_per_thousand_calls` to null and keeps the `web_search` ability. Six other Claude records already use this shape.
+- [Vertex] `vertex/xai/grok-4.6` now uses `launch_stage: "GA"` and drops `preview`. Its `regions` list gained `us`.
+- [DeepInfra] `deepinfra/Qwen/Qwen3.8-27B` gained `video` in its input modalities, from the `input-video` tag on the provider index.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [Gemini] `gemini-3.8-live` and `gemini-3.8-live-extended-thinking` became generally available on September 15. Both are audio-to-audio models for the Live API. No accepted mode fits that endpoint.
+- [Gemini] `antigravity-preview-09-2026` replaced `antigravity-preview-05-2026` on September 17. Google serves its agents only through the Interactions API.
+- [DeepInfra] Three new image generators stay out under the image-generation policy: `Bria/fibo-1.5`, `Bria/fibo_edit-1.5`, and `ByteDance/Seedream-5.0-Pro`.
+- [Groq] `minimaxai/minimax-m2.7` shows "Contact Sales" for price and rate limits. Enterprise models stay out.
+- [Groq] `meta-llama/llama-prompt-guard-2-22m` and `meta-llama/llama-prompt-guard-2-86m` are content classifiers. Their mode is outside the accepted list.
+- [Groq] Orpheus speech models and both Whisper models serve speech endpoints. Their modes are outside the accepted list.
+- [xAI] Grok 4.7 Fast runs only through Cursor and Grok Build. The public xAI API does not serve it.
+- [xAI] `grok-voice-transcribe-2.0` is a speech-to-text model. Its mode is outside the accepted list.
+- [OpenAI] Earlier exclusions stay. They cover `gpt-rosalind-research`, `gpt-live-1`, the realtime and transcription models, `gpt-oss-120b`, `gpt-oss-20b`, and the legacy completion models.
+
+### Prices that did not change
+
+- [Anthropic] All 24 records match the current pricing, Batch, and Fast-mode tables. Context windows, output limits, and knowledge cutoffs also match. The pricing page text is identical to the September 14 snapshot.
+- [OpenAI] A scripted check compared 760 price cells across the Standard, Batch, Flex, and Fast tables. Every cell matched. The pricing page and all 102 model pages are byte-identical to the September 14 snapshot.
+- [Gemini] A scripted check compared 195 price cells across Standard, Batch, Flex, and Priority for all 20 records. Token limits on 17 model pages also match. No value changed.
+- [Vertex] The 56 rendered pricing tables hold no new price for an existing record. Gemini 3.8 Flash Cyber supplied the only new rows.
+- [VertexAnthropic] All seven Claude pricing tables hold the same rows as on September 14. All 12 model pages are unchanged.
+- [xAI] The seven text models keep their prices, their 200,000-token threshold, and their rate limits. The threshold includes the boundary value.
+- [Groq] The four remaining models keep every recorded value. The model index confirms the prices, context windows, output limits, and Developer-plan rate limits. The capability guides confirm reasoning, vision, structured outputs, tool use, caching, and built-in tools. Cached input stays at the literal published rates of $0.075 and $0.037 per million tokens. Batch stays at 50 percent for the two GPT OSS models, and Flex matches the standard price.
+- [DeepInfra] The other 293 existing records match the provider index on price, limits, tags, and lifecycle.
+
+### Prices that differ from the direct-API catalogs
+
+- [Vertex] Gemini 3.8 Flash Cyber has no direct Gemini record. Google publishes no price for it on the Gemini API pricing page.
+- [Vertex] Grok 4.6 keeps its hosted prices of $2.00 input and $6.00 output per million tokens. These match the direct xAI prices. Vertex publishes no Priority or Batch price for it.
+- [VertexAnthropic] Claude Opus 4.1 keeps its recorded Vertex prices, but Google no longer publishes them. The direct Anthropic catalog still shows $15 input and $75 output per million tokens.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [Vertex] Gemini 3.8 Flash no longer supports agentic video understanding. Video input stays. The catalog holds no field for that preview ability, so no record changed.
+- [Vertex] Gemini 3.8 Flash Cyber does not support function calling, grounding, code execution, URL context, or computer use. Direct Gemini 3.8 Flash supports all of them.
+- [Vertex] Grok 4.6 does not accept batch predictions. The direct xAI catalog also records no Batch price for it.
+
+### Sources and coverage
+
+- [All] This run compared every one of the 496 starting records against a current provider source. Three additions have full source records. A provider match and a passing validator do not establish complete field verification.
+- [All] The 2026-09-14 run saved page snapshots. This run fetched the same pages and compared them, so unchanged pages are proven unchanged, not assumed.
+- [Groq] Source coverage is now complete for this date. A later retry reached every page over `curl`, after the earlier attempts returned "Access denied". Checks covered the index, deprecations, changelog, rate limits, five model pages, and nine capability and service pages. Only the external pricing page stays unreachable.
+- [All] Evidence stays under ignored `audits/2026-09-22/`. It holds the fetched sources, the comparison scripts, and a coverage table.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Checks covered the [release notes](https://platform.claude.com/docs/en/release-notes/overview), [models overview](https://platform.claude.com/docs/en/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), and [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations). The feed holds no model entry after September 14. The named historical field gaps stay open.
+- [OpenAI] Checks covered the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), and 102 model pages. The last model entry in the feed is September 10, for `gpt-live-1`.
+- [Gemini] Checks covered the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), and 17 model pages. Two new model IDs appeared, both for the Live API.
+- [xAI] Checks covered the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing), [rate limits](https://docs.x.ai/developers/rate-limits), the tool guides, and the [Grok 4.7 page](https://docs.x.ai/developers/models/grok-4.7). Browser supplied the rendered image and tool tables.
+- [Groq] Checks covered the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), [changelog](https://console.groq.com/docs/changelog), and [rate limits](https://console.groq.com/docs/rate-limits). They also covered [vision](https://console.groq.com/docs/vision), [reasoning](https://console.groq.com/docs/reasoning), [structured outputs](https://console.groq.com/docs/structured-outputs), [prompt caching](https://console.groq.com/docs/prompt-caching), [tool use](https://console.groq.com/docs/tool-use/overview), [browser search](https://console.groq.com/docs/tool-use/built-in-tools/browser-search), [code execution](https://console.groq.com/docs/tool-use/built-in-tools/code-execution), [Batch](https://console.groq.com/docs/batch), [Flex](https://console.groq.com/docs/flex-processing), and [service tiers](https://console.groq.com/docs/service-tiers). The changelog still ends on April 18, 2026, so the deprecation page carries the September events.
+- [DeepInfra] All 298 starting records match the [unfiltered index](https://api.deepinfra.com/models/list). A field-level comparison against the September 14 index found five changed records and four new models. Three detail endpoints supplied output limits and tags.
+- [Vertex] Checks covered the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes), 46 model pages, [open-model deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/open-models), and [partner deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/partner-models). Browser read all 56 [pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing). Six model pages changed.
+- [VertexAnthropic] Checks covered 12 model pages, the seven Claude pricing tables, and the [web search page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/web-search). All model pages are unchanged.
+
+</details>
+
 # 2026-09-14 TARS MODEL UPDATE
 
 This combined update covers all eight catalogs, the pricing schema, and the updater instructions. The catalogs contain 496 records.
