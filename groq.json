@@ -90,43 +90,6 @@
       }
     },
     {
-      "model": "groq/qwen/qwen3.6-27b",
-      "provider": "groq",
-      "mode": "chat",
-      "isEnabled": true,
-      "inputTokensPricePerMillion": "0.6000000000",
-      "outputTokensPricePerMillion": "3.0000000000",
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": 131072,
-      "capabilities": ["file_upload", "reasoning", "tool_choice", "vision"],
-      "modalities": {
-        "input": ["image", "text"],
-        "output": ["text"]
-      },
-      "backendUrls": ["https://api.groq.com/openai/v1/"],
-      "additionalPricePerMillion": {
-        "flex_input_tokens_price_per_million": 0.6,
-        "flex_output_tokens_price_per_million": 3
-      },
-      "limits": {
-        "tps": 500,
-        "tpm": 250000,
-        "max_file_size_mb": 20,
-        "max_input_images": 3,
-        "max_output_tokens": 16384,
-        "rpm": 1000
-      },
-      "metadata": {
-        "preview": true,
-        "source_url": "https://console.groq.com/docs/model/qwen/qwen3.6-27b",
-        "description": "Qwen 3.6 27B is a 27-billion-parameter multimodal model from Alibaba's Qwen series, delivering flagship-level agentic coding and reasoning that rivals models many times its size. It accepts both image and text inputs for visual understanding tasks such as image analysis, OCR, and visual question answering, and supports seamless switching between thinking mode (for complex logical reasoning, math, and coding) and non-thinking mode (for efficient, general-purpose dialogue) within a single model, with a long context window and strong multilingual support.",
-        "display_name": "Qwen3.6-27B",
-        "quantization": "Groq's TruePoint Numerics",
-        "reasoning_efforts": ["none", "default"]
-      }
-    },
-    {
       "model": "groq/qwen/qwen3.8-27b",
       "provider": "groq",
       "mode": "chat",
