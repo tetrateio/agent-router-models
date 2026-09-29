@@ -186,6 +186,68 @@
       }
     },
     {
+      "model": "claude-sonnet-5-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "2.5000000000",
+      "additionalPricePerMillion": {
+        "web_search_per_thousand_calls": null,
+        "caching_5m_per_million": 2.5,
+        "caching_1h_per_million": 4,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 5,
+        "batch_caching_5m_per_million": 1.25,
+        "batch_caching_1h_per_million": 2,
+        "batch_cached_tokens_price_per_million": 0.1
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "rpm": 2500,
+        "tpm": 25000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-sonnet-5-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-5-5",
+        "description": "Built for coding, agents, and professional work at scale.",
+        "display_name": "Claude Sonnet 5.5 on Google Cloud",
+        "release_date": "2026-09-28",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "Generally available"
+      }
+    },
+    {
       "model": "claude-sonnet-5",
       "provider": "vertexanthropic",
       "mode": "chat",

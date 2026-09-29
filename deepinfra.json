@@ -313,6 +313,39 @@
       }
     },
     {
+      "model": "deepinfra/anthropic/claude-opus-5-5",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "4.0000000000",
+      "outputTokensPricePerMillion": "20.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 3.2,
+        "batch_output_tokens_price_per_million": 16
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/anthropic/claude-opus-5-5",
+        "description": "Claude Opus 5.5 is Anthropic's most capable Opus model. Better at coding, knowledge work, and long-running tasks. It's easier to collaborate with and more cost efficient than ever.",
+        "display_name": "anthropic/claude-opus-5-5"
+      }
+    },
+    {
       "model": "deepinfra/anthropic/claude-sonnet-4-6",
       "provider": "deepinfra",
       "mode": "chat",
@@ -679,7 +712,7 @@
       "model": "deepinfra/deepseek-ai/DeepSeek-V3-0324",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "0.240",
       "outputTokensPricePerMillion": "0.900",
@@ -709,7 +742,10 @@
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V3-0324",
         "description": "DeepSeek-V3-0324, a strong Mixture-of-Experts (MoE) language model with 671B total parameters with 37B activated for each token, an improved iteration over DeepSeek-V3.",
         "display_name": "deepseek-ai/DeepSeek-V3-0324",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-29. Replacement: deepseek-ai/DeepSeek-V4.1-Flash.",
+        "retirement_date": "2026-09-29"
       }
     },
     {
@@ -1493,7 +1529,10 @@
         "source_url": "https://deepinfra.com/google/gemma-4-E4B-it",
         "description": "",
         "display_name": "google/gemma-4-E4B-it",
-        "quantization": "bfloat16"
+        "quantization": "bfloat16",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: google/gemma-4-31B-it-turbo.",
+        "retirement_date": "2026-10-01"
       }
     },
     {
@@ -1746,7 +1785,10 @@
         "source_url": "https://deepinfra.com/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
         "description": "The Llama 4 collection of models are natively multimodal AI models that enable text and multimodal experiences. These models leverage a mixture-of-experts architecture to offer industry-leading performance in text and image understanding. Llama 4 Maverick, a 17 billion parameter model with 128 experts",
         "display_name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: google/gemma-4-31B-it-turbo.",
+        "retirement_date": "2026-10-01"
       }
     },
     {
@@ -2210,7 +2252,7 @@
         "batch_output_tokens_price_per_million": 0.88
       },
       "limits": {
-        "max_output_tokens": 512000
+        "max_output_tokens": 131072
       },
       "metadata": {
         "source_url": "https://deepinfra.com/MiniMaxAI/MiniMax-M3",
@@ -2549,7 +2591,7 @@
       "model": "deepinfra/moonshotai/Kimi-K2.7-Code",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.680",
       "outputTokensPricePerMillion": "3.400",
       "cachedTokensPricePerMillion": "0.136",
@@ -2592,7 +2634,10 @@
         "source_url": "https://deepinfra.com/moonshotai/Kimi-K2.7-Code",
         "description": "Kimi K2.7 Code is a coding-focused agentic model built upon Kimi K2.6. With substantial improvements on real-world long-horizon coding tasks, it strengthens end-to-end task completion across complex software engineering workflows while improving token efficiency, reducing thinking-token usage by approximately 30% compared with Kimi K2.6.",
         "display_name": "moonshotai/Kimi-K2.7-Code",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-29. Replacement: moonshotai/Kimi-K3.",
+        "retirement_date": "2026-09-29"
       }
     },
     {
@@ -2887,11 +2932,10 @@
         "prompt_caching",
         "reasoning",
         "structured_outputs",
-        "tool_choice",
-        "vision"
+        "tool_choice"
       ],
       "modalities": {
-        "input": ["image", "text"],
+        "input": ["text"],
         "output": ["text"]
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
@@ -2929,9 +2973,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.080",
-      "outputTokensPricePerMillion": "0.200",
-      "cachedTokensPricePerMillion": "0.040",
+      "inputTokensPricePerMillion": "0.0600000000",
+      "outputTokensPricePerMillion": "0.1600000000",
+      "cachedTokensPricePerMillion": "0.0300000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 262144,
       "capabilities": [
@@ -2946,11 +2990,11 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.064,
-        "batch_output_tokens_price_per_million": 0.16
+        "batch_input_tokens_price_per_million": 0.048,
+        "batch_output_tokens_price_per_million": 0.128
       },
       "limits": {
-        "max_output_tokens": 131072
+        "max_output_tokens": 32768
       },
       "metadata": {
         "source_url": "https://deepinfra.com/nvidia/NVIDIA-Nemotron-3.5-Lightning",
@@ -3719,7 +3763,10 @@
         "source_url": "https://deepinfra.com/Qwen/Qwen3.5-122B-A10B",
         "description": "Qwen3.5-122B-A10B is a large Mixture-of-Experts model from Alibaba's Qwen3.5 series with 122B total parameters and 10B activated per token. It features a 262K token context window (extensible to 1M with YaRN), thinking/reasoning mode, tool calling, and support for 201 languages. Excels at complex reasoning, coding, multimodal understanding, and agentic tasks with the efficiency of sparse activation.",
         "display_name": "Qwen/Qwen3.5-122B-A10B",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: Qwen/Qwen3.5-397B-A17B.",
+        "retirement_date": "2026-10-01"
       }
     },
     {
@@ -4062,6 +4109,14 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.225,
+        "priority_output_tokens_price_per_million": 2.8125,
+        "priority_cached_tokens_price_per_million": 0.05625,
+        "priority_caching_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million": 0.12,
+        "flex_output_tokens_price_per_million": 1.5,
+        "flex_cached_tokens_price_per_million": 0.03,
+        "flex_caching_tokens_price_per_million": null,
         "batch_input_tokens_price_per_million": 0.12,
         "batch_output_tokens_price_per_million": 1.5
       },
@@ -4255,7 +4310,10 @@
         "source_url": "https://deepinfra.com/stepfun-ai/Step-3.7-Flash",
         "description": "Step 3.7 Flash is an open-source multimodal reasoning model by StepFun with 198B total parameters (11B active) using Mixture of Experts. It accepts   text and image inputs and features a 256K context window, selectable reasoning effort, tool calling, and agentic capabilities for coding and search workflows, scoring   80.9% on GPQA Diamond and 56.3% on SWE-bench Pro.",
         "display_name": "stepfun-ai/Step-3.7-Flash",
-        "quantization": "modelopt"
+        "quantization": "modelopt",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: XiaomiMiMo/MiMo-V2.6-Flash.",
+        "retirement_date": "2026-10-01"
       }
     },
     {
@@ -4298,6 +4356,40 @@
       }
     },
     {
+      "model": "deepinfra/tencent/Hy4-preview",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.8340000000",
+      "outputTokensPricePerMillion": "2.5010000000",
+      "cachedTokensPricePerMillion": "0.0420000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.6672,
+        "batch_output_tokens_price_per_million": 2.0008
+      },
+      "limits": {
+        "max_output_tokens": 131072
+      },
+      "metadata": {
+        "source_url": "https://deepinfra.com/tencent/Hy4-preview",
+        "display_name": "tencent/Hy4-preview",
+        "quantization": "fp8"
+      }
+    },
+    {
       "model": "deepinfra/thinkingmachines/Inkling",
       "provider": "deepinfra",
       "mode": "chat",
@@ -4311,6 +4403,7 @@
         "prompt_caching",
         "reasoning",
         "speech_recognition",
+        "structured_outputs",
         "tool_choice",
         "vision"
       ],
@@ -4374,7 +4467,7 @@
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.5",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.1330000000",
       "outputTokensPricePerMillion": "0.2660000000",
       "cachedTokensPricePerMillion": "0.0026600000",
@@ -4422,7 +4515,7 @@
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.5-Pro",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.3900000000",
       "outputTokensPricePerMillion": "1.1700000000",
       "cachedTokensPricePerMillion": "0.0780000000",
@@ -4486,12 +4579,12 @@
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "limits": {},
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Flash",
-      "inputTokensPricePerMillion": "0.1400000000",
-      "outputTokensPricePerMillion": "0.2800000000",
-      "cachedTokensPricePerMillion": "0.0028000000",
+      "inputTokensPricePerMillion": "0.1190000000",
+      "outputTokensPricePerMillion": "0.2380000000",
+      "cachedTokensPricePerMillion": "0.0023800000",
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.112,
-        "batch_output_tokens_price_per_million": 0.224
+        "batch_input_tokens_price_per_million": 0.0952,
+        "batch_output_tokens_price_per_million": 0.1904
       },
       "metadata": {
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.6-Flash",
@@ -4521,11 +4614,11 @@
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "limits": {},
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Pro",
-      "inputTokensPricePerMillion": "0.4350000000",
+      "inputTokensPricePerMillion": "0.4300000000",
       "outputTokensPricePerMillion": "0.8700000000",
       "cachedTokensPricePerMillion": "0.0036000000",
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.348,
+        "batch_input_tokens_price_per_million": 0.344,
         "batch_output_tokens_price_per_million": 0.696
       },
       "metadata": {
@@ -4766,7 +4859,10 @@
         "source_url": "https://deepinfra.com/zai-org/GLM-5.1",
         "description": "GLM-5.1 is Z-AI's next-generation flagship model for agentic engineering, with significantly stronger coding capabilities than its predecessor. It achieves state-of-the-art performance on SWE-Bench Pro and leads GLM-5 by a wide margin on NL2Repo (repo generation) and Terminal-Bench 2.0 (real-world terminal tasks).",
         "display_name": "zai-org/GLM-5.1",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: zai-org/GLM-5.3.",
+        "retirement_date": "2026-10-01"
       }
     },
     {
