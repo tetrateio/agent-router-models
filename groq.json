@@ -98,7 +98,7 @@
       "outputTokensPricePerMillion": "4.0000000000",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
-      "contextWindow": 131042,
+      "contextWindow": 131072,
       "capabilities": [
         "file_upload",
         "reasoning",

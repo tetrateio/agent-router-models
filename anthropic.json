@@ -687,6 +687,81 @@
       }
     },
     {
+      "model": "claude-sonnet-5-5",
+      "provider": "anthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "2.5000000000",
+      "contextWindow": 1000000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://api.anthropic.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "caching_1h_per_million": 4,
+        "caching_5m_per_million": 2.5,
+        "code_execution_per_hour": 0.05,
+        "web_search_per_thousand_calls": 10,
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_caching_tokens_price_per_million": 1.25,
+        "batch_caching_5m_per_million": 1.25,
+        "batch_caching_1h_per_million": 2,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 5
+      },
+      "limits": {
+        "max_file_size_mb": 32,
+        "max_output_tokens": 128000,
+        "extra": {
+          "min_cacheable_prompt_tokens": 512,
+          "tool_use_system_prompt_tokens": 286
+        },
+        "max_images_per_prompt": 600
+      },
+      "metadata": {
+        "aliases": [
+          "claude-sonnet-5-5"
+        ],
+        "source_url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+        "description": "The best combination of speed and intelligence.",
+        "display_name": "Claude Sonnet 5.5",
+        "release_date": "2026-09-28",
+        "knowledge_cutoff": "2026-06-01",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ]
+      }
+    },
+    {
       "model": "claude-sonnet-5",
       "provider": "anthropic",
       "mode": "chat",

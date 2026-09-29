@@ -1,3 +1,160 @@
+# 2026-09-29 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 508 records.
+
+## New Models:
+
+- [Anthropic] Claude Sonnet 5.5 is the new Sonnet model for coding, agents, and professional work. Anthropic released it on September 28, 2026. It has the same prices as Claude Sonnet 5. The context window holds 1,000,000 tokens, and output reaches 128,000 tokens. Adaptive thinking is on by default. Effort accepts low, medium, high, xhigh, and max, and the default is high. Knowledge extends through June 2026. The model accepts text, images, and PDF files, and it returns text. It supports computer use, web search, code execution, prompt caching, structured outputs, and tool calls.
+
+| `claude-sonnet-5-5` service | Input | Cached input | Output |
+| --- | --- | --- | --- |
+| Standard | $2.00 | $0.20 | $10.00 |
+| Batch | $1.00 | $0.10 | $5.00 |
+
+Prices are USD per million tokens. Five-minute cache writes cost $2.50 and one-hour cache writes cost $4. Forced tool use returns an error, so only automatic tool choice works. On the Claude API, computer use accepts only the `computer_toolset_20260801` toolset. Fast mode is not available for this model.
+
+- [VertexAnthropic] Claude Sonnet 5.5 on Google Cloud is generally available. Standard input costs $2 and output costs $10 per million tokens. Cache reads cost $0.20. Five-minute cache writes cost $2.50, and one-hour cache writes cost $4. Batch input costs $1 and Batch output costs $5. The context window holds 1,000,000 tokens, and output reaches 128,000 tokens. It runs on the global endpoint and in the United States and Europe.
+
+- [DeepInfra] Claude Opus 5.5 is now available on DeepInfra. Input costs $4 and output costs $20 per million tokens. Cached input costs $0.20. Batch input costs $3.20 and Batch output costs $16. The context window holds 1,000,000 tokens. The model accepts text and images, and it returns text. It supports reasoning, tool calls, structured outputs, and prompt caching.
+
+- [DeepInfra] Hy4-preview is a new text model from Tencent. Input costs $0.834 and output costs $2.501 per million tokens. Cached input costs $0.042. Batch input costs $0.6672 and Batch output costs $2.0008. The context window holds 1,048,576 tokens, and output reaches 131,072 tokens. It supports reasoning, tool calls, structured outputs, and prompt caching.
+
+## Price Changes:
+
+- [xAI] The File Attachments tool (`attachment_search`) now costs $5 per 1,000 calls. The earlier price was $10. This change affects all eight xAI records that carry this tool price.
+
+- [DeepInfra] Four models changed price. One new promotion started, and one model gained new service tiers.
+
+| Model | Previous input / cached / output | Current input / cached / output | Current Batch input / output |
+| --- | --- | --- | --- |
+| `nvidia/NVIDIA-Nemotron-3.5-Lightning` | $0.08 / $0.04 / $0.20 | $0.06 / $0.03 / $0.16 | $0.048 / $0.128 |
+| `XiaomiMiMo/MiMo-V2.6-Flash` | $0.14 / $0.0028 / $0.28 | $0.119 / $0.00238 / $0.238 | $0.0952 / $0.1904 |
+| `XiaomiMiMo/MiMo-V2.6-Pro` | $0.435 / $0.0036 / $0.87 | $0.43 / $0.0036 / $0.87 | $0.344 / $0.696 |
+
+Prices are USD per million tokens. MiMo-V2.6-Flash has a 15 percent promotion with no published end date. Nemotron 3.5 Lightning has a lower list price.
+
+- [DeepInfra] Qwen3.8-27B now offers Priority and Flex service. Priority costs $0.225 input, $0.05625 cached input, and $2.8125 output per million tokens. Flex costs $0.12 input, $0.03 cached input, and $1.50 output. These prices include the current 25 percent promotion. Standard prices do not change.
+
+## Deprecated Models:
+
+- [DeepInfra] Five models retire on October 1, 2026. They stay available until that date, and their prices do not change.
+
+| Model | Replacement |
+| --- | --- |
+| `Qwen/Qwen3.5-122B-A10B` | `Qwen/Qwen3.5-397B-A17B` |
+| `google/gemma-4-E4B-it` | `google/gemma-4-31B-it-turbo` |
+| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | `google/gemma-4-31B-it-turbo` |
+| `stepfun-ai/Step-3.7-Flash` | `XiaomiMiMo/MiMo-V2.6-Flash` |
+| `zai-org/GLM-5.1` | `zai-org/GLM-5.3` |
+
+## Retired Models:
+
+- [DeepInfra] MiMo-V2.5 and MiMo-V2.5-Pro retire today, September 29, 2026. The September 23 update announced this date. Use MiMo-V2.6-Flash and MiMo-V2.6-Pro instead. The catalog now disables both models.
+- [DeepInfra] DeepSeek-V3-0324 and Kimi-K2.7-Code also retire today. DeepInfra gives low usage as the reason. The replacements are DeepSeek-V4.1-Flash and Kimi-K3. DeepInfra announced these two retirements after the September 23 update. The catalog now disables both models.
+
+## Other Updates:
+
+- [DeepInfra] NVIDIA Nemotron 3 Ultra no longer accepts image input. DeepInfra removed the multimodal label from the model. The model now accepts text only. Prices do not change.
+- [DeepInfra] Inkling now supports structured outputs.
+- [DeepInfra] Two models have lower output limits. MiniMax-M3 now returns at most 131,072 tokens, down from 512,000. Nemotron 3.5 Lightning now returns at most 32,768 tokens, down from 131,072.
+- [Groq] Qwen 3.8 27B now shows a context window of 131,072 tokens. The earlier value was 131,042.
+- [OpenAI] The deprecation page now names GPT Image 2.5 Sunburst and GPT Image 2.5 Flare as the replacements for `gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, and `chatgpt-image-latest`. The earlier replacement was GPT Image 2. The shutdown dates do not change.
+- [OpenAI] On September 25, OpenAI corrected an image-encoding fault in GPT-6 Sol and GPT-6 Luna. The fault decreased the quality of image understanding. OpenAI recommends a new evaluation for workloads that use image input.
+- [Anthropic] Since September 24, Anthropic bills some refusals that occur before any output. This applies to the `bio`, `frontier_llm`, and `reasoning_extraction` categories. These refusals cost the same as other requests to the same model.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [All] This update adds no disabled record. `vertex/gemini-3.8-flash-cyber` stays off from the September 22 update, because Google serves it behind an allowlist.
+
+### Corrections to earlier updates
+
+- [All] This update corrects no earlier block. Every changed value in this update follows a change at the provider.
+
+### Follow-up work
+
+- [All] The browser extension was unreachable for this run. Every source was read over `curl`. The Vertex pricing page still returns all 56 tables to `curl`.
+- [Anthropic] The web search page still names no supported models. The Tool reference page, including its embedded page data, holds no per-model list. The Claude Sonnet 5.5 record carries web search on the same evidence as Claude Opus 5.5. Google Cloud's web search page lists both models. A later run must read the rendered Tool reference.
+- [VertexAnthropic] Google's $10 web search price table still names only earlier Claude models. It does not name Claude Sonnet 5.5, so its search price stays unknown.
+- [VertexAnthropic] Google gives Claude Sonnet 4.5 on Google Cloud a retirement date of "not sooner than September 29, 2026". This date is not firm, so the record holds no retirement date. Claude Haiku 4.5 has the same kind of date, October 15, 2026, on both Anthropic and Google Cloud.
+- [Anthropic] Claude Sonnet 5.5 retires "not sooner than September 28, 2027". This date is not firm, so the record holds no retirement date. The same applies to the Google Cloud record.
+- [DeepInfra] DeepSeek-V3-0324 and Kimi-K2.7-Code stop late on September 29 UTC, at 23:40 and 23:36. The model pages say that requests still work until then. The catalog disables records on the retirement date, so both records are off for the full day.
+- [DeepInfra] The Claude Opus 5.5 index entry gives no cache-write rate and no output limit. Those cells stay empty.
+- [DeepInfra] DeepInfra publishes no description for Hy4-preview. The record has no description.
+- [DeepInfra] The MiMo-V2.6-Flash promotion joins nine earlier promotions that have no published end date. This provider changes promotions often, so its prices need a check on every run.
+- [DeepInfra] The Batch documentation moved to [docs.deepinfra.com/batch/introduction](https://docs.deepinfra.com/batch/introduction). It still gives a 20 percent discount.
+- [Anthropic] The catalog cannot record which refusal categories are billed.
+- [Gemini/Vertex] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash token prices double.
+- [All] Earlier unresolved items stay open. They cover source conflicts, historical field gaps, and billing units that the schema cannot hold.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 504 to 508 records. This update adds four records and removes none.
+- [Anthropic] `claude-sonnet-5-5` uses `inference_geo_us_multiplier: 1.1`, `tool_use_system_prompt_tokens: 286`, and `min_cacheable_prompt_tokens: 512`. It has no `fast_mode_*` cells. The `tool_choice` ability covers automatic tool choice only.
+- [VertexAnthropic] `claude-sonnet-5-5` sets `web_search_per_thousand_calls` to null and keeps the `web_search` ability. It uses the global-endpoint quota: `rpm: 2500` and `tpm: 25000000`.
+- [DeepInfra] Four records set `isEnabled: false`: the two MiMo V2.5 records, `deepseek-ai/DeepSeek-V3-0324`, and `moonshotai/Kimi-K2.7-Code`. The last two also set `deprecated: true`, `deprecated_reason`, and `retirement_date: "2026-09-29"`.
+- [DeepInfra] Five records set `deprecated: true`, `deprecated_reason`, and `retirement_date: "2026-10-01"`. They keep `isEnabled: true`, because the date is in the future. DeepInfra publishes no announcement date, so `deprecated_date` stays empty.
+- [DeepInfra] `Qwen/Qwen3.8-27B` adds `priority_*` and `flex_*` token cells. Their `caching_tokens` cells are null, because DeepInfra publishes no cache-write rate for this model.
+- [DeepInfra] `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B` removes `image` from `modalities.input` and removes `vision`. `thinkingmachines/Inkling` adds `structured_outputs`.
+- [xAI] Eight records change `file_attachments_per_thousand_calls` from 10 to 5.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [Gemini] Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS return audio only.
+- [Gemini] The Antigravity agent now uses the ID `antigravity-preview-09-2026`. It answers only on the Interactions API.
+- [Vertex] Gemini 3.8 Live is generally available on the Live API. The Live API is a WebSocket interface, and the model returns audio.
+- [Vertex] Muse Spark 1.3 from Meta is in Preview. Google publishes no price for it, and access needs a request to an account manager.
+- [DeepInfra] Ming-Image-0.1-Design and Ming-Image-0.1-Design-Layer generate images. DeepInfra is not an allowed image-generation provider. DeepInfra also bills these models per image unit, which the catalog cannot map to one image.
+- [DeepInfra] `nvidia/Nemotron-3-Diarization` is a speaker-diarization model. It bills per input second, and its mode is outside the accepted list. It replaces the preview model that the September 23 update named.
+- [OpenAI] Sora 2 and Sora 2 Pro shut down on September 24, 2026. OpenAI removed them from the model index and the pricing page. The catalog never carried them.
+- [All] Earlier exclusions stay. They cover the Gemini Live and Interactions models and the Groq Enterprise and speech models. They also cover the xAI Fast and transcription models, and the OpenAI realtime, transcription, and legacy completion models.
+
+### Prices that did not change
+
+- [Anthropic] A scripted comparison covered 214 price cells in the standard, Batch, and Fast-mode tables for all 26 records. Every cell matched. The Claude Sonnet 5 footnote confirms that $2 and $10 is now its standard price.
+- [OpenAI] A scripted comparison covered 824 price cells in the Standard, Batch, Flex, and Fast tables. Every cell matched. All 102 model pages are byte-identical to earlier snapshots, except the Sora pages.
+- [Gemini] A scripted comparison covered 195 price cells. The only differences are the 15 known parser gaps from September 22. The pricing page adds only the two TTS models.
+- [xAI] Every token, image, service, and other tool price is unchanged. The model index lists the same models in a new order.
+- [Groq] The deprecation page and the changelog are byte-identical to the September 23 snapshots. Prices, output limits, and rate limits of all four records are unchanged.
+- [Vertex] The 56 pricing tables hold no new price for an existing record. The only new rows are Claude Sonnet 5.5 and Gemini 3.8 Live. The spec tables on all 46 earlier model pages are unchanged.
+- [DeepInfra] The other 285 existing records match the provider index on price, limits, tags, and lifecycle.
+
+### Prices that differ from the direct-API catalogs
+
+- [VertexAnthropic] Claude Sonnet 5.5 has the same standard, cache, and Batch prices as the direct Anthropic record. This is different from Claude Opus 5.5, whose Google Cloud Batch price is higher.
+- [VertexAnthropic] Google's $10 web search table does not name Claude Sonnet 5.5, so its search price stays unknown. The direct Anthropic record carries $10 per 1,000 searches.
+- [VertexAnthropic] Regional endpoints cost $2.20 input and $11 output per million tokens. The catalog records the global prices, as it does for the other Claude records.
+- [DeepInfra] DeepInfra's Claude Opus 5.5 has the same standard prices as the direct Anthropic record. Its Batch price is 20 percent off, not 50 percent off. DeepInfra publishes no cache-write price.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [VertexAnthropic] Claude Sonnet 5.5 on Google Cloud lists computer use, web search, batch predictions, prompt caching, function calling, count tokens, and the memory tool. It does not list code execution, file upload, structured outputs, or reasoning, so the record omits them. The direct Anthropic record carries all four.
+- [VertexAnthropic] Google's page lists PDF input, which the record keeps. Both catalogs record text, image, and document input with text output.
+
+### Sources and coverage
+
+- [All] This run compared every one of the 504 starting records against a current provider source. The four additions have full source records. A provider match and a passing validator do not establish complete field verification.
+- [All] The run compared each fetched page with the snapshots from September 22 and September 23. Unchanged pages are proven unchanged, not assumed.
+- [All] Browser coverage is zero for this run. The extension did not connect. Every source, including the Vertex pricing tables, came from `curl`.
+- [All] A second pass fetched the 37 core sources again after the catalog edits. The text, the prices, and the DeepInfra index were identical to the first pass.
+- [All] Evidence stays under ignored `audits/2026-09-29/`. It holds the fetched sources, the comparison scripts, and the apply scripts.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Sources: the [release notes](https://platform.claude.com/docs/en/release-notes/api), [models overview](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [effort](https://platform.claude.com/docs/en/build-with-claude/effort), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview), and the [Claude Sonnet 5.5 page](https://platform.claude.com/docs/en/models/sonnet-5-5/overview). The [code execution](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool), [computer use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool), and [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) pages list `claude-sonnet-5-5` as a supported model.
+- [OpenAI] Sources: the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), [image generation guide](https://developers.openai.com/api/docs/guides/image-generation), and 104 model pages.
+- [Gemini] Sources: the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), [Interactions](https://ai.google.dev/gemini-api/docs/interactions), and 19 model pages.
+- [xAI] Sources: the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing) in Markdown and HTML, and [rate limits](https://docs.x.ai/developers/rate-limits). Both pricing formats show $5 per 1,000 File Attachments calls.
+- [Groq] Sources: the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), [changelog](https://console.groq.com/docs/changelog), [rate limits](https://console.groq.com/docs/rate-limits), five model pages, and ten capability and service pages. [Groq pricing](https://groq.com/pricing) still redirects to a homepage without prices.
+- [DeepInfra] Sources: the [unfiltered index](https://api.deepinfra.com/models/list), 306 detail endpoints, 11 rendered model pages, and the [Batch documentation](https://docs.deepinfra.com/batch/introduction). All 301 starting records match an index entry.
+- [Vertex] Sources: the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes), [pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), both deprecation pages, 46 model pages, the [Gemini 3.8 Live page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-live), and the [Muse Spark 1.3 page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/meta/muse-spark-1-3). No record in `vertex.json` changed.
+- [VertexAnthropic] Sources: the [Claude index](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), 14 Claude model pages including [Claude Sonnet 5.5](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-5-5), the [web search page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/web-search), and the three Claude pricing tables.
+
+</details>
+
 # 2026-09-23 TARS MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 504 records.
