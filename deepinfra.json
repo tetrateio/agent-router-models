@@ -1743,7 +1743,9 @@
         "batch_input_tokens_price_per_million": 0.08,
         "batch_output_tokens_price_per_million": 0.256
       },
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 16384
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/meta-llama/Llama-3.3-70B-Instruct-Turbo",
         "description": "Llama 3.3-70B Turbo is a highly optimized version of the Llama 3.3-70B model, utilizing FP8 quantization to deliver significantly faster inference speeds with a minor trade-off in accuracy. The model is designed to be helpful, safe, and flexible, with a focus on responsible deployment and mitigating potential risks such as bias, toxicity, and misinformation. It achieves state-of-the-art performance on various benchmarks, including conversational tasks, language translation, and text generation.",
@@ -4579,12 +4581,12 @@
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "limits": {},
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Flash",
-      "inputTokensPricePerMillion": "0.1190000000",
-      "outputTokensPricePerMillion": "0.2380000000",
-      "cachedTokensPricePerMillion": "0.0023800000",
+      "inputTokensPricePerMillion": "0.1400000000",
+      "outputTokensPricePerMillion": "0.2800000000",
+      "cachedTokensPricePerMillion": "0.0028000000",
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.0952,
-        "batch_output_tokens_price_per_million": 0.1904
+        "batch_input_tokens_price_per_million": 0.112,
+        "batch_output_tokens_price_per_million": 0.224
       },
       "metadata": {
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.6-Flash",
