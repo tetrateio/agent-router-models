@@ -1,3 +1,120 @@
+# 2026-09-30 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 509 records.
+
+## New Models:
+
+- [OpenAI] GPT-6.1 Sol is a new model for complex coding, computer use, and professional work. OpenAI released it on September 29, 2026. OpenAI says that it gives near-Astra performance at a lower cost. The context window holds 1,050,000 tokens, input reaches 922,000 tokens, and output reaches 128,000 tokens. Knowledge extends through April 30, 2026. The model accepts text and images, and it returns text. It supports web search, file search, code interpreter, hosted shell, computer use, image generation as a tool, prompt caching, structured outputs, and tool calls. Reasoning effort accepts low, medium, high, xhigh, and max. The default is medium.
+
+| `gpt-6.1-sol` service | Input | Cached input | Cache writes | Output |
+| --- | --- | --- | --- | --- |
+| Standard | $2.00 | $0.10 | $2.50 | $10.00 |
+| Batch and Flex | $1.00 | $0.05 | $1.25 | $5.00 |
+| Fast | $4.00 | $0.20 | $5.00 | $20.00 |
+
+Prices are USD per million tokens, for prompts of 272,000 input tokens or fewer. Above this limit, input and cache prices double and output costs 1.5 times more. Web search costs $10 per 1,000 calls. Regional processing adds 10 percent. The model has the same prices as GPT-6 Sol, except for cached input, which costs half as much.
+
+## Price Changes:
+
+- [DeepInfra] The 15 percent promotion on MiMo-V2.6-Flash ended. The model is back at its list price.
+
+| Model | Previous input / cached / output | Current input / cached / output | Current Batch input / output |
+| --- | --- | --- | --- |
+| `XiaomiMiMo/MiMo-V2.6-Flash` | $0.119 / $0.00238 / $0.238 | $0.14 / $0.0028 / $0.28 | $0.112 / $0.224 |
+
+Prices are USD per million tokens.
+
+## Deprecated Models:
+
+- [All] No model in the catalog has a new deprecation notice. The five DeepInfra models from the September 29 update still retire on October 1, 2026.
+
+## Retired Models:
+
+- [All] No model in the catalog retired since the September 29 update.
+
+## Other Updates:
+
+- [OpenAI] GPT-6 Astra has a new Ultrafast service tier on the Responses API. It decreases the time between output tokens. Standard-length input costs $60 and output costs $300 per million tokens. The catalog does not show this tier yet.
+- [OpenAI] GPT-6 Sol and GPT-6 Luna now support EU data residency with Standard, Flex, and Batch processing. Before, EU data residency worked only with Standard processing. Fast mode is not available with EU data residency for GPT-6 Astra, GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna.
+- [DeepInfra] Llama 3.3 70B Instruct Turbo now shows an output limit of 16,384 tokens. Before, DeepInfra published no output limit for this model.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [All] This update adds no disabled record. `vertex/gemini-3.8-flash-cyber` stays off from the September 22 update, because Google serves it behind an allowlist.
+
+### Corrections to earlier updates
+
+- [All] This update corrects no earlier block. Every changed value in this update follows a change at the provider.
+
+### Follow-up work
+
+- [All] The browser extension was unreachable for this run. The run read every source over `curl`, except the Groq pages. The Vertex pricing page still returns all 56 tables to `curl`.
+- [Groq] The Groq docs now return `403 Access denied` to `curl`. The run read the model index, the deprecation page, and the changelog through a summary fetch. These summaries match the September 29 values, but they are not byte-level evidence. The rate-limit page and the per-model pages were not read. A later run must read Groq in a browser.
+- [OpenAI] The Ultrafast rate for GPT-6 Astra has no declared pricing field. The published rates are $60 input, $6 cached input, $75 cache writes, and $300 output per million tokens. Above 272,000 input tokens, the rates are $120, $12, $150, and $450. The rates stay out of the record until the pricing contract declares an `ultrafast_` service.
+- [OpenAI] The pricing page removed its lines about the 10 percent FedRAMP uplift and the 10 percent regional-processing uplift. The model pages still give the 10 percent regional-processing premium, so the records keep `regional_processing_uplift_multiplier: 1.1`.
+- [DeepInfra] DeepInfra changed the end timestamps of `deepseek-ai/DeepSeek-Prover-V2-671B` and `deepseek-ai/DeepSeek-V3-0324-Turbo` to September 29, 2026. Earlier, the timestamps were July 16, 2025, and September 2, 2025. Both records were already off. The records keep the 2025 dates, because the new timestamps match the retirement of DeepSeek-V3-0324. DeepInfra also changed their replacement to DeepSeek-V4.1-Flash.
+- [DeepInfra] Nine promotions stay active with no published end date. This provider changes promotions often, so its prices need a comparison on every run.
+- [Anthropic] The web search page still names no supported models. A later run must read the rendered Tool reference.
+- [VertexAnthropic] Claude Sonnet 4.5 on Google Cloud still has a retirement date of "not sooner than September 29, 2026". This date passed, and the model is still listed. The record holds no retirement date.
+- [Gemini/Vertex] On January 1, 2027, Gemini 3.8, 3.7, and 3.6 Flash token prices double.
+- [All] Earlier unresolved items stay open. They cover source conflicts, historical field gaps, and billing units that the schema cannot hold.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 508 to 509 records. This update adds one record and removes none.
+- [OpenAI] `gpt-6.1-sol` uses `mode: responses`, `high_context: 272000`, `max_input_tokens: 922000`, and `regional_processing_uplift_multiplier: 1.1`. Its `reasoning_efforts` do not include `none`, because the model page says that `none` and `minimal` are not supported. The `tool_choice` ability applies to the Responses API. Chat Completions does not accept tool calls for this model.
+- [OpenAI] `gpt-6.1-sol` takes `code_execution` from the hosted shell and code interpreter tools, and `file_upload` from file search. These are the same abilities as `gpt-6-sol`. The two model pages list the same features and tools.
+- [DeepInfra] `XiaomiMiMo/MiMo-V2.6-Flash` changes its token cells and its two `batch_*` cells to the list price. `meta-llama/Llama-3.3-70B-Instruct-Turbo` adds `limits.max_output_tokens: 16384`.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [OpenAI] `gpt-5.4-cyber` shuts down on October 1, 2026. OpenAI now names "the most capable cyber model available to you" as its replacement, instead of `gpt-5.6-cyber`. The catalog never carried `gpt-5.4-cyber`.
+- [Gemini] `veo-3.1-generate-preview`, `veo-3.1-fast-generate-preview`, and `veo-3.1-lite-generate-preview` shut down on October 22, 2026. The replacement is `gemini-omni-1.1-flash`. These are video models, so the catalog does not carry them.
+- [All] Earlier exclusions stay. They cover the Gemini Live, TTS, and Interactions models, and the Groq Enterprise and speech models. They also cover the xAI Fast and transcription models, and the OpenAI realtime, transcription, and legacy completion models.
+
+### Prices that did not change
+
+- [OpenAI] The pricing page changed only for GPT-6.1 Sol and the Ultrafast table. The other rows in the Standard, Batch, Flex, and Fast tables are identical to the September 29 snapshot. The other 104 model pages are byte-identical, with four exceptions. GPT-5.6 Sol and GPT-6 Astra have new description text. GPT-6 Sol and GPT-6 Luna have new residency text.
+- [Anthropic] Every source is identical to the September 29 snapshot, except one link in the release notes.
+- [Gemini] The pricing, models, changelog, and Interactions pages, and all 19 model pages, are identical after tag removal. Only the Veo shutdown dates on the deprecation page changed.
+- [xAI] Every token, image, service, and tool price is unchanged. The pricing page now calls the provider "SpaceXAI" in two places and lists the two Imagine image models in a new order.
+- [Groq] The summary of the model index gives the same prices, context windows, output limits, and rate limits for all four records.
+- [Vertex] All 56 pricing tables are identical row for row. The spec tables on all 46 model pages are identical.
+- [VertexAnthropic] The Claude index adds a note about third-party terms. The Claude model pages and pricing tables are identical.
+- [DeepInfra] The other 301 records match the provider index and detail endpoints on price, limits, tags, and lifecycle.
+
+### Prices that differ from the direct-API catalogs
+
+- [VertexAnthropic] No mirror price changed in this update. The differences from the September 29 update stay.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [VertexAnthropic] No mirror capability changed in this update. The differences from the September 29 update stay.
+
+### Sources and coverage
+
+- [All] This run compared every one of the 508 starting records against a current provider source. The new record has a full source record. A provider match and a passing validator do not establish complete field verification.
+- [All] The run compared each fetched page with the September 29 snapshot. Unchanged pages are proven unchanged, not assumed.
+- [All] Browser coverage is zero for this run. The extension did not connect.
+- [All] Evidence stays under ignored `audits/2026-09-30/`. It holds the fetched sources, the comparison scripts, and the apply script.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Sources: the [release notes](https://platform.claude.com/docs/en/release-notes/api), [models overview](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [effort](https://platform.claude.com/docs/en/build-with-claude/effort), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [API overview](https://platform.claude.com/docs/en/api/overview), and [tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview).
+- [OpenAI] Sources: the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), [fast mode](https://developers.openai.com/api/docs/guides/fast-mode), [Ultrafast mode](https://developers.openai.com/api/docs/guides/ultrafast-mode), [image generation guide](https://developers.openai.com/api/docs/guides/image-generation), and 105 model pages, including [GPT-6.1 Sol](https://developers.openai.com/api/docs/models/gpt-6.1-sol).
+- [Gemini] Sources: the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), [Interactions](https://ai.google.dev/gemini-api/docs/interactions), and 19 model pages.
+- [xAI] Sources: the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing), and [rate limits](https://docs.x.ai/developers/rate-limits).
+- [Groq] Sources: summary fetches of the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), and [changelog](https://console.groq.com/docs/changelog). Direct `curl` requests returned HTTP 403.
+- [DeepInfra] Sources: the [unfiltered index](https://api.deepinfra.com/models/list), 303 detail endpoints, and three rendered model pages. All 303 records match an index entry.
+- [Vertex] Sources: the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes), [pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), both deprecation pages, and 49 model and feature pages. No record in `vertex.json` changed.
+- [VertexAnthropic] Sources: the [Claude index](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), 14 Claude model pages, the web search page, and the Claude pricing tables. No record in `vertexanthropic.json` changed.
+
+</details>
+
 # 2026-09-29 TARS MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 508 records.
