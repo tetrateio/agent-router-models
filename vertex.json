@@ -1556,6 +1556,59 @@
       }
     },
     {
+      "model": "vertex/xai/grok-4.7",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "6.0000000000",
+      "cachedTokensPricePerMillion": "0.5000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 524288,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "grok-4.7"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/grok/grok-4-7",
+        "description": "A high-capability model from xAI, built for coding and knowledge work. It works longer on difficult tasks and checks its own work.",
+        "display_name": "Grok 4.7",
+        "release_date": "2026-09-30",
+        "regions": [
+          "global",
+          "us"
+        ],
+        "launch_stage": "Preview",
+        "upstream_model": "xai/grok-4.7"
+      },
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 4,
+        "output_tokens_price_per_million_high_context": 12,
+        "cached_tokens_price_per_million_high_context": 1
+      },
+      "limits": {
+        "high_context": 200000
+      }
+    },
+    {
       "model": "vertex/xai/grok-4.6",
       "provider": "vertex",
       "mode": "chat",

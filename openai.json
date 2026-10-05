@@ -1187,7 +1187,11 @@
         "knowledge_cutoff": "2025-08-31",
         "reasoning_efforts": ["low", "medium", "high", "xhigh"],
         "aliases": ["gpt-5.3-codex"],
-        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.3-codex"
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-5.3-codex",
+        "deprecated": true,
+        "deprecated_date": "2026-10-01",
+        "retirement_date": "2027-04-01",
+        "deprecated_reason": "Retires on April 1, 2027. Replacement: gpt-6-sol."
       }
     },
     {
@@ -2045,7 +2049,11 @@
         "description": "The best model for coding and agentic tasks with configurable reasoning effort",
         "display_name": "GPT-5.1",
         "knowledge_cutoff": "2024-09-30",
-        "reasoning_efforts": ["none", "low", "medium", "high"]
+        "reasoning_efforts": ["none", "low", "medium", "high"],
+        "deprecated": true,
+        "deprecated_date": "2026-10-01",
+        "retirement_date": "2027-04-01",
+        "deprecated_reason": "Retires on April 1, 2027. Replacement: gpt-6-sol."
       }
     },
     {
@@ -3143,7 +3151,11 @@
         "source_url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
         "description": "Our cheapest GPT-5.4-class model for simple high-volume tasks",
         "display_name": "GPT-5.4 nano",
-        "knowledge_cutoff": "2025-08-31"
+        "knowledge_cutoff": "2025-08-31",
+        "deprecated": true,
+        "deprecated_date": "2026-10-01",
+        "retirement_date": "2027-04-01",
+        "deprecated_reason": "Retires on April 1, 2027. Replacement: gpt-6-luna."
       }
     },
     {
@@ -3603,10 +3615,16 @@
         "https://api.openai.com/v1/"
       ],
       "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.625,
+        "batch_output_tokens_price_per_million": null,
         "image_tokens": {
           "input_image_tokens_price_per_million": 8,
           "cached_input_image_tokens_price_per_million": 2,
-          "output_image_tokens_price_per_million": 30
+          "output_image_tokens_price_per_million": 30,
+          "batch_input_image_tokens_price_per_million": 4,
+          "batch_cached_input_image_tokens_price_per_million": 1,
+          "batch_output_image_tokens_price_per_million": 15
         }
       },
       "limits": {
@@ -3666,10 +3684,16 @@
         "https://api.openai.com/v1/"
       ],
       "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 2.5,
+        "batch_cached_tokens_price_per_million": 0.625,
+        "batch_output_tokens_price_per_million": null,
         "image_tokens": {
           "input_image_tokens_price_per_million": 8,
           "cached_input_image_tokens_price_per_million": 2,
-          "output_image_tokens_price_per_million": 30
+          "output_image_tokens_price_per_million": 30,
+          "batch_input_image_tokens_price_per_million": 4,
+          "batch_cached_input_image_tokens_price_per_million": 1,
+          "batch_output_image_tokens_price_per_million": 15
         }
       },
       "limits": {

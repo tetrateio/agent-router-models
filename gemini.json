@@ -1142,7 +1142,7 @@
       "model": "gemini-2.5-flash-image",
       "provider": "gemini",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.3000000000",
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": null,
@@ -1214,7 +1214,7 @@
         "knowledge_cutoff": "2025-06-01",
         "deprecated": true,
         "retirement_date": "2026-10-02",
-        "deprecated_reason": "Scheduled for shutdown; Google lists the retired gemini-3.1-flash-image-preview as its replacement."
+        "deprecated_reason": "Shutdown date October 2, 2026. The pricing page names gemini-3.1-flash-image or gemini-3.1-flash-lite-image as the replacement."
       }
     },
     {
@@ -1385,7 +1385,7 @@
       "model": "gemini-2.5-computer-use-preview-10-2025",
       "provider": "gemini",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "1.2500000000",
       "outputTokensPricePerMillion": "10.0000000000",
       "cachedTokensPricePerMillion": null,
@@ -1417,7 +1417,10 @@
         "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-computer-use-preview-10-2025",
         "description": "Gemini model specialized for computer-use workflows with image and text input.",
         "display_name": "Gemini 2.5 Computer Use Preview",
-        "preview": true
+        "preview": true,
+        "deprecated": true,
+        "retirement_date": "2026-07-28",
+        "deprecated_reason": "Shut down on July 28, 2026. Replacement: gemini-3.8-flash."
       }
     }
   ]

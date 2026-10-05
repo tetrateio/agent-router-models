@@ -410,6 +410,38 @@
       }
     },
     {
+      "model": "deepinfra/anthropic/claude-sonnet-5-5",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.000",
+      "outputTokensPricePerMillion": "10.000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1000000,
+      "capabilities": [
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 1.6,
+        "batch_output_tokens_price_per_million": 8
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/anthropic/claude-sonnet-5-5",
+        "description": "Claude Sonnet 5.5 is Anthropic's latest Sonnet model, balancing speed and capability for everyday coding, agents, and enterprise work. It supports a 1M-token context window and up to 128K output tokens.",
+        "display_name": "anthropic/claude-sonnet-5-5"
+      }
+    },
+    {
       "model": "deepinfra/ByteDance/Seed-1.8",
       "provider": "deepinfra",
       "mode": "chat",
@@ -1385,8 +1417,8 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.130",
-      "outputTokensPricePerMillion": "0.380",
+      "inputTokensPricePerMillion": "0.200",
+      "outputTokensPricePerMillion": "0.400",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "contextWindow": 262144,
@@ -1403,16 +1435,16 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "priority_input_tokens_price_per_million": 0.195,
-        "priority_output_tokens_price_per_million": 0.57,
+        "priority_input_tokens_price_per_million": 0.3,
+        "priority_output_tokens_price_per_million": 0.6,
         "priority_cached_tokens_price_per_million": null,
         "priority_caching_tokens_price_per_million": null,
-        "flex_input_tokens_price_per_million": 0.104,
-        "flex_output_tokens_price_per_million": 0.304,
+        "flex_input_tokens_price_per_million": 0.16,
+        "flex_output_tokens_price_per_million": 0.32,
         "flex_cached_tokens_price_per_million": null,
         "flex_caching_tokens_price_per_million": null,
-        "batch_input_tokens_price_per_million": 0.104,
-        "batch_output_tokens_price_per_million": 0.304
+        "batch_input_tokens_price_per_million": 0.16,
+        "batch_output_tokens_price_per_million": 0.32
       },
       "limits": {},
       "metadata": {
@@ -1500,7 +1532,7 @@
       "model": "deepinfra/google/gemma-4-E4B-it",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.020",
       "outputTokensPricePerMillion": "0.100",
       "cachedTokensPricePerMillion": null,
@@ -1531,7 +1563,7 @@
         "display_name": "google/gemma-4-E4B-it",
         "quantization": "bfloat16",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: google/gemma-4-31B-it-turbo.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-01. Replacement: google/gemma-4-31B-it-turbo.",
         "retirement_date": "2026-10-01"
       }
     },
@@ -1757,7 +1789,7 @@
       "model": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "0.200",
       "outputTokensPricePerMillion": "0.800",
@@ -1789,7 +1821,7 @@
         "display_name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
         "quantization": "fp8",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: google/gemma-4-31B-it-turbo.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-01. Replacement: google/gemma-4-31B-it-turbo.",
         "retirement_date": "2026-10-01"
       }
     },
@@ -2197,7 +2229,7 @@
       "model": "deepinfra/MiniMaxAI/MiniMax-M2.7-Turbo",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.380",
       "outputTokensPricePerMillion": "1.700",
       "cachedTokensPricePerMillion": "0.070",
@@ -2220,7 +2252,10 @@
         "source_url": "https://deepinfra.com/MiniMaxAI/MiniMax-M2.7-Turbo",
         "description": "Speed-optimized MiniMax-M2.7",
         "display_name": "MiniMaxAI/MiniMax-M2.7-Turbo",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-30. Replacement: MiniMaxAI/MiniMax-M3.",
+        "retirement_date": "2026-09-30"
       }
     },
     {
@@ -2670,6 +2705,7 @@
         "batch_output_tokens_price_per_million": 11.4
       },
       "limits": {
+        "max_output_tokens": 1048576,
         "explicit_cache_granularity_tokens": 1536
       },
       "metadata": {
@@ -2844,7 +2880,10 @@
         "source_url": "https://deepinfra.com/nvidia/Nemotron-3-Nano-30B-A3B",
         "description": "NVIDIA Nemotron 3 Nano is an open small reasoning model optimized for fast, cost-efficient inference in agentic and production workloads. Built with a hybrid Mixture-of-Experts (MoE) and Mamba-Transformer architecture, it delivers strong multi-step reasoning, high token throughput, stable latency with predictable cost, and efficient deployment for agent-based systems. Designed for real-world AI systems where reasoning can generate significantly more tokens per prompt, Nemotron Nano reduces compute cost while maintaining strong reasoning quality.",
         "display_name": "nvidia/Nemotron-3-Nano-30B-A3B",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: nvidia/NVIDIA-Nemotron-3.5-Lightning.",
+        "retirement_date": "2026-10-08"
       }
     },
     {
@@ -3729,7 +3768,7 @@
       "model": "deepinfra/Qwen/Qwen3.5-122B-A10B",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.290",
       "outputTokensPricePerMillion": "2.400",
       "cachedTokensPricePerMillion": null,
@@ -3767,7 +3806,7 @@
         "display_name": "Qwen/Qwen3.5-122B-A10B",
         "quantization": "fp4",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: Qwen/Qwen3.5-397B-A17B.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-01. Replacement: Qwen/Qwen3.5-397B-A17B.",
         "retirement_date": "2026-10-01"
       }
     },
@@ -3990,10 +4029,11 @@
       "isEnabled": true,
       "inputTokensPricePerMillion": "0.100",
       "outputTokensPricePerMillion": "0.950",
-      "cachedTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": "0.100",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 262144,
       "capabilities": [
+        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -4007,17 +4047,17 @@
       "additionalPricePerMillion": {
         "priority_input_tokens_price_per_million": 0.15,
         "priority_output_tokens_price_per_million": 1.425,
-        "priority_cached_tokens_price_per_million": null,
+        "priority_cached_tokens_price_per_million": 0.15,
         "priority_caching_tokens_price_per_million": null,
         "flex_input_tokens_price_per_million": 0.08,
         "flex_output_tokens_price_per_million": 0.76,
-        "flex_cached_tokens_price_per_million": null,
+        "flex_cached_tokens_price_per_million": 0.08,
         "flex_caching_tokens_price_per_million": null,
         "batch_input_tokens_price_per_million": 0.08,
         "batch_output_tokens_price_per_million": 0.76
       },
       "limits": {
-        "max_output_tokens": 16384
+        "max_output_tokens": 65536
       },
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3.6-35B-A3B",
@@ -4285,7 +4325,7 @@
       "model": "deepinfra/stepfun-ai/Step-3.7-Flash",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.1600000000",
       "outputTokensPricePerMillion": "0.9200000000",
       "cachedTokensPricePerMillion": "0.0320000000",
@@ -4314,7 +4354,7 @@
         "display_name": "stepfun-ai/Step-3.7-Flash",
         "quantization": "modelopt",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: XiaomiMiMo/MiMo-V2.6-Flash.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-01. Replacement: XiaomiMiMo/MiMo-V2.6-Flash.",
         "retirement_date": "2026-10-01"
       }
     },
@@ -4354,7 +4394,10 @@
         "source_url": "https://deepinfra.com/tencent/Hy3",
         "description": "Hy3 is a 295B-parameter Mixture-of-Experts (MoE) model with 21B active parameters and 3.8B MTP layer parameters, developed by the Tencent Hy Team. Following the Hy3 Preview launch in late April, we gathered feedback from 50+ products and scaled up post-training with higher quality data. Today, we introduce Hy3, which outperforms similar-size models and rivals flagship open-source models with 2-5x parameters. It also shows significant gains in utility across various products and productivity tasks.",
         "display_name": "tencent/Hy3",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: tencent/Hy4-preview.",
+        "retirement_date": "2026-10-08"
       }
     },
     {
@@ -4387,6 +4430,7 @@
       },
       "metadata": {
         "source_url": "https://deepinfra.com/tencent/Hy4-preview",
+        "description": "Hy4 preview is a 770B-parameter Mixture-of-Experts flagship model from the Tencent Hy Team, with 49B parameters activated per token and a 1M-token context window. It uses Gated DeepSeek Sparse Attention with IndexCache, and is post-trained for software engineering, office and data analysis, game development, and scientific research.",
         "display_name": "tencent/Hy4-preview",
         "quantization": "fp8"
       }
@@ -4829,7 +4873,7 @@
       "model": "deepinfra/zai-org/GLM-5.1",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "1.050",
       "outputTokensPricePerMillion": "3.500",
       "cachedTokensPricePerMillion": "0.205",
@@ -4863,7 +4907,7 @@
         "display_name": "zai-org/GLM-5.1",
         "quantization": "fp4",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-01. Replacement: zai-org/GLM-5.3.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-01. Replacement: zai-org/GLM-5.3.",
         "retirement_date": "2026-10-01"
       }
     },
@@ -7423,7 +7467,10 @@
         "source_url": "https://deepinfra.com/deepseek-ai/Janus-Pro-7B",
         "display_name": "deepseek-ai/Janus-Pro-7B",
         "description": "Janus-Pro is a novel autoregressive framework that unifies multimodal understanding and generation. It addresses the limitations of previous approaches by decoupling visual encoding into separate pathways, while still utilizing a single, unified transformer architecture for processing. The decoupling not only alleviates the conflict between the visual encoder’s roles in understanding and generation, but also enhances the framework’s flexibility. Janus-Pro surpasses previous unified model and matches or exceeds the performance of task-specific models. The simplicity, high flexibility, and effectiveness of Janus-Pro make it a strong candidate for next-generation unified multimodal models.",
-        "catalog_note": "The provider lists a native inference endpoint but does not mark this model as OpenAI-compatible."
+        "catalog_note": "The provider lists a native inference endpoint but does not mark this model as OpenAI-compatible.",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08.",
+        "retirement_date": "2026-10-08"
       }
     },
     {
@@ -7859,7 +7906,10 @@
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen-Image-Edit",
         "display_name": "Qwen/Qwen-Image-Edit",
-        "description": "Qwen-Image-Edit is a next-generation image editing model built on top of Qwen-Image, designed for both semantic and appearance-level edits. It excels at tasks like precise text modifications, style transfers, viewpoint transformations, and element adjustments while preserving overall visual consistency."
+        "description": "Qwen-Image-Edit is a next-generation image editing model built on top of Qwen-Image, designed for both semantic and appearance-level edits. It excels at tasks like precise text modifications, style transfers, viewpoint transformations, and element adjustments while preserving overall visual consistency.",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: Qwen/Qwen-Image-Edit-Max.",
+        "retirement_date": "2026-10-08"
       }
     },
     {
@@ -9685,7 +9735,10 @@
       "metadata": {
         "source_url": "https://deepinfra.com/black-forest-labs/FLUX.1-Kontext-dev",
         "display_name": "black-forest-labs/FLUX.1-Kontext-dev",
-        "description": "FLUX.1 Kontext [dev] is a 12-billion-parameter image editing model that transforms visuals based on natural language instructions. It allows highly consistent, multi-step edits and is released with open weights under a non-commercial license to empower artists and researchers."
+        "description": "FLUX.1 Kontext [dev] is a 12-billion-parameter image editing model that transforms visuals based on natural language instructions. It allows highly consistent, multi-step edits and is released with open weights under a non-commercial license to empower artists and researchers.",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: black-forest-labs/FLUX-2-dev.",
+        "retirement_date": "2026-10-08"
       }
     },
     {
@@ -9993,7 +10046,10 @@
         "source_url": "https://deepinfra.com/deepseek-ai/Janus-Pro-1B",
         "display_name": "deepseek-ai/Janus-Pro-1B",
         "description": "Janus-Pro is a novel autoregressive framework that unifies multimodal understanding and generation. It addresses the limitations of previous approaches by decoupling visual encoding into separate pathways, while still utilizing a single, unified transformer architecture for processing. The decoupling not only alleviates the conflict between the visual encoder’s roles in understanding and generation, but also enhances the framework’s flexibility. Janus-Pro surpasses previous unified model and matches or exceeds the performance of task-specific models. The simplicity, high flexibility, and effectiveness of Janus-Pro make it a strong candidate for next-generation unified multimodal models.",
-        "catalog_note": "The provider lists a native inference endpoint but does not mark this model as OpenAI-compatible."
+        "catalog_note": "The provider lists a native inference endpoint but does not mark this model as OpenAI-compatible.",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08.",
+        "retirement_date": "2026-10-08"
       }
     },
     {
