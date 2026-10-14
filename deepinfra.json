@@ -485,13 +485,7 @@
       "cachedTokensPricePerMillion": "0.100",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 256000,
-      "capabilities": [
-        "prompt_caching",
-        "reasoning",
-        "structured_outputs",
-        "tool_choice",
-        "vision"
-      ],
+      "capabilities": ["prompt_caching", "reasoning", "tool_choice", "vision"],
       "modalities": {
         "input": ["image", "text"],
         "output": ["text"]
@@ -1624,7 +1618,10 @@
       "metadata": {
         "source_url": "https://deepinfra.com/ibm-granite/granite-4.2-30b",
         "description": "Granite-4.2-30B is the flagship reasoning model in the Granite 4.2 family. It delivers the strongest performance across reasoning-intensive tasks by leveraging built-in <think>...</think> chain-of-thought. It supports flexible thinking modes — full thinking (default), non-thinking, and low-effort — allowing users to balance depth vs. latency on a per-query basis.",
-        "display_name": "ibm-granite/granite-4.2-30b"
+        "display_name": "ibm-granite/granite-4.2-30b",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-18. Replacement: ibm-granite/granite-4.2-8b.",
+        "retirement_date": "2026-10-18"
       }
     },
     {
@@ -1651,7 +1648,10 @@
       "metadata": {
         "source_url": "https://deepinfra.com/ibm-granite/granite-4.2-3b",
         "description": "Granite-4.2-3B is the compact reasoning model in the Granite 4.2 family. Despite its small parameter count, it delivers strong performance on reasoning-intensive tasks by leveraging built-in <think>...</think> chain-of-thought. It supports flexible thinking modes — full thinking (default), non-thinking, and low-effort — allowing users to balance depth vs. latency on a per-query basis.",
-        "display_name": "ibm-granite/granite-4.2-3b"
+        "display_name": "ibm-granite/granite-4.2-3b",
+        "deprecated": true,
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-18. Replacement: ibm-granite/granite-4.2-8b.",
+        "retirement_date": "2026-10-18"
       }
     },
     {
@@ -2304,7 +2304,7 @@
       "mode": "chat",
       "isEnabled": true,
       "updatedAt": "2026-03-17T08:24:05.000Z",
-      "inputTokensPricePerMillion": "0.019",
+      "inputTokensPricePerMillion": "0.029",
       "outputTokensPricePerMillion": "0.030",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
@@ -2316,11 +2316,11 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "flex_input_tokens_price_per_million": 0.0152,
+        "flex_input_tokens_price_per_million": 0.0232,
         "flex_output_tokens_price_per_million": 0.024,
         "flex_cached_tokens_price_per_million": null,
         "flex_caching_tokens_price_per_million": null,
-        "batch_input_tokens_price_per_million": 0.0152,
+        "batch_input_tokens_price_per_million": 0.0232,
         "batch_output_tokens_price_per_million": 0.024
       },
       "limits": {},
@@ -2689,6 +2689,7 @@
       "contextWindow": 1048576,
       "capabilities": [
         "prompt_caching",
+        "reasoning",
         "structured_outputs",
         "tool_choice",
         "vision"
@@ -2848,7 +2849,7 @@
       "model": "deepinfra/nvidia/Nemotron-3-Nano-30B-A3B",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "0.050",
       "outputTokensPricePerMillion": "0.200",
@@ -3596,7 +3597,7 @@
       "model": "deepinfra/Qwen/Qwen3-Max",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "1.200",
       "outputTokensPricePerMillion": "6.000",
@@ -3617,14 +3618,17 @@
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3-Max",
         "description": "The latest flagship model in the Qwen family. State-of-the-art results across a comprehensive suite of benchmarks — including knowledge, reasoning, coding, instruction following, human preference alignment, agent tasks, and multilingual understanding.",
-        "display_name": "Qwen/Qwen3-Max"
+        "display_name": "Qwen/Qwen3-Max",
+        "deprecated": true,
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-10. Replacement: Qwen/Qwen3.8-Max.",
+        "retirement_date": "2026-10-10"
       }
     },
     {
       "model": "deepinfra/Qwen/Qwen3-Max-Thinking",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "1.200",
       "outputTokensPricePerMillion": "6.000",
@@ -3645,7 +3649,10 @@
       "metadata": {
         "source_url": "https://deepinfra.com/Qwen/Qwen3-Max-Thinking",
         "description": "The latest flagship reasoning model in the Qwen3 family. Further enhanced by multiple innovations like adaptive tool-use and advanced test-time scaling techniques",
-        "display_name": "Qwen/Qwen3-Max-Thinking"
+        "display_name": "Qwen/Qwen3-Max-Thinking",
+        "deprecated": true,
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-10. Replacement: Qwen/Qwen3.8-Max.",
+        "retirement_date": "2026-10-10"
       }
     },
     {
@@ -4097,7 +4104,7 @@
       "model": "deepinfra/Qwen/Qwen3.8-2.4T-A95B",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "2.000",
       "outputTokensPricePerMillion": "6.000",
       "cachedTokensPricePerMillion": "0.200",
@@ -4125,7 +4132,10 @@
         "source_url": "https://deepinfra.com/Qwen/Qwen3.8-2.4T-A95B",
         "description": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of Qwen3.8 Max, with 95 billion active parameters out of 2.4 trillion total. It is suited for coding, research, complex reasoning, and agentic workflows.",
         "display_name": "Qwen/Qwen3.8-2.4T-A95B",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-12. Replacement: zai-org/GLM-5.3.",
+        "retirement_date": "2026-10-12"
       }
     },
     {
@@ -4362,7 +4372,7 @@
       "model": "deepinfra/tencent/Hy3",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.1300000000",
       "outputTokensPricePerMillion": "0.5300000000",
       "cachedTokensPricePerMillion": "0.0330000000",
@@ -6078,7 +6088,7 @@
       "model": "deepinfra/inclusionAI/Ling-3.0-flash-Fin",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.060",
       "outputTokensPricePerMillion": "0.180",
       "cachedTokensPricePerMillion": "0.012",
@@ -6104,7 +6114,10 @@
         "source_url": "https://deepinfra.com/inclusionAI/Ling-3.0-flash-Fin",
         "description": "Ling-3.0-flash-Fin is the first finance-enhanced model in the Ant Ling family. Developed by Ant Group with leading financial institutions and domain experts, it extends Ling-3.0-flash through continued training on high-quality financial data.",
         "display_name": "inclusionAI/Ling-3.0-flash-Fin",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-09. Replacement: inclusionAI/Ling-3.0-flash-VL.",
+        "retirement_date": "2026-10-09"
       }
     },
     {

@@ -649,7 +649,9 @@
         "description": "An alias for frontier general-purpose models with safeguards for defensive cybersecurity work. It points to gpt-5.6-sol and needs separate approval through the Daybreak program.",
         "display_name": "Daybreak Blue",
         "knowledge_cutoff": "2026-02-16",
-        "aliases": ["gpt-daybreak-blue-latest", "gpt-5.6-sol"]
+        "aliases": ["gpt-daybreak-blue-latest", "gpt-5.6-sol"],
+        "deprecated": true,
+        "deprecated_reason": "OpenAI deprecated this alias with no shutdown date. Use the latest cyber model available to you."
       }
     },
     {
@@ -693,7 +695,9 @@
         "description": "An alias for advanced cybersecurity models for authorized vulnerability research and security testing. It points to gpt-5.6-cyber and needs separate approval through the Daybreak program.",
         "display_name": "Daybreak Red",
         "knowledge_cutoff": "2026-02-16",
-        "aliases": ["gpt-daybreak-red-latest", "gpt-5.6-cyber"]
+        "aliases": ["gpt-daybreak-red-latest", "gpt-5.6-cyber"],
+        "deprecated": true,
+        "deprecated_reason": "OpenAI deprecated this alias with no shutdown date. Use the latest cyber model available to you."
       }
     },
     {
@@ -733,7 +737,7 @@
         "source_url": "https://developers.openai.com/api/docs/models/chat-latest",
         "description": "Latest Instant model used in ChatGPT",
         "display_name": "Chat Latest",
-        "knowledge_cutoff": "2025-08-31",
+        "knowledge_cutoff": "2026-04-20",
         "aliases": ["chat-latest"]
       }
     },

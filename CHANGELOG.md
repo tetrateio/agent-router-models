@@ -1,3 +1,168 @@
+# 2026-10-13 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 514 records.
+
+## New Models:
+
+- [Anthropic] Claude Haiku 5.5 is the new Haiku model for high-volume, latency-sensitive work, such as classification, extraction, and routing. Anthropic released it on October 7, 2026. The context window holds 1,000,000 tokens, and output reaches 128,000 tokens. The model accepts text, images, and PDF files, and it returns text. It supports adaptive thinking, tool calls, structured outputs, prompt caching, web search, code execution, and computer use. Effort accepts low, medium, high, xhigh, and max, and the default is medium. Knowledge extends through June 2026. Prices depend on prompt length. Prices are USD per million tokens.
+
+| `claude-haiku-5-5` prompt length | Input | Cache read | 5-minute cache write | 1-hour cache write | Output | Batch input | Batch output |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 100,000 tokens or fewer | $0.10 | $0.01 | $0.125 | $0.20 | $0.50 | $0.05 | $0.25 |
+| More than 100,000 tokens | $0.50 | $0.05 | $0.625 | $1.00 | $2.50 | $0.25 | $1.25 |
+
+- [VertexAnthropic] Claude Haiku 5.5 on Google Cloud is generally available. It has the same standard, cache, and Batch prices as the direct Anthropic model. On Google Cloud, the higher prices start at 100,000 input tokens, not above that count. The context window holds 1,000,000 tokens, and output reaches 128,000 tokens. It supports computer use, web search, prompt caching, and tool calls. It runs on the global endpoint and in the United States and Europe.
+- [Gemini] Gemini Nano Banana 2.1 (`gemini-nano-banana-2.1`) is the new image generation and editing model. Google released it on October 6, 2026. It replaces Gemini 3.1 Flash Image. Input costs $1.50 and text output costs $7.50 per million tokens. Image output costs $30 per million tokens. One image costs about $0.0336 at 1K, $0.0504 at 2K, and $0.113 at 4K. Batch prices are half of these prices. The context window holds 131,072 tokens, and output reaches 32,768 tokens. The model accepts text, images, video, and PDF files. It returns images and text. It supports thinking and grounding with Google Search.
+
+## Price Changes:
+
+- [Anthropic] Cache reads on Claude Sonnet 5.5 cost less. The price decreased from $0.20 to $0.10 per million tokens on October 7, 2026. Batch cache reads decreased from $0.10 to $0.05. The other prices did not change.
+- [VertexAnthropic] Cache reads on Claude Sonnet 5.5 on Google Cloud also decreased from $0.20 to $0.10 per million tokens. Batch cache reads decreased from $0.10 to $0.05.
+- [Vertex] Gemini 3.1 Flash Image and Gemini 3.1 Flash-Lite Image now have Priority prices. Prices are USD per million tokens.
+
+| Model | Priority input | Priority cached input | Priority text output | Priority image output |
+| --- | --- | --- | --- | --- |
+| `gemini-3.1-flash-image` | $0.90 | $0.09 | $5.40 | $108 |
+| `gemini-3.1-flash-lite-image` | $0.45 | $0.045 | $2.70 | $54 |
+
+- [DeepInfra] Mistral Nemo Instruct 2407 input costs more. Input increased from $0.019 to $0.029 per million tokens. Flex and Batch input increased from $0.0152 to $0.0232. Output prices did not change.
+
+## Deprecated Models:
+
+- [Gemini] Gemini 3.1 Flash Image (`gemini-3.1-flash-image`) is deprecated as of October 6, 2026. Google announced no shutdown date. The replacement is Gemini Nano Banana 2.1. The model stays enabled.
+- [Gemini] Gemini 3.7 Flash (`gemini-3.7-flash`) and Gemini 3.5 Flash (`gemini-3.5-flash`) are deprecated as of October 8, 2026. Google sends requests for `gemini-3.7-flash` to `gemini-3.8-flash`, and requests for `gemini-3.5-flash` to `gemini-3.6-flash`. Google announced no shutdown date. Both models stay enabled. Update your model names to the replacements.
+- [Vertex] Two Gemini Flash models now have retirement dates on Google Cloud. They stay enabled until these dates. The replacement for both is Gemini 3.8 Flash.
+
+| Model | Retirement date |
+| --- | --- |
+| `vertex/gemini-3.6-flash` | November 19, 2026 |
+| `vertex/gemini-3.7-flash` | January 28, 2027 |
+
+- [OpenAI] OpenAI deprecated the Daybreak aliases `gpt-daybreak-blue-latest` and `gpt-daybreak-red-latest`. OpenAI gives no shutdown date. It tells users to move to the latest cyber model available to them. Both aliases were already disabled.
+- [DeepInfra] IBM Granite 4.2 30B and Granite 4.2 3B retire on October 18, 2026. DeepInfra gives low usage as the reason. The replacement is `ibm-granite/granite-4.2-8b`. Requests continue to work until that date.
+
+## Retired Models:
+
+- [DeepInfra] Four models retired. The catalog now disables them.
+
+| Model | Retirement date | Replacement |
+| --- | --- | --- |
+| `inclusionAI/Ling-3.0-flash-Fin` | October 9, 2026 | `inclusionAI/Ling-3.0-flash-VL` |
+| `Qwen/Qwen3-Max` | October 10, 2026 | `Qwen/Qwen3.8-Max` |
+| `Qwen/Qwen3-Max-Thinking` | October 10, 2026 | `Qwen/Qwen3.8-Max` |
+| `Qwen/Qwen3.8-2.4T-A95B` | October 12, 2026 | `zai-org/GLM-5.3` |
+
+- [DeepInfra] `nvidia/Nemotron-3-Nano-30B-A3B` and `tencent/Hy3` reached their retirement date on October 8, 2026. The October 5 update announced this date. The catalog now disables both models.
+
+## Other Updates:
+
+- [Gemini] Gemini 2.5 Flash Image (`gemini-2.5-flash-image`) is available again. Google moved its shutdown date from October 2, 2026 to March 15, 2027. The model page still lists the model as stable, and the prices did not change.
+- [OpenAI] The knowledge cutoff of Chat Latest (`chat-latest`) changed from August 31, 2025 to April 20, 2026. OpenAI updated the model snapshot on October 7, 2026.
+- [DeepInfra] Kimi K3 now supports reasoning.
+- [DeepInfra] Seed 2.0 Code no longer lists structured outputs.
+- [Vertex] Google now publishes a knowledge cutoff of January 2025 for Gemini 3 Pro Image, Gemini 3.1 Flash Image, and Gemini 3.1 Flash-Lite Image.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [All] This update adds no disabled record.
+
+### Corrections to earlier updates
+
+- [Gemini] The October 5 block disabled Gemini 2.5 Flash Image after the October 2, 2026 date. Google moved the shutdown date to March 15, 2027, and the model page still lists the model as stable. This update enables the model again.
+
+### Follow-up work
+
+- [All] The browser extension connected only for the Gemini checks. The run read every other source over `curl`.
+- [Gemini] The sources for `gemini-2.5-flash-image` disagree. The deprecation page gives March 15, 2027 as the shutdown date. The pricing page still says that the model "will be shut down on October 2, 2026". The model page opens in the browser and lists the model as stable. The record uses the March 15, 2027 date and is enabled again.
+- [Gemini] The model pages for `gemini-3.7-flash` and `gemini-3.5-flash` still open in the browser, so the records stay enabled. This follows a new rule from the catalog owner: a deprecated Gemini model stays available while its page opens in the browser. Each page says that requests go to the replacement model. The deprecation page says that the endpoint does not shut down.
+- [Gemini] The pricing page no longer lists `gemini-3.7-flash` or `gemini-3.5-flash`. The records keep their last verified prices. Requests go to the replacement model, so Google can bill them at the replacement price. For `gemini-3.7-flash`, the prices are the same as `gemini-3.8-flash`. For `gemini-3.5-flash`, the record gives $1.50 and $9, and `gemini-3.6-flash` costs $0.75 and $3.75.
+- [Gemini] `gemini-2.5-computer-use-preview-10-2025` stays disabled. Its model page says that the model shut down on July 28, 2026.
+- [VertexAnthropic] Two sources disagree about the long-context boundary of Claude Haiku 5.5. The column header says "> 100K input tokens". The footnote says "longer than or equal to 100k tokens". The record uses the footnote, as for Claude Sonnet 4.5. The direct Anthropic record uses "over 100,000 tokens".
+- [VertexAnthropic] The Batch columns for Claude Haiku 5.5 above 100,000 tokens are empty. These cells stay null.
+- [VertexAnthropic] Google's $10 web search price table still does not name Claude Haiku 5.5 or Claude Sonnet 5.5. Their search prices stay unknown.
+- [VertexAnthropic] The multi-region Claude price tables contain extra rows. The Claude Fable 5.1 table has a second Batch Cache Hit row at $0.275. The Claude Opus 4.5 table has one at $0.055. The global table has no such rows, and the records use the global prices.
+- [Anthropic] The web search page still names no supported models. The Claude Haiku 5.5 record has web search on the same evidence as Claude Sonnet 5.5. Google Cloud lists web search for the model. The new `capabilities.server_tools` field in the Models API can confirm this in a later run.
+- [Anthropic] Claude Haiku 5.5 retires "not sooner than October 7, 2027". This date is not firm, so the record has no retirement date. The same applies to the Google Cloud record.
+- [Anthropic] The Batch cache prices for Claude Haiku 5.5 come from the pricing page. The page says that cache multipliers stack with the Batch discount. The Google Cloud table gives the same values.
+- [OpenAI] GPT-6.1 Sol now has Ultrafast mode prices. Short-context input costs $12, cached input $0.60, cache writes $15, and output $60 per million tokens. Long-context prices are $24, $1.20, $30, and $90. The catalog has no field for Ultrafast prices, the same as for GPT-6 Astra.
+- [OpenAI] OpenAI released the Decisions API in beta on October 6, 2026, with `gpt-6-luna` only. No catalog mode covers this endpoint.
+- [OpenAI] OpenAI replaced the five usage tiers with three tiers: Build, Launch, and Grow. The OpenAI records have no rate-limit fields, so no record changed.
+- [DeepInfra] DeepInfra changed the retirement timestamp of `NVIDIA-Nemotron-Nano-9B-v2` from June 11, 2026 to October 8, 2026. The replacement changed to `nvidia/NVIDIA-Nemotron-3.5-Lightning`. The model stopped earlier, so the record keeps June 11.
+- [DeepInfra] The rendered pages of the four retired models now return HTTP 404. The API index still lists them, so the records stay disabled.
+- [Gemini/Vertex] On January 1, 2027, Gemini 3.8 and 3.6 Flash token prices double.
+- [All] Earlier unresolved items stay open.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 511 to 514 records. This update adds three records and removes none.
+- [Anthropic] `claude-haiku-5-5` copies the shape of `claude-sonnet-5-5`. It adds `limits.high_context: 100000` with the default `gt` comparison and `_high_context` cells for every standard, cache, and Batch price. It sets `inference_geo_us_multiplier: 1.1`, `code_execution_per_hour: 0.05`, `web_search_per_thousand_calls: 10`, `tool_use_system_prompt_tokens: 286`, `min_cacheable_prompt_tokens: 512`, and `max_images_per_prompt: 600`. It has no `fast_mode_*` cells.
+- [Anthropic] `claude-sonnet-5-5` changes `cachedTokensPricePerMillion` to 0.10 and `batch_cached_tokens_price_per_million` to 0.05.
+- [VertexAnthropic] `claude-haiku-5-5` sets `high_context: 100000` with `high_context_comparison: gte`. It sets `web_search_per_thousand_calls` to null and keeps the `web_search` ability. It uses the global-endpoint quota: `rpm: 3000` and `tpm: 30000000`.
+- [VertexAnthropic] `claude-sonnet-5-5` changes `cachedTokensPricePerMillion` to 0.10 and `batch_cached_tokens_price_per_million` to 0.05.
+- [Gemini] `gemini-nano-banana-2.1` copies the shape of `gemini-3.1-flash-image`. It sets `image_generation` and `batch_image_generation` per-image prices at 1K, 2K, and 4K, and `reasoning_efforts` of minimal, medium, and high. It has no cache, Flex, or Priority cells, because the model page lists none of them.
+- [Gemini] `gemini-3.1-flash-image` sets `deprecated: true`, `deprecated_date: 2026-10-06`, and a `deprecated_reason`.
+- [Gemini] `gemini-3.7-flash` and `gemini-3.5-flash` set `deprecated: true`, `deprecated_date: 2026-10-08`, and a `deprecated_reason`. They have no `retirement_date`.
+- [Gemini] `gemini-2.5-flash-image` sets `isEnabled: true`, changes `retirement_date` from 2026-10-02 to 2027-03-15, and changes its `deprecated_reason`.
+- [Vertex] `vertex/gemini-3.6-flash` and `vertex/gemini-3.7-flash` set `deprecated: true`, `retirement_date`, and a `deprecated_reason`.
+- [Vertex] `vertex/gemini-3.1-flash-image` and `vertex/gemini-3.1-flash-lite-image` replace null `priority_*` cells with prices, at the top level and in `image_tokens`.
+- [Vertex] `vertex/gemini-3-pro-image`, `vertex/gemini-3.1-flash-image`, and `vertex/gemini-3.1-flash-lite-image` add `knowledge_cutoff: 2025-01-01`.
+- [OpenAI] `gpt-daybreak-blue-latest` and `gpt-daybreak-red-latest` add `deprecated: true` and a `deprecated_reason`. `chat-latest` changes `knowledge_cutoff` to 2026-04-20.
+- [DeepInfra] Four retired records set `isEnabled: false`, `deprecated: true`, `retirement_date`, and a `deprecated_reason`. The two Granite records set the same fields and stay enabled. `Nemotron-3-Nano-30B-A3B` and `Hy3` set `isEnabled: false`.
+- [DeepInfra] `moonshotai/Kimi-K3` adds `reasoning`. `ByteDance/Seed-2.0-code` removes `structured_outputs`. `Mistral-Nemo-Instruct-2407` changes its standard, `flex_*`, and `batch_*` input prices.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [Vertex] Gemini Nano Banana 2.1 is generally available on Google Cloud. Standard input costs $1.50, text output $7.50, and image output $30 per million tokens. Image generation on Vertex is not allowed, so the catalog does not carry it.
+- [OpenAI] `gpt-rosalind-discovery` costs $5 for input, $0.50 for cached input, and $25 for output per million tokens. It has no model page, and access needs approval through the trusted-access program. The same applies to `gpt-rosalind-research`.
+- [Gemini] The `deep-research-pro-preview-12-2025` agent shuts down on October 23, 2026. Agents use only the Interactions API, so the catalog does not carry them.
+- [DeepInfra] Kokoro 82M input increased from $0.62 to $0.99 per million characters. It returns audio, so the catalog does not carry it.
+- [All] Earlier exclusions stay.
+
+### Prices that did not change
+
+- [Anthropic] The other 25 records match the pricing, models, deprecation, context-window, fast-mode, caching, tool-use, and effort pages. The only price change is the Claude Sonnet 5.5 cache read. The deprecation page now names Claude Sonnet 5.5 as the replacement for retired Sonnet models.
+- [OpenAI] The pricing page adds the GPT-6.1 Sol Ultrafast row and the Rosalind table only. The model pages change only rate-limit tiers, EU data residency text, and the Chat Latest and Daybreak entries.
+- [Gemini] The pricing page removes the Gemini 3.7 Flash and 3.5 Flash tables and adds Gemini Nano Banana 2.1. The Gemini 2.5 Flash Image prices did not change. The other tables change only the grounding text, from "Gemini 3.x" to "Gemini 3 and newer". The other model pages change only line breaks, and the TTS pages change one capability that the catalog does not carry.
+- [xAI] The release notes, models, pricing, and rate-limit pages change only the company name, the row order, and the rate-limit formula text. All 11 records match.
+- [Groq] The model index, changelog, deprecation page, and all model and feature pages are byte-identical to the October 5 snapshot. The rate-limit page changes one Free plan row for Safety GPT OSS 20B. The catalog records Developer-plan limits, which did not change.
+- [Vertex] The other Vertex tables are identical row for row. The Gemini model pages move their API rows into a new table and add Parallel and Exa web search to the grounding list. The embeddings page adds Gemini Embedding 2, with the same limits as the record.
+- [VertexAnthropic] The other 13 Claude records match the global price table. Only the description of Claude Haiku 4.5 changed in wording, so the record keeps its text.
+- [DeepInfra] The other 293 records match the index and detail endpoints.
+
+### Prices that differ from the direct-API catalogs
+
+- [VertexAnthropic] Claude Haiku 5.5 on Google Cloud has the same prices as the direct record. The long-context boundary is different: Google Cloud starts at 100,000 tokens, and Anthropic starts above 100,000 tokens. Google publishes no Batch prices above 100,000 tokens.
+- [Vertex] Gemini 3.7 Flash retires on Google Cloud on January 28, 2027, and Gemini 3.5 Flash has no date. On the Gemini API, both names have no shutdown date, and Google sends their requests to the replacement models.
+- [Vertex] Gemini 3.6 Flash retires on Google Cloud on November 19, 2026. The Gemini API gives no shutdown date for it.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [VertexAnthropic] Claude Haiku 5.5 on Google Cloud does not list code execution, file upload, structured outputs, or reasoning. The direct Anthropic record carries all four.
+
+### Sources and coverage
+
+- [All] This run compared all 511 starting records against a current provider source. The three new records have a full source record. A provider match and a passing validator do not establish complete field verification.
+- [All] The run compared each fetched page with the October 5 snapshot. Unchanged pages are proven unchanged, not assumed.
+- [Gemini] The browser read the rendered pricing page, model list, deprecation page, and the model pages for Gemini 3.7 Flash, 3.5 Flash, 2.5 Flash Image, and 2.5 Computer Use Preview. The rendered pages match the `curl` text. Browser coverage for the other providers is zero.
+- [All] Evidence stays under ignored `audits/2026-10-13/`. It holds the fetched sources, the comparison scripts, and the apply script.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Sources: the [release notes](https://platform.claude.com/docs/en/release-notes/api), [models overview](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [effort](https://platform.claude.com/docs/en/build-with-claude/effort), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [API overview](https://platform.claude.com/docs/en/api/overview), [tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview), the [Claude Haiku 5.5 overview](https://platform.claude.com/docs/en/models/haiku-5-5/overview), [What's new in Claude Haiku 5.5](https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5), and the [code execution](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool), [computer use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool), [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs), [vision](https://platform.claude.com/docs/en/build-with-claude/vision), [PDF support](https://platform.claude.com/docs/en/build-with-claude/pdf-support), [Files API](https://platform.claude.com/docs/en/build-with-claude/files), [web search](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool), and [tool reference](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference) pages.
+- [OpenAI] Sources: the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), [fast mode](https://developers.openai.com/api/docs/guides/fast-mode), [Ultrafast mode](https://developers.openai.com/api/docs/guides/ultrafast-mode), [Decisions](https://developers.openai.com/api/docs/guides/decisions), the image generation guide, and 105 model pages. The Rosalind model pages return HTTP 404.
+- [Gemini] Sources: the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), [Interactions](https://ai.google.dev/gemini-api/docs/interactions), 19 model pages, and the [Gemini Nano Banana 2.1 page](https://ai.google.dev/gemini-api/docs/models/gemini-nano-banana-2.1).
+- [xAI] Sources: the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing), and [rate limits](https://docs.x.ai/developers/rate-limits).
+- [Groq] Sources: the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), [changelog](https://console.groq.com/docs/changelog), [rate limits](https://console.groq.com/docs/rate-limits), five model pages, and ten feature pages. All fetches succeeded on the first try.
+- [DeepInfra] Sources: the [unfiltered index](https://api.deepinfra.com/models/list), 304 detail endpoints, and nine rendered model pages, including [Mistral Nemo Instruct 2407](https://deepinfra.com/mistralai/Mistral-Nemo-Instruct-2407) and [Granite 4.2 30B](https://deepinfra.com/ibm-granite/granite-4.2-30b). All 304 records match an index entry.
+- [Vertex] Sources: the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes), [pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), both deprecation pages, the model and feature pages, and the [Nano Banana 2.1 page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/nano-banana-2-1).
+- [VertexAnthropic] Sources: the [Claude index](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), 15 Claude model pages including [Claude Haiku 5.5](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/haiku-5-5), the web search page, and the Claude pricing tables.
+
+</details>
+
 # 2026-10-05 TARS MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 511 records.

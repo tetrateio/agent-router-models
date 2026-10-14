@@ -192,7 +192,7 @@
       "isEnabled": true,
       "inputTokensPricePerMillion": "2.0000000000",
       "outputTokensPricePerMillion": "10.0000000000",
-      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
       "cachingTokensPricePerMillion": "2.5000000000",
       "additionalPricePerMillion": {
         "web_search_per_thousand_calls": null,
@@ -202,7 +202,7 @@
         "batch_output_tokens_price_per_million": 5,
         "batch_caching_5m_per_million": 1.25,
         "batch_caching_1h_per_million": 2,
-        "batch_cached_tokens_price_per_million": 0.1
+        "batch_cached_tokens_price_per_million": 0.05
       },
       "contextWindow": 1000000,
       "capabilities": [
@@ -239,6 +239,81 @@
         "description": "Built for coding, agents, and professional work at scale.",
         "display_name": "Claude Sonnet 5.5 on Google Cloud",
         "release_date": "2026-09-28",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "Generally available"
+      }
+    },
+    {
+      "model": "claude-haiku-5-5",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": "0.5000000000",
+      "cachedTokensPricePerMillion": "0.0100000000",
+      "cachingTokensPricePerMillion": "0.1250000000",
+      "additionalPricePerMillion": {
+        "web_search_per_thousand_calls": null,
+        "caching_5m_per_million": 0.125,
+        "caching_1h_per_million": 0.2,
+        "input_tokens_price_per_million_high_context": 0.5,
+        "output_tokens_price_per_million_high_context": 2.5,
+        "cached_tokens_price_per_million_high_context": 0.05,
+        "caching_tokens_price_per_million_high_context": 0.625,
+        "caching_5m_per_million_high_context": 0.625,
+        "caching_1h_per_million_high_context": 1,
+        "batch_input_tokens_price_per_million": 0.05,
+        "batch_input_tokens_price_per_million_high_context": null,
+        "batch_output_tokens_price_per_million": 0.25,
+        "batch_output_tokens_price_per_million_high_context": null,
+        "batch_caching_5m_per_million": 0.0625,
+        "batch_caching_5m_per_million_high_context": null,
+        "batch_caching_1h_per_million": 0.1,
+        "batch_caching_1h_per_million_high_context": null,
+        "batch_cached_tokens_price_per_million": 0.005,
+        "batch_cached_tokens_price_per_million_high_context": null
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000,
+        "high_context": 100000,
+        "high_context_comparison": "gte",
+        "rpm": 3000,
+        "tpm": 30000000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-haiku-5-5"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/haiku-5-5",
+        "description": "High-performance, cost-effective model built for coding, sub-agents, and latency-sensitive experiences at scale.",
+        "display_name": "Claude Haiku 5.5 on Google Cloud",
+        "release_date": "2026-10-07",
         "regions": [
           "global",
           "us",
