@@ -2,6 +2,156 @@
   "version": "1.0",
   "models": [
     {
+      "model": "vertex/gemini-4-argon",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": "2.0000000000",
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "non_global_endpoint_multiplier": 1.1,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_cached_tokens_price_per_million": 0.05,
+        "batch_output_tokens_price_per_million": 5,
+        "priority_input_tokens_price_per_million": 3.6,
+        "priority_cached_tokens_price_per_million": 0.18,
+        "priority_output_tokens_price_per_million": 18
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "system_messages",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-4-argon"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-argon",
+        "description": "Our flagship reasoning model, built for complex software engineering, deep mathematical and scientific problem solving, autonomous multi-step agents, and long-decode generation up to 1M tokens.",
+        "display_name": "Gemini 4 Argon",
+        "release_date": "2026-10-13",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "upstream_model": "gemini-4-argon",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "vertex/gemini-4-argon-cyber-permissive",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "4.0000000000",
+      "outputTokensPricePerMillion": "20.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "4.0000000000",
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "non_global_endpoint_multiplier": 1.1,
+        "batch_input_tokens_price_per_million": 2,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_output_tokens_price_per_million": 10,
+        "priority_input_tokens_price_per_million": 7.2,
+        "priority_cached_tokens_price_per_million": 0.36,
+        "priority_output_tokens_price_per_million": 36
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "system_messages",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-4-argon-cyber-permissive"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-argon#cyber",
+        "description": "A version of Gemini 4 Argon for defensive cybersecurity use cases. Access requires an allowlist.",
+        "display_name": "Gemini 4 Argon Cyber Permissive",
+        "release_date": "2026-10-13",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "upstream_model": "gemini-4-argon-cyber-permissive",
+        "regions": [
+          "global",
+          "us"
+        ],
+        "launch_stage": "GA"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
       "model": "vertex/gemini-3.8-flash",
       "provider": "vertex",
       "mode": "chat",

@@ -1,3 +1,115 @@
+# 2026-10-14 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 517 records.
+
+## New Models:
+
+- [Gemini] Gemini 4 Argon (`gemini-4-argon`) is the new flagship reasoning model for complex coding, math, science, and multi-step agent work. Google released it on October 13, 2026, as a stable model. The context window holds 1,048,576 tokens, and this limit includes input and output. One request returns up to 65,536 output tokens. The model accepts text, images, video, audio, and PDF files, and it returns text. It supports thinking (low, medium, and high), tool calls, structured outputs, code execution, computer use (Preview), URL context, and grounding with Google Search and Google Maps. Caching is implicit only. The model is not available on the Free tier. The prices are promotional until November 30, 2026, and the same price applies to the full context window. Prices are USD per million tokens.
+
+| `gemini-4-argon` service | Input | Cached input | Output |
+| --- | --- | --- | --- |
+| Standard | $2 | $0.10 | $10 |
+| Batch | $1 | $0.05 | $5 |
+| Flex | $1 | $0.05 | $5 |
+| Priority | $3.60 | $0.18 | $18 |
+
+- [Vertex] Gemini 4 Argon (`vertex/gemini-4-argon`) is generally available on Google Cloud. It has the same standard, Batch, and Priority prices as the Gemini API model. Outside the global endpoint, prices increase by a factor of 1.1. The context window holds 1,048,576 tokens, and one request returns up to 65,536 output tokens. It supports thinking, system instructions, tool calls, structured outputs, implicit caching, code execution, computer use (Preview), URL context, and grounding. It runs on the global endpoint and in the United States and Europe.
+
+## Price Changes:
+
+- [All] No price changed in this update.
+
+## Deprecated Models:
+
+- [OpenAI] OpenAI deprecated two GPT-4o snapshots on October 14, 2026. They shut down on January 14, 2027. The replacement is `gpt-6-luna`. Both models stay enabled until that date.
+
+| Model | Shutdown date | Replacement |
+| --- | --- | --- |
+| `gpt-4o-2024-08-06` | January 14, 2027 | `gpt-6-luna` |
+| `gpt-4o-2024-11-20` | January 14, 2027 | `gpt-6-luna` |
+
+## Retired Models:
+
+- [All] No model retired in this update.
+
+## Other Updates:
+
+- [DeepInfra] Qwen3.5 9B (`Qwen/Qwen3.5-9B`) now supports reasoning.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [Vertex] `vertex/gemini-4-argon-cyber-permissive` is a version of Gemini 4 Argon for defensive cybersecurity work. Google serves it at general availability behind an allowlist (the Fairwind Program), so the record stays off. This follows the record for Gemini 3.8 Flash Cyber. The promotional price does not apply to this model. Standard input costs $4, cached input $0.20, and output $20 per million tokens. Priority costs $7.20, $0.36, and $36. Batch costs $2, $0.10, and $10. It does not support computer use, and it runs on the global endpoint and in the United States only.
+
+### Corrections to earlier updates
+
+- [All] This update corrects no earlier block.
+
+### Follow-up work
+
+- [All] The browser extension did not connect in this run. The run read every source over `curl`. Browser coverage is zero for all providers. The Vertex pricing page returned its full tables over `curl`.
+- [Gemini/Vertex] On December 1, 2026, Gemini 4 Argon prices double. Standard becomes $4 input, $0.20 cached input, and $20 output per million tokens. Batch and Flex become $2, $0.10, and $10. Priority becomes $7.20, $0.36, and $36. On Google Cloud, the current price comes from a 50% credit on net spend.
+- [Gemini/Vertex] Gemini 4 Argon can return up to 1,048,576 output tokens with long decodes. Long decodes work only on the `generateContent` API in `v1beta1`. The catalog endpoints are the OpenAI-compatible endpoint and `v1`, so both records use the synchronous limit of 65,536 tokens. The Google Cloud model page gives 1,048,576 as the maximum output.
+- [Vertex] The Google Cloud pricing table for Gemini 4 Argon has the title "Batch / Flex". The model page lists only Standard PayGo and Priority PayGo, so the record has no Flex prices.
+- [Vertex] The CodeMender price table now gives $1.50 for Gemini 3.8 Flash Cyber cache tokens. The model price tables still give $0.15. The record keeps $0.15, because the CodeMender table applies only to CodeMender.
+- [OpenAI] The deprecation notice names the snapshots `gpt-4o-mini-2024-07-18`, `gpt-4.1-2025-04-14`, and `gpt-4.1-mini-2025-04-14`. The catalog has no separate records for these snapshots. The `gpt-4o-mini`, `gpt-4.1`, and `gpt-4.1-mini` records list them as aliases. The notice does not name the alias names `gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, or `gpt-4.1-mini`, so these records do not change. The `gpt-4o-2024-05-13` record also does not change.
+- [OpenAI] The deprecation page now says that the models API returns a `shutdown_date` field. A later run can use this field to compare shutdown dates.
+- [Gemini] The model index no longer shows a card for Gemini 3.1 Pro Preview. The pricing and deprecation pages and the model page still list it, so the records do not change.
+- [All] Earlier unresolved items stay open.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 514 to 517 records. This update adds three records and removes none.
+- [Gemini] `gemini-4-argon` copies the shape of `gemini-3.8-flash`. It sets `batch_*`, `flex_*`, and `priority_*` cells, `grounding_google_search_per_thousand: 14`, and `grounding_google_maps_per_thousand: 14`. `cachingTokensPricePerMillion` takes the published context caching price, as for the other Gemini API records. It has no `caching_storage_*` cells, because explicit caching is not supported. It has no `high_context` limit and no `knowledge_cutoff`. `release_date` is 2026-10-13.
+- [Vertex] `vertex/gemini-4-argon` and `vertex/gemini-4-argon-cyber-permissive` copy the shape of `vertex/gemini-3.8-flash`. They set `batch_*` and `priority_*` cells, `non_global_endpoint_multiplier: 1.1`, `grounding_your_data_per_thousand: 2.5`, and `launch_stage: GA`. `cachingTokensPricePerMillion` takes the standard input price. The Cyber Permissive record sets `isEnabled: false` and removes `computer_use`.
+- [OpenAI] `gpt-4o-2024-08-06` and `gpt-4o-2024-11-20` set `deprecated: true`, `deprecated_date: 2026-10-14`, `retirement_date: 2027-01-14`, and a `deprecated_reason`.
+- [DeepInfra] `deepinfra/Qwen/Qwen3.5-9B` adds `reasoning`. The index added the `reasoning` tag.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [All] Earlier exclusions stay. This update adds no exclusion.
+
+### Prices that did not change
+
+- [Anthropic] All 27 records match. The pricing page changes only a worked example, which now uses Claude Opus 5.5 at the current prices.
+- [OpenAI] The pricing page and all model pages are identical to the October 13 snapshot. The deprecation page adds the GPT-4 notice and moves two older notices.
+- [Gemini] The pricing page adds Gemini 4 Argon and changes the "Used to improve our products" rows of other models. The catalog does not carry these rows. The other model pages change only the banner text. Gemini 4 Argon has one price for the full context window of 1,048,576 tokens.
+- [xAI] The models, pricing, and rate-limit pages change only the row order. All 11 records match.
+- [Groq] All pages are identical to the October 13 snapshot. All 4 records match.
+- [Vertex] The pricing page adds the Gemini 4 Argon tables and moves Claude Haiku 5.5 into the shared Claude tables. The values in the other tables are the same as on October 13. The TTS tables change the unit text from "1M tokens" to "1,000,000 count". The Gemini 3.8 Flash page lists agentic video understanding as generally available. Gemini 4 Argon has one price for the full context window.
+- [VertexAnthropic] The Claude price tables have new columns, but every value is the same as on October 13. All 15 records match.
+- [DeepInfra] The index changes only one tag. The Gemma 4 31B IT detail changes only its import time and version. The other 303 records match.
+
+### Prices that differ from the direct-API catalogs
+
+- [Vertex] Gemini 4 Argon has the same standard, Batch, and Priority prices as the Gemini API model. Google Cloud adds the 1.1 factor outside the global endpoint and has no Flex price.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [Vertex] Gemini 4 Argon on Google Cloud lists system instructions. It does not list file upload. The Gemini API record carries file upload.
+
+### Sources and coverage
+
+- [All] This run compared every fetched source with the October 13 snapshot. The October 13 run compared all 514 records against current sources. Of 241 pages, 197 are identical after markup removal. Of 304 DeepInfra detail endpoints, 302 are identical. The run read each changed page line by line.
+- [All] All 545 fetches returned HTTP 200. Browser coverage is zero.
+- [All] Evidence stays under ignored `audits/2026-10-14/`. It holds the fetched sources, the comparison output, and the apply script.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Sources: the [release notes](https://platform.claude.com/docs/en/release-notes/api), [models overview](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [API overview](https://platform.claude.com/docs/en/api/overview), and [tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview).
+- [OpenAI] Sources: the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), [tools](https://developers.openai.com/api/docs/guides/tools), [fast mode](https://developers.openai.com/api/docs/guides/fast-mode), the image generation guide, and the model pages.
+- [Gemini] Sources: the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), [Interactions](https://ai.google.dev/gemini-api/docs/interactions), 19 model pages, and the [Gemini 4 Argon page](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon).
+- [xAI] Sources: the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing), and [rate limits](https://docs.x.ai/developers/rate-limits).
+- [Groq] Sources: the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), [changelog](https://console.groq.com/docs/changelog), [rate limits](https://console.groq.com/docs/rate-limits), the model pages, and the feature pages.
+- [DeepInfra] Sources: the [unfiltered index](https://api.deepinfra.com/models/list) and 304 detail endpoints, including [Qwen3.5 9B](https://api.deepinfra.com/models/Qwen/Qwen3.5-9B). All 304 records match an index entry.
+- [Vertex] Sources: the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes), [pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), both deprecation pages, the model and feature pages, the [Gemini 4 Argon page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-argon), and the [Gemini 4 Argon guide](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon).
+- [VertexAnthropic] Sources: the [Claude index](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), 15 Claude model pages, and the Claude pricing tables.
+
+</details>
+
 # 2026-10-13 TARS MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 514 records.

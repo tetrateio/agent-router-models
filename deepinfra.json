@@ -3958,7 +3958,12 @@
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
       "contextWindow": 262144,
-      "capabilities": ["structured_outputs", "tool_choice", "vision"],
+      "capabilities": [
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
       "modalities": {
         "input": ["image", "text", "video"],
         "output": ["text"]

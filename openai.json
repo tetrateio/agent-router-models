@@ -2629,7 +2629,10 @@
         "description": "Fast, intelligent, flexible GPT model",
         "display_name": "GPT-4o",
         "knowledge_cutoff": "2023-10-01",
-        "deprecated": false
+        "deprecated": true,
+        "deprecated_date": "2026-10-14",
+        "retirement_date": "2027-01-14",
+        "deprecated_reason": "Retires on January 14, 2027. Replacement: gpt-6-luna."
       }
     },
     {
@@ -2762,7 +2765,10 @@
         "description": "Fast, intelligent, flexible GPT model",
         "display_name": "GPT-4o",
         "knowledge_cutoff": "2023-10-01",
-        "deprecated": false
+        "deprecated": true,
+        "deprecated_date": "2026-10-14",
+        "retirement_date": "2027-01-14",
+        "deprecated_reason": "Retires on January 14, 2027. Replacement: gpt-6-luna."
       }
     },
     {
