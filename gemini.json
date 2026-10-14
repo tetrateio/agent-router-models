@@ -146,7 +146,10 @@
           "low",
           "medium",
           "high"
-        ]
+        ],
+        "deprecated": true,
+        "deprecated_date": "2026-10-08",
+        "deprecated_reason": "Deprecated on October 8, 2026. Google routes API requests to gemini-3.8-flash and announces no shutdown date."
       }
     },
     {
@@ -284,7 +287,10 @@
         "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash",
         "description": "Our legacy Flash model, providing baseline speed and foundational performance for routine, high-throughput workloads.",
         "display_name": "Gemini 3.5 Flash",
-        "release_date": "2026-05-19"
+        "release_date": "2026-05-19",
+        "deprecated": true,
+        "deprecated_date": "2026-10-08",
+        "deprecated_reason": "Deprecated on October 8, 2026. Google routes API requests to gemini-3.6-flash and announces no shutdown date."
       }
     },
     {
@@ -682,6 +688,81 @@
       }
     },
     {
+      "model": "gemini-nano-banana-2.1",
+      "provider": "gemini",
+      "mode": "image_generation",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.5000000000",
+      "outputTokensPricePerMillion": "7.5000000000",
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "image_tokens": {
+          "output_image_tokens_price_per_million": 30,
+          "input_image_tokens_price_per_million": 1.5,
+          "batch_input_image_tokens_price_per_million": 0.75,
+          "batch_output_image_tokens_price_per_million": 15
+        },
+        "image_generation": {
+          "standard": {
+            "1K": 0.0336,
+            "2K": 0.0504,
+            "4K": 0.113
+          }
+        },
+        "batch_input_tokens_price_per_million": 0.75,
+        "batch_output_tokens_price_per_million": 3.75,
+        "batch_image_generation": {
+          "standard": {
+            "1K": 0.0168,
+            "2K": 0.0252,
+            "4K": 0.0567
+          }
+        }
+      },
+      "contextWindow": 131072,
+      "capabilities": [
+        "image_generation",
+        "pdf_support",
+        "reasoning",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "image",
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 32768
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-nano-banana-2.1"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-nano-banana-2.1",
+        "description": "High-efficiency image generation and conversational editing model with improved visual quality, prompt adherence, multi-turn character consistency, and text rendering.",
+        "display_name": "Gemini Nano Banana 2.1",
+        "release_date": "2026-10-06",
+        "reasoning_efforts": [
+          "minimal",
+          "medium",
+          "high"
+        ]
+      }
+    },
+    {
       "model": "gemini-3.1-flash-image",
       "provider": "gemini",
       "mode": "image_generation",
@@ -750,7 +831,10 @@
         "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-image",
         "description": "Powerful, high-efficiency image generation and editing optimized for speed and high-volume use cases.",
         "display_name": "Gemini 3.1 Flash Image (Nano Banana 2)",
-        "release_date": "2026-05-28"
+        "release_date": "2026-05-28",
+        "deprecated": true,
+        "deprecated_date": "2026-10-06",
+        "deprecated_reason": "Deprecated on October 6, 2026 with no shutdown date announced. Replacement: gemini-nano-banana-2.1."
       }
     },
     {
@@ -1142,7 +1226,7 @@
       "model": "gemini-2.5-flash-image",
       "provider": "gemini",
       "mode": "image_generation",
-      "isEnabled": false,
+      "isEnabled": true,
       "inputTokensPricePerMillion": "0.3000000000",
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": null,
@@ -1213,8 +1297,8 @@
         "release_date": "2025-10-02",
         "knowledge_cutoff": "2025-06-01",
         "deprecated": true,
-        "retirement_date": "2026-10-02",
-        "deprecated_reason": "Shutdown date October 2, 2026. The pricing page names gemini-3.1-flash-image or gemini-3.1-flash-lite-image as the replacement."
+        "retirement_date": "2027-03-15",
+        "deprecated_reason": "The deprecations page gives March 15, 2027 as the shutdown date. Replacement: gemini-3.1-flash-lite-image."
       }
     },
     {

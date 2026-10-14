@@ -215,7 +215,10 @@
           "us",
           "eu"
         ],
-        "launch_stage": "GA"
+        "launch_stage": "GA",
+        "deprecated": true,
+        "retirement_date": "2027-01-28",
+        "deprecated_reason": "Google lists January 28, 2027 as the retirement date on Agent Platform. Replacement: gemini-3.8-flash."
       },
       "limits": {
         "max_output_tokens": 65536
@@ -290,7 +293,10 @@
           "us",
           "eu"
         ],
-        "launch_stage": "GA"
+        "launch_stage": "GA",
+        "deprecated": true,
+        "retirement_date": "2026-11-19",
+        "deprecated_reason": "Google lists November 19, 2026 as the retirement date on Agent Platform. Replacement: gemini-3.8-flash."
       },
       "limits": {
         "max_output_tokens": 65536
@@ -1093,6 +1099,7 @@
         "description": "State-of-the-art image generation and editing for highly contextual native image creation.",
         "display_name": "Gemini 3 Pro Image (Nano Banana Pro)",
         "release_date": "2026-05-28",
+        "knowledge_cutoff": "2025-01-01",
         "upstream_model": "gemini-3-pro-image",
         "regions": [
           "global"
@@ -1118,9 +1125,9 @@
           "output_image_tokens_price_per_million": 60,
           "input_image_tokens_price_per_million": 0.5,
           "cached_input_image_tokens_price_per_million": 0.05,
-          "priority_input_image_tokens_price_per_million": null,
-          "priority_cached_input_image_tokens_price_per_million": null,
-          "priority_output_image_tokens_price_per_million": null,
+          "priority_input_image_tokens_price_per_million": 0.9,
+          "priority_cached_input_image_tokens_price_per_million": 0.09,
+          "priority_output_image_tokens_price_per_million": 108,
           "flex_input_image_tokens_price_per_million": 0.25,
           "flex_cached_input_image_tokens_price_per_million": 0.025,
           "batch_input_image_tokens_price_per_million": 0.25,
@@ -1140,9 +1147,9 @@
         "batch_input_tokens_price_per_million": 0.25,
         "batch_cached_tokens_price_per_million": 0.025,
         "batch_output_tokens_price_per_million": 1.5,
-        "priority_input_tokens_price_per_million": null,
-        "priority_cached_tokens_price_per_million": null,
-        "priority_output_tokens_price_per_million": null,
+        "priority_input_tokens_price_per_million": 0.9,
+        "priority_cached_tokens_price_per_million": 0.09,
+        "priority_output_tokens_price_per_million": 5.4,
         "flex_input_tokens_price_per_million": 0.25,
         "flex_cached_tokens_price_per_million": 0.025,
         "flex_output_tokens_price_per_million": 1.5
@@ -1180,6 +1187,7 @@
         "description": "Powerful, high-efficiency image generation and editing optimized for speed and high-volume use cases.",
         "display_name": "Gemini 3.1 Flash Image (Nano Banana 2)",
         "release_date": "2026-05-28",
+        "knowledge_cutoff": "2025-01-01",
         "upstream_model": "gemini-3.1-flash-image",
         "regions": [
           "global",
@@ -1206,9 +1214,9 @@
           "output_image_tokens_price_per_million": 30,
           "input_image_tokens_price_per_million": 0.25,
           "cached_input_image_tokens_price_per_million": 0.025,
-          "priority_input_image_tokens_price_per_million": null,
-          "priority_cached_input_image_tokens_price_per_million": null,
-          "priority_output_image_tokens_price_per_million": null,
+          "priority_input_image_tokens_price_per_million": 0.45,
+          "priority_cached_input_image_tokens_price_per_million": 0.045,
+          "priority_output_image_tokens_price_per_million": 54,
           "flex_input_image_tokens_price_per_million": 0.125,
           "flex_cached_input_image_tokens_price_per_million": 0.0125,
           "batch_input_image_tokens_price_per_million": 0.125,
@@ -1224,9 +1232,9 @@
         "batch_input_tokens_price_per_million": 0.125,
         "batch_cached_tokens_price_per_million": 0.0125,
         "batch_output_tokens_price_per_million": 0.75,
-        "priority_input_tokens_price_per_million": null,
-        "priority_cached_tokens_price_per_million": null,
-        "priority_output_tokens_price_per_million": null,
+        "priority_input_tokens_price_per_million": 0.45,
+        "priority_cached_tokens_price_per_million": 0.045,
+        "priority_output_tokens_price_per_million": 2.7,
         "flex_input_tokens_price_per_million": 0.125,
         "flex_cached_tokens_price_per_million": 0.0125,
         "flex_output_tokens_price_per_million": 0.75
@@ -1263,6 +1271,7 @@
         "description": "Ultra-low-latency, cost-effective image generation and editing designed for high-volume interactive use cases.",
         "display_name": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite)",
         "release_date": "2026-06-23",
+        "knowledge_cutoff": "2025-01-01",
         "reasoning_efforts": [
           "minimal",
           "high"
