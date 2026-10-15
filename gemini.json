@@ -2,6 +2,76 @@
   "version": "1.0",
   "models": [
     {
+      "model": "gemini-4-argon",
+      "provider": "gemini",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": "0.1000000000",
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_output_tokens_price_per_million": 5,
+        "batch_cached_tokens_price_per_million": 0.05,
+        "flex_input_tokens_price_per_million": 1,
+        "flex_output_tokens_price_per_million": 5,
+        "flex_cached_tokens_price_per_million": 0.05,
+        "priority_input_tokens_price_per_million": 3.6,
+        "priority_output_tokens_price_per_million": 18,
+        "priority_cached_tokens_price_per_million": 0.18
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "aliases": [
+          "gemini-4-argon"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+        "description": "Our flagship reasoning model, built for complex software engineering, deep mathematical and scientific problem solving, autonomous multi-step agents, and long-decode generation up to 1M tokens.",
+        "display_name": "Gemini 4 Argon",
+        "release_date": "2026-10-13",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ]
+      }
+    },
+    {
       "model": "gemini-3.8-flash",
       "provider": "gemini",
       "mode": "chat",
