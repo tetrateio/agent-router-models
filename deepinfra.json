@@ -881,7 +881,9 @@
         "batch_input_tokens_price_per_million": 0.208,
         "batch_output_tokens_price_per_million": 0.304
       },
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 163840
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V3.2",
         "description": "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse attention mechanism that reduces training and inference cost while preserving quality in long-context scenarios. A scalable reinforcement learning post-training framework further improves reasoning, with reported performance in the GPT-5 class, and the model has demonstrated gold-medal results on the 2025 IMO and IOI. V3.2 also uses a large-scale agentic task synthesis pipeline to better integrate reasoning into tool-use settings, boosting compliance and generalization in interactive environments.",
@@ -1591,14 +1593,17 @@
         "source_url": "https://deepinfra.com/Gryphe/MythoMax-L2-13b",
         "description": "",
         "display_name": "Gryphe/MythoMax-L2-13b",
-        "quantization": "fp16"
+        "quantization": "fp16",
+        "deprecated": true,
+        "retirement_date": "2026-10-29",
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-29. Replacement: Sao10K/L3-8B-Lunaris-v1-Turbo."
       }
     },
     {
       "model": "deepinfra/ibm-granite/granite-4.2-30b",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.160",
       "outputTokensPricePerMillion": "0.650",
       "cachedTokensPricePerMillion": "0.040",
@@ -1628,7 +1633,7 @@
       "model": "deepinfra/ibm-granite/granite-4.2-3b",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.030",
       "outputTokensPricePerMillion": "0.120",
       "cachedTokensPricePerMillion": "0.0075",
@@ -1713,6 +1718,39 @@
         "source_url": "https://deepinfra.com/inclusionAI/Ling-3.0-flash",
         "description": "The model prioritizes token efficiency and agentic inference at production scale, stretching what developers can achieve within limited token, latency, and serving-cost budgets.",
         "display_name": "inclusionAI/Ling-3.0-flash"
+      }
+    },
+    {
+      "model": "deepinfra/inclusionAI/Ling-3.1-flash",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0750000000",
+      "outputTokensPricePerMillion": "0.2250000000",
+      "cachedTokensPricePerMillion": "0.0150000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.06,
+        "batch_output_tokens_price_per_million": 0.18
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/inclusionAI/Ling-3.1-flash",
+        "display_name": "inclusionAI/Ling-3.1-flash",
+        "description": "Ling-3.1-flash, an upgraded native hybrid reasoning model designed for complex, real-world tasks. With 560B total parameters, 25B active parameters per token, and a 1M-token context window, Ling-3.1-flash builds upon Ling-3.0-flash with improvements in architecture, performance on real-world capabilities.",
+        "quantization": "fp4"
       }
     },
     {
@@ -2712,7 +2750,8 @@
       "metadata": {
         "source_url": "https://deepinfra.com/moonshotai/Kimi-K3",
         "description": "Kimi K3 is Moonshot AI's 2.8T-parameter open-weight multimodal reasoning model. Built for complex coding, knowledge work, and long-horizon agentic workflows, it excels at navigating large repositories, calling tools, debugging, and iterating on images, logs, tests, and runtime feedback. Its architecture relies on KDA and Attention Residuals for computational efficiency.",
-        "display_name": "moonshotai/Kimi-K3"
+        "display_name": "moonshotai/Kimi-K3",
+        "quantization": "mxfp4"
       }
     },
     {
@@ -2745,7 +2784,10 @@
         "source_url": "https://deepinfra.com/NousResearch/Hermes-3-Llama-3.1-405B",
         "description": "Hermes 3 is a cutting-edge language model that offers advanced capabilities in roleplaying, reasoning, and conversation. It's a fine-tuned version of the Llama-3.1 405B foundation model, designed to align with user needs and provide powerful control. Key features include reliable function calling, structured output, generalist assistant capabilities, and improved code generation. Hermes 3 is competitive with Llama-3.1 Instruct models, with its own strengths and weaknesses.",
         "display_name": "NousResearch/Hermes-3-Llama-3.1-405B",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "retirement_date": "2026-11-02",
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-11-02. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
       }
     },
     {
@@ -2782,7 +2824,10 @@
         "source_url": "https://deepinfra.com/NousResearch/Hermes-3-Llama-3.1-70B",
         "description": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.",
         "display_name": "NousResearch/Hermes-3-Llama-3.1-70B",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "retirement_date": "2026-11-02",
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-11-02. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
       }
     },
     {
@@ -3045,6 +3090,40 @@
       }
     },
     {
+      "model": "deepinfra/nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "0.5000000000",
+      "cachedTokensPricePerMillion": "0.0200000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["text", "image", "video"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.12,
+        "batch_output_tokens_price_per_million": 0.4
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+        "display_name": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+        "description": "NVIDIA Nemotron 3.5 Super VL is an open multimodal model for agents that see, reason, and act. Its 120B-parameter Mixture-of-Experts design (12B active) understands text, images, documents, GUIs, and video, and adds reasoning and tool use on top.",
+        "quantization": "fp4"
+      }
+    },
+    {
       "model": "deepinfra/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL",
       "provider": "deepinfra",
       "mode": "chat",
@@ -3139,7 +3218,7 @@
       "model": "deepinfra/openai/gpt-oss-120b-Turbo",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "0.150",
       "outputTokensPricePerMillion": "0.600",
@@ -3165,7 +3244,10 @@
         "source_url": "https://deepinfra.com/openai/gpt-oss-120b-Turbo",
         "description": "",
         "display_name": "openai/gpt-oss-120b-Turbo",
-        "quantization": "bfloat16"
+        "quantization": "bfloat16",
+        "deprecated": true,
+        "retirement_date": "2026-10-20",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-20. Replacement: openai/gpt-oss-120b."
       }
     },
     {
@@ -4420,9 +4502,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.8340000000",
-      "outputTokensPricePerMillion": "2.5010000000",
-      "cachedTokensPricePerMillion": "0.0420000000",
+      "inputTokensPricePerMillion": "0.7923000000",
+      "outputTokensPricePerMillion": "2.3759500000",
+      "cachedTokensPricePerMillion": "0.0399000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
@@ -4437,8 +4519,8 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.6672,
-        "batch_output_tokens_price_per_million": 2.0008
+        "batch_input_tokens_price_per_million": 0.63384,
+        "batch_output_tokens_price_per_million": 1.90076
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4447,14 +4529,14 @@
         "source_url": "https://deepinfra.com/tencent/Hy4-preview",
         "description": "Hy4 preview is a 770B-parameter Mixture-of-Experts flagship model from the Tencent Hy Team, with 49B parameters activated per token and a 1M-token context window. It uses Gated DeepSeek Sparse Attention with IndexCache, and is post-trained for software engineering, office and data analysis, game development, and scientific research.",
         "display_name": "tencent/Hy4-preview",
-        "quantization": "fp8"
+        "quantization": "fp4"
       }
     },
     {
       "model": "deepinfra/thinkingmachines/Inkling",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.950",
       "outputTokensPricePerMillion": "4.050",
       "cachedTokensPricePerMillion": "0.160",
@@ -4484,7 +4566,10 @@
         "source_url": "https://deepinfra.com/thinkingmachines/Inkling",
         "description": "Inkling is a general-purpose multimodal model that accepts text, image and audio inputs and generates text outputs.",
         "display_name": "thinkingmachines/Inkling",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "retirement_date": "2026-10-22",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-22. Replacement: thinkingmachines/Inkling-Small."
       }
     },
     {
@@ -4640,12 +4725,12 @@
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "limits": {},
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Flash",
-      "inputTokensPricePerMillion": "0.1400000000",
-      "outputTokensPricePerMillion": "0.2800000000",
-      "cachedTokensPricePerMillion": "0.0028000000",
+      "inputTokensPricePerMillion": "0.0910000000",
+      "outputTokensPricePerMillion": "0.1820000000",
+      "cachedTokensPricePerMillion": "0.0018200000",
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.112,
-        "batch_output_tokens_price_per_million": 0.224
+        "batch_input_tokens_price_per_million": 0.0728,
+        "batch_output_tokens_price_per_million": 0.1456
       },
       "metadata": {
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.6-Flash",
@@ -4675,12 +4760,12 @@
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "limits": {},
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Pro",
-      "inputTokensPricePerMillion": "0.4300000000",
-      "outputTokensPricePerMillion": "0.8700000000",
-      "cachedTokensPricePerMillion": "0.0036000000",
+      "inputTokensPricePerMillion": "0.3870000000",
+      "outputTokensPricePerMillion": "0.7830000000",
+      "cachedTokensPricePerMillion": "0.0032400000",
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.344,
-        "batch_output_tokens_price_per_million": 0.696
+        "batch_input_tokens_price_per_million": 0.3096,
+        "batch_output_tokens_price_per_million": 0.6264
       },
       "metadata": {
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.6-Pro",
@@ -4981,9 +5066,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.0750000000",
-      "outputTokensPricePerMillion": "0.2500000000",
-      "cachedTokensPricePerMillion": "0.0150000000",
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": "0.5000000000",
+      "cachedTokensPricePerMillion": "0.0300000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
@@ -4999,11 +5084,11 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.06,
-        "batch_output_tokens_price_per_million": 0.2
+        "batch_input_tokens_price_per_million": 0.12,
+        "batch_output_tokens_price_per_million": 0.4
       },
       "limits": {
-        "max_output_tokens": 131072
+        "max_output_tokens": 1048576
       },
       "metadata": {
         "source_url": "https://deepinfra.com/zai-org/GLM-5.3-Flash",
@@ -5191,6 +5276,33 @@
         "source_url": "https://deepinfra.com/google/embeddinggemma-300m",
         "description": "EmbeddingGemma is a 300M parameter multilingual open embedding model from Google DeepMind, designed for efficient deployment even on low-resource devices, producing high-quality text vector representations for tasks such as search, classification, clustering, and semantic similarity.",
         "display_name": "google/embeddinggemma-300m"
+      }
+    },
+    {
+      "model": "deepinfra/google/embeddinggemma-2",
+      "provider": "deepinfra",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.020",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 8192,
+      "capabilities": ["embedding_image_input", "speech_recognition", "vision"],
+      "modalities": {
+        "input": ["text", "image", "audio", "video"],
+        "output": ["embedding"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.016,
+        "batch_output_tokens_price_per_million": null
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/google/embeddinggemma-2",
+        "display_name": "google/embeddinggemma-2",
+        "description": "EmbeddingGemma 2 is a 740M parameter multimodal embedding model from Google DeepMind that maps text (incl. code), images, video and audio, alone or interleaved, into a single 768-dimensional vector space, with task prompts and Matryoshka truncation to 512, 256 or 128 dimensions for search, retrieval, classification and clustering."
       }
     },
     {
@@ -5425,6 +5537,64 @@
         "source_url": "https://deepinfra.com/nvidia/Nemotron-3-Embed-8B",
         "description": "Nemotron-3-Embed-8B is a multilingual text embedding model from NVIDIA, based on Ministral-3-8B, that maps text into 4096-dimensional dense vectors for retrieval and semantic similarity. Spanning 34 languages, it targets multilingual RAG and question-answering over large corpora and achieves state-of-the-art results on the RTEB leaderboard.",
         "display_name": "nvidia/Nemotron-3-Embed-8B",
+        "quantization": "fp16"
+      }
+    },
+    {
+      "model": "deepinfra/nvidia/Nemotron-3.5-Embed-1B-BF16",
+      "provider": "deepinfra",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.015",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 32768,
+      "capabilities": ["embedding_image_input", "vision"],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["embedding"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "input_image_per_million_tokens": 0.035,
+        "batch_input_tokens_price_per_million": 0.012,
+        "batch_output_tokens_price_per_million": null
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/nvidia/Nemotron-3.5-Embed-1B-BF16",
+        "display_name": "nvidia/Nemotron-3.5-Embed-1B-BF16",
+        "description": "Nemotron-3.5-Embed-1B-BF16 is a compact multimodal embedding model from NVIDIA that maps text, images, and page screenshots into a shared 2048-dimensional vector space for visual document retrieval and semantic search. It pairs the Nemotron-3-Embed-1B text encoder with a vision encoder, supports up to 32k tokens and Matryoshka dimensions, and suits multilingual RAG over PDFs, slides, and scanned documents.",
+        "quantization": "fp16"
+      }
+    },
+    {
+      "model": "deepinfra/nvidia/Nemotron-3.5-Embed-8B-BF16",
+      "provider": "deepinfra",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.035",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 32768,
+      "capabilities": ["embedding_image_input", "vision"],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["embedding"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "input_image_per_million_tokens": 0.07,
+        "batch_input_tokens_price_per_million": 0.028,
+        "batch_output_tokens_price_per_million": null
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/nvidia/Nemotron-3.5-Embed-8B-BF16",
+        "display_name": "nvidia/Nemotron-3.5-Embed-8B-BF16",
+        "description": "Nemotron-3.5-Embed-8B-BF16 is a multimodal embedding model from NVIDIA that maps text, images, and page screenshots into a shared 4096-dimensional vector space for visual document retrieval and semantic search. Built on the Nemotron-3-Embed-8B text encoder with a vision encoder, it supports up to 32k tokens and Matryoshka dimensions, and delivers the highest retrieval quality in the Nemotron 3.5 family.",
         "quantization": "fp16"
       }
     },
@@ -6195,6 +6365,50 @@
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4.1-Flash",
         "display_name": "deepseek-ai/DeepSeek-V4.1-Flash",
         "description": "Introduce DeepSeek-V4.1-Flash, a multimodal Mixture-of-Experts (MoE) model with 552B backbone parameters and support for contexts of up to one million tokens.",
+        "quantization": "fp8"
+      }
+    },
+    {
+      "model": "deepinfra/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.0980000000",
+      "outputTokensPricePerMillion": "0.2940000000",
+      "cachedTokensPricePerMillion": "0.0029400000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 0.147,
+        "priority_output_tokens_price_per_million": 0.441,
+        "priority_cached_tokens_price_per_million": 0.00441,
+        "priority_caching_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million": 0.0784,
+        "flex_output_tokens_price_per_million": 0.2352,
+        "flex_cached_tokens_price_per_million": 0.002352,
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 0.0784,
+        "batch_output_tokens_price_per_million": 0.2352
+      },
+      "limits": {
+        "max_output_tokens": 131072
+      },
+      "metadata": {
+        "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "display_name": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "description": "DeepSeek-V4.1-Flash-1017 is a minor update to DeepSeek-V4.1-Flash, delivering substantial improvements across reasoning, coding, agentic tasks, and visual benchmarks. Alongside these gains, the model reduces task execution time and output length, enabling users to complete tasks faster and at lower cost and advancing the performance–cost Pareto frontier across multiple agent harnesses.",
         "quantization": "fp8"
       }
     },
@@ -7462,36 +7676,6 @@
       }
     },
     {
-      "model": "deepinfra/deepseek-ai/Janus-Pro-7B",
-      "provider": "deepinfra",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": null,
-      "outputTokensPricePerMillion": null,
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": null,
-      "capabilities": ["vision"],
-      "modalities": {
-        "input": ["text", "image"],
-        "output": ["text"]
-      },
-      "backendUrls": [],
-      "additionalPricePerMillion": {
-        "input_image_price_per_image": 0.002
-      },
-      "limits": {},
-      "metadata": {
-        "source_url": "https://deepinfra.com/deepseek-ai/Janus-Pro-7B",
-        "display_name": "deepseek-ai/Janus-Pro-7B",
-        "description": "Janus-Pro is a novel autoregressive framework that unifies multimodal understanding and generation. It addresses the limitations of previous approaches by decoupling visual encoding into separate pathways, while still utilizing a single, unified transformer architecture for processing. The decoupling not only alleviates the conflict between the visual encoder’s roles in understanding and generation, but also enhances the framework’s flexibility. Janus-Pro surpasses previous unified model and matches or exceeds the performance of task-specific models. The simplicity, high flexibility, and effectiveness of Janus-Pro make it a strong candidate for next-generation unified multimodal models.",
-        "catalog_note": "The provider lists a native inference endpoint but does not mark this model as OpenAI-compatible.",
-        "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08.",
-        "retirement_date": "2026-10-08"
-      }
-    },
-    {
       "model": "deepinfra/Gryphe/MythoMax-L2-13b-turbo",
       "provider": "deepinfra",
       "mode": "chat",
@@ -8715,7 +8899,10 @@
         "description": "FIBO is an open-source, JSON-native text-to-image model trained on detailed structured descriptions (over 1,000+ words per image), providing fine-grained control over light, composition, and camera parameters.",
         "options": {
           "speed": ["standard", "fast", "hq"]
-        }
+        },
+        "deprecated": true,
+        "retirement_date": "2026-10-27",
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-27. Replacement: Bria/fibo-2.0."
       }
     },
     {
@@ -8904,6 +9091,42 @@
         "deprecated": true,
         "retirement_date": "2026-06-29",
         "deprecated_reason": "Retired on DeepInfra on 2026-06-29. Replacement: stepfun-ai/Step-3.7-Flash."
+      }
+    },
+    {
+      "model": "deepinfra/stepfun-ai/Step-5-Preview",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "2.7000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["text", "image", "video"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.8,
+        "batch_output_tokens_price_per_million": 2.16
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      },
+      "metadata": {
+        "source_url": "https://deepinfra.com/stepfun-ai/Step-5-Preview",
+        "display_name": "stepfun-ai/Step-5-Preview",
+        "description": "Step 5 Preview is StepFun's flagship model for agentic work. It is a sparse Mixture-of-Experts model with 600B total parameters and 27B active per token, a 1M-token context window, and text and image input. It delivers frontier-level performance in software engineering, long-horizon agentic execution with repeated tool calls, and professional knowledge work, with particular strength in finance.",
+        "quantization": "fp8"
       }
     },
     {
@@ -10038,36 +10261,6 @@
         "deprecated": true,
         "retirement_date": "2025-11-15",
         "deprecated_reason": "Retired on DeepInfra on 2025-11-15. Replacement: Qwen/Qwen3-30B-A3B."
-      }
-    },
-    {
-      "model": "deepinfra/deepseek-ai/Janus-Pro-1B",
-      "provider": "deepinfra",
-      "mode": "chat",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": null,
-      "outputTokensPricePerMillion": null,
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": null,
-      "capabilities": ["vision"],
-      "modalities": {
-        "input": ["text", "image"],
-        "output": ["text"]
-      },
-      "backendUrls": [],
-      "additionalPricePerMillion": {
-        "input_image_price_per_image": 0.0005
-      },
-      "limits": {},
-      "metadata": {
-        "source_url": "https://deepinfra.com/deepseek-ai/Janus-Pro-1B",
-        "display_name": "deepseek-ai/Janus-Pro-1B",
-        "description": "Janus-Pro is a novel autoregressive framework that unifies multimodal understanding and generation. It addresses the limitations of previous approaches by decoupling visual encoding into separate pathways, while still utilizing a single, unified transformer architecture for processing. The decoupling not only alleviates the conflict between the visual encoder’s roles in understanding and generation, but also enhances the framework’s flexibility. Janus-Pro surpasses previous unified model and matches or exceeds the performance of task-specific models. The simplicity, high flexibility, and effectiveness of Janus-Pro make it a strong candidate for next-generation unified multimodal models.",
-        "catalog_note": "The provider lists a native inference endpoint but does not mark this model as OpenAI-compatible.",
-        "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08.",
-        "retirement_date": "2026-10-08"
       }
     },
     {
