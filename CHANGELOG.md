@@ -1,3 +1,242 @@
+# 2026-10-27 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 523 records. The run read the provider change feeds from October 14 to October 27, 2026.
+
+## New Models:
+
+- [OpenAI] GPT-6.1 Terra (`gpt-6.1-terra`) is a fast and efficient model for visual reasoning, computer use, and writing. OpenAI released it on October 26, 2026. The context window holds 1,050,000 tokens. One request accepts up to 922,000 input tokens and returns up to 128,000 output tokens. The model accepts text and images, and it returns text. It supports reasoning (none, low, medium, high, xhigh, and max), tool calls, structured outputs, web search, file search, code execution, image generation, computer use, and prompt caching. The knowledge cutoff is June 1, 2026. A prompt of more than 272,000 input tokens uses the long-context prices. Prices are USD per million tokens.
+
+| `gpt-6.1-terra` service | Input | Cached input | 30-minute cache write | Output |
+| --- | --- | --- | --- | --- |
+| Standard | $1 | $0.05 | $1.25 | $5 |
+| Standard, long context | $2 | $0.10 | $2.50 | $7.50 |
+| Batch and Flex | $0.50 | $0.025 | $0.625 | $2.50 |
+| Batch and Flex, long context | $1 | $0.05 | $1.25 | $3.75 |
+| Fast mode | $2 | $0.10 | $2.50 | $10 |
+| Fast mode, long context | $4 | $0.20 | $5 | $15 |
+
+- [Vertex] DeepSeek-V4.1-Flash (`vertex/deepseek-ai/deepseek-v4.1-flash-maas`) is a managed DeepSeek model in Preview on Google Cloud. Google released it on October 14, 2026. The model accepts text and images, and it returns text. It supports thinking, tool calls, and structured outputs. The context window and the maximum output both hold 1,048,576 tokens. Input costs $0.30, cached input $0.03, and output $1.20 per million tokens. The model runs on the global endpoint only. Batch inference is not supported.
+
+- [DeepInfra] DeepInfra added seven models. Prices are USD per million tokens. Two models have a promotion with no published end date, so the catalog records the promotional price.
+
+| Model | Input | Cached input | Output | Context window | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `deepseek-ai/DeepSeek-V4.1-Flash-1017` | $0.098 | $0.00294 | $0.294 | 1,048,576 | A 51 percent promotion. The list price is $0.20, $0.006, and $0.60. Priority and Flex tiers. Maximum output 131,072. |
+| `inclusionAI/Ling-3.1-flash` | $0.075 | $0.015 | $0.225 | 262,144 | A 75 percent promotion. The list price is $0.30, $0.06, and $0.90. |
+| `nvidia/NVIDIA-Nemotron-3.5-Super-VL` | $0.15 | $0.02 | $0.50 | 262,144 | Text, image, and video input. |
+| `stepfun-ai/Step-5-Preview` | $1.00 | $0.10 | $2.70 | 1,048,576 | Text, image, and video input. Maximum output 65,536. |
+| `google/embeddinggemma-2` | $0.02 | — | — | 8,192 | Embedding model. Text, image, audio, and video input. |
+| `nvidia/Nemotron-3.5-Embed-1B-BF16` | $0.015 | — | — | 32,768 | Embedding model. Image tokens cost $0.035. |
+| `nvidia/Nemotron-3.5-Embed-8B-BF16` | $0.035 | — | — | 32,768 | Embedding model. Image tokens cost $0.07. |
+
+## Price Changes:
+
+- [DeepInfra] Four models changed price. Batch prices stay at 0.8 times the real-time prices. Prices are USD per million tokens, in the order input, cached input, and output.
+
+| Model | Old price | New price | Reason |
+| --- | --- | --- | --- |
+| `zai-org/GLM-5.3-Flash` | $0.075, $0.015, $0.25 | $0.15, $0.03, $0.50 | The 50 percent promotion ended. |
+| `XiaomiMiMo/MiMo-V2.6-Flash` | $0.14, $0.0028, $0.28 | $0.091, $0.00182, $0.182 | A new 35 percent promotion. |
+| `XiaomiMiMo/MiMo-V2.6-Pro` | $0.43, $0.0036, $0.87 | $0.387, $0.00324, $0.783 | A new 10 percent promotion. |
+| `tencent/Hy4-preview` | $0.834, $0.042, $2.501 | $0.7923, $0.0399, $2.37595 | A new 5 percent promotion. |
+
+- [xAI] The pricing page now gives a 20 percent Batch discount for Grok 4.7, Grok 4.6, and Grok 4.5. The three records add Batch prices. Prices are USD per million tokens. The value in parentheses applies to prompts of 200,000 tokens or more.
+
+| Model | Batch input | Batch cached input | Batch output |
+| --- | --- | --- | --- |
+| `grok-4.7`, `grok-4.6` | $1.60 ($3.20) | $0.40 ($0.80) | $4.80 ($9.60) |
+| `grok-4.5` | $1.60 ($3.20) | $0.24 ($0.48) | $4.80 ($9.60) |
+
+## Deprecated Models:
+
+- [DeepInfra] DeepInfra scheduled four models for retirement. The three text models stay enabled until their dates. `Bria/fibo` was already disabled, because DeepInfra image generation stays off.
+
+| Model | Retirement date | Replacement |
+| --- | --- | --- |
+| `Gryphe/MythoMax-L2-13b` | October 29, 2026 | `Sao10K/L3-8B-Lunaris-v1-Turbo` |
+| `NousResearch/Hermes-3-Llama-3.1-405B` | November 2, 2026 | `deepseek-ai/DeepSeek-V4.1-Flash-1017` |
+| `NousResearch/Hermes-3-Llama-3.1-70B` | November 2, 2026 | `deepseek-ai/DeepSeek-V4.1-Flash-1017` |
+| `Bria/fibo` | October 27, 2026 | `Bria/fibo-2.0` |
+
+## Retired Models:
+
+- [OpenAI] OpenAI shut down 10 models on October 23, 2026. OpenAI announced this shutdown on April 22, 2026. The records are now disabled.
+
+| Model | Replacement |
+| --- | --- |
+| `gpt-3.5-turbo` | `gpt-5.6-terra` |
+| `gpt-4` | `gpt-5.6-sol` |
+| `gpt-4-turbo` | `gpt-5.6-sol` |
+| `gpt-4.1-nano` | `gpt-5.6-luna` |
+| `gpt-4o-2024-05-13` | `gpt-5.6-sol` |
+| `gpt-image-1` | `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` |
+| `o1` | `gpt-5.6-sol` |
+| `o1-pro` | `gpt-5.6-sol` with `reasoning.mode: pro` |
+| `o3-mini` | `gpt-5.6-sol` |
+| `o4-mini` | `gpt-5.6-terra` |
+
+- [Vertex] Google retired Gemini 2.5 Pro, Gemini 2.5 Flash, and Gemini 2.5 Flash-Lite on Google Cloud on October 20, 2026. The records are now disabled. The Gemini API gives no shutdown date for these models, so the Gemini API records stay enabled.
+- [Vertex] Google retired 16 open models from Model as a Service on October 21, 2026. Google offers self-deployment on Model Garden as the alternative. The records are now disabled.
+
+| Publisher | Retired models |
+| --- | --- |
+| DeepSeek | DeepSeek-V3.1, DeepSeek-V3.2, DeepSeek-R1 (0528), DeepSeek-OCR |
+| Qwen | Qwen3-235B-A22B-Instruct-2507, Qwen3-Coder-480B-A35B-Instruct, Qwen3-Next-80B Instruct, Qwen3-Next-80B Thinking |
+| Z.ai | GLM-4.7, GLM-5 |
+| Moonshot AI | Kimi K2 Thinking |
+| MiniMax | MiniMax-M2 |
+| OpenAI | gpt-oss-20b |
+| Meta | Llama 3.3 70B Instruct |
+| intfloat | Multilingual E5 Large Instruct, Multilingual E5 Small |
+
+- [DeepInfra] DeepInfra retired four models. The records are now disabled.
+
+| Model | Retirement date | Replacement |
+| --- | --- | --- |
+| `ibm-granite/granite-4.2-30b` | October 18, 2026 | `ibm-granite/granite-4.2-8b` |
+| `ibm-granite/granite-4.2-3b` | October 18, 2026 | `ibm-granite/granite-4.2-8b` |
+| `openai/gpt-oss-120b-Turbo` | October 20, 2026 | `openai/gpt-oss-120b` |
+| `thinkingmachines/Inkling` | October 22, 2026 | `thinkingmachines/Inkling-Small` |
+
+- [DeepInfra] DeepInfra removed Janus-Pro 7B and Janus-Pro 1B from its index. Both models retired on October 8, and both records were already disabled. This update removes `deepseek-ai/Janus-Pro-7B` and `deepseek-ai/Janus-Pro-1B`.
+- [VertexAnthropic] Google removed Claude Opus 4.1 from the Google Cloud documentation. The model page returns HTTP 404. The Claude index and the navigation no longer name the model. The web search page names it only in a note about organization policy. The pricing page lost its Opus 4.1 prices on September 29. This update removes the `claude-opus-4-1` record.
+
+## Other Updates:
+
+- [Vertex] Gemini 4 Argon now runs in two more regions, `europe-west2` and `asia-southeast1`. Standard PayGo stays on the global endpoint, `us`, and `eu`.
+- [Vertex] Gemini 3.5 Flash-Lite now runs in `asia-south1`.
+- [xAI] The files documentation now gives a maximum file size of 512 MB. All eight text records change from 48 MB to 512 MB. The Batch API has a separate limit of 200 MB for one input file.
+- [DeepInfra] GLM-5.3-Flash now returns up to 1,048,576 output tokens. DeepSeek-V3.2 now publishes a maximum output of 163,840 tokens.
+- [DeepInfra] Hy4 Preview now runs at `fp4` quantization instead of `fp8`.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [All] This update adds no disabled record.
+
+### Corrections to earlier updates
+
+- [Anthropic] The release dates of Claude Opus 4.5 and Claude Haiku 4.5 were wrong. The release notes give November 24, 2025, for Opus 4.5. They give October 15, 2025, for Haiku 4.5. The two aliases and two snapshots now use these dates.
+- [OpenAI] GPT-5.3 Codex (`gpt-5.3-codex`) did not have its fast mode prices. The pricing page also listed them on October 14. Fast mode costs $3.50 input, $0.35 cached input, and $28 output per million tokens.
+- [OpenAI] Three records did not have their reasoning efforts. The model pages give none, low, medium, high, and xhigh for GPT-5.4 mini and GPT-5.4 nano. They give medium, high, and xhigh for GPT-5.5 Pro.
+- [OpenAI] The model pages of o4-mini Deep Research and o3 Deep Research list file uploads. Both records add file upload and stay disabled.
+- [DeepInfra] Kimi K3 did not have its quantization. The detail endpoint also gave `mxfp4` on October 14.
+- [xAI] Earlier updates gave a maximum file size of 48 MB. The run has no saved xAI files page from October 14. The run cannot show whether xAI raised the limit or the earlier value was wrong.
+
+### Follow-up work
+
+- [All] The browser extension did not connect in this run. The run read every source over `curl`. Browser coverage is zero for all providers. The Vertex pricing page returned its full tables over `curl`.
+- [OpenAI] OpenAI added 12-hour prompt caching on October 20, 2026. A 12-hour cache write costs 2.5 times the input price. The pricing page gives 66 of these prices for 10 models. The catalog has no field for them.
+- [OpenAI] The Ultrafast prices of GPT-6 Astra and GPT-6.1 Sol still have no field. The Ultrafast table now also gives 12-hour cache write prices.
+- [OpenAI] GPT Image 1.5, GPT Image 1 mini, and ChatGPT Image Latest retire on December 1, 2026. The records stay enabled until that date.
+- [OpenAI] The pricing page gives Batch, Flex, and fast mode prices for `gpt-daybreak-blue-latest`. The record does not have them. The record is disabled and deprecated, so this update does not change it.
+- [OpenAI] `gpt-4o-2024-08-06` and `gpt-4o-2024-11-20` have no Batch or fast mode prices and only three capabilities. The pricing page and the model page give these values for the `gpt-4o` family only. This item stays open from earlier updates.
+- [OpenAI] The enabled `gpt-4o`, `gpt-4o-2024-08-06`, and `gpt-4o-2024-11-20` records still list `gpt-4o-2024-05-13` as an alias. The model page marks this snapshot as shut down. The disabled `gpt-4o-2024-05-13` record lists the other three names.
+- [OpenAI] The two search preview records list web search, but the tool lists on their model pages do not. Both records are disabled, and they keep the capability.
+- [OpenAI] Two disabled audio preview records differ from their model pages. `gpt-4o-audio-preview` does not list the `2024-10-01` snapshot. `gpt-4o-mini-audio-preview` does not list three tools.
+- [Gemini/Vertex] The earlier price notes stand. On December 1, 2026, Gemini 4 Argon prices double. On January 1, 2027, Gemini 3.8 Flash and Gemini 3.6 Flash prices double.
+- [Gemini] The pricing page adds a Contributor tier for Gemini 4 Argon and some other models. The tier is an invite-only private preview at half the Standard price. Google uses its data to improve Google products. The catalog has no field for this tier.
+- [Gemini] The pricing page gives Flex and Priority prices for Gemini 3 Pro Image and Gemini 2.5 Flash Image. Their model pages say that Flex and Priority are not supported. The records keep the prices. The two pages gave the same conflict on October 14.
+- [Gemini] Gemini 3.7 Flash and Gemini 3.5 Flash have no pricing section. Google sends their requests to Gemini 3.8 Flash and Gemini 3.6 Flash. The records keep their last verified prices.
+- [Vertex] From November 13, 2026, Google bills Gemini 4 completions of more than 32K tokens. This rule also applies to requests that fail from a timeout. The catalog has no field for this rule.
+- [Vertex] The promotional credit for Provisioned Throughput now includes Gemini 4 Argon through November 30, 2026.
+- [Vertex] Google gives DeepSeek-V4.1-Flash an availability "until at least November 28, 2026". This date is not firm, so the record holds no retirement date.
+- [DeepInfra] Thirteen promotions stay active with no published end date. Five are new: MiMo-V2.6-Flash (35 percent), MiMo-V2.6-Pro (10 percent), Hy4 Preview (5 percent), DeepSeek-V4.1-Flash-1017 (51 percent), and Ling-3.1-flash (75 percent).
+- [DeepInfra] The eight earlier promotions are Qwen3.8-27B, Step-3.7-Flash, MiMo-V2.5, MiMo-V2.5-Pro, GLM-5.2, GLM-5.3, DeepSeek-V4-Flash-Vision-Exp, and DeepSeek-V4.1-Flash.
+- [DeepInfra] MythoMax retires on October 29, and both Hermes-3 models retire on November 2. The next run after these dates disables the three records.
+- [DeepInfra] The Ling-3.1-flash description gives a context of 1M tokens. DeepInfra serves 262,144 tokens, so the record uses 262,144.
+- [xAI] The source page for the Grok 4.6 knowledge cutoff now returns 404. The record keeps 2026-02-01. The models page gives a cutoff for Grok 4.7 only.
+- [xAI] The Batch prices come from the published 20 percent discount. The Batch toggle on each model page needs JavaScript, and the browser did not connect. Batch for Grok 4.7 and Grok 4.6 runs in `us-east-1` and `us-west-2` only.
+- [Anthropic] Two retirement dates stay tentative. Claude Haiku 4.5 retires "not sooner than October 15, 2026", and this date passed. Claude Opus 4.5 retires "not sooner than November 24, 2026".
+- [VertexAnthropic] Google moved the tentative retirement date of Claude Haiku 4.5 from October 15 to December 7, 2026. The tentative date of Claude Sonnet 4.5 (September 29, 2026) passed, and Google still lists the model. The tentative date of Claude Sonnet 5 is December 24, 2026. The records hold no retirement date.
+- [Vertex/VertexAnthropic] The other tentative retirement dates fall in 2027. The audit file `findings-vertex.md` lists them.
+- [DeepInfra] The four rerank records fall outside the accepted modes. This update does not change them.
+- [Anthropic] The retirement notes of `claude-opus-4-1` and `claude-opus-4-1-20250805` say that Google Cloud still offers the model. Google removed the model, so the next update corrects these notes.
+- [All] Earlier unresolved items stay open.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 517 to 523 records. This update adds nine records and removes three.
+- [OpenAI] `gpt-6.1-terra` copies the shape of `gpt-6.1-sol`. It sets `_high_context`, `batch_*`, `flex_*`, and `fast_mode_*` cells, `web_search_per_thousand_calls: 10`, and `regional_processing_uplift_multiplier: 1.1`. `limits` holds `high_context: 272000`, `max_input_tokens: 922000`, and `max_output_tokens: 128000`. `release_date` is 2026-10-26, and `knowledge_cutoff` is 2026-06-01.
+- [OpenAI] The 10 retired records set `isEnabled: false` and a `deprecated_reason` that names the replacement. On `o4-mini`, this reason replaces "succeeded by GPT-5 mini". `gpt-image-1` changes its description to "Retired image generation model", the new page tagline.
+- [OpenAI] `gpt-image-1.5`, `gpt-image-1-mini`, and `chatgpt-image-latest` add a `deprecated_reason`.
+- [OpenAI] `gpt-5.3-codex` adds four `fast_mode_*` cells. Its `fast_mode_caching_tokens_price_per_million` is null. `gpt-5.4-mini`, `gpt-5.4-nano`, and `gpt-5.5-pro` add `reasoning_efforts`. `o4-mini-deep-research` and `o3-deep-research` add `file_upload`.
+- [Anthropic] `claude-opus-4-5`, `claude-opus-4-5-20251101`, `claude-haiku-4-5`, and `claude-haiku-4-5-20251001` change `release_date`.
+- [Anthropic] Six disabled records drop `fallback_policies`: `claude-opus-4-1`, `claude-opus-4-1-20250805`, `claude-opus-4-0`, `claude-opus-4-20250514`, `claude-sonnet-4-0`, and `claude-sonnet-4-20250514`. Each fallback named a VertexAnthropic record that this update or an earlier update removed.
+- [xAI] `grok-4.7`, `grok-4.6`, and `grok-4.5` each add six `batch_*` cells, which include the `_high_context` cells. All eight text records set `limits.max_file_size_mb: 512`.
+- [Vertex] `vertex/deepseek-ai/deepseek-v4.1-flash-maas` sets `launch_stage: preview`, `preview: true`, `regions: [global]`, and `release_date: 2026-10-14`. It has no `additionalPricePerMillion` cells, because Google publishes no Batch, Priority, or Flex price for it.
+- [Vertex] The 19 retired records set `isEnabled: false`. Their deprecation fields already held the retirement dates. `vertex/gemini-4-argon` and `vertex/gemini-3.5-flash-lite` add regions to `metadata.regions`.
+- [VertexAnthropic] This update removes `claude-opus-4-1`.
+- [DeepInfra] The two Nemotron-3.5-Embed records put the image-token price in `input_image_per_million_tokens`. `embeddinggemma-2` adds `speech_recognition`, because it accepts audio input.
+- [DeepInfra] `gpt-oss-120b-Turbo` and `Inkling` set `isEnabled: false`, `deprecated: true`, `retirement_date`, and `deprecated_reason`. The two Granite 4.2 records set `isEnabled: false`. `MythoMax-L2-13b`, both `Hermes-3-Llama-3.1` records, and `Bria/fibo` set `deprecated: true`, `retirement_date`, and `deprecated_reason`.
+- [DeepInfra] `GLM-5.3-Flash` sets `max_output_tokens: 1048576`, and `DeepSeek-V3.2` sets `max_output_tokens: 163840`. `Hy4-preview` sets `quantization: fp4`, and `Kimi-K3` sets `quantization: mxfp4`.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [Groq] Muse Spark Open (`meta-models/muse-spark-open`) is an Enterprise model with contact-sales pricing. Groq Enterprise models stay out of the catalog.
+- [xAI] Grok Voice 3.0 (`grok-voice-3.0`) is a speech-to-speech model. Audio-output models stay out. Grok Voice 2.0 is deprecated. Neither model is in the catalog.
+- [OpenAI] The Decisions API became generally available with `gpt-6-luna` on October 22. The catalog does not cover the `v1/decisions` endpoint. The new GPT-Live voices and Agents API features also fall outside the catalog.
+- [Gemini] `deep-research-pro-preview-12-2025` shut down on October 23. It answered only on the Interactions API and was never in the catalog.
+- [Anthropic/VertexAnthropic] Claude Models on Google Cloud (Anthropic managed) launched on October 22. It uses the `claude.googleapis.com` endpoint, not `aiplatform.googleapis.com`. It falls outside both catalogs.
+- [DeepInfra] Eight new index entries stay out.
+
+| Model | Reason |
+| --- | --- |
+| `Bria/fibo-2.0` | DeepInfra image generation stays off. The price uses image units, which have no field. |
+| `Bria/remove_background_guided` | Image editing with image output. The price uses image units, which have no field. |
+| `Cloudflare/clef`, `Cloudflare/clef-flash` | Decision models. The output is a decision, not text. |
+| `nace-ai/drex-max`, `nace-ai/drex-v1.5`, `nace-ai/drex-v2.0` | Decision models. The output is a decision, not text. |
+| `nvidia/Nemotron-3.5-Rerank-8B-BF16` | Rerank model. Rerank is not an accepted mode. |
+
+### Prices that did not change
+
+- [Anthropic] All 27 records match. The pricing page changes only the name of the Google Cloud platform. Fast mode for Claude Opus 5.5 left research preview on October 15, and its prices did not change.
+- [OpenAI] 1,444 fields match. The pricing page adds GPT-6.1 Terra and the 30-minute and 12-hour cache write columns. It removes the rows of retired models. The fast mode guide adds EU data residency for GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna. The catalog has no field for this.
+- [Gemini] All 344 price cells match. The pricing page adds the Contributor tier. It removes the Veo 3.1, Omni Flash Preview, and Robotics ER 1.6 tables, which have no records.
+- [xAI] 331 fields match. The pricing page adds the Batch rows only.
+- [Groq] All 92 fields match. The model index adds Muse Spark Open only.
+- [Vertex] 64 of 70 Vertex and VertexAnthropic records match every price cell. The three text embedding models use the price per 1,000 characters, multiplied by 1,000. The table did not change. The Claude Opus 4.5 one-hour cache write matches the regional tables. `multimodalembedding@001` is disabled and has no price. Claude Opus 4.1 is removed.
+- [Vertex] The CodeMender table now gives $0.15 for Gemini 3.8 Flash Cyber cache tokens. This matches the record and closes the October 14 follow-up item.
+- [Vertex] The minimum for implicit caching on Gemini 4 Argon fell from 6,144 to 4,096 tokens. The AlphaEvolve table gives Gemini 4 Argon at $4 input and $20 output. A tuned endpoint costs 1.5 times the base price outside the global endpoint only. The catalog has no field for these values.
+- [VertexAnthropic] The Claude price tables fill in the regional prices of Claude Haiku 5.5. All values match.
+- [DeepInfra] 4,700 fields match. 288 records do not change.
+
+### Prices that differ from the direct-API catalogs
+
+- [All] This update adds no new price difference.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [All] This update adds no new capability difference.
+
+### Sources and coverage
+
+- [All] This run compared all 523 records with current sources, field by field. It compared every fetched source with the October 14 snapshot.
+- [OpenAI] 1,444 fields match, and 37 fields differ. The update applies the fast mode prices of GPT-5.3 Codex. The other 34 differences belong to `gpt-daybreak-blue-latest` and the two GPT-4o snapshots (see Follow-up work). 33 fields are unpublished. 86 cells were not checked: 78 are null in the catalog, and 8 are Batch cells of four disabled records that the pricing page does not list. 16 descriptions differ from the page taglines. The update changes one, and the others differ in wording only.
+- [xAI] 331 fields match. The update applies all 26 differences. 11 notes record the Batch support on each model page.
+- [DeepInfra] 4,700 fields match. 41 image prices use image units and have no field. 11 notes cover promotions. 5 fields do not apply.
+- [Vertex/VertexAnthropic] The run compared limits, capabilities, modalities, lifecycle, and regions for 70 records with the model pages.
+- [All] The fetch logs record 550 HTTP fetches, and 546 returned HTTP 200. The four HTTP 404 results are the Gemini "What's new in Gemini 4" page, the Vertex Claude Opus 4.1 page, and the two Janus-Pro detail endpoints.
+- [All] Five pages return HTTP 200 with a "not found" body. Three are xAI pages: the Grok 4.6 overview, the errors page, and the chat reference. Two are the Anthropic model pages for Opus 4.1 and Sonnet 4.
+- [Gemini] The October 26 change to request storage changes no catalog field.
+- [All] Evidence stays under ignored `audits/2026-10-27/`. It holds the fetched sources, the comparison output, and the apply scripts.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Sources: the [release notes](https://platform.claude.com/docs/en/release-notes/api), [models overview](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [effort](https://platform.claude.com/docs/en/build-with-claude/effort), [API overview](https://platform.claude.com/docs/en/api/overview), [tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview), and 18 model pages.
+- [OpenAI] Sources: the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [comparison](https://developers.openai.com/api/docs/models/compare), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), [tools](https://developers.openai.com/api/docs/guides/tools), [fast mode](https://developers.openai.com/api/docs/guides/fast-mode), [Ultrafast mode](https://developers.openai.com/api/docs/guides/ultrafast-mode), the [image generation guide](https://developers.openai.com/api/docs/guides/image-generation), and 105 model pages, which include the [GPT-6.1 Terra page](https://developers.openai.com/api/docs/models/gpt-6.1-terra).
+- [Gemini] Sources: the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), [Interactions](https://ai.google.dev/gemini-api/docs/interactions), and the model pages.
+- [xAI] Sources: the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing), [rate limits](https://docs.x.ai/developers/rate-limits), [files](https://docs.x.ai/developers/files/managing-files), [Batch API](https://docs.x.ai/developers/advanced-api-usage/batch-api), and the model pages.
+- [Groq] Sources: the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), [changelog](https://console.groq.com/docs/changelog), [rate limits](https://console.groq.com/docs/rate-limits), the model pages, and the feature pages.
+- [DeepInfra] Sources: the [unfiltered index](https://api.deepinfra.com/models/list), 304 detail endpoints, and 20 model pages of new and changed models.
+- [Vertex] Sources: the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes), [pricing tables](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), the [open model deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/open-models), the [partner model deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/partner-models), the [DeepSeek-V4.1-Flash page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/maas/deepseek/deepseek-v41-flash), and 52 model pages.
+- [VertexAnthropic] Sources: the [Claude index](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), 15 Claude model pages, and the Claude pricing tables.
+
+</details>
+
 # 2026-10-14 TARS MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 517 records.

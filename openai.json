@@ -77,6 +77,81 @@
       }
     },
     {
+      "model": "gpt-6.1-terra",
+      "provider": "openai",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "5.0000000000",
+      "cachedTokensPricePerMillion": "0.0500000000",
+      "cachingTokensPricePerMillion": "1.2500000000",
+      "contextWindow": 1050000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "image_generation",
+        "native_streaming",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.openai.com/v1/"],
+      "additionalPricePerMillion": {
+        "web_search_per_thousand_calls": 10,
+        "input_tokens_price_per_million_high_context": 2,
+        "cached_tokens_price_per_million_high_context": 0.1,
+        "output_tokens_price_per_million_high_context": 7.5,
+        "caching_tokens_price_per_million_high_context": 2.5,
+        "batch_input_tokens_price_per_million": 0.5,
+        "batch_cached_tokens_price_per_million": 0.025,
+        "batch_caching_tokens_price_per_million": 0.625,
+        "batch_output_tokens_price_per_million": 2.5,
+        "batch_input_tokens_price_per_million_high_context": 1,
+        "batch_cached_tokens_price_per_million_high_context": 0.05,
+        "batch_caching_tokens_price_per_million_high_context": 1.25,
+        "batch_output_tokens_price_per_million_high_context": 3.75,
+        "flex_input_tokens_price_per_million": 0.5,
+        "flex_cached_tokens_price_per_million": 0.025,
+        "flex_caching_tokens_price_per_million": 0.625,
+        "flex_output_tokens_price_per_million": 2.5,
+        "flex_input_tokens_price_per_million_high_context": 1,
+        "flex_cached_tokens_price_per_million_high_context": 0.05,
+        "flex_caching_tokens_price_per_million_high_context": 1.25,
+        "flex_output_tokens_price_per_million_high_context": 3.75,
+        "fast_mode_input_tokens_price_per_million": 2,
+        "fast_mode_cached_tokens_price_per_million": 0.1,
+        "fast_mode_caching_tokens_price_per_million": 2.5,
+        "fast_mode_output_tokens_price_per_million": 10,
+        "fast_mode_input_tokens_price_per_million_high_context": 4,
+        "fast_mode_cached_tokens_price_per_million_high_context": 0.2,
+        "fast_mode_caching_tokens_price_per_million_high_context": 5,
+        "fast_mode_output_tokens_price_per_million_high_context": 15,
+        "regional_processing_uplift_multiplier": 1.1
+      },
+      "limits": {
+        "high_context": 272000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+        "description": "A fast, efficient model for visual reasoning, precise computer use, and clear, natural writing.",
+        "display_name": "GPT-6.1 Terra",
+        "release_date": "2026-10-26",
+        "knowledge_cutoff": "2026-06-01",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh", "max"],
+        "aliases": ["gpt-6.1-terra"]
+      }
+    },
+    {
       "model": "gpt-6-sol",
       "provider": "openai",
       "mode": "responses",
@@ -1179,7 +1254,11 @@
       },
       "backendUrls": ["https://api.openai.com/v1/"],
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": 10
+        "web_search_per_thousand_calls": 10,
+        "fast_mode_input_tokens_price_per_million": 3.5,
+        "fast_mode_cached_tokens_price_per_million": 0.35,
+        "fast_mode_caching_tokens_price_per_million": null,
+        "fast_mode_output_tokens_price_per_million": 28
       },
       "limits": {
         "max_input_tokens": 272000,
@@ -1210,6 +1289,7 @@
       "contextWindow": 200000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "native_streaming",
         "prompt_caching",
         "reasoning",
@@ -1407,7 +1487,8 @@
         "source_url": "https://developers.openai.com/api/docs/models/chatgpt-image-latest",
         "deprecated": true,
         "deprecated_date": "2026-06-02",
-        "retirement_date": "2026-12-01"
+        "retirement_date": "2026-12-01",
+        "deprecated_reason": "Retires on December 1, 2026. Replacement: gpt-image-2.5-sunburst or gpt-image-2.5-flare."
       }
     },
     {
@@ -1466,6 +1547,7 @@
       "contextWindow": 200000,
       "capabilities": [
         "code_execution",
+        "file_upload",
         "native_streaming",
         "prompt_caching",
         "reasoning",
@@ -1668,7 +1750,8 @@
         "source_url": "https://developers.openai.com/api/docs/models/gpt-image-1-mini",
         "deprecated": true,
         "deprecated_date": "2026-06-02",
-        "retirement_date": "2026-12-01"
+        "retirement_date": "2026-12-01",
+        "deprecated_reason": "Retires on December 1, 2026. Replacement: gpt-image-2.5-sunburst or gpt-image-2.5-flare."
       }
     },
     {
@@ -1778,7 +1861,8 @@
         "source_url": "https://developers.openai.com/api/docs/models/gpt-image-1.5",
         "deprecated": true,
         "deprecated_date": "2026-06-02",
-        "retirement_date": "2026-12-01"
+        "retirement_date": "2026-12-01",
+        "deprecated_reason": "Retires on December 1, 2026. Replacement: gpt-image-2.5-sunburst or gpt-image-2.5-flare."
       }
     },
     {
@@ -2165,7 +2249,7 @@
       "model": "o4-mini",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "1.1000000000",
       "outputTokensPricePerMillion": "4.4000000000",
       "cachedTokensPricePerMillion": "0.2750000000",
@@ -2214,7 +2298,7 @@
         "description": "Fast, cost-efficient reasoning model, succeeded by GPT-5 mini",
         "display_name": "o4-mini",
         "knowledge_cutoff": "2024-06-01",
-        "deprecated_reason": "succeeded by GPT-5 mini"
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-terra."
       }
     },
     {
@@ -2316,7 +2400,7 @@
       "model": "gpt-4.1-nano",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.1000000000",
       "outputTokensPricePerMillion": "0.4000000000",
       "cachedTokensPricePerMillion": "0.0250000000",
@@ -2358,14 +2442,15 @@
         "knowledge_cutoff": "2024-06-01",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
-        "retirement_date": "2026-10-23"
+        "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-luna."
       }
     },
     {
       "model": "gpt-image-1",
       "provider": "openai",
       "mode": "image_generation",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "5.0000000000",
       "outputTokensPricePerMillion": null,
       "cachedTokensPricePerMillion": "1.2500000000",
@@ -2418,10 +2503,11 @@
           "output_format": ["jpeg", "png", "webp"],
           "partial_images": ["0", "1", "2", "3"]
         },
-        "description": "Our previous image generation model",
+        "description": "Retired image generation model",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
         "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-image-2.5-sunburst or gpt-image-2.5-flare.",
         "display_name": "GPT Image 1",
         "aliases": ["gpt-image-1"],
         "source_url": "https://developers.openai.com/api/docs/models/gpt-image-1"
@@ -2431,7 +2517,7 @@
       "model": "o1-pro",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "150.0000000000",
       "outputTokensPricePerMillion": "600.0000000000",
       "cachedTokensPricePerMillion": null,
@@ -2466,6 +2552,7 @@
         "deprecated": true,
         "deprecated_date": "2026-04-22",
         "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-sol with reasoning.mode: pro.",
         "aliases": ["o1-pro", "o1-pro-2025-03-19"]
       }
     },
@@ -2508,7 +2595,7 @@
       "model": "o3-mini",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "1.1000000000",
       "outputTokensPricePerMillion": "4.4000000000",
       "cachedTokensPricePerMillion": "0.5500000000",
@@ -2546,14 +2633,15 @@
         "knowledge_cutoff": "2023-10-01",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
-        "retirement_date": "2026-10-23"
+        "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-sol."
       }
     },
     {
       "model": "o1",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "15.0000000000",
       "outputTokensPricePerMillion": "60.0000000000",
       "cachedTokensPricePerMillion": "7.5000000000",
@@ -2595,7 +2683,8 @@
         "knowledge_cutoff": "2023-10-01",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
-        "retirement_date": "2026-10-23"
+        "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-sol."
       }
     },
     {
@@ -2639,7 +2728,7 @@
       "model": "gpt-4o-2024-05-13",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "5.0000000000",
       "outputTokensPricePerMillion": "15.0000000000",
       "cachedTokensPricePerMillion": null,
@@ -2677,7 +2766,8 @@
         "knowledge_cutoff": "2023-10-01",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
-        "retirement_date": "2026-10-23"
+        "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-sol."
       }
     },
     {
@@ -2823,7 +2913,7 @@
       "model": "gpt-4-turbo",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "10.0000000000",
       "outputTokensPricePerMillion": "30.0000000000",
       "cachedTokensPricePerMillion": null,
@@ -2858,14 +2948,15 @@
         "knowledge_cutoff": "2023-12-01",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
-        "retirement_date": "2026-10-23"
+        "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-sol."
       }
     },
     {
       "model": "gpt-3.5-turbo",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.5000000000",
       "outputTokensPricePerMillion": "1.5000000000",
       "cachedTokensPricePerMillion": null,
@@ -2899,14 +2990,15 @@
         "knowledge_cutoff": "2021-09-01",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
-        "retirement_date": "2026-10-23"
+        "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-terra."
       }
     },
     {
       "model": "gpt-4",
       "provider": "openai",
       "mode": "responses",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "30.0000000000",
       "outputTokensPricePerMillion": "60.0000000000",
       "cachedTokensPricePerMillion": null,
@@ -2935,7 +3027,8 @@
         "knowledge_cutoff": "2023-12-01",
         "deprecated": true,
         "deprecated_date": "2026-04-22",
-        "retirement_date": "2026-10-23"
+        "retirement_date": "2026-10-23",
+        "deprecated_reason": "Retired October 23, 2026. Migrate to gpt-5.6-sol."
       }
     },
     {
@@ -3054,7 +3147,8 @@
         "source_url": "https://developers.openai.com/api/docs/models/gpt-5.5-pro",
         "description": "Version of GPT-5.5 that produces smarter and more precise responses.",
         "display_name": "GPT-5.5 Pro",
-        "knowledge_cutoff": "2025-12-01"
+        "knowledge_cutoff": "2025-12-01",
+        "reasoning_efforts": ["medium", "high", "xhigh"]
       }
     },
     {
@@ -3110,7 +3204,8 @@
         "source_url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
         "description": "Our strongest mini model yet for coding, computer use, and subagents",
         "display_name": "GPT-5.4 mini",
-        "knowledge_cutoff": "2025-08-31"
+        "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh"]
       }
     },
     {
@@ -3162,6 +3257,7 @@
         "description": "Our cheapest GPT-5.4-class model for simple high-volume tasks",
         "display_name": "GPT-5.4 nano",
         "knowledge_cutoff": "2025-08-31",
+        "reasoning_efforts": ["none", "low", "medium", "high", "xhigh"],
         "deprecated": true,
         "deprecated_date": "2026-10-01",
         "retirement_date": "2027-04-01",
