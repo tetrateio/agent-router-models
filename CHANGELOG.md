@@ -153,6 +153,7 @@ This update covers all eight catalogs. The catalogs now contain 523 records. The
 - [Vertex/VertexAnthropic] The other tentative retirement dates fall in 2027. The audit file `findings-vertex.md` lists them.
 - [DeepInfra] The four rerank records fall outside the accepted modes. This update does not change them.
 - [Anthropic] The retirement notes of `claude-opus-4-1` and `claude-opus-4-1-20250805` say that Google Cloud still offers the model. Google removed the model, so the next update corrects these notes.
+- [Anthropic] Six disabled records keep their `fallback_policies`, but the targets are not in `vertexanthropic.json`. `claude-opus-4-1` and `claude-opus-4-1-20250805` point to `vertexanthropic/claude-opus-4-1`, which this update removes. `claude-opus-4-0`, `claude-opus-4-20250514`, `claude-sonnet-4-0`, and `claude-sonnet-4-20250514` point to records that earlier updates removed.
 - [All] Earlier unresolved items stay open.
 
 ### Schema and catalog changes
@@ -163,7 +164,6 @@ This update covers all eight catalogs. The catalogs now contain 523 records. The
 - [OpenAI] `gpt-image-1.5`, `gpt-image-1-mini`, and `chatgpt-image-latest` add a `deprecated_reason`.
 - [OpenAI] `gpt-5.3-codex` adds four `fast_mode_*` cells. Its `fast_mode_caching_tokens_price_per_million` is null. `gpt-5.4-mini`, `gpt-5.4-nano`, and `gpt-5.5-pro` add `reasoning_efforts`. `o4-mini-deep-research` and `o3-deep-research` add `file_upload`.
 - [Anthropic] `claude-opus-4-5`, `claude-opus-4-5-20251101`, `claude-haiku-4-5`, and `claude-haiku-4-5-20251001` change `release_date`.
-- [Anthropic] Six disabled records drop `fallback_policies`: `claude-opus-4-1`, `claude-opus-4-1-20250805`, `claude-opus-4-0`, `claude-opus-4-20250514`, `claude-sonnet-4-0`, and `claude-sonnet-4-20250514`. Each fallback named a VertexAnthropic record that this update or an earlier update removed.
 - [xAI] `grok-4.7`, `grok-4.6`, and `grok-4.5` each add six `batch_*` cells, which include the `_high_context` cells. All eight text records set `limits.max_file_size_mb: 512`.
 - [Vertex] `vertex/deepseek-ai/deepseek-v4.1-flash-maas` sets `launch_stage: preview`, `preview: true`, `regions: [global]`, and `release_date: 2026-10-14`. It has no `additionalPricePerMillion` cells, because Google publishes no Batch, Priority, or Flex price for it.
 - [Vertex] The 19 retired records set `isEnabled: false`. Their deprecation fields already held the retirement dates. `vertex/gemini-4-argon` and `vertex/gemini-3.5-flash-lite` add regions to `metadata.regions`.

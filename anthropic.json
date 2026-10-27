@@ -229,6 +229,9 @@
         "deprecated_date": "2026-06-05",
         "retirement_date": "2026-08-05",
         "knowledge_cutoff": "2025-01-01",
+        "fallback_policies": [
+          "vertexanthropic/claude-opus-4-1"
+        ],
         "provider_override": "autofallback",
         "deprecated_reason": "Retired on August 5, 2026 (still available on Amazon Bedrock and Google Cloud)"
       }
@@ -299,6 +302,9 @@
         "deprecated_date": "2026-06-05",
         "retirement_date": "2026-08-05",
         "knowledge_cutoff": "2025-01-01",
+        "fallback_policies": [
+          "vertexanthropic/claude-opus-4-1"
+        ],
         "provider_override": "autofallback",
         "deprecated_reason": "Retired on August 5, 2026 (still available on Amazon Bedrock and Google Cloud)"
       }
@@ -1659,6 +1665,9 @@
         "deprecated_date": "2026-04-14",
         "retirement_date": "2026-06-15",
         "knowledge_cutoff": "2025-01-01",
+        "fallback_policies": [
+          "vertexanthropic/claude-sonnet-4"
+        ],
         "deprecated_reason": "Retired on June 15, 2026",
         "provider_override": "autofallback"
       }
@@ -1729,6 +1738,9 @@
         "deprecated_date": "2026-04-14",
         "retirement_date": "2026-06-15",
         "knowledge_cutoff": "2025-01-01",
+        "fallback_policies": [
+          "vertexanthropic/claude-opus-4"
+        ],
         "deprecated_reason": "Retired on June 15, 2026",
         "provider_override": "autofallback"
       }
@@ -1799,6 +1811,9 @@
         "deprecated_date": "2026-04-14",
         "retirement_date": "2026-06-15",
         "knowledge_cutoff": "2025-01-01",
+        "fallback_policies": [
+          "vertexanthropic/claude-opus-4"
+        ],
         "deprecated_reason": "Retired on June 15, 2026",
         "provider_override": "autofallback"
       }
@@ -1869,6 +1884,9 @@
         "deprecated_date": "2026-04-14",
         "retirement_date": "2026-06-15",
         "knowledge_cutoff": "2025-01-01",
+        "fallback_policies": [
+          "vertexanthropic/claude-sonnet-4"
+        ],
         "deprecated_reason": "Retired on June 15, 2026",
         "provider_override": "autofallback"
       }
