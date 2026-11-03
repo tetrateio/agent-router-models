@@ -1,3 +1,7 @@
+# 2026-11-03 MODEL UPDATE
+
+- [DeepInfra] Disabled the three text models that retired after the 2026-10-27 update: `Gryphe/MythoMax-L2-13b` on October 29, 2026, and `NousResearch/Hermes-3-Llama-3.1-405B` and `NousResearch/Hermes-3-Llama-3.1-70B` on November 2, 2026. The [unfiltered index](https://api.deepinfra.com/models/list) shows all three as deprecated on those dates, with the replacements that update recorded.
+
 # 2026-10-27 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 523 records. The run read the provider change feeds from October 14 to October 27, 2026.
