@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Decide whether a catalog file can be rewritten whole, or only edited in place.
 //
 // Two house styles exist in this repo. `load` re-serializes the untouched file

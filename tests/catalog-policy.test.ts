@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Run: bun tests/catalog-policy.test.ts
 import assert from "node:assert/strict"
 import { catalogErrors } from "../scripts/catalog-policy.ts"

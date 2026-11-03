@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Validate the pricing contract on every provider catalog: bun scripts/validate-catalogs.ts
 import { readFileSync } from "node:fs"
 import { catalogErrors } from "./catalog-policy.ts"

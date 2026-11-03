@@ -1,6 +1,6 @@
 # Model Catalogs
 
-This repository holds provider and model catalogs for the Tetrate Agent Router Management Plane.
+This repository holds provider and model catalogs for Agent Router. The [Agent Router Python SDK](https://pypi.org/project/theagentrouter/) ships a copy of them, and Tetrate Agent Router Enterprise reads them.
 [providers.json](providers.json) lists the providers. Each model catalog contains one provider's models, prices, limits, and capabilities.
 [CHANGELOG.md](CHANGELOG.md) records catalog updates, source coverage, and unresolved limitations.
 
@@ -85,3 +85,11 @@ The skill instructs the agent to:
 
 The `audits/` directory holds local provider evidence and completed migration artifacts. Git ignores this directory, and commits exclude its contents.
 The changelog records material source gaps, unresolved pricing, and source URLs so each committed update remains reviewable.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). This project follows the [LF Projects Code of Conduct](CODE_OF_CONDUCT.md). To report a security problem, see [SECURITY.md](SECURITY.md).
+
+## License
+
+[Apache License 2.0](LICENSE).

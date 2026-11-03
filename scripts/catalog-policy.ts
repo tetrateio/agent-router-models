@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Cross-field catalog rules from AGENTS.md. Pricing validation remains separate.
 const object = (value: unknown): value is Record<string, unknown> =>
   value !== null && typeof value === "object" && !Array.isArray(value)

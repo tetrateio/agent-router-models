@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.2.16
+      - run: bun tests/validate.test.ts
+      - run: bun tests/catalog-policy.test.ts
+      - run: bun tests/validate-cli.test.ts
+      - name: Type check
+        run: bunx typescript@5.9.3 --noEmit --strict --target es2022 tests/models.typecheck.ts
+      # This also fails when a model's retirement date has passed, whatever a pull request changes,
+      # so it shows the result without blocking.
+      - name: Validate the catalogs
+        run: bun scripts/validate-catalogs.ts
+        continue-on-error: true
