@@ -23,7 +23,7 @@ To report a wrong price or a missing model without fixing it, open an issue with
 
 ## Sign-off
 
-Every commit needs a `Signed-off-by: Your Name <you@example.com>` line, with your real name. It certifies the [Developer Certificate of Origin](https://developercertificate.org/): you wrote the change, or have the right to submit it under this project's license.
+Every commit needs a `Signed-off-by: Your Name <you@example.com>` line, with your real name. It certifies the [Developer Certificate of Origin](https://developercertificate.org/): you wrote the change, or have the right to submit it under this project's license. CI checks every commit in a pull request for this line.
 
 ## Using AI tools
 
@@ -36,4 +36,4 @@ You may use AI tools to help, as [Agent Router](https://github.com/theagentroute
 
 ## Code of conduct
 
-This project follows the [LF Projects Code of Conduct](CODE_OF_CONDUCT.md), as an Agentic AI Foundation project.
+This project follows the [LF Projects Code of Conduct](CODE_OF_CONDUCT.md).
