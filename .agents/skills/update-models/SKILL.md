@@ -337,7 +337,7 @@ These recur every run. Decide them the same way each time.
 
 ## The changelog block
 
-Write one block at the top of `CHANGELOG.md`, headed `# YYYY-MM-DD TARS MODEL UPDATE` with
+Write one block at the top of `CHANGELOG.md`, headed `# YYYY-MM-DD MODEL UPDATE` with
 today's date. Run the `simple-english` skill over the block before you finish.
 
 The block is for customers. The body carries what a customer acts on. Notes carry the rest.

@@ -1,4 +1,4 @@
-# 2026-10-27 TARS MODEL UPDATE
+# 2026-10-27 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 523 records. The run read the provider change feeds from October 14 to October 27, 2026.
 
@@ -237,7 +237,7 @@ This update covers all eight catalogs. The catalogs now contain 523 records. The
 
 </details>
 
-# 2026-10-14 TARS MODEL UPDATE
+# 2026-10-14 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 517 records.
 
@@ -349,7 +349,7 @@ This update covers all eight catalogs. The catalogs now contain 517 records.
 
 </details>
 
-# 2026-10-13 TARS MODEL UPDATE
+# 2026-10-13 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 514 records.
 
@@ -514,7 +514,7 @@ This update covers all eight catalogs. The catalogs now contain 514 records.
 
 </details>
 
-# 2026-10-05 TARS MODEL UPDATE
+# 2026-10-05 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 511 records.
 
@@ -655,7 +655,7 @@ This update covers all eight catalogs. The catalogs now contain 511 records.
 
 </details>
 
-# 2026-10-01 TARS MODEL UPDATE
+# 2026-10-01 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 510 records.
 
@@ -773,7 +773,7 @@ Prices are USD per million tokens. Text output is not billed, because these mode
 
 </details>
 
-# 2026-09-30 TARS MODEL UPDATE
+# 2026-09-30 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 509 records.
 
@@ -890,7 +890,7 @@ Prices are USD per million tokens.
 
 </details>
 
-# 2026-09-29 TARS MODEL UPDATE
+# 2026-09-29 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 508 records.
 
@@ -1047,7 +1047,7 @@ Prices are USD per million tokens. MiMo-V2.6-Flash has a 15 percent promotion wi
 
 </details>
 
-# 2026-09-23 TARS MODEL UPDATE
+# 2026-09-23 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 504 records.
 
@@ -1193,7 +1193,7 @@ Prices are USD per million tokens. This model also changed price on September 22
 
 </details>
 
-# 2026-09-22 TARS MODEL UPDATE
+# 2026-09-22 MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 498 records.
 
@@ -1350,7 +1350,7 @@ Prices are USD per million tokens. "None" means that OpenAI publishes no rate fo
 
 </details>
 
-# 2026-09-14 TARS MODEL UPDATE
+# 2026-09-14 MODEL UPDATE
 
 This combined update covers all eight catalogs, the pricing schema, and the updater instructions. The catalogs contain 496 records.
 
@@ -1729,7 +1729,7 @@ Vertex Gemini 3 Flash Preview is the exception: its Standard output rate remains
 
 </details>
 
-# 2026-09-11 TARS MODEL UPDATE
+# 2026-09-11 MODEL UPDATE
 
 ## Pricing contract and migration:
 
@@ -2085,7 +2085,7 @@ Vertex Gemini 3 Flash Preview is the exception: its Standard output rate remains
 - [Vertex] [Pricing](https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), [Claude models](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), [partner deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/partner-models), and [open-model deprecations](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/open-models). Browser displayed all 57 pricing tables. Model pages supply limits, abilities, regions, and dates. Google's release notes were also checked.
 - [Groq] [Release notes](https://console.groq.com/docs/changelog) were accessible. [Models](https://console.groq.com/docs/models), deprecations, and capability pages were blocked. The five existing records remain unverified for this date; two receive the Batch shape migration only.
 
-# 2026-09-08 TARS MODEL UPDATE
+# 2026-09-08 MODEL UPDATE
 
 ## Other Updates:
 - [OpenAI] `gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`, `gpt-5.5`, `gpt-5.5-pro`, `gpt-5.4`, `gpt-5.4-pro`, and `daybreak-blue-latest` — the records now give the long-context prices as dollar amounts. The prices did not change. A prompt of more than 272,000 input tokens costs twice the standard input and cached input price and one and a half times the output price, for the whole request.
@@ -2144,7 +2144,7 @@ Vertex Gemini 3 Flash Preview is the exception: its Standard output rate remains
 - [Vertex] The pricing page lists Gemini 2.5 Pro Computer Use-Preview with a published price. The catalog has no record for it. Decide on the next run whether it belongs in `vertex.json`.
 - [OpenAI] `daybreak-blue-latest` and `daybreak-red-latest` are aliases that point to `gpt-5.6-sol` and `gpt-5.6-cyber` today. Their long-context state follows whichever model the alias points to, so check it whenever OpenAI moves the alias.
 
-# 2026-09-07 TARS MODEL UPDATE
+# 2026-09-07 MODEL UPDATE
 
 ## New Models:
 - [OpenAI] `gpt-6-astra` — OpenAI's most capable model, made for the hardest end-to-end work: reasoning, coding, computer use, research, and document creation. OpenAI released the model on 2026-09-03. Text and image input, text output. 1.05M context, 922k max input, and 128k max output. $10.00 input, $1.00 cached input, $12.50 cache write, and $50.00 output per 1M tokens. Prompts of more than 272k tokens cost 2x input and 1.5x output. Batch and Flex cost 50% of the standard rate. Fast mode costs 2x. Reasoning effort accepts `low`, `medium`, `high`, `xhigh`, and `max`. The model does not accept the `none` effort, custom `temperature`, `top_p`, or `logprobs`. Tool calling needs the Responses API. The model supports web search, file search, image generation, code interpreter, computer use, structured outputs, and prompt caching.
@@ -2222,7 +2222,7 @@ Vertex Gemini 3 Flash Preview is the exception: its Standard output rate remains
 - Groq: changelog, models index, deprecations, rate limits, the five model pages, and the capability pages for vision, reasoning, structured outputs, prompt caching, tool use, browser search, web search, and code execution. The first fetch on this run returned an access error from the Groq edge. A later fetch succeeded. The deprecations page has no entry after 2026-08-16.
 - We compared every record in all eight catalogs to the provider pages with a script. Price, cached price, context window, and deprecation state were part of the comparison.
 
-# 2026-09-04 TARS MODEL UPDATE
+# 2026-09-04 MODEL UPDATE
 
 ## New Catalogs:
 
@@ -2358,7 +2358,7 @@ Prices are USD per million tokens, input/output unless stated otherwise.
 - [Anthropic] Sources cover release notes, models, pricing, deprecations, context windows, Fast mode, caching, request sizes, and Fable 5.1/Mythos 5.1 pages. Capability sources cover computer use, browser use, code execution, structured outputs, and effort. Scripted comparisons cover all 37 existing records' prices, cache prices, context windows, maximum outputs, and image limits. All compared values match. Retired records remain because Anthropic still lists them.
 - [Gemini] Sources cover release notes, models, pricing, deprecations, and Gemini 3.8 Flash, 3.7 Flash, and Robotics ER 2 pages. Scripted comparisons cover all 24 existing records against pricing and deprecations. Only retirement state changes on those records.
 
-# 2026-08-27 TARS MODEL UPDATE
+# 2026-08-27 MODEL UPDATE
 
 ## New Models:
 - [Groq] `qwen/qwen3.8-27b` — a preview multimodal model. Text and image input, text output. 131k context and 16k max output. $0.80 input and $4.00 output per 1M tokens. 450 tokens per second. The maximum file size is 20 MB. The model accepts a maximum of 3 input images.
@@ -2422,7 +2422,7 @@ Prices are USD per million tokens, input/output unless stated otherwise.
 - Groq: changelog (nothing since April), models index, deprecations, capability pages, and the Qwen 3.8 model page.
 - DeepInfra: the models/list API and per-model detail endpoints for the five new records.
 
-# 2026-08-17 TARS MODEL UPDATE
+# 2026-08-17 MODEL UPDATE
 
 ## New Models:
 - [DeepInfra] We added 55 models. All prices are per 1M tokens, input then output.
@@ -2630,7 +2630,7 @@ We compared every record in every file against a provider record with a script. 
 - [Groq] All other records match the documentation. We compared prices, context windows, max completion tokens, token speeds, and rate limits against the models page and each model card. Abilities come from the ability pages, because each one gives a list of supported models. The model cards and the ability pages disagree for two models. We followed the ability pages.
 - [xAI] All other records match the documentation. We read each of the 10 model pages, the pricing page, and the release notes. We compared prices, cached prices, long-context prices, context windows, aliases, regions, rate limits, and batch discounts. Only the file size limit changed. xAI now publishes a knowledge cutoff for Grok 4.6 (2026-02-01). The other 9 models have no published cutoff, so the field stays empty.
 
-# 2026-07-25 TARS MODEL UPDATE
+# 2026-07-25 MODEL UPDATE
 
 ## New Models:
 - [Anthropic] `claude-opus-5` — new flagship Opus model released 2026-07-24 at $5/$25 per MTok (cached input $0.50; 5m cache write $6.25, 1h cache write $10), 1M context window at standard pricing, 128k max output, thinking on by default, full `low`/`medium`/`high`/`xhigh`/`max` effort ladder, `computer-use-2025-11-24` support, code execution, web search, vision, PDF/files, and structured outputs. Also records the 512-token prompt-cache minimum (down from 1,024 on Opus 4.8) and fast-mode pricing ($10/$50 per MTok, Claude API only).
@@ -2650,7 +2650,7 @@ We compared every record in every file against a provider record with a script. 
 - [Anthropic] `claude-opus-4-1` / `claude-opus-4-1-20250805` remain deprecated with retirement 2026-08-05; recommended replacement is now `claude-opus-4-8`.
 - [Anthropic] Computer use is confirmed unsupported on `claude-fable-5` and `claude-mythos-5`; `computer-use-2025-11-24` covers Opus 5, Sonnet 5, Opus 4.8, Opus 4.7, Opus 4.6, Sonnet 4.6, and Opus 4.5 only.
 
-# 2026-07-21 TARS MODEL UPDATE
+# 2026-07-21 MODEL UPDATE
 
 ## New Models:
 - [Gemini] `gemini-3.6-flash` — stable multimodal chat model at $1.50/$7.50 per 1M tokens (cached input $0.15), 1M context, 65k max output, reasoning, tools, structured outputs, computer use, search/Maps grounding, and 50% batch discount.
@@ -2686,7 +2686,7 @@ We compared every record in every file against a provider record with a script. 
 - [Gemini] `gemini-3-flash-preview` — retained current $0.50/$3.00 pricing, corrected audio/cache pricing, 1M context, 65k max output, and verified computer-use/tool/grounding capabilities.
 - [Gemini] Catalog capabilities normalized to `tool_choice`; removed legacy `function_calling`, added modality-required vision/speech/image-generation capabilities, and aligned limits and pricing with official model, pricing, and deprecation documentation.
 
-# 2026-07-10 TARS MODEL UPDATE
+# 2026-07-10 MODEL UPDATE
 
 ## New Models:
 - [OpenAI] `gpt-5.6-sol` — frontier GPT-5.6 model at $5.00/$30.00 per 1M tokens (cached input $0.50; cache writes $6.25), 1.05M context, 128k max output, configurable reasoning (`none`/`low`/`medium`/`high`/`xhigh`/`max`), text/image input, text output, tools, structured outputs, vision, image generation, web search, code execution, and computer use; alias `gpt-5.6`.
@@ -2701,7 +2701,7 @@ We compared every record in every file against a provider record with a script. 
 ## Retired Models:
 - [OpenAI] `dall-e-2` / `dall-e-3` — disabled after their 2026-05-12 API shutdown.
 
-# 2026-07-09 TARS MODEL UPDATE
+# 2026-07-09 MODEL UPDATE
 
 ## New Models:
 - [xAI] `grok-4.5` — flagship coding/agentic model at $2.00/$6.00 per 1M tokens (cached $0.50), 500k context, configurable reasoning (`low`/`medium`/`high`, default high), tools, structured outputs, vision; regions `us-east-1`, `us-west-2`; no batch discount.
@@ -2722,14 +2722,14 @@ We compared every record in every file against a provider record with a script. 
     - Removed undocumented `web_search_per_thousand_sources`; kept documented tool surcharges (web/X search, code execution, file attachments, collections)
     - High-context tier remains 2× above 200k tokens
 
-# 2026-06-30 TARS MODEL UPDATE
+# 2026-06-30 MODEL UPDATE
 
 - [Anthropic] `claude-sonnet-5` — added active chat model with 1M context, 128k max output, introductory $2/$10 per MTok pricing through 2026-08-31, adaptive reasoning/effort, tool choice, structured outputs, vision/PDF/files, web search, code execution, and computer use.
 - [Anthropic] `claude-mythos-5` — added disabled limited-availability model; access is suspended as of 2026-06-12.
 - [Anthropic] `claude-fable-5` — kept disabled and recorded the 2026-06-12 access suspension.
 - [Anthropic] Disabled retired Claude Sonnet 4 and Claude Opus 4 Claude API rows as of 2026-06-15.
 
-# 2026-06-10 TARS MODEL UPDATE
+# 2026-06-10 MODEL UPDATE
 
 ## New Models:
 - [Anthropic] `claude-fable-5` — added Claude Fable 5.
@@ -2738,12 +2738,12 @@ We compared every record in every file against a provider record with a script. 
 - [Anthropic] `claude-opus-4-1`
 - [Anthropic] `claude-opus-4-1-20250805`
 
-# 2026-05-28 TARS MODEL UPDATE
+# 2026-05-28 MODEL UPDATE
 
 ## New Models:
 - [Anthropic] `claude-opus-4-8` — added Claude Opus 4.8.
 
-# 2026-04-28 TARS MODEL UPDATE
+# 2026-04-28 MODEL UPDATE
 
 ## New Models:
 - [OpenAI] `gpt-5.5` — added newest frontier responses model with text/image input, text output, reasoning support, structured outputs/tool choice, vision, image generation, web search, code execution, computer use.
@@ -2806,13 +2806,13 @@ We compared every record in every file against a provider record with a script. 
 - [OpenAI] `text-embedding-ada-002` — removed incorrect `video_generation` capability.
 
 
-# 2026-04-21 TARS MODEL UPDATE
+# 2026-04-21 MODEL UPDATE
 
 ## Retired Models:
 - [Anthropic] `claude-3-haiku-20240307` — Anthropic now lists Claude Haiku 3 as retired on the Claude API effective 2026-04-20, and states that requests to retired models fail. Recommended replacement: `claude-haiku-4-5-20251001`.
 
 
-# 2026-04-18 TARS MODEL UPDATE
+# 2026-04-18 MODEL UPDATE
 
 ## Notes:
 - Going forward, we aim to be faster and more detailed with model updates — shorter lag between provider announcements and our catalog changes, and richer per-model details (capabilities, pricing tiers, rate limits, aliases, deprecation metadata).
@@ -2878,7 +2878,7 @@ We compared every record in every file against a provider record with a script. 
     - `modalities.input.image` → `vision` capability. Added `vision` to all xAI multimodal chat models.
     - `modalities.output.image` → `image_generation` capability. Applied to the two new `grok-imagine-*` models.
 
-# 2026-02-20 TARS MODEL UPDATE
+# 2026-02-20 MODEL UPDATE
 
 ## New Models:
 - [Google Gemini] `gemini-3-1-pro-preview`
