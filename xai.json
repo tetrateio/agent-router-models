@@ -43,13 +43,19 @@
         "priority_output_tokens_price_per_million_high_context": 24,
         "priority_cached_tokens_price_per_million": 1,
         "priority_cached_tokens_price_per_million_high_context": 2,
+        "batch_input_tokens_price_per_million": 1.6,
+        "batch_input_tokens_price_per_million_high_context": 3.2,
+        "batch_output_tokens_price_per_million": 4.8,
+        "batch_output_tokens_price_per_million_high_context": 9.6,
+        "batch_cached_tokens_price_per_million": 0.4,
+        "batch_cached_tokens_price_per_million_high_context": 0.8,
         "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "rpm": 9000,
         "tpm": 50000000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
@@ -104,13 +110,19 @@
         "priority_output_tokens_price_per_million_high_context": 24,
         "priority_cached_tokens_price_per_million": 1,
         "priority_cached_tokens_price_per_million_high_context": 2,
+        "batch_input_tokens_price_per_million": 1.6,
+        "batch_input_tokens_price_per_million_high_context": 3.2,
+        "batch_output_tokens_price_per_million": 4.8,
+        "batch_output_tokens_price_per_million_high_context": 9.6,
+        "batch_cached_tokens_price_per_million": 0.4,
+        "batch_cached_tokens_price_per_million_high_context": 0.8,
         "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
         "rpm": 9000,
         "tpm": 50000000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
@@ -164,13 +176,19 @@
         "priority_output_tokens_price_per_million": 12,
         "priority_output_tokens_price_per_million_high_context": 24,
         "priority_cached_tokens_price_per_million": 0.6,
-        "priority_cached_tokens_price_per_million_high_context": 1.2
+        "priority_cached_tokens_price_per_million_high_context": 1.2,
+        "batch_input_tokens_price_per_million": 1.6,
+        "batch_input_tokens_price_per_million_high_context": 3.2,
+        "batch_output_tokens_price_per_million": 4.8,
+        "batch_output_tokens_price_per_million_high_context": 9.6,
+        "batch_cached_tokens_price_per_million": 0.24,
+        "batch_cached_tokens_price_per_million_high_context": 0.48
       },
       "limits": {
         "rpm": 9000,
         "tpm": 50000000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
@@ -236,7 +254,7 @@
         "rpm": 2220,
         "tpm": 10000000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
@@ -302,7 +320,7 @@
         "rpm": 2220,
         "tpm": 10000000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
@@ -382,7 +400,7 @@
         "rpm": 2220,
         "tpm": 10000000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
@@ -456,7 +474,7 @@
         "rpm": 540,
         "tpm": 2500000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
@@ -524,7 +542,7 @@
         "rpm": 2220,
         "tpm": 10000000,
         "high_context": 200000,
-        "max_file_size_mb": 48,
+        "max_file_size_mb": 512,
         "max_image_size_mb": 20,
         "high_context_comparison": "gte"
       },
