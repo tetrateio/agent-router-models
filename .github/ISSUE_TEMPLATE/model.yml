@@ -1,0 +1,22 @@
+name: Wrong or missing model
+description: A price, limit or capability that is wrong, or a model that is missing.
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Provider and model
+      placeholder: openai/gpt-5.4-mini
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong or missing
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Link to the provider's official documentation
+    validations:
+      required: true

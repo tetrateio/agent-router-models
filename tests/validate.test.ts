@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Self-check for the pricing contract. Run: bun tests/validate.test.ts
 //
 // Each case is a record shape that has appeared in a catalog, or that a future

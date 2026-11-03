@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Compile with tsc --noEmit --strict --target es2022 tests/models.typecheck.ts
 import type { AdditionalPricing, ModelLimits } from "../schemas/models"
 const valid: AdditionalPricing = {

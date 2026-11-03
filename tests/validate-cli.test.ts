@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Run: bun tests/validate-cli.test.ts
 import { strictEqual, match } from "node:assert"
 import { mkdtempSync, writeFileSync, rmSync } from "node:fs"
