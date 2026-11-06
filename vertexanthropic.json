@@ -897,68 +897,6 @@
         ],
         "launch_stage": "Generally available"
       }
-    },
-    {
-      "model": "claude-opus-4-1",
-      "provider": "vertexanthropic",
-      "mode": "chat",
-      "isEnabled": true,
-      "inputTokensPricePerMillion": "15.0000000000",
-      "outputTokensPricePerMillion": "75.0000000000",
-      "cachedTokensPricePerMillion": "1.5000000000",
-      "cachingTokensPricePerMillion": "18.7500000000",
-      "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
-        "caching_5m_per_million": 18.75,
-        "caching_1h_per_million": 30,
-        "batch_input_tokens_price_per_million": 7.5,
-        "batch_output_tokens_price_per_million": 37.5,
-        "batch_caching_5m_per_million": 9.375,
-        "batch_caching_1h_per_million": 15,
-        "batch_cached_tokens_price_per_million": 0.75
-      },
-      "contextWindow": 200000,
-      "capabilities": [
-        "pdf_support",
-        "prompt_caching",
-        "reasoning",
-        "tool_choice",
-        "vision",
-        "web_search"
-      ],
-      "modalities": {
-        "input": [
-          "document",
-          "image",
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "backendUrls": [
-        "https://aiplatform.googleapis.com/v1/"
-      ],
-      "limits": {
-        "max_output_tokens": 32000,
-        "rpm": 25,
-        "tpm": 60000
-      },
-      "metadata": {
-        "aliases": [
-          "claude-opus-4-1"
-        ],
-        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/opus-4-1",
-        "description": "Anthropic's Opus-class model and an industry leader for coding and agent capabilities, especially agentic search.",
-        "display_name": "Claude Opus 4.1 on Google Cloud",
-        "release_date": "2025-08-05",
-        "regions": [
-          "global",
-          "us-east5"
-        ],
-        "deprecated": false,
-        "launch_stage": "Generally available"
-      }
     }
   ]
 }
