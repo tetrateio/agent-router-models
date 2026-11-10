@@ -149,7 +149,7 @@
       "model": "gemini-3.7-flash",
       "provider": "gemini",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.7500000000",
       "outputTokensPricePerMillion": "3.7500000000",
       "cachedTokensPricePerMillion": "0.0750000000",
@@ -295,7 +295,7 @@
       "model": "gemini-3.5-flash",
       "provider": "gemini",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "1.5000000000",
       "outputTokensPricePerMillion": "9.0000000000",
       "cachedTokensPricePerMillion": "0.1500000000",
@@ -378,7 +378,7 @@
         "grounding_google_maps_per_thousand": 14,
         "batch_input_tokens_price_per_million": 0.15,
         "batch_output_tokens_price_per_million": 1.25,
-        "batch_cached_tokens_price_per_million": 0.02,
+        "batch_cached_tokens_price_per_million": 0.015,
         "flex_input_tokens_price_per_million": 0.15,
         "flex_output_tokens_price_per_million": 1.25,
         "flex_cached_tokens_price_per_million": 0.02,
@@ -508,8 +508,7 @@
         "display_name": "Gemini 3.1 Flash-Lite",
         "release_date": "2026-05-07",
         "deprecated": true,
-        "retirement_date": "2027-05-07",
-        "deprecated_reason": "Scheduled for shutdown; use gemini-3.5-flash-lite."
+        "deprecated_reason": "Google lists May 7, 2027 as the earliest possible shutdown date. Replacement: gemini-3.5-flash-lite."
       }
     },
     {
@@ -988,9 +987,7 @@
         "grounding_google_search_per_thousand": 14,
         "image_tokens": {
           "output_image_tokens_price_per_million": 120,
-          "input_image_tokens_price_per_million": 2,
-          "priority_input_image_tokens_price_per_million": 3.6,
-          "priority_output_image_tokens_price_per_million": 216
+          "input_image_tokens_price_per_million": 2
         },
         "image_generation": {
           "standard": {
@@ -1001,20 +998,8 @@
         },
         "batch_input_tokens_price_per_million": 1,
         "batch_output_tokens_price_per_million": 6,
-        "flex_input_tokens_price_per_million": 1,
-        "flex_output_tokens_price_per_million": 6,
-        "priority_input_tokens_price_per_million": 3.6,
-        "priority_output_tokens_price_per_million": 21.6,
         "batch_input_image_price_per_image": 0.0006,
         "batch_image_generation": {
-          "standard": {
-            "1K": 0.067,
-            "2K": 0.067,
-            "4K": 0.12
-          }
-        },
-        "flex_input_image_price_per_image": 0.0006,
-        "flex_image_generation": {
           "standard": {
             "1K": 0.067,
             "2K": 0.067,
@@ -1135,7 +1120,11 @@
         "description": "Google's advanced model for complex tasks, deep reasoning, and coding.",
         "display_name": "Gemini 2.5 Pro",
         "release_date": "2025-06-17",
-        "knowledge_cutoff": "2025-01-01"
+        "knowledge_cutoff": "2025-01-01",
+        "deprecated": true,
+        "deprecated_date": "2026-11-02",
+        "retirement_date": "2026-12-01",
+        "deprecated_reason": "Deprecated on November 2, 2026. From December 1, 2026, Google routes API requests to gemini-3.8-flash at Gemini 3.8 Flash rates."
       }
     },
     {
@@ -1211,7 +1200,11 @@
         "description": "A price-performance model for low-latency, high-volume tasks that require reasoning.",
         "display_name": "Gemini 2.5 Flash",
         "release_date": "2025-06-17",
-        "knowledge_cutoff": "2025-01-01"
+        "knowledge_cutoff": "2025-01-01",
+        "deprecated": true,
+        "deprecated_date": "2026-11-02",
+        "retirement_date": "2026-12-01",
+        "deprecated_reason": "Deprecated on November 2, 2026. From December 1, 2026, Google routes API requests to gemini-3.5-flash-lite at Gemini 3.5 Flash-Lite rates."
       }
     },
     {
@@ -1367,8 +1360,7 @@
         "release_date": "2025-10-02",
         "knowledge_cutoff": "2025-06-01",
         "deprecated": true,
-        "retirement_date": "2027-03-15",
-        "deprecated_reason": "The deprecations page gives March 15, 2027 as the shutdown date. Replacement: gemini-3.1-flash-lite-image."
+        "deprecated_reason": "Google lists March 15, 2027 as the earliest possible shutdown date. Replacement: gemini-3.1-flash-lite-image."
       }
     },
     {
@@ -1421,6 +1413,49 @@
         "description": "Multimodal Gemini embedding model for retrieval and analytics tasks.",
         "display_name": "Gemini Embedding 2",
         "release_date": "2026-04-22",
+        "options": {
+          "output_dimensionality": [
+            "128-3072"
+          ]
+        }
+      }
+    },
+    {
+      "model": "gemini-embedding-001",
+      "provider": "gemini",
+      "mode": "embedding",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1500000000",
+      "outputTokensPricePerMillion": null,
+      "cachedTokensPricePerMillion": null,
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.075,
+        "batch_output_tokens_price_per_million": null
+      },
+      "contextWindow": 2048,
+      "capabilities": [],
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "embedding"
+        ]
+      },
+      "backendUrls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-embedding-001"
+        ],
+        "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-embedding-001",
+        "description": "Text embedding model for semantic search, text classification, and RAG systems. Output dimensions are flexible from 128 to 3072.",
+        "display_name": "Gemini Embedding",
+        "release_date": "2025-07-14",
+        "deprecated": true,
+        "deprecated_reason": "Google lists May 14, 2028 as the earliest possible shutdown date. Replacement: gemini-embedding-2.",
         "options": {
           "output_dimensionality": [
             "128-3072"

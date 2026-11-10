@@ -2,6 +2,73 @@
   "version": "1.0",
   "models": [
     {
+      "model": "claude-fable-5-2",
+      "provider": "vertexanthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "8.0000000000",
+      "outputTokensPricePerMillion": "40.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "10.0000000000",
+      "additionalPricePerMillion": {
+        "web_search_per_thousand_calls": 10,
+        "caching_5m_per_million": 10,
+        "caching_1h_per_million": 16,
+        "batch_input_tokens_price_per_million": 4,
+        "batch_output_tokens_price_per_million": 20,
+        "batch_caching_5m_per_million": 5,
+        "batch_caching_1h_per_million": 8,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "fast_mode_input_tokens_price_per_million": 16,
+        "fast_mode_output_tokens_price_per_million": 80,
+        "fast_mode_cached_tokens_price_per_million": 0.4,
+        "fast_mode_caching_tokens_price_per_million": 20,
+        "fast_mode_caching_5m_per_million": 20,
+        "fast_mode_caching_1h_per_million": 32
+      },
+      "contextWindow": 1000000,
+      "capabilities": [
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "limits": {
+        "max_output_tokens": 128000
+      },
+      "metadata": {
+        "aliases": [
+          "claude-fable-5-2"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/fable-5-2",
+        "description": "Designed for technical and scientific work, including coding and finance.",
+        "display_name": "Claude Fable 5.2 on Google Cloud",
+        "release_date": "2026-11-09",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "Generally available"
+      }
+    },
+    {
       "model": "claude-fable-5-1",
       "provider": "vertexanthropic",
       "mode": "chat",
@@ -11,7 +78,7 @@
       "cachedTokensPricePerMillion": "0.2500000000",
       "cachingTokensPricePerMillion": "12.5000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 12.5,
         "caching_1h_per_million": 20,
         "batch_input_tokens_price_per_million": 5,
@@ -25,6 +92,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -71,7 +139,7 @@
       "cachedTokensPricePerMillion": "0.2000000000",
       "cachingTokensPricePerMillion": "5.0000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 5,
         "caching_1h_per_million": 8,
         "batch_input_tokens_price_per_million": 2.5,
@@ -85,6 +153,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -133,7 +202,7 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
         "caching_1h_per_million": 10,
         "batch_input_tokens_price_per_million": 2.5,
@@ -147,6 +216,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -195,7 +265,7 @@
       "cachedTokensPricePerMillion": "0.1000000000",
       "cachingTokensPricePerMillion": "2.5000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 2.5,
         "caching_1h_per_million": 4,
         "batch_input_tokens_price_per_million": 1,
@@ -209,6 +279,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -257,7 +328,7 @@
       "cachedTokensPricePerMillion": "0.0100000000",
       "cachingTokensPricePerMillion": "0.1250000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 0.125,
         "caching_1h_per_million": 0.2,
         "input_tokens_price_per_million_high_context": 0.5,
@@ -282,6 +353,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -332,7 +404,7 @@
       "cachedTokensPricePerMillion": "0.2000000000",
       "cachingTokensPricePerMillion": "2.5000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 2.5,
         "caching_1h_per_million": 4.0,
         "batch_input_tokens_price_per_million": 1,
@@ -343,6 +415,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -391,7 +464,7 @@
       "cachedTokensPricePerMillion": "1.0000000000",
       "cachingTokensPricePerMillion": "12.5000000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 12.5,
         "caching_1h_per_million": 20,
         "batch_input_tokens_price_per_million": 5,
@@ -405,6 +478,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -453,7 +527,7 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
         "caching_1h_per_million": 10,
         "batch_input_tokens_price_per_million": 2.5,
@@ -468,6 +542,7 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -516,7 +591,7 @@
       "cachedTokensPricePerMillion": "0.5000000000",
       "cachingTokensPricePerMillion": "6.2500000000",
       "additionalPricePerMillion": {
-        "web_search_per_thousand_calls": null,
+        "web_search_per_thousand_calls": 10,
         "caching_5m_per_million": 6.25,
         "caching_1h_per_million": 10,
         "batch_input_tokens_price_per_million": 2.5,
@@ -531,6 +606,7 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -594,6 +670,7 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -658,6 +735,7 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -721,6 +799,7 @@
         "computer_use",
         "pdf_support",
         "prompt_caching",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -795,6 +874,7 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"
@@ -834,7 +914,11 @@
           "global"
         ],
         "knowledge_cutoff": "2025-07-01",
-        "launch_stage": "Generally available"
+        "launch_stage": "Deprecated",
+        "deprecated": true,
+        "deprecated_date": "2026-09-29",
+        "retirement_date": "2026-11-30",
+        "deprecated_reason": "Deprecated on September 29, 2026. Google shuts it down on November 30, 2026. It is available to existing customers only. Google names no replacement."
       }
     },
     {
@@ -860,6 +944,7 @@
         "pdf_support",
         "prompt_caching",
         "reasoning",
+        "structured_outputs",
         "tool_choice",
         "vision",
         "web_search"

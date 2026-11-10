@@ -166,6 +166,7 @@
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
         "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1,
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.375,
         "batch_cached_tokens_price_per_million": 0.0375,
@@ -242,6 +243,10 @@
       "cachedTokensPricePerMillion": "0.1500000000",
       "cachingTokensPricePerMillion": "1.5000000000",
       "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1,
         "non_global_endpoint_multiplier": 1.1,
         "priority_input_tokens_price_per_million": 2.7,
         "priority_cached_tokens_price_per_million": 0.27,
@@ -252,13 +257,16 @@
       },
       "contextWindow": 1048576,
       "capabilities": [
+        "code_execution",
         "pdf_support",
         "prompt_caching",
         "reasoning",
         "speech_recognition",
         "structured_outputs",
         "system_messages",
-        "vision"
+        "tool_choice",
+        "vision",
+        "web_search"
       ],
       "modalities": {
         "input": [
@@ -307,6 +315,7 @@
         "grounding_google_search_per_thousand": 14,
         "grounding_google_maps_per_thousand": 14,
         "grounding_your_data_per_thousand": 2.5,
+        "caching_storage_per_million_per_hour": 1,
         "non_global_endpoint_multiplier": 1.1,
         "batch_input_tokens_price_per_million": 0.375,
         "batch_cached_tokens_price_per_million": 0.0375,
@@ -867,6 +876,68 @@
       },
       "limits": {
         "high_context": 200000,
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "vertex/gemini-robotics-er-2-preview",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.0000000000",
+      "outputTokensPricePerMillion": "5.0000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": "1.0000000000",
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": null,
+        "grounding_google_maps_per_thousand": null,
+        "grounding_your_data_per_thousand": null,
+        "caching_storage_per_million_per_hour": 0.5
+      },
+      "contextWindow": 131072,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "system_messages",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-robotics-er-2-preview"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/robotics-er-2",
+        "description": "Embodied reasoning model for robotics, built on Gemini 3.5 Flash, with spatial reasoning, video moment finding, video progress classification, multi-robot orchestration, and multi-step tool use.",
+        "display_name": "Gemini Robotics ER 2 Preview",
+        "release_date": "2026-10-27",
+        "preview": true,
+        "upstream_model": "gemini-robotics-er-2-preview",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "Preview"
+      },
+      "limits": {
         "max_output_tokens": 65536
       }
     },
@@ -1728,7 +1799,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 524288,
       "capabilities": [
-        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1758,7 +1828,7 @@
           "global",
           "us"
         ],
-        "launch_stage": "Preview",
+        "launch_stage": "GA",
         "upstream_model": "xai/grok-4.7"
       },
       "additionalPricePerMillion": {
@@ -1781,7 +1851,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 524288,
       "capabilities": [
-        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1834,7 +1903,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 200000,
       "capabilities": [
-        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1879,7 +1947,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 2000000,
       "capabilities": [
-        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -1931,7 +1998,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 2000000,
       "capabilities": [
-        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision"
@@ -1982,7 +2048,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 128000,
       "capabilities": [
-        "prompt_caching",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -2029,7 +2094,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 128000,
       "capabilities": [
-        "prompt_caching",
         "structured_outputs",
         "tool_choice",
         "vision"
@@ -3048,6 +3112,151 @@
       }
     },
     {
+      "model": "vertex/meta/muse-wonder-1.0",
+      "provider": "vertex",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "4.0000000000",
+      "outputTokensPricePerMillion": "20.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "pdf_support",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "muse-wonder-1.0"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/meta/muse-wonder-1-0",
+        "description": "Meta's high-capability reasoning model for complex software engineering and long-horizon agentic work. It plans tasks, delegates to sub-agents, calls tools in parallel, and recovers from errors.",
+        "display_name": "Muse Wonder 1.0",
+        "release_date": "2026-11-09",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "Preview",
+        "preview": true,
+        "upstream_model": "meta/muse-wonder-1.0"
+      }
+    },
+    {
+      "model": "vertex/meta/muse-ember-1.0",
+      "provider": "vertex",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.1000000000",
+      "outputTokensPricePerMillion": "0.5000000000",
+      "cachedTokensPricePerMillion": "0.0040000000",
+      "cachingTokensPricePerMillion": null,
+      "additionalPricePerMillion": {
+        "input_tokens_price_per_million_high_context": 0.3,
+        "output_tokens_price_per_million_high_context": 1.5,
+        "cached_tokens_price_per_million_high_context": 0.012
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "muse-ember-1.0"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/meta/muse-ember-1-0",
+        "description": "Meta's efficient reasoning model for high-volume agent tasks, including tool calls, coding subtasks, routing, extraction, and long-document processing.",
+        "display_name": "Muse Ember 1.0",
+        "release_date": "2026-11-09",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "Preview",
+        "preview": true,
+        "upstream_model": "meta/muse-ember-1.0"
+      },
+      "limits": {
+        "max_output_tokens": 524288,
+        "high_context": 200000
+      }
+    },
+    {
+      "model": "vertex/meta/muse-spark-1.3",
+      "provider": "vertex",
+      "mode": "responses",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.2500000000",
+      "outputTokensPricePerMillion": "4.2500000000",
+      "cachedTokensPricePerMillion": "0.1500000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "pdf_support",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "muse-spark-1.3"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/meta/muse-spark-1-3",
+        "description": "Meta's reasoning model for agentic workflows and competitive coding, with built-in tool calling and MCP support.",
+        "display_name": "Muse Spark 1.3",
+        "release_date": "2026-09-24",
+        "regions": [
+          "global"
+        ],
+        "launch_stage": "Preview",
+        "preview": true,
+        "upstream_model": "meta/muse-spark-1.3"
+      }
+    },
+    {
       "model": "vertex/mistralai/mistral-medium-3",
       "provider": "vertex",
       "mode": "chat",
@@ -3329,8 +3538,7 @@
       ],
       "limits": {
         "max_output_tokens": 65536,
-        "max_images_per_prompt": 3000,
-        "max_file_size_mb": 50
+        "max_images_per_prompt": 3000
       },
       "metadata": {
         "aliases": [
@@ -3377,7 +3585,6 @@
       ],
       "additionalPricePerMillion": {},
       "limits": {
-        "max_file_size_mb": 20,
         "embedding_dimensions": [
           128,
           256,

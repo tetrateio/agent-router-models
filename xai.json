@@ -52,7 +52,7 @@
         "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
-        "rpm": 9000,
+        "rpm": 7200,
         "tpm": 50000000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -62,7 +62,7 @@
       "metadata": {
         "regions": ["us-east-1", "us-west-2", "us-central-1"],
         "source_url": "https://docs.x.ai/developers/models/grok-4.7",
-        "description": "SpaceXAI's frontier model for coding, agentic tasks, and knowledge work. Configurable reasoning effort (low, medium, high, xhigh; default high).",
+        "description": "SpaceXSI's frontier model for coding, agentic tasks, and knowledge work. Configurable reasoning effort (low, medium, high, xhigh; default high).",
         "display_name": "Grok 4.7",
         "knowledge_cutoff": "2026-05-01",
         "reasoning_efforts": ["low", "medium", "high", "xhigh"]
@@ -119,7 +119,7 @@
         "regional_processing_uplift_multiplier": 1.1
       },
       "limits": {
-        "rpm": 9000,
+        "rpm": 7200,
         "tpm": 50000000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -129,7 +129,7 @@
       "metadata": {
         "regions": ["us-east-1", "us-west-2", "us-central-1"],
         "source_url": "https://docs.x.ai/developers/models/grok-4.6",
-        "description": "SpaceXAI's frontier model for coding, agentic tasks, and knowledge work. Configurable reasoning effort (low, medium, high, xhigh; default high). Reasoning cannot be disabled.",
+        "description": "SpaceXSI's frontier model for coding, agentic tasks, and knowledge work. Configurable reasoning effort (low, medium, high, xhigh; default high). Reasoning cannot be disabled.",
         "display_name": "Grok 4.6",
         "knowledge_cutoff": "2026-02-01",
         "reasoning_efforts": ["low", "medium", "high", "xhigh"]
@@ -185,7 +185,7 @@
         "batch_cached_tokens_price_per_million_high_context": 0.48
       },
       "limits": {
-        "rpm": 9000,
+        "rpm": 7200,
         "tpm": 50000000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -196,7 +196,7 @@
         "aliases": ["grok-4.5-latest", "grok-build-latest"],
         "regions": ["us-east-1", "us-west-2"],
         "source_url": "https://docs.x.ai/developers/models/grok-4.5",
-        "description": "SpaceXAI's intelligent coding model for agentic software, engineering, and workflow tasks. Trained in SpaceXAI's data centers in Memphis with new datasets spanning science, engineering, and math. Configurable reasoning effort (low, medium, high, xhigh; default high).",
+        "description": "SpaceXSI's intelligent coding model for agentic software, engineering, and workflow tasks. Trained in SpaceXSI's data centers in Memphis with new datasets spanning science, engineering, and math. Configurable reasoning effort (low, medium, high, xhigh; default high).",
         "display_name": "Grok 4.5",
         "reasoning_efforts": ["low", "medium", "high", "xhigh"]
       }
@@ -251,7 +251,7 @@
         "batch_output_tokens_price_per_million": 2
       },
       "limits": {
-        "rpm": 2220,
+        "rpm": 1800,
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -317,7 +317,7 @@
         "batch_output_tokens_price_per_million": 2
       },
       "limits": {
-        "rpm": 2220,
+        "rpm": 1800,
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -397,7 +397,7 @@
         "batch_output_tokens_price_per_million": 2
       },
       "limits": {
-        "rpm": 2220,
+        "rpm": 1800,
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -471,7 +471,7 @@
         "batch_output_tokens_price_per_million": 2
       },
       "limits": {
-        "rpm": 540,
+        "rpm": 450,
         "tpm": 2500000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -539,7 +539,7 @@
         "priority_cached_tokens_price_per_million_high_context": 0.8
       },
       "limits": {
-        "rpm": 2220,
+        "rpm": 1800,
         "tpm": 10000000,
         "high_context": 200000,
         "max_file_size_mb": 512,
@@ -550,7 +550,7 @@
         "aliases": ["grok-code-fast-1", "grok-code-fast", "grok-code-fast-1-0825"],
         "regions": ["us-east-1", "us-west-2"],
         "source_url": "https://docs.x.ai/developers/models/grok-build-0.1",
-        "description": "SpaceXAI's intelligent coding model for agentic software, engineering, and workflow tasks.",
+        "description": "SpaceXSI's intelligent coding model for agentic software, engineering, and workflow tasks.",
         "display_name": "Grok Build 0.1"
       }
     },
@@ -586,11 +586,11 @@
         "input_image_price_per_image": 0.01
       },
       "limits": {
-        "rpm": 360,
+        "rpm": 300,
         "max_image_size_mb": 20
       },
       "metadata": {
-        "regions": ["us-east-1", "us-west-2"],
+        "regions": ["us-east-1", "us-west-2", "us-saltlake-2"],
         "source_url": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
         "description": "Grok Imagine Image 2.0 text-to-image generation and editing model, recommended by xAI for images. Accepts text and image input and outputs images at 1k or 2k resolution. Only model that accepts the quality parameter (low, medium, or auto; default auto, which serves low for generation and medium for editing). Image editing accepts up to 5 source images.",
         "display_name": "Grok Imagine Image 2.0",
@@ -613,71 +613,6 @@
             "9:20",
             "21:9",
             "5:2",
-            "auto"
-          ]
-        }
-      }
-    },
-    {
-      "model": "xai/grok-imagine-image-quality",
-      "provider": "xai",
-      "mode": "image_generation",
-      "isEnabled": false,
-      "inputTokensPricePerMillion": null,
-      "outputTokensPricePerMillion": null,
-      "cachedTokensPricePerMillion": null,
-      "cachingTokensPricePerMillion": null,
-      "contextWindow": null,
-      "capabilities": ["image_generation", "vision"],
-      "modalities": {
-        "input": ["image", "text"],
-        "output": ["image"]
-      },
-      "backendUrls": ["https://api.x.ai/v1/"],
-      "additionalPricePerMillion": {
-        "image_generation": {
-          "standard": {
-            "1k": 0.05,
-            "1.5k": 0.06,
-            "2k": 0.07
-          }
-        },
-        "input_image_price_per_image": 0.01
-      },
-      "limits": {
-        "rpm": 360,
-        "max_image_size_mb": 20
-      },
-      "metadata": {
-        "aliases": [
-          "grok-imagine-image-quality-20260403",
-          "grok-imagine-image-quality-latest",
-          "grok-imagine-image-pro"
-        ],
-        "regions": ["us-east-1", "us-west-2"],
-        "source_url": "https://docs.x.ai/developers/models/grok-imagine-image-quality",
-        "description": "Premium quality tier of the Grok Imagine text-to-image generation model. Accepts text and image input and outputs images at 1k resolution for $0.05 or 2k resolution for $0.07 per image. Each input image costs $0.01.",
-        "display_name": "Grok Imagine Image Quality",
-        "deprecated": true,
-        "deprecated_date": "2026-09-02",
-        "retirement_date": "2026-11-02",
-        "deprecated_reason": "Retires on November 2, 2026. After that date requests are served by grok-imagine-image-2.0 with quality set to low at that model's per-image price.",
-        "options": {
-          "resolution": ["1k", "2k"],
-          "aspect_ratio": [
-            "1:1",
-            "16:9",
-            "9:16",
-            "4:3",
-            "3:4",
-            "3:2",
-            "2:3",
-            "2:1",
-            "1:2",
-            "19.5:9",
-            "9:19.5",
-            "20:9",
-            "9:20",
             "auto"
           ]
         }
@@ -709,7 +644,7 @@
         "input_image_price_per_image": 0.002
       },
       "limits": {
-        "rpm": 360,
+        "rpm": 300,
         "max_image_size_mb": 20
       },
       "metadata": {
