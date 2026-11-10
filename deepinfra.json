@@ -805,7 +805,7 @@
         "batch_output_tokens_price_per_million": 0.76
       },
       "limits": {
-        "max_output_tokens": 32768
+        "max_output_tokens": 163840
       },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V3.1",
@@ -932,7 +932,7 @@
       },
       "limits": {
         "explicit_cache_granularity_tokens": 1024,
-        "max_output_tokens": 65536
+        "max_output_tokens": 393216
       },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Flash",
@@ -994,7 +994,12 @@
       "cachedTokensPricePerMillion": "0.100",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
-      "capabilities": ["prompt_caching", "structured_outputs", "tool_choice"],
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
       "modalities": {
         "input": ["text"],
         "output": ["text"]
@@ -1012,7 +1017,9 @@
         "batch_input_tokens_price_per_million": 1.04,
         "batch_output_tokens_price_per_million": 2.08
       },
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 393216
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Pro",
         "description": "DeepSeek V4 Pro is an MoE model with 1.6T total parameters (49B active) and a 1M-token context window. It's built for advanced reasoning, coding, and long-running agent tasks, and performs well on knowledge, math, and software engineering benchmarks.",
@@ -1030,7 +1037,12 @@
       "cachedTokensPricePerMillion": "0.100",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
-      "capabilities": ["prompt_caching", "structured_outputs", "tool_choice"],
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice"
+      ],
       "modalities": {
         "input": ["text"],
         "output": ["text"]
@@ -1048,7 +1060,9 @@
         "batch_input_tokens_price_per_million": 1.04,
         "batch_output_tokens_price_per_million": 2.08
       },
-      "limits": {},
+      "limits": {
+        "max_output_tokens": 393216
+      },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Pro-0813",
         "description": "DeepSeek-V4-Pro-0813 is the official release of DeepSeek-V4-Pro, superseding the preview version, with greatly enhanced agentic capabilities and performance improvements that are especially pronounced in production environments. It is built on the DeepSeek-V4-Pro (Preview) model structure, with a DSpark speculative decoding module attached.",
@@ -1567,7 +1581,7 @@
       "model": "deepinfra/Gryphe/MythoMax-L2-13b",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "0.400",
       "outputTokensPricePerMillion": "0.400",
@@ -1596,7 +1610,7 @@
         "quantization": "fp16",
         "deprecated": true,
         "retirement_date": "2026-10-29",
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-29. Replacement: Sao10K/L3-8B-Lunaris-v1-Turbo."
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-29. Replacement: Sao10K/L3-8B-Lunaris-v1-Turbo."
       }
     },
     {
@@ -1625,7 +1639,7 @@
         "description": "Granite-4.2-30B is the flagship reasoning model in the Granite 4.2 family. It delivers the strongest performance across reasoning-intensive tasks by leveraging built-in <think>...</think> chain-of-thought. It supports flexible thinking modes — full thinking (default), non-thinking, and low-effort — allowing users to balance depth vs. latency on a per-query basis.",
         "display_name": "ibm-granite/granite-4.2-30b",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-18. Replacement: ibm-granite/granite-4.2-8b.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-18. Replacement: ibm-granite/granite-4.2-8b.",
         "retirement_date": "2026-10-18"
       }
     },
@@ -1655,7 +1669,7 @@
         "description": "Granite-4.2-3B is the compact reasoning model in the Granite 4.2 family. Despite its small parameter count, it delivers strong performance on reasoning-intensive tasks by leveraging built-in <think>...</think> chain-of-thought. It supports flexible thinking modes — full thinking (default), non-thinking, and low-effort — allowing users to balance depth vs. latency on a per-query basis.",
         "display_name": "ibm-granite/granite-4.2-3b",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-18. Replacement: ibm-granite/granite-4.2-8b.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-18. Replacement: ibm-granite/granite-4.2-8b.",
         "retirement_date": "2026-10-18"
       }
     },
@@ -1750,7 +1764,10 @@
         "source_url": "https://deepinfra.com/inclusionAI/Ling-3.1-flash",
         "display_name": "inclusionAI/Ling-3.1-flash",
         "description": "Ling-3.1-flash, an upgraded native hybrid reasoning model designed for complex, real-world tasks. With 560B total parameters, 25B active parameters per token, and a 1M-token context window, Ling-3.1-flash builds upon Ling-3.0-flash with improvements in architecture, performance on real-world capabilities.",
-        "quantization": "fp4"
+        "quantization": "fp4",
+        "deprecated": true,
+        "retirement_date": "2026-11-15",
+        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-11-15. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
       }
     },
     {
@@ -2001,7 +2018,7 @@
       "model": "deepinfra/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "0.400",
       "outputTokensPricePerMillion": "0.400",
@@ -2027,7 +2044,10 @@
         "source_url": "https://deepinfra.com/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
         "description": "Meta developed and released the Meta Llama 3.1 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8B, 70B and 405B sizes",
         "display_name": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "retirement_date": "2026-11-03",
+        "deprecated_reason": "Retired on DeepInfra on 2026-11-03. Replacement: meta-llama/Llama-3.3-70B-Instruct-Turbo."
       }
     },
     {
@@ -2755,10 +2775,53 @@
       }
     },
     {
-      "model": "deepinfra/NousResearch/Hermes-3-Llama-3.1-405B",
+      "model": "deepinfra/moonshotai/Kimi-K3.1-Pro",
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
+      "inputTokensPricePerMillion": "1.9000000000",
+      "outputTokensPricePerMillion": "9.5000000000",
+      "cachedTokensPricePerMillion": "0.1900000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 1048576,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "priority_input_tokens_price_per_million": 2.85,
+        "priority_output_tokens_price_per_million": 14.25,
+        "priority_cached_tokens_price_per_million": 0.285,
+        "priority_caching_tokens_price_per_million": null,
+        "flex_input_tokens_price_per_million": 1.52,
+        "flex_output_tokens_price_per_million": 7.6,
+        "flex_cached_tokens_price_per_million": 0.152,
+        "flex_caching_tokens_price_per_million": null,
+        "batch_input_tokens_price_per_million": 1.52,
+        "batch_output_tokens_price_per_million": 7.6
+      },
+      "limits": {
+        "max_output_tokens": 943718
+      },
+      "metadata": {
+        "source_url": "https://deepinfra.com/moonshotai/Kimi-K3.1-Pro",
+        "display_name": "moonshotai/Kimi-K3.1-Pro",
+        "description": "Kimi K3.1 Pro is an open-weight, natively multimodal agentic model, post-trained from Kimi K3 with large-scale joint reinforcement learning across hundreds of downstream domains, it is the first model in the K3.1 series. With a 1-million-token context window, Kimi K3.1 Pro delivers substantial improvements in coding, 3D creation, financial research, factual accuracy, and other agentic capabilities."
+      }
+    },
+    {
+      "model": "deepinfra/NousResearch/Hermes-3-Llama-3.1-405B",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "1.000",
       "outputTokensPricePerMillion": "1.000",
@@ -2787,14 +2850,14 @@
         "quantization": "fp8",
         "deprecated": true,
         "retirement_date": "2026-11-02",
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-11-02. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
+        "deprecated_reason": "Retired on DeepInfra on 2026-11-02. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
       }
     },
     {
       "model": "deepinfra/NousResearch/Hermes-3-Llama-3.1-70B",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "updatedAt": "2026-03-17T08:24:05.000Z",
       "inputTokensPricePerMillion": "0.700",
       "outputTokensPricePerMillion": "0.700",
@@ -2827,7 +2890,7 @@
         "quantization": "fp8",
         "deprecated": true,
         "retirement_date": "2026-11-02",
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-11-02. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
+        "deprecated_reason": "Retired on DeepInfra on 2026-11-02. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
       }
     },
     {
@@ -2928,7 +2991,7 @@
         "display_name": "nvidia/Nemotron-3-Nano-30B-A3B",
         "quantization": "fp4",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: nvidia/NVIDIA-Nemotron-3.5-Lightning.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-08. Replacement: nvidia/NVIDIA-Nemotron-3.5-Lightning.",
         "retirement_date": "2026-10-08"
       }
     },
@@ -2974,7 +3037,7 @@
       "mode": "chat",
       "isEnabled": true,
       "updatedAt": "2026-03-17T08:24:05.000Z",
-      "inputTokensPricePerMillion": "0.085",
+      "inputTokensPricePerMillion": "0.075",
       "outputTokensPricePerMillion": "0.400",
       "cachedTokensPricePerMillion": null,
       "cachingTokensPricePerMillion": null,
@@ -2986,15 +3049,15 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "priority_input_tokens_price_per_million": 0.1275,
+        "priority_input_tokens_price_per_million": 0.1125,
         "priority_output_tokens_price_per_million": 0.6,
         "priority_cached_tokens_price_per_million": null,
         "priority_caching_tokens_price_per_million": null,
-        "flex_input_tokens_price_per_million": 0.068,
+        "flex_input_tokens_price_per_million": 0.06,
         "flex_output_tokens_price_per_million": 0.32,
         "flex_cached_tokens_price_per_million": null,
         "flex_caching_tokens_price_per_million": null,
-        "batch_input_tokens_price_per_million": 0.068,
+        "batch_input_tokens_price_per_million": 0.06,
         "batch_output_tokens_price_per_million": 0.32
       },
       "limits": {},
@@ -4493,7 +4556,7 @@
         "display_name": "tencent/Hy3",
         "quantization": "fp4",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: tencent/Hy4-preview.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-08. Replacement: tencent/Hy4-preview.",
         "retirement_date": "2026-10-08"
       }
     },
@@ -4502,9 +4565,9 @@
       "provider": "deepinfra",
       "mode": "chat",
       "isEnabled": true,
-      "inputTokensPricePerMillion": "0.7923000000",
-      "outputTokensPricePerMillion": "2.3759500000",
-      "cachedTokensPricePerMillion": "0.0399000000",
+      "inputTokensPricePerMillion": "0.8340000000",
+      "outputTokensPricePerMillion": "2.5010000000",
+      "cachedTokensPricePerMillion": "0.0420000000",
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
@@ -4519,8 +4582,8 @@
       },
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.63384,
-        "batch_output_tokens_price_per_million": 1.90076
+        "batch_input_tokens_price_per_million": 0.6672,
+        "batch_output_tokens_price_per_million": 2.0008
       },
       "limits": {
         "max_output_tokens": 131072
@@ -4653,7 +4716,7 @@
         "display_name": "XiaomiMiMo/MiMo-V2.5",
         "quantization": "fp8",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-09-29. Replacement: XiaomiMiMo/MiMo-V2.6-Flash.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-29. Replacement: XiaomiMiMo/MiMo-V2.6-Flash.",
         "retirement_date": "2026-09-29"
       }
     },
@@ -4700,7 +4763,7 @@
         "display_name": "XiaomiMiMo/MiMo-V2.5-Pro",
         "quantization": "fp8",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-09-29. Replacement: XiaomiMiMo/MiMo-V2.6-Pro.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-09-29. Replacement: XiaomiMiMo/MiMo-V2.6-Pro.",
         "retirement_date": "2026-09-29"
       }
     },
@@ -4725,12 +4788,12 @@
       "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
       "limits": {},
       "model": "deepinfra/XiaomiMiMo/MiMo-V2.6-Flash",
-      "inputTokensPricePerMillion": "0.0910000000",
-      "outputTokensPricePerMillion": "0.1820000000",
-      "cachedTokensPricePerMillion": "0.0018200000",
+      "inputTokensPricePerMillion": "0.1400000000",
+      "outputTokensPricePerMillion": "0.2800000000",
+      "cachedTokensPricePerMillion": "0.0028000000",
       "additionalPricePerMillion": {
-        "batch_input_tokens_price_per_million": 0.0728,
-        "batch_output_tokens_price_per_million": 0.1456
+        "batch_input_tokens_price_per_million": 0.112,
+        "batch_output_tokens_price_per_million": 0.224
       },
       "metadata": {
         "source_url": "https://deepinfra.com/XiaomiMiMo/MiMo-V2.6-Flash",
@@ -6359,7 +6422,7 @@
         "batch_output_tokens_price_per_million": 0.336
       },
       "limits": {
-        "max_output_tokens": 131072
+        "max_output_tokens": 393216
       },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4.1-Flash",
@@ -6403,7 +6466,7 @@
         "batch_output_tokens_price_per_million": 0.2352
       },
       "limits": {
-        "max_output_tokens": 131072
+        "max_output_tokens": 393216
       },
       "metadata": {
         "source_url": "https://deepinfra.com/deepseek-ai/DeepSeek-V4.1-Flash-1017",
@@ -8110,7 +8173,7 @@
         "display_name": "Qwen/Qwen-Image-Edit",
         "description": "Qwen-Image-Edit is a next-generation image editing model built on top of Qwen-Image, designed for both semantic and appearance-level edits. It excels at tasks like precise text modifications, style transfers, viewpoint transformations, and element adjustments while preserving overall visual consistency.",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: Qwen/Qwen-Image-Edit-Max.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-08. Replacement: Qwen/Qwen-Image-Edit-Max.",
         "retirement_date": "2026-10-08"
       }
     },
@@ -8902,7 +8965,7 @@
         },
         "deprecated": true,
         "retirement_date": "2026-10-27",
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-27. Replacement: Bria/fibo-2.0."
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-27. Replacement: Bria/fibo-2.0."
       }
     },
     {
@@ -9097,7 +9160,7 @@
       "model": "deepinfra/stepfun-ai/Step-5-Preview",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "1.0000000000",
       "outputTokensPricePerMillion": "2.7000000000",
       "cachedTokensPricePerMillion": "0.1000000000",
@@ -9126,7 +9189,10 @@
         "source_url": "https://deepinfra.com/stepfun-ai/Step-5-Preview",
         "display_name": "stepfun-ai/Step-5-Preview",
         "description": "Step 5 Preview is StepFun's flagship model for agentic work. It is a sparse Mixture-of-Experts model with 600B total parameters and 27B active per token, a 1M-token context window, and text and image input. It delivers frontier-level performance in software engineering, long-horizon agentic execution with repeated tool calls, and professional knowledge work, with particular strength in finance.",
-        "quantization": "fp8"
+        "quantization": "fp8",
+        "deprecated": true,
+        "retirement_date": "2026-10-29",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-29. Replacement: zai-org/GLM-5.3-Flash."
       }
     },
     {
@@ -9978,7 +10044,7 @@
         "display_name": "black-forest-labs/FLUX.1-Kontext-dev",
         "description": "FLUX.1 Kontext [dev] is a 12-billion-parameter image editing model that transforms visuals based on natural language instructions. It allows highly consistent, multi-step edits and is released with open weights under a non-commercial license to empower artists and researchers.",
         "deprecated": true,
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-10-08. Replacement: black-forest-labs/FLUX-2-dev.",
+        "deprecated_reason": "Retired on DeepInfra on 2026-10-08. Replacement: black-forest-labs/FLUX-2-dev.",
         "retirement_date": "2026-10-08"
       }
     },

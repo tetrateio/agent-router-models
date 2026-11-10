@@ -56,7 +56,7 @@
         "fast_mode_caching_1h_per_million": 16
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "min_cacheable_prompt_tokens": 512,
@@ -137,7 +137,7 @@
         "fast_mode_caching_1h_per_million": 20
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "min_cacheable_prompt_tokens": 512,
@@ -210,7 +210,7 @@
         "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 32000,
         "extra": {
           "tool_use_system_prompt_tokens": 313,
@@ -233,7 +233,7 @@
           "vertexanthropic/claude-opus-4-1"
         ],
         "provider_override": "autofallback",
-        "deprecated_reason": "Retired on August 5, 2026 (still available on Amazon Bedrock and Google Cloud)"
+        "deprecated_reason": "Retired on August 5, 2026 (still available on Amazon Bedrock until January 8, 2027)"
       }
     },
     {
@@ -283,7 +283,7 @@
         "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 32000,
         "extra": {
           "tool_use_system_prompt_tokens": 313,
@@ -306,7 +306,167 @@
           "vertexanthropic/claude-opus-4-1"
         ],
         "provider_override": "autofallback",
-        "deprecated_reason": "Retired on August 5, 2026 (still available on Amazon Bedrock and Google Cloud)"
+        "deprecated_reason": "Retired on August 5, 2026 (still available on Amazon Bedrock until January 8, 2027)"
+      }
+    },
+    {
+      "model": "claude-fable-5-2",
+      "provider": "anthropic",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "8.0000000000",
+      "outputTokensPricePerMillion": "40.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "10.0000000000",
+      "contextWindow": 1000000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://api.anthropic.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "caching_1h_per_million": 16,
+        "caching_5m_per_million": 10,
+        "code_execution_per_hour": 0.05,
+        "web_search_per_thousand_calls": 10,
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_caching_tokens_price_per_million": 5,
+        "batch_caching_5m_per_million": 5,
+        "batch_caching_1h_per_million": 8,
+        "batch_input_tokens_price_per_million": 4,
+        "batch_output_tokens_price_per_million": 20,
+        "fast_mode_input_tokens_price_per_million": 16,
+        "fast_mode_output_tokens_price_per_million": 80,
+        "fast_mode_cached_tokens_price_per_million": 0.4,
+        "fast_mode_caching_tokens_price_per_million": 20,
+        "fast_mode_caching_5m_per_million": 20,
+        "fast_mode_caching_1h_per_million": 32
+      },
+      "limits": {
+        "max_file_size_mb": 500,
+        "max_output_tokens": 128000,
+        "extra": {
+          "min_cacheable_prompt_tokens": 512
+        },
+        "max_images_per_prompt": 600
+      },
+      "metadata": {
+        "aliases": [
+          "claude-fable-5-2"
+        ],
+        "source_url": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+        "description": "For demanding reasoning and long-horizon agentic work.",
+        "display_name": "Claude Fable 5.2",
+        "release_date": "2026-11-09",
+        "knowledge_cutoff": "2026-06-01",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ]
+      }
+    },
+    {
+      "model": "claude-mythos-5-2",
+      "provider": "anthropic",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "8.0000000000",
+      "outputTokensPricePerMillion": "40.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "10.0000000000",
+      "contextWindow": 1000000,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "file_upload",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "document",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://api.anthropic.com/v1/"
+      ],
+      "additionalPricePerMillion": {
+        "caching_1h_per_million": 16,
+        "caching_5m_per_million": 10,
+        "code_execution_per_hour": 0.05,
+        "web_search_per_thousand_calls": 10,
+        "inference_geo_us_multiplier": 1.1,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_caching_tokens_price_per_million": 5,
+        "batch_caching_5m_per_million": 5,
+        "batch_caching_1h_per_million": 8,
+        "batch_input_tokens_price_per_million": 4,
+        "batch_output_tokens_price_per_million": 20,
+        "fast_mode_input_tokens_price_per_million": 16,
+        "fast_mode_output_tokens_price_per_million": 80,
+        "fast_mode_cached_tokens_price_per_million": 0.4,
+        "fast_mode_caching_tokens_price_per_million": 20,
+        "fast_mode_caching_5m_per_million": 20,
+        "fast_mode_caching_1h_per_million": 32
+      },
+      "limits": {
+        "max_file_size_mb": 500,
+        "max_output_tokens": 128000,
+        "extra": {
+          "min_cacheable_prompt_tokens": 512
+        },
+        "max_images_per_prompt": 600
+      },
+      "metadata": {
+        "aliases": [
+          "claude-mythos-5-2"
+        ],
+        "source_url": "https://platform.claude.com/docs/en/models/mythos-5-2/overview",
+        "description": "Claude Fable 5.2 for verified organizations. Available only to organizations verified through Anthropic's verification programs, with the same specifications and pricing.",
+        "display_name": "Claude Mythos 5.2",
+        "release_date": "2026-11-09",
+        "knowledge_cutoff": "2026-06-01",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ]
       }
     },
     {
@@ -358,7 +518,7 @@
         "batch_output_tokens_price_per_million": 25
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "min_cacheable_prompt_tokens": 512
@@ -432,7 +592,7 @@
         "batch_output_tokens_price_per_million": 25
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "min_cacheable_prompt_tokens": 512
@@ -444,7 +604,7 @@
           "claude-mythos-5-1"
         ],
         "source_url": "https://platform.claude.com/docs/en/models/mythos-5-1/overview",
-        "description": "Claude Fable 5.1 for Project Glasswing participants. Offered by invitation only, with the same specifications and pricing.",
+        "description": "Claude Fable 5.1 for verified organizations. Available only to organizations verified through Anthropic's verification programs, with the same specifications and pricing.",
         "display_name": "Claude Mythos 5.1",
         "release_date": "2026-09-01",
         "knowledge_cutoff": "2026-06-01",
@@ -506,7 +666,7 @@
         "batch_output_tokens_price_per_million": 25
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "max_images_per_prompt": 600,
         "extra": {
@@ -580,7 +740,7 @@
         "batch_output_tokens_price_per_million": 25
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "max_images_per_prompt": 600,
         "extra": {
@@ -592,7 +752,7 @@
           "claude-mythos-5"
         ],
         "source_url": "https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5",
-        "description": "Shares Claude Fable 5's capabilities without the safety classifiers. Available through Project Glasswing. Successor to Claude Mythos Preview.",
+        "description": "Most capable model for cybersecurity and biology research. The same model as Claude Fable 5, for organizations verified through Anthropic's verification programs.",
         "display_name": "Claude Mythos 5",
         "release_date": "2026-06-09",
         "knowledge_cutoff": "2026-01-01",
@@ -660,7 +820,7 @@
         "fast_mode_caching_1h_per_million": 20
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "tool_use_system_prompt_tokens": 290,
@@ -735,7 +895,7 @@
         "batch_output_tokens_price_per_million": 5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "min_cacheable_prompt_tokens": 512,
@@ -822,7 +982,7 @@
         "batch_caching_1h_per_million_high_context": 0.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "high_context": 100000,
         "extra": {
@@ -898,7 +1058,7 @@
         "batch_output_tokens_price_per_million": 5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "tool_use_system_prompt_tokens": 354,
@@ -973,7 +1133,7 @@
         "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "tool_use_system_prompt_tokens": 675,
@@ -1048,7 +1208,7 @@
         "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "tool_use_system_prompt_tokens": 497,
@@ -1126,7 +1286,7 @@
         "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 128000,
         "extra": {
           "tool_use_system_prompt_tokens": 497,
@@ -1203,7 +1363,7 @@
         "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "tool_use_system_prompt_tokens": 496,
@@ -1279,7 +1439,7 @@
         "batch_output_tokens_price_per_million": 12.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "tool_use_system_prompt_tokens": 496,
@@ -1355,7 +1515,7 @@
         "batch_output_tokens_price_per_million": 2.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "tool_use_system_prompt_tokens": 496,
@@ -1426,7 +1586,7 @@
         "batch_output_tokens_price_per_million": 2.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "tool_use_system_prompt_tokens": 496,
@@ -1497,7 +1657,7 @@
         "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "tool_use_system_prompt_tokens": 496,
@@ -1572,7 +1732,7 @@
         "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "tool_use_system_prompt_tokens": 496,
@@ -1646,7 +1806,7 @@
         "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "min_cacheable_prompt_tokens": 1024,
@@ -1719,7 +1879,7 @@
         "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 32000,
         "extra": {
           "min_cacheable_prompt_tokens": 1024,
@@ -1792,7 +1952,7 @@
         "batch_output_tokens_price_per_million": 37.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 32000,
         "extra": {
           "min_cacheable_prompt_tokens": 1024,
@@ -1865,7 +2025,7 @@
         "batch_output_tokens_price_per_million": 7.5
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 64000,
         "extra": {
           "min_cacheable_prompt_tokens": 1024,
@@ -1937,7 +2097,7 @@
         "batch_output_tokens_price_per_million": 2
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 8000,
         "extra": {
           "tool_use_system_prompt_tokens": 264,
@@ -1956,7 +2116,7 @@
         "deprecated_date": "2025-12-19",
         "retirement_date": "2026-02-19",
         "knowledge_cutoff": "2024-07-01",
-        "deprecated_reason": "Retired on February 19, 2026 (still available on Amazon Bedrock and Google Cloud)"
+        "deprecated_reason": "Retired on February 19, 2026"
       }
     },
     {
@@ -2005,7 +2165,7 @@
         "batch_output_tokens_price_per_million": 2
       },
       "limits": {
-        "max_file_size_mb": 32,
+        "max_file_size_mb": 500,
         "max_output_tokens": 8000,
         "extra": {
           "tool_use_system_prompt_tokens": 264,
@@ -2024,7 +2184,7 @@
         "deprecated_date": "2025-12-19",
         "retirement_date": "2026-02-19",
         "knowledge_cutoff": "2024-07-01",
-        "deprecated_reason": "Retired on February 19, 2026 (still available on Amazon Bedrock and Google Cloud)"
+        "deprecated_reason": "Retired on February 19, 2026"
       }
     }
   ]
