@@ -1731,14 +1731,15 @@
       "metadata": {
         "source_url": "https://deepinfra.com/inclusionAI/Ling-3.0-flash",
         "description": "The model prioritizes token efficiency and agentic inference at production scale, stretching what developers can achieve within limited token, latency, and serving-cost budgets.",
-        "display_name": "inclusionAI/Ling-3.0-flash"
+        "display_name": "inclusionAI/Ling-3.0-flash",
+        "quantization": "fp4"
       }
     },
     {
       "model": "deepinfra/inclusionAI/Ling-3.1-flash",
       "provider": "deepinfra",
       "mode": "chat",
-      "isEnabled": true,
+      "isEnabled": false,
       "inputTokensPricePerMillion": "0.0750000000",
       "outputTokensPricePerMillion": "0.2250000000",
       "cachedTokensPricePerMillion": "0.0150000000",
@@ -1766,8 +1767,9 @@
         "description": "Ling-3.1-flash, an upgraded native hybrid reasoning model designed for complex, real-world tasks. With 560B total parameters, 25B active parameters per token, and a 1M-token context window, Ling-3.1-flash builds upon Ling-3.0-flash with improvements in architecture, performance on real-world capabilities.",
         "quantization": "fp4",
         "deprecated": true,
-        "retirement_date": "2026-11-15",
-        "deprecated_reason": "Scheduled for retirement on DeepInfra on 2026-11-15. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017."
+        "retirement_date": "2026-11-11",
+        "deprecated_reason": "Retired on DeepInfra on 2026-11-11. Replacement: deepseek-ai/DeepSeek-V4.1-Flash-1017.",
+        "deprecated_date": "2026-11-11"
       }
     },
     {
@@ -4669,7 +4671,41 @@
         "source_url": "https://deepinfra.com/thinkingmachines/Inkling-Small",
         "description": "Inkling-Small is a Mixture-of-Experts transformer with 276B total parameters, 12B active, trained on NVIDIA GB300 NVL72 systems. Like Inkling, it features native reasoning over audio and images, variable thinking effort",
         "display_name": "thinkingmachines/Inkling-Small",
-        "quantization": "fp8"
+        "quantization": "fp4"
+      }
+    },
+    {
+      "model": "deepinfra/thinkingmachines/Inkling-2-Small",
+      "provider": "deepinfra",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "0.2850000000",
+      "outputTokensPricePerMillion": "0.9500000000",
+      "cachedTokensPricePerMillion": "0.0285000000",
+      "cachingTokensPricePerMillion": null,
+      "contextWindow": 262144,
+      "capabilities": [
+        "prompt_caching",
+        "reasoning",
+        "structured_outputs",
+        "tool_choice",
+        "vision"
+      ],
+      "modalities": {
+        "input": ["image", "text"],
+        "output": ["text"]
+      },
+      "backendUrls": ["https://api.deepinfra.com/v1/openai/"],
+      "additionalPricePerMillion": {
+        "batch_input_tokens_price_per_million": 0.228,
+        "batch_output_tokens_price_per_million": 0.76
+      },
+      "limits": {},
+      "metadata": {
+        "source_url": "https://deepinfra.com/thinkingmachines/Inkling-2-Small",
+        "display_name": "thinkingmachines/Inkling-2-Small",
+        "description": "Inkling 2 Small is a general-purpose multimodal model that accepts text and image inputs and generates text outputs. It is intended for use in English and other languages, and across multiple coding languages.",
+        "quantization": "fp4"
       }
     },
     {
@@ -6508,7 +6544,7 @@
         "source_url": "https://deepinfra.com/inclusionAI/Ling-3.0-flash-VL",
         "display_name": "inclusionAI/Ling-3.0-flash-VL",
         "description": "The multimodal version built on Ling-3.0-flash — 124B total / ~5.5B active per token, with native text, image, and video understanding. It’s mainly designed for multimodal agentic workflows, long-context understanding, and multi-step reasoning.",
-        "quantization": "fp16"
+        "quantization": "fp4"
       }
     },
     {

@@ -2,6 +2,158 @@
   "version": "1.0",
   "models": [
     {
+      "model": "vertex/gemini-4-carbon",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "2.0000000000",
+      "outputTokensPricePerMillion": "10.0000000000",
+      "cachedTokensPricePerMillion": "0.1000000000",
+      "cachingTokensPricePerMillion": "2.0000000000",
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "non_global_endpoint_multiplier": 1.1,
+        "batch_input_tokens_price_per_million": 1,
+        "batch_cached_tokens_price_per_million": 0.05,
+        "batch_output_tokens_price_per_million": 5,
+        "priority_input_tokens_price_per_million": 3.6,
+        "priority_cached_tokens_price_per_million": 0.18,
+        "priority_output_tokens_price_per_million": 18
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "system_messages",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-4-carbon"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-carbon",
+        "description": "Our most capable reasoning model, built for complex software engineering, mathematical and scientific problem solving, high factual accuracy, autonomous multi-step agents, and long decode up to 1M tokens. Available to verified enterprise customers in select regions.",
+        "display_name": "Gemini 4 Carbon",
+        "release_date": "2026-11-10",
+        "knowledge_cutoff": "2026-03-01",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "upstream_model": "gemini-4-carbon",
+        "regions": [
+          "global",
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "vertex/gemini-4-carbon-cyber-permissive",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": false,
+      "inputTokensPricePerMillion": "4.0000000000",
+      "outputTokensPricePerMillion": "20.0000000000",
+      "cachedTokensPricePerMillion": "0.2000000000",
+      "cachingTokensPricePerMillion": "4.0000000000",
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "non_global_endpoint_multiplier": 1.1,
+        "batch_input_tokens_price_per_million": 2,
+        "batch_cached_tokens_price_per_million": 0.1,
+        "batch_output_tokens_price_per_million": 10,
+        "priority_input_tokens_price_per_million": 7.2,
+        "priority_cached_tokens_price_per_million": 0.36,
+        "priority_output_tokens_price_per_million": 36
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "system_messages",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-4-carbon-cyber-permissive"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-carbon#cyber",
+        "description": "A version of Gemini 4 Carbon for defensive cybersecurity use cases. Access requires an allowlist.",
+        "display_name": "Gemini 4 Carbon Cyber Permissive",
+        "release_date": "2026-11-10",
+        "knowledge_cutoff": "2026-03-01",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "upstream_model": "gemini-4-carbon-cyber-permissive",
+        "regions": [
+          "global",
+          "us"
+        ],
+        "launch_stage": "GA"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
       "model": "vertex/gemini-4-argon",
       "provider": "vertex",
       "mode": "chat",
@@ -57,7 +209,7 @@
           "gemini-4-argon"
         ],
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-argon",
-        "description": "Our flagship reasoning model, built for complex software engineering, deep mathematical and scientific problem solving, autonomous multi-step agents, and long-decode generation up to 1M tokens.",
+        "description": "Our efficient Gemini 4 frontier reasoning model. It delivers Gemini 4 intelligence with faster responses and lower token spend per turn compared to Gemini 4 Carbon across complex coding, agentic, math, and science tasks. Like Carbon, it supports a unified 1M-token context window and long decode up to 1M tokens.",
         "display_name": "Gemini 4 Argon",
         "release_date": "2026-10-13",
         "reasoning_efforts": [
@@ -145,7 +297,86 @@
         "upstream_model": "gemini-4-argon-cyber-permissive",
         "regions": [
           "global",
-          "us"
+          "us",
+          "eu"
+        ],
+        "launch_stage": "GA"
+      },
+      "limits": {
+        "max_output_tokens": 65536
+      }
+    },
+    {
+      "model": "vertex/gemini-4-hydrogen",
+      "provider": "vertex",
+      "mode": "chat",
+      "isEnabled": true,
+      "inputTokensPricePerMillion": "1.5000000000",
+      "outputTokensPricePerMillion": "7.5000000000",
+      "cachedTokensPricePerMillion": "0.0750000000",
+      "cachingTokensPricePerMillion": "1.5000000000",
+      "additionalPricePerMillion": {
+        "grounding_google_search_per_thousand": 14,
+        "grounding_google_maps_per_thousand": 14,
+        "grounding_your_data_per_thousand": 2.5,
+        "non_global_endpoint_multiplier": 1.1,
+        "batch_input_tokens_price_per_million": 0.75,
+        "batch_cached_tokens_price_per_million": 0.0375,
+        "batch_output_tokens_price_per_million": 3.75,
+        "priority_input_tokens_price_per_million": 2.7,
+        "priority_cached_tokens_price_per_million": 0.135,
+        "priority_output_tokens_price_per_million": 13.5
+      },
+      "contextWindow": 1048576,
+      "capabilities": [
+        "code_execution",
+        "computer_use",
+        "pdf_support",
+        "prompt_caching",
+        "reasoning",
+        "speech_recognition",
+        "structured_outputs",
+        "system_messages",
+        "tool_choice",
+        "url_context",
+        "vision",
+        "web_search"
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "document",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "backendUrls": [
+        "https://aiplatform.googleapis.com/v1/"
+      ],
+      "metadata": {
+        "aliases": [
+          "gemini-4-hydrogen"
+        ],
+        "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-hydrogen",
+        "description": "Brings cutting-edge intelligence to everyone, with speed and efficiency for everyday coding and agentic workflows, featuring a unified 1M-token context window and long decode up to 1M tokens.",
+        "display_name": "Gemini 4 Hydrogen",
+        "release_date": "2026-11-12",
+        "knowledge_cutoff": "2026-03-01",
+        "reasoning_efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "upstream_model": "gemini-4-hydrogen",
+        "regions": [
+          "global",
+          "us",
+          "eu"
         ],
         "launch_stage": "GA"
       },
@@ -225,7 +456,9 @@
         "regions": [
           "global",
           "us",
-          "eu"
+          "eu",
+          "northamerica-northeast1",
+          "asia-northeast1"
         ],
         "launch_stage": "GA"
       },
@@ -3122,7 +3355,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
-        "pdf_support",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -3130,7 +3362,6 @@
       ],
       "modalities": {
         "input": [
-          "document",
           "image",
           "text"
         ],
@@ -3147,8 +3378,15 @@
         ],
         "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/meta/muse-wonder-1-0",
         "description": "Meta's high-capability reasoning model for complex software engineering and long-horizon agentic work. It plans tasks, delegates to sub-agents, calls tools in parallel, and recovers from errors.",
-        "display_name": "Muse Wonder 1.0",
+        "display_name": "Muse Wonder",
         "release_date": "2026-11-09",
+        "reasoning_efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
         "regions": [
           "global"
         ],
@@ -3198,6 +3436,14 @@
         "description": "Meta's efficient reasoning model for high-volume agent tasks, including tool calls, coding subtasks, routing, extraction, and long-document processing.",
         "display_name": "Muse Ember 1.0",
         "release_date": "2026-11-09",
+        "reasoning_efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
         "regions": [
           "global"
         ],
@@ -3221,7 +3467,6 @@
       "cachingTokensPricePerMillion": null,
       "contextWindow": 1048576,
       "capabilities": [
-        "pdf_support",
         "reasoning",
         "structured_outputs",
         "tool_choice",
@@ -3229,7 +3474,6 @@
       ],
       "modalities": {
         "input": [
-          "document",
           "image",
           "text"
         ],
@@ -3248,6 +3492,13 @@
         "description": "Meta's reasoning model for agentic workflows and competitive coding, with built-in tool calling and MCP support.",
         "display_name": "Muse Spark 1.3",
         "release_date": "2026-09-24",
+        "reasoning_efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
         "regions": [
           "global"
         ],
