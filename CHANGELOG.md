@@ -1,3 +1,167 @@
+# 2026-11-16 TARS MODEL UPDATE
+
+This update covers all eight catalogs. The catalogs now contain 540 records. The run read the provider change feeds from November 10 to November 16, 2026.
+
+## New Models:
+
+- [Gemini] Gemini 4 Carbon (`gemini-4-carbon`) is the most capable Gemini reasoning model. It is for complex software engineering, mathematical and scientific problem solving, and autonomous multi-step agents. Google released it on November 10, 2026. The context window holds 1,048,576 tokens, and one response holds up to 65,536 output tokens. The model accepts text, images, video, audio, and PDF documents, and it returns text. It supports the low, medium, and high thinking levels. It also supports function calls, structured outputs, code execution, computer use, URL context, file search, and grounding with Google Search and Google Maps. It has no free tier. Through November 30, 2026, an introductory price applies. Prices are USD per million tokens.
+
+| `gemini-4-carbon` service | Input | Cached input | Output |
+| --- | --- | --- | --- |
+| Standard | $2 | $0.10 | $10 |
+| Batch and Flex | $1 | $0.05 | $5 |
+| Priority | $3.60 | $0.18 | $18 |
+
+- [Gemini] Gemini 4 Hydrogen (`gemini-4-hydrogen`) is a fast and efficient model for daily coding and agentic work. Google released it on November 12, 2026. It has the same limits, input types, and tools as Gemini 4 Carbon. It adds a fourth thinking level, xhigh, to low, medium, and high. The default level is high. The model is available on the free tier and the paid tier. Prices are USD per million tokens.
+
+| `gemini-4-hydrogen` service | Input | Cached input | Output |
+| --- | --- | --- | --- |
+| Standard | $1.50 | $0.075 | $7.50 |
+| Batch and Flex | $0.75 | $0.0375 | $3.75 |
+| Priority | $2.70 | $0.135 | $13.50 |
+
+- [Vertex] Gemini 4 Hydrogen on Google Cloud (`vertex/gemini-4-hydrogen`) is generally available from November 12, 2026. It runs on the global, `us`, and `eu` endpoints. It has the same token prices as on the Gemini API. Grounding with Google Search and Google Maps costs $14 per 1,000 queries. Grounding with your data costs $2.50 per 1,000 prompts. Regional endpoints cost 1.1 times the global price. The model accepts text, images, audio, video, and documents, and it returns text. The knowledge cutoff is March 2026.
+- [DeepInfra] Inkling 2 Small (`thinkingmachines/Inkling-2-Small`) is a multimodal model from Thinking Machines Lab. It accepts text and images, and it returns text. It supports reasoning, tool calls, structured outputs, and prompt caching. A 5 percent promotion with no published end date applies, so the record uses the promotional price. The list price is $0.30 for input, $0.03 for cached input, and $1 for output per million tokens.
+
+| `thinkingmachines/Inkling-2-Small` service | Input | Cached input | Output |
+| --- | --- | --- | --- |
+| Standard | $0.285 | $0.0285 | $0.95 |
+| Batch | $0.228 | — | $0.76 |
+
+## Price Changes:
+
+- [All] No price of an existing record changed.
+
+## Deprecated Models:
+
+- [OpenAI] OpenAI deprecated GPT Image 2 (`gpt-image-2` and `gpt-image-2-2026-04-21`) on November 10, 2026. The model shuts down on February 10, 2027. The replacements are `gpt-image-2.6-sunburst` and `gpt-image-2.6-flare`. The record stays enabled until the shutdown date.
+
+## Retired Models:
+
+- [DeepInfra] Ling-3.1-flash (`inclusionAI/Ling-3.1-flash`) retired on November 11, 2026, four days before the announced date. Its model page returns HTTP 404. The replacement is `deepseek-ai/DeepSeek-V4.1-Flash-1017`. The record is disabled.
+
+## Other Updates:
+
+- [OpenAI] The deprecations page now names newer replacements for seven models that shut down on December 11, 2026. The shutdown date does not change.
+
+| Records | Old replacement | New replacement |
+| --- | --- | --- |
+| `gpt-5`, `o3` | `gpt-5.6-sol` | `gpt-6.1-sol` |
+| `gpt-5-mini` | `gpt-5.6-terra` | `gpt-6.1-terra` |
+| `gpt-5-nano` | `gpt-5.6-luna` | `gpt-6-luna` |
+| `gpt-5-pro`, `o3-pro` | `gpt-5.6-sol` with the pro reasoning mode | `gpt-6.1-sol` with the pro reasoning mode |
+
+- [Gemini/Vertex] Google changed the description of Gemini 4 Argon. It is now the efficient Gemini 4 reasoning model, with faster responses and fewer tokens for each turn than Gemini 4 Carbon.
+- [Vertex] Gemini 3.8 Flash is generally available in Canada (`northamerica-northeast1`) and Japan (`asia-northeast1`) from November 9, 2026.
+- [Vertex] Gemini 4 Argon Cyber Permissive now runs on the `eu` endpoint also.
+- [Vertex] The Muse Wonder and Muse Spark 1.3 pages now list text and image inputs only. PDF input is not supported. The records remove PDF support. The Muse model pages now give the reasoning effort levels. Muse Wonder and Muse Spark 1.3 take minimal, low, medium, high, and xhigh. Muse Ember 1.0 also takes max. Google renamed Muse Wonder 1.0 to Muse Wonder.
+- [DeepInfra] Three models now run in FP4 precision: `inclusionAI/Ling-3.0-flash`, `inclusionAI/Ling-3.0-flash-VL`, and `thinkingmachines/Inkling-Small`.
+
+## Notes:
+
+### Models that are added but not enabled
+
+- [Vertex] Gemini 4 Carbon on Google Cloud (`vertex/gemini-4-carbon`) is generally available from November 10, 2026. Only verified enterprise customers in some regions can use it, so the record stays off. This follows the earlier rule for models with limited access. It has the same introductory prices as on the Gemini API, and Priority costs $3.60, $0.18, and $18 per million tokens. It runs on the global, `us`, and `eu` endpoints. It accepts Microsoft Office and OpenDocument files in addition to PDF files.
+- [Vertex] Gemini 4 Carbon for cyber (`vertex/gemini-4-carbon-cyber-permissive`) is a version of Gemini 4 Carbon for defensive security work. Access needs an allowlist through the Fairwind Program, so the record stays off. It does not support computer use. It runs on the global and `us` endpoints. The default thinking level is high. The introductory price does not apply to this model. Prices are USD per million tokens.
+
+| `vertex/gemini-4-carbon-cyber-permissive` service | Input | Cached input | Output |
+| --- | --- | --- | --- |
+| Standard | $4 | $0.20 | $20 |
+| Batch | $2 | $0.10 | $10 |
+| Priority | $7.20 | $0.36 | $36 |
+
+- [Vertex] `vertex/gemini-4-argon-cyber-permissive` and `vertex/gemini-3.8-flash-cyber` stay off, because Google serves them behind an allowlist.
+
+### Corrections to earlier updates
+
+- [Vertex] The 2026-11-10 update gave Muse Wonder 1.0 and Muse Spark 1.3 PDF input. The Google Cloud pages of that date listed PDF input. The pages now list PDF as not supported, and the records remove it.
+
+### Follow-up work
+
+- [Gemini/Vertex] From December 1, 2026, Gemini 4 Carbon costs $4 for input, $0.20 for cached input, and $20 for output per million tokens. On the Gemini API, Batch and Flex become $2, $0.10, and $10, and Priority becomes $7.20, $0.36, and $36. Gemini 4 Argon takes the same prices on the same date.
+- [Vertex] The Google Cloud promotion for Gemini 4 Carbon and Gemini 4 Argon is a 50 percent credit on net spend. The pricing table shows the price after the credit. The records hold this price through November 30, 2026.
+- [Vertex] From January 12, 2027, Gemini 4 Hydrogen and later models support cache control with a time-to-live setting. A cache write then costs 1.25 times the standard input price. For Gemini 4 Hydrogen, this is $1.875 on Standard, $3.375 on Priority, and $0.9375 on Batch per million tokens. Until that date, a cache write costs the standard input price. The record holds $1.50.
+- [Vertex] Gemini 4 Hydrogen is a short-term generally available release. Google can retire it with 45 days of notice.
+- [Gemini/Vertex] Gemini 4 Carbon and Gemini 4 Hydrogen support long decodes of up to 1,048,576 output tokens. The records use the standard endpoints, so the maximum output stays at 65,536 tokens, as for Gemini 4 Argon. From November 13, 2026, Google Cloud bills the tokens of completions of more than 32,000 tokens. If a request fails because of a timeout, these tokens are still billed.
+- [Gemini] Gemini 4 Hydrogen has an invite-only Contributor tier at half the Standard price. The catalog has no field for this tier.
+- [OpenAI] The Batch pricing table now gives prices for GPT Image 2.6 Sunburst and GPT Image 2.6 Flare. Text input costs $2.50, and cached text input costs $0.625 per million tokens. Image input costs $4, cached image input $1, and image output $15 per million tokens. The model pages say that Batch is not supported. The records keep no Batch prices until the sources agree.
+- [OpenAI] The open items of the 2026-11-10 update stay open. They cover the GPT-4o snapshots and the alias names of the deprecated GPT-4o and GPT-4.1 models. They also cover `gpt-daybreak-blue-latest`, the two search preview records, and the two audio preview records.
+- [DeepInfra] The Inkling 2 Small sources disagree about the context window. The index, the detail endpoint, and the page header give 1,048,576 tokens. The model card on the same page gives 262,144 tokens as the context window on DeepInfra. The record holds 262,144, the smaller value. The detail endpoint gives no maximum output.
+- [DeepInfra] Before it retired, Ling-3.1-flash showed an 85 percent promotion: $0.045 for input, $0.009 for cached input, and $0.135 for output per million tokens. The disabled record keeps its last verified price.
+- [DeepInfra] Twelve promotions stay active with no published end date. Inkling 2 Small (5 percent) is new. The others are Kimi K3.1 Pro, Qwen3.8-27B, Step-3.7-Flash, MiMo-V2.5, MiMo-V2.5-Pro, MiMo-V2.6-Pro, GLM-5.2, GLM-5.3, DeepSeek-V4-Flash-Vision-Exp, DeepSeek-V4.1-Flash, and DeepSeek-V4.1-Flash-1017.
+- [Vertex] Google moved the minimum availability date of `glm-5.2-maas` from October 31 to November 30, 2026. The text says "available until at least", so the record holds no retirement date.
+- [Vertex] Gemini 3.6 Flash on Google Cloud retires on November 19, 2026. The next update disables the record.
+- [Anthropic/VertexAnthropic] Claude Sonnet 4.5 retires on November 30, 2026, on both platforms. Fast mode for Claude Opus 4.8 ends on the same date.
+- [All] Earlier unresolved items stay open.
+
+### Schema and catalog changes
+
+- [All] The catalogs grew from 534 to 540 records. This update adds six records and removes none.
+- [Gemini] `gemini-4-carbon` and `gemini-4-hydrogen` copy the shape of `gemini-4-argon`. Each sets `cachingTokensPricePerMillion` to its cached input price, and 9 `batch_*`, `flex_*`, and `priority_*` cells. `metadata.reasoning_efforts` is `[low, medium, high]` for Carbon and `[low, medium, high, xhigh]` for Hydrogen. `gemini-4-argon` changes `description`.
+- [Vertex] `vertex/gemini-4-hydrogen`, `vertex/gemini-4-carbon`, and `vertex/gemini-4-carbon-cyber-permissive` copy the shape of `vertex/gemini-4-argon`. `cachingTokensPricePerMillion` holds the standard input price. Each record sets `knowledge_cutoff: 2026-03-01` and `launch_stage: GA`. The two Carbon records set `isEnabled: false`. `vertex/gemini-4-carbon-cyber-permissive` removes `computer_use` and sets `regions: [global, us]`.
+- [Vertex] `vertex/gemini-4-argon` changes `description`. `vertex/gemini-4-argon-cyber-permissive` adds `eu` to `metadata.regions`. `vertex/gemini-3.8-flash` adds `northamerica-northeast1` and `asia-northeast1` to `metadata.regions`.
+- [Vertex] `vertex/meta/muse-wonder-1.0` and `vertex/meta/muse-spark-1.3` remove `pdf_support` from `capabilities` and `document` from `modalities.input`. The three Muse records add `metadata.reasoning_efforts`. `vertex/meta/muse-wonder-1.0` changes `display_name` to "Muse Wonder".
+- [OpenAI] `gpt-image-2` sets `deprecated: true`, `deprecated_date: 2026-11-10`, `retirement_date: 2027-02-10`, and `deprecated_reason`. Six records change the replacement name in `deprecated_reason`: `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-5-pro`, `o3`, and `o3-pro`.
+- [DeepInfra] `inclusionAI/Ling-3.1-flash` sets `isEnabled: false`, `deprecated_date: 2026-11-11`, and `retirement_date: 2026-11-11`. `deprecated_reason` changes from "Scheduled for retirement" to "Retired". Three records change `metadata.quantization` to `fp4`: `Ling-3.0-flash` from no value, `Ling-3.0-flash-VL` from `fp16`, and `Inkling-Small` from `fp8`.
+- [DeepInfra] `thinkingmachines/Inkling-2-Small` sets `contextWindow: 262144`, `quantization: fp4`, two `batch_*` cells at 0.8 times the real-time prices, and an empty `limits`.
+- [All] Checks passed: 113 pricing cases, 67 catalog-policy cases, CLI checks, and all eight catalogs. Supporting audits stay under ignored `audits/`.
+
+### Models that stay out of the catalog
+
+- [Gemini] Gemini Decision 1 (`gemini-decision-1`) answers only on the Decisions API, and it returns zero output tokens. It costs $0.10 per million input tokens. It falls outside the accepted modes.
+- [Gemini] The models of earlier updates stay out: Gemini 3.5 Transcribe, Gemini Omni 1.2 Flash, the Live, text-to-speech, and Lyria models, and the three agents of the Interactions API.
+- [DeepInfra] Four new Lightricks models stay out: `Lightricks/LTX-HDR`, `Lightricks/LTX-AlphaGen`, `Lightricks/LTX-Reframe`, and `Lightricks/LTX-Upscale`. They are video models with a price per second of output video, from $0.08 to $0.25. `nace-ai/drex-max-finance` stays out from the 2026-11-10 update.
+- [OpenAI/Vertex] The models of the 2026-11-10 update stay out. These include GPT-6 Rosalind, GPT-6 Astra Law, and the four OpenAI partner models in Private Preview on Google Cloud.
+
+### Prices that did not change
+
+- [Anthropic] All 27 compared records match every price. The two retired Claude Haiku 3.5 records have no pricing row.
+- [OpenAI] 1,412 fields match. The pricing page has a new layout with separate short-context and long-context rows. The GPT-6-Cyber long-context prices match the catalog.
+- [Gemini] 329 price cells match in the earlier sections. The Gemini 4 Carbon and Gemini 4 Hydrogen sections are new.
+- [xAI] Every price matches.
+- [Groq] All checked fields match.
+- [DeepInfra] 4,874 fields match. 306 records do not change.
+- [Vertex/VertexAnthropic] The price check gives the same result as on November 10. 70 of 75 earlier records match every price cell. The other five are the three text embedding models with a price per 1,000 characters, `multimodalembedding@001`, and one regional table.
+
+### Prices that differ from the direct-API catalogs
+
+- [Vertex] On Google Cloud, a Gemini 4 Hydrogen cache write costs $1.50, the standard input price. On the Gemini API, the catalog holds $0.075. The Google Cloud records hold no Flex prices, as for Gemini 4 Argon.
+- [Vertex] Google Cloud adds grounding with your data at $2.50 per 1,000 prompts and the 1.1 multiplier for regional endpoints.
+
+### Capabilities that differ from the direct-API catalogs
+
+- [Vertex] Gemini 4 Hydrogen on Google Cloud does not list file upload. It lists system instructions.
+- [Vertex] Gemini 4 Carbon for cyber has no Gemini API version. Unlike Gemini 4 Carbon, it does not support computer use.
+
+### Sources and coverage
+
+- [All] This run compared all 540 records with current sources, field by field. It also compared the fetched sources with the November 10 captures. 247 sources changed.
+- [All] The Chrome extension connected in this run. The run read the Vertex pricing page and the Inkling 2 Small page on DeepInfra in Chrome. The 49 Vertex pricing tables in Chrome match the `curl` copy cell for cell. All other sources came from `curl`.
+- [Anthropic] All Anthropic changes are wording or link changes. The overview page now omits Claude Mythos 5.2 and Claude Mythos 5.1 from the 2.5 percent cache read note. The pricing page still gives them the same prices as the Fable models. The fast mode page lists Claude Mythos 5.2 as supported. No record changes.
+- [OpenAI] 1,412 fields match, 54 are unpublished, and 136 were not checked. 49 fields differ, and none is a real change. 24 belong to `gpt-daybreak-blue-latest` and 13 to three GPT-4o snapshots, as in earlier updates. 12 are parser artifacts of the new short-context and long-context rows: four for GPT-6-Cyber, four for GPT-5.6-Cyber, and four for `gpt-daybreak-red-latest`. The short-context rows match the catalog. The GPT-5.6-Cyber long-context row has no prices. 14 descriptions differ in wording only. 8 known differences stay open.
+- [OpenAI] The deprecations page now uses one table for all models. A script matched every row to the records. Only the rows of this update and the snapshot rows of earlier updates differ.
+- [Gemini] Three differences stay from earlier updates: the reasoning levels of Gemini 3.1 Flash-Lite Image (a parser artifact) and the Flex and Priority conflict of Gemini 2.5 Flash Image. The Gemini API compatibility page for OpenAI maps `reasoning_effort` to Gemini 4 thinking levels, with xhigh for Gemini 4 Hydrogen only.
+- [xAI] 350 fields match in 10 records, and no field differs. The only feed entry adds Files API support for image and video requests.
+- [Groq] 91 fields match in 4 records. The one difference is the `max_file_size_mb` value of Qwen 3.8 27B, which the 2026-11-10 update removed on purpose. The Groq console sources did not change.
+- [DeepInfra] 4,874 fields match in 311 records. 11 fields differed, and this update applies all of them. 41 price entries use billing units that the script does not map, as before. 2 image-token prices of the Nemotron-3.5-Embed models are not in the index, and their model pages match. 12 notes cover promotions.
+- [Vertex/VertexAnthropic] The run compared limits, capabilities, modalities, lifecycle, and regions for all 78 records with the model pages. The 18 changed VertexAnthropic pages changed only in markup.
+- [All] The fetch log records 644 sources, and all returned HTTP 200. One saved page carries "Page not found" text only inside its script data: the xAI pricing page, which has its full price data.
+- [All] Evidence stays under ignored `audits/2026-11-16/`. It holds the fetched sources, the comparison output, and the apply scripts.
+
+<details>
+<summary>Provider sources and verification limits</summary>
+
+- [Anthropic] Sources: the [release notes](https://platform.claude.com/docs/en/release-notes/api), [models overview](https://platform.claude.com/docs/en/about-claude/models/overview), [pricing](https://platform.claude.com/docs/en/about-claude/pricing), [deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations), [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows), [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode), [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [effort](https://platform.claude.com/docs/en/build-with-claude/effort), [API overview](https://platform.claude.com/docs/en/api/overview), [tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview), and the model pages.
+- [OpenAI] Sources: the [changelog](https://developers.openai.com/api/docs/changelog), [model index](https://developers.openai.com/api/docs/models), [all models](https://developers.openai.com/api/docs/models/all), [comparison](https://developers.openai.com/api/docs/models/compare), [pricing](https://developers.openai.com/api/docs/pricing), [deprecations](https://developers.openai.com/api/docs/deprecations), [tools](https://developers.openai.com/api/docs/guides/tools), [fast mode](https://developers.openai.com/api/docs/guides/fast-mode), the [image generation guide](https://developers.openai.com/api/docs/guides/image-generation), and 80 model pages, which include the [GPT Image 2 page](https://developers.openai.com/api/docs/models/gpt-image-2).
+- [Gemini] Sources: the [changelog](https://ai.google.dev/gemini-api/docs/changelog), [models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), [deprecations](https://ai.google.dev/gemini-api/docs/deprecations), [OpenAI compatibility](https://ai.google.dev/gemini-api/docs/openai), [Decisions API](https://ai.google.dev/gemini-api/docs/decisions-api), the [Gemini 4 Carbon page](https://ai.google.dev/gemini-api/docs/models/gemini-4-carbon), the [Gemini 4 Hydrogen page](https://ai.google.dev/gemini-api/docs/models/gemini-4-hydrogen), the two "What's new" guides, and the other model pages.
+- [xAI] Sources: the [release notes](https://docs.x.ai/developers/release-notes), [models](https://docs.x.ai/developers/models), [pricing](https://docs.x.ai/developers/pricing), [rate limits](https://docs.x.ai/developers/rate-limits), [files](https://docs.x.ai/developers/files/managing-files), and the model pages.
+- [Groq] Sources: the [model index](https://console.groq.com/docs/models), [deprecations](https://console.groq.com/docs/deprecations), [changelog](https://console.groq.com/docs/changelog), [rate limits](https://console.groq.com/docs/rate-limits), the model pages, and the feature pages.
+- [DeepInfra] Sources: the [unfiltered index](https://api.deepinfra.com/models/list), 322 detail endpoints, the [Batch guide](https://docs.deepinfra.com/batch/introduction), and the model pages of new and changed models, which include the [Inkling 2 Small page](https://deepinfra.com/thinkingmachines/Inkling-2-Small).
+- [Vertex] Sources: the [release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes), the [pricing tables](https://docs.cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing), the [partner model pricing](https://cloud.google.com/model-garden/partner-models/pricing), the [context cache overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/context-cache/context-cache-overview), the [Gemini 4 Carbon page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-carbon), the [Gemini 4 Hydrogen page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/4-hydrogen), the deprecation pages, and 71 model and guide pages.
+- [VertexAnthropic] Sources: the [Claude index](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude), 15 Claude model pages, and the Claude pricing tables.
+
+</details>
+
 # 2026-11-10 TARS MODEL UPDATE
 
 This update covers all eight catalogs. The catalogs now contain 534 records. The run read the provider change feeds from October 27 to November 10, 2026.
